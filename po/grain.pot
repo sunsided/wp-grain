@@ -1,0 +1,1331 @@
+#: .\404.php:5
+msgid	"Error 404 - Not found!"
+msgstr	""
+
+#: .\404.php:6
+msgid	"Would you like to search for something?"
+msgstr	""
+
+#: .\admin\menu.php:18 .\admin\menu.php:19 .\admin\menu.php:20
+#: .\admin\menu.php:21 .\admin\menu.php:22
+msgid	"Configure Grain"
+msgstr	""
+
+#: .\admin\menu.php:18 .\admin\menu.php:677
+msgid	"Copyright Settings"
+msgstr	""
+
+#: .\admin\menu.php:19
+msgid	"General Settings"
+msgstr	""
+
+#: .\admin\menu.php:20
+msgid	"Navigation Settings"
+msgstr	""
+
+#: .\admin\menu.php:20
+msgid	"Navigation Bar"
+msgstr	""
+
+#: .\admin\menu.php:21
+msgid	"Styling and Layout"
+msgstr	""
+
+#: .\admin\menu.php:22 .\admin\menu.php:296
+msgid	"Date and Time Settings"
+msgstr	""
+
+#: .\admin\menu.php:22
+msgid	"Date and Time"
+msgstr	""
+
+#: .\admin\menu.php:26
+msgid	"Yet Another Photoblog"
+msgstr	""
+
+#: .\admin\menu.php:26
+msgid	"YAPB"
+msgstr	""
+
+#: .\admin\menu.php:290 .\admin\menu.php:465 .\admin\menu.php:671
+#: .\admin\menu.php:776 .\admin\menu.php:940
+msgid	"Changes saved"
+msgstr	""
+
+#: .\admin\menu.php:300
+msgid	"For information on date and time formatting codes refer to the "
+	"PHP manual entry of <a href=\"http://www.php.net/date\" "
+	"target=\"_blank\">the <code>date()</code> function</a>."
+msgstr	""
+
+#: .\admin\menu.php:301
+msgid	"If you want to include a specific text in the format, such as "
+	"\"<code>o'clock</code>\", you may include it in curly braces, "
+	"e.g. \"<code>{o'clock'}</code>\""
+msgstr	""
+
+#: .\admin\menu.php:305
+msgid	"Some examples"
+msgstr	""
+
+#: .\admin\menu.php:310
+msgid	"format"
+msgstr	""
+
+#: .\admin\menu.php:311
+msgid	"result"
+msgstr	""
+
+#: .\admin\menu.php:351
+msgid	"Archive settings"
+msgstr	""
+
+#: .\admin\menu.php:353
+msgid	"Daily Archive:"
+msgstr	""
+
+#: .\admin\menu.php:361
+msgid	"The date or time format in the archive for a specific day."
+msgstr	""
+
+#: .\admin\menu.php:364 .\admin\menu.php:381 .\admin\menu.php:403
+#: .\admin\menu.php:425 .\admin\menu.php:442
+msgid	"The current selection (<code>%FORMAT</code>) results in "
+	"'<code>%RESULT</code>' for the current time."
+msgstr	""
+
+#: .\admin\menu.php:371
+msgid	"Monthly Archive:"
+msgstr	""
+
+#: .\admin\menu.php:378
+msgid	"The date or time format in the archive for a specific month."
+msgstr	""
+
+#: .\admin\menu.php:391
+msgid	"Photo Info"
+msgstr	""
+
+#: .\admin\menu.php:393 .\admin\menu.php:432
+msgid	"Time of comment:"
+msgstr	""
+
+#: .\admin\menu.php:400
+msgid	"The date and time format for the photo's 'published' date."
+msgstr	""
+
+#: .\admin\menu.php:413
+msgid	"Per comment"
+msgstr	""
+
+#: .\admin\menu.php:415
+msgid	"Date of comment:"
+msgstr	""
+
+#: .\admin\menu.php:422
+msgid	"The date format for a comment."
+msgstr	""
+
+#: .\admin\menu.php:439
+msgid	"The time format for a comment."
+msgstr	""
+
+#: .\admin\menu.php:472
+msgid	"Style Override"
+msgstr	""
+
+#: .\admin\menu.php:476
+msgid	"Style Override settings"
+msgstr	""
+
+#: .\admin\menu.php:478
+msgid	"CSS File:"
+msgstr	""
+
+#: .\admin\menu.php:491
+msgid	"The file selected here is loaded in addition to the base "
+	"stylesheet and allows for style overrides."
+msgstr	""
+
+#: .\admin\menu.php:503
+msgid	"You can edit the selected override file here: %FILE"
+msgstr	""
+
+#: .\admin\menu.php:516
+msgid	"Missing Image"
+msgstr	""
+
+#: .\admin\menu.php:519
+msgid	"<em>Whoops</em> image"
+msgstr	""
+
+#: .\admin\menu.php:522
+msgid	"Whoops image URL:"
+msgstr	""
+
+#: .\admin\menu.php:531
+msgid	"The URL of the image that will be displayed if a photoblog post "
+	"has no image assigned or the image is not uploaded yet.<br />If "
+	"you want to display a text instead of an image, leave the field "
+	"empty."
+msgstr	""
+
+#: .\admin\menu.php:535
+msgid	"Image size:"
+msgstr	""
+
+#: .\admin\menu.php:547 .\admin\menu.php:584 .\admin\menu.php:603
+msgid	"Pixels"
+msgstr	""
+
+#: .\admin\menu.php:548
+msgid	"The actual size of the replacement image."
+msgstr	""
+
+#: .\admin\menu.php:554
+msgid	"Mosaic Settings"
+msgstr	""
+
+#: .\admin\menu.php:557
+msgid	"Mosaic settings"
+msgstr	""
+
+#: .\admin\menu.php:559
+msgid	"Show Years:"
+msgstr	""
+
+#: .\admin\menu.php:566
+msgid	"Group thumbnails by years in the mosaic page"
+msgstr	""
+
+#: .\admin\menu.php:572
+msgid	"Thumbnail settings"
+msgstr	""
+
+#: .\admin\menu.php:575
+msgid	"Comments popup"
+msgstr	""
+
+#: .\admin\menu.php:577
+msgid	"Show Thumbnail:"
+msgstr	""
+
+#: .\admin\menu.php:577
+msgid	"Show the photo's thumbnail image on the comments popup"
+msgstr	""
+
+#: .\admin\menu.php:580 .\admin\menu.php:599
+msgid	"Thumbnail size:"
+msgstr	""
+
+#: .\admin\menu.php:587
+msgid	"Size to fit:"
+msgstr	""
+
+#: .\admin\menu.php:587
+msgid	"Values given above are the maximum dimensions."
+msgstr	""
+
+#: .\admin\menu.php:588
+msgid	"If disabled, the thumbnail will be displayed in the size given "
+	"above, cropping the parts that don't fit.<br />If it is enabled "
+	"the thumbnail image will be resized so that it fits within these "
+	"boundaries."
+msgstr	""
+
+#: .\admin\menu.php:595
+msgid	"Mosaic & Archive"
+msgstr	""
+
+#: .\admin\menu.php:597
+msgid	"Show Tooltips:"
+msgstr	""
+
+#: .\admin\menu.php:597
+msgid	"Show tooltip when hovering a thumbnail"
+msgstr	""
+
+#: .\admin\menu.php:609
+msgid	"Comments"
+msgstr	""
+
+#: .\admin\menu.php:612
+msgid	"Gravatar options"
+msgstr	""
+
+#: .\admin\menu.php:614
+msgid	"Use Gravatars"
+msgstr	""
+
+#: .\admin\menu.php:614
+msgid	"If enabled, <a href=\"http://www.gravatar.com/\" "
+	"target=\"_blank\">Gravatar</a> icons are shown on user comments"
+msgstr	""
+
+#: .\admin\menu.php:615
+msgid	"Alternative Image:"
+msgstr	""
+
+#: .\admin\menu.php:617
+msgid	"URL of an alternate image for the case the commenter has no "
+	"Gravatar"
+msgstr	""
+
+#: .\admin\menu.php:622
+msgid	"Ring options"
+msgstr	""
+
+#: .\admin\menu.php:624
+msgid	"photoblogs.org button: "
+msgstr	""
+
+#: .\admin\menu.php:624
+msgid	"bookmark me at photoblogs.org"
+msgstr	""
+
+#: .\admin\menu.php:624 .\admin\menu.php:631
+msgid	"If enabled, a \"%\" button will be added to the comment form"
+msgstr	""
+
+#: .\admin\menu.php:626 .\admin\menu.php:633
+msgid	"Profile URL:"
+msgstr	""
+
+#: .\admin\menu.php:628
+msgid	"The URL of your <a href=\"http://photoblogs.org\" "
+	"target=\"_blank\">photoblogs.org</a> profile"
+msgstr	""
+
+#: .\admin\menu.php:631
+msgid	"coolphotoblogs.com button: "
+msgstr	""
+
+#: .\admin\menu.php:631
+msgid	"vote for me at coolphotoblogs.com"
+msgstr	""
+
+#: .\admin\menu.php:635
+msgid	"The URL of your <a href=\"http://coolphotoblogs.com\" "
+	"target=\"_blank\">coolphotoblogs.com</a> profile"
+msgstr	""
+
+#: .\admin\menu.php:641
+msgid	"Effects Options"
+msgstr	""
+
+#: .\admin\menu.php:644
+msgid	"moo.fx options"
+msgstr	""
+
+#: .\admin\menu.php:646
+msgid	"Use moo.fx:"
+msgstr	""
+
+#: .\admin\menu.php:648
+msgid	"Enable JavaScript effects (<a href=\"http://moofx.mad4milk.net/\" "
+	"target=\"_blank\">moo.fx</a> engine)"
+msgstr	""
+
+#: .\admin\menu.php:650
+msgid	"Reflection effect:"
+msgstr	""
+
+#: .\admin\menu.php:650
+msgid	"If enabled, the image reflects on the background"
+msgstr	""
+
+#: .\admin\menu.php:652
+msgid	"Fade effect:"
+msgstr	""
+
+#: .\admin\menu.php:652
+msgid	"Fade the image in instead of just display it"
+msgstr	""
+
+#: .\admin\menu.php:653
+msgid	"The effect may be slow for some machines and is definitly slower "
+	"for larger images, as well as complex theme styles. Double check "
+	"that. In addition it requires support on the browser's side, so "
+	"it isn't necessarily visible to every visitor."
+msgstr	""
+
+#: .\admin\menu.php:681
+msgid	"Short Copyright Message"
+msgstr	""
+
+#: .\admin\menu.php:683
+msgid	"Copyright holder:"
+msgstr	""
+
+#: .\admin\menu.php:683 .\admin\menu.php:705
+msgid	"No HTML here"
+msgstr	""
+
+#: .\admin\menu.php:684
+msgid	"Copyright holder (HTML):"
+msgstr	""
+
+#: .\admin\menu.php:684 .\admin\menu.php:907 .\admin\menu.php:999
+#: .\admin\menu.php:1003 .\admin\menu.php:1029
+msgid	"HTML allowed here"
+msgstr	""
+
+#: .\admin\menu.php:685
+msgid	"Start year:"
+msgstr	""
+
+#: .\admin\menu.php:685 .\admin\menu.php:686
+#, c-format
+msgid	"% for current year"
+msgstr	""
+
+#: .\admin\menu.php:686
+msgid	"End year:"
+msgstr	""
+
+#: .\admin\menu.php:687
+msgid	"Offset to end year:"
+msgstr	""
+
+#: .\admin\menu.php:689
+msgid	"i.e. <code>%OFFSET</code> to get <code>%SUMMED_YEAR</code> if the "
+	"end year is <code>%YEAR</code>"
+msgstr	""
+
+#: .\admin\menu.php:699
+msgid	"Imprint"
+msgstr	""
+
+#: .\admin\menu.php:701
+msgid	"You can embed an URL to your imprint page in the head of the "
+	"webpage via a <a href=\"http://dublincore.org/\" "
+	"target=\"_blank\">Dublin Core</a> meta tag."
+msgstr	""
+
+#: .\admin\menu.php:703
+msgid	"Imprint URL:"
+msgstr	""
+
+#: .\admin\menu.php:706
+msgid	"The URL to your imprint page. Leave empty if you do not want to "
+	"embed an <code>DC.Rights</code> meta tag."
+msgstr	""
+
+#: .\admin\menu.php:711
+msgid	"Creative Commons License"
+msgstr	""
+
+#: .\admin\menu.php:714
+msgid	"Creative Commons Embedding"
+msgstr	""
+
+#: .\admin\menu.php:718
+msgid	"If you like to, you can publish your photos under a <a "
+	"href=\"http://creativecommons.org/\" target=\"_blank\">Creative "
+	"Commons</a> License. You can choose a license <a "
+	"href=\"http://creativecommons.org/license/?lang=%LANGCODE\" "
+	"target=\"_blank\">here</a>."
+msgstr	""
+
+#: .\admin\menu.php:722
+msgid	"You may also want to read the <a "
+	"href=\"http://wiki.creativecommons.org/Frequently_Asked_Questions"
+	"\" target=\"_blank\">Frequently Asked Questions</a> page."
+msgstr	""
+
+#: .\admin\menu.php:724
+msgid	"Copyright:"
+msgstr	""
+
+#: .\admin\menu.php:724
+msgid	"Embed Creative Commons license"
+msgstr	""
+
+#: .\admin\menu.php:725
+msgid	"Unchecking this option will remove the Creative Commons Logo, the "
+	"textual message, as well as the embedded RDF."
+msgstr	""
+
+#: .\admin\menu.php:727
+msgid	"The License's HTML code:"
+msgstr	""
+
+#: .\admin\menu.php:732
+msgid	"To simplify CSS styling of the theme, all occurrences of "
+	"<code>&lt;br /&gt;</code>, <code>&lt;br/&gt;</code> and "
+	"<code>&lt;br&gt;</code> tags will be removed when embedding the "
+	"code."
+msgstr	""
+
+#: .\admin\menu.php:737
+msgid	"In addition to the code above you can choose to embed an <acronym "
+	"title=\"Resource Description Framework\">RDF</acronym> "
+	"representation of the license. If you don't want to do that or "
+	"don't know what it does, you may that option."
+msgstr	""
+
+#: .\admin\menu.php:740
+msgid	"The License's RDF code:"
+msgstr	""
+
+#: .\admin\menu.php:745
+msgid	"The RDF code is another way of displaying the CC license that can "
+	"be embedded into the Feeds, as well as the HTML pages."
+msgstr	""
+
+#: .\admin\menu.php:746
+msgid	"The RDF code for the license you selected by downloading and "
+	"opening the template for the PDF or XML embedding on the license "
+	"selection page.<br />The code begins with <code>&lt;rdf:RDF "
+	"...</code> and ends with <code>&lt;/rdf:RDF&gt;</code>."
+msgstr	""
+
+#: .\admin\menu.php:747
+msgid	"You can validate RDF encoded licenses with the <a "
+	"href=\"http://validator.creativecommons.org/\" "
+	"target=\"_blank\">CC RDF License Validator</a>."
+msgstr	""
+
+#: .\admin\menu.php:751
+msgid	"Embed RDF in Feeds:"
+msgstr	""
+
+#: .\admin\menu.php:753
+msgid	"Embed the RDF in the Atom and RSS feeds"
+msgstr	""
+
+#: .\admin\menu.php:755
+msgid	"Only enable this option if you know what you are doing, as faulty "
+	"RDF markup may render your feeds invalid."
+msgstr	""
+
+#: .\admin\menu.php:783
+msgid	"Navigation"
+msgstr	""
+
+#: .\admin\menu.php:787
+msgid	"Navigation Bar Location"
+msgstr	""
+
+#: .\admin\menu.php:789
+msgid	"Navigation Bar:"
+msgstr	""
+
+#: .\admin\menu.php:793
+msgid	"Page header"
+msgstr	""
+
+#: .\admin\menu.php:794
+msgid	"In front/top of the photo"
+msgstr	""
+
+#: .\admin\menu.php:795
+msgid	"Behind/below the photo"
+msgstr	""
+
+#: .\admin\menu.php:797
+msgid	"Sets the position of the navigation bar."
+msgstr	""
+
+#: .\admin\menu.php:802
+msgid	"On-Image navigation"
+msgstr	""
+
+#: .\admin\menu.php:804
+msgid	"Bidirectional Navigation:"
+msgstr	""
+
+#: .\admin\menu.php:804
+msgid	"Enable the bidirectional on-image navigation"
+msgstr	""
+
+#: .\admin\menu.php:805
+msgid	"If enabled, the photo will contain links to the previous (older) "
+	"and next (newer) photos. If disabled, only the previous link will "
+	"be used."
+msgstr	""
+
+#: .\admin\menu.php:810
+msgid	"About & Information Link"
+msgstr	""
+
+#: .\admin\menu.php:813
+msgid	"About:"
+msgstr	""
+
+#: .\admin\menu.php:813
+msgid	"Show the About link"
+msgstr	""
+
+#: .\admin\menu.php:815
+msgid	"About page ID:"
+msgstr	""
+
+#: .\admin\menu.php:839 .\admin\menu.php:888
+msgid	"Page does not exist."
+msgstr	""
+
+#: .\admin\menu.php:839 .\admin\menu.php:888
+msgid	"The link will be removed from the navigation bar."
+msgstr	""
+
+#: .\admin\menu.php:843 .\admin\menu.php:892
+msgid	"The currently selected page is: %SELECTION"
+msgstr	""
+
+#: .\admin\menu.php:849 .\admin\menu.php:898
+msgid	"Write Page"
+msgstr	""
+
+#: .\admin\menu.php:851 .\admin\menu.php:900
+msgid	"You can create a new page in the \"%LINK\" menu."
+msgstr	""
+
+#: .\admin\menu.php:861
+msgid	"Mosaic Page Link"
+msgstr	""
+
+#: .\admin\menu.php:863
+msgid	"Mosaic:"
+msgstr	""
+
+#: .\admin\menu.php:863
+msgid	"Show \"Mosaic\" link in the navigation bar"
+msgstr	""
+
+#: .\admin\menu.php:865
+msgid	"ID of the Mosaic page:"
+msgstr	""
+
+#: .\admin\menu.php:906
+msgid	"Link Title:"
+msgstr	""
+
+#: .\admin\menu.php:908
+msgid	"This title will be shown in the navigation bar"
+msgstr	""
+
+#: .\admin\menu.php:910
+msgid	"Photos per page:"
+msgstr	""
+
+#: .\admin\menu.php:916 .\admin\menu.php:1068
+msgid	"Other options"
+msgstr	""
+
+#: .\admin\menu.php:918 .\admin\menu.php:988
+msgid	"Permalink:"
+msgstr	""
+
+#: .\admin\menu.php:918
+msgid	"Show the Permalink in the Navigation Bar"
+msgstr	""
+
+#: .\admin\menu.php:919
+msgid	"Unchecking this removes the permalink from the navigation. The "
+	"permalink will still be visible at the Comments/Details popup (if "
+	"it is not explicitely disabled otherwise)."
+msgstr	""
+
+#: .\admin\menu.php:921
+msgid	"Newest Photo:"
+msgstr	""
+
+#: .\admin\menu.php:921
+msgid	"Show a link to the newest photo"
+msgstr	""
+
+#: .\admin\menu.php:923
+msgid	"Random Photo:"
+msgstr	""
+
+#: .\admin\menu.php:923
+msgid	"Show a link to a random photo link"
+msgstr	""
+
+#: .\admin\menu.php:946
+msgid	"Info and commenting mode"
+msgstr	""
+
+#: .\admin\menu.php:950
+msgid	"Basic behavior"
+msgstr	""
+
+#: .\admin\menu.php:952
+msgid	"Enable comments:"
+msgstr	""
+
+#: .\admin\menu.php:952
+msgid	"Allow the visitors to comment or view the comments"
+msgstr	""
+
+#: .\admin\menu.php:955
+msgid	"Discussion"
+msgstr	""
+
+#: .\admin\menu.php:956
+msgid	"If you disable that, visitors will neither be able to comment, "
+	"nor to view any existing comments. You may want to disable "
+	"wordpress' commenting options on the %LINK screen, too."
+msgstr	""
+
+#: .\admin\menu.php:962
+msgid	"Use Comments/Info popup:"
+msgstr	""
+
+#: .\admin\menu.php:962
+msgid	"Use a popup that displays the image's info as well as a comments "
+	"form"
+msgstr	""
+
+#: .\admin\menu.php:963
+msgid	"If you disable this, the \"Extended Info page\" will be used. "
+	"This is a replacement for the comments popup, showing the info "
+	"and comments right under the photo. One will still have to click "
+	"the comments link to display it, though."
+msgstr	""
+
+#: .\admin\menu.php:966
+msgid	"Always show info:"
+msgstr	""
+
+#: .\admin\menu.php:966
+msgid	"Always show photo info regardless of the popup/extended info "
+	"settings above"
+msgstr	""
+
+#: .\admin\menu.php:967
+msgid	"If you always want to display the photo's title and it's text on "
+	"the main page, enable this option. If you uncheck this option, be "
+	"aware that the user won't see any information about your photo if "
+	"you also disable the comments above."
+msgstr	""
+
+#: .\admin\menu.php:970
+msgid	"Directly jump to comments:"
+msgstr	""
+
+#: .\admin\menu.php:970
+msgid	"If the user clicks the link for the comments popup, jump directly "
+	"to the comments"
+msgstr	""
+
+#: .\admin\menu.php:971
+msgid	"This option only applies when the info is already shown on the "
+	"main page, so that the visitor won't have to scroll to the "
+	"comments on the popup."
+msgstr	""
+
+#: .\admin\menu.php:976
+msgid	"Info display"
+msgstr	""
+
+#: .\admin\menu.php:978
+msgid	"Show EXIF info:"
+msgstr	""
+
+#: .\admin\menu.php:978
+msgid	"If enabled, the Photo's EXIF information will be shown next to "
+	"the text"
+msgstr	""
+
+#: .\admin\menu.php:982
+msgid	"You can affect how the EXIF information is displayed by editing "
+	"the file %FILE"
+msgstr	""
+
+#: .\admin\menu.php:988
+msgid	"Show the permanlink in the image info"
+msgstr	""
+
+#: .\admin\menu.php:991
+msgid	"Comment hint:"
+msgstr	""
+
+#: .\admin\menu.php:991
+msgid	"Shows a link to the comments in the short info display"
+msgstr	""
+
+#: .\admin\menu.php:993
+msgid	"Show Date:"
+msgstr	""
+
+#: .\admin\menu.php:993
+msgid	"Display the date the photo was published"
+msgstr	""
+
+#: .\admin\menu.php:996
+msgid	"Category List:"
+msgstr	""
+
+#: .\admin\menu.php:996
+msgid	"Shows the categories in which the photo is filed"
+msgstr	""
+
+#: .\admin\menu.php:998
+msgid	"Begin category list:"
+msgstr	""
+
+#: .\admin\menu.php:1000
+msgid	"This text will be enbedded prior to the category list"
+msgstr	""
+
+#: .\admin\menu.php:1002
+msgid	"End category list:"
+msgstr	""
+
+#: .\admin\menu.php:1004
+msgid	"This text will be embedded after the category list"
+msgstr	""
+
+#: .\admin\menu.php:1009
+msgid	"RSS and Atom Feed"
+msgstr	""
+
+#: .\admin\menu.php:1012
+msgid	"Atom Feed Settings"
+msgstr	""
+
+#: .\admin\menu.php:1014
+msgid	"Atom Feed:"
+msgstr	""
+
+#: .\admin\menu.php:1014
+msgid	"Show the Atom Feed icon next to the RSS feed icon"
+msgstr	""
+
+#: .\admin\menu.php:1019
+msgid	"Syndication Options"
+msgstr	""
+
+#: .\admin\menu.php:1021
+msgid	"Syndication data can (and has to be) changed in the <a "
+	"href=\"theme-editor.php?file=wp-content/themes/grain/functions.syn"
+	"dication.php&theme=Grain\">functions.syndication.php</a> file."
+msgstr	""
+
+#: .\admin\menu.php:1024
+msgid	"Flat Syndication"
+msgstr	""
+
+#: .\admin\menu.php:1026
+msgid	"Flat Syndication:"
+msgstr	""
+
+#: .\admin\menu.php:1026
+msgid	"Show Syndication in the footer"
+msgstr	""
+
+#: .\admin\menu.php:1028
+msgid	"Delimiter:"
+msgstr	""
+
+#: .\admin\menu.php:1030
+msgid	"This will separate the particular links"
+msgstr	""
+
+#: .\admin\menu.php:1033
+msgid	"Sidebar Syndication:"
+msgstr	""
+
+#: .\admin\menu.php:1033
+msgid	"Show Syndication in the Sidebar"
+msgstr	""
+
+#: .\admin\menu.php:1038
+msgid	"Secondary Language Options"
+msgstr	""
+
+#: .\admin\menu.php:1041
+msgid	"Photo titles can be additionally displayed in a second language."
+msgstr	""
+
+#: .\admin\menu.php:1043
+msgid	"General options"
+msgstr	""
+
+#: .\admin\menu.php:1045
+msgid	"2nd Language:"
+msgstr	""
+
+#: .\admin\menu.php:1045
+msgid	"Enable 2nd language support"
+msgstr	""
+
+#: .\admin\menu.php:1047
+msgid	"Custom field:"
+msgstr	""
+
+#: .\admin\menu.php:1049
+msgid	"The name/tag of the custom field that contains the secondary "
+	"language title"
+msgstr	""
+
+#: .\admin\menu.php:1054
+msgid	"Sidebar"
+msgstr	""
+
+#: .\admin\menu.php:1057 .\sidebar.php:112
+msgid	"Most commented"
+msgstr	""
+
+#: .\admin\menu.php:1059
+msgid	"Most commented:"
+msgstr	""
+
+#: .\admin\menu.php:1059
+msgid	"List most commented photos"
+msgstr	""
+
+#: .\admin\menu.php:1061
+msgid	"Maximum count:"
+msgstr	""
+
+#: .\admin\menu.php:1063
+msgid	"Sets the maximum count of displayed entries"
+msgstr	""
+
+#: .\admin\menu.php:1070
+msgid	"Calendar:"
+msgstr	""
+
+#: .\admin\menu.php:1070
+msgid	"Show calendar"
+msgstr	""
+
+#: .\admin\menu.php:1072
+msgid	"Blogroll:"
+msgstr	""
+
+#: .\admin\menu.php:1072
+msgid	"Show Blogroll"
+msgstr	""
+
+#: .\admin\menu.php:1074
+msgid	"Meta:"
+msgstr	""
+
+#: .\admin\menu.php:1074
+msgid	"Show Meta"
+msgstr	""
+
+#: .\archive.php:12
+msgid	"Archive for category %CATEGORY."
+msgstr	""
+
+#: .\archive.php:21
+msgid	"Archive for tag %TAG."
+msgstr	""
+
+#: .\archive.php:30
+msgid	"Daily archive for %DATE."
+msgstr	""
+
+#: .\archive.php:41
+msgid	"Monthly archive for %DATE."
+msgstr	""
+
+#: .\archive.php:49
+msgid	"Yearly archive for %YEAR."
+msgstr	""
+
+#: .\archive.php:56 .\search.php:7
+msgid	"Search results"
+msgstr	""
+
+#: .\archive.php:59
+msgid	"Archive of authors"
+msgstr	""
+
+#: .\archive.php:62
+msgid	"Blog archive"
+msgstr	""
+
+#: .\archive.php:68 .\archive.php:91 .\search.php:10 .\search.php:34
+msgid	"&laquo; next page"
+msgstr	""
+
+#: .\archive.php:69 .\archive.php:92 .\search.php:11 .\search.php:35
+msgid	"previous page &raquo;"
+msgstr	""
+
+#: .\archive.php:97 .\index.php:387 .\search.php:40
+msgid	"Not found"
+msgstr	""
+
+#: .\archives.php:13
+msgid	"Archive cloud"
+msgstr	""
+
+#: .\archives.php:25 .\sidebar.php:84
+msgid	"Archives by years"
+msgstr	""
+
+#: .\archives.php:37
+msgid	"Archives by months"
+msgstr	""
+
+#: .\archives.php:42
+msgid	"Archives by categories"
+msgstr	""
+
+#: .\comments-popup.php:30
+msgid	"Comments on %TITLE"
+msgstr	""
+
+#: .\comments-popup.php:99 .\index.php:349
+msgid	"The permalink address <acronym title=\"Uniform Resource "
+	"Identifier\">(URI)</acronym> of this photo is:"
+msgstr	""
+
+#: .\comments-popup.php:132
+msgid	"Comments are closed - You are not supposed to be here."
+msgstr	""
+
+#: .\comments.php:4
+msgid	"Please don't call this page directly"
+msgstr	""
+
+#: .\comments.php:10
+msgid	"The comments are password protected, too"
+msgstr	""
+
+#: .\comments.php:31
+msgid	"Comments (%)"
+msgstr	""
+
+#: .\comments.php:43
+msgid	"<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for "
+	"comments on this photo."
+msgstr	""
+
+#: .\comments.php:46
+msgid	"The <acronym title=\"Uniform Resource "
+	"Identifier\">(URI)</acronym> to TrackBack this photo is:"
+msgstr	""
+
+#: .\comments.php:89
+msgid	"unapproved &rarr;"
+msgstr	""
+
+#: .\comments.php:89
+msgid	"edit comment"
+msgstr	""
+
+#: .\comments.php:99 .\comments.php:139
+msgid	"Trackback"
+msgstr	""
+
+#: .\comments.php:99 .\comments.php:139
+msgid	"Pingback"
+msgstr	""
+
+#: .\comments.php:131
+msgid	"%AUTHOR &#8212; %DATE at %TIME"
+msgstr	""
+
+#: .\comments.php:139
+msgid	"Comment"
+msgstr	""
+
+#: .\comments.php:151
+msgid	"Be the first to comment!"
+msgstr	""
+
+#: .\comments.php:156
+msgid	"Leave a comment"
+msgstr	""
+
+#: .\comments.php:157
+msgid	"Line and paragraph breaks automatic, e-mail address never "
+	"displayed, <acronym title=\"Hypertext Markup "
+	"Language\">HTML</acronym> allowed: "
+msgstr	""
+
+#: .\comments.php:167
+msgid	"Your are logged in as"
+msgstr	""
+
+#: .\comments.php:169
+msgid	"Logout &raquo;"
+msgstr	""
+
+#: .\comments.php:185
+msgid	"Your Name:"
+msgstr	""
+
+#: .\comments.php:199
+msgid	"E-mail (invisible):"
+msgstr	""
+
+#: .\comments.php:213
+msgid	"Website (<acronym title=\"Uniform Resource "
+	"Locator\">URL</acronym>):"
+msgstr	""
+
+#: .\comments.php:221
+msgid	"Your comment:"
+msgstr	""
+
+#: .\comments.php:269
+msgid	"Sorry, the comment form is closed at this time."
+msgstr	""
+
+#: .\exif-block.php:11
+msgid	"EXIF information"
+msgstr	""
+
+#: .\exif-block.php:26
+msgid	"This photo has no EXIF data."
+msgstr	""
+
+#: .\footer.php:30
+msgid	"is proudly powered by"
+msgstr	""
+
+#: .\footer.php:30
+msgid	"and"
+msgstr	""
+
+#: .\footer.php:35 .\index.php:304
+msgid	"edit post"
+msgstr	""
+
+#: .\footer.php:45
+msgid	"Copyright"
+msgstr	""
+
+#: .\func\image.php:51
+msgid	"click to view"
+msgstr	""
+
+#: .\header.menu.php:2
+msgid	"next &raquo;"
+msgstr	""
+
+#: .\header.menu.php:3
+msgid	"&laquo; previous"
+msgstr	""
+
+#: .\header.menu.php:4
+msgid	"newest"
+msgstr	""
+
+#: .\header.menu.php:6
+msgid	"random"
+msgstr	""
+
+#: .\header.menu.php:7
+msgid	"about"
+msgstr	""
+
+#: .\header.menu.php:8
+msgid	"about &amp; information"
+msgstr	""
+
+#: .\header.menu.php:36
+msgid	"comments (%)"
+msgstr	""
+
+#: .\header.menu.php:43 .\header.menu.php:65
+msgid	"comments and details"
+msgstr	""
+
+#: .\header.menu.php:47
+msgid	"show comments (%)"
+msgstr	""
+
+#: .\header.menu.php:48
+msgid	"hide comments"
+msgstr	""
+
+#: .\header.menu.php:107
+msgid	"Permalink for: "
+msgstr	""
+
+#: .\header.menu.php:107
+msgid	"Permalink"
+msgstr	""
+
+#: .\header.menu.php:107
+msgid	"#"
+msgstr	""
+
+#: .\header.menu.php:127
+msgid	"To the overview"
+msgstr	""
+
+#: .\index.php:37
+msgid	"&lArr; click for previous photo"
+msgstr	""
+
+#: .\index.php:39
+msgid	"(this is the first photo)"
+msgstr	""
+
+#: .\index.php:44
+msgid	"click for next photo &rArr;"
+msgstr	""
+
+#: .\index.php:46
+msgid	"(this is the newest photo)"
+msgstr	""
+
+#: .\index.php:117
+msgid	"This photo page is not ready yet. Please check back later."
+msgstr	""
+
+#: .\index.php:326
+msgid	"Posted in: "
+msgstr	""
+
+#: .\index.php:336
+msgid	"Tagged with: "
+msgstr	""
+
+#: .\index.php:388
+msgid	"Sorry, but you're searching for something that's not here."
+msgstr	""
+
+#: .\iplugs\devalvr\detectvr.js.php:262
+msgid	"click here to install (250 KB, it only takes a few seconds)"
+msgstr	""
+
+#: .\iplugs\devalvr\detectvr.js.php:265
+msgid	"click here after installing to reload page"
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:131
+msgid	"Shows a photo and it's description."
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:132
+msgid	"Uses a viewer applet to show the panorama given in the box below."
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:133
+msgid	"Looks like a 'Photo Post' type, but displays everything behind "
+	"the <code>&lt;</code><code>!--more--&gt;</code> marker instead of "
+	"the photo. This way you can show user-defined content."
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:134
+msgid	"The post will be displayed just like a normal (text) blog post or "
+	"static page."
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:144
+msgid	"Post Settings"
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:149
+msgid	"Post type:"
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:156
+msgid	"Photo Post"
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:159
+msgid	"Panorama Post"
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:164
+msgid	"Split Post"
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:167
+msgid	"Pure Content"
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:178
+msgid	"Panorama Settings"
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:183
+msgid	"Panorama file URL:"
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:191
+msgid	"You can upload or select a panorama file using the Upload box. To "
+	"find the URL of the uploaded file, click it's <code>Edit</code> "
+	"link afterwards."
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:196
+msgid	"Panorama player:"
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:205
+msgid	"autoselect by filetype"
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:214
+msgid	"DevalVR"
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:223
+msgid	"Quicktime"
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:232
+msgid	"Java based (PTViewer)"
+msgstr	""
+
+#: .\iplugs\suite.0.2.php:238
+msgid	"Panorama Image:"
+msgstr	""
+
+#: .\mosaic.php:22 .\mosaic.php:60
+msgid	"&laquo; previous page"
+msgstr	""
+
+#: .\mosaic.php:23 .\mosaic.php:61
+msgid	"next page &raquo;"
+msgstr	""
+
+#: .\sidebar.php:21
+msgid	"You are browsing the archive for the category '%CATEGORY'."
+msgstr	""
+
+#: .\sidebar.php:31
+msgid	"You are browsing the %BLOG archive for %DAY, %DATE."
+msgstr	""
+
+#: .\sidebar.php:43
+msgid	"You are browsing the %BLOG archive for the month %DATE."
+msgstr	""
+
+#: .\sidebar.php:54
+msgid	"You are browsing the %BLOG archive for the year %YEAR."
+msgstr	""
+
+#: .\sidebar.php:65
+msgid	"You have searched the %BLOG archives for "
+	"<strong>%SEARCH</strong>. If you are unable to find anything in "
+	"these search results, you can try one of these links."
+msgstr	""
+
+#: .\sidebar.php:74
+msgid	"You are browsing the %BLOG archive."
+msgstr	""
+
+#: .\sidebar.php:82
+msgid	"Pages"
+msgstr	""
+
+#: .\sidebar.php:99
+msgid	"Archives by month"
+msgstr	""
+
+#: .\sidebar.php:105
+msgid	"Categories"
+msgstr	""
+
+#: .\sidebar.php:127
+msgid	"Meta"
+msgstr	""
+
+#: .\sidebar.php:143
+msgid	"Syndicate"
+msgstr	""

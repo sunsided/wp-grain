@@ -1,0 +1,1606 @@
+/*
+Theme Name: Grain
+Theme URI: http://mac.defx.de/grain-theme
+Description: <p>A Photoblog Theme for Wordpress</p><p>This Theme needs the <a href="http://johannes.jarolim.com/blog/wordpress/yet-another-photoblog">Yet Another Photoblog</a> plugin by J. P. Jarolim</p>
+Version: 0.2
+Author: Markus Mayer
+Author URI: http://www.defx.de/
+
+	Grain 0.2
+	 http://mac.defx.de/grain-theme/
+
+	This theme was designed and built by Markus Mayer,
+	whose blog you will find at http://mac.defx.de/
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+
+*/
+
+/*
+	Template Name: Stylesheet: Structure
+*/
+
+html {
+	margin: 0;
+	padding: 0; 
+	/*height: 100%;*/
+}
+
+body {
+	margin: 0;
+	padding: 0; 
+	/*height: 100%;*/
+	}
+
+#page {
+	border: 1px solid black;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	width: 980px;
+	margin: 20px auto;
+	display: block;
+	}
+
+/* Footer */
+
+#footer {
+	padding: 0;
+	margin: 0;
+	clear: both;
+	}
+
+#footer p {
+	margin: 0;
+	padding: 20px 0;
+	text-align: center;
+	}
+
+/* Content */
+
+#content_area {
+	padding: 0;
+	margin: 0 auto;
+	clear: both;
+	}
+	
+#content-page,
+#content-post,
+#archive-list,
+#content-archives {
+	margin: 0 auto;
+	}
+
+#content-post {
+	margin: 0;
+	width: 100%;
+	padding: 30px 0;
+	text-align: center;
+	}
+
+#photo-info {
+	text-align: justify;
+	}
+
+/* Dynamic design */
+
+.narrowcolumn,
+#archive-list {
+	width: 700px;
+	float: left;
+	padding-left: 20px;
+	}
+	
+#archive-list {
+	padding-left: 10px;
+	}
+
+div.mosaic-photo,
+div.archive-photo {
+	display: inline;
+	}
+
+.widecolumn {
+	width: 800px;
+	}
+
+.post {
+	margin: 0 auto;
+	padding: 0 20px;
+	position: relative;
+	}
+
+/*
+	Template Name: Stylesheet: Typography and Color
+*/
+
+
+body {
+	font-size: 8pt;
+	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	letter-spacing: 0.05em;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	background: rgb(0, 0, 0);
+	}
+
+#commentspopup,
+#page {
+	text-align: left;
+	background: rgb(64, 64, 64) url(images/grid3.png);
+	}
+
+/* Header */
+
+#header {
+	/* the header section, covering title, menu and graphics */
+	margin: 0;
+	padding: 0; 
+	height: 50px;
+	display: block;
+	
+	background: rgb(37, 37, 37) url(images/grid2.png);
+	
+	/* allow positioning; is itself relative to #page  */
+	position: relative;
+	}
+
+#page #headerimg {
+	/* display the title */
+	height: 20px;
+	margin-bottom: 0px;
+
+	/* positioning; relative to #header */
+	position: absolute;
+	left: 20px;
+	top: 8px;
+	z-index: 100;
+	}
+	
+#page #header-description {
+	/* positioning; relative to #header */
+	position: absolute;
+	top: 28px;
+	left: 20px;
+	z-index: 200;
+	}
+
+#commentspopup #headerimg {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	padding-top: 10px;
+	height: 50px;
+	}	
+
+#headermenu  {
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 18px;
+	
+	font-size: 8pt;
+	letter-spacing: 0px;	
+
+	color: rgb(200, 200, 200);
+	z-index: 50;
+	}
+	
+#headermenu.in-header {
+	/* since the div is full width, aligning the text to the right will do the trick */
+	text-align: right;
+
+	/* positioning */
+	position: relative;
+	}	
+	
+#headermenu.in-body {
+	text-align: center;
+
+	/* positioning */
+	position: relative;
+	}		
+	
+#headerimg h1 {
+	font-size: 14pt;
+}
+
+#page #header-description {
+	clear: left;
+	font-size: 8pt;
+	text-align: left;
+	}
+	
+
+#commentspopup #header-description {
+	text-align: center;
+	margin-top: -30px;
+	color: silver;
+	}	
+
+#headermenu a,
+#headermenu a:link,
+#headermenu a:visited {
+	color: silver;
+	text-decoration: none;
+	}
+
+#headermenu a:hover {
+	color: rgb(255, 92, 64);
+	text-decoration: underline;
+	}
+
+/* rounded corners */
+	
+#header-top {
+	/* display the upper left rounded border */
+	background: url(images/arc-t-lt.gif) no-repeat top left;
+	height: 20px;
+	width: 100%;
+	overflow: visible;
+
+	/* positioning */
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 10;
+	}
+	
+#header-top-inner {
+	/* display the upper right rounded border */
+	background: url(images/arc-t-rt.gif) no-repeat top right;
+	height: 20px;
+	width: 100%;
+	overflow: visible;
+
+	/* positioning */
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 9;
+	}	
+
+#header-bottom {
+	background: url(images/arc-lt.gif) no-repeat top left;
+	height: 20px;
+	width: 100%;
+
+	/* positioning; relative to #header; set top to the height of the #header element */
+	position: absolute;
+	top: 50px;
+	z-index: 50;
+}
+
+#header-bottom-inner {
+	background: url(images/arc-rt.gif) no-repeat top right;
+	height: 20px;
+	width: 100%;
+
+	/* positioning; relative to #header-bottom */
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 50;
+}
+
+/* Footer */
+
+#footer {
+	background: rgb(37, 37, 37) url(images/grid2.png);
+	border: none;
+	height: 105px;
+	
+	/* allow positioning; is itself relative to #page  */
+	position: relative;
+	}
+	
+#footer-top {
+	/* display the upper left rounded border */
+	background: url(images/arc-l.gif) no-repeat top left;
+	height: 20px;
+	width: 100%;
+	overflow: visible;
+
+	/* positioning; is relative to #footer */
+	position: absolute;
+	left: 0px;
+	top: -20px;
+	z-index: 10;
+	}	
+	
+#footer-top-inner {
+	/* display the upper left rounded border */
+	background: url(images/arc-r.gif) no-repeat top right;
+	height: 20px;
+	width: 100%;
+	overflow: visible;
+
+	/* positioning; is relative to #footer-top */
+	position: absolute;
+	left: 0px;
+	top: 00px;
+	z-index: 10;
+	}
+
+#footer-bottom {
+	/* display the upper left rounded border */
+	background: url(images/arc-t-l.gif) no-repeat bottom left;
+	height: 20px;
+	width: 100%;
+	overflow: visible;
+
+	/* positioning; is relative to #footer; set top to #footer height minus image height */
+	position: absolute;
+	left: 0px;
+	top: 85px;
+	z-index: 10;
+	}	
+	
+#footer-bottom-inner {
+	/* display the upper left rounded border */
+	background: url(images/arc-t-r.gif) no-repeat top right;
+	height: 20px;
+	width: 100%;
+	overflow: visible;
+
+	/* positioning; is relative to #footer-bottom */
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 10;
+	}
+
+/* Content */
+
+#content_area {
+	}
+
+#content-page,
+#content-archives,
+#content-post {
+	/*font-size: 1.2em;*/
+	text-align: center;
+	position: relative;
+	}
+	
+#content-archives {
+	text-align: left;
+	}
+	
+#commentspopup #comment-page,
+#archive-list {
+	/*font-size: 1.2em;*/
+	text-align: left;
+	}
+
+/* Dynamic design */
+
+.archive-post {
+	display: inline;
+}
+
+.narrowcolumn .post,
+#archive-list .archive-post {
+	color: rgb(255, 255, 255);
+	text-align: left;
+	}
+	
+.widecolumn .post {
+	color: rgb(255, 255, 255);
+	text-align: center;
+	}
+
+div#photo-frame,
+div#special-frame {
+	position: relative;
+}
+
+#infotext-frame {
+   margin-bottom: 10px;
+}
+
+#infotext-frame.no-exif {
+}
+
+#infotext-frame.exif {
+}
+
+#infotext-frame p {
+	color: rgb(230, 230, 230);
+	}
+	
+#infotext-frame p:first-line {
+	color: rgb(255, 255, 255);
+	}
+
+.widecolumn .entry p {
+	/* font-size: 1.05em; */
+	}
+
+.narrowcolumn .entry, .widecolumn .entry {
+	/* line-height: 1.4em; */
+	}
+
+.widecolumn {
+	/* line-height: 1.6em; */
+	}
+
+.narrowcolumn .postmetadata {
+	text-align: center;
+	}
+
+
+
+.alt {
+	background-color: #f8f8f8;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	}
+
+small {
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-size: 0.9em;
+	line-height: 1.5em;
+	}
+
+h1, h2, h3 {
+	font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	font-weight: bold;
+	}
+
+h1 {
+	font-size: 12pt;
+	}
+	
+h1#archivindex {
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	}
+
+h2,
+h2.pagetitle {
+	/* font-size: 1.6em; */
+	font-size: 12pt;
+	}
+	
+#commentspopup h2,
+#info-frame h2 {
+	border-bottom: 1px solid white;
+	}
+
+h3 {
+	/* font-size: 1.3em; */
+	font-size: 10pt;
+	}
+
+h1, h1 a, h1 a:hover, h1 a:visited, #headerimg .description {
+	text-decoration: none;
+	color: white;
+	}
+
+h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
+	color: white;
+	}
+
+h2, h2 a, h2 a:hover, h2 a:visited, h3, h3 a, h3 a:hover, h3 a:visited, #sidebar h2, #wp-calendar caption, cite {
+	text-decoration: none;
+	color: white;
+	}
+
+#content-page p {
+	font-size: 8.5pt;
+	line-height: 1.25em;
+}
+
+#meta {
+	clear: both;
+	}
+
+#meta.enforced {
+	border-top: 1px dotted silver;
+	padding-top: 10px;
+	}
+
+#meta #content-date {
+}
+
+#meta #content-date #content-date-modified {
+	color: silver;
+}
+
+#meta #comment-hint {
+}
+
+#meta #post-categories {
+	}
+
+#meta #permalink-container{
+	display: block;
+	color: dimgray;
+}
+
+#meta #permalink-container #permalink{
+	font-style: italic;
+	white-space: nowrap;
+}
+
+.entry p a:visited {
+	color: #b85b5a;
+	}
+
+.commentlist li, #commentform input, #commentform textarea {
+	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	}
+
+.commentlist li {
+	font-weight: bold;
+	}
+
+.commentlist cite, .commentlist cite a {
+	font-weight: bold;
+	font-style: normal;
+	/*font-size: 1.1em;*/
+	}
+
+.commentlist p {
+	font-weight: normal;
+	line-height: 1.25em;
+	text-transform: none;
+	}
+
+#commentform p {
+	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	}
+	
+#comments-closed {
+	text-align: center;
+	}
+	
+del.closed-comments {
+	text-decoration: none;
+	}
+
+.commentmetadata {
+	font-weight: normal;
+	}
+
+small, #sidebar ul ul li, #sidebar ul ol li, .nocomments, .postmetadata, blockquote, strike {
+	color: #777;
+	}
+
+code {
+	font-family: 'Courier New', Courier, Fixed;
+	}
+
+acronym, abbr, span.caps
+{
+	/*font-size: 0.9em;*/
+	letter-spacing: .07em;
+	}
+
+a, h2 a:hover, h3 a:hover {
+	color: rgb(255, 142, 114);
+	text-decoration: none;
+	}
+
+a:hover {
+	color: rgb(255, 255, 192);
+	text-decoration: underline;
+	}
+
+div.comment-text-inner a,
+div.comment-text-inner a:visited {
+	color: rgb(192, 64, 32);
+}
+
+div.comment-text-inner a:hover {
+	color: rgb(255, 92, 64);
+}
+
+/* Sidebar */
+	
+#sidebar {
+	font: 1em 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	color: rgb(255, 255, 255);
+	}
+
+#sidebar h2 {
+	font-family: 'Lucida Grande', Verdana, Sans-Serif;
+	/*font-size: 1.2em;*/
+	}
+
+/* Calendar */
+
+#wp-calendar #prev a {
+	font-size: 9pt;
+	}
+
+#wp-calendar a {
+	text-decoration: none;
+	}
+
+#wp-calendar caption {
+	font-weight: bold;
+	/*font-size: 1.3em;*/
+	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	
+	text-align: center;
+	}
+
+#wp-calendar th {
+	font-style: normal;
+	text-transform: capitalize;
+	}
+	
+	
+	
+/*  
+	Template Name: Stylesheet: Headers
+*/
+
+
+h1 {
+	padding-top: 70px;
+	margin: 0;
+	}
+	
+#headerimg h1 {
+	padding-top: 0px;
+	margin: 0;
+	margin-top: -2px;
+	}
+
+h2 {
+	margin: 30px 0 0;
+	}
+
+h2.pagetitle {
+	margin-top: 30px;
+	text-align: center;
+}
+
+h2#title.has-subtitle {
+	margin-bottom: 0px;
+	padding-bottom: 12px;
+}
+
+#sidebar h2 {
+	margin: 5px 0 0;
+	padding: 0;
+	}
+
+h3 {
+	padding: 0;
+	margin: 30px 0 0;
+	}
+
+h3.comments {
+	padding: 0;
+	margin: 40px auto 20px ;
+	}
+	
+h3#subtitle {
+	margin-top: -1.4em;
+	margin-left: 1px;
+	color: silver;
+}	
+	
+/*
+	Template Name: Stylesheet: Lists
+*/
+
+/* Begin Lists
+
+	Special stylized non-IE bullets
+	Do not work in Internet Explorer, which merely default to normal bullets. */
+
+html>body .entry ul {
+	margin-left: 0px;
+	padding: 0 0 0 30px;
+	list-style: none;
+	padding-left: 10px;
+	text-indent: -10px;
+	} 
+
+html>body .entry li {
+	margin: 7px 0 8px 10px;
+	}
+
+.entry ul li:before, #sidebar ul ul li:before {
+	content: "\00BB \0020";
+	}
+
+.entry ol {
+	padding: 0 0 0 35px;
+	margin: 0;
+	}
+
+.entry ol li {
+	margin: 0;
+	padding: 0;
+	}
+
+.postmetadata ul, .postmetadata li {
+	display: inline;
+	list-style-type: none;
+	list-style-image: none;
+	}
+
+#sidebar ul, #sidebar ul ol {
+	margin: 0;
+	padding: 0;
+	}
+
+ul.syndication-list {
+	list-style-type: none;
+	list-style-image: none;
+	}
+
+#sidebar ul li {
+	list-style-type: none;
+	list-style-image: none;
+	margin-bottom: 15px;
+	}
+
+#sidebar ul p, #sidebar ul select {
+	margin: 5px 0 8px;
+	}
+
+#sidebar ul ul, #sidebar ul ol {
+	margin: 5px 0 0 10px;
+	}
+
+#sidebar ul ul ul, #sidebar ul ol {
+	margin: 0 0 0 10px;
+	}
+
+ol li, #sidebar ul ol li {
+	list-style: decimal outside;
+	}
+
+#sidebar ul ul li, #sidebar ul ol li {
+	margin: 3px 0 0;
+	padding: 0;
+	}
+	
+	
+	
+/*
+	Template Name: Stylesheet: Forms
+*/
+
+#searchform {
+	margin: 10px auto;
+	padding: 5px 3px; 
+	text-align: center;
+	}
+
+#sidebar #searchform #s {
+	width: 108px;
+	padding: 2px;
+	}
+
+#sidebar #searchsubmit {
+	padding: 1px;
+	}
+
+.entry form { /* This is mainly for password protected posts, makes them look better. */
+	text-align:center;
+	}
+
+select {
+	width: 130px;
+	}
+
+#commentform {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#commentform p.comment-form-input {
+	vertical-align: middle;
+}
+
+#commentform .textfield,
+#commentform .textarea {
+	background: rgb(192, 192, 192);
+	border: none;
+	border-bottom: 1px solid white;
+	border-left: 1px solid white;
+	font-size: 8pt;
+}
+
+#commentform input.textfield{
+	width: 300px;
+	padding: 2px;
+	margin: 5px 5px 1px 0;
+	}
+
+#commentform textarea {
+	width: 500px;
+	padding: 2px;
+	height: 100px;
+	margin-left: 20px;
+	}
+
+#commentform #submit,
+#commentform input.addon-button {
+	margin: 0px;
+	margin-top: 10px;
+	text-align: center;
+	background: rgb(255, 140, 30);
+	border: 1px solid rgb(30, 30, 30);
+	}
+	
+#commentform #submit:hover {
+	background: rgb(255, 180, 30);
+	}		
+
+#commentform #addon-buttons-frame {
+}
+	
+#commentform input.addon-button {
+	margin: 0;
+	margin-top: 10px;
+	padding: 0px 2px;
+	text-align: center;
+	background: dimgray;
+	color: white;
+	width: 200px !important;
+	}	
+	
+#commentform input.addon-button:hover {
+	background: rgb(130, 130, 130);
+	}	
+	
+#commentform p#comment-field-submit {
+	margin-left: 20px;
+}	
+
+#comment-field-loggedin {
+	border-bottom: 1px dashed silver;
+	margin-left: 20px !important;
+	width: 500px;
+}
+	
+/*
+	Template Name: Stylesheet: Sidebar
+*/
+
+#sidebar
+{
+	padding: 20px 0 10px 0;
+	padding-left: 20px;
+	margin-left: 740px;
+	width: 190px;
+	border-left: 1px solid white;
+	}
+
+#sidebar form {
+	margin: 0;
+	}
+	
+	
+	
+/*
+	Template Name: Stylesheet: Images
+*/
+
+p img {
+	padding: 0;
+	max-width: 100%;
+	}
+
+/*	Using 'class="alignright"' on an image will (who would've
+	thought?!) align the image to the right. And using 'class="centered',
+	will of course center the image. This is much better than using
+	align="center", being much more futureproof (and valid) */
+
+img.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+	}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+	}
+
+.alignright {
+	float: right;
+	}
+
+.alignleft {
+	float: left
+	}
+
+#atom-feed {
+	float: right;
+	margin-top: 20px;
+	border: none;
+	height: 24px;
+}
+
+#rss-feed {
+	float: right;
+	margin: 20px;
+	margin-left: 5px;
+	margin-right: 20px;
+	border: none;
+	height: 24px;
+}
+
+#comments-rss-feed {
+	float: left;
+	margin-right: 10px;
+}
+
+img.wp-smiley {
+	vertical-align: middle;
+	}
+
+img.author-comment-icon {
+	vertical-align: middle;
+}
+
+img#comment-field-text-icon {
+	vertical-align: middle;
+}
+
+span.syndication-comment-info {
+	float: left;
+	font-weight: bold;
+	color: black;
+	margin-right: 5px;
+	margin-bottom: 2px;
+	
+	margin-left: -2px;
+	margin-top: -2px;
+	padding: 3px;
+	padding-top: 5px;
+	padding-left: 5px;
+	
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	background: #dcdcdc;
+}
+
+span.syndication-comment-info img.syndication-comment-icon {
+	vertical-align: middle;
+}
+
+span.syndication-comment-info span.syndication-comment-type {
+	margin-top: 2px;
+}
+
+
+/*
+	Template Name: Stylesheet: Comments
+*/
+
+.alt {
+	margin: 0;
+	padding: 10px;
+	}
+
+#comment-area {
+	margin: 40px 0;
+	}
+
+.commentlist {
+	padding: 0;
+	text-align: justify;
+	}
+
+.commentlist li {
+	margin: 15px 0 3px;
+	padding: 5px 10px 3px;
+	list-style: none;
+	}
+
+.commentlist p {
+	margin: 10px 5px 10px 0;
+	}
+
+#commentform p {
+	margin: 5px 0;
+	}
+
+.nocomments {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	}
+
+.commentmetadata {
+	margin: 0;
+	display: block;
+	}
+	
+#comment-page,
+#info-frame {
+	padding: 0 20px;
+	margin-top: 20px;
+	}
+	
+#comment-page h2.summary,
+#info-frame h2.summary {
+	padding: 0;
+	margin: 0;
+	}
+	
+li.commentbody-author {
+	/* list-style-image: url(images/comment-author.png); */
+	list-style-image: none;
+	list-style-type: none;	
+	vertical-align: middle;
+	margin-bottom: 25px;
+	padding-left: 5px;
+	}
+
+li.commentbody,
+li.commentbody-syndication {
+	/* list-style-image: url(images/comment.gif); */
+	list-style-image: none;
+	list-style-type: none;
+	vertical-align: middle;
+	margin-bottom: 25px;
+	padding-left: 5px;
+	}
+	
+div.comment-meta {
+	/* border-top: 1px dotted white; */
+	margin-top: 2px;
+	margin-right: 20px;
+	color: rgb( 192, 192, 192);
+	}
+
+div.comment-text {
+	padding-bottom: 10px;
+	}
+
+li.commentbody div.comment-text,
+li.commentbody-author div.comment-text {
+	/* when using gravatars, make sure to indent the text block.
+		this does not apply to li.commentbody-syndication */
+/*	margin-left: 50px;*/
+}
+
+li.commentbody div.comment-text,
+li.commentbody-syndication div.comment-text {
+	background: url(images/comm.png) no-repeat bottom left;
+	}
+	
+li.commentbody-author div.comment-text {
+	background: url(images/comm-author.png) no-repeat bottom left;
+	background-position: 20px bottom;
+	}
+
+li.commentbody div.comment-text-inner,
+li.commentbody-syndication div.comment-text-inner {
+	background-color: #ececec;
+	overflow: auto;
+	}
+
+li.commentbody-author div.comment-text-inner {
+	background-color: #cccccc;
+	}
+	
+div.comment-text-inner {
+	overflow: auto;
+}
+	
+div.comment-text div.comment-text-inner {
+	padding: 2px;
+	padding-bottom: 3px;
+	}
+	
+div.comment-text div.comment-text-inner p {
+	color: black;
+	padding-left: 2px;
+	margin: 0px;
+	}
+	
+div.comment-gravatar {
+	margin-right: 5px; 
+	margin-bottom: 2px; 
+	float: left;
+}
+
+div.comment-admin-tools,
+div.comment-admin-tools-unapproved {
+	/* float: right; */
+	text-align: right;
+	padding-bottom: 2px;
+	padding-right: 5px;
+	border-left: 1px solid dimgray;
+	border-top: 1px solid dimgray;
+	background: #4c4c4c;
+}
+
+div.comment-admin-tools-unapproved {
+	background: #FF3232;
+	border-left: 1px solid silver;
+	border-top: 1px solid silver;	
+}
+
+div.comment-admin-tools-unapproved a,
+div.comment-admin-tools-unapproved a:visited,
+div.comment-admin-tools-unapproved a:link {
+	color: black;
+}
+
+div.comment-admin-tools-unapproved a:hover,
+div.comment-admin-tools-unapproved a:active {
+	color: white;
+}
+	
+#commentspopup p.credit {
+	text-align: center;
+	}
+	
+#popup-tools {
+	border-top: 1px solid white;
+	margin-top: 40px;
+	text-align: right;
+	}
+	
+h2#comments-headline {
+	clear: both;
+}
+
+#info-frame {
+	text-align: left;
+}
+
+#info-frame #content {
+	text-align: left;
+	margin: 10px 0px;
+}
+
+#info-frame #content.exif {
+}
+
+#info-frame #content.no-exif {
+}
+
+#info-frame #comment-area {
+	text-align: center;
+}
+
+#info-frame #commentlist {
+	max-width: 500px;
+	text-align: left;
+	margin: 0 auto;
+}
+
+#info-frame #exif-frame {
+	padding: 0;
+	margin-bottom: 10px;
+	float: right;
+	width: 300px;
+	}
+	
+#commentspopup #exif-frame {
+	padding: 0;
+	margin-bottom: 10px;
+	width: 100%;
+	}
+
+#comment-frame {
+}
+
+/*  
+	Template Name: Stylesheet: Calendar
+*/
+
+#wp-calendar {
+	empty-cells: show;
+	margin: 10px auto 0;
+	width: 155px;
+	}
+
+#wp-calendar #next a {
+	padding-right: 10px;
+	text-align: right;
+	}
+
+#wp-calendar #prev a {
+	padding-left: 10px;
+	text-align: left;
+	}
+
+#wp-calendar a {
+	display: block;
+	}
+
+#wp-calendar caption {
+	text-align: center;
+	width: 100%;
+	}
+
+#wp-calendar td {
+	padding: 3px 0;
+	text-align: center;
+	}
+
+#wp-calendar td.pad:hover { /* Doesn't work in IE */
+	background-color: #fff; }
+	
+	
+/*
+	Template Name: Stylesheet: Various
+*/
+
+acronym, abbr, span.caps {
+	cursor: help;
+	}
+
+acronym, abbr {
+	border-bottom: 1px dashed #999;
+	}
+
+blockquote {
+	margin: 15px 30px 0 10px;
+	padding-left: 20px;
+	border-left: 5px solid #ddd;
+	}
+
+blockquote cite {
+	margin: 5px 0 0;
+	display: block;
+	}
+
+.center {
+	text-align: center;
+	}
+
+hr {
+	display: none;
+	}
+
+a img {
+	border: none;
+	}
+
+.navigation {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	}
+
+.tooltip-title,
+.tooltip-title-prev,
+.tooltip-title-next {
+	/*
+	background: rgb(255, 156, 0) url(images/tip-header.png);
+	opacity: 0.75;
+	padding: 1px 4px;
+	color: rgb(70, 30, 0);
+	border: 1px solid rgb(255, 102, 0);
+	border-bottom: none;
+	letter-spacing: 0.1em;
+	font-weight: bolder;
+	font-family: 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif;
+	*/
+	background: black url(images/tip-header.png);
+	color: black;
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	filter: alpha(opacity=80);
+	padding: 1px 4px;
+	border: 1px solid dimgray;
+	border-bottom: none;
+	letter-spacing: 0.1em;
+	font-weight: bolder;
+	font-family: 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif;
+	}
+
+.tooltip-text,
+.tooltip-text-prev,
+.tooltip-text-next {
+	/*
+	background: white;
+	opacity: 0.85;
+	padding: 1px 4px;
+	color: rgb(70, 30, 0);
+	border: 1px solid rgb(255, 102, 0);
+	border-top: none;
+	*/
+	background: dimgray url(images/grid.png);
+	color: white;
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	filter: alpha(opacity=80);
+	padding: 1px 4px;
+	border: 1px solid dimgray;
+	border-top: none;	
+	}
+	
+/* used for moo.fx tooltips */
+.tooltip-tip {
+	opacity: 0.8;
+	color: #fff;
+	/*width: 139px;*/
+	z-index: 13000;
+}
+	
+.thin {
+	font-weight: normal;
+	}
+
+#license-text {
+	padding-top: 22px;
+}
+
+#license-text img,
+#license-text a img {
+	float: left;
+	margin-top: -2px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+}
+
+#footer-info,
+#footer-info-padded {
+	/*float:left;*/
+	padding-top: 2px;
+	padding-bottom: 30px;
+}
+
+#footer-info-padded {
+        padding-top: 22px;
+}
+
+#footer-info-padded span.powered-by {
+	margin-left: 20px;
+}
+
+#syndication {
+	opacity: 0.8;
+	text-align: right;
+	width: 100%;
+	
+	/* positioning; relative to #final-footer */
+	position: absolute;
+	left: -50px; /* leave 50px space to the right */
+	top: 10px;
+	z-index: 100;
+}
+
+.syndication-button {
+	display: inline;
+}
+
+#copyright {
+	color: silver;
+	opacity: 0.8;
+	
+	/* positioning; relative to #final-footer */
+	position: absolute;
+	left: 50px;
+	top: 10px;
+	z-index: 100;
+}
+
+#final-footer {
+	margin-top: 20px;
+	border-top: 1px solid rgb(64, 64, 64);
+	
+	/* positioning */
+	position: relative;
+}
+
+table.toolset {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	}
+	
+table.toolset tr td ul li {
+	margin: 0;
+	padding: 0;
+	padding-left: 10px;
+	}
+	
+div.must-see {
+	margin: 20px 0;
+	padding: 10px 0;
+	border-top: 1px dotted white;
+	border-bottom: 1px dotted white;
+	/*font-size: 1.2em;*/
+}
+
+div.must-see span {
+	margin: 0 5px;
+	white-space: nowrap;
+	}
+	
+div.must-see span:before {
+	content: "[";
+	color: gray;
+	}
+
+div.must-see span:after {
+	content: "]";
+	color: gray;
+	}
+	
+span.post-comment-count:before {
+	content: " - ";
+	}
+	
+/*
+	Template Name: Stylesheet: Photo
+*/
+
+/* reposition the panorama frame */
+#panorama {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	position: relative;
+}
+
+/* when using the reflection script, disable the border */
+/* btw. I would not use reflection with a panorama :) */
+div.photo-noborder #photo,
+div.photo-noborder #panorama {
+
+	/* !important is used here so that unspecific styling of the #photo element won't screw up things */
+	border: none !important;
+	
+		/* if you like to, you can still add a border for the image only. But make sure then that the
+		margin-left value of the 'div.photo-noborder canvas' item is set to the same value as the border-width */
+		/* border: 10px solid rgb(230, 230, 230);  */
+		
+	padding: 0;
+	max-width: 800px;
+}
+
+div.photo-withborder #photo,
+div.photo-withborder #panorama {
+	/*border: 10px solid rgb(230, 230, 230);*/
+	border: 1px solid dimgray;
+	/*border: 0px;*/
+	margin: 20px 0;
+	padding: 0;
+	max-width: 800px;
+	position: relative;
+}
+
+div.photo-noborder {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+div.photo-noborder canvas {
+	/* see 'div.photo-noborder #photo' above */
+	/* margin-left: 10px; */
+	margin-left: 0; 
+}
+
+#photo,
+#panorama {
+	margin: 0 auto;
+	text-align: left;
+	}
+
+#comment-thumb {
+	float: right;
+	border: 5px solid rgb(230, 230, 230);
+	margin-left: 5px;
+	margin-bottom: 5px;
+	}
+
+#photo-info h2 {
+	margin-top: 0;
+	color: rgb(255, 255, 255);
+	}
+	
+#photo-info h2 a {
+	color: rgb(255, 255, 255);
+}
+
+#photo-info small {
+	/*display: block;*/
+}
+
+#photo-info small {
+	/*float: left;*/
+	color: rgb(200, 200, 200);
+}
+
+.postmetadata {
+	color: rgb(200, 200, 200);
+	clear: left;
+}
+
+.postmetadata a {
+	color: rgb(255, 225, 200);
+}
+
+#exif {
+	padding: 0;
+	margin: 0 auto;
+	border-collapse: collapse;
+	}
+
+#exif caption {
+	margin: 0 auto;
+	border-bottom: 1px solid white;
+	}
+
+td.exif-key {
+	text-align: right;
+	font-weight: bold;
+	}
+
+td.exif-value {
+	text-align: left;
+	padding-left: 10px;
+	}
+
+#exif td {
+	border-bottom: 1px dashed gray;
+	}
+
+#exif-frame {
+	/* clear: both;  */
+	/*width: 100%;*/
+	text-align: center;
+	padding: 20px 0;
+	}
+	
+.archive-thumb {
+	/*border: 5px solid rgb(230, 230, 230);
+	margin: 2px;*/
+	border: 1px solid silver;
+	margin: 0px;
+	position: relative;
+}
+
+.archive-thumb:hover {
+	/* border: 5px solid rgb(255, 255, 255); */
+	border: 1px solid white;
+}
+
+.archive-post,
+.mosaic-photo {
+	margin: 2px;
+	position: relative;
+}
+
+#photo-nav-left {
+	float: left;
+}
+
+#photo-nav-left a {
+}
+
+#photo-nav-left a:hover {
+	background: url(images/go_left.gif) 50% left no-repeat;
+}
+
+#photo-nav-right {
+	float: right;
+}
+
+#photo-nav-right a {
+}
+
+#photo-nav-right a:hover {
+	background: url(images/go_right.gif) 50% right no-repeat;
+}
