@@ -1,0 +1,55 @@
+0.2.2 
+Fix: Menu bug that appeared on the start page. 
+
+0.2.1 
+Add: WordPress 2.3 tagging support. 
+Fix: Mosaic year bug. 
+Change: No redirects on direct page hits anymore. 
+Fix: Image quality issue on images smaller than 800px. 
+
+0.2 
+Change: Sidebar is widgeted now. 
+Add: Widget-enabled ‘Sidebars’ within the main layout that can be used for extended purposes. 
+Change: File structure. 
+Change: CSS files are combined into the style.css now for easier handling. 
+Add: CSS ‘override’ stylesheets that can be loaded in addition to the main stylesheet. 
+Change: Look of the comments page modernized. 
+Change: Logged-in users now have a reduced commenting form. 
+Change: Extended Info page isn’t kept open when browsing the pages and has to be re-opened using the comments link by the visitor. 
+Add: Info display on the photo page without showing the comments. 
+Add: Option to display the navigation bar in three different places. 
+Add: Some moo.fx javascript effects such as fading, reflection. They are slow, unfortunately. 
+Add: ‘Vote’ and ‘Bookmark’ buttons on the comment form. 
+Change: Display of EXIF information can be switched in the backend. 
+Add: Gravatar-enabled comments. 
+Change: Creative Commons handling feature can now be customized a bit better. 
+Add/Change: Mucho more styling options to have fun with. 
+
+0.1.2 r3 
+Change: Wrapped images in archive and mosaic page into div tags 
+Change: Now using an IMG tag to display the image, as well as image maps for bidirectional links (see below) 
+Add: Option to switch between bidirectional links (previous/next), as well as unidirectional ones (prev only) for the on-image navigation 
+Add: Two new i18n tags enabling a better naming for the Extended Info link (”comments on/off”) 
+Fix: Corrected the image size bug which cropped images wider than 800px 
+Fix: Added tooltips for mosaic page images 
+Fix: Theme now works fine with any permalink structure 
+
+0.1.2 r2 
+Change: If the comment popup is viewed directly or with a referrer other than your’s, extended info mode is enforced for that post. 
+
+0.1.2 
+Add: Added extended info/comment mode 
+Add: Added the mosaic/overview page option (thanks to Johannes) 
+Add: Implemented the weighted categories function for the archive index 
+Change: Moved the ‘edit’ link into the footer 
+Fix: Added missing i18n tags for the archives page and the thumbnails 
+Fix: Fixed the wrong and missing i18n tags on the archive and search pages 
+Fix: Fixed the missing i18n tags in the administration 
+
+0.1.1 r3 
+Fix: Fixed the daily archive title (i18n) issue. 
+
+0.1.1 r2 
+Fix: Fixed an issue with images wider than 800px 
+Fix: Fixed an issue with images of odd width 0.1.1 
+Add: On-Image navigation
