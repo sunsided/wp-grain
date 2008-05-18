@@ -7,10 +7,12 @@
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 
+/* little helpers */
 
-	/* definitions */
-
-	define('GRAIN_RELATIVE_PATH', substr(TEMPLATEPATH, strlen(ABSPATH)));
-	define('GRAIN_TEMPLATE_DIR', get_bloginfo('template_directory'));
+	function grain_rmlinebreaks($string) 
+	{
+		$breaks = array('<br />', '<br/>', '<br>');
+		return str_replace($breaks, '', $string);
+	}
 
 ?>

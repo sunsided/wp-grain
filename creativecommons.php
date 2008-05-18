@@ -13,20 +13,36 @@
 
 /* Shortcut functions helper */
 
-	function grain_cc_code($apply_filter = TRUE, $default = null) {
+	function grain_embed_cc_div() 
+	{
+		echo '<div id="license-text"><!--Creative Commons License-->';
+		
+		// Get the code and remove linebreaks so that the HTML doesn't look too jagged
+		$code = grain_cc_code();
+		$code = grain_rmlinebreaks($code);
+		echo $code;
+		
+		echo '<!--/Creative Commons License--></div>';
+	}
+
+	function grain_cc_code($apply_filter = TRUE, $default = null) 
+	{
+		// TODO: Although this is only a default, localization needed here
 		$default = '<!--Creative Commons License-->
 	<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.0/de/">
 		<img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/>
 	</a>
 	<br />
-	Dieser Inhalt ist unter einer <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.0/">Creative Commons-Lizenz</a> lizenziert.<!--/Creative Commons License-->
+	This content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.0/">Creative Commons license</a>.<!--/Creative Commons License-->
 	';
 
 		return grain_getoption(GRAIN_COPYRIGHT_CC_CODE, $apply_filter, $default);
 	}
 
-	function grain_cc_rdf($apply_filter = TRUE, $default = null) {
-		$default = '<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	function grain_cc_rdf($apply_filter = TRUE, $default = null) 
+	{
+		$default = 
+		'<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 			<Work rdf:about="">
 				<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.0/" />
 				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
