@@ -1,13 +1,20 @@
-# Enforce PHP mime types
-AddType application/x-httpd-php .php
-
 # Disallow access to certain files
-<Files .htaccess>
-	Order deny,allow
+<FilesMatch ^\.>
 	Deny from all
-</Files>
+</FilesMatch>
 
-<FilesMatch *.php>
-	Order deny,allow
+<FilesMatch \.txt$>
+	Deny from all
+</FilesMatch>
+
+<FilesMatch ^functions\.>
+	Deny from all
+</FilesMatch>
+
+<LocationMatch ^\.svn>
+	Deny from all
+</LocationMatch>
+
+<FilesMatch \.php$>
 	Deny from all
 </FilesMatch>
