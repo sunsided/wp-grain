@@ -1017,7 +1017,7 @@
 				<fieldset>
 					<legend><?php _e("Atom Feed Settings", "grain"); ?></legend>
 
-					<p><label for="atom_feed"><img style="vertical-align: top; margin-top: -15px; margin-right: 10px;" alt="Atom Feed Logo" src="<?php echo bloginfo('template_directory'); ?>/images/atom_gray.gif" /> <?php _e("Atom Feed:", "grain"); ?></label> <input style="margin-top: 8px;" type="checkbox" name="atom_feed" id="atom_feed" <?php if( grain_atomfeed_enabled() ) echo ' checked="checked" ';?> value="1" /> <?php _e("Show the Atom Feed icon next to the RSS feed icon", "grain"); ?><br />
+					<p><label for="atom_feed"><img style="vertical-align: top; margin-top: -15px; margin-right: 10px;" alt="Atom Feed Logo" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/images/atom_gray.gif" /> <?php _e("Atom Feed:", "grain"); ?></label> <input style="margin-top: 8px;" type="checkbox" name="atom_feed" id="atom_feed" <?php if( grain_atomfeed_enabled() ) echo ' checked="checked" ';?> value="1" /> <?php _e("Show the Atom Feed icon next to the RSS feed icon", "grain"); ?><br />
 					</p>
 					
 				</fieldset>

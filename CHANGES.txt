@@ -1,3 +1,7 @@
+0.2.3 -- currently in development
+Add: Sidebars now have additional CSS styles applied describing their position
+Fix: "%" in copyrights is now correctly rendered as the current year. This was due to bug preventing that an options default value got filtered.
+
 0.2.2 
 Fix: Menu bug that appeared on the start page. 
 

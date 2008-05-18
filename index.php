@@ -91,7 +91,7 @@
 						array( 
 							'pwidth' => $image_dimensions[0], 
 							'pheight' => $image_dimensions[1],
-							'wait' => get_bloginfo('template_directory').'/images/loading.gif',
+							'wait' => GRAIN_TEMPLATE_DIR.'/images/loading.gif',
 							'panmin' => '-90',
 							'panmax' => '90'
 						)

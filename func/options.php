@@ -24,12 +24,18 @@
 	function grain_getoption($tag, $apply_filter = TRUE, $default=null) {
 		global $grain_options;
 		global $grain_admin;	
-		return grain_option_isset($tag) 
-				? 
-					$apply_filter 
-						? apply_filters($tag, $grain_options[$tag]) 
-						: $grain_options[$tag]
-				: $default;
+		
+		// apply the default
+		$value = $default;
+		
+		// if the value exists, get it
+		if(grain_option_isset($tag)) $value = $grain_options[$tag];
+		
+		// if there are filters to be applied, apply them
+		if($apply_filter) $value = apply_filters($tag, $value);
+		
+		// return the value
+		return $value;
 	}
 
 	function grain_setoption($tag, $value) {
@@ -369,7 +375,7 @@
 	}
 	
 	function grain_whoopsimage_url($apply_filter = TRUE, $default='{default}') {
-		if($default == '{default}') $default = get_bloginfo('template_directory').'/images/whoops.png';
+		if($default == '{default}') $default = GRAIN_TEMPLATE_DIR.'/images/whoops.png';
 		return grain_getoption(GRAIN_WHOOPS_URL, $apply_filter, $default);
 	}
 	

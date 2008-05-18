@@ -24,7 +24,7 @@
 	}
 
 	function grain_ptviewer_defaults(&$arguments) {
-		$wait_url_default = get_bloginfo('template_directory').'/images/loading.gif';
+		$wait_url_default = GRAIN_TEMPLATE_DIR.'/images/loading.gif';
 		if( empty($arguments['wait'])) $arguments['wait'] = $wait_url_default;
 		
 		if( empty($arguments['width'])) $arguments['width'] = GRAIN_MAX_IMAGE_WIDTH;

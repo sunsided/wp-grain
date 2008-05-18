@@ -10,24 +10,15 @@
 <div id="footer">
 	<div id="footer-top"><div id="footer-top-inner"></div></div>
 
-        <a title="<?php echo grain_thumbnail_title(__("RSS Feed", "grain"), __("Syndication", "grain")); ?>" href="<?php bloginfo('rss2_url'); ?>"><img onMouseover="this.src='<?php bloginfo('template_directory'); ?>/images/rss-feed.gif'" onMouseout="this.src='<?php bloginfo('template_directory'); ?>/images/rss-feed-low.gif'" id="rss-feed" src="<?php bloginfo('template_directory'); ?>/images/rss-feed-low.gif" alt="RSS feed icon" /></a>
-		<?php if(grain_atomfeed_enabled()): ?><a title="<?php echo grain_thumbnail_title(__("Atom Feed", "grain"), __("Syndication", "grain")); ?>" href="<?php bloginfo('atom_url'); ?>"><img onMouseover="this.src='<?php bloginfo('template_directory'); ?>/images/atom-feed.gif'" onMouseout="this.src='<?php bloginfo('template_directory'); ?>/images/atom-feed-low.gif'"id="atom-feed" src="<?php bloginfo('template_directory'); ?>/images/atom-feed-low.gif" alt="Atom feed icon" /></a><?php endif; ?>
+		<?php 
+			// embed the RSS icon
+			grain_embed_rss_icon();
+			
+			// embed ATOM feed icon, if wanted
+			if(grain_atomfeed_enabled()) grain_embed_atom_icon();
 
-		<?php
-		if( grain_cc_enabled() ) 
-		{
-			echo '<div id="license-text">';
-			echo '<!--Creative Commons License-->';
-			$code = grain_cc_code();
-			// remove linebreaks for the style
-			$code = str_replace('<br />', '', $code);
-			$code = str_replace('<br/>', '', $code);
-			$code = str_replace('<br>', '', $code);
-			// display code
-			echo $code;
-			echo '<!--/Creative Commons License-->';
-			echo '</div>';
-		}
+			// embed Creative Commons license hint, if wanted
+			if( grain_cc_enabled() ) grain_embed_cc_div(); 
 		?>
 
 	<div id="footer-info<?php if( !grain_cc_enabled() ) echo '-padded'; ?>">
@@ -48,7 +39,7 @@
 			<?php endif; ?>
 			
 			<div id="copyright">
-		       		<span><?php _e("Copyright"); ?> &copy; <?php echo grain_copyright_years(); ?> <?php echo grain_copyright_ex(); ?></span>
+		       		<span><?php _e("Copyright"); ?> <?php grain_embed_copyright(TRUE); ?></span>
 			</div>
 			
 		 </div>

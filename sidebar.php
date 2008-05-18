@@ -150,7 +150,7 @@
 			<li><h2><?php _e("Syndicate", "grain"); ?></h2>
 				<ul class="syndication-list">
 					<?php echo grain_sidebar_syndication() ?>
-					<li><a alt="yapb flavoured" href="http://johannes.jarolim.com/yapb"><img class="syndbutton" src="<?php bloginfo('template_directory'); ?>/images/yapb.gif" border="0" alt="yapb logo" title="yapb flavoured"></a></li>
+					<li><a alt="yapb flavoured" href="http://johannes.jarolim.com/yapb"><img class="syndbutton" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/images/yapb.gif" border="0" alt="yapb logo" title="yapb flavoured"></a></li>
 				</ul>
 			</li>
 			<?php endif; ?>

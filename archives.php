@@ -3,10 +3,9 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$	
-*/
 
-/*
-Template Name: Archives
+	
+	Template Name: Archives Overview Page
 */
 
 ?>

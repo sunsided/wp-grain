@@ -3,20 +3,15 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+	Template Name: Mosaic Page
+	Kudos to Johannes Jarolim (http://johannes.jarolim.com) for the support
 */
 
 
-/*
-Template Name: Mosaic Page
-*/
- get_header();
-
-
-/*
-	Thanks for the support to Johannes Jarolim (http://johannes.jarolim.com)
-*/
-
-$mosaic_count_per_page = grain_mosaic_count();
+	get_header();
+	
+	$mosaic_count_per_page = grain_mosaic_count();
 
 ?>
 <div id="content-archives" class="narrowcolumn">

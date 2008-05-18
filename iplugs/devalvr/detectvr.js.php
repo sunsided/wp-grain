@@ -927,7 +927,7 @@ function p2q_EmbedFlash(sFile,sWidth,sHeight,sId)
 
 function p2q_EmbedPtviewer(sFile,sWidth,sHeight,sId) 
 {
-	document.writeln('<applet name='+sId+' code="ptviewer.class" archive="<?php bloginfo('template_directory'); ?>/iplugs/ptviewer/ptviewer<?php echo GRAIN_PTVIEWER_FLAVOR; ?>.jar"'); 
+	document.writeln('<applet name='+sId+' code="ptviewer.class" archive="<?php echo GRAIN_TEMPLATE_DIR; ?>/iplugs/ptviewer/ptviewer<?php echo GRAIN_PTVIEWER_FLAVOR; ?>.jar"'); 
 	document.writeln('  width="' + sWidth + '" height="' + sHeight + '" >');
 	document.writeln('	<param name="file" value="' + sFile + '">');
 	writeParameters(arguments,auxparameters['java'],1);

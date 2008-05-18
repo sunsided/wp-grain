@@ -47,7 +47,7 @@
 	<div id="comment-frame-body">
 
 		<p>
-		<a href="feed:<?php bloginfo('comments_rss2_url'); ?>"><img id="comments-rss-feed" src="<?php bloginfo('template_directory'); ?>/images/rss-feed.gif" alt="RSS feed icon" title="RSS feed" />
+		<a href="feed:<?php bloginfo('comments_rss2_url'); ?>"><img id="comments-rss-feed" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/images/rss-feed.gif" alt="RSS feed icon" title="RSS feed" />
 		<?php _e("<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this photo.", "grain"); ?></a></p>
 
 		<?php if ('open' == $post->ping_status) { ?>
@@ -101,7 +101,7 @@
 						
 						<?php if($is_syndicated): ?>
 							<span class="syndication-comment-info">
-							<img class="syndication-comment-icon" src="<?php bloginfo('template_directory'); ?>/icons/syndicated.png" />
+							<img class="syndication-comment-icon" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/icons/syndicated.png" />
 							<span class="syndication-comment-type">
 							<?php 
 							echo ($comment->comment_type == 'trackback' ? __("Trackback", "grain") : __("Pingback", "grain"));
@@ -131,7 +131,7 @@
 
 					<div class="comment-meta">
 						<?php if($is_author_comment): ?>
-						<img class="author-comment-icon" src="<?php bloginfo('template_directory'); ?>/icons/camera.png" />
+						<img class="author-comment-icon" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/icons/camera.png" />
 						<?php endif; ?>
 					
 					<?php
@@ -181,7 +181,7 @@
 		
 			<p id="comment-field-author" class="comment-form-input">
 				<label for="author">
-				<img id="comment-field-author-icon" src="<?php bloginfo('template_directory'); ?>/icons/author.png" />
+				<img id="comment-field-author-icon" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/icons/author.png" />
 				<input 
 					class="textfield"
 					type="text" 
@@ -195,7 +195,7 @@
 
 			<p id="comment-field-email" class="comment-form-input">
 				<label for="email">
-				<img id="comment-field-email-icon" src="<?php bloginfo('template_directory'); ?>/icons/email.png" />
+				<img id="comment-field-email-icon" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/icons/email.png" />
 				<input 
 					class="textfield"
 					type="text" 
@@ -209,7 +209,7 @@
 
 			<p id="comment-field-url" class="comment-form-input">
 				<label for="url">
-				<img id="comment-field-url-icon" src="<?php bloginfo('template_directory'); ?>/icons/address.png" />
+				<img id="comment-field-url-icon" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/icons/address.png" />
 				<input 
 					class="textfield"
 					type="text" 
@@ -225,7 +225,7 @@
 
 			<p id="comment-field-text" class="comment-form-input">
 				<label for="comment">
-					<img id="comment-field-text-icon" src="<?php bloginfo('template_directory'); ?>/icons/comment.png" />
+					<img id="comment-field-text-icon" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/icons/comment.png" />
 					<?php _e("Your comment:", "grain"); ?>
 				</label>
 			<br />

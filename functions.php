@@ -4,22 +4,17 @@
 	------------------------------------------------------------------
 	File version: $Id$	
 */
-
 	
 /* Warm up engine */	
 
-	define('GRAIN_THEME_VERSION', '0.2');
+	define('GRAIN_THEME_VERSION', '0.2.3');
+	define('GRAIN_THEME_VERSION_DEVBUILD', true);
 
-/* Paths helper */
+/* Helper functions */
 
+	@require_once(TEMPLATEPATH . '/func/littlehelpers.php');
 	@require_once(TEMPLATEPATH . '/func/paths.php');
-
-/* Options helper */
-
 	@require_once(TEMPLATEPATH . '/func/options.php');
-
-/* upgrade helper */
-
 	@require_once(TEMPLATEPATH . '/func/upgrade.php');
 
 /* load locale functions */
@@ -57,15 +52,15 @@
 
 	@require_once(TEMPLATEPATH . '/func/image.php');
 
-/* Creative Commons functions following */
+/* Creative Commons functions */
 
 	@require_once(TEMPLATEPATH . '/func/creativecommons.php');
 
-/* Grain admin panel following */
+/* Feed tweaking */
 
 	@require_once(TEMPLATEPATH . '/func/feeds.php');
 
-/* Grain admin panel following */
+/* Content helper files */
 
 	@require_once(TEMPLATEPATH . '/func/content.php');
 
@@ -73,42 +68,8 @@
 
 	@require_once(TEMPLATEPATH . '/admin/menu.php');
 
-/* General wordpress tweaking */
+/* Sidebars */
 
-	if ( function_exists('register_sidebar') )
-		register_sidebar(array(
-			'name' => 'Default Sidebar',
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget' => '</li>',
-			'before_title' => '<h2 class="widgettitle">',
-			'after_title' => '</h2>',
-		));
-		
-	if ( function_exists('register_sidebar') )
-		register_sidebar(array(
-			'name' => 'Above Image',
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget' => '</li>',
-			'before_title' => '<h2 class="widgettitle">',
-			'after_title' => '</h2>',
-		));
-		
-	if ( function_exists('register_sidebar') )
-		register_sidebar(array(
-			'name' => 'Below Image',
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget' => '</li>',
-			'before_title' => '<h2 class="widgettitle">',
-			'after_title' => '</h2>',
-		));
-		
-	if ( function_exists('register_sidebar') )
-		register_sidebar(array(
-			'name' => 'Footer',
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget' => '</li>',
-			'before_title' => '<h2 class="widgettitle">',
-			'after_title' => '</h2>',
-		));
+	@require_once(TEMPLATEPATH . '/func/sidebars.php');
 
 ?>

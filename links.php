@@ -3,11 +3,8 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
-*/
 
-
-/*
-Template Name: Links
+	Template Name: Links
 */
 ?>
 

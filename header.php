@@ -42,7 +42,7 @@ if( isset($_REQUEST['info']) && !empty($_REQUEST['info']) ) {
 
 <meta http-equiv="content-type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
-<meta name="copyright" content="(c) <?php echo grain_copyright_years_ex(); ?> <?php echo grain_copyright(); ?>" />
+<meta name="copyright" content="<?php grain_embed_copyright(); ?>" />
 <meta name="author" Content="<?php echo grain_copyright(); ?>" />
 <meta name="content-language" Content="<?php echo get_bloginfo('language'); ?>" />
 
@@ -81,21 +81,21 @@ if( isset($_REQUEST['info']) && !empty($_REQUEST['info']) ) {
 	$style_overrides = grain_get_css_overrides();
 	if( array_search($style_override, $style_overrides) !== FALSE ):
 	?>
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/<?php echo $style_override; ?>" type="text/css" media="screen" />
+<link rel="stylesheet" href="<?php echo GRAIN_TEMPLATE_DIR; ?>/<?php echo $style_override; ?>" type="text/css" media="screen" />
 	<?php
 	endif;
 ?>
 
 <!-- theme js -->
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/boxover.js"></script>
+<script type="text/javascript" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/js/boxover.js"></script>
 <?php 
 	if(grain_eyecandy_use_moofx()): 
 ?>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/mootools.v1.11.js"></script>
+<script type="text/javascript" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/js/mootools.v1.11.js"></script>
 <?php 	
 		if(grain_eyecandy_use_reflection()) : 
 ?>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/reflection.js"></script>
+<script type="text/javascript" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/js/reflection.js"></script>
 <?php		endif; ?>
 <?php endif; ?>
 <?php comments_popup_script(600, 600); ?>

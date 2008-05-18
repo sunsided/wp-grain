@@ -24,7 +24,7 @@ if( GRAIN_INCLUDE_PANO_EXTENSION ):
 	}
 	
 	function grain_plugin_url($name) {
-		return get_bloginfo('template_directory').'/iplugs/'.$name;
+		return GRAIN_TEMPLATE_DIR.'/iplugs/'.$name;
 	}
 	
 /* ptviewer */

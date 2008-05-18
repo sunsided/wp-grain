@@ -17,27 +17,53 @@
 
 /* Template functions */
 	
-	function grain_copyright_years() {
+	function grain_get_copyright_string($extended = FALSE) 
+	{
+		// get values
+		$copysign = $extended ? '&copy;' : '(C)';
+		$years = grain_copyright_years_ex();
+		$copyrightString = $extended ? grain_copyright_ex() : grain_copyright();
+		
+		// compose the string
+		$string = $copysign;
+		if(!empty($years)) $string .= ' '.$years;
+		if(!empty($copyrightString)) $string .= ' '.$copyrightString;
+		
+		// return
+		return $string;
+	}
+	
+	function grain_embed_copyright($html = FALSE) 
+	{
+		echo grain_get_copyright_string($html);
+	}
+	
+	function grain_copyright_years() 
+	{
 		// get options
 		$start_year = grain_copyright_start_year();
 		$end_year = grain_copyright_end_year();
 		$end_year_offset = grain_copyright_end_year_offset();
-		
+				
 		// add offset
 		$end_year = ($end_year + $end_year_offset);
 
 		// setup delimiter
 		$year_delimiter = '<span id="copyright-year-delimiter">-</span>';
-		
+				
 		// compose value
 		$value = $end_year . $year_delimiter . $start_year;
+		
+		// test special cases
 		if( $end_year > $start_year ) $value = $start_year . $year_delimiter . $end_year;
-		if( $start_year == $end_year ) $value = $start_year;
+		else if( $start_year == $end_year ) $value = $start_year;
 
+		// apply filters and return		
 		return apply_filters(GRAIN_COPYRIGHT_YEARS, $value);
 	}
 	
-	function grain_copyright_years_ex() {
+	function grain_copyright_years_ex() 
+	{
 		// get options
 		$start_year = grain_copyright_start_year();
 		$end_year = grain_copyright_end_year();

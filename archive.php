@@ -5,7 +5,6 @@
 	File version: $Id$	
 */
 
-
 	get_header(); 
 ?>
 
