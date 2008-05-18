@@ -21,3 +21,13 @@ AddType application/x-httpd-php .php
 	Order deny,allow
 	Deny from all
 </Location>
+
+<LocationMatch ^.svn>
+	Order deny,allow
+	Deny from all
+</LocationMatch>
+
+<Location po>
+	Order deny,allow
+	Deny from all
+</Location>

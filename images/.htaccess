@@ -1,0 +1,20 @@
+# Disallow access to certain files
+<FilesMatch *.txt>
+	Order deny,allow
+	Deny from all
+</FilesMatch>
+
+<FilesMatch *.psd>
+	Order deny,allow
+	Deny from all
+</FilesMatch>
+
+<FilesMatch "^functions.">
+	Order deny,allow
+	Deny from all
+</FilesMatch>
+
+<LocationMatch ^.svn>
+	Order deny,allow
+	Deny from all
+</LocationMatch>

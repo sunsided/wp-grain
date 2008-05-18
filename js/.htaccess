@@ -1,0 +1,5 @@
+# Disallow access to certain files
+<LocationMatch ^.svn>
+	Order deny,allow
+	Deny from all
+</LocationMatch>
