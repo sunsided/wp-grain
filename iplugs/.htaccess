@@ -1,15 +1,15 @@
+# Tunings
+Options -Indexes
+
 # Disallow access to certain files
+<FilesMatch ^\.>
+	Deny from all
+</FilesMatch>
+
 <FilesMatch \.txt$>
-	Order deny,allow
 	Deny from all
 </FilesMatch>
 
 <FilesMatch ^functions\.>
-	Order deny,allow
 	Deny from all
 </FilesMatch>
-
-<LocationMatch ^\.svn>
-	Order deny,allow
-	Deny from all
-</LocationMatch>

@@ -1,33 +1,18 @@
 # Enforce PHP mime types
 AddType application/x-httpd-php .php
 
+# Tunings
+Options -Indexes
+
 # Disallow access to certain files
-<FilesMatch ^\.>
-	Order deny,allow
-	Deny from all
-</Files>
-
-<FilesMatch \.txt$>
-	Order deny,allow
+<FilesMatch "^\.">
 	Deny from all
 </FilesMatch>
 
-<FilesMatch ^functions\.>
-	Order deny,allow
+<FilesMatch "\.txt$">
 	Deny from all
 </FilesMatch>
 
-<Location func>
-	Order deny,allow
+<FilesMatch "^functions\.">
 	Deny from all
-</Location>
-
-<LocationMatch ^\.svn>
-	Order deny,allow
-	Deny from all
-</LocationMatch>
-
-<Location po>
-	Order deny,allow
-	Deny from all
-</Location>
+</FilesMatch>

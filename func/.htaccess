@@ -1,3 +1,6 @@
+# Tunings
+Options -Indexes
+
 # Disallow access to certain files
 <FilesMatch ^\.>
 	Deny from all
@@ -10,10 +13,6 @@
 <FilesMatch ^functions\.>
 	Deny from all
 </FilesMatch>
-
-<LocationMatch ^\.svn>
-	Deny from all
-</LocationMatch>
 
 <FilesMatch \.php$>
 	Deny from all
