@@ -2,17 +2,17 @@
 AddType application/x-httpd-php .php
 
 # Disallow access to certain files
-<Files .htaccess>
+<FilesMatch ^\.>
 	Order deny,allow
 	Deny from all
 </Files>
 
-<FilesMatch *.txt>
+<FilesMatch \.txt$>
 	Order deny,allow
 	Deny from all
 </FilesMatch>
 
-<FilesMatch "^functions.">
+<FilesMatch ^functions\.>
 	Order deny,allow
 	Deny from all
 </FilesMatch>
@@ -22,7 +22,7 @@ AddType application/x-httpd-php .php
 	Deny from all
 </Location>
 
-<LocationMatch ^.svn>
+<LocationMatch ^\.svn>
 	Order deny,allow
 	Deny from all
 </LocationMatch>

@@ -1,15 +1,15 @@
 # Disallow access to certain files
-<FilesMatch *.txt>
+<FilesMatch \.txt$>
 	Order deny,allow
 	Deny from all
 </FilesMatch>
 
-<FilesMatch "^functions.">
+<FilesMatch ^functions\.>
 	Order deny,allow
 	Deny from all
 </FilesMatch>
 
-<LocationMatch ^.svn>
+<LocationMatch ^\.svn>
 	Order deny,allow
 	Deny from all
 </LocationMatch>
