@@ -4,6 +4,7 @@ Fix: "%" in copyrights is now correctly rendered as the current year. This was d
 Fix: Navigation bar was shown even if there were no post at all
 Fix: "Edit" link was shown to administrative users even if there were no post at all
 Add: Grain version number now is extended by "dev" in the HTML header if it was taken from a development branch
+Fix: Rounded borders had different colors in Internet Explorer 6 and 7 (this is not totally fixed yet, but it definitely looks better)
 
 0.2.2 
 Fix: Menu bug that appeared on the start page. 

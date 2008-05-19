@@ -68,21 +68,30 @@ if( isset($_REQUEST['info']) && !empty($_REQUEST['info']) ) {
 
 <!-- etc -->
 <?php wp_head(); ?>
+
 </head>
+
 <body id="body">
+
+<!-- the page -->
 <div id="page">
 
-
+<!-- header -->
 <div id="header">
 	<div id="header-top"><div id="header-top-inner"></div></div>
 
 	<?php grain_inject_navigation_menu(GRAIN_IS_HEADER); ?>
+	
+	<!-- header image -->
 	<div id="headerimg">
 		<h1><a rel="start" href="<?php echo get_settings('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
 	</div>
+	
+	<!-- blog description -->
 	<div id="header-description"><?php bloginfo('description'); ?></div>
 
 	<div id="header-bottom"><div id="header-bottom-inner"></div></div>
 </div>
 
+<!-- content following -->
 <div id="content_area">
