@@ -7,56 +7,60 @@
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 
-/* comment link generation */
+	/* META headers */
+	
+	// embed general meta information for statistics
+	function grain_embed_general_meta() 
+	{
+		?>
+<meta http-equiv="content-type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<meta name="copyright" content="<?php grain_embed_copyright(); ?>" />
+<meta name="author" Content="<?php echo grain_copyright(); ?>" />
+<meta name="content-language" Content="<?php echo get_bloginfo('language'); ?>" />
+<?php
+	}
+	
+	// embed Dublin Core meta information
+	function grain_embed_dc_meta() 
+	{
+		?>
+<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+<link rel="schema.foaf" href="http://xmlns.com/foaf/0.1/" />
+<?php 		
+		$imprint_url = grain_imprint_url(null);
+		if( !empty($imprint_url) ): ?>
+<meta name="dc.rights" content="(Scheme=URL) <?php echo $imprint_url; ?>" />
+<?php endif; ?>
+<meta name="dc.language" scheme="RFC3066" content="<?php echo get_bloginfo('language'); ?>">
+<meta name="dc.title" content="<?php bloginfo('name'); ?>>" />
+<meta name="dc.description"  content="<?php bloginfo('name'); ?>, <?php wp_title(); ?>" />
+<meta name="dc.creator" content="<?php echo grain_copyright(); ?>" />
+<meta name="dc.publisher" content="<?php echo grain_copyright(); ?>" />
+<meta name="dc.type" content="Image" /> 
+<meta name="dc.format" content="<?php bloginfo('html_type'); ?>" />
+<meta name="dc.subject" content="photo" />
+<meta name="foaf.maker" content="<?php echo grain_copyright(); ?>" />
+<meta name="foaf.topic" content="photo" />	
+<?php
+	}
 
-	function grain_generate_comments_link() {
-		global $post;
-		
-		$grain_extended_comments = grain_extended_comments();
-		$comments_open = $post->comment_status == "open";
-		$link = '';
+	// embed creative commons RDF
+	function grain_embed_cc_rdf() 
+	{
+		if( !grain_cc_enabled() ) return;
 
-	    // display the comment popup link
-		if( !$grain_extended_comments && !GRAIN_REQUESTED_OTEXINFO )
-		{
-			// get string
-			$_hmn_comments_more = str_replace( "%", $post->comment_count, __("comments (%)", "grain") );
-			
-			// inf info enforcement is on, we skip directly to the comments on the popup
-			// TODO: Add apropriate option here
-			$internal = (grain_enforce_info() && grain_popup_jumptocomments() ? '#comments' : '');
-			// build link
-			$link .= (!$comments_open ? '<del class="closed-comments">' : '');
-			$link .= '<a class="open-popup" onclick="wpopen(this.href); return false" title="'.__("comments and details", "grain").'" accesskey="c" rel="nofollow" href="?comments_popup='.$post->ID.$internal.'">'.$_hmn_comments_more.'</a>';
-			$link .= (!$comments_open ? '</del>' : '');
-			
-		}
-		else
-		{
-			// get strings
-			$_hmn_comments_more = str_replace( "%", $post->comment_count, __("show comments (%)", "grain") );
-			$_hmn_comments_less = str_replace( "%", $post->comment_count, __("hide comments", "grain") );
-			
-			// set text
-			//$text = (isset($_SESSION['grain:info']) && $_SESSION['grain:info'] == 'on') ? $_hmn_comments_less : $_hmn_comments_more;
-			$text = GRAIN_REQUESTED_EXINFO ? $_hmn_comments_less : $_hmn_comments_more;
-			
-			// select behaviour (open/close)
-			$target = (grain_enforce_info() ? '#comments' : '#info');
-			//$infomode = (isset($_SESSION['grain:info']) && $_SESSION['grain:info'] == 'on') ? 'off' : 'on'.$target;
-			$infomode = GRAIN_REQUESTED_EXINFO ? 'off' : 'on'.$target;
-			
-			// append info to permalink, based on whether it contains an ampersand or not
-			$contains_amp = strstr(get_permalink($post->ID), '?');
-			$permalink = get_permalink($post->ID) . ($contains_amp !== FALSE ? '&info='.$infomode : '?info='.$infomode);
-			
-			// build link
-			$link .= (!$comments_open ? '<del class="closed-comments">' : '');
-			$link .= '<a class="open-extended" title="'.__("comments and details", "grain").'" accesskey="i" rel="start" href="'.$permalink.'">'.$text.'</a>';
-			$link .= (!$comments_open ? '</del>' : '');
-		}
-		
-		return $link;
+		// test rdf
+		$rdf = grain_cc_rdf();
+		if(!empty($rdf)) echo '<!--'.$rdf.'-->';
+	}
+
+	// embed Generator meta information for statistics
+	function grain_embed_generator_meta() 
+	{
+		// wordpress generator meta gets applied by a hook, so skip it here
+		?>
+<meta name="theme" content="Grain <?php echo grain_version(); ?>" /> <!-- please leave this for stats -->
+		<?php
 	}
 
 ?>
