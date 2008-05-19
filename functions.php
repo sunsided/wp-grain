@@ -29,10 +29,15 @@
 
 	@require_once(TEMPLATEPATH . '/func/syndication.php');
 
-/* Navigation link functions */
+/* HTML header */
 
-	@require_once(TEMPLATEPATH . '/func/navlinks.php');
+	@require_once(TEMPLATEPATH . '/func/stylesheets.php');	
+	@require_once(TEMPLATEPATH . '/func/javascript.php');	
 	@require_once(TEMPLATEPATH . '/func/header.php');
+
+/* Navigation link functions */
+	
+	@require_once(TEMPLATEPATH . '/func/navlinks.php');
 
 /* template filters and action */
 	

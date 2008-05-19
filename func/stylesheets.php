@@ -1,0 +1,29 @@
+<?php
+/*     
+	This file is part of Grain Theme for WordPress.
+	------------------------------------------------------------------
+	File version: $Id$
+*/
+	
+	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
+
+
+	/* functions */
+
+	function grain_embed_css() 
+	{
+		?>
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+<?php
+		
+		$style_override = grain_override_style();
+		$style_overrides = grain_get_css_overrides();
+		if( array_search($style_override, $style_overrides) !== FALSE ) 
+		{
+		?>
+<link rel="stylesheet" href="<?php echo GRAIN_TEMPLATE_DIR; ?>/<?php echo $style_override; ?>" type="text/css" media="screen" />
+<?php
+		}	
+	}
+
+?>
