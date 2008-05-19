@@ -64,8 +64,8 @@ if( isset($_REQUEST['info']) && !empty($_REQUEST['info']) ) {
 <meta name="foaf.maker" content="<?php echo grain_copyright(); ?>" />
 <meta name="foaf.topic" content="photo" />
 
-<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
-<meta name="theme" content="Grain <?php echo GRAIN_THEME_VERSION; ?>" /> <!-- leave this for stats -->
+<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- please leave this for stats -->
+<meta name="theme" content="Grain <?php echo grain_version(); ?>" /> <!-- please leave this for stats -->
 
 <?php
 	if( grain_cc_enabled() ) {	

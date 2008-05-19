@@ -8,6 +8,7 @@
 /* Warm up engine */	
 
 	define('GRAIN_THEME_VERSION', '0.2.3');
+	define('GRAIN_THEME_URL', 'http://wp-grain.wiki.sourceforge.net/');
 	define('GRAIN_THEME_VERSION_DEVBUILD', true);
 
 /* Helper functions */
@@ -33,6 +34,7 @@
 /* Navigation link functions */
 
 	@require_once(TEMPLATEPATH . '/func/navlinks.php');
+	@require_once(TEMPLATEPATH . '/func/header.php');
 
 /* template filters and action */
 	

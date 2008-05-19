@@ -25,11 +25,11 @@
 
 		<span class="powered-by">
 			<?php bloginfo('name'); ?> <?php _e("is proudly powered by"); ?> <a href="http://wordpress.org/">WordPress</a> <?php _e("and"); ?>
-			<a href="http://mac.defx.de/grain-theme" title="Grain <?php echo GRAIN_THEME_VERSION; ?>">Grain</a>
+			<a href="<?php echo GRAIN_THEME_URL; ?>" title="Grain <?php echo GRAIN_THEME_VERSION; ?>">Grain</a>
 		</span>
 		
 		<!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->
-		<?php edit_post_link(__("edit post", "grain"), ' | ', ''); ?>
+		<?php if( grain_getpostcount() ) edit_post_link(__("edit post", "grain"), ' | ', ''); ?>
 
 		<div id="final-footer">
 			<?php if( grain_flat_syndication_enabled() ): ?>
