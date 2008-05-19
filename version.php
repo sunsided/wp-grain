@@ -4,9 +4,7 @@
 	------------------------------------------------------------------
 	File version: $Id$
 */
-	
-	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
-	
+
 	/* defines */
 	
 	define('GRAIN_THEME_VERSION', '0.2.3');
