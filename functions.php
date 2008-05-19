@@ -7,9 +7,7 @@
 	
 /* Warm up engine */	
 
-	define('GRAIN_THEME_VERSION', '0.2.3');
-	define('GRAIN_THEME_URL', 'http://wp-grain.wiki.sourceforge.net/');
-	define('GRAIN_THEME_VERSION_DEVBUILD', true);
+	@require_once(TEMPLATEPATH . '/func/version.php');
 
 /* Helper functions */
 
