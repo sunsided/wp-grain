@@ -31,33 +31,70 @@
 
 /* top level menu */
 
-	function grain_admin_createmenus() {
+	function grain_admin_createmenus() 
+	{
+		
+		$baseTitle = __("Configure Grain", "grain") . ' &raquo; ';
 
-		add_theme_page(__("Configure Grain", "grain") . ' &raquo; ' . __("Copyright Settings", "grain"), __("Copyright Settings", "grain"), 'edit_themes', 'copyright', 'grain_adminpage_copyright');
-		add_theme_page(__("Configure Grain", "grain") . ' &raquo; ' . __("General Settings", "grain"), __("General Settings", "grain"), 'edit_themes', 'general', 'grain_adminpage_general');
-		add_theme_page(__("Configure Grain", "grain") . ' &raquo; ' . __("Navigation Settings", "grain"), __("Navigation Bar", "grain"), 'edit_themes', 'navigation', 'grain_adminpage_navigation');
-		add_theme_page(__("Configure Grain", "grain") . ' &raquo; ' . __("Styling and Layout", "grain"), __("Styling and Layout", "grain"), 'edit_themes', 'styling', 'grain_adminpage_styling');
-		add_theme_page(__("Configure Grain", "grain") . ' &raquo; ' . __("Date and Time Settings", "grain"), __("Date and Time", "grain"), 'edit_themes', 'datetime', 'grain_adminpage_datetime');
+		add_theme_page(	$baseTitle . __("Copyright Settings", "grain"), 		
+						__("Copyright Settings", "grain"), 
+						'edit_themes', 
+						'copyright', 
+						'grain_adminpage_copyright');
+		
+		add_theme_page( $baseTitle . __("General Settings", "grain"), 			
+						__("General Settings", "grain"), 
+						'edit_themes', 
+						'general', 
+						'grain_adminpage_general');
+		
+		add_theme_page( $baseTitle . __("Navigation Settings", "grain"), 		
+						__("Navigation Bar", "grain"), 
+						'edit_themes', 
+						'navigation', 
+						'grain_adminpage_navigation');
+		
+		add_theme_page( $baseTitle . __("Styling and Layout", "grain"), 		
+						__("Styling and Layout", "grain"), 
+						'edit_themes', 
+						'styling', 
+						'grain_adminpage_styling');
+		
+		add_theme_page( $baseTitle . __("Date and Time Settings", "grain"), 	
+						__("Date and Time", "grain"), 
+						'edit_themes', 
+						'datetime', 
+						'grain_adminpage_datetime');
+		
 		
 		// shortcut to yapb
 		$yapb_page = get_bloginfo('url').'/wp-admin/options-general.php?page=Yapb.class.php';
-		add_theme_page(__("Yet Another Photoblog", "grain"), __("YAPB", "grain"), 'edit_plugins', $yapb_page);
+		add_theme_page( __("Yet Another Photoblog", "grain"), 
+						__("YAPB", "grain"), 
+						'edit_plugins', 
+						$yapb_page);
 				
+		// do the logic
 		grain_admin_dologic();
+
 	}
 
 /* functions */
 
-	function grain_admin_dologic() {
+	function grain_admin_dologic() 
+	{
 		global $grain_options;
 	
-		if ( $knownPage ) {
+		if ( $knownPage ) 
+		{
 
-			if ( 'save' == $_REQUEST['action'] ) {
+			if ( 'save' == $_REQUEST['action'] ) 
+			{
 
 				$newoptions = $grain_options;
 
-				if ( isset($_REQUEST['copyright_form']) ) {
+				if ( isset($_REQUEST['copyright_form']) ) 
+				{
 				
 					if ( isset($_REQUEST['defaults']) ) {
 						
@@ -80,7 +117,8 @@
 					}
 
 				}
-				else if ( isset($_REQUEST['navigation_form']) ) {
+				else if ( isset($_REQUEST['navigation_form']) ) 
+				{
 				
 					if ( isset($_REQUEST['defaults']) ) {
 						
@@ -99,7 +137,8 @@
 					}				
 				
 				}
-				else if ( isset($_REQUEST['general_form']) ) {
+				else if ( isset($_REQUEST['general_form']) ) 
+				{
 
 					if ( isset($_REQUEST['defaults']) ) {
 						
@@ -131,7 +170,8 @@
 						
 					}
 				}
-				else if ( isset($_REQUEST['styling_form']) ) {
+				else if ( isset($_REQUEST['styling_form']) ) 
+				{
 
 					if ( isset($_REQUEST['defaults']) ) {
 						
@@ -175,7 +215,8 @@
 					
 					}
 				}
-				else if ( isset($_REQUEST['datetime_form']) ) {
+				else if ( isset($_REQUEST['datetime_form']) ) 
+				{
 
 					if ( isset($_REQUEST['defaults']) ) {
 						
@@ -197,107 +238,14 @@
 				//print_r($_REQUEST);
 				wp_redirect("themes.php?page=".$_GET['page']."&saved=true");
 				die;
-			}
-		}
+			
+			} // save
+			
+		} // known page
 	}
 
 	function grain_admin_pagestyle() {
-	?>
-	<style type='text/css'>
-		#grain-header {
-			font-size: 1em;
-		}
-		#grain-header .hibrowser {
-			width: 780px;
-			height: 260px;
-			overflow: scroll;
-		}
-		#grain-header #hitarget {
-			display: none;
-		}
-
-		#nonJsForm {
-			position: relative;
-			text-align: left;
-		}
-		#nonJsForm label {
-			padding-top: 6px;
-			padding-right: 5px;
-			float: left;
-			width: 200px;
-			text-align: right;
-		}
-
-		#nonJsForm input,
-		#nonJsForm textarea,
-		.input_pad {
-			padding-top: 6px;
-			padding-right: 5px;
-			margin-left: 10px;
-			/*width: 200px;*/
-			text-align: left;
-		}
-
-		.input_pad {
-			padding-left: 205px;
-			margin-top: -10px;
-			padding-top: 0;
-		}
-
-		#nonJsForm textarea.license-code {
-			font-family: "Courier New", Courier, monospace;
-		}
-
-		.defbutton {
-			font-weight: bold;
-		}
-		.zerosize {
-			width: 0px;
-			height: 0px;
-			overflow: hidden;
-		}
-		
-		#nonJsForm hr {
-			border: none;
-			border-top: 1px dotted black;
-			margin: 10px 0;
-		}
-		
-		#nonJsForm h2 {
-			padding-top: 20px;
-		}
-		
-		#nonJsForm h2#first {
-			padding-top: 0px;
-		}
-		
-		fieldset {
-			border: 1px solid silver;
-			margin-bottom: 10px;
-			padding: 10px;
-		}
-		
-		fieldset p {
-			margin-top: 10px;
-			margin-bottom: 10px;
-		}
-		
-		table {
-			width: 100%;
-		}
-		
-		td.key {
-			width: 200px;
-			padding-left: 2px;
-			padding-right: 2px;
-		}
-		td.value {
-			padding-left: 2px;
-			padding-right: 2px;
-		}
-	</style>
-	<?php
+		echo "<link rel='stylesheet' href='".GRAIN_TEMPLATE_DIR."/admin/admin.css' type='text/css' />";
 	}
-
 
 ?>
