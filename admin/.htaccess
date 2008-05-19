@@ -13,3 +13,7 @@ Options -Indexes
 <FilesMatch ^functions\.>
 	Deny from all
 </FilesMatch>
+
+<FilesMatch ^page\.>
+	Deny from all
+</FilesMatch>
