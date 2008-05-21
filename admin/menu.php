@@ -254,7 +254,7 @@
 	{
 		if( !grain_is_yapb_installed() )
 		?>
-			<div id="errormessage" class="error"><p><strong><?php _e("The YAPB plugin could not be found.", "grain"); ?></strong></a></p></div>	
+			<div id="errormessage" class="error"><p><strong><?php _e("The YAPB plugin could not be found.", "grain"); ?></strong> <a title="<?php _e("Yet Another Photoblog", "grain"); ?>" target="_blank" href="http://wp-grain.wiki.sourceforge.net/YaPB"><?php _e("Click for more information", "grain"); ?></a></a></p></div>	
 		<?php
 	}
 
