@@ -33,17 +33,20 @@
 			$years_enabled = grain_mosaic_years();
 			foreach($posts as $post): 
 			
-			?><div class="archive-post"><?php
+			?><div class="archive-post">
+<?php
 
 			if( $years_enabled ) {
 					$currentYear = mysql2date('Y', $post->post_date);
 					if ($currentYear != $previousYear) {
-						echo '<div class="year"><h2>' . $currentYear . '</h2></div>';
+						echo '<div class="year"><h2>' . $currentYear . '</h2></div>
+';
 						$previousYear = $currentYear;
 					}
 			}
 				if (!is_null($image = YapbImage::getInstanceFromDb($post->ID))) {
-					echo '<div class="mosaic-photo">';
+					echo '<div class="mosaic-photo">
+';
 					
 					// display
 					do_action(GRAIN_ARCHIVE_BEFORE_THUMB);
@@ -51,9 +54,11 @@
 					do_action(GRAIN_ARCHIVE_AFTER_THUMB);
 					
 					// close div
-					echo '</div>';
+					echo '</div>
+';
 				}
-		?></div><?php
+		?></div>
+<?php
 		
 			endforeach;
 

@@ -32,8 +32,7 @@
 /* top level menu */
 
 	function grain_admin_createmenus() 
-	{
-		
+	{	
 		$baseTitle = __("Configure Grain", "grain") . ' &raquo; ';
 
 		add_theme_page(	$baseTitle . __("Copyright Settings", "grain"), 		
@@ -68,11 +67,14 @@
 		
 		
 		// shortcut to yapb
-		$yapb_page = get_bloginfo('url').'/wp-admin/options-general.php?page=Yapb.class.php';
-		add_theme_page( __("Yet Another Photoblog", "grain"), 
-						__("YAPB", "grain"), 
-						'edit_plugins', 
-						$yapb_page);
+		if(grain_is_yapb_installed() ) 
+		{
+			$yapb_page = get_bloginfo('url').'/wp-admin/options-general.php?page=Yapb.class.php';
+			add_theme_page( __("Yet Another Photoblog", "grain"), 
+							__("YAPB", "grain"), 
+							'edit_plugins', 
+							$yapb_page);
+		}
 				
 		// do the logic
 		grain_admin_dologic();
@@ -246,6 +248,14 @@
 
 	function grain_admin_pagestyle() {
 		echo "<link rel='stylesheet' href='".GRAIN_TEMPLATE_DIR."/admin/admin.css' type='text/css' />";
+	}
+
+	function grain_admin_inject_yapb_msg() 
+	{
+		if( !grain_is_yapb_installed() )
+		?>
+			<div id="errormessage" class="error"><p><strong><?php _e("The YAPB plugin could not be found.", "grain"); ?></strong></a></p></div>	
+		<?php
 	}
 
 ?>

@@ -32,4 +32,10 @@
 		return $__grain_post_count;
 	}
 
+	function grain_is_yapb_installed() 
+	{
+		global $yapb;
+		return !empty($yapb);
+	}
+
 ?>

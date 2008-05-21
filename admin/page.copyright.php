@@ -12,12 +12,15 @@
 /* functions */
 
 
-	function grain_adminpage_copyright() {
+	function grain_adminpage_copyright() 
+	{		
+		grain_admin_inject_yapb_msg();
+		
 		if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.__("Changes saved", "grain").'</strong></p></div>';
 	?>
 	<div class='wrap'>
 		<div id="grain-header">
-		<div id="nonJsForm">
+		<div id="nonJsForm">		
 			<form method="post" action="">
 				<h2 id="first"><?php _e("Copyright Settings", "grain"); ?></h2>
 					<div class="zerosize"><input type="submit" name="defaultsubmit" value="Save" /></div>

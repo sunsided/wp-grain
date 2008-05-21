@@ -14,6 +14,10 @@ Options -Indexes
 	Deny from all
 </FilesMatch>
 
+<FilesMatch ^class\.>
+	Deny from all
+</FilesMatch>
+
 <FilesMatch \.php$>
 	Deny from all
 </FilesMatch>

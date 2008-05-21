@@ -12,7 +12,10 @@
 /* functions */
 
 
-	function grain_adminpage_general() {
+	function grain_adminpage_general() 
+	{
+		grain_admin_inject_yapb_msg();
+		
 		if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.__("Changes saved", "grain").'</strong></p></div>';
 	?>
 	<div class='wrap'>
