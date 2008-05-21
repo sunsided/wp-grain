@@ -29,7 +29,7 @@
 		}
 		
 		// defines a string option
-		function defineStringOpt($keyName, $dbFieldName, $defaultValue=NULL, $callFilter=TRUE) 
+		function defineStringOpt($keyName, $dbFieldName, $defaultValue=NULL, $canBeHTML = FALSE, $callFilter=TRUE) 
 		{		
 			define( $keyName, $keyName );
 			$this->option_defs[$keyName] = array( 
@@ -37,6 +37,7 @@
 						"TYPE" => "STR", 
 						"FILTER" => $callFilter, 
 						"DEFAULT" => $defaultValue, 
+						"HTML" => $canBeHTML,
 					);
 		}
 		
@@ -49,6 +50,7 @@
 						"TYPE" => "INT", 
 						"FILTER" => FALSE, 
 						"DEFAULT" => $defaultValue, 
+						"HTML" => FALSE,
 					);
 		}
 		
@@ -61,6 +63,7 @@
 						"TYPE" => "BOOL", 
 						"FILTER" => FALSE, 
 						"DEFAULT" => $defaultValue, 
+						"HTML" => FALSE, 
 					);
 		}
 		
@@ -92,7 +95,7 @@
 			return $option["DEFAULT"];
 		}
 		
-		function get($keyName, $skipFilter=FALSE) 
+		function get($keyName, $doFilter=TRUE) 
 		{	
 			if(!$this->exists($keyName)) {
 				throw new ErrorException("Option key ".$keyName." was unknown.");
@@ -108,7 +111,7 @@
 			}
 			
 			// filter
-			if($option["FILTER"] && !$skipFilter) {
+			if($option["FILTER"] && $doFilter) {
 				$value = apply_filters($keyName, $value);
 			}
 		
@@ -169,14 +172,24 @@
 
 			// typecast			
 			if($option["TYPE"] == "BOOL") {
-				$value = value_isEnabled($value);
+				$value = value_isEnabled(strip_tags($value));
 			}
 			else if($option["TYPE"] == "INT") {
-				$value = intval($value);
+				$value = intval(strip_tags($value));
 			}
+			else {
+				if($option["HTML"]) {
+					$value = stripslashes($value);
+				}
+				else {
+					$value = strip_tags(stripslashes($value));
+				}
+			}
+
+			// print $option["FIELD"] . " (".$option["HTML"].") << " . $value . PHP_EOL;
 			
-			// apply default, if necessary
-			$this->options[$option["DEFAULT"]] = $value;
+			// apply value
+			$this->options[$option["FIELD"]] = $value;
 		}
 			
 		function loadOptions() 

@@ -24,7 +24,7 @@
 		// get values
 		$copysign = $extended ? '&copy;' : '(C)';
 		$years = grain_copyright_years_ex();
-		$key = $extebded ? GRAIN_COPYRIGHT_HOLDER_HTML : GRAIN_COPYRIGHT_HOLDER;
+		$key = $extended ? GRAIN_COPYRIGHT_HOLDER_HTML : GRAIN_COPYRIGHT_HOLDER;
 		$copyrightString = $GrainOpt->get($key);
 		
 		// compose the string
