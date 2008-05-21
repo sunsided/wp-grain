@@ -6,76 +6,198 @@
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
-/* Option keys */
+
+/* Options class */
+
+	// define the main option key
+	define( 'GRAIN_OPTIONS_KEY', 'grain_theme' );
+	define( 'GRAIN_OPTION_KEY', GRAIN_OPTIONS_KEY );
+
+	// Singleton
+	$GrainOpt = new GrainOption();
+
+	// Optionsklasse
+	class GrainOption {
+		
+		// die Optionen
+		var $option_defs;
+		var $options;
+		
+		function GrainOption() {
+			$this->option_defs = array();
+			$this->loadOptions();
+		}
+		
+		// defines a string option
+		function defineStringOpt($keyName, $dbFieldName, $defaultValue=NULL, $callFilter=TRUE) 
+		{		
+			define( $keyName, $keyName );
+			$this->option_defs[$keyName] = array( 
+						"FIELD" => $dbFieldName, 
+						"TYPE" => "STR", 
+						"FILTER" => $callFilter, 
+						"DEFAULT" => $defaultValue, 
+					);
+		}
+		
+		// defines an integer option
+		function defineValueOpt($keyName, $dbFieldName, $defaultValue=-1)
+		{
+			define( $keyName, $keyName );
+			$this->option_defs[$keyName] = array( 
+						"FIELD" => $dbFieldName, 
+						"TYPE" => "INT", 
+						"FILTER" => FALSE, 
+						"DEFAULT" => $defaultValue, 
+					);
+		}
+		
+		// defines a boolean option
+		function defineFlagOpt($keyName, $dbFieldName, $defaultValue=FALSE) 
+		{
+			define( $keyName, $keyName );
+			$this->option_defs[$keyName] = array( 
+						"FIELD" => $dbFieldName, 
+						"TYPE" => "BOOL", 
+						"FILTER" => FALSE, 
+						"DEFAULT" => $defaultValue, 
+					);
+		}
+		
+		// checks if an options exists
+		function exists($keyName) 
+		{
+			return array_key_exists($keyName, $this->option_defs );
+		}
+		
+		// checks if an option is empty (without applying filters or defaults)
+		function isempty($keyName) 
+		{
+			if( !$this->exists($keyName) ) {
+				throw new ErrorException("Option key ".$keyName." was unknown.");
+			}
+
+			$option = $this->option_defs[$keyName];
+			return empty($this->options[$option["FIELD"]]);
+		}
+		
+		function getDefault($keyName) 
+		{	
+			if(!$this->exists($keyName)) {
+				throw new ErrorException("Option key ".$keyName." was unknown.");
+			}
+			
+			// get option and value
+			$option = $this->option_defs[$keyName];			
+			return $option["DEFAULT"];
+		}
+		
+		function get($keyName, $skipFilter=FALSE) 
+		{	
+			if(!$this->exists($keyName)) {
+				throw new ErrorException("Option key ".$keyName." was unknown.");
+			}
+			
+			// get option and value
+			$option = $this->option_defs[$keyName];			
+			$value = $this->options[$option["FIELD"]];
+			
+			// apply default, if necessary
+			if(empty($value)) {
+				$value = $option["DEFAULT"];
+			}
+			
+			// filter
+			if($option["FILTER"] && !$skipFilter) {
+				$value = apply_filters($keyName, $value);
+			}
+		
+			// cast, if necessary
+			if( $option["TYPE"] == "BOOL" ) {
+				$value = $this->value_isEnabled($value);
+			}
+			else if( $option["TYPE"] == "INT" ) {
+				$value = intval($value);
+			}
+		
+			// return
+			return $value;
+		}
+		
+		function getFormatted($keyName, $skipFilter=FALSE) 
+		{
+			$value = $this->get($keyName, $skipFiler);
+			return attribute_escape($value);
+		}
+		
+		function getForCheckbox($keyName) 
+		{
+			return $this->isempty($keyName);
+		}
+				
+		function getYesNo($keyName) 
+		{
+			if($this->option_defs[$keyName]["TYPE"] != "BOOL") {
+				throw new ErrorException("Type for ".$keyName." was no bool");	
+			}
+			return $this->get($keyName);
+		}
+		
+		function value_isEnabled($value) 
+		{	
+			if( empty($value) ) return FALSE;
+			else if( $value === FALSE ) return FALSE;
+			else if( $value === 0 ) return FALSE;
+			else if( $value === '' ) return FALSE;
+			else if( $value === 'off' ) return FALSE;
+			else if( $value === 'false' ) return FALSE;
+			else if( $value === 'no' ) return FALSE;
+			else if( $value === '-' ) return FALSE;
+			else if( $value === 'n' ) return FALSE;
+			else if( $value === 'f' ) return FALSE;
+			return TRUE;
+		}
+		
+		function set($keyName, $value) 
+		{
+			if(!$this->exists($keyName)) {
+				throw new ErrorException("Option key ".$keyName." was unknown.");
+			}
+			
+			// get option and value
+			$option = $this->option_defs[$keyName];
+
+			// typecast			
+			if($option["TYPE"] == "BOOL") {
+				$value = value_isEnabled($value);
+			}
+			else if($option["TYPE"] == "INT") {
+				$value = intval($value);
+			}
+			
+			// apply default, if necessary
+			$this->options[$option["DEFAULT"]] = $value;
+		}
+			
+		function loadOptions() 
+		{
+			$this->options = get_option( GRAIN_OPTIONS_KEY );
+		}
+			
+		function writeOptions() 
+		{
+			update_option( GRAIN_OPTIONS_KEY, $this->options );
+		}
+			
+	} // GrainOpt
+
+/* Load options */
 
 	@require_once(TEMPLATEPATH . '/func/optionskeys.php');
 
-/* definitions */
-
-	define('GRAIN_MAX_IMAGE_WIDTH', 800);
-	define('GRAIN_MAX_IMAGE_HEIGHT', 533); // only applies in certain cases, such as panorama etc.
-
-/* Globals */
-	
-	$grain_options = get_option( GRAIN_OPTIONS_KEY );
-
-/* Options helper */
-
-	function grain_getoption($tag, $apply_filter = TRUE, $default=null) {
-		global $grain_options;
-		global $grain_admin;	
-		
-		// apply the default
-		$value = $default;
-		
-		// if the value exists, get it
-		if(grain_option_isset($tag)) $value = $grain_options[$tag];
-		
-		// if there are filters to be applied, apply them
-		if($apply_filter) $value = apply_filters($tag, $value);
-		
-		// return the value
-		return $value;
-	}
-
-	function grain_setoption($tag, $value) {
-		global $grain_options;
-		$grain_options[$tag] = $value;
-		update_option( GRAIN_OPTIONS_KEY, $grain_options );
-	}
-
-	function grain_getoption_for_output($tag, $default=null) {
-		return attribute_escape(grain_getoption($tag, $default));
-	}
-	
-	function grain_value_checkbox($value) {
-		return isset($value) ? TRUE : FALSE;
-	}
-	
-	function grain_value_isenabled($value) {	
-		if( !isset($value) ) return FALSE;
-		if( empty($value) ) return FALSE;
-		if( $value === FALSE ) return FALSE;
-		if( $value === 0 ) return FALSE;
-		if( $value === '' ) return FALSE;
-		if( $value === 'off' ) return FALSE;
-		if( $value === 'false' ) return FALSE;
-		if( $value === 'no' ) return FALSE;
-		return TRUE;
-	}
-	
-	function grain_option_isset($value) {
-		global $grain_options;
-		return array_key_exists($value, $grain_options );
-	}
-	
-	function grain_getoption_yesno($tag, $default=null) {
-		global $grain_options;
-		if( !grain_option_isset($tag) ) return $default;
-		return grain_value_isenabled($grain_options[$tag]) ? TRUE : FALSE;
-	}
-
 /* Shortcut functions helper */
+
+/*
 
 	function grain_infopage_id( $apply_filter = TRUE, $default = 2 ) {
 		return grain_getoption(GRAIN_INFOPAGE_ID, $apply_filter, $default);
@@ -383,7 +505,7 @@
 		return intval(grain_getoption(GRAIN_WHOOPS_WIDTH, $apply_filter, $default));
 	}
 	
-	function grain_whoopsimage_height($apply_filter = TRUE, $default=532) {
+	function grain_whoopsimage_height($apply_filter = TRUE, $default=GRAIN_MAX_IMAGE_HEIGHT) {
 		return intval(grain_getoption(GRAIN_WHOOPS_HEIGHT, $apply_filter, $default));
 	}
 
@@ -394,5 +516,7 @@
 	function grain_taglist_separator($apply_filter = TRUE, $default=", ") {
 		return grain_getoption(GRAIN_TAGLIST_SEPARATOR, $apply_filter, $default);
 	}
+
+*/
 
 ?>

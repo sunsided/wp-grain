@@ -32,7 +32,7 @@
 	
 /* Feed hooks */
 
-	if( grain_ccrdf_feed_embed() ) {
+	if( $GrainOpt->getYesNo(GRAIN_CC_RDF_FEED) ) {
 		add_action('atom_head', 'grain_feedembed_ccrdf');
 		add_action('rss_head', 'grain_feedembed_ccrdf');
 		add_action('rss2_head', 'grain_feedembed_ccrdf');

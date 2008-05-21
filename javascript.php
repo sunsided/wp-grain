@@ -12,19 +12,20 @@
 
 	function grain_embed_javascripts() 
 	{
+		global $GrainOpt;
 		echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/boxover.js"></script>';
 		
-		if(grain_eyecandy_use_moofx()) 
+		if($GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX)) 
 		{
 			echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/mootools.v1.11.js"></script>';
-			if(grain_eyecandy_use_reflection()) 
+			if($GrainOpt->getYesNo(GRAIN_EYECANDY_REFLECTION_ENABLED)) 
 			{
 				echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/reflection.js"></script>';
 			}
 		}
 		
 		// info for the comments popup
-		if(!grain_extended_comments()) comments_popup_script(600, 600);
+		if(!$GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED)) comments_popup_script(600, 600);
 	}
 
 ?>
