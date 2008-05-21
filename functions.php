@@ -13,12 +13,9 @@
 
 	@require_once(TEMPLATEPATH . '/func/littlehelpers.php');
 	@require_once(TEMPLATEPATH . '/func/paths.php');
+	@require_once(TEMPLATEPATH . '/func/locale.php');
 	@require_once(TEMPLATEPATH . '/func/options.php');
 	@require_once(TEMPLATEPATH . '/func/upgrade.php');
-	
-/* load locale functions */
-	
-	@require_once(TEMPLATEPATH . '/func/locale.php');
 
 /* load plugin functions */
 	

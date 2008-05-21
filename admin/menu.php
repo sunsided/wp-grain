@@ -6,6 +6,7 @@
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
+	session_start();
 	
 /* Options */
 
@@ -17,20 +18,29 @@
 	add_action('admin_head', 'grain_admin_pagestyle');	
 	add_action('admin_menu', 'grain_admin_createmenus');
 
-/* Menu building functions */
+/* Some translations */
 
 	$no_HTML = __("No HTML here", "grain");
 	$HTML_allowed = __("HTML allowed here", "grain");
 
+/* Menu building functions */
+
+	// this object holds the values that are allowed to be saved from the currently loaded page
+
 	function grain_admin_start_page() 
 	{
-		// TODO: Business logic here
-		// e.g. clearing and preparing the session object containing the valid fields
+		$_SESSION["__grain_admin_options"] = array();
+	}
+
+	// bereitet den Wert für die Ausgabe vor
+	function grain_admin_v4o($optionKey, $value) {
+		return addslashes($value);
 	}
 
 	function grain_admin_line($optionName, $fieldName, $lineCSS, $cssClass, $title, $quickInfo, $descriptionLine = NULL ) 
 	{
 		global $GrainOpt, $HTML_allowed, $no_HTML;
+		$_SESSION["__grain_admin_options"][$fieldName] = $optionName;
 		
 		$value = htmlentities($GrainOpt->get($optionName, FALSE));
 
@@ -94,6 +104,7 @@
 	function grain_admin_checkbox($optionName, $fieldName, $cssClass, $title, $quickInfo, $descriptionLine = NULL ) 
 	{
 		global $GrainOpt, $HTML_allowed, $no_HTML;
+		$_SESSION["__grain_admin_options"][$fieldName] = $optionName;
 		
 		$value = $GrainOpt->getYesNo($optionName, FALSE);
 
@@ -129,6 +140,7 @@
 	function grain_admin_multiline($optionName, $fieldName, $cssClass, $title, $descriptionLine = NULL ) 
 	{
 		global $GrainOpt, $HTML_allowed, $no_HTML;
+		$_SESSION["__grain_admin_options"][$fieldName] = $optionName;
 		
 		$value = htmlentities($GrainOpt->get($optionName, FALSE));
 
@@ -155,6 +167,7 @@
 	function grain_admin_combobox($optionName, $fieldName, $cssClass, $values, $title, $quickInfo = NULL, $descriptionLine = NULL ) 
 	{
 		global $GrainOpt, $HTML_allowed, $no_HTML;
+		$_SESSION["__grain_admin_options"][$fieldName] = $optionName;
 		
 		$optionvalue = $GrainOpt->get($optionName, FALSE);
 
@@ -210,6 +223,8 @@
 	function grain_admin_sizeboxes($optionName1, $fieldName1, $optionName2, $fieldName2, $cssClass, $title, $unit, $descriptionLine = NULL ) 
 	{
 		global $GrainOpt, $HTML_allowed, $no_HTML;
+		$_SESSION["__grain_admin_options"][$fieldName1] = $optionName1;
+		$_SESSION["__grain_admin_options"][$fieldName2] = $optionName2;
 		
 		$value1 = $GrainOpt->get($optionName1, FALSE);
 		$value2 = $GrainOpt->get($optionName2, FALSE);
@@ -245,7 +260,7 @@
 /* known menus */
 
 	$knownPagesList = array( "copyright", "general", "styling", "datetime", "navigation" );
-	$knownPage = in_array( $knownPagesList, $_GET['page'] );
+	$knownPage = in_array( $_GET['page'], $knownPagesList );
 
 	@require_once(TEMPLATEPATH . '/admin/page.copyright.php');
 	@require_once(TEMPLATEPATH . '/admin/page.general.php');
@@ -309,161 +324,35 @@
 
 	function grain_admin_dologic() 
 	{
-		/*
-		
-		global $grain_options;
+		global $GrainOpt, $knownPage, $_SESSION;
 	
 		if ( $knownPage ) 
 		{
-
 			if ( 'save' == $_REQUEST['action'] ) 
 			{
-
-				$newoptions = $grain_options;
-
-				if ( isset($_REQUEST['copyright_form']) ) 
+				// loop all values
+				$allowed_options = $_SESSION["__grain_admin_options"];
+				$transmitted = $_REQUEST;
+				foreach($transmitted as $field => $value) 
 				{
-				
-					if ( isset($_REQUEST['defaults']) ) {
+					// check against registered options
+					if(array_key_exists($field, $allowed_options) ) 
+					{
+						// the field was registered, we may save the value now
+						// get the option first
+						$related_option = $allowed_options[$field];
 						
-					} else {
-						// Copyright
-						$newoptions[GRAIN_COPYRIGHT_HOLDER] = strip_tags(stripslashes($_POST['copyright_person']));
-						$newoptions[GRAIN_COPYRIGHT_HOLDER_HTML] = stripslashes($_POST['copyright_person_ex']);
-						$newoptions[GRAIN_COPYRIGHT_START_YEAR] = strip_tags(stripslashes($_POST['copyright_start_year']));
-						$newoptions[GRAIN_COPYRIGHT_END_YEAR] = strip_tags(stripslashes($_POST['copyright_end_year']));
-						$newoptions[GRAIN_COPYRIGHT_END_OFFSET] = strip_tags(stripslashes($_POST['copyright_end_year_offset']));
-
-						// Creative Commons
-						$newoptions[GRAIN_COPYRIGHT_CC_ENABLED] = grain_value_checkbox($_POST['cc_license_enabled']);
-						$newoptions[GRAIN_COPYRIGHT_CC_CODE] = stripslashes($_POST['cc_license_code']);
-						$newoptions[GRAIN_COPYRIGHT_CC_RDF] = stripslashes($_POST['cc_license_rdf']);
-						$newoptions[GRAIN_CC_RDF_FEED] = grain_value_checkbox($_POST['cc_rdf_feed']);
+						// get option descriptor
+						$definition = $GrainOpt->option_defs[$related_option];
 						
-						// imprint
-						$newoptions[GRAIN_IMPRINT_URL] = strip_tags(stripslashes($_POST['imprint_url']));
-					}
-
-				}
-				else if ( isset($_REQUEST['navigation_form']) ) 
-				{
-				
-					if ( isset($_REQUEST['defaults']) ) {
-						
-					} else {
-						// Navigation
-						$newoptions[GRAIN_NAVBAR_LOCATION] = strip_tags(stripslashes($_POST['navbar_location']));
-						$newoptions[GRAIN_INFOPAGE_ID] = strip_tags(stripslashes($_POST['info_page_id']));
-						$newoptions[GRAIN_MOSAIC_PAGEID] = strip_tags(stripslashes($_POST['mosaic_page_id']));
-						$newoptions[GRAIN_MOSAIC_LINKTITLE] = stripslashes($_POST['mosaic_title']);
-						$newoptions[GRAIN_MNU_PERMALINK_VISIBLE] = grain_value_checkbox($_POST['permalink_visible']);
-						$newoptions[GRAIN_MNU_RANDOM_VISIBLE] = grain_value_checkbox($_POST['random_visible']);
-						$newoptions[GRAIN_MNU_NEWEST_VISIBLE] = grain_value_checkbox($_POST['newest_visible']);
-						$newoptions[GRAIN_MNU_INFO_VISIBLE] = grain_value_checkbox($_POST['info_visible']);
-						$newoptions[GRAIN_MOSAIC_ENABLED] = grain_value_checkbox($_POST['mosaic_visible']);
-						$newoptions[GRAIN_NAV_BIDIR_ENABLED] = grain_value_checkbox($_POST['bidir_nav']);
-					}				
-				
-				}
-				else if ( isset($_REQUEST['general_form']) ) 
-				{
-
-					if ( isset($_REQUEST['defaults']) ) {
-						
-					} else {					
-						$newoptions[GRAIN_SYND_FLAT_ENABLED] = grain_value_checkbox($_POST['flat_syndication']);
-						$newoptions[GRAIN_SYND_FLAT_DELIMITER] = strip_tags(stripslashes($_POST['flat_syndication_delimiter']));
-						$newoptions[GRAIN_SDBR_SYND_ENABLED] = grain_value_checkbox($_POST['sidebar_syndication']);
-						$newoptions[GRAIN_SDBR_MOSTCOMM_ENABLED] = grain_value_checkbox($_POST['most_commented']);
-						$newoptions[GRAIN_SDBR_BLOGROLL_ENABLED] = grain_value_checkbox($_POST['blogroll_enabled']);
-						$newoptions[GRAIN_SDBR_META_ENABLED] = grain_value_checkbox($_POST['meta_enabled']);
-						$newoptions[GRAIN_MOSAIC_COUNT] = strip_tags(stripslashes($_POST['most_commented_count']));
-						$newoptions[GRAIN_SDBR_CALENDAR_ENABLED] = grain_value_checkbox($_POST['calendar_enabled']);
-						$newoptions[GRAIN_2NDLANG_ENABLED] = grain_value_checkbox($_POST['second_language']);
-						$newoptions[GRAIN_2NDLANG_TAG] = strip_tags(stripslashes($_POST['second_language_tag']));
-						$newoptions[GRAIN_FEED_ATOM_ENABLED] = grain_value_checkbox($_POST['atom_feed']);
-						$newoptions[GRAIN_MOSAIC_COUNT] = strip_tags(stripslashes($_POST['mosaic_count']));
-						$newoptions[GRAIN_EXTENDEDINFO_ENABLED] = !grain_value_checkbox($_POST['extended_comments']);
-						$newoptions[GRAIN_CONTENT_ENFORCE_INFO] = grain_value_checkbox($_POST['enforce_extended_info']);
-						$newoptions[GRAIN_CONTENT_PERMALINK_VISIBLE] = grain_value_checkbox($_POST['show_permalink']);
-						$newoptions[GRAIN_CONTENT_COMMENTS_HINT] = grain_value_checkbox($_POST['show_comments_hint']);
-						$newoptions[GRAIN_CONTENT_DATES] = grain_value_checkbox($_POST['show_dates']);
-						$newoptions[GRAIN_CONTENT_CATEGORIES] = grain_value_checkbox($_POST['show_categories']);
-						$newoptions[GRAIN_OPENTAGS_CATLIST] = stripslashes($_POST['before_categories']);
-						$newoptions[GRAIN_CLOSETAGS_CATLIST] = stripslashes($_POST['after_categories']);					
-						$newoptions[GRAIN_POPUP_JTC] = grain_value_checkbox($_POST['popup_jtc']);						
-						// exif
-						$newoptions[GRAIN_EXIF_VISIBLE] = grain_value_checkbox($_POST['display_exif']);						
-						$newoptions[GRAIN_COMMENTS_ENABLED] = grain_value_checkbox($_POST['enable_comments']);
-						
-					}
-				}
-				else if ( isset($_REQUEST['styling_form']) ) 
-				{
-
-					if ( isset($_REQUEST['defaults']) ) {
-						
-					} else {				
-						// override				
-						$newoptions[GRAIN_STYLE_OVERRIDE] = strip_tags(stripslashes($_POST['css_override_file']));
-						
-						// moo.fx
-						$newoptions[GRAIN_EYECANDY_MOOFX] = grain_value_checkbox($_POST['use_moofx']);
-						$newoptions[GRAIN_EYECANDY_REFLECTION_ENABLED] = grain_value_checkbox($_POST['use_moofx_reflec']);
-						$newoptions[GRAIN_EYECANDY_FADER] = grain_value_checkbox($_POST['use_moofx_fade']);
-						
-						// gravatars
-						$newoptions[GRAIN_EYECANDY_GRAVATARS_ENABLED] = grain_value_checkbox($_POST['use_gravatars']);
-						$newoptions[GRAIN_EYECANDY_GRAVATAR_ALTERNATE] = strip_tags(stripslashes($_POST['gravatar_alternate']));
-						
-						// addon buttons
-						$newoptions[GRAIN_EYECANDY_PBORG_BOOKMARK_ENABLED] = grain_value_checkbox($_POST['use_pborg_button']);
-						$newoptions[GRAIN_EYECANDY_PBORG_URI] = strip_tags(stripslashes($_POST['pborg_uri']));
-						$newoptions[GRAIN_EYECANDY_COOLPB_ENABLED] = grain_value_checkbox($_POST['use_coolpb_button']);
-						$newoptions[GRAIN_EYECANDY_COOLPB_URI] = strip_tags(stripslashes($_POST['coolpb_uri']));
-						
-						// mosaic
-						$newoptions[GRAIN_MOSAIC_DISPLAY_YEARS] = grain_value_checkbox($_POST['show_mosaic_years']);
-						
-						// thumbnails
-						$newoptions[GRAIN_ARCHIVE_TOOLTIPS] = grain_value_checkbox($_POST['show_tooltips']);
-						$newoptions[GRAIN_MOSAIC_THUMB_WIDTH] = strip_tags(stripslashes($_POST['thumb_width']));
-						$newoptions[GRAIN_MOSAIC_THUMB_HEIGHT] = strip_tags(stripslashes($_POST['thumb_height']));
-						
-						// popup
-						$newoptions[GRAIN_POPUP_SHOW_THUMB] = grain_value_checkbox($_POST['show_popup_thumbnail']);
-						$newoptions[GRAIN_POPUP_THUMB_WIDTH] = strip_tags(stripslashes($_POST['popup_thumb_width']));
-						$newoptions[GRAIN_POPUP_THUMB_HEIGHT] = strip_tags(stripslashes($_POST['popup_thumb_height']));
-						$newoptions[GRAIN_POPUP_THUMB_STF] = strip_tags(stripslashes($_POST['popup_thumb_stf']));
-						
-						// whoops
-						$newoptions[GRAIN_WHOOPS_URL] = strip_tags(stripslashes($_POST['whoops_uri']));
-						$newoptions[GRAIN_WHOOPS_WIDTH] = strip_tags(stripslashes($_POST['whoops_width']));
-						$newoptions[GRAIN_WHOOPS_HEIGHT] = strip_tags(stripslashes($_POST['whoops_height']));
-					
-					}
-				}
-				else if ( isset($_REQUEST['datetime_form']) ) 
-				{
-
-					if ( isset($_REQUEST['defaults']) ) {
-						
-					} else {				
-						$newoptions[GRAIN_DTFMT_DAILYARCHIVE] = strip_tags(stripslashes($_POST['archive_daily_dt']));
-						$newoptions[GRAIN_DTFMT_MONTHLYARCHIVE] = strip_tags(stripslashes($_POST['archive_monthly_dt']));
-						$newoptions[GRAIN_DTFMT_PUBLISHED] = strip_tags(stripslashes($_POST['post_publish_dt']));
-						$newoptions[GRAIN_DFMT_COMMENTS] = strip_tags(stripslashes($_POST['comments_date']));
-						$newoptions[GRAIN_TFMT_COMMENTS] = strip_tags(stripslashes($_POST['comments_time']));
+						// set the value - set() takes care of the rest
+						$GrainOpt->set($related_option, $value);
 					}
 				}
 
-				// update options if changed
-				if( $grain_options != $newoptions ) {
-					$grain_options = $newoptions;
-					update_option(GRAIN_OPTIONS_KEY, $grain_options);
-				}
+				// ... and write
+				$GrainOpt->writeOptions();
 
-				//print_r($_REQUEST);
 				wp_redirect("themes.php?page=".$_GET['page']."&saved=true");
 				die;
 			
@@ -471,7 +360,6 @@
 			
 		} // known page
 		
-		*/
 	}
 
 	function grain_admin_pagestyle() {
