@@ -6,6 +6,16 @@ Fix: "Edit" link was shown to administrative users even if there were no post at
 Add: Grain version number now is extended by "dev" in the HTML header if it was taken from a development branch
 Fix: Rounded borders had different colors in Internet Explorer 6 and 7 (this is not totally fixed yet, but it definitely looks better)
 Add: The administration now shows an error message if YAPB was not installed.
+Add: Option to control the image size.
+Add: Option to control filter (p, g, ...) level and image size of Gravatars.
+Change: Option to show popup is now option to suppress popup because of new business logic; The setting is interpreted correctly though.
+Add: Option to control markup of category and tag list.
+Change: Reordered navigation bar page.
+Add: Page selection boxes are now disabled if no page is available.
+Change: Changed defaults so that some options are now enabled by default (newest, random link etc.)
+Add/Change: Several new localization strings; Old strings have changed. (added i.e. date/time formats, so that their defaults can be localized too)
+Change: Checkbox texts (right of the box) are now labels, too (users may change the checkbox by clicking on the label; depending on the Browser)
+Fix: Fixed bug that prevented disabling of checkboxes with an underlying value that defaulted to true
 
 0.2.2 
 Fix: Menu bug that appeared on the start page. 

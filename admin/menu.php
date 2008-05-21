@@ -32,11 +32,6 @@
 		$_SESSION["__grain_admin_options"] = array();
 	}
 
-	// bereitet den Wert für die Ausgabe vor
-	function grain_admin_v4o($optionKey, $value) {
-		return addslashes($value);
-	}
-
 	function grain_admin_line($optionName, $fieldName, $lineCSS, $cssClass, $title, $quickInfo, $descriptionLine = NULL ) 
 	{
 		global $GrainOpt, $HTML_allowed, $no_HTML;
@@ -118,6 +113,10 @@
 		// write input
 		echo '<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>'.PHP_EOL;	
 		
+		// write hidden field
+		echo '<input type="hidden" name="'.$fieldName.'" value="0" />';
+		
+		// write real field
 		if($value)
 			echo '<input class="'.$classes.' checkbox" type="checkbox" name="'.$fieldName.'" id="'.$fieldName.'" checked="checked" value="1" />'.PHP_EOL;
 		else
@@ -333,6 +332,9 @@
 				// loop all values
 				$allowed_options = $_SESSION["__grain_admin_options"];
 				$transmitted = $_REQUEST;
+				
+				// print_r($transmitted);
+				
 				foreach($transmitted as $field => $value) 
 				{
 					// check against registered options
@@ -349,6 +351,8 @@
 						$GrainOpt->set($related_option, $value);
 					}
 				}
+
+				// die();
 
 				// ... and write
 				$GrainOpt->writeOptions();

@@ -92,7 +92,7 @@
 					<legend><?php _e("Permalink Navigation item", "grain"); ?></legend>
 					<?php
 					grain_admin_checkbox(GRAIN_MNU_PERMALINK_VISIBLE, "permalink_visible", NULL, __("Permalink:", "grain"), __("Show the Permalink in the Navigation Bar", "grain"), __("Unchecking this removes the permalink from the navigation. The permalink will still be visible at the Comments/Details popup (if it is not explicitely disabled otherwise).", "grain"));
-					grain_admin_shortline(GRAIN_MNU_PERMALINK_TEXT, "permalink_title", NULL, __("Permalink title:", "grain"), $no_HTML, __("This title will be shown in the navigation bar.", "grain"));
+					grain_admin_shortline(GRAIN_MNU_PERMALINK_TEXT, "permalink_title", NULL, __("Permalink title:", "grain"), $HTML_allowed, __("This title will be shown in the navigation bar.", "grain"));
 					?>
 				</fieldset>
 

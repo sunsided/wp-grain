@@ -95,6 +95,21 @@
 			return $option["DEFAULT"];
 		}
 		
+		function value_isEnabled($value) 
+		{				
+			if( empty($value) ) return FALSE;
+			else if( $value === FALSE ) return FALSE;
+			else if( $value === 0 ) return FALSE;
+			else if( $value === '' ) return FALSE;
+			else if( $value === 'off' ) return FALSE;
+			else if( $value === 'false' ) return FALSE;
+			else if( $value === 'no' ) return FALSE;
+			else if( $value === '-' ) return FALSE;
+			else if( $value === 'n' ) return FALSE;
+			else if( $value === 'f' ) return FALSE;
+			return TRUE;
+		}
+		
 		function get($keyName, $doFilter=TRUE) 
 		{	
 			if(!$this->exists($keyName)) {
@@ -135,7 +150,7 @@
 		
 		function getForCheckbox($keyName) 
 		{
-			return $this->isempty($keyName);
+			return !$this->isempty($keyName);
 		}
 				
 		function getYesNo($keyName) 
@@ -143,22 +158,7 @@
 			if($this->option_defs[$keyName]["TYPE"] != "BOOL") {
 				throw new ErrorException("Type for ".$keyName." was no bool");	
 			}
-			return $this->get($keyName);
-		}
-		
-		function value_isEnabled($value) 
-		{	
-			if( empty($value) ) return FALSE;
-			else if( $value === FALSE ) return FALSE;
-			else if( $value === 0 ) return FALSE;
-			else if( $value === '' ) return FALSE;
-			else if( $value === 'off' ) return FALSE;
-			else if( $value === 'false' ) return FALSE;
-			else if( $value === 'no' ) return FALSE;
-			else if( $value === '-' ) return FALSE;
-			else if( $value === 'n' ) return FALSE;
-			else if( $value === 'f' ) return FALSE;
-			return TRUE;
+			return $this->getForCheckbox($keyName);
 		}
 		
 		function set($keyName, $value) 
@@ -172,7 +172,7 @@
 
 			// typecast			
 			if($option["TYPE"] == "BOOL") {
-				$value = value_isEnabled(strip_tags($value));
+				$value = $this->value_isEnabled(strip_tags($value));
 			}
 			else if($option["TYPE"] == "INT") {
 				$value = intval(strip_tags($value));

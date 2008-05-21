@@ -65,7 +65,7 @@
 	$GrainOpt->defineFlagOpt( 'GRAIN_COPYRIGHT_CC_ENABLED', 'cc_enabled', FALSE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_CC_RDF_FEED', 'cc_rdf_feed', FALSE );
 	$GrainOpt->defineStringOpt( 'GRAIN_COPYRIGHT_HOLDER', 'copyright_holder', __("(Your name)", "grain"), FALSE );
-	$GrainOpt->defineStringOpt( 'GRAIN_COPYRIGHT_HOLDER_HTML', 'copyright_holder_markup', __("(Your name)", "grain"), TRUE );
+	$GrainOpt->defineStringOpt( 'GRAIN_COPYRIGHT_HOLDER_HTML', 'copyright_holder_markup', __("<em>(Your name)</em>", "grain"), TRUE );
 
 	// CC complex
 	$GrainOpt->defineStringOpt( 'GRAIN_COPYRIGHT_CC_CODE', 'cc_code',
