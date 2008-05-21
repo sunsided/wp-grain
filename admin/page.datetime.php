@@ -14,9 +14,12 @@
 
 	function grain_adminpage_datetime() 
 	{
+		global $HTML_allowed, $no_HTML, $GrainOpt;
 		grain_admin_inject_yapb_msg();
 		
 		if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.__("Changes saved", "grain").'</strong></p></div>';
+		
+		grain_admin_start_page();
 	?>
 	<div class='wrap'>
 		<div id="grain-header">
@@ -77,104 +80,43 @@
 					</fieldset>
 					
 					<fieldset>
-					<legend><?php _e("Archive settings", "grain"); ?></legend>
-					
-					<p><label for="archive_daily_dt"><?php _e("Daily Archive:", "grain"); ?></label>
-						<input 
-							name="archive_daily_dt" 
-							id="archive_daily_dt" 
-							style="width: 200px" 
-							type="text" 
-							value="<?php echo htmlentities(grain_dtfmt_dailyarchive(FALSE)); ?>" /><br />
-						<div class="input_pad">
-							<?php _e("The date or time format in the archive for a specific day.", "grain"); ?>
-							<br />
-							<?php 
-								$value = str_replace('%FORMAT', grain_dtfmt_dailyarchive(), __("The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time.", "grain")); 
-								$value = str_replace('%RESULT', date(grain_filter_dt(grain_dtfmt_dailyarchive())), $value); 
-								echo $value;
-							?>
-						</div>
-					</p>
-					
-					<p><label for="archive_monthly_dt"><?php _e("Monthly Archive:", "grain"); ?></label>
-						<input 
-							name="archive_monthly_dt" 
-							id="archive_monthly_dt" 
-							style="width: 200px" 
-							type="text" 
-							value="<?php echo htmlentities(grain_dtfmt_monthlyarchive(FALSE)); ?>" /><br />
-						<div class="input_pad"><?php _e("The date or time format in the archive for a specific month.", "grain"); ?>
-						<br />
-							<?php 
-								$value = str_replace('%FORMAT', grain_dtfmt_monthlyarchive(), __("The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time.", "grain")); 
-								$value = str_replace('%RESULT', date(grain_filter_dt(grain_dtfmt_monthlyarchive())), $value); 
-								echo $value;
-							?>
-						</div>
-					</p>
-					
+						<legend><?php _e("Archive settings", "grain"); ?></legend>
+						<?php
+						$message = __("The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time.", "grain");
+						$message = str_replace('%FORMAT', $GrainOpt->get(GRAIN_DTFMT_DAILYARCHIVE), $message); 
+						$message = str_replace('%RESULT', date(grain_filter_dt($GrainOpt->get(GRAIN_DTFMT_DAILYARCHIVE))), $message); 
+						grain_admin_shortline(GRAIN_DTFMT_DAILYARCHIVE, "archive_daily_dt", NULL, __("Daily Archive:", "grain"), $no_HTML, __("The date or time format in the archive for a specific day.", "grain").'<br />'.$message);
+						
+						$message = __("The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time.", "grain");
+						$message = str_replace('%FORMAT', $GrainOpt->get(GRAIN_DTFMT_MONTHLYARCHIVE), $message); 
+						$message = str_replace('%RESULT', date(grain_filter_dt($GrainOpt->get(GRAIN_DTFMT_MONTHLYARCHIVE))), $message); 
+						grain_admin_shortline(GRAIN_DTFMT_MONTHLYARCHIVE, "archive_monthly_dt", NULL, __("Monthly Archive:", "grain"), $no_HTML, __("The date or time format in the archive for a specific month.", "grain").'<br />'.$message);
+						?>
 					</fieldset>
 					
 					<fieldset>
-					<legend><?php _e("Photo Info", "grain"); ?></legend>
-					
-					<p><label for="post_publish_dt"><?php _e("Time of comment:", "grain"); ?></label>
-						<input 
-							name="post_publish_dt" 
-							id="post_publish_dt" 
-							style="width: 200px" 
-							type="text" 
-							value="<?php echo htmlentities(grain_dtfmt_published(FALSE)); ?>" /><br />
-						<div class="input_pad"><?php _e("The date and time format for the photo's 'published' date.", "grain"); ?>
-						<br />
-							<?php 
-								$value = str_replace('%FORMAT', grain_dtfmt_published(), __("The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time.", "grain")); 
-								$value = str_replace('%RESULT', date(grain_filter_dt(grain_dtfmt_published())), $value); 
-								echo $value;
-							?>
-						</div>
-					</p>
-					
+						<legend><?php _e("Photo Info", "grain"); ?></legend>
+						<?php
+						$message = __("The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time.", "grain");
+						$message = str_replace('%FORMAT', $GrainOpt->get(GRAIN_DTFMT_PUBLISHED), $message); 
+						$message = str_replace('%RESULT', date(grain_filter_dt($GrainOpt->get(GRAIN_DTFMT_PUBLISHED))), $message); 
+						grain_admin_shortline(GRAIN_DTFMT_PUBLISHED, "post_publish_dt", NULL, __("Publication date:", "grain"), $no_HTML, __("The date and time format for the photo's 'published' date.", "grain").'<br />'.$message);
+						?>					
 					</fieldset>
 					
 					<fieldset>
-					<legend><?php _e("Per comment", "grain"); ?></legend>
-
-					<p><label for="comments_date"><?php _e("Date of comment:", "grain"); ?></label>
-						<input 
-							name="comments_date" 
-							id="comments_date" 
-							style="width: 200px" 
-							type="text" 
-							value="<?php echo htmlentities(grain_dfmt_comments(FALSE)); ?>" /><br />
-						<div class="input_pad"><?php _e("The date format for a comment.", "grain"); ?>
-						<br />
-							<?php 
-								$value = str_replace('%FORMAT', grain_dfmt_comments(), __("The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time.", "grain")); 
-								$value = str_replace('%RESULT', date(grain_filter_dt(grain_dfmt_comments())), $value); 
-								echo $value;
-							?>
-						</div>
-					</p>
-					
-					<p><label for="comments_time"><?php _e("Time of comment:", "grain"); ?></label>
-						<input 
-							name="comments_time" 
-							id="comments_time" 
-							style="width: 200px" 
-							type="text" 
-							value="<?php echo htmlentities(grain_tfmt_comments(FALSE)); ?>" /><br />
-						<div class="input_pad"><?php _e("The time format for a comment.", "grain"); ?>
-						<br />
-							<?php 
-								$value = str_replace('%FORMAT', grain_tfmt_comments(), __("The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time.", "grain")); 
-								$value = str_replace('%RESULT', date(grain_filter_dt(grain_tfmt_comments())), $value); 
-								echo $value;
-							?>
-						</div>
-					</p>
-					
+						<legend><?php _e("Per comment", "grain"); ?></legend>
+						<?php
+						$message = __("The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time.", "grain");
+						$message = str_replace('%FORMAT', $GrainOpt->get(GRAIN_DFMT_COMMENTS), $message); 
+						$message = str_replace('%RESULT', date(grain_filter_dt($GrainOpt->get(GRAIN_DFMT_COMMENTS))), $message); 
+						grain_admin_shortline(GRAIN_DFMT_COMMENTS, "comments_date", NULL, __("Date of comment:", "grain"), $no_HTML, __("The date format for a comment.", "grain").'<br />'.$message);
+						
+						$message = __("The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time.", "grain");
+						$message = str_replace('%FORMAT', $GrainOpt->get(GRAIN_TFMT_COMMENTS), $message); 
+						$message = str_replace('%RESULT', date(grain_filter_dt($GrainOpt->get(GRAIN_TFMT_COMMENTS))), $message); 
+						grain_admin_shortline(GRAIN_TFMT_COMMENTS, "comments_time", NULL, __("Time of comment:", "grain"), $no_HTML, __("The time format for a comment.", "grain").'<br />'.$message);				
+						?>
 					</fieldset>
 
 					<!-- <input type="submit" name="defaults" value="<?php _e("Factory Defaults", "grain"); ?>" /> -->

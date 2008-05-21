@@ -16,6 +16,7 @@
 			false, 
 			'http://buttons.photoblogs.org/photoblogs02.gif' );
 			
+		/*
 		grain_add_to_syndication( 
 			'CoolPhotoblogs', 
 			'CoolPhotoblogs', 
@@ -29,6 +30,7 @@
 			'http://photos.vfxy.com/', 
 			true, 
 			'http://photos.vfxy.com/img/iam_vfxy.jpg' );
+		*/
 	}
 
 ?>

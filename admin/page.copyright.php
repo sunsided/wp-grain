@@ -14,9 +14,12 @@
 
 	function grain_adminpage_copyright() 
 	{		
+		global $HTML_allowed, $no_HTML;
 		grain_admin_inject_yapb_msg();
 		
 		if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.__("Changes saved", "grain").'</strong></p></div>';
+		
+		grain_admin_start_page();
 	?>
 	<div class='wrap'>
 		<div id="grain-header">
@@ -26,85 +29,54 @@
 					<div class="zerosize"><input type="submit" name="defaultsubmit" value="Save" /></div>
 									
 				<fieldset>
-					<legend><?php _e("Short Copyright Message", "grain"); ?></legend>
-				
-					<label for="copyright_person"><?php _e("Copyright holder:", "grain"); ?></label><input style="width: 400px" type="text" name="copyright_person" id="copyright_person" value="<?php echo htmlentities(grain_copyright(FALSE, __("(Your name)", "grain"))); ?>" /> <?php _e("No HTML here", "grain"); ?><br />
-					<label for="copyright_person_ex"><?php _e("Copyright holder (HTML):", "grain"); ?></label><input style="width: 400px" type="text" name="copyright_person_ex" id="copyright_person_ex" value="<?php echo htmlentities(grain_copyright_ex(FALSE, '<em>'.__("(Your name)", "grain").'</em>')); ?>" /> <?php _e("HTML allowed here", "grain"); ?><br />
-					<label for="copyright_start_year"><?php _e("Start year:", "grain"); ?></label><input style="width: 150px" type="text" name="copyright_start_year" id="copyright_start_year" value="<?php echo grain_copyright_start_year(FALSE); ?>" /> <?php _e("% for current year", "grain"); ?> (<?php echo date('Y'); ?>)<br />
-					<label for="copyright_end_year"><?php _e("End year:", "grain"); ?></label><input style="width: 150px" type="text" name="copyright_end_year" id="copyright_end_year" value="<?php echo grain_copyright_end_year_ex(FALSE); ?>" /> <?php _e("% for current year", "grain"); ?> (<?php echo date('Y'); ?>)<br />
-					<label for="copyright_end_year_offset"><?php _e("Offset to end year:", "grain"); ?></label><input style="width: 150px" type="text" name="copyright_end_year_offset" id="copyright_end_year_offset" value="<?php echo grain_copyright_end_year_offset(FALSE); ?>" /> <?php
-
+					<legend><?php _e("Copyright Holder", "grain"); ?></legend>				
+					<?php
+					grain_admin_infoline(NULL, __("Here you can enter your copyright information and tell Grain how to display them.", "grain"));
+					
+					$string = __("% is always the current year", "grain");
+					grain_admin_shortline(GRAIN_COPYRIGHT_START_YEAR, "copyright_start_year", NULL, __("First copyright year:", "grain"), $string, NULL);
+					grain_admin_shortline(GRAIN_COPYRIGHT_END_YEAR, "copyright_end_year", NULL, __("Last copyright year:", "grain"), $string, NULL);
+					
 					$string = __("i.e. <code>%OFFSET</code> to get <code>%SUMMED_YEAR</code> if the end year is <code>%YEAR</code>", "grain");
-					$string = str_replace( "%OFFSET", "10", $string);
-					$string = str_replace( "%YEAR", date('Y'), $string);
-					$string = str_replace( "%SUMMED_YEAR", (date('Y') + 10), $string);
-					echo $string;
-
-					?><br />
+					$string = str_replace( array( "%OFFSET", "%YEAR", "%SUMMED_YEAR" ), array(10, date('Y'), (date('Y') + 10)), $string);
+					grain_admin_shortline(GRAIN_COPYRIGHT_END_OFFSET, "copyright_end_year_offset", NULL, __("Offset to end year:", "grain"), $string, NULL);
+					
+					grain_admin_infoline(NULL, __("Here you can configure the informational text, e.g. your name and a licensing info.", "grain"));
+					
+					grain_admin_longline(GRAIN_COPYRIGHT_HOLDER, "copyright_person", NULL, __("Copyright holder:", "grain"), $no_HTML, __("Keep this short, e.g. <code>\"John Doe\"</code>. This info will be embedded in the page's meta header.", "grain"));
+					grain_admin_longline(GRAIN_COPYRIGHT_HOLDER_HTML, "copyright_person_ex", NULL, __("Full copyright holder and info:", "grain"), $HTML_allowed, __("e.g. <code>\"John Doe. All rights reserved.\"</code> This info will be visible to the visitor.", "grain") );					
+					?>
+									
 				</fieldset>
 				
 				<fieldset>
-					<legend><?php _e("Imprint", "grain"); ?></legend>
-
-					<p><?php _e("You can embed an URL to your imprint page in the head of the webpage via a <a href=\"http://dublincore.org/\" target=\"_blank\">Dublin Core</a> meta tag.", "grain"); ?></p>
-				
-					<p><label for="imprint_url"><?php _e("Imprint URL:", "grain"); ?></label>
-						<input style="width: 400px" type="text" name="imprint_url" id="imprint_url" value="<?php echo htmlentities(grain_imprint_url(FALSE)); ?>" /> 
-						<?php _e("No HTML here", "grain"); ?><br />
-						<div class="input_pad"><?php _e("The URL to your imprint page. Leave empty if you do not want to embed an <code>DC.Rights</code> meta tag.", "grain"); ?></div>
-					</p>
-
+					<legend><?php _e("Imprint Page", "grain"); ?></legend>
+					<?php
+					grain_admin_infoline(NULL, __("Grain uses <a href=\"http://dublincore.org/\" target=\"_blank\">Dublin Core</a> meta tags to describe your blog. If you have an imprint page you may set it here.<br />If you do not have an imprint or do not want to propagate it through the DC meta tag the field can be left empty.", "grain"));					
+					grain_admin_longline(GRAIN_IMPRINT_URL, "imprint_url", NULL, __("Imprint URL:", "grain"), $no_HTML, __("The URL to your imprint page. Leave empty if you do not want to embed an <code>DC.Rights</code> meta tag.", "grain"));
+					?>		
 				</fieldset>									
 
 				<h2><?php _e("Creative Commons License", "grain"); ?></h2>
 				
 				<fieldset>
-					<legend><?php _e("Creative Commons Embedding", "grain"); ?></legend>
+					<legend><?php _e("Embedding a Creative Commons License", "grain"); ?></legend>
 				
-					<p>
-						<?php 
-							$message = __("If you like to, you can publish your photos under a <a href=\"http://creativecommons.org/\" target=\"_blank\">Creative Commons</a> License. You can choose a license <a href=\"http://creativecommons.org/license/?lang=%LANGCODE\" target=\"_blank\">here</a>.", "grain"); 
-							$message = str_replace('%LANGCODE', grain_get_base_locale(), $message);
-							echo $message;
-						?>
-						<?php _e("You may also want to read the <a href=\"http://wiki.creativecommons.org/Frequently_Asked_Questions\" target=\"_blank\">Frequently Asked Questions</a> page.", "grain"); ?>
-					</p>
-					<p><label for="cc_license_enabled"><?php _e("Copyright:", "grain"); ?></label> <input style="margin-top: 8px;" type="checkbox" name="cc_license_enabled" id="cc_license_enabled" <?php if( grain_cc_enabled() ) echo ' checked="checked" ';?> value="1" /> <strong><?php _e("Embed Creative Commons license", "grain"); ?></strong><br />
-						<div class="input_pad"><?php _e("Unchecking this option will remove the Creative Commons Logo, the textual message, as well as the embedded RDF.", "grain"); ?></div>
-					</p>
-					<p><label for="cc_license_code"><?php _e("The License's HTML code:", "grain"); ?></label>
-						<textarea class="license-code" cols="100" wrap="off" rows="10" name="cc_license_code" id="cc_license_code"><?php
-							echo htmlentities(grain_cc_code(FALSE));
-						?></textarea>
-						<div class="input_pad">
-							<?php _e("To simplify CSS styling of the theme, all occurrences of <code>&lt;br /&gt;</code>, <code>&lt;br/&gt;</code> and <code>&lt;br&gt;</code> tags will be removed when embedding the code.", "grain"); ?>
-						</div>
-					</p>
+					<?php 
+					$message = __("If you like to, you can publish your photos under a <a href=\"http://creativecommons.org/\" target=\"_blank\">Creative Commons</a> License. You can choose a license <a href=\"http://creativecommons.org/license/?lang=%LANGCODE\" target=\"_blank\">here</a>.", "grain"); 
+					$message = str_replace('%LANGCODE', grain_get_base_locale(), $message);
+					grain_admin_infoline(NULL, $message);					
 					
-					<p>
-						<?php _e("In addition to the code above you can choose to embed an <acronym title=\"Resource Description Framework\">RDF</acronym> representation of the license. If you don't want to do that or don't know what it does, you may that option.", "grain"); ?>
-					</p>
+					grain_admin_checkbox(GRAIN_COPYRIGHT_CC_ENABLED, "cc_license_enabled", NULL, __("Copyright:", "grain"), '<strong>'.__("Embed Creative Commons license", "grain").'</strong>', __("Unchecking this option will remove the Creative Commons Logo, the textual message, as well as the embedded <a target=\"_blank\" href=\"http://en.wikipedia.org/wiki/Resource_Description_Framework\">RDF</a> (if any). This is the way to go if you want your photos to be published as, e.g. \"All rights reserved\".", "grain"));
+					grain_admin_multiline(GRAIN_COPYRIGHT_CC_CODE, "cc_license_code", NULL, __("The license's HTML code:", "grain"), __("To simplify CSS styling of the theme, all occurrences of <code>&lt;br /&gt;</code>, <code>&lt;br/&gt;</code> and <code>&lt;br&gt;</code> tags will be removed when embedding the code.", "grain") );
 					
-					<p><label for="cc_license_rdf"><?php _e("The License's RDF code:", "grain"); ?></label>
-						<textarea class="license-code" cols="100" wrap="off" rows="10" name="cc_license_rdf" id="cc_license_rdf"><?php
-							echo htmlentities(grain_cc_rdf(FALSE));
-						?></textarea>
-						<div class="input_pad">
-							<?php _e("The RDF code is another way of displaying the CC license that can be embedded into the Feeds, as well as the HTML pages.", "grain"); ?>
-							<br /><?php _e("The RDF code for the license you selected by downloading and opening the template for the PDF or XML embedding on the license selection page.<br />The code begins with <code>&lt;rdf:RDF ...</code> and ends with <code>&lt;/rdf:RDF&gt;</code>.", "grain"); ?>
-							<br /><?php _e("You can validate RDF encoded licenses with the <a href=\"http://validator.creativecommons.org/\" target=\"_blank\">CC RDF License Validator</a>.", "grain"); ?>
-						</div>
-					</p>
-					<p>
-						<label for="cc_rdf_feed"><?php _e("Embed RDF in Feeds:", "grain"); ?></label> 
-						<input style="margin-top: 8px;" type="checkbox" name="cc_rdf_feed" id="cc_rdf_feed" <?php if( grain_ccrdf_feed_embed() ) echo ' checked="checked" ';?> value="1" />
-						<?php _e("Embed the RDF in the Atom and RSS feeds", "grain"); ?><br />
-						<div class="input_pad">
-							<strong><?php _e("Only enable this option if you know what you are doing, as faulty RDF markup may render your feeds invalid.", "grain"); ?></strong>
-						</div>
-					</p>
-
-
+					grain_admin_infoline(NULL, __("In addition to the code above you can choose to embed an <acronym title=\"Resource Description Framework\">RDF</acronym> representation - a machine readable version - of the license. The RDF will be embedded on the website and can also be integrated in your newsfeeds, if you choose to enable that.", "grain"));
+					
+					$message = __("The RDF code for the license you selected can be found by downloading and opening the template for the PDF or XML embedding on the license selection page. The code begins with <code>&lt;rdf:RDF ...</code> and ends with <code>&lt;/rdf:RDF&gt;</code>.", "grain");
+					$message .= '<br />' . __("You can validate RDF encoded licenses and RDF enabled content with the <a href=\"http://validator.creativecommons.org/\" target=\"_blank\">CC RDF License Validator</a>.", "grain");
+					grain_admin_multiline(GRAIN_COPYRIGHT_CC_RDF, "cc_license_rdf", NULL, __("The license's RDF code:", "grain"), $message );
+					grain_admin_checkbox(GRAIN_CC_RDF_FEED, "cc_rdf_feed", NULL, __("Embed RDF in Newsfeeds:", "grain"), __("Embed the RDF in the Atom and RSS feeds", "grain"), __("<strong>Use this with caution!</strong> Enable this option only if you are sure what you are doing! Faulty RDF markup may render your newsfeeds invalid or even unusable. Test your newsfeeds thoroughly when enabling this!", "grain"));
+					?>
 
 				</fieldset>
 

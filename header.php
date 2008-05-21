@@ -5,34 +5,7 @@
 	File version: $Id$
 */
 
-
-
-// start new session
-session_start();
-
-// If the index page is called, pretend it is not
-if( is_home() ):
-	$lastposts = get_posts('numberposts=1');
-	foreach ($lastposts as $post):
-		setup_postdata($post);
-	endforeach;
-	// pretend we are on a single page so that next/prev post functions work
-	$wp_query->is_single = true;
-endif;
-
-// extended info mode
-if( isset($_REQUEST['info']) && !empty($_REQUEST['info']) ) {
-	// $_SESSION['grain:info'] = $_REQUEST['info'];
-	define('GRAIN_REQUESTED_EXINFO', $_REQUEST['info'] == 'on' ? TRUE : FALSE);
-	define('GRAIN_REQUESTED_OTEXINFO', FALSE);
-} elseif( isset($_REQUEST['oti']) && !empty($_REQUEST['oti']) ) {
-	//$_SESSION['grain:oti'] = $_REQUEST['oti'];
-	define('GRAIN_REQUESTED_OTEXINFO', $_REQUEST['oti'] == 'on' ? TRUE : FALSE);
-	define('GRAIN_REQUESTED_EXINFO', GRAIN_REQUESTED_OTEXINFO);
-} else {
-	define('GRAIN_REQUESTED_OTEXINFO', FALSE);
-	define('GRAIN_REQUESTED_EXINFO', FALSE);
-}
+grain_startSession();
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>

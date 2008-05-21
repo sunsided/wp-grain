@@ -3,14 +3,17 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
-*/ 
+*/
+
+	global $GrainOpt; 
 ?>
+
 	<div id="sidebar">
 		<ul>
 			<?php   /* Widgetized sidebar, if you have the plugin installed. */ 
 				if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?> 
 		
-			<?php if( grain_sidebar_calendar_enabled() ): ?>
+			<?php if( $GrainOpt->getYesNo(GRAIN_SDBR_CALENDAR_ENABLED) ): ?>
 			<li>
 			<?php get_calendar(); ?>
 			</li>
@@ -38,7 +41,7 @@
 					$string = __("You are browsing the %BLOG archive for %DAY, %DATE.", "grain");
 					$string = str_replace('%BLOG', '<a href="'.get_settings('siteurl').'">'.get_bloginfo('name').'</a>', $string);
 					$string = str_replace('%DAY', apply_filters('the_time', get_the_time( 'l' ), 'l'), $string);
-					$format = grain_filter_dt(grain_dtfmt_dailyarchive());
+					$format = grain_filter_dt($GrainOpt->get(GRAIN_DTFMT_DAILYARCHIVE));
 					$string = str_replace('%DATE', apply_filters('the_time', get_the_time( $format ), $format), $string);
 					echo $string;
 
@@ -49,7 +52,7 @@
 
 					$string = __("You are browsing the %BLOG archive for the month %DATE.", "grain");
 					$string = str_replace('%BLOG', '<a href="'.get_settings('siteurl').'">'.get_bloginfo('name').'</a>', $string);
-					$format = grain_filter_dt(grain_dtfmt_monthlyarchive());
+					$format = grain_filter_dt($GrainOpt->get(GRAIN_DTFMT_MONTHLYARCHIVE));
 					$string = str_replace('%DATE', apply_filters('the_time', get_the_time( $format ), $format), $string);
 					echo $string;
 
@@ -115,7 +118,7 @@
 				</ul>
 			</li>
 			
-			<?php if( grain_sidebar_mc_enabled() && function_exists("get_mostcommented") ): ?>
+			<?php if( $GrainOpt->getYesNo(GRAIN_SDBR_MOSTCOMM_ENABLED) && function_exists("get_mostcommented") ): ?>
 			<li><h2><?php _e("Most commented", "grain"); ?></h2>
 			<ul>
 				<?php grain_mostcommented(grain_sidebar_mc_count()); ?>
@@ -125,12 +128,12 @@
 
 			<?php /* If this is the frontpage */ if ( is_home() || is_page() ) { ?>
 				<?php
-					if( grain_sidebar_blogroll_enabled() ):
+					if( $GrainOpt->getYesNo(GRAIN_SDBR_BLOGROLL_ENABLED) ):
 						get_links_list();
 					endif; // blogroll enabled
  				?>
 
-			<?php if( grain_sidebar_meta_enabled() ): ?>
+			<?php if( $GrainOpt->getYesNo(GRAIN_SDBR_META_ENABLED) ): ?>
 				<li><h2><?php _e("Meta", "grain"); ?></h2>
 				<ul>
 					<?php wp_register(); ?>
@@ -146,11 +149,11 @@
                         	endif; // meta enabled
 			} ?>
 
-			<?php if( grain_sidebar_syndication_enabled() ): ?>
+			<?php if( $GrainOpt->getYesNo(GRAIN_SDBR_SYND_ENABLED) ): ?>
 			<li><h2><?php _e("Syndicate", "grain"); ?></h2>
 				<ul class="syndication-list">
 					<?php echo grain_sidebar_syndication() ?>
-					<li><a alt="yapb flavoured" href="http://johannes.jarolim.com/yapb"><img class="syndbutton" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/images/yapb.gif" border="0" alt="yapb logo" title="yapb flavoured"></a></li>
+					<li id="sdbr-synd-yapb"><a alt="yapb flavoured" href="http://johannes.jarolim.com/yapb"><img class="syndbutton" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/images/yapb.gif" border="0" alt="yapb logo" title="yapb flavoured"></a></li>
 				</ul>
 			</li>
 			<?php endif; ?>

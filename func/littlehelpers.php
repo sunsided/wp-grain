@@ -9,6 +9,8 @@
 
 /* little helpers */
 
+	if(!defined("PHP_EOL")) define("PHP_EOL", '\n');
+
 	function grain_version() 
 	{
 		$version = GRAIN_THEME_VERSION;
@@ -28,8 +30,18 @@
 	function grain_getpostcount() 
 	{
 		global $wpdb; global $__grain_post_count;
-		if( $__grain_post_count < 0 ) $__grain_post_count = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->posts WHERE post_status = 'publish';");
+		if( $__grain_post_count < 0 ) $__grain_post_count = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'post';");
 		return $__grain_post_count;
+	}
+
+	// Returns the number of published pages
+	// Kudos: http://perishablepress.com/press/2006/08/28/display-total-number-of-posts/
+	$__grain_page_count = -1;
+	function grain_getpagecount() 
+	{
+		global $wpdb; global $__grain_page_count;
+		if( $__grain_page_count < 0 ) $__grain_page_count = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'page';");
+		return $__grain_page_count;
 	}
 
 	function grain_is_yapb_installed() 

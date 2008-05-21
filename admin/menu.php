@@ -4,7 +4,6 @@
 	------------------------------------------------------------------
 	File version: $Id$
 */
-
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 	
@@ -17,6 +16,231 @@
 
 	add_action('admin_head', 'grain_admin_pagestyle');	
 	add_action('admin_menu', 'grain_admin_createmenus');
+
+/* Menu building functions */
+
+	$no_HTML = __("No HTML here", "grain");
+	$HTML_allowed = __("HTML allowed here", "grain");
+
+	function grain_admin_start_page() 
+	{
+		// TODO: Business logic here
+		// e.g. clearing and preparing the session object containing the valid fields
+	}
+
+	function grain_admin_line($optionName, $fieldName, $lineCSS, $cssClass, $title, $quickInfo, $descriptionLine = NULL ) 
+	{
+		global $GrainOpt, $HTML_allowed, $no_HTML;
+		
+		$value = htmlentities($GrainOpt->get($optionName, FALSE));
+
+		// get css class
+		$classes = $lineCSS;
+		if(!empty($cssClass)) $classes .= ' '.$cssClass;
+		
+		// begin option line
+		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">';
+		
+		// write input
+		echo '<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>';
+		echo '<input class="'.$classes.'" type="text" name="'.$fieldName.'" id="'.$fieldName.'" value="'.$value.'" />';
+		
+		// quickinfo
+		if( !empty($quickInfo) ) {
+			$class = "quickinfo";
+			if( $quickInfo == $HTML_allowed ) {
+				$class .= " html-allowed";
+				$quickInfo = "<span title=\"".$HTML_allowed."\">(HTML &radic;)</span>";
+			}
+			else if( $quickInfo == $no_HTML ) {
+				$class .= " no-html";
+				$quickInfo = "<strike title=\"".$no_HTML."\">(HTML)</strike>";
+			}
+
+			echo '<span class="'.$class.'" id="'.$fieldName.'_info">'.$quickInfo.'</span>';
+		}
+		
+		// description line
+		if( !empty($descriptionLine) ) {
+			echo '<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>';
+		}
+		
+		// end option line
+		echo '</div>';
+	}
+
+	function grain_admin_longline($optionName, $fieldName, $cssClass, $title, $quickInfo, $descriptionLine = NULL ) 
+	{
+		grain_admin_line($optionName, $fieldName, "longline", $cssClass, $title, $quickInfo, $descriptionLine );
+	}
+
+	function grain_admin_shortline($optionName, $fieldName, $cssClass, $title, $quickInfo, $descriptionLine = NULL ) 
+	{
+		grain_admin_line($optionName, $fieldName, "shortline", $cssClass, $title, $quickInfo, $descriptionLine );
+	}
+
+	function grain_admin_infoline($cssClass, $text) 
+	{		
+		// begin option line
+		if(empty($cssClass)) {
+			echo '<div class="infoline">'.$text.'</div>';
+		}
+		else
+		{
+			echo '<div class="infoline $cssClass">'.$text.'</div>';
+		}
+	}
+
+	function grain_admin_checkbox($optionName, $fieldName, $cssClass, $title, $quickInfo, $descriptionLine = NULL ) 
+	{
+		global $GrainOpt, $HTML_allowed, $no_HTML;
+		
+		$value = $GrainOpt->getYesNo($optionName, FALSE);
+
+		// get css class
+		$classes = "checkbox";
+		if(!empty($cssClass)) $classes .= ' '.$cssClass;
+		
+		// begin option line
+		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">'.PHP_EOL;
+		
+		// write input
+		echo '<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>'.PHP_EOL;	
+		
+		if($value)
+			echo '<input class="'.$classes.' checkbox" type="checkbox" name="'.$fieldName.'" id="'.$fieldName.'" checked="checked" value="1" />'.PHP_EOL;
+		else
+			echo '<input class="'.$classes.' checkbox" type="checkbox" name="'.$fieldName.'" id="'.$fieldName.'" value="1" />'.PHP_EOL;
+		
+		// quickinfo
+		if( !empty($quickInfo) ) {
+			echo '<label for="'.$fieldName.'" class="checkbox_text" id="'.$fieldName.'_info">'.$quickInfo.'</label>'.PHP_EOL;
+		}
+		
+		// description line
+		if( !empty($descriptionLine) ) {
+			echo '<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>'.PHP_EOL;
+		}
+		
+		// end option line
+		echo '</div>'.PHP_EOL;
+	}
+
+	function grain_admin_multiline($optionName, $fieldName, $cssClass, $title, $descriptionLine = NULL ) 
+	{
+		global $GrainOpt, $HTML_allowed, $no_HTML;
+		
+		$value = htmlentities($GrainOpt->get($optionName, FALSE));
+
+		// get css class
+		$classes = "multiline";
+		if(!empty($cssClass)) $classes .= ' '.$cssClass;
+		
+		// begin option line
+		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">'.PHP_EOL;
+		
+		// write input
+		echo '<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>'.PHP_EOL;	
+		echo '<textarea class="'.$classes.'" cols="95" wrap="off" rows="10" name="'.$fieldName.'" id="'.$fieldName.'">'.$value.'</textarea>'.PHP_EOL;
+				
+		// description line
+		if( !empty($descriptionLine) ) {
+			echo '<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>';
+		}
+		
+		// end option line
+		echo '</div>';
+	}
+
+	function grain_admin_combobox($optionName, $fieldName, $cssClass, $values, $title, $quickInfo = NULL, $descriptionLine = NULL ) 
+	{
+		global $GrainOpt, $HTML_allowed, $no_HTML;
+		
+		$optionvalue = $GrainOpt->get($optionName, FALSE);
+
+		// get css class
+		$classes = "combobox";
+		if(!empty($cssClass)) $classes .= ' '.$cssClass;
+		
+		// begin option line
+		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">'.PHP_EOL;
+		
+		// write input
+		echo '<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>'.PHP_EOL;	
+		
+		// loop all entries
+		if(!empty($values))
+			echo '<select class="'.$classes.'" name="'.$fieldName.'" id="'.$fieldName.'">'.PHP_EOL;
+		else
+			echo '<select disabled="disabled" class="'.$classes.'" name="'.$fieldName.'" id="'.$fieldName.'">'.PHP_EOL;
+		foreach ($values as $fieldvalue => $text) 
+		{
+			if( $fieldvalue == $optionvalue )
+				echo '<option value='.$fieldvalue.'" selected="selected">'.$text.'</option>'.PHP_EOL;
+			else
+				echo '<option value='.$fieldvalue.'">'.$text.'</option>'.PHP_EOL;
+		}
+		echo '</select>'.PHP_EOL;
+		
+		// quickinfo
+		if( !empty($quickInfo) ) {
+			echo '<span class="'.$class.'" id="'.$fieldName.'_info">'.$quickInfo.'</span>';
+		}
+		
+		// description line
+		if( !empty($descriptionLine) ) {
+			echo '<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>'.PHP_EOL;
+		}
+		
+		// end option line
+		echo '</div>'.PHP_EOL;
+	}
+	
+	function grain_admin_pageselector($optionName, $fieldName, $cssClass, $title, $quickInfo = NULL, $descriptionLine = NULL ) 
+	{
+		$pages = get_pages();
+		$pageList = array();
+		foreach($pages as $page) {		
+			$pageList[$page->ID] = $page->post_title;
+		}
+		grain_admin_combobox($optionName, $fieldName, $cssClass, $pageList, $title, $quickInfo, $descriptionLine);
+	
+	}
+	
+	function grain_admin_sizeboxes($optionName1, $fieldName1, $optionName2, $fieldName2, $cssClass, $title, $unit, $descriptionLine = NULL ) 
+	{
+		global $GrainOpt, $HTML_allowed, $no_HTML;
+		
+		$value1 = $GrainOpt->get($optionName1, FALSE);
+		$value2 = $GrainOpt->get($optionName2, FALSE);
+
+		// get css class
+		$classes = "pixelbox";
+		if(!empty($cssClass)) $classes .= ' '.$cssClass;
+		
+		// begin option line
+		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">';
+		
+		// write input
+		echo '<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>';
+		
+		echo '<input maxlength="4" class="'.$classes.'" type="text" name="'.$fieldName1.'" id="'.$fieldName1.'" value="'.$value1.'" />';
+		echo '<span class="separator">'.__("&times;", "grain").'</span>';
+		echo '<input maxlength="4" class="'.$classes.'" type="text" name="'.$fieldName2.'" id="'.$fieldName2.'" value="'.$value2.'" />';
+		
+		// quickinfo
+		if( !empty($unit) ) {
+			echo '<span class="'.$class.'" id="'.$fieldName.'_info">'.$unit.'</span>';
+		}
+		
+		// description line
+		if( !empty($descriptionLine) ) {
+			echo '<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>';
+		}
+		
+		// end option line
+		echo '</div>';
+	}
 
 /* known menus */
 
@@ -85,6 +309,8 @@
 
 	function grain_admin_dologic() 
 	{
+		/*
+		
 		global $grain_options;
 	
 		if ( $knownPage ) 
@@ -244,6 +470,8 @@
 			} // save
 			
 		} // known page
+		
+		*/
 	}
 
 	function grain_admin_pagestyle() {

@@ -14,18 +14,18 @@
 	$aboutLinkTitle  = __("about &amp; information", "grain");
 
 	// get info / mosaic page
-	$infoPageId      = grain_infopage_id(0); // defaults to 0 for availability checking below
-	$mosaicPageId    = grain_mosaicpage_id(0); // defaults to 0 for availability checking below
-    $mosaicLinkTitle = grain_mosaicpage_title();
+	$infoPageId      = $GrainOpt->get(GRAIN_INFOPAGE_ID);
+	$mosaicPageId    = $GrainOpt->get(GRAIN_MOSAIC_PAGEID);
+    $mosaicLinkTitle = $GrainOpt->get(GRAIN_MOSAIC_LINKTITLE);
 	$thisIsInfoPage  = ($infoPageId > 0) && ($post->ID == $infoPageId);
 	$thisIsMosaicPage  = ($mosaicPageId > 0) && ($post->ID == $mosaicPageId);
 
 	// test the availability of some options
-	$grain_newest_enabled = grain_newest_enabled();
-	$grain_random_enabled = grain_random_enabled();
-	$grain_info_enabled = grain_info_enabled();
-	$grain_mosaic_enabled = grain_mosaic_enabled();
-	$grain_extended_comments = grain_extended_comments();
+	$grain_newest_enabled = $GrainOpt->getYesNo(GRAIN_MNU_NEWEST_VISIBLE);
+	$grain_random_enabled = $GrainOpt->getYesNo(GRAIN_MNU_RANDOM_VISIBLE);
+	$grain_info_enabled = $GrainOpt->getYesNo(GRAIN_MNU_INFO_VISIBLE);
+	$grain_mosaic_enabled = $GrainOpt->getYesNo(GRAIN_MOSAIC_ENABLED);
+	$grain_extended_comments = $GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED);
 
 	// get some system related values
 	$isContentPage = is_single() || is_home();
@@ -53,12 +53,12 @@
 		if( $next ) 			$link .= '<span id="menu-next">'.$next.'</span>';
 		array_push( $links, $link );
 
-		if( grain_comments_enabled() ) {
+		if( $GrainOpt->getYesNo(GRAIN_COMMENTS_ENABLED) ) {
 			$link = grain_generate_comments_link();
 			array_push( $links, '<span id="menu-comments">'.$link.'</span>' );
 		}
 
-		if( grain_permalink_enabled() ):
+		if( $GrainOpt->getYesNo(GRAIN_MNU_PERMALINK_VISIBLE) ):
 			$link = '<a class="tooltipped" id="permalink" alt="'.__("Permalink for: ", "grain").$post->post_title.'" title="'.grain_thumbnail_title(__("Permalink", "grain"), $post->post_title).'" href="'.get_permalink($post->ID).'">'.__("#", "grain").'</a>';
 			array_push( $links, '<span id="menu-permalink">'.$link.'</span>' );
 		endif;

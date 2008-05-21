@@ -14,9 +14,12 @@
 
 	function grain_adminpage_styling() 
 	{
+		global $HTML_allowed, $no_HTML, $GrainOpt;
 		grain_admin_inject_yapb_msg();
 		
 		if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.__("Changes saved", "grain").'</strong></p></div>';
+		
+		grain_admin_start_page();
 	?>
 	<div class='wrap'>
 		<div id="grain-header">
@@ -28,167 +31,105 @@
 
 				<fieldset>
 					<legend><?php _e("Style Override settings", "grain"); ?></legend>
+					<?php
 
-					<p><label for="css_override_file"><?php _e("CSS File:", "grain"); ?></label>
-						<select 
-							name="css_override_file" 
-							id="css_override_file">
-								<option value="">Keine</option>
-						<?php 
-							$files = grain_get_css_overrides();
-							foreach($files as $file) {
-								$selection = (grain_override_style(FALSE) == $file ? 'selected="selected"' : '');
-								echo '<option value="'.$file.'" '.$selection.'>'.$file.'</option>';
-							}
-						?>	
-						</select>
-						<div class="input_pad"><?php _e("The file selected here is loaded in addition to the base stylesheet and allows for style overrides.", "grain"); ?>
-						
-						<?php 
-	
-							$style = grain_override_style();
-							if( !empty($style) ) 
-							{
-								$style_overrides = grain_get_css_overrides();
-								if( array_search($style, $style_overrides) !== FALSE ) 
-								{
-									$link_uri = get_bloginfo('url').'/wp-admin/theme-editor.php?file='.GRAIN_RELATIVE_PATH.'/'.grain_override_style().'&theme=Grain';
-									$link = '<a target="_blank" href="'.$link_uri.'">'.grain_override_style(FALSE).'</a>';
-									$message = __("You can edit the selected override file here: %FILE", "grain"); 
-									$message = str_replace('%FILE', $link, $message);
-									echo '<br />'.$message;
-								}
-							}							
-						?>						
-						
-						</div>
-						
-					</p>		
+					$files = grain_get_css_overrides();
+					$selection["-"] = __("none", "grain");
+					foreach($files as $file) {
+						$selection[$file] = $file;
+					}
 
+					$message = NULL;
+					$style = $GrainOpt->get(GRAIN_STYLE_OVERRIDE);
+					if( !empty($style) ) 
+					{
+						$style_overrides = grain_get_css_overrides();
+						if( array_search($style, $style_overrides) !== FALSE ) 
+						{
+							$link_uri = get_bloginfo('url').'/wp-admin/theme-editor.php?file='.GRAIN_RELATIVE_PATH.'/'.$style.'&theme=Grain';
+							$link = '<a target="_blank" href="'.$link_uri.'">'.$style.'</a>';
+							$message = __("You can edit the currently selected override file here: %FILE", "grain"); 
+							$message = str_replace('%FILE', $link, $message);
+						}
+					}
+					
+					grain_admin_combobox(GRAIN_STYLE_OVERRIDE, "css_override_file", NULL, $selection, __("CSS File:", "grain"), NULL, __("The file selected here is loaded in addition to the base stylesheet and allows for style overrides. You can use this for quick switching or non-destructive editing of your blog's CSS styles.", "grain") . "<br /><br />" . $message);
+
+					?>	
 				</fieldset>	
 			
-				<h2><?php _e("Missing Image", "grain"); ?></h2>
-										
+				<h2><?php _e("Image Settings", "grain"); ?></h2>
+				<fieldset>
+					<legend><?php _e("Image settings", "grain"); ?></legend>
+					<?php					
+					grain_admin_sizeboxes(GRAIN_MAX_IMAGE_WIDTH, "max_image_width", GRAIN_MAX_IMAGE_HEIGHT, "max_image_height", NULL, __("Image dimensions:", "grain"), __("Pixels", "grain"), __("The maximum dimensions of a photo. The photo will be scaled to fit.<br />If you change these to higher values you probably also have to change your CSS styles for the blog.", "grain"));
+					?>	
+				</fieldset>
+			
+				<h2><?php _e("Missing Image", "grain"); ?></h2>		
 				<fieldset>
 					<legend><?php _e("<em>Whoops</em> image", "grain"); ?></legend>
-										
-					
-					<p><label for="whoops_uri"><?php _e("Whoops image URL:", "grain"); ?></label>
-						<input 
-							style="width: 350px" 
-							type="text" 
-							name="whoops_uri" 
-							id="whoops_uri" 
-							value="<?php echo htmlentities(grain_whoopsimage_url(FALSE)); ?>" />
-						<br />
-						<div class="input_pad">
-							<?php _e("The URL of the image that will be displayed if a photoblog post has no image assigned or the image is not uploaded yet.<br />If you want to display a text instead of an image, leave the field empty.", "grain"); ?>
-						</div>
-					</p>
-					
-					<p><label for="whoops_width"><?php _e("Image size:", "grain"); ?></label>
-							<input style="width: 50px" 
-								type="text" 
-								name="whoops_width" 
-								id="whoops_width" 
-								value="<?php echo htmlentities(grain_whoopsimage_width(FALSE)); ?>" /> 
-							by
-							<input style="width: 50px" 
-								type="text" 
-								name="whoops_height" 
-								id="whoops_height" 
-								value="<?php echo htmlentities(grain_whoopsimage_height(FALSE)); ?>" /> 
-							<?php _e("Pixels"); ?><br />
-							<div class="input_pad"><?php _e("The actual size of the replacement image.", "grain"); ?></div>
-					</p>
-					
-					
+					<?php
+					grain_admin_infoline(NULL, __("If it happens that YAPB is unable to load an image or if you haven't set any image for a post Grain will show a message about that fact. If you want to you can set an image that is to be displayed instead.", "grain"));
+					grain_admin_longline(GRAIN_WHOOPS_URL, "whoops_uri", NULL, __("Whoops image URL:", "grain"), $no_HTML, __("The URL of the image that will be displayed if a photoblog post has no image assigned or the image is not uploaded yet.<br />If you want to display a text instead of an image, leave the field empty.", "grain"));					
+					grain_admin_sizeboxes(GRAIN_WHOOPS_WIDTH, "whoops_width", GRAIN_WHOOPS_HEIGHT, "whoops_height", NULL, __("Image size:", "grain"), __("Pixels", "grain"), __("The actual size of the replacement image.", "grain"));
+					?>					
 				</fieldset>
+						
 			
 				<h2><?php _e("Mosaic Settings", "grain"); ?></h2>
-										
 				<fieldset>
 					<legend><?php _e("Mosaic settings", "grain"); ?></legend>
-										
-					<p><label for="show_mosaic_years"><?php _e("Show Years:", "grain"); ?></label> 
-						<input style="margin-top: 8px;" 
-							type="checkbox" 
-							name="show_mosaic_years" 
-							id="show_mosaic_years" 
-							<?php if( grain_mosaic_years() ) echo ' checked="checked" ';?> 
-							value="1" /> 
-							<?php _e("Group thumbnails by years in the mosaic page", "grain"); ?><br />
-					</p>
-			
-					
+					<?php					
+					grain_admin_checkbox(GRAIN_MOSAIC_DISPLAY_YEARS, "show_mosaic_years", NULL, __("Show Years:", "grain"), __("Group thumbnails by years in the mosaic page", "grain"), NULL);
+					grain_admin_shortline(GRAIN_MOSAIC_COUNT, "mosaic_count", NULL, __("Photos per page:", "grain"), $no_HTML, __("This value sets how many photos will be displayed at most on a mosaic page.", "grain"));
+					?>	
 				</fieldset>
-			
-				<h2><?php _e("Thumbnail settings", "grain"); ?></h2>
-										
+						
+				<h2><?php _e("Thumbnail settings", "grain"); ?></h2>			
 				<fieldset>
 					<legend><?php _e("Comments popup", "grain"); ?></legend>
-										
-					<p><label for="show_popup_thumbnail"><?php _e("Show Thumbnail:", "grain"); ?></label> <input style="margin-top: 8px;" type="checkbox" name="show_popup_thumbnail" id="show_popup_thumbnail" <?php if( grain_show_popup_thumb() ) echo ' checked="checked" ';?> value="1" /> <?php _e("Show the photo's thumbnail image on the comments popup", "grain"); ?><br />
-					</p>
-					
-					<p><label for="popup_thumb_width"><?php _e("Thumbnail size:", "grain"); ?></label>
-							<input style="width: 50px" type="text" name="popup_thumb_width" id="popup_thumb_width" value="<?php echo htmlentities(grain_popupthumb_width(FALSE)); ?>" /> 
-							by
-							<input style="width: 50px" type="text" name="popup_thumb_height" id="popup_thumb_height" value="<?php echo htmlentities(grain_popupthumb_height(FALSE)); ?>" /> 
-							<?php _e("Pixels"); ?>
-					</p>
-					
-					<p><label for="popup_thumb_stf"><?php _e("Size to fit:", "grain"); ?></label> <input style="margin-top: 8px;" type="checkbox" name="popup_thumb_stf" id="popup_thumb_stf" <?php if( grain_popupthumb_stf() ) echo ' checked="checked" ';?> value="1" /> <?php _e("Values given above are the maximum dimensions.", "grain"); ?><br />
-							<div class="input_pad"><?php _e("If disabled, the thumbnail will be displayed in the size given above, cropping the parts that don't fit.<br />If it is enabled the thumbnail image will be resized so that it fits within these boundaries.", "grain"); ?></div>
-					</p>
-					
-					
+					<?php					
+					grain_admin_checkbox(GRAIN_POPUP_SHOW_THUMB, "show_popup_thumbnail", NULL, __("Show Thumbnail:", "grain"), __("Show the photo's thumbnail image on the comments popup", "grain"), NULL);
+					grain_admin_sizeboxes(GRAIN_POPUP_THUMB_WIDTH, "popup_thumb_width", GRAIN_POPUP_THUMB_HEIGHT, "popup_thumb_height", NULL, __("Thumbnail size:", "grain"), __("Pixels", "grain"), NULL);
+					grain_admin_checkbox(GRAIN_POPUP_THUMB_STF, "popup_thumb_stf", NULL, __("Size to fit:", "grain"), __("Values given above are the maximum dimensions.", "grain"), __("If disabled, the thumbnail will be displayed in the size given above, cropping the parts that don't fit.<br />If it is enabled the thumbnail image will be resized so that it fits within these boundaries.", "grain"));
+					?>
 				</fieldset>
 										
 				<fieldset>
 					<legend><?php _e("Mosaic & Archive", "grain"); ?></legend>
-										
-					<p><label for="show_tooltips"><?php _e("Show Tooltips:", "grain"); ?></label> <input style="margin-top: 8px;" type="checkbox" name="show_tooltips" id="show_tooltips" <?php if( grain_archive_tooltips() ) echo ' checked="checked" ';?> value="1" /> <?php _e("Show tooltip when hovering a thumbnail", "grain"); ?><br />
-					</p>
-					<p><label for="thumb_width"><?php _e("Thumbnail size:", "grain"); ?></label>
-							<input style="width: 50px" type="text" name="thumb_width" id="thumb_width" value="<?php echo htmlentities(grain_mosaicthumb_width(FALSE)); ?>" /> 
-							by
-							<input style="width: 50px" type="text" name="thumb_height" id="thumb_height" value="<?php echo htmlentities(grain_mosaicthumb_height(FALSE)); ?>" /> 
-							<?php _e("Pixels"); ?>
-					</p>
-					
-					
+					<?php
+					grain_admin_checkbox(GRAIN_ARCHIVE_TOOLTIPS, "show_tooltips", NULL, __("Show Tooltips:", "grain"), __("Show tooltip when hovering a thumbnail", "grain"), NULL);	
+					grain_admin_sizeboxes(GRAIN_MOSAIC_THUMB_WIDTH, "thumb_width", GRAIN_MOSAIC_THUMB_HEIGHT, "thumb_height", NULL, __("Thumbnail size:", "grain"), __("Pixels", "grain"), NULL);	
+					?>
 				</fieldset>
 
 				<h2><?php _e("Comments", "grain"); ?></h2>
 
 				<fieldset>
 					<legend><?php _e("Gravatar options", "grain"); ?></legend>
-
-					<p><label for="use_gravatars"><?php _e("Use Gravatars", "grain"); ?></label> <input style="margin-top: 8px;" type="checkbox" name="use_gravatars" id="use_gravatars" <?php if( grain_eyecandy_use_gravatars() ) echo ' checked="checked" ';?> value="1" /> <?php _e("If enabled, <a href=\"http://www.gravatar.com/\" target=\"_blank\">Gravatar</a> icons are shown on user comments", "grain"); ?><br />
-					<p><label for="gravatar_alternate"><?php _e("Alternative Image:", "grain"); ?></label>
-						<input style="width: 350px" type="text" name="gravatar_alternate" id="gravatar_alternate" value="<?php echo htmlentities(grain_eyecandy_gravatar_alternate(FALSE)); ?>" /><br />
-						<div class="input_pad"><?php _e("URL of an alternate image for the case the commenter has no Gravatar", "grain"); ?></div>
-					</p>
+					<?php
+					grain_admin_checkbox(GRAIN_EYECANDY_GRAVATARS_ENABLED, "use_gravatars", NULL, __("Use Gravatars:", "grain"), __("If enabled, <a href=\"http://www.gravatar.com/\" target=\"_blank\">Gravatar</a> icons are shown on user comments", "grain"), NULL);
+					grain_admin_longline(GRAIN_EYECANDY_GRAVATAR_ALTERNATE, "gravatar_alternate", NULL, __("Alternative Image:", "grain"), $no_HTML, __("URL of an alternate image for the case the commenter has no Gravatar. If you don't specify an image URL Gravatar will use it's own dummy image if necessary.", "grain"));
 					
+					grain_admin_infoline(NULL, __("The following values are extended configuration options for the Gravatar service. Please change them only if you know what you are doing.", "grain"));
+					
+					grain_admin_shortline(GRAIN_EYECANDY_GRAVATAR_RATING, "gravatar_rating", NULL, __("Gravatar rating:", "grain"), $no_HTML, __("Here you can specify the rating of the gravatars. Allowed values are <code>G, PG, R</code> and <code>X</code>. Only change this if you know why you would want to.", "grain"));
+					grain_admin_shortline(GRAIN_EYECANDY_GRAVATAR_SIZE, "gravatar_size", NULL, __("Gravatar size:", "grain"), $no_HTML, __("Here you can change the size of the Gravatar. If you change this value you will have to adapt your stylesheet.", "grain"));
+					
+					?>
 				</fieldset>
 				<fieldset>
-					<legend><?php _e("Ring options", "grain"); ?></legend>
-					
-					<p><label for="use_pborg_button"><?php _e("photoblogs.org button: ", "grain"); ?></label> <input style="margin-top: 8px;" type="checkbox" name="use_pborg_button" id="use_pborg_button" <?php if( grain_eyecandy_use_pborg_button() ) echo ' checked="checked" ';?> value="1" /> <?php echo str_replace("%", __("bookmark me at photoblogs.org"), __("If enabled, a \"%\" button will be added to the comment form", "grain")); ?><br />
-					</p>
-					<p><label for="pborg_uri"><?php _e("Profile URL:", "grain"); ?></label>
-						<input style="width: 350px" type="text" name="pborg_uri" id="pborg_uri" value="<?php echo htmlentities(grain_eyecandy_pborg_uri(FALSE)); ?>" /><br />
-						<div class="input_pad"><?php _e("The URL of your <a href=\"http://photoblogs.org\" target=\"_blank\">photoblogs.org</a> profile", "grain"); ?></div>
-					</p>
-					
-					<p><label for="use_coolpb_button"><?php _e("coolphotoblogs.com button: ", "grain"); ?></label> <input style="margin-top: 8px;" type="checkbox" name="use_coolpb_button" id="use_coolpb_button" <?php if( grain_eyecandy_use_coolpb_button() ) echo ' checked="checked" ';?> value="1" /> <?php echo str_replace("%", __("vote for me at coolphotoblogs.com", "grain"), __("If enabled, a \"%\" button will be added to the comment form", "grain")); ?><br />
-					</p>
-					<p><label for="coolpb_uri"><?php _e("Profile URL:", "grain"); ?></label>
-						<input style="width: 350px" type="text" name="coolpb_uri" id="coolpb_uri" value="<?php echo htmlentities(grain_eyecandy_coolpb_uri(FALSE)); ?>" /><br />
-						<div class="input_pad"><?php _e("The URL of your <a href=\"http://coolphotoblogs.com\" target=\"_blank\">coolphotoblogs.com</a> profile", "grain"); ?></div>
-					</p>					
-				
+					<legend><?php _e("Ring / Syndication options", "grain"); ?></legend>
+					<?php
+					$message = str_replace("%", __("bookmark me at photoblogs.org"), __("If enabled, a \"%\" button will be added to the comment form", "grain"));
+					grain_admin_checkbox(GRAIN_EYECANDY_PBORG_BOOKMARK_ENABLED, "use_pborg_button", NULL, __("photoblogs.org button:", "grain"), $message, NULL);
+					grain_admin_longline(GRAIN_EYECANDY_PBORG_URI, "pborg_uri", NULL, __("Profile URL:", "grain"), $no_HTML, __("The URL of your <a href=\"http://photoblogs.org\" target=\"_blank\">photoblogs.org</a> profile", "grain"));
+
+					$message = str_replace("%", __("vote for me at coolphotoblogs.com"), __("If enabled, a \"%\" button will be added to the comment form", "grain"));
+					grain_admin_checkbox(GRAIN_EYECANDY_COOLPB_ENABLED, "use_coolpb_button", NULL, __("coolphotoblogs.com button:", "grain"), $message, NULL);
+					grain_admin_longline(GRAIN_EYECANDY_COOLPB_URI, "coolpb_uri", NULL, __("Profile URL:", "grain"), $no_HTML, __("The URL of your <a href=\"http://photoblogs.org\" target=\"_blank\">photoblogs.org</a> profile", "grain"));
+					?>		
 				</fieldset>
 				
 			
@@ -196,16 +137,14 @@
 										
 				<fieldset>
 					<legend><?php _e("moo.fx options", "grain"); ?></legend>
-										
-					<p><label for="use_moofx"><?php _e("Use moo.fx:", "grain"); ?></label> 
-						<input style="margin-top: 8px;" type="checkbox" name="use_moofx" id="use_moofx" <?php if( grain_eyecandy_use_moofx() ) echo ' checked="checked" ';?> value="1" /> 
-						<strong><?php _e("Enable JavaScript effects (<a href=\"http://moofx.mad4milk.net/\" target=\"_blank\">moo.fx</a> engine)", "grain"); ?></strong><br />
-					</p>
-					<p><label for="use_moofx_reflec"><?php _e("Reflection effect:", "grain"); ?></label> <input style="margin-top: 8px;" type="checkbox" name="use_moofx_reflec" id="use_moofx_reflec" <?php if( grain_eyecandy_use_reflection() ) echo ' checked="checked" ';?> value="1" /> <?php _e("If enabled, the image reflects on the background", "grain"); ?><br />
-					</p>
-					<p><label for="use_moofx_fade"><?php _e("Fade effect:", "grain"); ?></label> <input style="margin-top: 8px;" type="checkbox" name="use_moofx_fade" id="use_moofx_fade" <?php if( grain_eyecandy_use_fader() ) echo ' checked="checked" ';?> value="1" /> <?php _e("Fade the image in instead of just display it", "grain"); ?><br />
-							<div class="input_pad"><?php _e("The effect may be slow for some machines and is definitly slower for larger images, as well as complex theme styles. Double check that. In addition it requires support on the browser's side, so it isn't necessarily visible to every visitor.", "grain"); ?></div>
-					</p>
+					<?php
+					grain_admin_checkbox(GRAIN_EYECANDY_MOOFX, "use_moofx", NULL, __("Use moo.fx:", "grain"), '<strong>'.__("Enable JavaScript effects (<a href=\"http://moofx.mad4milk.net/\" target=\"_blank\">moo.fx</a> engine)", "grain").'</strong>', NULL);	
+					
+					grain_admin_infoline(NULL, __("Once you have enabled moo.fx, you can choose use the following effects.", "grain"));
+					
+					grain_admin_checkbox(GRAIN_EYECANDY_REFLECTION_ENABLED, "use_moofx_reflec", NULL, __("Reflection effect:", "grain"), __("If enabled, the image reflects on the background", "grain"), NULL);		
+					grain_admin_checkbox(GRAIN_EYECANDY_FADER, "use_moofx_fade", NULL, __("Fade effect:", "grain"), __("Use a fade-in effect to display the image", "grain"), __("The effect may be slow for some machines and is definitly slower for larger images, as well as complex theme styles. Double check that. In addition it requires support on the browser's side, so it isn't necessarily visible to every visitor.", "grain"));		
+					?>
 					
 				</fieldset>				
 

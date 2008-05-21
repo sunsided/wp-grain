@@ -12,7 +12,7 @@
 	@require_once(TEMPLATEPATH . '/func/options.php');
 	
 	/* version helper */
-	
+		
 	function grain_get_version_array($versionString) {
 		$regexp = '#(?P<major>\d+)\.(?P<minor>\d+)(\.(?P<revision>\d+)(r(?P<fix>\d+))?)?#iu';
 		preg_match($regexp, $versionString, $array);
@@ -57,7 +57,9 @@
 	/* upgrader */
 	
 	function grain_perform_upgrade() {
-		$version = grain_getoption(GRAIN_VERSION_KEY, null);
+		global $GrainOpt;
+		
+		$version = $GrainOpt->get(GRAIN_VERSION_KEY);
 
 		// check if the theme is below version 0.1.2r3
 		if( $version == null ) {

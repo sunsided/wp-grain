@@ -14,29 +14,43 @@
 			// embed the RSS icon
 			grain_embed_rss_icon();
 			
+			global $GrainOpt;
+			
 			// embed ATOM feed icon, if wanted
-			if(grain_atomfeed_enabled()) grain_embed_atom_icon();
+			if($GrainOpt->getYesNo(GRAIN_FEED_ATOM_ENABLED)) grain_embed_atom_icon();
 
 			// embed Creative Commons license hint, if wanted
-			if( grain_cc_enabled() ) grain_embed_cc_div(); 
+			if( $GrainOpt->getYesNo(GRAIN_COPYRIGHT_CC_ENABLED) ) grain_embed_cc_div(); 
 		?>
 
-	<div id="footer-info<?php if( !grain_cc_enabled() ) echo '-padded'; ?>">
+	<div id="footer-info<?php if( !$GrainOpt->getYesNo(GRAIN_COPYRIGHT_CC_ENABLED) ) echo '-padded'; ?>">
 
 		<span class="powered-by">
-			<?php bloginfo('name'); ?> <?php _e("is proudly powered by"); ?> <a href="http://wordpress.org/">WordPress</a> <?php _e("and"); ?>
-			<a href="<?php echo GRAIN_THEME_URL; ?>" title="Grain <?php echo GRAIN_THEME_VERSION; ?>">Grain</a>
+			<?php
+			
+			$blogName = get_bloginfo('name');
+			$grainURL = '<a href="'.GRAIN_THEME_URL.'" title="Grain">Grain</a>';
+			$wordpressURL = '<a href="http://wordpress.org/">WordPress</a>';
+			$message = __("{BLOG} is proudly powered by {WP} and {GRAIN}");
+			echo str_replace( 
+				array( "{BLOG}", "{WP}", "{GRAIN}" ), 
+				array( $blogName, $wordpressURL, $grainURL ), 
+				$message );
+			
+			?>
 		</span>
 		
 		<!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->
 		<?php if( grain_getpostcount() ) edit_post_link(__("edit post", "grain"), ' | ', ''); ?>
 
 		<div id="final-footer">
-			<?php if( grain_flat_syndication_enabled() ): ?>
+			
 			<div id="syndication">
-				<?php echo grain_flat_syndication( grain_flat_delimiter() ); ?>
+				<?php 
+				if( $GrainOpt->getYesNo(GRAIN_SYND_FLAT_ENABLED) ) {
+					echo grain_flat_syndication( $GrainOpt->getYesNo(GRAIN_SYND_FLAT_DELIMITER) );
+				} ?>
 			</div>
-			<?php endif; ?>
 			
 			<div id="copyright">
 		       		<span><?php _e("Copyright"); ?> <?php grain_embed_copyright(TRUE); ?></span>

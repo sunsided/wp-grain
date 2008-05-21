@@ -19,10 +19,13 @@
 	
 	function grain_get_copyright_string($extended = FALSE) 
 	{
+		global $GrainOpt;
+		
 		// get values
 		$copysign = $extended ? '&copy;' : '(C)';
 		$years = grain_copyright_years_ex();
-		$copyrightString = $extended ? grain_copyright_ex() : grain_copyright();
+		$key = $extebded ? GRAIN_COPYRIGHT_HOLDER_HTML : GRAIN_COPYRIGHT_HOLDER;
+		$copyrightString = $GrainOpt->get($key);
 		
 		// compose the string
 		$string = $copysign;
@@ -39,11 +42,13 @@
 	}
 	
 	function grain_copyright_years() 
-	{
+	{	
+		global $GrainOpt;
+		
 		// get options
-		$start_year = grain_copyright_start_year();
-		$end_year = grain_copyright_end_year();
-		$end_year_offset = grain_copyright_end_year_offset();
+		$start_year = $GrainOpt->get(GRAIN_COPYRIGHT_START_YEAR);
+		$end_year = $GrainOpt->get(GRAIN_COPYRIGHT_END_YEAR);
+		$end_year_offset = $GrainOpt->get(GRAIN_COPYRIGHT_END_OFFSET);
 				
 		// add offset
 		$end_year = ($end_year + $end_year_offset);
@@ -61,13 +66,15 @@
 		// apply filters and return		
 		return apply_filters(GRAIN_COPYRIGHT_YEARS, $value);
 	}
-	
+		
 	function grain_copyright_years_ex() 
-	{
+	{			
+		global $GrainOpt;
+		
 		// get options
-		$start_year = grain_copyright_start_year();
-		$end_year = grain_copyright_end_year();
-		$end_year_offset = grain_copyright_end_year_offset();
+		$start_year = $GrainOpt->get(GRAIN_COPYRIGHT_START_YEAR);
+		$end_year = $GrainOpt->get(GRAIN_COPYRIGHT_END_YEAR);
+		$end_year_offset = $GrainOpt->get(GRAIN_COPYRIGHT_END_OFFSET);
 		
 		// add offset
 		$end_year = ($end_year + $end_year_offset);
@@ -85,12 +92,10 @@
 	
 /* Header Menu */
 
-	define('GRAIN_IS_HEADER', 'header');
-	define('GRAIN_IS_BODY_BEFORE', 'body_before');
-	define('GRAIN_IS_BODY_AFTER', 'body_after');
-
-	function grain_inject_navigation_menu($location) {
-		$target = grain_navigation_bar_location();
+	function grain_inject_navigation_menu($location) 
+	{
+		global $GrainOpt;
+		$target = $GrainOpt->get(GRAIN_NAVBAR_LOCATION);
 		if($location != $target ) return;
 		
 		global $post;
@@ -119,11 +124,11 @@
 
 	function grain_get_gravatar_uri($rating = false, $size = false, $default = false, $border = false) {
 		global $comment;
-		$uri = "http://www.gravatar.com/avatar.php?gravatar_id=".md5($comment->comment_author_email);
-		if($rating && $rating != '') 	$uri .= "&amp;rating=".$rating;
-		if($size && $size != '') 		$uri .="&amp;size=".$size;
-		if($default && $default != '')	$uri .= "&amp;default=".urlencode($default);
-		if($border && $border != '')	$uri .= "&amp;border=".$border;
+		$uri = "http://www.gravatar.com/avatar.php?gravatar_id=".md5(trim(strtolower($comment->comment_author_email)));
+		if($rating && $rating != '') 	$uri .= "&amp;rating=".strtolower($rating);
+		if($size && $size != '') 		$uri .="&amp;size=".intval($size);
+		if($default && $default != '')	$uri .= "&amp;default=".urlencode(trim(strtolower($default)));
+		if($border && $border != '')	$uri .= "&amp;border=".intval($border);
 		return $uri;
 	}
 
@@ -178,8 +183,10 @@
 	}
 
 	function grain_inject_fader($element_id='photo') {
-		if(!grain_eyecandy_use_moofx()) return;
-		if(!grain_eyecandy_use_fader()) return;
+		global $GrainOpt;
+		
+		if(!$GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX)) return;
+		if(!$GrainOpt->getYesNo(GRAIN_EYECANDY_FADER)) return;
 	?>
 	<script type="text/javascript" language="JavaScript">
 
@@ -226,8 +233,9 @@
 /* Eye candy: Tooltips */
 
 	function grain_inject_moofx_tooltips($element_id='photo') {
-		if(!grain_eyecandy_use_moofx()) return;
-		if(!grain_eyecandy_use_moofx_tips()) return;
+		global $GrainOpt;
+		if(!$GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX)) return;
+		if(!$GrainOpt->getYesNo(GRAIN_EYECANDY_USE_MOOTIPS)) return;
 	?>
 	<script type="text/javascript" language="JavaScript">
 
@@ -249,7 +257,8 @@
 /* Eye candy: Slide */
 
 	function grain_can_inject_moofx_slide() {
-		return grain_eyecandy_use_moofx() && grain_eyecandy_use_moofx_slide();
+		global $GrainOpt;
+		return $GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX) && $GrainOpt->getYesNo(GRAIN_EYECANDY_USE_SLIDE);
 	}
 
 	function grain_inject_moofx_slide() {

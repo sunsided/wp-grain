@@ -12,11 +12,13 @@
 
 	function grain_embed_css() 
 	{
+		global $GrainOpt;
+		
 		?>
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <?php
 		
-		$style_override = grain_override_style();
+		$style_override = $GrainOpt->get(GRAIN_STYLE_OVERRIDE);
 		$style_overrides = grain_get_css_overrides();
 		if( array_search($style_override, $style_overrides) !== FALSE ) 
 		{
