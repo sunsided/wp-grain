@@ -292,50 +292,61 @@ body {
 
 #footer {
 	background: rgb(37, 37, 37) url(images/grid2.gif);
-	border: none;
-	height: 105px;
-	
-	/* allow positioning; is itself relative to #page  */
+	height: 90px;
+
 	position: relative;
 	}
 	
-#footer-top {
+#footer-top {	
 	/* display the upper left rounded border */
 	background: url(images/arc-l.gif) no-repeat top left;
 	height: 20px;
+	top: -20px; /* push image up */
+	
 	width: 100%;
 	overflow: visible;
-
-	/* positioning; is relative to #footer */
-	position: relative;
-	top: -20px;
 	z-index: 10;
+	position: relative;
 	}	
 	
 #footer-top-inner {
 	/* display the upper left rounded border */
-	background: url(images/arc-r.gif) no-repeat bottom right;
+	background: url(images/arc-r.gif) no-repeat top right;
 	height: 20px;
+	
 	width: 100%;
 	overflow: visible;
 	z-index: 10;
 	}
 
+#final-footer {
+	top: -35px;
+	border-top: 1px solid rgb(64, 64, 64);
+	margin-bottom: -1px; /* minus one due to the 1px border */
+	
+	/* positioning */
+	position: relative;
+	z-index: 100;
+}
+
 #footer-bottom {
 	/* display the upper left rounded border */
 	background: url(images/arc-t-r.gif) no-repeat bottom right;
-	margin-top: -1px;
 	height: 20px;
+	bottom: 20px; /* push image up */	
+	
 	width: 100%;
 	overflow: visible;
-
+	z-index: 10;
+	position: relative;
 	}
 	
 #footer-bottom-inner {
 	/* display the upper left rounded border */
 	background: url(images/arc-t-l.gif) no-repeat bottom left;
 	height: 20px;
-	width: 50%;
+	
+	width: 100%;
 	overflow: visible;
 	position: relative;
 	}	
@@ -1385,14 +1396,6 @@ a img {
 	left: 50px;
 	top: 10px;
 	z-index: 100;
-}
-
-#final-footer {
-	margin-top: 20px;
-	border-top: 1px solid rgb(64, 64, 64);
-	
-	/* positioning */
-	position: relative;
 }
 
 table.toolset {
