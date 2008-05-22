@@ -116,7 +116,7 @@
 							<?php if($has_url) : ?>
 							<a href="<?php echo $comment->comment_author_url; ?>">
 							<?php endif; ?>
-							<img style="border:1px solid white;" src="<?php echo $gravatar_uri; ?>" title="<?php echo $comment->comment_author; ?>" title="<?php echo $comment->comment_author; ?>" />
+							<img class="gravatar" style="border:1px solid white;" src="<?php echo $gravatar_uri; ?>" title="<?php echo $comment->comment_author; ?>" title="<?php echo $comment->comment_author; ?>" />
 							<?php if($has_url) : ?>
 							</a>
 							<?php endif; ?>

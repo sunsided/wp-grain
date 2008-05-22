@@ -1,20 +1,21 @@
 0.2.3 -- currently in development
 Add: Sidebars now have additional CSS styles applied describing their position
-Fix: "%" in copyrights is now correctly rendered as the current year. This was due to bug preventing that an options default value got filtered.
-Fix: Navigation bar was shown even if there were no post at all
-Fix: "Edit" link was shown to administrative users even if there were no post at all
 Add: Grain version number now is extended by "dev" in the HTML header if it was taken from a development branch
-Fix: Rounded borders had different colors in Internet Explorer 6 and 7 (this is not totally fixed yet, but it definitely looks better)
 Add: The administration now shows an error message if YAPB was not installed.
 Add: Option to control the image size.
 Add: Option to control filter (p, g, ...) level and image size of Gravatars.
-Change: Option to show popup is now option to suppress popup because of new business logic; The setting is interpreted correctly though.
 Add: Option to control markup of category and tag list.
-Change: Reordered navigation bar page.
 Add: Page selection boxes are now disabled if no page is available.
-Change: Changed defaults so that some options are now enabled by default (newest, random link etc.)
+Add: Gravatar images now have the "gravatar" CSS class
 Add/Change: Several new localization strings; Old strings have changed. (added i.e. date/time formats, so that their defaults can be localized too)
+Change: Option to show popup is now option to suppress popup because of new business logic; The setting is interpreted correctly though.
+Change: Reordered navigation bar page.
+Change: Changed defaults so that some options are now enabled by default (newest, random link etc.)
 Change: Checkbox texts (right of the box) are now labels, too (users may change the checkbox by clicking on the label; depending on the Browser)
+Fix: Rounded borders had different colors in Internet Explorer 6 and 7 (this is not totally fixed yet, but it definitely looks better)
+Fix: "%" in copyrights is now correctly rendered as the current year. This was due to bug preventing that an options default value got filtered.
+Fix: Navigation bar was shown even if there were no post at all
+Fix: "Edit" link was shown to administrative users even if there were no post at all
 Fix: Fixed bug that prevented disabling of checkboxes with an underlying value that defaulted to true
 
 0.2.2 
@@ -22,33 +23,33 @@ Fix: Menu bug that appeared on the start page.
 
 0.2.1 
 Add: WordPress 2.3 tagging support. 
-Fix: Mosaic year bug. 
 Change: No redirects on direct page hits anymore. 
+Fix: Mosaic year bug. 
 Fix: Image quality issue on images smaller than 800px. 
 
 0.2 
-Change: Sidebar is widgeted now. 
 Add: Widget-enabled ‘Sidebars’ within the main layout that can be used for extended purposes. 
-Change: File structure. 
-Change: CSS files are combined into the style.css now for easier handling. 
 Add: CSS ‘override’ stylesheets that can be loaded in addition to the main stylesheet. 
-Change: Look of the comments page modernized. 
-Change: Logged-in users now have a reduced commenting form. 
-Change: Extended Info page isn’t kept open when browsing the pages and has to be re-opened using the comments link by the visitor. 
 Add: Info display on the photo page without showing the comments. 
 Add: Option to display the navigation bar in three different places. 
 Add: Some moo.fx javascript effects such as fading, reflection. They are slow, unfortunately. 
 Add: ‘Vote’ and ‘Bookmark’ buttons on the comment form. 
-Change: Display of EXIF information can be switched in the backend. 
 Add: Gravatar-enabled comments. 
-Change: Creative Commons handling feature can now be customized a bit better. 
 Add/Change: Mucho more styling options to have fun with. 
+Change: Sidebar is widgeted now. 
+Change: File structure. 
+Change: CSS files are combined into the style.css now for easier handling. 
+Change: Look of the comments page modernized. 
+Change: Logged-in users now have a reduced commenting form. 
+Change: Extended Info page isn’t kept open when browsing the pages and has to be re-opened using the comments link by the visitor. 
+Change: Display of EXIF information can be switched in the backend. 
+Change: Creative Commons handling feature can now be customized a bit better. 
 
 0.1.2 r3 
-Change: Wrapped images in archive and mosaic page into div tags 
-Change: Now using an IMG tag to display the image, as well as image maps for bidirectional links (see below) 
 Add: Option to switch between bidirectional links (previous/next), as well as unidirectional ones (prev only) for the on-image navigation 
 Add: Two new i18n tags enabling a better naming for the Extended Info link (”comments on/off”) 
+Change: Wrapped images in archive and mosaic page into div tags 
+Change: Now using an IMG tag to display the image, as well as image maps for bidirectional links (see below) 
 Fix: Corrected the image size bug which cropped images wider than 800px 
 Fix: Added tooltips for mosaic page images 
 Fix: Theme now works fine with any permalink structure 
@@ -69,6 +70,6 @@ Fix: Fixed the missing i18n tags in the administration
 Fix: Fixed the daily archive title (i18n) issue. 
 
 0.1.1 r2 
+Add: On-Image navigation
 Fix: Fixed an issue with images wider than 800px 
 Fix: Fixed an issue with images of odd width 0.1.1 
-Add: On-Image navigation

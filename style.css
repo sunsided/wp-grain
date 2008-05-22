@@ -1610,3 +1610,7 @@ td.exif-value {
 #photo-nav-right a:hover {
 	background: url(images/go_right.gif) 50% right no-repeat;
 }
+
+img.gravatar {
+   border: 0px !important;
+}
