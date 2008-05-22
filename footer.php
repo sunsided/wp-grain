@@ -8,20 +8,20 @@
 </div>
 
 <div id="footer">
-	<div id="footer-top"><div id="footer-top-inner"></div></div>
+	<div id="footer-top"><div id="footer-top-inner" /></div>
 
-		<?php 
-			// embed the RSS icon
-			grain_embed_rss_icon();
-			
-			global $GrainOpt;
-			
-			// embed ATOM feed icon, if wanted
-			if($GrainOpt->getYesNo(GRAIN_FEED_ATOM_ENABLED)) grain_embed_atom_icon();
+	<?php 
+		// embed the RSS icon
+		grain_embed_rss_icon();
+		
+		global $GrainOpt;
+		
+		// embed ATOM feed icon, if wanted
+		if($GrainOpt->getYesNo(GRAIN_FEED_ATOM_ENABLED)) grain_embed_atom_icon();
 
-			// embed Creative Commons license hint, if wanted
-			if( $GrainOpt->getYesNo(GRAIN_COPYRIGHT_CC_ENABLED) ) grain_embed_cc_div(); 
-		?>
+		// embed Creative Commons license hint, if wanted
+		if( $GrainOpt->getYesNo(GRAIN_COPYRIGHT_CC_ENABLED) ) grain_embed_cc_div(); 
+	?>
 
 	<div id="footer-info<?php if( !$GrainOpt->getYesNo(GRAIN_COPYRIGHT_CC_ENABLED) ) echo '-padded'; ?>">
 
@@ -40,7 +40,6 @@
 			?>
 		</span>
 		
-		<!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->
 		<?php if( grain_getpostcount() ) edit_post_link(__("edit post", "grain"), ' | ', ''); ?>
 
 		<div id="final-footer">
@@ -53,11 +52,11 @@
 			</div>
 			
 			<div id="copyright">
-		       		<span><?php _e("Copyright"); ?> <?php grain_embed_copyright(TRUE); ?></span>
+		       		<span><?php _e("Copyright", "grain"); ?> <?php grain_embed_copyright(TRUE); ?></span>
 			</div>
 			
 		 </div>
-	</div
+	</div>
 
 	<?php wp_footer(); ?>
 	
@@ -69,4 +68,4 @@
 
 </div>
 </body>
-</html>
+</html> <!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->

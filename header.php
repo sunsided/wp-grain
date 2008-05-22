@@ -50,19 +50,25 @@ grain_startSession();
 <div id="page">
 
 <!-- header -->
-<div id="header">
-	<div id="header-top"><div id="header-top-inner"></div></div>
+<div id="header-complete">
+	<div id="header">
+		<div id="header-top"><div id="header-top-inner"></div></div>
 
-	<?php grain_inject_navigation_menu(GRAIN_IS_HEADER); ?>
-	
-	<!-- header image -->
-	<div id="headerimg">
-		<h1><a rel="start" href="<?php echo get_settings('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+		<?php grain_inject_navigation_menu(GRAIN_IS_HEADER); ?>
+		
+		<!-- header image -->
+		<div id="blogtitle-complete">
+			<div id="headerimg">
+				<h1 id="header-title"><a rel="start" href="<?php echo get_settings('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+			</div>
+			
+			<!-- blog description -->
+			<div id="header-description">
+				<a rel="start" href="<?php echo get_settings('home'); ?>/"><?php bloginfo('description'); ?></a>
+			</div>
+		</div>
+
 	</div>
-	
-	<!-- blog description -->
-	<div id="header-description"><?php bloginfo('description'); ?></div>
-
 	<div id="header-bottom"><div id="header-bottom-inner"></div></div>
 </div>
 

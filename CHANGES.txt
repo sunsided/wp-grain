@@ -1,4 +1,4 @@
-0.2.3 -- currently in development
+0.3 -- currently in development
 Add: Sidebars now have additional CSS styles applied describing their position
 Add: Grain version number now is extended by "dev" in the HTML header if it was taken from a development branch
 Add: The administration now shows an error message if YAPB was not installed.
@@ -12,11 +12,15 @@ Change: Option to show popup is now option to suppress popup because of new busi
 Change: Reordered navigation bar page.
 Change: Changed defaults so that some options are now enabled by default (newest, random link etc.)
 Change: Checkbox texts (right of the box) are now labels, too (users may change the checkbox by clicking on the label; depending on the Browser)
+Change: CSS: Rounded corners in CSS now automatically move depending on the header height; This doesn't have to be tweaked separately anymore
+Change: CSS: some elements such as header and blog title are now wrapped in additional divs
+Change: Blog description line is now linked, too
 Fix: Rounded borders had different colors in Internet Explorer 6 and 7 (this is not totally fixed yet, but it definitely looks better)
 Fix: "%" in copyrights is now correctly rendered as the current year. This was due to bug preventing that an options default value got filtered.
 Fix: Navigation bar was shown even if there were no post at all
 Fix: "Edit" link was shown to administrative users even if there were no post at all
 Fix: Fixed bug that prevented disabling of checkboxes with an underlying value that defaulted to true
+Fix: CSS: Rounded borders are now displayed correctly Internet Explorer 7
 
 0.2.2 
 Fix: Menu bug that appeared on the start page. 

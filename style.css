@@ -5,7 +5,7 @@
     Description: A Photoblog Theme for Wordpress using the <a target="_blank" href="http://johannes.jarolim.com/blog/wordpress/yet-another-photoblog">Yet Another Photoblog</a> plugin.
     Author: Markus Mayer
     Author URI: http://mac.defx.de/
-    Version: 0.2.3 development
+    Version: 0.3 development
 
     <!----------------------------------------------------------------------------------------
 
@@ -239,13 +239,13 @@ body {
 	
 #header-top {
 	/* display the upper left rounded border */
-	background: url(images/arc-t-lt.gif) no-repeat top left;
+	background: url(images/arc-t-lt.gif) no-repeat left top;
 	height: 20px;
 	width: 100%;
 	overflow: visible;
 
 	/* positioning */
-	position: absolute;
+	position: relative;
 	left: 0px;
 	top: 0px;
 	z-index: 10;
@@ -253,36 +253,36 @@ body {
 	
 #header-top-inner {
 	/* display the upper right rounded border */
-	background: url(images/arc-t-rt.gif) no-repeat top right;
+	background: url(images/arc-t-rt.gif) no-repeat right top;
 	height: 20px;
 	width: 100%;
 	overflow: visible;
 
 	/* positioning */
-	position: absolute;
+	position: relative;
 	left: 0px;
 	top: 0px;
 	z-index: 9;
 	}	
 
 #header-bottom {
-	background: url(images/arc-lt.gif) no-repeat top left;
+	background: url(images/arc-lt.gif) no-repeat left bottom;
 	height: 20px;
 	width: 100%;
 
 	/* positioning; relative to #header; set top to the height of the #header element */
-	position: absolute;
-	top: 50px;
+	/*position: relative;
+	top: 30px;*/
 	z-index: 50;
 }
 
 #header-bottom-inner {
-	background: url(images/arc-rt.gif) no-repeat top right;
+	background: url(images/arc-rt.gif) no-repeat right bottom;
 	height: 20px;
 	width: 100%;
 
 	/* positioning; relative to #header-bottom */
-	position: absolute;
+	position: relative;
 	top: 0px;
 	left: 0px;
 	z-index: 50;
@@ -307,53 +307,38 @@ body {
 	overflow: visible;
 
 	/* positioning; is relative to #footer */
-	position: absolute;
-	left: 0px;
+	position: relative;
 	top: -20px;
 	z-index: 10;
 	}	
 	
 #footer-top-inner {
 	/* display the upper left rounded border */
-	background: url(images/arc-r.gif) no-repeat top right;
+	background: url(images/arc-r.gif) no-repeat bottom right;
 	height: 20px;
 	width: 100%;
 	overflow: visible;
-
-	/* positioning; is relative to #footer-top */
-	position: absolute;
-	left: 0px;
-	top: 00px;
 	z-index: 10;
 	}
 
 #footer-bottom {
 	/* display the upper left rounded border */
-	background: url(images/arc-t-l.gif) no-repeat bottom left;
+	background: url(images/arc-t-r.gif) no-repeat bottom right;
+	margin-top: -1px;
 	height: 20px;
 	width: 100%;
 	overflow: visible;
 
-	/* positioning; is relative to #footer; set top to #footer height minus image height */
-	position: absolute;
-	left: 0px;
-	top: 85px;
-	z-index: 10;
-	}	
+	}
 	
 #footer-bottom-inner {
 	/* display the upper left rounded border */
-	background: url(images/arc-t-r.gif) no-repeat top right;
+	background: url(images/arc-t-l.gif) no-repeat bottom left;
 	height: 20px;
-	width: 100%;
+	width: 50%;
 	overflow: visible;
-
-	/* positioning; is relative to #footer-bottom */
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	z-index: 10;
-	}
+	position: relative;
+	}	
 
 /* Content */
 
@@ -479,7 +464,9 @@ h3 {
 	font-size: 10pt;
 	}
 
-h1, h1 a, h1 a:hover, h1 a:visited, #headerimg .description {
+h1, h1 a, h1 a:hover, h1 a:visited, 
+#header-description a:hover,
+#header-description a:visited {
 	text-decoration: none;
 	color: white;
 	}
@@ -1597,7 +1584,9 @@ td.exif-value {
 }
 
 #photo-nav-left a:hover {
-	background: url(images/go_left.gif) 50% left no-repeat;
+	background-image: url(images/go_left.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
 }
 
 #photo-nav-right {
@@ -1608,7 +1597,9 @@ td.exif-value {
 }
 
 #photo-nav-right a:hover {
-	background: url(images/go_right.gif) 50% right no-repeat;
+	background-image: url(images/go_right.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
 }
 
 img.gravatar {
