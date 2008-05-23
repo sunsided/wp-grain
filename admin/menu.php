@@ -47,8 +47,8 @@
 		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">';
 		
 		// write input
-		echo '<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>';
-		echo '<input class="'.$classes.'" type="text" name="'.$fieldName.'" id="'.$fieldName.'" value="'.$value.'" />';
+		echo '	<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>';
+		echo '	<input class="'.$classes.'" type="text" name="'.$fieldName.'" id="'.$fieldName.'" value="'.$value.'" />';
 		
 		// quickinfo
 		if( !empty($quickInfo) ) {
@@ -62,12 +62,12 @@
 				$quickInfo = "<strike title=\"".$no_HTML."\">(HTML)</strike>";
 			}
 
-			echo '<span class="'.$class.'" id="'.$fieldName.'_info">'.$quickInfo.'</span>';
+			echo '	<span class="'.$class.'" id="'.$fieldName.'_info">'.$quickInfo.'</span>';
 		}
 		
 		// description line
 		if( !empty($descriptionLine) ) {
-			echo '<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>';
+			echo '	<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>';
 		}
 		
 		// end option line
@@ -105,31 +105,31 @@
 
 		// get css class
 		$classes = "checkbox";
-		if(!empty($cssClass)) $classes .= ' '.$cssClass;
+		if(!empty($cssClass) && ($classes != $cssClass)) $classes .= ' '.$cssClass;
 		
 		// begin option line
 		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">'.PHP_EOL;
 		
 		// write input
-		echo '<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>'.PHP_EOL;	
+		echo '	<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'_field">'.$title.'</label>'.PHP_EOL;	
 		
 		// write hidden field
-		echo '<input type="hidden" name="'.$fieldName.'" value="0" />';
+		echo '	<input type="hidden" name="'.$fieldName.'" value="0" />'.PHP_EOL;
 		
 		// write real field
 		if($value)
-			echo '<input class="'.$classes.' checkbox" type="checkbox" name="'.$fieldName.'" id="'.$fieldName.'" checked="checked" value="1" />'.PHP_EOL;
+			echo '	<input class="'.$classes.'" type="checkbox" name="'.$fieldName.'" id="'.$fieldName.'_field" checked="checked" value="1" />'.PHP_EOL;
 		else
-			echo '<input class="'.$classes.' checkbox" type="checkbox" name="'.$fieldName.'" id="'.$fieldName.'" value="1" />'.PHP_EOL;
+			echo '	<input class="'.$classes.'" type="checkbox" name="'.$fieldName.'" id="'.$fieldName.'_field" value="1" />'.PHP_EOL;
 		
 		// quickinfo
 		if( !empty($quickInfo) ) {
-			echo '<label for="'.$fieldName.'" class="checkbox_text" id="'.$fieldName.'_info">'.$quickInfo.'</label>'.PHP_EOL;
+			echo '	<label for="'.$fieldName.'_field" class="checkbox_text" id="'.$fieldName.'_info">'.$quickInfo.'</label>'.PHP_EOL;
 		}
 		
 		// description line
 		if( !empty($descriptionLine) ) {
-			echo '<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>'.PHP_EOL;
+			echo '	<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>'.PHP_EOL;
 		}
 		
 		// end option line
@@ -151,12 +151,12 @@
 		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">'.PHP_EOL;
 		
 		// write input
-		echo '<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>'.PHP_EOL;	
-		echo '<textarea class="'.$classes.'" cols="95" wrap="off" rows="10" name="'.$fieldName.'" id="'.$fieldName.'">'.$value.'</textarea>'.PHP_EOL;
+		echo '	<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>'.PHP_EOL;	
+		echo '	<textarea class="'.$classes.'" cols="95" wrap="off" rows="10" name="'.$fieldName.'" id="'.$fieldName.'">'.$value.'</textarea>'.PHP_EOL;
 				
 		// description line
 		if( !empty($descriptionLine) ) {
-			echo '<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>';
+			echo '	<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>';
 		}
 		
 		// end option line
@@ -178,30 +178,30 @@
 		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">'.PHP_EOL;
 		
 		// write input
-		echo '<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>'.PHP_EOL;	
+		echo '	<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>'.PHP_EOL;	
 		
 		// loop all entries
 		if(!empty($values))
-			echo '<select class="'.$classes.'" name="'.$fieldName.'" id="'.$fieldName.'">'.PHP_EOL;
+			echo '	<select class="'.$classes.'" name="'.$fieldName.'" id="'.$fieldName.'">'.PHP_EOL;
 		else
-			echo '<select disabled="disabled" class="'.$classes.'" name="'.$fieldName.'" id="'.$fieldName.'">'.PHP_EOL;
+			echo '	<select disabled="disabled" class="'.$classes.'" name="'.$fieldName.'" id="'.$fieldName.'">'.PHP_EOL;
 		foreach ($values as $fieldvalue => $text) 
 		{
 			if( $fieldvalue == $optionvalue )
-				echo '<option value="'.$fieldvalue.'" selected="selected">'.$text.'</option>'.PHP_EOL;
+				echo '		<option value="'.$fieldvalue.'" selected="selected">'.$text.'</option>'.PHP_EOL;
 			else
-				echo '<option value="'.$fieldvalue.'">'.$text.'</option>'.PHP_EOL;
+				echo '		<option value="'.$fieldvalue.'">'.$text.'</option>'.PHP_EOL;
 		}
-		echo '</select>'.PHP_EOL;
+		echo '	</select>'.PHP_EOL;
 		
 		// quickinfo
 		if( !empty($quickInfo) ) {
-			echo '<span class="'.$class.'" id="'.$fieldName.'_info">'.$quickInfo.'</span>';
+			echo '	<span class="'.$class.'" id="'.$fieldName.'_info">'.$quickInfo.'</span>';
 		}
 		
 		// description line
 		if( !empty($descriptionLine) ) {
-			echo '<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>'.PHP_EOL;
+			echo '	<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>'.PHP_EOL;
 		}
 		
 		// end option line
@@ -236,20 +236,20 @@
 		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">';
 		
 		// write input
-		echo '<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>';
+		echo '	<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>';
 		
-		echo '<input maxlength="4" class="'.$classes.'" type="text" name="'.$fieldName1.'" id="'.$fieldName1.'" value="'.$value1.'" />';
-		echo '<span class="separator">'.__("&times;", "grain").'</span>';
-		echo '<input maxlength="4" class="'.$classes.'" type="text" name="'.$fieldName2.'" id="'.$fieldName2.'" value="'.$value2.'" />';
+		echo '	<input maxlength="4" class="'.$classes.'" type="text" name="'.$fieldName1.'" id="'.$fieldName1.'" value="'.$value1.'" />';
+		echo '	<span class="separator">'.__("&times;", "grain").'</span>';
+		echo '	<input maxlength="4" class="'.$classes.'" type="text" name="'.$fieldName2.'" id="'.$fieldName2.'" value="'.$value2.'" />';
 		
 		// quickinfo
 		if( !empty($unit) ) {
-			echo '<span class="'.$class.'" id="'.$fieldName.'_info">'.$unit.'</span>';
+			echo '	<span class="'.$class.'" id="'.$fieldName.'_info">'.$unit.'</span>';
 		}
 		
 		// description line
 		if( !empty($descriptionLine) ) {
-			echo '<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>';
+			echo '	<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>';
 		}
 		
 		// end option line
