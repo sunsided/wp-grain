@@ -107,7 +107,7 @@ This content is licensed under a <a rel="license" href="http://creativecommons.o
 	$GrainOpt->defineFlagOpt( 'GRAIN_EYECANDY_GRAVATARS_ENABLED', 'eyecandy_gravatars_enabled', FALSE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_EYECANDY_GRAVATARS_LINKED', 'eyecandy_gravatars_linked', FALSE );
 	$GrainOpt->defineValueOpt( 'GRAIN_EYECANDY_GRAVATAR_SIZE', 'eyecandy_gravatar_size', 40 );
-	$GrainOpt->defineStringOpt( 'GRAIN_EYECANDY_GRAVATAR_ALTERNATE', 'eyecandy_gravatar_alternate_uri' );
+	$GrainOpt->defineStringOpt( 'GRAIN_EYECANDY_GRAVATAR_ALTERNATE', 'eyecandy_gravatar_alternate_uri', GRAIN_TEMPLATE_DIR.'/images/gravatar.png', FALSE );
 	$GrainOpt->defineStringOpt( 'GRAIN_EYECANDY_GRAVATAR_RATING', 'eyecandy_gravatar_rating', "G" );
 	
 	$GrainOpt->defineFlagOpt( 'GRAIN_EYECANDY_COOLPB_ENABLED', 'eyecandy_use_coolpb_button', FALSE );
