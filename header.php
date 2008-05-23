@@ -9,7 +9,7 @@
 
 	/* Session preparing */
 	
-	function grain_startSession() 
+	function grain_startSession($on_popup=FALSE) 
 	{	
 		global $wp_query, $GrainOpt;
 			
@@ -20,14 +20,14 @@
 		if( is_home() ):
 			$lastposts = get_posts('numberposts=1');
 			foreach ($lastposts as $post):
-				setup_postdata($post);
+				setup_postdata($post);			
 			endforeach;
 			// pretend we are on a single page so that next/prev post functions work
 			$wp_query->is_single = true;
 		endif;
 		
 		// allow OTI requests only from local server
-		$oti_allowed = ($_SERVER["REMOTE_ADDR"] == $_SERVER["SERVER_ADDR"]) && $_SESSION["GRAIN_FROM_COMPP"] === true;
+		$oti_allowed = /*($_SERVER["REMOTE_ADDR"] == $_SERVER["SERVER_ADDR"]) &&*/ $_SESSION["GRAIN_FROM_COMPP"] === true;
 		$ext_allowed = $GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED);
 		$comments_allowed = grain_can_comment(); // $GrainOpt->getYesNo(GRAIN_COMMENTS_ON_EMPTY_ENABLED);
 		
@@ -53,9 +53,8 @@
 	
 	function grain_endSession() 
 	{
-		if( $_SESSION['grain:oti'] ) {
-			session_unregister('grain:oti');
-			session_unregister('grain:info');
+		if( $_SESSION['GRAIN_FROM_COMPP'] ) {
+			session_unregister('GRAIN_FROM_COMPP');
 		}
 	}
 

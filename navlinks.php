@@ -54,7 +54,8 @@
 
 	function grain_can_comment() 
 	{
-		global $post, $GrainOpt;
+		global $GrainOpt, $post;
+		if( empty($post) ) return false;
 		if( !$GrainOpt->getYesNo(GRAIN_COMMENTS_ENABLED) ) return false;
 		if( !grain_post_has_image()	) {
 			return $GrainOpt->getYesNo(GRAIN_COMMENTS_ON_EMPTY_ENABLED);
@@ -76,7 +77,6 @@
 			$_hmn_comments_more = str_replace( "%", $post->comment_count, __("comments (%)", "grain") );
 			
 			// inf info enforcement is on, we skip directly to the comments on the popup
-			// TODO: Add apropriate option here
 			$internal = ($GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO) && $GrainOpt->getYesNo(GRAIN_POPUP_JTC) ? '#comments' : '');
 			// build link
 			$link .= (!$comments_open ? '<del class="closed-comments">' : '');
@@ -94,9 +94,8 @@
 			//$text = (isset($_SESSION['grain:info']) && $_SESSION['grain:info'] == 'on') ? $_hmn_comments_less : $_hmn_comments_more;
 			$text = GRAIN_REQUESTED_EXINFO ? $_hmn_comments_less : $_hmn_comments_more;
 			
-			// select behaviour (open/close)
+			// select behavior (open/close)
 			$target = ($GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO) ? '#comments' : '#info');
-			//$infomode = (isset($_SESSION['grain:info']) && $_SESSION['grain:info'] == 'on') ? 'off' : 'on'.$target;
 			$infomode = GRAIN_REQUESTED_EXINFO ? 'off' : 'on'.$target;
 			
 			// append info to permalink, based on whether it contains an ampersand or not
@@ -105,7 +104,7 @@
 			
 			// build link
 			$link .= (!$comments_open ? '<del class="closed-comments">' : '');
-			$link .= '<a class="open-extended" title="'.__("comments and details", "grain").'" accesskey="i" rel="start" href="'.$permalink.'">'.$text.'</a>';
+			$link .= '<a class="open-extended" title="'.__("comments and details", "grain").'" accesskey="i" rel="alternate" href="'.$permalink.'">'.$text.'</a>';
 			$link .= (!$comments_open ? '</del>' : '');
 		}
 		

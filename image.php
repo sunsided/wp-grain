@@ -65,4 +65,50 @@
 		return $anchor_html;
 	}
 
+	function grain_inject_popup_thumb() {
+		global $post, $GrainOpt;
+		if( !$GrainOpt->is(GRAIN_POPUP_SHOW_THUMB) ) return;
+
+		// if there is an image
+		if (!empty($post->image))
+		{
+			// get image size
+			$dimensions = getimagesize($post->image->systemFilePath());			 
+			
+			// scale image
+			$width = $GrainOpt->get(GRAIN_POPUP_THUMB_WIDTH);
+			$height = $GrainOpt->get(GRAIN_POPUP_THUMB_HEIGHT);
+			if( $GrainOpt->getYesNo(GRAIN_POPUP_THUMB_STF) ) {
+				$dimensions = grain_scale_image_size($dimensions, $width, $height); // max size
+				$width = $dimensions['width'];
+				$height = $dimensions['height'];
+			}
+		
+			// create URL to the thumbnail
+			$thumbHref = $post->image->getThumbnailHref(array('w='.$width,'h='.$height, 'zc=1'));
+			$title = get_the_title();
+		
+			// embed thumbnail
+			echo '<img id="comment-thumb" src="'.$thumbHref.'" alt="'.$title.'" title="'.$title.'" width="'.$width.'" height="'.$height.'" />';
+		}
+		
+	}
+	
+	function grain_get_subtitle() {
+		global $post, $GrainOpt;
+		if( !$GrainOpt->is(GRAIN_2NDLANG_ENABLED) ) return null;
+		
+		// get the title
+		$subtitle = get_post_meta($post->ID, $GrainOpt->get(GRAIN_2NDLANG_TAG), true);
+		$has_subtitle = !empty($subtitle) && ( $subtitle != $post->post_title );
+		
+		// return the title or
+		return $has_subtitle ? $subtitle : null;
+	}
+	
+	function grain_exif_visible() {
+		global $post, $GrainOpt;
+		return !empty($post->image) && $GrainOpt->is(GRAIN_EXIF_VISIBLE);
+	}
+
 ?>

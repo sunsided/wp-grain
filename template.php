@@ -496,4 +496,29 @@
 		return apply_filters('get_the_time', $the_time, $d);
 	}
 
+	function grain_inject_commenteditlink() {
+		global $user_ID, $comment;
+		// test if the current user can moderate comments
+		if( !empty($user_ID) && current_user_can('moderate_comments') ):
+				$approved = ($comment->comment_approved=='1');
+			?>
+			<div class="comment-admin-tools<?php if(!$approved) echo "-unapproved"; ?>">
+				<?php 
+					$target = GRAIN_IS_POPUP ? "_blank" : "_self";
+					$tooltip = grain_thumbnail_title(__("edit comment", "grain"), __("comment ID:", "grain") .' '. $comment->comment_ID);
+					$edit_text = __("edit comment", "grain");
+					$html = '<a href="'.get_bloginfo('url').'/wp-admin/comment.php?action=editcomment&c='.get_comment_ID().'" target="'.$target.'" title="'.$tooltip.'">'.__("edit comment", "grain").'</a>';
+					if( !$approved ) $html = '<span class="unapproved-comment">'.__("unapproved &rarr;", "grain").' '.$html.'</span>';
+					echo $html;
+				?>
+			</div>
+			<?php 
+		endif; // moderation test	
+	}
+	
+	function grain_announce_page($id=0) {
+		$_SESSION["GRAIN_PAGE_VISITED"]	= $id;
+		if(empty($id)) session_unregister("GRAIN_PAGE_VISITED");
+	}
+
 ?>
