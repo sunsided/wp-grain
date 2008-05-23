@@ -11,7 +11,7 @@
 	
 	function grain_startSession() 
 	{	
-		global $wp_query;
+		global $wp_query, $GrainOpt;
 			
 		// start new session
 		session_start();
@@ -26,17 +26,26 @@
 			$wp_query->is_single = true;
 		endif;
 		
+		// allow OTI requests only from local server
+		$oti_allowed = ($_SERVER["REMOTE_ADDR"] == $_SERVER["SERVER_ADDR"]) && $_SESSION["GRAIN_FROM_COMPP"] === true;
+		$ext_allowed = $GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED);
+		$comments_allowed = grain_can_comment(); // $GrainOpt->getYesNo(GRAIN_COMMENTS_ON_EMPTY_ENABLED);
 		
 		// extended info mode
-		if( isset($_REQUEST['info']) && !empty($_REQUEST['info']) ) {
+		if( $comments_allowed && $ext_allowed && isset($_REQUEST['info']) && !empty($_REQUEST['info']) ) 
+		{
 			// $_SESSION['grain:info'] = $_REQUEST['info'];
 			define('GRAIN_REQUESTED_EXINFO', $_REQUEST['info'] == 'on' ? TRUE : FALSE);
 			define('GRAIN_REQUESTED_OTEXINFO', FALSE);
-		} elseif( isset($_REQUEST['oti']) && !empty($_REQUEST['oti']) ) {
+		} 
+		elseif( $oti_allowed  && isset($_REQUEST['oti']) && !empty($_REQUEST['oti']) ) 
+		{
 			//$_SESSION['grain:oti'] = $_REQUEST['oti'];
 			define('GRAIN_REQUESTED_OTEXINFO', $_REQUEST['oti'] == 'on' ? TRUE : FALSE);
 			define('GRAIN_REQUESTED_EXINFO', GRAIN_REQUESTED_OTEXINFO);
-		} else {
+		} 
+		else 
+		{
 			define('GRAIN_REQUESTED_OTEXINFO', FALSE);
 			define('GRAIN_REQUESTED_EXINFO', FALSE);
 		}	

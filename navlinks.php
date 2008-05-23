@@ -52,10 +52,20 @@
 	
 	/* comment link generation */
 
+	function grain_can_comment() 
+	{
+		global $post, $GrainOpt;
+		if( !$GrainOpt->getYesNo(GRAIN_COMMENTS_ENABLED) ) return false;
+		if( !grain_post_has_image()	) {
+			return $GrainOpt->getYesNo(GRAIN_COMMENTS_ON_EMPTY_ENABLED);
+		}
+		return true;
+	}
+
 	function grain_generate_comments_link() {
-		global $post;
+		global $post, $GrainOpt;
 		
-		$grain_extended_comments = grain_extended_comments();
+		$grain_extended_comments = $GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED);
 		$comments_open = $post->comment_status == "open";
 		$link = '';
 
@@ -67,7 +77,7 @@
 			
 			// inf info enforcement is on, we skip directly to the comments on the popup
 			// TODO: Add apropriate option here
-			$internal = (grain_enforce_info() && grain_popup_jumptocomments() ? '#comments' : '');
+			$internal = ($GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO) && $GrainOpt->getYesNo(GRAIN_POPUP_JTC) ? '#comments' : '');
 			// build link
 			$link .= (!$comments_open ? '<del class="closed-comments">' : '');
 			$link .= '<a class="open-popup" onclick="wpopen(this.href); return false" title="'.__("comments and details", "grain").'" accesskey="c" rel="nofollow" href="?comments_popup='.$post->ID.$internal.'">'.$_hmn_comments_more.'</a>';
@@ -85,7 +95,7 @@
 			$text = GRAIN_REQUESTED_EXINFO ? $_hmn_comments_less : $_hmn_comments_more;
 			
 			// select behaviour (open/close)
-			$target = (grain_enforce_info() ? '#comments' : '#info');
+			$target = ($GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO) ? '#comments' : '#info');
 			//$infomode = (isset($_SESSION['grain:info']) && $_SESSION['grain:info'] == 'on') ? 'off' : 'on'.$target;
 			$infomode = GRAIN_REQUESTED_EXINFO ? 'off' : 'on'.$target;
 			
