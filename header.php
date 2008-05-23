@@ -41,6 +41,14 @@
 			define('GRAIN_REQUESTED_EXINFO', FALSE);
 		}	
 	}
+	
+	function grain_endSession() 
+	{
+		if( $_SESSION['grain:oti'] ) {
+			session_unregister('grain:oti');
+			session_unregister('grain:info');
+		}
+	}
 
 	/* META headers */
 	

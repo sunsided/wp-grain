@@ -40,6 +40,7 @@
 	}
 
 	function grain_post_has_image() {
+		if( !function_exists("yapb_is_photoblog_post") ) return null;
 		return yapb_is_photoblog_post();
 	}
 

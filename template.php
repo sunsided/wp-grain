@@ -17,6 +17,26 @@
 
 /* Template functions */
 	
+	if( !function_exists("is_private") ) {
+		function is_private() 
+		{
+			global $post;
+			if( empty($post) ) return false;
+			return $post->post_status == "private";
+		}	
+	}
+	
+	function grain_inject_photopage_error($message) 
+	{
+		// set and filter
+		$html = '<div id="photo-page-error"><h2 class="errormessage">'.$message.'</h2></div>';
+		$html = apply_filters(GRAIN_PHOTO_PAGE_ERROR_TITLE, $html);
+		
+		// display error
+		echo $html;
+		do_action(GRAIN_PHOTO_PAGE_ERROR);
+	}
+	
 	function grain_get_copyright_string($extended = FALSE) 
 	{
 		global $GrainOpt;
@@ -96,6 +116,7 @@
 	{
 		global $GrainOpt;
 		$target = $GrainOpt->get(GRAIN_NAVBAR_LOCATION);
+		
 		if($location != $target ) return;
 		
 		global $post;
@@ -118,8 +139,9 @@
 /* Eye candy helper */	
 	
 	function grain_use_reflection() {
-		if( !grain_eyecandy_use_moofx() ) return FALSE;
-		return grain_eyecandy_use_reflection();
+		global $GrainOpt;
+		if( !$GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX) ) return FALSE;
+		return $GrainOpt->getYesNo(GRAIN_EYECANDY_REFLECTION_ENABLED);
 	}
 
 	function grain_get_gravatar_uri($rating = false, $size = false, $default = false, $border = false) {
@@ -179,7 +201,8 @@
 /* Eye candy: Fading 2 */
 
 	function grain_fx_can_fade() {
-		return grain_eyecandy_use_moofx() && grain_eyecandy_use_fader();
+		global $GrainOpt;
+		return $GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX) && $GrainOpt->getYesNo(GRAIN_EYECANDY_FADER);
 	}
 
 	function grain_inject_fader($element_id='photo') {
