@@ -188,9 +188,9 @@
 		foreach ($values as $fieldvalue => $text) 
 		{
 			if( $fieldvalue == $optionvalue )
-				echo '<option value='.$fieldvalue.'" selected="selected">'.$text.'</option>'.PHP_EOL;
+				echo '<option value="'.$fieldvalue.'" selected="selected">'.$text.'</option>'.PHP_EOL;
 			else
-				echo '<option value='.$fieldvalue.'">'.$text.'</option>'.PHP_EOL;
+				echo '<option value="'.$fieldvalue.'">'.$text.'</option>'.PHP_EOL;
 		}
 		echo '</select>'.PHP_EOL;
 		

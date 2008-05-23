@@ -290,6 +290,11 @@ body {
 
 /* Footer */
 
+#footer-complete {
+	top: 20px;
+	position: relative;	
+}
+
 #footer {
 	background: rgb(37, 37, 37) url(images/grid2.gif);
 	height: 90px;
@@ -352,9 +357,6 @@ body {
 	}	
 
 /* Content */
-
-#content_area {
-	}
 
 #content-page,
 #content-archives,
@@ -652,10 +654,6 @@ h1 {
 	padding-top: 0px;
 	margin: 0;
 	margin-top: -2px;
-	}
-
-h2 {
-	margin: 30px 0 0;
 	}
 
 h2.pagetitle {

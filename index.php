@@ -16,9 +16,21 @@
 	<div id="content-post" class="widecolumn">
 
 <?php 
-	if (have_posts()):
+
+	$grain_page_displayed = false;
+	$hadPosts = have_posts();
+
+	if ($hadPosts):
 	
-		while (have_posts()) : the_post(); ?>
+		while( have_posts() ) : the_post();
+		
+			// skip private pages
+			if( is_private() ) continue;
+		
+			// set a flag that we have displayed a page
+			$grain_page_displayed = true;
+		
+			?>
 			<div class="post" id="post-<?php the_ID(); ?>">
 
 			<?php 
@@ -30,9 +42,12 @@
 			grain_inject_navigation_menu(GRAIN_IS_BODY_BEFORE); 
 
 			// prepare post
-			$en_title = get_post_meta($post->ID, grain_2ndlang_tag(), true);
-			$addon = "";
-			if( grain_2ndlang_enabled() && ($en_title != null && $en_title != $post->post_title) ) $addon = "<br /><span class='thin'>" . $en_title .'</span>';
+			if( $GrainOpt->getYesNo(GRAIN_2NDLANG_ENABLED) ) 
+			{
+				$en_title = get_post_meta($post->ID, $GrainOpt->get(GRAIN_2NDLANG_TAG), true);
+				$addon = "";
+				if( $en_title != null && $en_title != $post->post_title ) $addon = "<br /><span class='thin'>" . $en_title .'</span>';
+			}
 
 			// get surrounding posts
 			$previous = get_previous_post();
@@ -113,36 +128,38 @@
 			elseif( grain_posttype($post->ID) == GRAIN_POSTTYPE_PHOTO ):
 
 		
-				$whoops_url = grain_whoopsimage_url();
+				$whoops_url = $GrainOpt->get(GRAIN_WHOOPS_URL);
 				
 				echo '<div id="photo-frame">';
 					
-				if (!grain_post_has_image() && empty($whoops_url) ):
-				
-					echo '<h2>';
-					// apply filters;
-					echo apply_filters(GRAIN_PHOTO_PAGE_ERROR_TITLE, __("This photo page is not ready yet. Please check back later.", "grain"));
-					echo '</h2>';
-					do_action(GRAIN_PHOTO_PAGE_ERROR);
-					
-				else:	
+				// check if the post has no image
+				// test if there is no replacement image as well
+				if (!grain_post_has_image() && empty($whoops_url) )
+				{
+					grain_inject_photopage_error(__("This photo page is not ready yet. Please check back later.", "grain"));
+				} 
+				else
+				{
 					
 					// get image path and URL
-					if ( !grain_post_has_image() ):
+					if ( !grain_post_has_image() )
+					{
 						//$path = $whoops_path;
 						$image_url = $whoops_url;
 						// get image size
-						$image_dimensions = array ( grain_whoopsimage_width(), grain_whoopsimage_height() );
-					else:
+						$image_dimensions = array ( $GrainOpt->get(GRAIN_WHOOPS_WIDTH), $GrainOpt->get(GRAIN_WHOOPS_HEIGHT) );
+					}
+					else
+					{
 						$path = $post->image->systemFilePath();
 						$image_url = $post->image->uri;					
 						// get image size
 						$image_dimensions = getimagesize($path);	
-					endif;
+					}
 	
 						
 					// scale image
-					$dimensions = grain_scale_image_size($image_dimensions, GRAIN_MAX_IMAGE_WIDTH); // max width, max height
+					$dimensions = grain_scale_image_size($image_dimensions, $GrainOpt->get(GRAIN_MAX_IMAGE_WIDTH), $GrainOpt->get(GRAIN_MAX_IMAGE_HEIGHT)); // max width, max height
 					$width = $dimensions['width'];
 					$height = $dimensions['height'];
 					$width2 = $dimensions['halfWidth'];
@@ -160,7 +177,7 @@
 					endif;
 
 					// compose tooltips
-					if(!grain_eyecandy_use_moofx_tips()) {
+					if(!$GrainOpt->getYesNo(GRAIN_EYECANDY_USE_MOOTIPS)) {
 						// $title_prev = 'cssbody=[tooltip-text-prev] cssheader=[tooltip-title-prev] header=['.$post->post_title. $addon .'] body=['.$message_left.']';
 						$title_prev = grain_thumbnail_title($post->post_title. $addon, $message_left);
 						//$title_next = 'cssbody=[tooltip-text-next] cssheader=[tooltip-title-next] header=['.$post->post_title. $addon .'] body=['.$message_right.']';
@@ -215,7 +232,7 @@
 						if( $previous != null )
 							$string = '<a class="tooltipped" title="'.$title_prev.'" rel="prev" href="'. get_permalink($previous->ID) .'"><img title="'.$title_prev.'" id="photo" alt="'. $post->post_title . '" class="photo'.(grain_eyecandy_use_reflection()? '-noborder' : '-withborder' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/></a>';
 						else
-							$string = '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.(grain_eyecandy_use_reflection()? '-noborder' : '-withborder' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/>';
+							$string = '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.($GrainOpt->get(GRAIN_EYECANDY_REFLECTION_ENABLED)? '-noborder' : '-withborder' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/>';
 						
 					}
 
@@ -233,7 +250,7 @@
 					// inject reflection script
 					grain_inject_reflec_script('photo');
 
-				endif; // if (!grain_post_has_image() && (empty($whoops_url) || empty($whoops_path)) ):
+				} // (!grain_post_has_image() && empty($whoops_url) ) 
 
 				echo '</div>		<!-- <div id="photo-frame"> -->';
 				//echo '</div>		<!-- <div id="loading-frame"> -->';
@@ -252,13 +269,13 @@
 				//$extended_mode = (isset($_SESSION['grain:info']) && ($_SESSION['grain:info'] == 'on') && grain_extended_comments()) || (isset($_SESSION['grain:oti']) && ($_SESSION['grain:oti'] == 'on'));
 				$extended_mode = (GRAIN_REQUESTED_EXINFO && grain_extended_comments()) || GRAIN_REQUESTED_OTEXINFO;
 
-				if ( $extended_mode || grain_enforce_info() ):
+				if ( $extended_mode || $GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO) ):
 				
-					$en_title = get_post_meta($post->ID, grain_2ndlang_tag(), true);
+					$en_title = get_post_meta($post->ID, $GrainOpt->get(GRAIN_2NDLANG_TAG), true);
 					$addon = FALSE;
 					if( grain_2ndlang_enabled() && ( $en_title != null && $en_title != $post->post_title) ) $addon = TRUE;
 
-					$exif_enabled = $post->image && grain_exif_visible();
+					$exif_enabled = $post->image && $GrainOpt->getYesNo(GRAIN_EXIF_VISIBLE);
 					$exif_class = $exif_enabled ? 'exif' : 'no-exif';
 					$subtitle_class = $addon ? 'has-subtitle' : 'no-subtitle';
 					
@@ -388,23 +405,21 @@
 		break; // // while (have_posts()) : the_post();
 		endwhile; // while (have_posts()) : the_post();
 
+	endif;
+;
 
-	else: ?>
-
-		<h2 class="center"><?php _e("Not found", "grain"); ?></h2>
-		<p class="center"><?php _e("Sorry, but you're searching for something that's not here.", "grain"); ?></p>
-		<?php include (TEMPLATEPATH . "/searchform.php"); ?>
-
-	<?php endif; ?>
-
+	// if there was no post or if we could not find one to display, show an error message
+	if( !$hadPosts || $grain_page_displayed === false ) 
+	{
+		grain_inject_photopage_error(__("There is currently no page to display. Please check back later.", "grain"));	
+	}
+	
+	?>
 	</div>
 
-<?php /* get_sidebar(); */ ?>
+<?php 
 
-<?php get_footer(); ?>
-<?php
-	if( $_SESSION['grain:oti'] ) {
-		session_unregister('grain:oti');
-		session_unregister('grain:info');
-	}
+	get_footer(); 
+	grain_endSession();
+
 ?>

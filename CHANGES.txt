@@ -7,6 +7,7 @@ Add: Option to control filter (p, g, ...) level and image size of Gravatars.
 Add: Option to control markup of category and tag list.
 Add: Page selection boxes are now disabled if no page is available.
 Add: Gravatar images now have the "gravatar" CSS class
+Add: Error messages (no post, photo not found, ...) can now be styled (in addition to the filter that can be applied)
 Add/Change: Several new localization strings; Old strings have changed. (added i.e. date/time formats, so that their defaults can be localized too)
 Change: Option to show popup is now option to suppress popup because of new business logic; The setting is interpreted correctly though.
 Change: Reordered navigation bar page.
@@ -21,6 +22,7 @@ Fix: Navigation bar was shown even if there were no post at all
 Fix: "Edit" link was shown to administrative users even if there were no post at all
 Fix: Fixed bug that prevented disabling of checkboxes with an underlying value that defaulted to true
 Fix: CSS: Rounded borders are now displayed correctly Internet Explorer 7
+Fix: Private posts are skipped now
 
 0.2.2 
 Fix: Menu bug that appeared on the start page. 
