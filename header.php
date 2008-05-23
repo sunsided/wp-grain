@@ -46,31 +46,42 @@ grain_startSession();
 
 <body id="body">
 
+<?php
+	$page_id = grain_ispopup() ? "commentspopup" : "page";
+	$contentarea_id = grain_ispopup() ? "comment-page" : "content_area";
+?>
+
 <!-- the page -->
-<div id="page">
+<div id="<?php echo $page_id; ?>">
 
-<!-- header -->
-<div id="header-complete">
-	<div id="header">
-		<div id="header-top"><div id="header-top-inner"></div></div>
-
-		<?php grain_inject_navigation_menu(GRAIN_IS_HEADER); ?>
-		
-		<!-- header image -->
-		<div id="blogtitle-complete">
-			<div id="headerimg">
-				<h1 id="header-title"><a rel="start" href="<?php echo get_settings('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-			</div>
+	<!-- header -->
+	<div id="header-complete">
+		<div id="header">
+			<div id="header-top"><div id="header-top-inner"></div></div>
+	
+			<?php 
 			
-			<!-- blog description -->
-			<div id="header-description">
-				<a rel="start" href="<?php echo get_settings('home'); ?>/"><?php bloginfo('description'); ?></a>
+				if(!grain_ispopup()) grain_inject_navigation_menu(GRAIN_IS_HEADER); 
+				
+				// link to the main page
+				$href = grain_ispopup() ? "javascript:close();" : get_settings('home');
+			?>
+			
+			<!-- header image -->
+			<div id="blogtitle-complete">
+				<div id="headerimg">
+					<h1 id="header-title"><a rel="start" href="<?php echo $href; ?>"><?php bloginfo('name'); ?></a></h1>
+				</div>
+				
+				<!-- blog description -->
+				<div id="header-description">
+					<a rel="start" href="<?php echo $href; ?>"><?php bloginfo('description'); ?></a>
+				</div>
 			</div>
+	
 		</div>
-
+		<div id="header-bottom"><div id="header-bottom-inner"></div></div>
 	</div>
-	<div id="header-bottom"><div id="header-bottom-inner"></div></div>
-</div>
 
-<!-- content following -->
-<div id="content_area">
+	<!-- content following -->
+	<div id="<?php echo $contentarea_id; ?>">

@@ -9,6 +9,8 @@
 
 	/* Session preparing */
 	
+	define("GRAIN_OTI_KEY", "otex");
+	
 	function grain_startSession($on_popup=FALSE) 
 	{	
 		global $wp_query, $GrainOpt;
@@ -34,14 +36,12 @@
 		// extended info mode
 		if( $comments_allowed && $ext_allowed && isset($_REQUEST['info']) && !empty($_REQUEST['info']) ) 
 		{
-			// $_SESSION['grain:info'] = $_REQUEST['info'];
 			define('GRAIN_REQUESTED_EXINFO', $_REQUEST['info'] == 'on' ? TRUE : FALSE);
 			define('GRAIN_REQUESTED_OTEXINFO', FALSE);
 		} 
-		elseif( $oti_allowed  && isset($_REQUEST['oti']) && !empty($_REQUEST['oti']) ) 
+		elseif( $oti_allowed  && isset($_REQUEST[GRAIN_OTI_KEY]) && !empty($_REQUEST[GRAIN_OTI_KEY]) ) 
 		{
-			//$_SESSION['grain:oti'] = $_REQUEST['oti'];
-			define('GRAIN_REQUESTED_OTEXINFO', $_REQUEST['oti'] == 'on' ? TRUE : FALSE);
+			define('GRAIN_REQUESTED_OTEXINFO', $_REQUEST[GRAIN_OTI_KEY] == 'on' ? TRUE : FALSE);
 			define('GRAIN_REQUESTED_EXINFO', GRAIN_REQUESTED_OTEXINFO);
 		} 
 		else 

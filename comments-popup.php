@@ -18,7 +18,7 @@ while ( have_posts()) : the_post();
 		if( grain_can_comment() ) {
 			// append info to permalink, based on whether it contains an ampersand or not
 			$contains_amp = strstr(get_permalink($post->ID), '?');
-			$permalink = get_permalink($post->ID) . ($contains_amp !== FALSE ? '&oti=on' : '?oti=on');
+			$permalink = get_permalink($post->ID) . ($contains_amp !== FALSE ? '&'.GRAIN_OTI_KEY.'=on' : '?'.GRAIN_OTI_KEY.'=on');
 		} else {
 			$permalink = get_permalink($post->ID);
 		}
@@ -36,65 +36,23 @@ while ( have_posts()) : the_post();
 	
 	else:
 	
-		define("GRAIN_IS_POPUP", true);
+		// flag that this is a popup
+		grain_set_ispopup(TRUE);
+		get_header();
 	
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	 <title>
-	 		<?php echo str_replace( "%TITLE", $post->post_title, __("Comments on &quot;%TITLE&quot;", "grain")); ?> &laquo; <?php echo get_settings('blogname'); ?>
-	 </title>
-	
-	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php echo get_settings('blog_charset'); ?>" />
-	
-	<!-- meta -->
-	<?php 
-	grain_embed_general_meta();
-	grain_embed_generator_meta();
-	?>
-	
-	<!-- stylesheets -->
-	<?php grain_embed_css(); ?>
-	
-	<!-- theme js -->
-	<?php grain_embed_javascripts(); ?>	
-</head>
-	
-<body id="body">
-	
-	<div id="commentspopup">
-			
-		<div id="header-complete">
-			<div id="header">
-				<div id="header-top"><div id="header-top-inner"></div></div>
-				
-				<div id="blogtitle-complete">
-					<div id="headerimg">
-						<h1 id="header-title"><?php echo get_settings('blogname'); ?></h1>
-					</div>
-					<div id="header-description">
-						<a href="javascript:close();"><?php bloginfo('description'); ?></a>
-					</div>
-				</div>
-			</div>
-			<div id="header-bottom"><div id="header-bottom-inner"></div></div>
-		</div>
-	
-		<div id="comment-page">
-	
-		<?php
-			// show the popup
-			grain_inject_popup_thumb();
-	
-			// prepare the second title line
-			$en_title = grain_get_subtitle();
-	
-			// exif information
-			$exif_enabled = grain_exif_visible();
-			$exif_class = $exif_enabled ? 'exif' : 'no-exif';
-			$subtitle_class = $en_title ? 'has-subtitle' : 'no-subtitle';
-	
-							?>
+
+		// show the popup
+		grain_inject_popup_thumb();
+
+		// prepare the second title line
+		$en_title = grain_get_subtitle();
+
+		// exif information
+		$exif_enabled = grain_exif_visible();
+		$exif_class = $exif_enabled ? 'exif' : 'no-exif';
+		$subtitle_class = $en_title ? 'has-subtitle' : 'no-subtitle';
+
+		?>
 	
 		<div id="info-frame">
 			<a name="info"></a>
@@ -116,7 +74,7 @@ while ( have_posts()) : the_post();
 			}
 			?>
 	
-			<p style="clear: both;"><?php _e("The permalink address <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> of this photo is:"); ?><br /><em><?php echo get_permalink(); ?></em></p>
+			<span class="permalink-info"><?php _e("The permalink address <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> of this photo is:"); ?><span class="the-permalink"><?php echo get_permalink(); ?></span></span>
 							
 			<?php					
 			// inject  the comments loop
@@ -124,6 +82,7 @@ while ( have_posts()) : the_post();
 			?>
 		</div>
 		
+		<?php /*
 		
 		<p class="credit"><?php timer_stop(1); ?> <cite>Powered by <a href="http://wordpress.org" title="Powered by WordPress, state-of-the-art semantic personal publishing platform"><strong>Wordpress</strong></a></cite></p>
 
@@ -138,6 +97,12 @@ while ( have_posts()) : the_post();
 	</div>
 </body>
 </html>		
+
+*/
+
+get_footer();
+
+?>
 		
 		<?php
 	

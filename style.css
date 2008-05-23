@@ -351,6 +351,11 @@ body {
 	position: relative;
 	}
 	
+#commentspopup #footer-bottom {
+	display: none;
+	visibility: hidden;	
+	}
+	
 #footer-bottom-inner {
 	/* display the upper left rounded border */
 	background: url(images/arc-t-l.gif) no-repeat bottom left;
@@ -483,6 +488,7 @@ h3 {
 	}
 
 h1, h1 a, h1 a:hover, h1 a:visited, 
+#header-description a,
 #header-description a:hover,
 #header-description a:visited {
 	text-decoration: none;
@@ -1614,4 +1620,14 @@ img.gravatar {
 
 span.unapproved-comment {
 	font-weight: bold;	
+}
+
+.permalink-info {
+	clear: both;
+	display: block;
+}
+
+.permalink-info .the-permalink {
+	font-style: italic;
+	display: block;
 }

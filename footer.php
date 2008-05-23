@@ -21,7 +21,7 @@
 			if($GrainOpt->getYesNo(GRAIN_FEED_ATOM_ENABLED)) grain_embed_atom_icon();
 
 			// embed Creative Commons license hint, if wanted
-			if( $GrainOpt->getYesNo(GRAIN_COPYRIGHT_CC_ENABLED) ) grain_embed_cc_div(); 
+			if( !grain_ispopup() && $GrainOpt->getYesNo(GRAIN_COPYRIGHT_CC_ENABLED) ) grain_embed_cc_div(); 
 		?>
 
 		<div id="footer-info<?php if( !$GrainOpt->getYesNo(GRAIN_COPYRIGHT_CC_ENABLED) ) echo '-padded'; ?>">
@@ -41,7 +41,7 @@
 				?>
 			</span>
 			
-			<span id="edit-post-link"><?php if( grain_getpostcount() ) edit_post_link(__("edit post", "grain"), ' | ', ''); ?></span>
+			<span id="edit-post-link"><?php if( !grain_ispopup() && grain_getpostcount() ) edit_post_link(__("edit post", "grain"), ' | ', ''); ?></span>
 		</div>
 
 		<?php wp_footer(); ?>
@@ -51,7 +51,7 @@
 		
 		<div id="syndication">
 			<?php 
-			if( $GrainOpt->getYesNo(GRAIN_SYND_FLAT_ENABLED) ) {
+			if( !grain_ispopup() && $GrainOpt->getYesNo(GRAIN_SYND_FLAT_ENABLED) ) {
 				echo grain_flat_syndication( $GrainOpt->getYesNo(GRAIN_SYND_FLAT_DELIMITER) );
 			} ?>
 		</div>
