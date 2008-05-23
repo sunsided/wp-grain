@@ -270,11 +270,13 @@
 /*******************************************************************************************************************/				
 
 				// check for extended info mode
-				//$extended_mode = (isset($_SESSION['grain:info']) && ($_SESSION['grain:info'] == 'on') && grain_extended_comments()) || (isset($_SESSION['grain:oti']) && ($_SESSION['grain:oti'] == 'on'));
-				$extended_mode = (GRAIN_REQUESTED_EXINFO && $GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED)) || 
-								GRAIN_REQUESTED_OTEXINFO || 
-								$GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO);
+				$regular_extended_mode = (GRAIN_REQUESTED_EXINFO && $GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED)) || GRAIN_REQUESTED_OTEXINFO;
+				$enforced_extended_mode = $GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO);
+				$extended_mode = $regular_extended_mode || $enforced_extended_mode;
+				$is_folded = !$enforced_extended_mode || !$regular_extended_mode;
+				$is_unfolded = !$is_folded;
 
+				// dispatch
 				if ( $extended_mode ):
 				
 					$en_title = get_post_meta($post->ID, $GrainOpt->get(GRAIN_2NDLANG_TAG), true);
@@ -324,7 +326,14 @@
 						else:
 							// output the full content here
 							//echo get_the_content();
-							the_content();
+							
+							if($GrainOpt->is(GRAIN_EXCERPTONLY) || $is_folded)
+								the_excerpt();
+							else 
+							{
+								the_content();
+							}
+							
 						endif;
 					
 					?></div>
@@ -336,13 +345,13 @@
 					<?php if($GrainOpt->getYesNo(GRAIN_CONTENT_DATES)): ?>
 						<span id="content-date">
 							<?php 
-								the_time(grain_filter_dt(grain_dtfmt_published()));
+								the_time(grain_filter_dt($GrainOpt->get(GRAIN_DTFMT_PUBLISHED)));
 							?>
 						</span>
 					
 					<?php endif; ?>
 					
-					<?php if(/*!$extended_mode &&*/ $GrainOpt->getYesNo(GRAIN_COMMENTS_ENABLED) && $GrainOpt->getYesNo(GRAIN_CONTENT_COMMENTS_HINT)): ?>
+					<?php if($GrainOpt->getYesNo(GRAIN_COMMENTS_ENABLED) && $GrainOpt->getYesNo(GRAIN_CONTENT_COMMENTS_HINT)): ?>
 						<span id="comment-hint">
 							<?php 
 								echo grain_generate_comments_link(); 
@@ -353,19 +362,20 @@
 					<?php if($GrainOpt->getYesNo(GRAIN_CONTENT_CATEGORIES)) : ?>
 						<span id="post-categories">
 						<?php 
-							echo grain_begin_catlist(TRUE, __("Posted in: ", "grain"));
-							the_category(grain_catlist_separator());
-							echo grain_end_catlist();
+							echo $GrainOpt->get(GRAIN_OPENTAGS_CATLIST);
+							the_category($GrainOpt->get(GRAIN_CATLIST_SEPARATOR));
+							echo $GrainOpt->get(GRAIN_CLOSETAGS_CATLIST);
 						?>
 						</span>
 					<?php endif; ?>
 					
 					<?php if($GrainOpt->getYesNo(GRAIN_CONTENT_TAGS)) : ?>
+						<span id="post-tags">
 						<?php 
 							if( the_tags( 
-								grain_begin_taglist(TRUE, __("Tagged with: ", "grain")), 
-								grain_taglist_separator(), 
-								grain_end_taglist())):
+								$GrainOpt->get(GRAIN_OPENTAGS_TAGLIST), 
+								$GrainOpt->get(GRAIN_TAGLIST_SEPARATOR), 
+								$GrainOpt->get(GRAIN_CLOSETAGS_TAGLIST))):
 								
 								echo '<span id="post-tags">';
 								the_tags(); 
@@ -373,6 +383,7 @@
 							
 							endif;
 						?>
+					</span>
 					<?php endif; ?>
 					
 					<?php if( $GrainOpt->getYesNo(GRAIN_CONTENT_PERMALINK_VISIBLE) ):  ?>
@@ -389,7 +400,7 @@
 	// recheck for extended info mode, since info enforcement could be enabled
 	// $GrainOpt->getYesNo(GRAIN_COMMENTS_ON_EMPTY_ENABLED)
 	//if( $extended_mode && $GrainOpt->getYesNo(GRAIN_COMMENTS_ENABLED) ) {
-	if( $extended_mode && grain_can_comment() ) {
+	if( $regular_extended_mode && grain_can_comment() ) {
 
 		include( TEMPLATEPATH.'/comments.php'); 
 	

@@ -127,9 +127,9 @@ This content is licensed under a <a rel="license" href="http://creativecommons.o
 	$GrainOpt->defineStringOpt( 'GRAIN_DFMT_COMMENTS', 'dtfmt_comment_date', __("F jS, Y", "grain"), FALSE );
 	$GrainOpt->defineStringOpt( 'GRAIN_TFMT_COMMENTS', 'dtfmt_comment_time', __("H:i", "grain"), FALSE );
 	
-	$GrainOpt->defineStringOpt( 'GRAIN_OPENTAGS_CATLIST', 'tags_open_catlist', "", TRUE);
+	$GrainOpt->defineStringOpt( 'GRAIN_OPENTAGS_CATLIST', 'tags_open_catlist', __("Posted in: ", "grain"), TRUE);
 	$GrainOpt->defineStringOpt( 'GRAIN_CLOSETAGS_CATLIST', 'tags_close_catlist', "", TRUE);
-	$GrainOpt->defineStringOpt( 'GRAIN_OPENTAGS_TAGLIST', 'tags_open_taglist', "", TRUE);
+	$GrainOpt->defineStringOpt( 'GRAIN_OPENTAGS_TAGLIST', 'tags_open_taglist', __("Tagged with: ", "grain"), TRUE);
 	$GrainOpt->defineStringOpt( 'GRAIN_CLOSETAGS_TAGLIST', 'tags_close_taglist', "", TRUE);
 	$GrainOpt->defineStringOpt( 'GRAIN_TAGLIST_SEPARATOR', 'tags_separator', ", ", TRUE);
 	$GrainOpt->defineStringOpt( 'GRAIN_CATLIST_SEPARATOR', 'cats_separator', ", ", TRUE);
@@ -146,7 +146,7 @@ This content is licensed under a <a rel="license" href="http://creativecommons.o
 	$GrainOpt->defineFlagOpt( 'GRAIN_ARCHIVE_TOOLTIPS', 'archive_tooltips', TRUE);
 	$GrainOpt->defineFlagOpt( 'GRAIN_COMMENTS_ENABLED', 'comments_enabled', TRUE);
 	$GrainOpt->defineFlagOpt( 'GRAIN_COMMENTS_ON_EMPTY_ENABLED', 'comments_on_empty', FALSE);
-	$GrainOpt->defineFlagOpt( 'GRAIN_EXCERPTONLY', 'excerptonly', TRUE);
+	$GrainOpt->defineFlagOpt( 'GRAIN_EXCERPTONLY', 'excerptonly', FALSE);
 
 	$GrainOpt->defineStringOpt( 'GRAIN_IMPRINT_URL', 'imprint_url', NULL, FALSE );
 

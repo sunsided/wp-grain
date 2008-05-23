@@ -52,7 +52,7 @@
 		<div id="syndication">
 			<?php 
 			if( !grain_ispopup() && $GrainOpt->getYesNo(GRAIN_SYND_FLAT_ENABLED) ) {
-				echo grain_flat_syndication( $GrainOpt->getYesNo(GRAIN_SYND_FLAT_DELIMITER) );
+				echo grain_flat_syndication( $GrainOpt->get(GRAIN_SYND_FLAT_DELIMITER) );
 			} ?>
 		</div>
 		

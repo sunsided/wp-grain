@@ -95,7 +95,8 @@
 			$text = GRAIN_REQUESTED_EXINFO ? $_hmn_comments_less : $_hmn_comments_more;
 			
 			// select behavior (open/close)
-			$target = ($GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO) ? '#comments' : '#info');
+			// $target = ($GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO) ? '#comments' : '#info');
+			$target = "#info";
 			$infomode = GRAIN_REQUESTED_EXINFO ? 'off' : 'on'.$target;
 			
 			// append info to permalink, based on whether it contains an ampersand or not
