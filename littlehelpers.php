@@ -49,5 +49,14 @@
 		global $yapb;
 		return !empty($yapb);
 	}
+	
+	function grain_set_ispopup($popup=true) {
+		define("GRAIN_IS_POPUP", $popup);
+	}
+	
+	function grain_ispopup() {
+		if(defined("GRAIN_IS_POPUP")) return GRAIN_IS_POPUP;
+		return false;	
+	}
 
 ?>
