@@ -265,6 +265,11 @@ body {
 	z-index: 9;
 	}	
 
+#commentspopup #header-top {
+	display: none;
+	visibility: hidden;
+	}
+
 #header-bottom {
 	background: url(images/arc-lt.gif) no-repeat left bottom;
 	height: 20px;
@@ -1605,4 +1610,8 @@ td.exif-value {
 
 img.gravatar {
    border: 0px !important;
+}
+
+span.unapproved-comment {
+	font-weight: bold;	
 }

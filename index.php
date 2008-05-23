@@ -9,6 +9,7 @@
 
 /*******************************************************************************************************************/				
 
+	define("GRAIN_IS_POPUP", false);
 	get_header(); 
 	
 	?>
@@ -26,6 +27,9 @@
 		
 			// skip private pages
 			if( is_private() ) continue;
+		
+			// set the currently visited page
+			grain_announce_page( $post->ID );
 		
 			// set a flag that we have displayed a page
 			$grain_page_displayed = true;
@@ -415,7 +419,18 @@
 	// if there was no post or if we could not find one to display, show an error message
 	if( !$hadPosts || $grain_page_displayed === false ) 
 	{
-		grain_inject_photopage_error(__("There is currently no page to display. Please check back later.", "grain"));	
+		// set the currently visited page
+		grain_announce_page( 0 );
+		
+		// display an error
+		if( grain_getpostcount() == 0 ) 
+		{
+			grain_inject_photopage_error(__("There is currently no page to display. Please check back later.", "grain"));	
+		}
+		else 
+		{
+			grain_inject_photopage_error(__("There will be a search page soon.", "grain"));	
+		}
 	}
 	
 	?>

@@ -85,18 +85,7 @@
 					<div class="comment-boxed">
 					
 					<div class="comment-text">
-						<?php 
-						
-						// test if the current user can moderate comments
-						if( !empty($user_ID) && current_user_can('moderate_comments') ):
-								$approved = ($comment->comment_approved=='1');
-						?>
-						<div class="comment-admin-tools<?php if(!$approved) echo "-unapproved"; ?>"><?php if(!$approved) echo '<strong>'.__("unapproved &rarr;", "grain"); ?> <a href="<?php bloginfo('url'); ?>/wp-admin/comment.php?action=editcomment&c=<?php comment_ID() ?>" target="_self" title="<?php echo grain_thumbnail_title(__("edit comment", "grain"), __("comment ID:", "grain") .' '. $comment->comment_ID); ?>"><?php _e("edit comment", "grain"); ?></a><?php if(!$approved) echo '</strong>'; ?></div>
-						<?php 
-						endif; // moderation test
-						
-						
-						?>
+						<?php grain_inject_commenteditlink(); ?>
 					
 						<div class="comment-text-inner" <?php if($GrainOpt->getYesNo(GRAIN_EYECANDY_GRAVATARS_ENABLED)) echo ' style="min-height: '.$GrainOpt->get(GRAIN_EYECANDY_GRAVATAR_SIZE).'px;"'; ?>>				
 						

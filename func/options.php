@@ -161,6 +161,11 @@
 			return $this->getForCheckbox($keyName);
 		}
 		
+		function is($keyName) 
+		{
+			return $this->getYesNo($keyName);
+		}
+		
 		function set($keyName, $value) 
 		{
 			if(!$this->exists($keyName)) {
