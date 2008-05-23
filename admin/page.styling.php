@@ -110,6 +110,8 @@
 					<legend><?php _e("Gravatar options", "grain"); ?></legend>
 					<?php
 					grain_admin_checkbox(GRAIN_EYECANDY_GRAVATARS_ENABLED, "use_gravatars", NULL, __("Use Gravatars:", "grain"), __("If enabled, <a href=\"http://www.gravatar.com/\" target=\"_blank\">Gravatar</a> icons are shown on user comments", "grain"), NULL);
+					grain_admin_checkbox(GRAIN_EYECANDY_GRAVATARS_LINKED, "link_gravatars", NULL, __("Link Gravatars:", "grain"), __("If a commenter gives a website URL, the gravatar icon links to his page", "grain"), NULL);
+					
 					grain_admin_longline(GRAIN_EYECANDY_GRAVATAR_ALTERNATE, "gravatar_alternate", NULL, __("Alternative Image:", "grain"), $no_HTML, __("URL of an alternate image for the case the commenter has no Gravatar. If you don't specify an image URL Gravatar will use it's own dummy image if necessary.", "grain"));
 					
 					grain_admin_infoline(NULL, __("The following values are extended configuration options for the Gravatar service. Please change them only if you know what you are doing.", "grain"));

@@ -85,19 +85,20 @@
 					<div class="comment-boxed">
 					
 					<div class="comment-text">
-						<?php if( $user_ID ): 
-						 if(
-							(!empty($userdata->wp_capabilities->administrator) || !empty($userdata->wp_capabilities->editor)) ||
-							(isset($userdata->wp_user_level) && $userdata->wp_user_level <= 7) ||
-							(isset($userdata->user_level) && $userdata->user_level <= 7)
-							):
+						<?php 
 						
-							$approved = ($comment->comment_approved=='1');
+						// test if the current user can moderate comments
+						if( !empty($user_ID) && current_user_can('moderate_comments') ):
+								$approved = ($comment->comment_approved=='1');
 						?>
 						<div class="comment-admin-tools<?php if(!$approved) echo "-unapproved"; ?>"><?php if(!$approved) echo '<strong>'.__("unapproved &rarr;", "grain"); ?> <a href="<?php bloginfo('url'); ?>/wp-admin/comment.php?action=editcomment&c=<?php comment_ID() ?>" target="_self" title="<?php echo grain_thumbnail_title(__("edit comment", "grain"), __("comment ID:", "grain") .' '. $comment->comment_ID); ?>"><?php _e("edit comment", "grain"); ?></a><?php if(!$approved) echo '</strong>'; ?></div>
-						<?php endif; endif; ?>							
+						<?php 
+						endif; // moderation test
+						
+						
+						?>
 					
-						<div class="comment-text-inner" <?php if(grain_eyecandy_use_gravatars()) echo ' style="min-height: '.grain_eyecandy_gravatar_size().'px;"'; ?>>				
+						<div class="comment-text-inner" <?php if($GrainOpt->getYesNo(GRAIN_EYECANDY_GRAVATARS_ENABLED)) echo ' style="min-height: '.$GrainOpt->get(GRAIN_EYECANDY_GRAVATAR_SIZE).'px;"'; ?>>				
 						
 						<?php if($is_syndicated): ?>
 							<span class="syndication-comment-info">
@@ -107,22 +108,26 @@
 							echo ($comment->comment_type == 'trackback' ? __("Trackback", "grain") : __("Pingback", "grain"));
 							?></span></span><?php endif; ?>
 							
-						<?php if(grain_eyecandy_use_gravatars() && !$is_syndicated) : 
-							$gravatar_size = grain_eyecandy_gravatar_size();
-							$gravatar_uri = grain_get_gravatar_uri(grain_eyecandy_gravatar_rating(), $gravatar_size, grain_eyecandy_gravatar_alternate());
+						<?php 
+							$thumTitle = grain_thumbnail_title($comment->comment_author, $has_url ? $comment->comment_author_url : __("no website", "grain") .' '. $comment->comment_ID);						
+							
+							if($GrainOpt->getYesNo(GRAIN_EYECANDY_GRAVATARS_ENABLED) && !$is_syndicated) : 
+								$gravatar_size = $GrainOpt->get(GRAIN_EYECANDY_GRAVATAR_SIZE);
+								$gravatar_uri = grain_get_gravatar_uri($GrainOpt->get(GRAIN_EYECANDY_GRAVATAR_RATING), $gravatar_size, $GrainOpt->get(GRAIN_EYECANDY_GRAVATAR_ALTERNATE));
+								$disableLinkedGravatar = !$GrainOpt->getYesNo(GRAIN_EYECANDY_GRAVATARS_LINKED);
 						?>
 						
 						<div class="comment-gravatar" style="width: <?php echo $gravatar_size; ?>px; height: <?php echo $gravatar_size; ?>px;">
-							<?php if($has_url) : ?>
-							<a href="<?php echo $comment->comment_author_url; ?>">
-							<?php endif; ?>
-							<img class="gravatar" style="border:1px solid white;" src="<?php echo $gravatar_uri; ?>" title="<?php echo $comment->comment_author; ?>" title="<?php echo $comment->comment_author; ?>" />
-							<?php if($has_url) : ?>
-							</a>
-							<?php endif; ?>
+							<?php if($has_url && !$disableLinkedGravatar) {
+								$author_url = '<a href="'.$comment->comment_author_url.'">%CONTENT</a>';							
+								echo '<a href="'.$comment->comment_author_url.'">';
+							} ?>
+							<img class="gravatar" style="border:1px solid white;" src="<?php echo $gravatar_uri; ?>" title="<?php echo (!$disableLinkedGravatar ? $thumTitle : $comment->comment_author); ?>" title="<?php echo $comment->comment_author; ?>" />
+							<?php if($has_url && !$disableLinkedGravatar) echo '</a>'; ?>
 						</div>
 						
-						<?php endif; ?>
+						<?php endif; //gravatar
+						 ?>
 							
 						<?php comment_text() ?>			
 						
@@ -138,12 +143,12 @@
 
 						$string = __("%AUTHOR &#8212; %DATE at %TIME", "grain");
 						if($has_url)
-							$string = str_replace('%AUTHOR', '<a class="comment-author-link" href="'.get_comment_author_url().'">'.get_comment_author().'</a>', $string);
+							$string = str_replace('%AUTHOR', '<a title="'.(empty($thumTitle) ? $comment->comment_author : $thumTitle).'" class="comment-author-link" href="'.get_comment_author_url().'">'.get_comment_author().'</a>', $string);
 						else
 							$string = str_replace('%AUTHOR', $comment->comment_author, $string);
 						$string = str_replace('%IP', get_comment_author_IP(), $string);
-						$string = str_replace('%DATE', get_comment_date( grain_filter_dt(grain_dfmt_comments())), $string );
-						$string = str_replace('%TIME', get_comment_date( grain_filter_dt(grain_tfmt_comments())), $string );
+						$string = str_replace('%DATE', get_comment_date( grain_filter_dt($GrainOpt->get(GRAIN_DFMT_COMMENTS))), $string );
+						$string = str_replace('%TIME', get_comment_date( grain_filter_dt($GrainOpt->get(GRAIN_TFMT_COMMENTS))), $string );
 						$string = str_replace('%TYPE', $comment->comment_type == 'trackback' ? __("Trackback", "grain") : $comment->comment_type == 'pingback' ? __("Pingback", "grain") : __("Comment", "grain"), $string );
 						echo $string;
 
@@ -243,8 +248,8 @@
 					id="submit" name="submit" type="submit" tabindex="5" value="<?php _e("Say it!", "grain"); ?>" />
 				<span id="addon-buttons-frame">
 				
-				<?php if(grain_eyecandy_use_pborg_button()) : 
-					$uri = grain_eyecandy_pborg_uri();
+				<?php if($GrainOpt->getYesNo(GRAIN_EYECANDY_PBORG_BOOKMARK_ENABLED)) : 
+					$uri = $GrainOpt->get(GRAIN_EYECANDY_PBORG_URI);
 					if(!empty($uri)):
 				?>
 				<input 
@@ -256,8 +261,8 @@
 					onclick="window.open('<?php echo $uri; ?>')" />
 				<?php endif; endif; ?>	
 				
-				<?php if(grain_eyecandy_use_coolpb_button()) : 
-					$uri = grain_eyecandy_coolpb_uri();
+				<?php if($GrainOpt->getYesNo(GRAIN_EYECANDY_COOLPB_ENABLED)) : 
+					$uri = $GrainOpt->get(GRAIN_EYECANDY_COOLPB_URI);
 					if(!empty($uri)):
 				?>
 				<input 

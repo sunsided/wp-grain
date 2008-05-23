@@ -267,20 +267,22 @@
 
 				// check for extended info mode
 				//$extended_mode = (isset($_SESSION['grain:info']) && ($_SESSION['grain:info'] == 'on') && grain_extended_comments()) || (isset($_SESSION['grain:oti']) && ($_SESSION['grain:oti'] == 'on'));
-				$extended_mode = (GRAIN_REQUESTED_EXINFO && grain_extended_comments()) || GRAIN_REQUESTED_OTEXINFO;
+				$extended_mode = (GRAIN_REQUESTED_EXINFO && $GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED)) || 
+								GRAIN_REQUESTED_OTEXINFO || 
+								$GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO);
 
-				if ( $extended_mode || $GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO) ):
+				if ( $extended_mode ):
 				
 					$en_title = get_post_meta($post->ID, $GrainOpt->get(GRAIN_2NDLANG_TAG), true);
 					$addon = FALSE;
-					if( grain_2ndlang_enabled() && ( $en_title != null && $en_title != $post->post_title) ) $addon = TRUE;
+					if( $GrainOpt->getYesNo(GRAIN_2NDLANG_ENABLED) && ( $en_title != null && $en_title != $post->post_title) ) $addon = TRUE;
 
 					$exif_enabled = $post->image && $GrainOpt->getYesNo(GRAIN_EXIF_VISIBLE);
 					$exif_class = $exif_enabled ? 'exif' : 'no-exif';
 					$subtitle_class = $addon ? 'has-subtitle' : 'no-subtitle';
 					
 					$photo_style = '';
-					if( grain_eyecandy_use_reflection() ) {
+					if( $GrainOpt->getYesNo(GRAIN_EYECANDY_REFLECTION_ENABLED) ) {
 						$photo_style = 'position: relative; top: -'.$top_offset.'px;';
 					}
 					?>
@@ -323,11 +325,11 @@
 					
 					?></div>
 
-					<div id="meta" <?php if(grain_enforce_info()) echo 'class="enforced"'; ?>>
+					<div id="meta" <?php if($GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO)) echo 'class="enforced"'; ?>>
 
 					<?php edit_post_link(__("edit post", "grain"), '', ''); ?>
 					
-					<?php if(grain_show_content_dates()): ?>
+					<?php if($GrainOpt->getYesNo(GRAIN_CONTENT_DATES)): ?>
 						<span id="content-date">
 							<?php 
 								the_time(grain_filter_dt(grain_dtfmt_published()));
@@ -336,7 +338,7 @@
 					
 					<?php endif; ?>
 					
-					<?php if(/*!$extended_mode &&*/ grain_comments_enabled() && grain_show_comments_hint()): ?>
+					<?php if(/*!$extended_mode &&*/ $GrainOpt->getYesNo(GRAIN_COMMENTS_ENABLED) && $GrainOpt->getYesNo(GRAIN_CONTENT_COMMENTS_HINT)): ?>
 						<span id="comment-hint">
 							<?php 
 								echo grain_generate_comments_link(); 
@@ -344,7 +346,7 @@
 						</span>
 					<?php endif; ?>
 
-					<?php if(grain_show_content_categories()) : ?>
+					<?php if($GrainOpt->getYesNo(GRAIN_CONTENT_CATEGORIES)) : ?>
 						<span id="post-categories">
 						<?php 
 							echo grain_begin_catlist(TRUE, __("Posted in: ", "grain"));
@@ -354,7 +356,7 @@
 						</span>
 					<?php endif; ?>
 					
-					<?php if(grain_show_content_tags()) : ?>
+					<?php if($GrainOpt->getYesNo(GRAIN_CONTENT_TAGS)) : ?>
 						<?php 
 							if( the_tags( 
 								grain_begin_taglist(TRUE, __("Tagged with: ", "grain")), 
@@ -369,7 +371,7 @@
 						?>
 					<?php endif; ?>
 					
-					<?php if( grain_show_content_permalink() ):  ?>
+					<?php if( $GrainOpt->getYesNo(GRAIN_CONTENT_PERMALINK_VISIBLE) ):  ?>
 						<span id="permalink-container"><?php _e("The permalink address <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> of this photo is:", "grain"); ?> <span id="permalink"><?php echo get_permalink(); ?></span></span>
 					<?php endif; ?>
 					</div>
@@ -381,7 +383,9 @@
 /*******************************************************************************************************************/
 
 	// recheck for extended info mode, since info enforcement could be enabled
-	if( $extended_mode && grain_comments_enabled() ) {
+	// $GrainOpt->getYesNo(GRAIN_COMMENTS_ON_EMPTY_ENABLED)
+	//if( $extended_mode && $GrainOpt->getYesNo(GRAIN_COMMENTS_ENABLED) ) {
+	if( $extended_mode && grain_can_comment() ) {
 
 		include( TEMPLATEPATH.'/comments.php'); 
 	

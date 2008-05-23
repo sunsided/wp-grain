@@ -36,12 +36,18 @@
 					$message = __("Most probably you want to leave this enabled to receive feedback. But maybe you really just want to <em>show</em> your photos. This is the showcase option then: If you disable it, visitors will neither be able to comment (which is a standard feature) nor to view any existing comments. You may then also want to disable WordPress' commenting options on the %LINK screen altogether to prevent comments coming in through track-/pingbacks or backdoors.", "grain"); 
 					$message = str_replace('%LINK', $link, $message);
 					grain_admin_checkbox(GRAIN_COMMENTS_ENABLED, "enable_comments", NULL, __("Enable comments:", "grain"), __("Allow visitors to comment or view existing comments", "grain"), $message);
-					
 					grain_admin_checkbox(GRAIN_EXTENDEDINFO_ENABLED, "extended_comments", NULL, __("No popups!", "grain"), __("Don't use a popup to display an image's info and commenting form", "grain"), __("If you enable this, the \"Extended Info page\" mechanism will be used. This is a replacement for the older comments popup, showing the info and comments on the same page as the photo. One will still have to click the comments link to display it, though.<br />If you prefer a popup for that task, disable this option.", "grain"));
 					grain_admin_checkbox(GRAIN_CONTENT_ENFORCE_INFO, "enforce_extended_info", NULL, __("Always show info:", "grain"), __("Always show photo title/description regardless of the popup setting above", "grain"), __("If you always want to display the photo's title and it's description on the photo page, enable this option. If you uncheck this option and have the popups disabled (enabled the option above that is), be aware that the user won't see any information about your photo. (They would be shown on the popup, but you disabled it.)", "grain"));					
-					grain_admin_checkbox(GRAIN_POPUP_JTC, "popup_jtc", NULL, __("Directly jump to comments:", "grain"), __("If the comments popup opens, skip the description text there", "grain"), __("This option only applies when the info is already shown on the main page, so that the visitor won't have to scroll to the comments on the popup. Rule of thumb: If you tend to write long texts and use the popup, you may want to enable this option.", "grain"));
 					?>							
 										
+				</fieldset>
+				
+				<fieldset>
+					<legend><?php _e("Basic behavior II", "grain"); ?></legend>
+					<?php 			
+					grain_admin_checkbox(GRAIN_COMMENTS_ON_EMPTY_ENABLED, "enable_comments_oe", NULL, __("Comments always allowed:", "grain"), __("Allow visitors to comment on pages considered \"not ready\"", "grain"), __("Sometimes it happens that a visitor sees a page whose image is not available. Leave this option disabled to prevent access to the comments form in this special case.<br />This also implies that the image infos can be seen.", "grain"));
+					grain_admin_checkbox(GRAIN_POPUP_JTC, "popup_jtc", NULL, __("Directly jump to comments:", "grain"), __("If the comments popup opens, skip the description text there", "grain"), __("This option only applies when the info is already shown on the main page, so that the visitor won't have to scroll to the comments on the popup. Rule of thumb: If you tend to write long texts and use the popup, you may want to enable this option.", "grain"));
+					?>
 				</fieldset>
 				<fieldset>
 					<legend><?php _e("Info display: Your photo's description", "grain"); ?></legend>

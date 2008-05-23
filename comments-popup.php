@@ -4,12 +4,12 @@
 	------------------------------------------------------------------
 	File version: $Id$	
 */
-
+	
+	session_start();
 
 	/* Don't remove these lines. */
 	add_filter('comment_text', 'popuplinks');
 	while ( have_posts()) : the_post();
-
 
 	// if this is a direct hit, redirect to a temporary extended info page ("one time info")
 	if(!isset($_SERVER['HTTP_REFERER']) || empty($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST']) === FAlSE ) {
@@ -21,6 +21,8 @@
 		} else {
 			$permalink = get_permalink($post->ID);
 		}
+		
+		$_SESSION["GRAIN_FROM_COMPP"] = true;
 		
 		header('Location: '.$permalink);
 		die();

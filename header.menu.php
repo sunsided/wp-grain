@@ -34,7 +34,7 @@
 /**********************************************************************************************/
 
 	// get post object
-	global $post;
+	global $post, $GrainOpt;
 
 	// this will be the array that contains the menu items
 	$links = array();
@@ -51,13 +51,17 @@
 		if( $prev ) 			$link = '<span id="menu-prev">'.$prev.'</span>';
 		if( $prev && $next ) 	$link .= " ";
 		if( $next ) 			$link .= '<span id="menu-next">'.$next.'</span>';
-		array_push( $links, $link );
+		
+		// add the link
+		if( !empty($link) ) 	array_push( $links, $link );
 
-		if( $GrainOpt->getYesNo(GRAIN_COMMENTS_ENABLED) ) {
-			$link = grain_generate_comments_link();
+		// add comments link
+		if( grain_can_comment() ) {
+			$link = grain_generate_comments_link();			
 			array_push( $links, '<span id="menu-comments">'.$link.'</span>' );
 		}
 
+		// add permalink
 		if( $GrainOpt->getYesNo(GRAIN_MNU_PERMALINK_VISIBLE) ):
 			$link = '<a class="tooltipped" id="permalink" alt="'.__("Permalink for: ", "grain").$post->post_title.'" title="'.grain_thumbnail_title(__("Permalink", "grain"), $post->post_title).'" href="'.get_permalink($post->ID).'">'.__("#", "grain").'</a>';
 			array_push( $links, '<span id="menu-permalink">'.$link.'</span>' );

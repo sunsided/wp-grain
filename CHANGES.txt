@@ -3,11 +3,13 @@ Add: Sidebars now have additional CSS styles applied describing their position
 Add: Grain version number now is extended by "dev" in the HTML header if it was taken from a development branch
 Add: The administration now shows an error message if YAPB was not installed.
 Add: Option to control the image size.
-Add: Option to control filter (p, g, ...) level and image size of Gravatars.
 Add: Option to control markup of category and tag list.
 Add: Page selection boxes are now disabled if no page is available.
+Add: Option to control filter (p, g, ...) level and image size of Gravatars.
 Add: Gravatar images now have the "gravatar" CSS class
+Add: Option to enable or disable linking of Gravatar icons
 Add: Error messages (no post, photo not found, ...) can now be styled (in addition to the filter that can be applied)
+Add: Option to control access to the comment form if a photo page has no content
 Add/Change: Several new localization strings; Old strings have changed. (added i.e. date/time formats, so that their defaults can be localized too)
 Change: Option to show popup is now option to suppress popup because of new business logic; The setting is interpreted correctly though.
 Change: Reordered navigation bar page.
@@ -23,6 +25,7 @@ Fix: "Edit" link was shown to administrative users even if there were no post at
 Fix: Fixed bug that prevented disabling of checkboxes with an underlying value that defaulted to true
 Fix: CSS: Rounded borders are now displayed correctly Internet Explorer 7
 Fix: Private posts are skipped now
+Fix: OTI option that enforces the extended info view if the comment popup is accessed directly now only works if called from the local system
 
 0.2.2 
 Fix: Menu bug that appeared on the start page. 
