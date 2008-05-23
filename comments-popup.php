@@ -61,7 +61,20 @@ while ( have_posts()) : the_post();
 				if($en_title) echo '<h3 id="subtitle">'.$en_title.'</h3>'.PHP_EOL;
 			?>
 			<div id="content" class="<?php echo $exif_class; ?>">
-				<?php the_content() ?>
+				<?php 
+				
+					if($GrainOpt->is(GRAIN_EXCERPTONLY))
+						the_excerpt();
+					else 
+					{
+						$_SESSION["GRAIN_FROM_COMPP"] = true;
+						$the_content = apply_filters("the_content", get_the_content());
+						$the_content = str_replace("?p=".$post->ID, "?p=".$post->ID."&".GRAIN_OTI_KEY."=on", $the_content);
+						echo $the_content;
+						
+					}
+					
+				?>
 			</div>
 	
 			<?php

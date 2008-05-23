@@ -102,7 +102,7 @@
 		$_SESSION["__grain_admin_options"][$fieldName] = $optionName;
 		
 		$value = $GrainOpt->getYesNo($optionName, FALSE);
-
+		
 		// get css class
 		$classes = "checkbox";
 		if(!empty($cssClass) && ($classes != $cssClass)) $classes .= ' '.$cssClass;
@@ -118,9 +118,9 @@
 		
 		// write real field
 		if($value)
-			echo '	<input class="'.$classes.'" type="checkbox" name="'.$fieldName.'" id="'.$fieldName.'_field" checked="checked" value="1" />'.PHP_EOL;
+			echo '	<input type="checkbox" class="'.$classes.'" name="'.$fieldName.'" id="'.$fieldName.'_field" checked="checked" value="1" />'.PHP_EOL;
 		else
-			echo '	<input class="'.$classes.'" type="checkbox" name="'.$fieldName.'" id="'.$fieldName.'_field" value="1" />'.PHP_EOL;
+			echo '	<input type="checkbox" class="'.$classes.'" name="'.$fieldName.'" id="'.$fieldName.'_field" value="1" />'.PHP_EOL;
 		
 		// quickinfo
 		if( !empty($quickInfo) ) {

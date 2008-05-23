@@ -47,6 +47,7 @@
 					<?php 			
 					grain_admin_checkbox(GRAIN_COMMENTS_ON_EMPTY_ENABLED, "enable_comments_oe", NULL, __("Comments always allowed:", "grain"), __("Allow visitors to comment on pages considered \"not ready\"", "grain"), __("Sometimes it happens that a visitor sees a page whose image is not available. Leave this option disabled to prevent access to the comments form in this special case.<br />This also implies that the image infos can be seen.", "grain"));
 					grain_admin_checkbox(GRAIN_POPUP_JTC, "popup_jtc", NULL, __("Directly jump to comments:", "grain"), __("If the comments popup opens, skip the description text there", "grain"), __("This option only applies when the info is already shown on the main page, so that the visitor won't have to scroll to the comments on the popup. Rule of thumb: If you tend to write long texts and use the popup, you may want to enable this option.", "grain"));
+					grain_admin_checkbox(GRAIN_EXCERPTONLY, "excerpt_only", NULL, __("Show only excerpts:", "grain"), __("Show only a post's excerpt", "grain"), __("This option doesn't apply to you if you never use the <code>&lt!--more--&gt</code> tag anyway. If you choose to disable this option and such tag is found in the photo's description text, a \"<code>read on...</code>\" link will be shown. Grain then switches to single time extended mode if that link is clicked. Be aware that, depending on the visitor's browser, the link may open within the popup.", "grain"));
 					?>
 				</fieldset>
 				<fieldset>
@@ -78,7 +79,7 @@
 				<fieldset>
 					<legend><?php _e("Info display: Tags", "grain"); ?></legend>
 					<?php				
-					grain_admin_checkbox(GRAIN_CONTENT_CATEGORIES, "show_taglist", NULL, __("Show tag list:", "grain"), __("Shows the tags with which the photo is marked", "grain"), NULL);
+					grain_admin_checkbox(GRAIN_CONTENT_TAGS, "show_taglist", NULL, __("Show tag list:", "grain"), __("Shows the tags with which the photo is marked", "grain"), NULL);
 					// TODO: Move these to the styling/layout page
 					grain_admin_shortline(GRAIN_OPENTAGS_TAGLIST, "before_taglist", NULL, __("Begin tag list:", "grain"), $HTML_allowed, __("This text will be embedded right before the tag list. You can put specific markup here to style your theme."));
 					grain_admin_shortline(GRAIN_TAGLIST_SEPARATOR, "delimit_taglist", NULL, __("Tag list delimiter:", "grain"), $HTML_allowed, __("This will be embedded within the tag list to separate two entries."));

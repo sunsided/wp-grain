@@ -146,6 +146,7 @@ This content is licensed under a <a rel="license" href="http://creativecommons.o
 	$GrainOpt->defineFlagOpt( 'GRAIN_ARCHIVE_TOOLTIPS', 'archive_tooltips', TRUE);
 	$GrainOpt->defineFlagOpt( 'GRAIN_COMMENTS_ENABLED', 'comments_enabled', TRUE);
 	$GrainOpt->defineFlagOpt( 'GRAIN_COMMENTS_ON_EMPTY_ENABLED', 'comments_on_empty', FALSE);
+	$GrainOpt->defineFlagOpt( 'GRAIN_EXCERPTONLY', 'excerptonly', TRUE);
 
 	$GrainOpt->defineStringOpt( 'GRAIN_IMPRINT_URL', 'imprint_url', NULL, FALSE );
 
