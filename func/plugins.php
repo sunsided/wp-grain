@@ -2,7 +2,7 @@
 /*     
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
-	File version: $Id: paths.php 11 2008-05-18 23:50:00Z sunside $
+	File version: $Id$
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
