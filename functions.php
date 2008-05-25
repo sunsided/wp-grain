@@ -19,8 +19,7 @@
 
 /* load plugin functions */
 	
-	@require_once(TEMPLATEPATH . '/iplugs/suite.0.1.php');
-	@require_once(TEMPLATEPATH . '/iplugs/suite.0.2.php');
+	@require_once(TEMPLATEPATH . '/func/plugins.php');
 
 /* Grain Syndication */
 
