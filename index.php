@@ -5,10 +5,6 @@
 	File version: $Id$
 */
 
-
-
-/*******************************************************************************************************************/				
-
 	grain_set_ispopup(FALSE);
 	get_header(); 
 	
@@ -18,9 +14,11 @@
 
 <?php 
 
+	// Prepare
 	$grain_page_displayed = false;
 	$hadPosts = have_posts();
 
+	// Check if there are pages
 	if ($hadPosts):
 	
 		while( have_posts() ) : the_post();
@@ -58,19 +56,19 @@
 			$next = get_next_post();
 
 			// compose messages
-			$state = 0;
+			$pagePosition = 0;
 			if( $previous != null ) :
 				$message_left = __("&lArr; click for previous photo", "grain");
 			else:
 				$message_left = __("(this is the first photo)", "grain");
-				$state = -1;
+				$pagePosition = -1;
 			endif;
 
 			if( $next != null ) :
 				$message_right = __("click for next photo &rArr;", "grain");
 			else:
 				$message_right = __("(this is the newest photo)", "grain");
-				$state = 1;
+				$pagePosition = 1;
 			endif;
 
 
@@ -198,10 +196,10 @@
 					$link_next = ($next != null ) ? get_permalink($next->ID) : '#';
 
 					$title_attr = "";
-					if( $state != 0 )
+					if( $pagePosition != 0 )
 					{
 						$title_attr = 'title="';
-						$title_attr .= ($state > 0) ? $title_next : $title_prev;
+						$title_attr .= ($pagePosition > 0) ? $title_next : $title_prev;
 						$title_attr .= '"';
 					}
 					

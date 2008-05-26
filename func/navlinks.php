@@ -111,5 +111,31 @@
 		
 		return $link;
 	}	
+	
+/* Header Menu */
+
+	function grain_inject_navigation_menu($location) 
+	{
+		global $GrainOpt;
+		$target = $GrainOpt->get(GRAIN_NAVBAR_LOCATION);
+		
+		if($location != $target ) return;
+		
+		global $post;
+		
+		if( $location == GRAIN_IS_HEADER )
+			$class = "in-header";
+		else
+			$class = "in-body";
+		?>
+
+	<div id="headermenu" class="<?php echo $class; ?>">
+		<?php
+		include (TEMPLATEPATH . '/header.menu.php');
+		?>
+	</div>		
+		
+		<?php
+	}	
 
 ?>

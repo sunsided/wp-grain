@@ -44,7 +44,7 @@ body {
 	border-top: 2px solid black;
 	border-bottom: 2px solid black;
 	width: 980px;
-	margin: 20px auto;
+	margin: 20px auto /*40px auto*/;
 	display: block;
 	}
 
@@ -138,6 +138,12 @@ body {
 
 /* Header */
 
+
+#header-complete {
+	display: block;
+	position: relative;
+	}
+
 #header {
 	/* the header section, covering title, menu and graphics */
 	margin: 0;
@@ -150,25 +156,20 @@ body {
 	/* allow positioning; is itself relative to #page  */
 	position: relative;
 	}
+	
+#headerimg h1 {
+	font-size: 14pt;
+}
 
 #page #headerimg {
 	/* display the title */
 	height: 20px;
 	margin-bottom: 0px;
 
-	/* positioning; relative to #header */
 	position: absolute;
 	left: 20px;
 	top: 8px;
 	z-index: 100;
-	}
-	
-#page #header-description {
-	/* positioning; relative to #header */
-	position: absolute;
-	top: 28px;
-	left: 20px;
-	z-index: 200;
 	}
 
 #commentspopup #headerimg {
@@ -178,12 +179,28 @@ body {
 	padding-top: 10px;
 	height: 50px;
 	}	
+	
+#page #header-description {
+	position: absolute;
+	top: 28px;
+	left: 20px;
+	z-index: 200;
+	
+	clear: left;
+	font-size: 8pt;
+	text-align: left;	
+	}
+
+#commentspopup #header-description {
+	text-align: center;
+	margin-top: -30px;
+	color: silver;
+	}	
 
 #headermenu  {
 	padding-right: 20px;
 	padding-left: 20px;
-	padding-top: 18px;
-	
+		
 	font-size: 8pt;
 	letter-spacing: 0px;	
 
@@ -205,23 +222,6 @@ body {
 	/* positioning */
 	position: relative;
 	}		
-	
-#headerimg h1 {
-	font-size: 14pt;
-}
-
-#page #header-description {
-	clear: left;
-	font-size: 8pt;
-	text-align: left;
-	}
-	
-
-#commentspopup #header-description {
-	text-align: center;
-	margin-top: -30px;
-	color: silver;
-	}	
 
 #headermenu a,
 #headermenu a:link,
@@ -251,6 +251,11 @@ body {
 	z-index: 10;
 	}
 	
+#commentspopup #header-top {
+	display: none;
+	visibility: hidden;
+	}
+	
 #header-top-inner {
 	/* display the upper right rounded border */
 	background: url(images/arc-t-rt.gif) no-repeat right top;
@@ -264,11 +269,6 @@ body {
 	top: 0px;
 	z-index: 9;
 	}	
-
-#commentspopup #header-top {
-	display: none;
-	visibility: hidden;
-	}
 
 #header-bottom {
 	background: url(images/arc-lt.gif) no-repeat left bottom;
@@ -296,14 +296,10 @@ body {
 /* Footer */
 
 #footer-complete {
-	top: 20px;
-	position: relative;	
-}
+	}
 
 #footer {
 	background: rgb(37, 37, 37) url(images/grid2.gif);
-	height: 90px;
-
 	position: relative;
 	}
 	
@@ -315,7 +311,6 @@ body {
 	
 	width: 100%;
 	overflow: visible;
-	z-index: 10;
 	position: relative;
 	}	
 	
@@ -323,37 +318,84 @@ body {
 	/* display the upper left rounded border */
 	background: url(images/arc-r.gif) no-repeat top right;
 	height: 20px;
-	
 	width: 100%;
 	overflow: visible;
-	z-index: 10;
+	}
+
+#footer-info.has-cclicense,
+#footer-info.no-cclicense {
+	width: 800px;
+	}
+
+#footer-info.no-cclicense span.powered-by {
+	margin-left: 20px;
+	}
+
+#newsfeed-icons {
+	float: right;
+	text-align: right;
+	position: relative;
+	right: 20px;
+	border: none;
+	height: 24px;
+	overflow: visible;
+	z-index: 40;
+	margin-top: -6px;
+	}
+
+img#atom-feed {
+	height: 24px;
+	}
+
+img#rss-feed {
+	height: 24px;
 	}
 
 #final-footer {
-	top: -35px;
 	border-top: 1px solid rgb(64, 64, 64);
-	margin-bottom: -1px; /* minus one due to the 1px border */
-	
-	/* positioning */
+	margin-top: 20px;
+	padding-top: 7px;
+	margin-bottom: -11px;
 	position: relative;
-	z-index: 100;
+	z-index: 40;
 }
+
+#syndication {
+	opacity: 0.8;
+	text-align: right;
+	float: right;
+	position: relative;
+	right: 50px;
+	z-index: 50;
+}
+
+.syndication-button {
+	display: inline;
+}
+
+#copyright {
+	color: silver;
+	opacity: 0.8;
+	position: relative;
+	left: 50px;
+	z-index: 40;
+}
+
+#commentspopup #footer-bottom {
+	display: none;
+	visibility: hidden;	
+	}
 
 #footer-bottom {
 	/* display the upper left rounded border */
 	background: url(images/arc-t-r.gif) no-repeat bottom right;
 	height: 20px;
-	bottom: 20px; /* push image up */	
+	/* top: 10px; /* push image up */	
 	
 	width: 100%;
 	overflow: visible;
-	z-index: 10;
 	position: relative;
-	}
-	
-#commentspopup #footer-bottom {
-	display: none;
-	visibility: hidden;	
+	z-index: 10;
 	}
 	
 #footer-bottom-inner {
@@ -364,6 +406,7 @@ body {
 	width: 100%;
 	overflow: visible;
 	position: relative;
+	z-index: 10;
 	}	
 
 /* Content */
@@ -936,22 +979,6 @@ img.alignleft {
 	float: left
 	}
 
-#atom-feed {
-	float: right;
-	margin-top: 20px;
-	border: none;
-	height: 24px;
-}
-
-#rss-feed {
-	float: right;
-	margin: 20px;
-	margin-left: 5px;
-	margin-right: 20px;
-	border: none;
-	height: 24px;
-}
-
 #comments-rss-feed {
 	float: left;
 	margin-right: 10px;
@@ -1363,48 +1390,6 @@ a img {
 	padding-left: 20px;
 	padding-bottom: 20px;
 	padding-right: 10px;
-}
-
-#footer-info,
-#footer-info-padded {
-	/*float:left;*/
-	padding-top: 2px;
-	padding-bottom: 30px;
-}
-
-#footer-info-padded {
-        padding-top: 22px;
-}
-
-#footer-info-padded span.powered-by {
-	margin-left: 20px;
-}
-
-#syndication {
-	opacity: 0.8;
-	text-align: right;
-	width: 100%;
-	
-	/* positioning; relative to #final-footer */
-	position: absolute;
-	left: -50px; /* leave 50px space to the right */
-	top: 10px;
-	z-index: 100;
-}
-
-.syndication-button {
-	display: inline;
-}
-
-#copyright {
-	color: silver;
-	opacity: 0.8;
-	
-	/* positioning; relative to #final-footer */
-	position: absolute;
-	left: 50px;
-	top: 10px;
-	z-index: 100;
 }
 
 table.toolset {
