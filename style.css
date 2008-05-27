@@ -142,6 +142,7 @@ body {
 #header-complete {
 	display: block;
 	position: relative;
+	margin-bottom: -20px; /* shift up for the radius images */
 	}
 
 #header {
@@ -1370,6 +1371,8 @@ a img {
 /* used for moo.fx tooltips */
 .tooltip-tip {
 	opacity: 0.8;
+	-moz-opacity: 0.8;
+	filter: alpha(opacity=80);
 	color: #fff;
 	/*width: 139px;*/
 	z-index: 13000;
@@ -1445,22 +1448,22 @@ span.post-comment-count:before {
 
 /* when using the reflection script, disable the border */
 /* btw. I would not use reflection with a panorama :) */
-div.photo-noborder #photo,
-div.photo-noborder #panorama {
+div.photo-with-reflection #photo,
+div.photo-with-reflection #panorama {
 
 	/* !important is used here so that unspecific styling of the #photo element won't screw up things */
 	border: none !important;
 	
 		/* if you like to, you can still add a border for the image only. But make sure then that the
-		margin-left value of the 'div.photo-noborder canvas' item is set to the same value as the border-width */
+		margin-left value of the 'div.photo-with-reflection canvas' item is set to the same value as the border-width */
 		/* border: 10px solid rgb(230, 230, 230);  */
 		
 	padding: 0;
 	max-width: 800px;
 }
 
-div.photo-withborder #photo,
-div.photo-withborder #panorama {
+div.photo #photo,
+div.photo #panorama {
 	/*border: 10px solid rgb(230, 230, 230);*/
 	border: 1px solid dimgray;
 	/*border: 0px;*/
@@ -1470,14 +1473,16 @@ div.photo-withborder #panorama {
 	position: relative;
 }
 
-div.photo-noborder {
+div.photo-with-reflection {
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
+	margin-bottom: -100px; /* <- this value controls how much the info text will overlap the reflection. 
+									This should be tweaked if the extended info is never shown  */
 }
 
-div.photo-noborder canvas {
-	/* see 'div.photo-noborder #photo' above */
+div.photo-with-reflection canvas {
+	/* see 'div.photo-with-reflection #photo' above */
 	/* margin-left: 10px; */
 	margin-left: 0; 
 }

@@ -7,7 +7,13 @@
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 
-	/* left/right navigation */
+/* definitions */
+
+	define("GRAIN_FIRST_POST", -1);
+	define("GRAIN_NEWEST_POST", +1);
+	define("GRAIN_SURROUNDED_POST", 0);
+
+/* left/right navigation */
 
 	function grain_mimic_previous_post_link($format='&laquo; %link', $link='%title', $in_same_cat = false, $excluded_categories = '') {
 		global $post;
@@ -50,7 +56,7 @@
 		return $format;
 	}
 	
-	/* comment link generation */
+/* comment link generation */
 
 	function grain_can_comment() 
 	{

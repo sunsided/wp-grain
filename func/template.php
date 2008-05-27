@@ -128,6 +128,23 @@
 		return 'cssbody=[tooltip-text-prev] cssheader=[tooltip-title-prev] header=['.$title.'] body=['.$text.']';
 	}
 
+	function grain_compose_post_tooltips($message_left, $message_right, $addon=NULL ) {
+		global $GrainOpt, $post;
+		
+		if(!$GrainOpt->getYesNo(GRAIN_EYECANDY_USE_MOOTIPS)) {
+			$title_prev = grain_thumbnail_title($post->post_title. $addon, $message_left);
+			$title_next = grain_thumbnail_title($post->post_title. $addon, $message_right);
+		}
+		else
+		{
+			$title_prev = $post->post_title. ' :: '.$message_left;
+			$title_next = $post->post_title. ' :: '.$message_right;
+		}
+		
+		// return 
+		return array( "prev" => $title_prev, "next" => $title_next );
+	}
+
 /* Helper: Override Styles */
 
 	function grain_get_css_overrides() {
