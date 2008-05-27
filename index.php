@@ -207,7 +207,7 @@
 	?>
 				</div>
 			<?php
-				endif;  // grain:info
+				endif;  // if( $extended_mode )
 			?>				
 			</div>
 

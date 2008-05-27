@@ -70,14 +70,14 @@
 
 		// compose messages
 		$returnValue["pagePosition"] = GRAIN_SURROUNDED_POST;
-		if( $previous != null ) {
+		if( $returnValue["previous"] != null ) {
 			$returnValue["message_left"] = __("&lArr; click for previous photo", "grain");
 		} else {
 			$returnValue["message_left"] = __("(this is the first photo)", "grain");
 			$returnValue["pagePosition"] = GRAIN_FIRST_POST;
 		}
 
-		if( $next != null ) {
+		if( $returnValue["next"] != null ) {
 			$returnValue["message_right"] = __("click for next photo &rArr;", "grain");
 		} else {
 			$returnValue["message_right"] = __("(this is the newest photo)", "grain");
@@ -174,10 +174,10 @@
 			}
 			else
 			{
-				if( $PostOpt["previous"] != null )
-					$string = '<a class="tooltipped" title="'.$title_prev.'" rel="prev" href="'. get_permalink($PostOpt["previous"]->ID) .'"><img title="'.$title_prev.'" id="photo" alt="'. $post->post_title . '" class="photo'.(grain_eyecandy_use_reflection()? '-noborder' : '-withborder' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/></a>';
+				if( $previous != null )
+					$string = '<a class="tooltipped" title="'.$title_prev.'" rel="prev" href="'. get_permalink($previous->ID) .'"><img title="'.$title_prev.'" id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection? '-with-reflection' : '' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/></a>';
 				else
-					$string = '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.($GrainOpt->get(GRAIN_EYECANDY_REFLECTION_ENABLED)? '-noborder' : '-withborder' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/>';
+					$string = '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection ? '-with-reflection' : '' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/>';
 				
 			}
 

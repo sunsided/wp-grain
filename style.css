@@ -1621,3 +1621,22 @@ span.unapproved-comment {
 	font-style: italic;
 	display: block;
 }
+
+#comment-frame-body #trackback-info {
+	color: dimgray;
+}
+
+#comment-frame-body #trackback-info .trackback-url {
+	display: block;
+	font-style: italic;
+}
+
+#comment-frame-body  #comment-rss-feed-container {
+	margin-bottom: 5px;
+}
+
+#comment-frame-body  #comment-rss-feed-container .linktext {
+	/* if you want to show the "comment rss feed" text, comment out the following two lines */
+	display: none; 
+	visibility: hidden;
+}

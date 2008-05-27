@@ -29,6 +29,7 @@ Fix: Fixed bug that prevented disabling of checkboxes with an underlying value t
 Fix: CSS: Rounded borders are now displayed correctly Internet Explorer 7
 Fix: Private posts are skipped now
 Fix: OTI option that enforces the extended info view if the comment popup is accessed directly now only works if called from the local system
+Fix: The comments RSS link now points to the current post
 
 0.2.2 
 Fix: Menu bug that appeared on the start page. 

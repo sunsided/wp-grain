@@ -46,12 +46,18 @@
 	
 	<div id="comment-frame-body">
 
-		<p>
-		<a href="feed:<?php bloginfo('comments_rss2_url'); ?>"><img id="comments-rss-feed" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/images/rss-feed.gif" alt="RSS feed icon" title="RSS feed" />
-		<?php _e("<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this photo.", "grain"); ?></a></p>
+		<div id="comment-rss-feed-container">
+			<?php 
+				$linktext_short = __("RSS feed for comments on this photo", "grain");
+				$linktext = str_replace("RSS", "<abbr title=\"Really Simple Syndication\">RSS</abbr>", $linktext_short);
+				$thumb_title = grain_thumbnail_title( __("Syndication", "grain"), $linktext_short );
+			?>
+			<a href="feed:<?php bloginfo('comments_rss2_url'); ?>&p=<?php echo $post->ID; ?>"><img id="comments-rss-feed" title="<?php echo $thumb_title ; ?>" src="<?php echo GRAIN_TEMPLATE_DIR; ?>/images/rss-feed.gif" alt="RSS feed icon" title="RSS feed" />
+			<span class="linktext"><?php echo $linktext; ?></span></a>
+		</div>
 
 		<?php if ('open' == $post->ping_status) { ?>
-		<p><?php _e("The <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> to TrackBack this photo is:", "grain"); ?><br /><em><?php trackback_url() ?></em></p>
+		<div id="trackback-info"><?php _e("The <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> to TrackBack this photo is:", "grain"); ?> <span class="trackback-url"><?php trackback_url() ?></span></div>
 		<?php } 
 		
 		// this line is WordPress' motor, do not delete it.
