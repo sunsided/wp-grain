@@ -173,10 +173,13 @@
 			}
 			else
 			{
-				if( $previous != null )
-					$string = '<a class="tooltipped" title="'.$title_prev.'" rel="prev" href="'. get_permalink($previous->ID) .'"><img title="'.$title_prev.'" id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection? '-with-reflection' : '' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/></a>';
-				else
-					$string = '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection ? '-with-reflection' : '' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/>';
+				if( $previous != null ) {
+					$string  = '<a class="tooltipped" title="'.$title_prev.'" rel="prev" href="'. get_permalink($previous->ID) .'">';
+					$string .= '<img title="'.$title_prev.'" id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection? '-with-reflection' : '' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/>';
+					$string .= '</a>';
+				} else {
+					$string  = '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection ? '-with-reflection' : '' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/>';
+				}
 				
 			}
 
@@ -184,9 +187,9 @@
 			do_action(GRAIN_BEFORE_IMAGE);				
 			
 			// display image
-			if( grain_fx_can_fade() ) echo '<div id="photo-fade">';
+			echo '<div id="photo-'.(grain_fx_can_fade()?'':'no').'fade">';
 			echo $string;				
-			if( grain_fx_can_fade() ) echo '</div>';
+			echo '</div>';
 			
 			// action
 			do_action(GRAIN_AFTER_IMAGE);
