@@ -80,13 +80,9 @@
 					$exif_class = $exif_enabled ? 'exif' : 'no-exif';
 					$subtitle_class = $addon ? 'has-subtitle' : 'no-subtitle';
 					
-					$photo_style = '';
-					if( $GrainOpt->getYesNo(GRAIN_EYECANDY_REFLECTION_ENABLED) ) {
-						$photo_style = 'position: relative; top: -'.$top_offset.'px;';
-					}
 					?>
 
-					<div id="info-frame" style="<?php echo $photo_style; ?>"><a name="info"></a>
+					<div id="info-frame"><a name="info"></a>
 
 					
 					<?php if(grain_can_inject_moofx_slide()) : ?>

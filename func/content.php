@@ -155,10 +155,9 @@
 						
 			// build image link and link map
 			$string =  '';
+			$useReflection = grain_use_reflection();
 			if( $GrainOpt->is(GRAIN_NAV_BIDIR_ENABLED) )
-			{				
-				$useReflection = grain_use_reflection();
-			
+			{						
 				// create image
 				if( !$useReflection ) $string .= '<div class="photo">';
 				$string .= '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection? '-with-reflection' : '' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'" usemap="#bloglinks" />';				
