@@ -46,11 +46,11 @@
 		by Dominik Menke (http://dominik.gaw2006.de/)
 		*/
 
-		global $wpdb, $tableposts;
+		global $wpdb, $tableposts, $post;
 
 		$query = "SELECT count(ID) as c
 			FROM $tableposts
-			WHERE post_status = 'publish'";
+			WHERE post_status = 'publish' AND ID <> ".$post->ID;
 		$cnt   = $wpdb->get_results($query);
 		$cnt   = rand(0, $cnt[0]->c);
 

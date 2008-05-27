@@ -5,14 +5,6 @@
 	File version: $Id$
 */
 
-	// get some strings
-	$nextPageTitle   = __("next &raquo;", "grain");
-	$prevPageTitle   = __("&laquo; previous", "grain");
-	$newestPhoto     = __("newest", "grain");
-	$randomPhoto     = __("random", "grain");
-	$aboutLinkText   = __("about", "grain");
-	$aboutLinkTitle  = __("about &amp; information", "grain");
-
 	// get info / mosaic page
 	$infoPageId      = $GrainOpt->get(GRAIN_INFOPAGE_ID);
 	$mosaicPageId    = $GrainOpt->get(GRAIN_MOSAIC_PAGEID);
@@ -43,8 +35,8 @@
 	if( $postCount && $isContentPage ):
 
 		// get next / previous post link
-		if( get_previous_post() != null )	$prev = grain_mimic_previous_post_link( '%link', $prevPageTitle );
-		if( get_next_post() != null )		$next = grain_mimic_next_post_link( '%link', $nextPageTitle );
+		if( get_previous_post() != null )	$prev = grain_mimic_previous_post_link( '%link', __("&laquo; previous", "grain") );
+		if( get_next_post() != null )		$next = grain_mimic_next_post_link( '%link', __("next &raquo;", "grain") );
 
 		// build the link
 		$link = "";
@@ -70,14 +62,14 @@
 	endif;
 
 	// Newest photo link
-	if( $postCount && $grain_newest_enabled && !is_home() && get_next_post() ):
-		$link = '<a title="'.$newestPhoto.'" accesskey="h" rel="start" href="'.get_settings('home').'/">'.$newestPhoto.'</a>';
+	if( $postCount > 1 && $grain_newest_enabled && !is_home() && get_next_post() ):
+		$link = '<a title="'.__("go to the newest photo", "grain").'" accesskey="h" rel="start" href="'.get_settings('home').'/">'.__("newest", "grain").'</a>';
         array_push( $links, '<span id="menu-newest">'.$link.'</span>' );
 	endif;
 
 	// Random photo link
-	if( $postCount && $grain_random_enabled ):
-		$link = grain_randompost( $randomPhoto );
+	if( $postCount > 2 && $grain_random_enabled ):
+		$link = grain_randompost( __("random", "grain") );
         array_push( $links, '<span id="menu-random">'.$link.'</span>' );
 	endif;
 	
@@ -94,7 +86,7 @@
 	if( $grain_info_enabled && $thisIsInfoPage ):
 		$infopost = get_post($infoPageId);
 		if($infopost) {
-			$link = '<a title="'.$aboutLinkTitle.'" accesskey="a" href="'.get_permalink($infoPageId).'">'.$aboutLinkText.'</a>';
+			$link = '<a title="'.__("about &amp; information", "grain").'" accesskey="a" href="'.get_permalink($infoPageId).'">'.__("about", "grain").'</a>';
 			array_push( $links, '<span id="menu-about">'.$link.'</span>' );
 		}
 	endif;

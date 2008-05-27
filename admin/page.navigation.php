@@ -40,8 +40,8 @@
 				<fieldset>
 					<legend><?php _e("Newest & Random", "grain"); ?></legend>
 					<?php
-					grain_admin_checkbox(GRAIN_MNU_NEWEST_VISIBLE, "newest_visible", NULL, __("Newest Photo:", "grain"), __("Show a link to the newest photo", "grain"), NULL);
-					grain_admin_checkbox(GRAIN_MNU_RANDOM_VISIBLE, "random_visible", NULL, __("Random Photo:", "grain"), __("Show a link to a random photo", "grain"), NULL);
+					grain_admin_checkbox(GRAIN_MNU_NEWEST_VISIBLE, "newest_visible", NULL, __("Newest Photo:", "grain"), __("Show a link to the newest photo", "grain"), __("The link will only appear if there are at least two (public) posts", "grain"));
+					grain_admin_checkbox(GRAIN_MNU_RANDOM_VISIBLE, "random_visible", NULL, __("Random Photo:", "grain"), __("Show a link to a random photo", "grain"), __("The link will only appear if there are at least three (public) posts", "grain"));
 					?>
 				</fieldset>
 				

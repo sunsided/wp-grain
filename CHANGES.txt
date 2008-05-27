@@ -31,6 +31,9 @@ Fix: Private posts are skipped now
 Fix: OTI option that enforces the extended info view if the comment popup is accessed directly now only works if called from the local system
 Fix: The comments RSS link now points to the current post
 Fix: The "newest" link was displayed on the newest entry, if it was not accessed as the start page
+Fix: "newest" is now disabled if there is no or only one (public) post
+Fix: "random" is now disabled if there is no or only up to two (public) posts
+Fix: "random" now only selects pages other the one that is currently opened
 
 0.2.2 
 Fix: Menu bug that appeared on the start page. 
