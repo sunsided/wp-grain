@@ -207,7 +207,7 @@
 		global $post;
 		
 		// prepare post
-		grain_prepare_post_logic();
+		$PostOpt = grain_prepare_post_logic();
 		
 		echo '<div id="special-frame">';
 				
@@ -215,9 +215,9 @@
 		do_action(GRAIN_BEFORE_PANORAMA);
 		
 		if( !grain_use_reflection() ) 
-			echo '<div class="photo-withborder">';
+			echo '<div class="photo">';
 		else
-			echo '<div class="photo-noborder">';
+			echo '<div class="photo-with-reflection">';
 			
 	
 		$path = $post->image->systemFilePath();

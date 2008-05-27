@@ -70,7 +70,7 @@
 	endif;
 
 	// Newest photo link
-	if( $postCount && $grain_newest_enabled ):
+	if( $postCount && $grain_newest_enabled && !is_home() && get_next_post() ):
 		$link = '<a title="'.$newestPhoto.'" accesskey="h" rel="start" href="'.get_settings('home').'/">'.$newestPhoto.'</a>';
         array_push( $links, '<span id="menu-newest">'.$link.'</span>' );
 	endif;

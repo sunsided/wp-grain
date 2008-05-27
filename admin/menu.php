@@ -286,7 +286,7 @@
 						'grain_adminpage_general');
 		
 		add_theme_page( $baseTitle . __("Navigation Settings", "grain"), 		
-						__("Navigation Bar", "grain"), 
+						__("Navigation", "grain"), 
 						'edit_themes', 
 						'navigation', 
 						'grain_adminpage_navigation');

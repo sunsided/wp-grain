@@ -30,6 +30,7 @@ Fix: CSS: Rounded borders are now displayed correctly Internet Explorer 7
 Fix: Private posts are skipped now
 Fix: OTI option that enforces the extended info view if the comment popup is accessed directly now only works if called from the local system
 Fix: The comments RSS link now points to the current post
+Fix: The "newest" link was displayed on the newest entry, if it was not accessed as the start page
 
 0.2.2 
 Fix: Menu bug that appeared on the start page. 
