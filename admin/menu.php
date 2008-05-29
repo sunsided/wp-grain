@@ -305,9 +305,10 @@
 		
 		
 		// shortcut to yapb
-		if(grain_is_yapb_installed() ) 
+		if( grain_is_yapb_installed() ) 
 		{
-			$yapb_page = 'http://'.get_bloginfo('url').'/wp-admin/options-general.php?page=Yapb.class.php';
+			// http://192.168.0.123/wp-admin/options-general.php?page=Yapb.class.php
+			$yapb_page = 'options-general.php?page=Yapb.class.php';
 			add_theme_page( __("Yet Another Photoblog (Plugin Options)", "grain"), 
 							__("YAPB", "grain"), 
 							'edit_plugins', 
@@ -372,10 +373,12 @@
 
 	function grain_admin_inject_yapb_msg() 
 	{
-		if( !grain_is_yapb_installed() )
-		?>
+		if( !grain_is_yapb_installed() ) 
+		{
+			?>
 			<div id="errormessage" class="error"><p><strong><?php _e("The YAPB plugin could not be found.", "grain"); ?></strong> <a title="<?php _e("Yet Another Photoblog", "grain"); ?>" target="_blank" href="<?php echo GRAIN_YAPB_URL; ?>"><?php _e("Click for more information", "grain"); ?></a></p></div>	
-		<?php
+			<?php
+		}
 	}
 
 ?>
