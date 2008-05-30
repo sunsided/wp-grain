@@ -16,9 +16,9 @@
 		<div class="post" id="post-<?php the_ID(); ?>">
 		<h2><?php the_title(); ?></h2>
 			<div class="entry">
-				<?php the_content('<p class="serif"><strong>Den ganzen Beitrag lesen...</strong></p>'); ?>
+				<?php the_content('<p class="serif"><strong>'.__("Read the whole story...", "grain").'</strong></p>'); ?>
 	
-				<?php link_pages('<p><strong>Seiten:</strong> ', '</p>', 'number'); ?>
+				<?php link_pages('<p><strong>'.__("Pages:", "grain").'</strong> ', '</p>', 'number'); ?>
 	
 			</div>
 		</div>

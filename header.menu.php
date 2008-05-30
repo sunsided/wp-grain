@@ -62,7 +62,7 @@
 	endif;
 
 	// Newest photo link
-	if( $postCount > 1 && $grain_newest_enabled && !is_home() && get_next_post() ):
+	if( $postCount > 1 && $grain_newest_enabled && !is_home() && ((is_single() && get_next_post()) || is_page()) ):
 		$link = '<a title="'.__("go to the newest photo", "grain").'" accesskey="h" rel="start" href="'.get_settings('home').'/">'.__("newest", "grain").'</a>';
         array_push( $links, '<span id="menu-newest">'.$link.'</span>' );
 	endif;
@@ -74,16 +74,16 @@
 	endif;
 	
 	// Mosaic page link
-	if( $postCount && $grain_mosaic_enabled && $thisIsMosaicPage ):
+	if( $postCount && $grain_mosaic_enabled && !$thisIsMosaicPage ):
 		$mosaicpost = get_post($mosaicPageId);
 		if($mosaicpost) {
-			$link = '<a class="tooltipped" title="'.grain_thumbnail_title($mosaicpost->post_title,__("To the overview", "grain")).'" accesskey="m" href="'.get_permalink($mosaicPageId).'">'.grain_mosaicpage_title().'</a>';
+			$link = '<a class="tooltipped" title="'.grain_thumbnail_title($mosaicpost->post_title,__("To the overview", "grain")).'" accesskey="m" href="'.get_permalink($mosaicPageId).'">'.$GrainOpt->get(GRAIN_MOSAIC_LINKTITLE).'</a>';
 			array_push( $links, '<span id="menu-mosaic">'.$link.'</span>' );
 		}
 	endif;
 
 	// Info page link
-	if( $grain_info_enabled && $thisIsInfoPage ):
+	if( $grain_info_enabled && !$thisIsInfoPage ):
 		$infopost = get_post($infoPageId);
 		if($infopost) {
 			$link = '<a title="'.__("about &amp; information", "grain").'" accesskey="a" href="'.get_permalink($infoPageId).'">'.__("about", "grain").'</a>';
@@ -92,6 +92,6 @@
 	endif;
 
 	// combine the array elements to one large menu
- 	echo implode( $links, ' <span id="menu-delimiter">|</span> ' );
+ 	echo implode( $links, ' <span class="menu-delimiter">|</span> ' );
 
 ?>

@@ -21,7 +21,7 @@
 	$GrainOpt->defineFlagOpt("GRAIN_MNU_RANDOM_VISIBLE", "menu_random_visible", TRUE );
 	$GrainOpt->defineFlagOpt("GRAIN_MNU_NEWEST_VISIBLE", "menu_newest_visible", TRUE );
 	$GrainOpt->defineFlagOpt("GRAIN_MNU_INFO_VISIBLE", "menu_info_visible", FALSE );
-	$GrainOpt->defineFlagOpt("GRAIN_NAV_BIDIR_ENABLED", "nav_bidir_enabled", FALSE );
+	$GrainOpt->defineFlagOpt("GRAIN_NAV_BIDIR_ENABLED", "nav_bidir_enabled", TRUE );
 	
 	// navigation bar positions
 	define('GRAIN_IS_HEADER', 'header');
@@ -37,9 +37,9 @@
 	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_SYND_ENABLED', 'sdbr_syndication', FALSE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_MOSTCOMM_ENABLED', 'sdbr_mc_enabled', TRUE );
 	$GrainOpt->defineValueOpt( 'GRAIN_SDBR_MOSTCOMM_COUNT', 'sdbr_mc_count', 10 );
-	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_META_ENABLED', 'sdbr_meta_enabled', FALSE );
-	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_BLOGROLL_ENABLED', 'sdbr_blogroll_enabled', FALSE );
-	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_CALENDAR_ENABLED', 'sdbr_calendar_enabled', FALSE );
+	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_META_ENABLED', 'sdbr_meta_enabled', TRUE );
+	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_BLOGROLL_ENABLED', 'sdbr_blogroll_enabled', TRUE );
+	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_CALENDAR_ENABLED', 'sdbr_calendar_enabled', TRUE );
 	
 	// 2nd language
 	$GrainOpt->defineFlagOpt( 'GRAIN_2NDLANG_ENABLED', 'feature_2ndl_enabled', FALSE );

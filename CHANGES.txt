@@ -21,6 +21,7 @@ Change: CSS: some elements such as header and blog title are now wrapped in addi
 Change: Blog description line is now linked, too
 Change: Grain now shows only the excerpt of a post when displaying a photo page. The full text will be displayed as soon as the page enters extended info mode (or on the popup, if the "only excerpts" option is not set)
 Change: CSS footer now resizes automatically depending on it's content (no height hardcoding needed anymore)
+Change: Posts without an image are now shown in the archives and the mosaic, but are not linked
 Fix: Rounded borders had different colors in Internet Explorer 6 and 7 (this is not totally fixed yet, but it definitely looks better)
 Fix: "%" in copyrights is now correctly rendered as the current year. This was due to bug preventing that an options default value got filtered.
 Fix: Navigation bar was shown even if there were no post at all

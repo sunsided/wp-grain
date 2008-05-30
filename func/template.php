@@ -37,6 +37,23 @@
 		do_action(GRAIN_PHOTO_PAGE_ERROR);
 	}
 	
+	function grain_inject_error_searchform() 
+	{	
+		global $s, $post;	// will be (possibly) used in searchform.php
+	
+		// get the message
+		$title = __("Not found.", "grain");
+		$message = __("Sorry, but you are looking for something that isn't here.", "grain");
+			
+		// display title and form
+		echo '<div id="photo-page-error">';
+		echo apply_filters(GRAIN_SEARCHFORM_ERROR_TITLE, '<h2 class="errortitle">'.$title.'</h2>');
+		echo apply_filters(GRAIN_SEARCHFORM_ERROR_MESSAGE, '<div class="errormessage">'.$message.'</div>');
+		include (TEMPLATEPATH . '/searchform.php');
+		echo '</div>';
+		do_action(GRAIN_AFTER_SEARCH_FORM);
+	}	
+	
 	function grain_get_copyright_string($extended = FALSE) 
 	{
 		global $GrainOpt;
@@ -168,8 +185,9 @@
 
 	/* Helper: Content sidebars */
 
-	function grain_inject_sidebar_above() {
-		/* Widgetized sidebar, if you have the plugin installed. */ 
+	function grain_inject_sidebar_above() 
+	{
+		// Widgetized sidebar, if you have the plugin installed.
 		if ( function_exists('dynamic_sidebar')) {
 		?>
 			<div id="content-sidebar-above" class="">
@@ -184,7 +202,7 @@
 	}
 	
 	function grain_inject_sidebar_below() {
-		/* Widgetized sidebar, if you have the plugin installed. */ 
+		// Widgetized sidebar, if you have the plugin installed.
 		if ( function_exists('dynamic_sidebar')) {
 		?>
 			<div id="content-sidebar-below" class="">
@@ -199,7 +217,7 @@
 	}
 	
 	function grain_inject_sidebar_footer() {
-		/* Widgetized sidebar, if you have the plugin installed. */ 
+		// Widgetized sidebar, if you have the plugin installed.
 		if ( function_exists('dynamic_sidebar')) {
 		?>
 			<div id="content-sidebar-footer" class="">

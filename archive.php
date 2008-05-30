@@ -37,7 +37,7 @@
 		
 			$string = __("Daily archive for %DATE.", "grain");
 			$string = str_replace('%DAY', apply_filters('the_time', get_the_time( 'l' ), 'l'), $string);
-			$format = grain_filter_dt(grain_dtfmt_dailyarchive());
+			$format = grain_filter_dt($GrainOpt->get(GRAIN_DTFMT_DAILYARCHIVE));
 			$string = str_replace('%DATE', apply_filters('the_time', get_the_time( $format ), $format), $string);
 			echo $string;
 			
@@ -47,7 +47,7 @@
 		<h2 class="pagetitle"><?php
 		
 			$string = __("Monthly archive for %DATE.", "grain");
-			$format = grain_filter_dt(grain_dtfmt_monthlyarchive());
+			$format = grain_filter_dt($GrainOpt->get(GRAIN_DTFMT_MONTHLYARCHIVE));
 			$string = str_replace('%DATE', apply_filters('the_time', get_the_time( $format ), $format), $string);
 			echo $string;
 		?></h2>
@@ -72,40 +72,40 @@
 		<?php } ?>
 
 
-		<div class="navigation">
+		<div id="navigation-top" class="navigation">
 			<div class="alignleft"><?php next_posts_link(__("&laquo; next page", "grain")) ?></div>
 			<div class="alignright"><?php previous_posts_link(__("previous page &raquo;", "grain")) ?></div>
 		</div>
 
 		<div id="archive-list">
-		<?php while (have_posts()) : the_post(); 
-		?><div class="archive-post"><?php 
+		<?php while (have_posts()) : the_post(); ?>
+		<div class="archive-post"><?php 
 				
-				if (!is_null($image = YapbImage::getInstanceFromDb($post->ID))) {
-					echo '<div class="archive-photo">';
+				$image = NULL;
+				if (class_exists(YapbImage)) $image = YapbImage::getInstanceFromDb($post->ID);
 				
-					// display
-					do_action(GRAIN_ARCHIVE_BEFORE_THUMB);
-					echo grain_mimic_ygi_archive($image, $post);	
-					do_action(GRAIN_ARCHIVE_AFTER_THUMB);
-				
-					echo '</div>';
-				}
-			?></div><?php 
+				// display
+				echo '<div class="archive-photo">';
+				do_action(GRAIN_ARCHIVE_BEFORE_THUMB);
+				echo grain_mimic_ygi_archive($image, $post);
+				do_action(GRAIN_ARCHIVE_AFTER_THUMB);					
+				echo '</div>';
+			?>
+			</div>
+			<?php 
 			endwhile; ?>
 		</div>
 
-		<div class="navigation">
+		<div id="navigation-bottom" class="navigation">
 			<div class="alignleft"><?php next_posts_link(__("&laquo; next page", "grain")) ?></div>
 			<div class="alignright"><?php previous_posts_link(__("previous page &raquo;", "grain")) ?></div>
 		</div>
 	
-	<?php else : ?>
+	<?php else : 
 
-		<h2 class="center"><?php _e("Not found", "grain"); ?></h2>
-		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
+		grain_inject_error_searchform();
 
-	<?php endif; ?>
+	endif; ?>
 		
 	</div>
 

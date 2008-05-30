@@ -1275,8 +1275,23 @@ h2#comments-headline {
 	text-align: center;
 	}
 
+#wp-calendar td:hover {
+	background: black url(images/tip-header.png);
+	color: black;
+	}
+
+#wp-calendar td:hover a:hover,
+#wp-calendar td:hover a {
+	color: black;
+	}
+
 #wp-calendar td.pad:hover { /* Doesn't work in IE */
-	background-color: #fff; }
+	background: transparent;
+	}
+	
+#wp-calendar td, #wp-calendar th {
+	cursor: default;
+}
 	
 	
 /*
@@ -1554,19 +1569,33 @@ td.exif-value {
 	}
 
 #exif-frame {
-	/* clear: both;  */
-	/*width: 100%;*/
 	text-align: center;
 	padding: 20px 0;
 	}
 	
 .archive-thumb {
-	/*border: 5px solid rgb(230, 230, 230);
-	margin: 2px;*/
 	border: 1px solid silver;
-	margin: 0px;
 	position: relative;
 }
+
+.archive-thumbframe,
+.archive-thumbframe-no-image {
+	background: url(images/grid2.gif);
+	position: relative;
+	float: left;
+	z-index: 1;
+	margin: 3px; /* <!-- change this to alter the space between the images */
+	}
+
+.archive-thumbframe-no-image {
+	cursor: default;
+	z-index: 0;
+	}
+
+.archive-thumbframe-no-image img {
+	visibility: hidden;
+	display: none;
+}	
 
 .archive-thumb:hover {
 	/* border: 5px solid rgb(255, 255, 255); */
@@ -1574,7 +1603,7 @@ td.exif-value {
 }
 
 .archive-post,
-.mosaic-photo {
+.mosaic-post {
 	margin: 2px;
 	position: relative;
 }
@@ -1640,4 +1669,8 @@ span.unapproved-comment {
 	/* if you want to show the "comment rss feed" text, comment out the following two lines */
 	display: none; 
 	visibility: hidden;
+}
+
+span.menu-delimiter {
+	color: gray;
 }

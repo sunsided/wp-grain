@@ -142,7 +142,11 @@ div.optionline {
 
 fieldset {
 	border: none;
+	border-left: 1px dashed silver;
+	border-bottom: 1px dashed silver;
 	margin-top: 10px;
+	margin-left: -2px;
+	padding-left: 20px;
 }
 
 fieldset legend {

@@ -16,6 +16,7 @@
 	define('GRAIN_PANO_APPLET_PARAMS', 'grain_panoAppParams');
 	
 	define('GRAIN_PHOTO_PAGE_ERROR', 'grain_photo_page_error');
+	define('GRAIN_AFTER_SEARCH_FORM', 'grain_after_search_form');
 	
 	define('GRAIN_ARCHIVE_BEFORE_THUMB', 'grain_archive_before_thumb');
 	define('GRAIN_ARCHIVE_AFTER_THUMB', 'grain_archive_after_thumb');

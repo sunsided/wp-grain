@@ -44,12 +44,11 @@
 			<div class="alignright"><?php previous_posts_link(__("previous page &raquo;", "grain")) ?></div>
 		</div>
 	
-	<?php else : ?>
-
-		<h2 class="center"><?php _e("Not found", "grain"); ?></h2>
-		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
-
-	<?php endif; ?>
+	<?php else : 
+	
+	grain_inject_error_searchform();
+	
+	endif; ?>
 		
 	</div>
 

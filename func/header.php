@@ -71,6 +71,12 @@
 <meta name="author" Content="<?php echo $GrainOpt->get(GRAIN_COPYRIGHT_HOLDER); ?>" />
 <meta name="content-language" Content="<?php echo get_bloginfo('language'); ?>" />
 <?php
+	
+		// prevent listing of the popup
+		if( grain_ispopup() ) {
+			echo '<meta name="robots" content="follow, noindex">'.PHP_EOL;
+		}
+
 	}
 	
 	// embed Dublin Core meta information
@@ -117,7 +123,7 @@
 		// wordpress generator meta gets applied by a hook, so skip it here
 		?>
 <meta name="theme" content="Grain <?php echo grain_version(); ?>" /> <!-- please leave this for stats -->
-		<?php
+<?php
 	}
 
 ?>

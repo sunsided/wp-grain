@@ -15,6 +15,7 @@
 
 	function grain_posttype($post_id, $default=GRAIN_POSTTYPE_PHOTO) {
 		
+		// TODO: Get real type from the database
 		return GRAIN_POSTTYPE_PHOTO;
 		//return GRAIN_POSTTYPE_SPLITPOST;
 		//return 'split-post';
@@ -262,6 +263,190 @@
 	
 		// inject reflection script
 		// grain_inject_reflec_script('panorama-applet');
+	}
+
+/* Extended Info */
+
+	/**
+		Tests whether Grain is in regular extended mode.
+		Grain enters "regular" extended mode if extended mode is enabled in the options and the user clicked
+		the comments/info link or when the user tried to visit a comments page directly.
+	*/
+	function grain_is_regular_extendedmode() 
+	{
+		global $GrainOpt;
+		return (GRAIN_REQUESTED_EXINFO && $GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED)) || GRAIN_REQUESTED_OTEXINFO;
+	}
+
+	/**
+		Tests whether Grain is in enforced extended mode.
+		Enforced extended mode means that the photo's information will be shown without regard to the
+		extended mode setting in the options.
+	*/
+	function grain_is_enforced_extendedmode() 
+	{
+		global $GrainOpt;
+		return $GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO);
+	}
+
+	/**
+		Tests whether Grain is in extended mode.
+		This function returns true, if either enforced or regular extended mode is entered.
+	*/
+	function grain_is_extendedmode() 
+	{
+		// $regular_extended_mode = (GRAIN_REQUESTED_EXINFO && $GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED)) || GRAIN_REQUESTED_OTEXINFO;
+		// $enforced_extended_mode = $GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO);
+		// $extended_mode = $regular_extended_mode || $enforced_extended_mode;
+	
+		if(grain_is_regular_extendedmode()) return true;
+		if(grain_is_enforced_extendedmode()) return true;
+		
+		return false;
+	}
+
+	/**
+		Does the "extended info" logic.
+		This renders the extended information block under the photo
+	*/
+	function grain_do_extendedinfo_logic() 
+	{
+		global $GrainOpt, $post;
+	
+		// check for extended info mode
+		$extended_mode = grain_is_extendedmode();
+		if( !$extended_mode ) return;
+		
+		
+		// some shortcuts
+		$is_folded = !grain_is_enforced_extendedmode() || !grain_is_regular_extendedmode();
+		$is_unfolded = !$is_folded;
+
+		// test for a subtitle
+		$addon = FALSE;	
+		if( $GrainOpt->getYesNo(GRAIN_2NDLANG_ENABLED) ) {
+			$en_title = get_post_meta($post->ID, $GrainOpt->get(GRAIN_2NDLANG_TAG), true);
+			if( $en_title != null && $en_title != $post->post_title ) $addon = TRUE;
+		}
+
+		$exif_enabled = $post->image && $GrainOpt->getYesNo(GRAIN_EXIF_VISIBLE);
+		$exif_class = $exif_enabled ? 'exif' : 'no-exif';
+		$subtitle_class = $addon ? 'has-subtitle' : 'no-subtitle';
+					
+		?>
+
+		<div id="info-frame"><a name="info"></a>
+	
+			<h2 id="title" class="<?php echo $subtitle_class; ?>"><?php the_title(); ?></h2>
+			<?php if($addon) echo '<h3 id="subtitle">'.$en_title.'</h3>'; ?>
+					 
+					 
+			<div id="content">
+					 
+			<?php
+				// display EXIF data
+				if ($exif_enabled): 
+			?>
+				
+				<div id="exif-frame">
+				<?php include( TEMPLATEPATH .'/exif-block.php' ); ?>
+				</div>
+				
+			<?php 	
+				endif 
+			?>
+					
+				<div id="infotext-frame" class="<?php echo $exif_class; ?>">
+				<?php 
+					if( grain_posttype($post->ID) == GRAIN_POSTTYPE_SPLITPOST )
+					{
+						// output the basic content
+						echo grain_get_the_content();					
+					} 
+					else 
+					{
+						// in default mode, so display the content (or it's excerpt)
+						if($GrainOpt->is(GRAIN_EXCERPTONLY) || $is_folded) 
+						{
+							the_excerpt();
+						} 
+						else 
+						{
+							the_content();
+						}
+					}
+				?>
+				</div>
+
+				<div id="meta" class="<?php echo grain_is_enforced_extendedmode() ? 'enforced' : 'regular'; ?>">
+
+					<span id="edit-post-link"><?php edit_post_link(__("edit post", "grain"), '', ''); ?></span>
+					
+					<?php if($GrainOpt->getYesNo(GRAIN_CONTENT_DATES)): ?>
+					<span id="content-date">
+						<?php 
+							the_time(grain_filter_dt($GrainOpt->get(GRAIN_DTFMT_PUBLISHED)));
+						?>
+					</span>
+					<?php endif; ?>
+					
+					<?php if($GrainOpt->getYesNo(GRAIN_COMMENTS_ENABLED) && $GrainOpt->getYesNo(GRAIN_CONTENT_COMMENTS_HINT)): ?>
+					<span id="comment-hint">
+						<?php 
+							echo grain_generate_comments_link(); 
+						?>
+					</span>
+					<?php endif; ?>
+
+					<?php if($GrainOpt->getYesNo(GRAIN_CONTENT_CATEGORIES)) : ?>
+					<span id="post-categories">
+					<?php 
+						echo $GrainOpt->get(GRAIN_OPENTAGS_CATLIST);
+						the_category($GrainOpt->get(GRAIN_CATLIST_SEPARATOR));
+						echo $GrainOpt->get(GRAIN_CLOSETAGS_CATLIST);
+					?>
+					</span>
+					<?php endif; ?>
+					
+					<?php if($GrainOpt->getYesNo(GRAIN_CONTENT_TAGS)) : ?>
+					<span id="post-tags">
+					<?php 
+						if( the_tags( 
+							$GrainOpt->get(GRAIN_OPENTAGS_TAGLIST), 
+							$GrainOpt->get(GRAIN_TAGLIST_SEPARATOR), 
+							$GrainOpt->get(GRAIN_CLOSETAGS_TAGLIST))):
+							
+							echo '<span id="post-tags">';
+							the_tags(); 
+							echo '</span>';
+						
+						endif;
+					?>
+					</span>
+					<?php endif; ?>
+					
+					<?php if( $GrainOpt->getYesNo(GRAIN_CONTENT_PERMALINK_VISIBLE) ):  ?>
+					<span id="permalink-container"><?php _e("The permalink address <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> of this photo is:", "grain"); ?> <span id="permalink"><?php echo get_permalink(); ?></span></span>
+					<?php endif; ?>
+					</div>
+					
+					</div> <!-- id content -->
+					
+					<?php					
+
+					// now we recheck for extended info mode, since info enforcement could be enabled
+					// in which case we don't want to display the comments
+					if( grain_is_regular_extendedmode() && grain_can_comment() ) 
+					{
+						include( TEMPLATEPATH.'/comments.php'); 
+					}
+	
+					// now inject the widget sidebar
+					grain_inject_sidebar_footer();
+	
+					?>
+				</div>
+			<?php
 	}
 
 ?>

@@ -11,7 +11,10 @@
 
 	get_header();
 	
-	$mosaic_count_per_page = grain_mosaic_count();
+	$mosaic_count_per_page = $GrainOpt->get(GRAIN_MOSAIC_COUNT);
+
+	// get the page data
+	the_post();
 
 ?>
 <div id="content-archives" class="narrowcolumn">
@@ -20,7 +23,7 @@
 
 		<h2 class="pagetitle"><?php the_title(); ?></h2>
 
-				<div class="navigation">
+				<div id="navigation-top" class="navigation">
 					<div class="alignleft"><?php grain_mosaic_ppl(__("&laquo; previous page", "grain"), grain_mocaic_current_page(), $mosaic_count_per_page) ?></div>
 					<div class="alignright"><?php grain_mosaic_npl(__("next page &raquo;", "grain"), grain_mocaic_current_page(), $mosaic_count_per_page) ?></div>
 				</div>
@@ -30,40 +33,38 @@
 			$offset = (grain_mocaic_current_page()-1) * $mosaic_count_per_page;
 			$posts = get_posts('numberposts='.$mosaic_count_per_page.'&offset='.$offset);
 			$previousYear = '0000';
-			$years_enabled = grain_mosaic_years();
+			$years_enabled = $GrainOpt->is(GRAIN_MOSAIC_DISPLAY_YEARS);
 			foreach($posts as $post): 
 			
-			?><div class="archive-post">
-<?php
+			?>
+			
+<div class="archive-post"><?php
 
 			if( $years_enabled ) {
 					$currentYear = mysql2date('Y', $post->post_date);
 					if ($currentYear != $previousYear) {
-						echo '<div class="year"><h2>' . $currentYear . '</h2></div>
-';
+						echo '<div class="year"><h2>' . $currentYear . '</h2></div>'.PHP_EOL;
 						$previousYear = $currentYear;
 					}
 			}
-				if (!is_null($image = YapbImage::getInstanceFromDb($post->ID))) {
-					echo '<div class="mosaic-photo">
-';
-					
-					// display
-					do_action(GRAIN_ARCHIVE_BEFORE_THUMB);
-					echo grain_mimic_ygi_archive($image, $post);
-					do_action(GRAIN_ARCHIVE_AFTER_THUMB);
-					
-					// close div
-					echo '</div>
-';
-				}
-		?></div>
+			
+			$image = NULL;
+			if (class_exists(YapbImage)) $image = YapbImage::getInstanceFromDb($post->ID);
+			
+			// display
+			echo '<div class="mosaic-photo">';
+			do_action(GRAIN_ARCHIVE_BEFORE_THUMB);
+			echo grain_mimic_ygi_archive($image, $post);
+			do_action(GRAIN_ARCHIVE_AFTER_THUMB);					
+			echo '</div>';
+		?>
+		</div>
 <?php
 		
 			endforeach;
 
 		?>
-				<div class="navigation">
+				<div id="navigation-bottom" class="navigation">
 					<div class="alignleft"><?php grain_mosaic_ppl(__("&laquo; previous page", "grain"), grain_mocaic_current_page(), $mosaic_count_per_page) ?></div>
 					<div class="alignright"><?php grain_mosaic_npl(__("next page &raquo;", "grain"), grain_mocaic_current_page(), $mosaic_count_per_page) ?></div>
 				</div>

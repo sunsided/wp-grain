@@ -86,15 +86,15 @@
 			$internal = ($GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO) && $GrainOpt->getYesNo(GRAIN_POPUP_JTC) ? '#comments' : '');
 			// build link
 			$link .= (!$comments_open ? '<del class="closed-comments">' : '');
-			$link .= '<a class="open-popup" onclick="wpopen(this.href); return false" title="'.__("comments and details", "grain").'" accesskey="c" rel="nofollow" href="?comments_popup='.$post->ID.$internal.'">'.$_hmn_comments_more.'</a>';
+			$link .= '<a class="open-popup" onclick="wpopen(this.href); return false" title="'.__("comments and details", "grain").'" accesskey="c" href="?comments_popup='.$post->ID.$internal.'">'.$_hmn_comments_more.'</a>';
 			$link .= (!$comments_open ? '</del>' : '');
 			
 		}
 		else
 		{
 			// get strings
-			$_hmn_comments_more = str_replace( "%", $post->comment_count, __("show comments (%)", "grain") );
-			$_hmn_comments_less = str_replace( "%", $post->comment_count, __("hide comments", "grain") );
+			$_hmn_comments_more = str_replace( "%", $post->comment_count, __("details &amp; comments (%)", "grain") );
+			$_hmn_comments_less = str_replace( "%", $post->comment_count, __("hide details", "grain") );
 			
 			// set text
 			//$text = (isset($_SESSION['grain:info']) && $_SESSION['grain:info'] == 'on') ? $_hmn_comments_less : $_hmn_comments_more;
