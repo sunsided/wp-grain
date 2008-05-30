@@ -156,7 +156,7 @@
 			
 			// get option and value
 			$option = $this->option_defs[$keyName];
-			if(!array_key_exists($option["FIELD"], $this->options)) return $option["DEFAULT"];
+			if(empty($this->options) || !array_key_exists($option["FIELD"], $this->options)) return $option["DEFAULT"];
 			return $this->options[$option["FIELD"]];
 		}
 				

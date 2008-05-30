@@ -37,6 +37,23 @@
 		do_action(GRAIN_PHOTO_PAGE_ERROR);
 	}
 	
+	function grain_inject_error_searchform() 
+	{	
+		global $s, $post;	// will be (possibly) used in searchform.php
+	
+		// get the message
+		$title = __("Not found.", "grain");
+		$message = __("Sorry, but you are looking for something that isn't here.", "grain");
+			
+		// display title and form
+		echo '<div id="photo-page-error">';
+		echo apply_filters(GRAIN_SEARCHFORM_ERROR_TITLE, '<h2 class="errortitle">'.$title.'</h2>');
+		echo apply_filters(GRAIN_SEARCHFORM_ERROR_MESSAGE, '<div class="errormessage">'.$message.'</div>');
+		include (TEMPLATEPATH . '/searchform.php');
+		echo '</div>';
+		do_action(GRAIN_AFTER_SEARCH_FORM);
+	}	
+	
 	function grain_get_copyright_string($extended = FALSE) 
 	{
 		global $GrainOpt;
@@ -110,39 +127,7 @@
 		return apply_filters(GRAIN_COPYRIGHT_YEARS_EX, $value);
 	}
 	
-/* Header Menu */
-
-	function grain_inject_navigation_menu($location) 
-	{
-		global $GrainOpt;
-		$target = $GrainOpt->get(GRAIN_NAVBAR_LOCATION);
-		
-		if($location != $target ) return;
-		
-		global $post;
-		
-		if( $location == GRAIN_IS_HEADER )
-			$class = "in-header";
-		else
-			$class = "in-body";
-		?>
-
-	<div id="headermenu" class="<?php echo $class; ?>">
-		<?php
-		include (TEMPLATEPATH . '/header.menu.php');
-		?>
-	</div>		
-		
-		<?php
-	}
-	
 /* Eye candy helper */	
-	
-	function grain_use_reflection() {
-		global $GrainOpt;
-		if( !$GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX) ) return FALSE;
-		return $GrainOpt->getYesNo(GRAIN_EYECANDY_REFLECTION_ENABLED);
-	}
 
 	function grain_get_gravatar_uri($rating = false, $size = false, $default = false, $border = false) {
 		global $comment;
@@ -154,189 +139,27 @@
 		return $uri;
 	}
 
-/* Eye candy: Fading */
-
-	function grain_inject_simplefader($element_id='photo') {
-		if(!grain_eyecandy_use_fader()) return;
-	?>
-	<style type='text/css'>#<?php echo $element_id; ?> {visibility:hidden;}</style>
-	<script type="text/javascript" language="JavaScript">
-
-		function initImage() {
-			// get image
-			imageId = '<?php echo $element_id; ?>';
-			image = document.getElementById(imageId);
-			// begin fade
-			setOpacity(image, 0);
-			image.style.visibility = "visible";
-			fadeIn(imageId,0);
-		}
-		function fadeIn(objId,opacity) {
-			if (document.getElementById) {
-				obj = document.getElementById(objId);
-				if (opacity <= 100) {
-					setOpacity(obj, opacity);
-					opacity += 5;
-					window.setTimeout("fadeIn('"+objId+"',"+opacity+")", 20);
-				}
-			}
-		}
-		function setOpacity(obj, opacity) {
-			opacity = (opacity == 100)?99.999:opacity;
-			// IE/Win
-			obj.style.filter = "alpha(opacity:"+opacity+")";
-			// Safari<1.2, Konqueror
-			obj.style.KHTMLOpacity = opacity/100;
-			// Older Mozilla and Firefox
-			obj.style.MozOpacity = opacity/100;
-			// Safari 1.2, newer Firefox and Mozilla, CSS3
-			obj.style.opacity = opacity/100;
-		}
-		window.onload = function() {initImage()}	
-		
-	</script>
-	<?php
-	}
-	
-/* Eye candy: Fading 2 */
-
-	function grain_fx_can_fade() {
-		global $GrainOpt;
-		return $GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX) && $GrainOpt->getYesNo(GRAIN_EYECANDY_FADER);
-	}
-
-	function grain_inject_fader($element_id='photo') {
-		global $GrainOpt;
-		
-		if(!$GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX)) return;
-		if(!$GrainOpt->getYesNo(GRAIN_EYECANDY_FADER)) return;
-	?>
-	<script type="text/javascript" language="JavaScript">
-
-		Element.extend({
-			fadeIn:function(delay) {
-				// Will fade in after delay - is chainable, ie:
-				// $('element').fadeIn(500).fadeOut(1000);
-				f = new Fx.Style(this, 'opacity', {duration:750, fps:50});
-				f.start.pass([0,1], f).delay(delay);
-				return this;
-			},
-			hide:function() {
-				this.setStyle('opacity', '0');
-				return this;
-			},
-			fadeOut:function(delay) {
-				// Will fade out after delay - is chainable, ie:
-				// $('element').fadeOut(500).fadeIn(1000);
-				f = new Fx.Style(this, 'opacity', {duration:500, fps:50});
-				f.start.pass([1,0], f).delay(delay);
-				return this;
-			}
-		});
-
-		window.addEvent('domready', function() {
-		
-			photo = $('photo-fade');
-			//photo = $('photo');
-			photo.hide();
-		
-		});	
-		
-		window.addEvent('load', function() {
-		
-			photo = $('photo-fade');
-			//photo = $('photo');
-			photo.fadeIn(100);
-		});	
-		
-	</script>
-	<?php
-	}	
-
-/* Eye candy: Tooltips */
-
-	function grain_inject_moofx_tooltips($element_id='photo') {
-		global $GrainOpt;
-		if(!$GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX)) return;
-		if(!$GrainOpt->getYesNo(GRAIN_EYECANDY_USE_MOOTIPS)) return;
-	?>
-	<script type="text/javascript" language="JavaScript">
-
-		window.addEvent('domready', function(){
-
-			var tooltips = new Tips($('<?php echo $element_id; ?>'), {
-				className: 'tooltip'
-			});
-			var tooltips2 = new Tips($$('.tooltipped'), {
-				className: 'tooltip'
-			});
-		
-		});
-		
-	</script>
-	<?php
-	}
-
-/* Eye candy: Slide */
-
-	function grain_can_inject_moofx_slide() {
-		global $GrainOpt;
-		return $GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX) && $GrainOpt->getYesNo(GRAIN_EYECANDY_USE_SLIDE);
-	}
-
-	function grain_inject_moofx_slide() {
-		if(!grain_can_inject_moofx_slide()) return;
-	?>
-	<script type="text/javascript" language="JavaScript">
-
-		window.addEvent('domready', function(){
-		
-			var contentSlide = new Fx.Slide('content');
-		
-			$('content-toggle').addEvent('click', function(e){
-				e = new Event(e);
-				contentSlide.toggle();
-				e.stop();
-			});
-		
-			var commentSlide = new Fx.Slide('comment-frame-body');
-		
-			$('comments-toggle').addEvent('click', function(e){
-				e = new Event(e);
-				commentSlide.toggle();
-				e.stop();
-			});
-		
-		});
-		
-	</script>
-	<?php
-	}
-
-/* Eye Candy: Various */
-
-	function grain_inject_reflec_script($element = 'photo') {
-		if( !grain_use_reflection() ) return;
-		
-		$reflection_size_factor = 0.3;
-		$reflection_opacity = 0.3;
-		
-		$reflection_shift = 0;
-		$top_offset = intval($height*$reflection_size_factor) - $reflection_shift;
-		?>
-		
-		<script language="Javascript">
-			Reflection.add('<?php echo $element; ?>', { height: <?php echo $reflection_size_factor; ?>, opacity: <?php echo $reflection_opacity; ?> });
-		</script>
-		
-		<?php
-	}
-
-
 /* Helper: Popups */
 
 	function grain_thumbnail_title($title, $text) {
 		return 'cssbody=[tooltip-text-prev] cssheader=[tooltip-title-prev] header=['.$title.'] body=['.$text.']';
+	}
+
+	function grain_compose_post_tooltips($message_left, $message_right, $addon=NULL ) {
+		global $GrainOpt, $post;
+		
+		if(!$GrainOpt->getYesNo(GRAIN_EYECANDY_USE_MOOTIPS)) {
+			$title_prev = grain_thumbnail_title($post->post_title. $addon, $message_left);
+			$title_next = grain_thumbnail_title($post->post_title. $addon, $message_right);
+		}
+		else
+		{
+			$title_prev = $post->post_title. ' :: '.$message_left;
+			$title_next = $post->post_title. ' :: '.$message_right;
+		}
+		
+		// return 
+		return array( "prev" => $title_prev, "next" => $title_next );
 	}
 
 /* Helper: Override Styles */
@@ -360,10 +183,11 @@
 		return $result;
     }
 
-/* Helper: Content sidebars */
+	/* Helper: Content sidebars */
 
-	function grain_inject_sidebar_above() {
-		/* Widgetized sidebar, if you have the plugin installed. */ 
+	function grain_inject_sidebar_above() 
+	{
+		// Widgetized sidebar, if you have the plugin installed.
 		if ( function_exists('dynamic_sidebar')) {
 		?>
 			<div id="content-sidebar-above" class="">
@@ -378,7 +202,7 @@
 	}
 	
 	function grain_inject_sidebar_below() {
-		/* Widgetized sidebar, if you have the plugin installed. */ 
+		// Widgetized sidebar, if you have the plugin installed.
 		if ( function_exists('dynamic_sidebar')) {
 		?>
 			<div id="content-sidebar-below" class="">
@@ -393,7 +217,7 @@
 	}
 	
 	function grain_inject_sidebar_footer() {
-		/* Widgetized sidebar, if you have the plugin installed. */ 
+		// Widgetized sidebar, if you have the plugin installed.
 		if ( function_exists('dynamic_sidebar')) {
 		?>
 			<div id="content-sidebar-footer" class="">

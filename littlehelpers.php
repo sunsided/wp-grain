@@ -47,7 +47,7 @@
 	function grain_is_yapb_installed() 
 	{
 		global $yapb;
-		return !empty($yapb);
+		return isset($yapb) && !empty($yapb);
 	}
 	
 	function grain_set_ispopup($popup=true) {

@@ -7,7 +7,13 @@
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 
-	/* left/right navigation */
+/* definitions */
+
+	define("GRAIN_FIRST_POST", -1);
+	define("GRAIN_NEWEST_POST", +1);
+	define("GRAIN_SURROUNDED_POST", 0);
+
+/* left/right navigation */
 
 	function grain_mimic_previous_post_link($format='&laquo; %link', $link='%title', $in_same_cat = false, $excluded_categories = '') {
 		global $post;
@@ -50,7 +56,7 @@
 		return $format;
 	}
 	
-	/* comment link generation */
+/* comment link generation */
 
 	function grain_can_comment() 
 	{
@@ -80,15 +86,15 @@
 			$internal = ($GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO) && $GrainOpt->getYesNo(GRAIN_POPUP_JTC) ? '#comments' : '');
 			// build link
 			$link .= (!$comments_open ? '<del class="closed-comments">' : '');
-			$link .= '<a class="open-popup" onclick="wpopen(this.href); return false" title="'.__("comments and details", "grain").'" accesskey="c" rel="nofollow" href="?comments_popup='.$post->ID.$internal.'">'.$_hmn_comments_more.'</a>';
+			$link .= '<a class="open-popup" onclick="wpopen(this.href); return false" title="'.__("comments and details", "grain").'" accesskey="c" href="?comments_popup='.$post->ID.$internal.'">'.$_hmn_comments_more.'</a>';
 			$link .= (!$comments_open ? '</del>' : '');
 			
 		}
 		else
 		{
 			// get strings
-			$_hmn_comments_more = str_replace( "%", $post->comment_count, __("show comments (%)", "grain") );
-			$_hmn_comments_less = str_replace( "%", $post->comment_count, __("hide comments", "grain") );
+			$_hmn_comments_more = str_replace( "%", $post->comment_count, __("details &amp; comments (%)", "grain") );
+			$_hmn_comments_less = str_replace( "%", $post->comment_count, __("hide details", "grain") );
 			
 			// set text
 			//$text = (isset($_SESSION['grain:info']) && $_SESSION['grain:info'] == 'on') ? $_hmn_comments_less : $_hmn_comments_more;
@@ -110,6 +116,32 @@
 		}
 		
 		return $link;
+	}	
+	
+/* Header Menu */
+
+	function grain_inject_navigation_menu($location) 
+	{
+		global $GrainOpt;
+		$target = $GrainOpt->get(GRAIN_NAVBAR_LOCATION);
+		
+		if($location != $target ) return;
+		
+		global $post;
+		
+		if( $location == GRAIN_IS_HEADER )
+			$class = "in-header";
+		else
+			$class = "in-body";
+		?>
+
+	<div id="headermenu" class="<?php echo $class; ?>">
+		<?php
+		include (TEMPLATEPATH . '/header.menu.php');
+		?>
+	</div>		
+		
+		<?php
 	}	
 
 ?>

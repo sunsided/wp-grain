@@ -45,21 +45,29 @@
 	}
 
 	function grain_mimic_ygi_archive($image, $post) {
+		global $GrainOpt;
 
 		// get data
-		$width = grain_mosaicthumb_width();
-		$height = grain_mosaicthumb_height();
+		$width = intval($GrainOpt->get(GRAIN_MOSAIC_THUMB_WIDTH));
+		$height = intval($GrainOpt->get(GRAIN_MOSAIC_THUMB_HEIGHT));
 	
-		$en_title = get_post_meta($post->ID, grain_2ndlang_tag(), true);
+		$en_title = get_post_meta($post->ID, $GrainOpt->get(GRAIN_2NDLANG_TAG), true);
 		$addon = "";
-		if( grain_2ndlang_enabled() && ($en_title != null && $en_title != $post->post_title) ) $addon = "<br /><span class='thin'>" . $en_title .'</span>';
+		if( $GrainOpt->is(GRAIN_2NDLANG_ENABLED) && ($en_title != null && $en_title != $post->post_title) ) $addon = "<br /><span class='thin'>" . $en_title .'</span>';
 		
-		$tooltip = grain_archive_tooltips() ? grain_thumbnail_title($post->post_title.$addon, __("click to view", "grain")) : '';
+		$message = __("click to view", "grain");
+		if(empty($image)) $message = __("not ready yet", "grain");
+		$tooltip = $GrainOpt->is(GRAIN_ARCHIVE_TOOLTIPS) ? grain_thumbnail_title($post->post_title.$addon, $message) : '';
 		
 		// build
-		$image_html = '<img width="'.$width.'" height="'.$height.'" class="archive-thumb" src="' . $image->getThumbnailHref(array('w='.$width,'h='.$height,'zc=1')) . '" alt="'.$post->post_title.'" title="'.$tooltip.'"/>';
+		$image_src = ""; //GRAIN_TEMPLATE_DIR ."/images/tip-header.png";
+		if( !empty($image) ) $image_src = $image->getThumbnailHref(array('w='.$width,'h='.$height,'zc=1'));
+		
+		$image_html = '<img id="thumbnail-'.$post->ID.'" width="'.$width.'" height="'.$height.'" style="width: '.$width.'px; height: '.$height.'px;" class="archive-thumb" src="' .$image_src. '" alt="'.$post->post_title.'" />';
 		$image_html = apply_filters( 'yapb_get_thumbnail', $image_html );
 		$anchor_html = '<a rel="bookmark" href="' . get_permalink($post->ID) . '">'.$image_html.'</a>';
+		
+		$anchor_html = '<div title="'.$tooltip.'" id="thumbframe-'.$post->ID.'" class="archive-thumbframe'.(empty($image)?"-no-image":"").'" style="width: '.$width.'px; height: '.$height.'px; overflow: visible;">'.$anchor_html."</div>";
 		
 		// return
 		return $anchor_html;
