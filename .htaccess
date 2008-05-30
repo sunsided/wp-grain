@@ -1,23 +1,18 @@
+# Enforce PHP mime types
+AddType application/x-httpd-php .php
+
 # Tunings
 Options -Indexes
 
 # Disallow access to certain files
-<FilesMatch ^\.>
+<FilesMatch "^\.">
 	Deny from all
 </FilesMatch>
 
-<FilesMatch \.txt$>
+<FilesMatch "\.txt$">
 	Deny from all
 </FilesMatch>
 
-<FilesMatch ^functions\.>
-	Deny from all
-</FilesMatch>
-
-<FilesMatch ^class\.>
-	Deny from all
-</FilesMatch>
-
-<FilesMatch \.php$>
+<FilesMatch "^functions\.">
 	Deny from all
 </FilesMatch>

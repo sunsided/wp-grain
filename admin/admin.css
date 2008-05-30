@@ -1,0 +1,172 @@
+/* $Id$ */
+
+#grain-header {
+	font-size: 1em;
+}
+
+#grain-header .hibrowser {
+	width: 780px;
+	height: 260px;
+	overflow: scroll;
+}
+
+#grain-header #hitarget {
+	display: none;
+}
+
+#nonJsForm {
+	position: relative;
+	text-align: left;
+}
+
+#nonJsForm label.leftbound {
+	/* padding-top: 6px; */
+	padding-right: 5px;
+	float: left;
+	width: 200px;
+	text-align: right;
+}
+
+#nonJsForm label.checkbox_text {
+	padding-top: none;
+	padding-right: none;
+	width: auto;
+	text-align: left;
+}
+
+#nonJsForm input,
+#nonJsForm textarea,
+.input_pad {
+	padding-top: 6px;
+	padding-right: 5px;
+	margin-left: 10px;
+	/*width: 200px;*/
+	text-align: left;
+}
+
+.input_pad {
+	padding-left: 205px;
+	padding-top: 0;
+	margin-top: 5px;
+}
+
+#nonJsForm textarea, #nonJsForm input {
+	font-family: "Courier New", Courier, monospace;
+}
+
+textarea {
+	width: 720px;
+}
+
+.defbutton {
+	font-weight: bold;
+}
+
+.zerosize {
+	width: 0px;
+	height: 0px;
+	overflow: hidden;
+}
+
+#nonJsForm hr {
+	border: none;
+	border-top: 1px dotted black;
+	margin: 10px 0;
+}
+
+#nonJsForm h2 {
+	padding-top: 20px;
+}
+
+#nonJsForm h2#first {
+	padding-top: 0px;
+}
+
+fieldset {
+	border: 1px solid silver;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+fieldset p {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+table {
+	width: 100%;
+}
+
+td.key {
+	width: 200px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+td.value {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+input {
+	margin-right: 10px;	
+}
+
+input.checkbox {
+	margin-right: 5px;	
+}
+
+input.longline {
+	width: 400px;	
+}
+
+input.shortline {
+	width: 150px;	
+}
+
+span.quickinfo {
+	color: gray;	
+}
+
+div.description {
+	margin-bottom: 10px;
+}
+
+div.infoline {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+div.optionline {
+	margin-bottom: 5px;	
+}
+
+fieldset {
+	border: none;
+	border-left: 1px dashed silver;
+	border-bottom: 1px dashed silver;
+	margin-top: 10px;
+	margin-left: -2px;
+	padding-left: 20px;
+}
+
+fieldset legend {
+	font-size: 1.25em;
+	border-bottom: 1px dotted silver;
+}
+
+#atom_feed_line {
+	padding-top: 10px;	
+}
+
+#atom_feed_label {
+	background-image: url(../images/atom_gray.gif);
+	background-repeat: no-repeat;
+	background-position: 80px 0px;
+	height: 40px;
+	margin-top: -10px;
+	padding-top: 10px;
+}
+
+input.pixelbox {
+	width: 50px;
+}

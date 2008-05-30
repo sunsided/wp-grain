@@ -4,126 +4,84 @@
 	------------------------------------------------------------------
 	File version: $Id$
 */
-	
-	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 
-	/* Session preparing */
-	
-	define("GRAIN_OTI_KEY", "otex");
-	
-	function grain_startSession($on_popup=FALSE) 
-	{	
-		global $wp_query, $GrainOpt;
-			
-		// start new session
-		session_start();
-		
-		// If the index page is called, pretend it is not
-		if( is_home() ):
-			$lastposts = get_posts('numberposts=1');
-			foreach ($lastposts as $post):
-				setup_postdata($post);			
-			endforeach;
-			// pretend we are on a single page so that next/prev post functions work
-			$wp_query->is_single = true;
-		endif;
-		
-		// allow OTI requests only from local server
-		$oti_allowed = /*($_SERVER["REMOTE_ADDR"] == $_SERVER["SERVER_ADDR"]) &&*/ $_SESSION["GRAIN_FROM_COMPP"] === true;
-		$ext_allowed = $GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED);
-		$comments_allowed = grain_can_comment(); // $GrainOpt->getYesNo(GRAIN_COMMENTS_ON_EMPTY_ENABLED);
-		
-		// extended info mode
-		if( $comments_allowed && $ext_allowed && isset($_REQUEST['info']) && !empty($_REQUEST['info']) ) 
-		{
-			define('GRAIN_REQUESTED_EXINFO', $_REQUEST['info'] == 'on' ? TRUE : FALSE);
-			define('GRAIN_REQUESTED_OTEXINFO', FALSE);
-		} 
-		elseif( $oti_allowed  && isset($_REQUEST[GRAIN_OTI_KEY]) && !empty($_REQUEST[GRAIN_OTI_KEY]) ) 
-		{
-			define('GRAIN_REQUESTED_OTEXINFO', $_REQUEST[GRAIN_OTI_KEY] == 'on' ? TRUE : FALSE);
-			define('GRAIN_REQUESTED_EXINFO', GRAIN_REQUESTED_OTEXINFO);
-		} 
-		else 
-		{
-			define('GRAIN_REQUESTED_OTEXINFO', FALSE);
-			define('GRAIN_REQUESTED_EXINFO', FALSE);
-		}	
-	}
-	
-	function grain_endSession() 
-	{
-		if( $_SESSION['GRAIN_FROM_COMPP'] ) {
-			session_unregister('GRAIN_FROM_COMPP');
-		}
-	}
+grain_startSession();
 
-	/* META headers */
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+
+<head profile="http://gmpg.org/xfn/11">
+<title>
+	<?php wp_title('&laquo;',true,'right'); ?>
+	<?php bloginfo('name'); ?>
 	
-	// embed general meta information for statistics
-	function grain_embed_general_meta() 
-	{
-		global $GrainOpt;
-		
-		?>
-<meta http-equiv="content-type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-<meta name="copyright" content="<?php grain_embed_copyright(); ?>" />
-<meta name="author" Content="<?php echo $GrainOpt->get(GRAIN_COPYRIGHT_HOLDER); ?>" />
-<meta name="content-language" Content="<?php echo get_bloginfo('language'); ?>" />
-<?php
-	
-		// prevent listing of the popup
-		if( grain_ispopup() ) {
-			echo '<meta name="robots" content="follow, noindex">'.PHP_EOL;
-		}
+</title>
 
-	}
-	
-	// embed Dublin Core meta information
-	function grain_embed_dc_meta() 
-	{
-		global $GrainOpt;
-		
-		?>
-<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
-<link rel="schema.foaf" href="http://xmlns.com/foaf/0.1/" />
-<?php 		
-		$imprint_url = $GrainOpt->get(GRAIN_IMPRINT_URL);
-		if( !empty($imprint_url) ): ?>
-<meta name="dc.rights" content="(Scheme=URL) <?php echo $imprint_url; ?>" />
-<?php endif; ?>
-<meta name="dc.language" scheme="RFC3066" content="<?php echo get_bloginfo('language'); ?>">
-<meta name="dc.title" content="<?php bloginfo('name'); ?>>" />
-<meta name="dc.description"  content="<?php bloginfo('name'); ?>, <?php wp_title(); ?>" />
-<meta name="dc.creator" content="<?php echo $GrainOpt->get(GRAIN_COPYRIGHT_HOLDER); ?>" />
-<meta name="dc.publisher" content="<?php echo $GrainOpt->get(GRAIN_COPYRIGHT_HOLDER); ?>" />
-<meta name="dc.type" content="Image" /> 
-<meta name="dc.format" content="<?php bloginfo('html_type'); ?>" />
-<meta name="dc.subject" content="photo" />
-<meta name="foaf.maker" content="<?php echo $GrainOpt->get(GRAIN_COPYRIGHT_HOLDER); ?>" />
-<meta name="foaf.topic" content="photo" />	
-<?php
-	}
-
-	// embed creative commons RDF
-	function grain_embed_cc_rdf() 
-	{
-		global $GrainOpt;
-		
-		if( !$GrainOpt->get(GRAIN_COPYRIGHT_CC_ENABLED) ) return;
-
-		// test rdf
-		$rdf = grain_cc_rdf();
-		if(!empty($rdf)) echo '<!--'.$rdf.'-->';
-	}
-
-	// embed Generator meta information for statistics
-	function grain_embed_generator_meta() 
-	{
-		// wordpress generator meta gets applied by a hook, so skip it here
-		?>
-<meta name="theme" content="Grain <?php echo grain_version(); ?>" /> <!-- please leave this for stats -->
-<?php
-	}
-
+<!-- meta information -->
+<?php 
+	grain_embed_general_meta();
+	grain_embed_dc_meta();
+	grain_embed_cc_rdf(); 
+	grain_embed_generator_meta();
 ?>
+
+<!-- stylesheets -->
+<?php grain_embed_css(); ?>
+
+<!-- theme js -->
+<?php grain_embed_javascripts(); ?>
+
+<!-- feeds -->
+<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
+<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Comments RSS Feed" href="<?php bloginfo('comments_rss2_url'); ?>" />
+<link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
+
+<!-- syndication -->
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+
+<!-- etc -->
+<?php wp_head(); ?>
+
+</head>
+
+<body id="body">
+
+<?php
+	$page_id = grain_ispopup() ? "commentspopup" : "page";
+	$contentarea_id = grain_ispopup() ? "comment-page" : "content_area";
+?>
+
+<!-- the page -->
+<div id="<?php echo $page_id; ?>">
+
+	<!-- header -->
+	<div id="header-complete">
+		<div id="header">
+			<div id="header-top"><div id="header-top-inner"></div></div>
+	
+			<?php 
+			
+				if(!grain_ispopup()) grain_inject_navigation_menu(GRAIN_IS_HEADER); 
+				
+				// link to the main page
+				$href = grain_ispopup() ? "javascript:close();" : get_settings('home');
+			?>
+			
+			<!-- header image -->
+			<div id="blogtitle-complete">
+				<div id="headerimg">
+					<h1 id="header-title"><a rel="start" href="<?php echo $href; ?>"><?php bloginfo('name'); ?></a></h1>
+				</div>
+				
+				<!-- blog description -->
+				<div id="header-description">
+					<a rel="start" href="<?php echo $href; ?>"><?php bloginfo('description'); ?></a>
+				</div>
+			</div>
+	
+		</div>
+		<div id="header-bottom"><div id="header-bottom-inner"></div></div>
+	</div>
+
+	<!-- content following -->
+	<div id="<?php echo $contentarea_id; ?>">

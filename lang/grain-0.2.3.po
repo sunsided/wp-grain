@@ -1,0 +1,1535 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Grain 0.2.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-21 18:56+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Markus Mayer <code@defx.de>\n"
+"Language-Team: Markus Mayer <code@defx.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: D:\\localserver\\grain-testbed\\htdocs\\wp-content\\themes\\grain\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:15
+msgid "Error 404 - Not found!"
+msgstr ""
+
+#: 404.php:16
+msgid "Would you like to search for something?"
+msgstr ""
+
+#: archive.php:20
+msgid "Archive for category %CATEGORY."
+msgstr ""
+
+#: archive.php:29
+msgid "Archive for tag %TAG."
+msgstr ""
+
+#: archive.php:38
+msgid "Daily archive for %DATE."
+msgstr ""
+
+#: archive.php:49
+msgid "Monthly archive for %DATE."
+msgstr ""
+
+#: archive.php:57
+msgid "Yearly archive for %YEAR."
+msgstr ""
+
+#: archive.php:64
+#: search.php:16
+msgid "Search results"
+msgstr ""
+
+#: archive.php:67
+msgid "Archive of authors"
+msgstr ""
+
+#: archive.php:70
+msgid "Blog archive"
+msgstr ""
+
+#: archive.php:76
+#: archive.php:99
+#: search.php:19
+#: search.php:43
+msgid "&laquo; next page"
+msgstr ""
+
+#: archive.php:77
+#: archive.php:100
+#: search.php:20
+#: search.php:44
+msgid "previous page &raquo;"
+msgstr ""
+
+#: archive.php:105
+#: index.php:394
+#: search.php:49
+msgid "Not found"
+msgstr ""
+
+#: archives.php:19
+msgid "Archive cloud"
+msgstr ""
+
+#: archives.php:31
+msgid "Archives by years"
+msgstr ""
+
+#: archives.php:43
+msgid "Archives by months"
+msgstr ""
+
+#: archives.php:48
+msgid "Archives by categories"
+msgstr ""
+
+#: comments-popup.php:36
+msgid "Comments on %TITLE"
+msgstr ""
+
+#: comments-popup.php:105
+#: index.php:356
+msgid "The permalink address <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> of this photo is:"
+msgstr ""
+
+#: comments-popup.php:138
+msgid "Comments are closed - You are not supposed to be here."
+msgstr ""
+
+#: comments.php:12
+msgid "Please don't call this page directly"
+msgstr ""
+
+#: comments.php:18
+msgid "The comments are password protected, too"
+msgstr ""
+
+#: comments.php:39
+msgid "Comments (%)"
+msgstr ""
+
+#: comments.php:51
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this photo."
+msgstr ""
+
+#: comments.php:54
+msgid "The <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> to TrackBack this photo is:"
+msgstr ""
+
+#: comments.php:97
+msgid "unapproved &rarr;"
+msgstr ""
+
+#: comments.php:97
+msgid "edit comment"
+msgstr ""
+
+#: comments.php:97
+msgid "comment ID:"
+msgstr ""
+
+#: comments.php:107
+#: comments.php:147
+msgid "Trackback"
+msgstr ""
+
+#: comments.php:107
+#: comments.php:147
+msgid "Pingback"
+msgstr ""
+
+#: comments.php:139
+msgid "%AUTHOR &#8212; %DATE at %TIME"
+msgstr ""
+
+#: comments.php:147
+msgid "Comment"
+msgstr ""
+
+#: comments.php:159
+msgid "Be the first to comment!"
+msgstr ""
+
+#: comments.php:164
+msgid "Leave a comment"
+msgstr ""
+
+#: comments.php:165
+msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed: "
+msgstr ""
+
+#: comments.php:175
+msgid "Your are logged in as"
+msgstr ""
+
+#: comments.php:177
+msgid "logout"
+msgstr ""
+
+#: comments.php:177
+msgid "Logout &raquo;"
+msgstr ""
+
+#: comments.php:193
+msgid "Your Name:"
+msgstr ""
+
+#: comments.php:207
+msgid "E-mail (invisible):"
+msgstr ""
+
+#: comments.php:221
+msgid "Website (<acronym title=\"Uniform Resource Locator\">URL</acronym>):"
+msgstr ""
+
+#: comments.php:229
+msgid "Your comment:"
+msgstr ""
+
+#: comments.php:243
+msgid "Say it!"
+msgstr ""
+
+#: comments.php:255
+msgid "bookmark me at photoblogs.org"
+msgstr ""
+
+#: comments.php:268
+msgid "vote for me at CoolPhotoblogs"
+msgstr ""
+
+#: comments.php:277
+msgid "Sorry, the comment form is closed at this time."
+msgstr ""
+
+#: exif-block.php:17
+msgid "EXIF information"
+msgstr ""
+
+#: exif-block.php:32
+msgid "This photo has no EXIF data."
+msgstr ""
+
+#: footer.php:34
+msgid "{BLOG} is proudly powered by {WP} and {GRAIN}"
+msgstr ""
+
+#: footer.php:44
+#: index.php:311
+msgid "edit post"
+msgstr ""
+
+#: footer.php:56
+msgid "Copyright"
+msgstr ""
+
+#: header.menu.php:9
+msgid "next &raquo;"
+msgstr ""
+
+#: header.menu.php:10
+msgid "&laquo; previous"
+msgstr ""
+
+#: header.menu.php:11
+msgid "newest"
+msgstr ""
+
+#: header.menu.php:12
+msgid "random"
+msgstr ""
+
+#: header.menu.php:13
+msgid "about"
+msgstr ""
+
+#: header.menu.php:14
+msgid "about &amp; information"
+msgstr ""
+
+#: header.menu.php:62
+msgid "Permalink for: "
+msgstr ""
+
+#: header.menu.php:62
+msgid "Permalink"
+msgstr ""
+
+#: header.menu.php:62
+msgid "#"
+msgstr ""
+
+#: header.menu.php:84
+msgid "To the overview"
+msgstr ""
+
+#: index.php:44
+msgid "&lArr; click for previous photo"
+msgstr ""
+
+#: index.php:46
+msgid "(this is the first photo)"
+msgstr ""
+
+#: index.php:51
+msgid "click for next photo &rArr;"
+msgstr ""
+
+#: index.php:53
+msgid "(this is the newest photo)"
+msgstr ""
+
+#: index.php:124
+msgid "This photo page is not ready yet. Please check back later."
+msgstr ""
+
+#: index.php:333
+msgid "Posted in: "
+msgstr ""
+
+#: index.php:343
+msgid "Tagged with: "
+msgstr ""
+
+#: index.php:395
+msgid "Sorry, but you're searching for something that's not here."
+msgstr ""
+
+#: mosaic.php:24
+#: mosaic.php:67
+msgid "&laquo; previous page"
+msgstr ""
+
+#: mosaic.php:25
+#: mosaic.php:68
+msgid "next page &raquo;"
+msgstr ""
+
+#: searchform.php:11
+msgid "search"
+msgstr ""
+
+#: sidebar.php:31
+msgid "You are browsing the archive for the category '%CATEGORY'."
+msgstr ""
+
+#: sidebar.php:41
+msgid "You are browsing the %BLOG archive for %DAY, %DATE."
+msgstr ""
+
+#: sidebar.php:53
+msgid "You are browsing the %BLOG archive for the month %DATE."
+msgstr ""
+
+#: sidebar.php:64
+msgid "You are browsing the %BLOG archive for the year %YEAR."
+msgstr ""
+
+#: sidebar.php:75
+msgid "You have searched the %BLOG archives for <strong>%SEARCH</strong>. If you are unable to find anything in these search results, you can try one of these links."
+msgstr ""
+
+#: sidebar.php:84
+msgid "You are browsing the %BLOG archive."
+msgstr ""
+
+#: sidebar.php:92
+msgid "Pages"
+msgstr ""
+
+#: sidebar.php:109
+msgid "Archives by month"
+msgstr ""
+
+#: sidebar.php:115
+msgid "Categories"
+msgstr ""
+
+#: sidebar.php:122
+msgid "Most commented"
+msgstr ""
+
+#: sidebar.php:137
+msgid "Meta"
+msgstr ""
+
+#: sidebar.php:153
+msgid "Syndicate"
+msgstr ""
+
+#: admin/menu.php:22
+msgid "No HTML here"
+msgstr ""
+
+#: admin/menu.php:23
+msgid "HTML allowed here"
+msgstr ""
+
+#: admin/menu.php:228
+msgid "&times;"
+msgstr ""
+
+#: admin/menu.php:260
+msgid "Configure Grain"
+msgstr ""
+
+#: admin/menu.php:262
+#: admin/menu.php:263
+#: admin/page.copyright.php:28
+msgid "Copyright Settings"
+msgstr ""
+
+#: admin/menu.php:268
+#: admin/menu.php:269
+msgid "General Settings"
+msgstr ""
+
+#: admin/menu.php:274
+msgid "Navigation Settings"
+msgstr ""
+
+#: admin/menu.php:275
+msgid "Navigation Bar"
+msgstr ""
+
+#: admin/menu.php:280
+#: admin/menu.php:281
+msgid "Styling and Layout"
+msgstr ""
+
+#: admin/menu.php:286
+#: admin/page.datetime.php:28
+msgid "Date and Time Settings"
+msgstr ""
+
+#: admin/menu.php:287
+msgid "Date and Time"
+msgstr ""
+
+#: admin/menu.php:297
+#: admin/menu.php:485
+msgid "Yet Another Photoblog"
+msgstr ""
+
+#: admin/menu.php:298
+msgid "YAPB"
+msgstr ""
+
+#: admin/menu.php:485
+msgid "The YAPB plugin could not be found."
+msgstr ""
+
+#: admin/menu.php:485
+msgid "Click for more information"
+msgstr ""
+
+#: admin/page.copyright.php:20
+#: admin/page.datetime.php:20
+#: admin/page.general.php:20
+#: admin/page.navigation.php:20
+#: admin/page.styling.php:20
+msgid "Changes saved"
+msgstr ""
+
+#: admin/page.copyright.php:32
+msgid "Copyright Holder"
+msgstr ""
+
+#: admin/page.copyright.php:34
+msgid "Here you can enter your copyright information and tell Grain how to display them."
+msgstr ""
+
+#: admin/page.copyright.php:36
+msgid "% is always the current year"
+msgstr ""
+
+#: admin/page.copyright.php:37
+msgid "First copyright year:"
+msgstr ""
+
+#: admin/page.copyright.php:38
+msgid "Last copyright year:"
+msgstr ""
+
+#: admin/page.copyright.php:40
+msgid "i.e. <code>%OFFSET</code> to get <code>%SUMMED_YEAR</code> if the end year is <code>%YEAR</code>"
+msgstr ""
+
+#: admin/page.copyright.php:42
+msgid "Offset to end year:"
+msgstr ""
+
+#: admin/page.copyright.php:44
+msgid "Here you can configure the informational text, e.g. your name and a licensing info."
+msgstr ""
+
+#: admin/page.copyright.php:46
+msgid "Copyright holder:"
+msgstr ""
+
+#: admin/page.copyright.php:46
+msgid "Keep this short, e.g. <code>\"John Doe\"</code>. This info will be embedded in the page's meta header."
+msgstr ""
+
+#: admin/page.copyright.php:47
+msgid "Full copyright holder and info:"
+msgstr ""
+
+#: admin/page.copyright.php:47
+msgid "e.g. <code>\"John Doe. All rights reserved.\"</code> This info will be visible to the visitor."
+msgstr ""
+
+#: admin/page.copyright.php:53
+msgid "Imprint Page"
+msgstr ""
+
+#: admin/page.copyright.php:55
+msgid "Grain uses <a href=\"http://dublincore.org/\" target=\"_blank\">Dublin Core</a> meta tags to describe your blog. If you have an imprint page you may set it here.<br />If you do not have an imprint or do not want to propagate it through the DC meta tag the field can be left empty."
+msgstr ""
+
+#: admin/page.copyright.php:56
+msgid "Imprint URL:"
+msgstr ""
+
+#: admin/page.copyright.php:56
+msgid "The URL to your imprint page. Leave empty if you do not want to embed an <code>DC.Rights</code> meta tag."
+msgstr ""
+
+#: admin/page.copyright.php:60
+msgid "Creative Commons License"
+msgstr ""
+
+#: admin/page.copyright.php:63
+msgid "Embedding a Creative Commons License"
+msgstr ""
+
+#: admin/page.copyright.php:66
+msgid "If you like to, you can publish your photos under a <a href=\"http://creativecommons.org/\" target=\"_blank\">Creative Commons</a> License. You can choose a license <a href=\"http://creativecommons.org/license/?lang=%LANGCODE\" target=\"_blank\">here</a>."
+msgstr ""
+
+#: admin/page.copyright.php:70
+msgid "Copyright:"
+msgstr ""
+
+#: admin/page.copyright.php:70
+msgid "Embed Creative Commons license"
+msgstr ""
+
+#: admin/page.copyright.php:70
+msgid "Unchecking this option will remove the Creative Commons Logo, the textual message, as well as the embedded <a target=\"_blank\" href=\"http://en.wikipedia.org/wiki/Resource_Description_Framework\">RDF</a> (if any). This is the way to go if you want your photos to be published as, e.g. \"All rights reserved\"."
+msgstr ""
+
+#: admin/page.copyright.php:71
+msgid "The license's HTML code:"
+msgstr ""
+
+#: admin/page.copyright.php:71
+msgid "To simplify CSS styling of the theme, all occurrences of <code>&lt;br /&gt;</code>, <code>&lt;br/&gt;</code> and <code>&lt;br&gt;</code> tags will be removed when embedding the code."
+msgstr ""
+
+#: admin/page.copyright.php:73
+msgid "In addition to the code above you can choose to embed an <acronym title=\"Resource Description Framework\">RDF</acronym> representation - a machine readable version - of the license. The RDF will be embedded on the website and can also be integrated in your newsfeeds, if you choose to enable that."
+msgstr ""
+
+#: admin/page.copyright.php:75
+msgid "The RDF code for the license you selected can be found by downloading and opening the template for the PDF or XML embedding on the license selection page. The code begins with <code>&lt;rdf:RDF ...</code> and ends with <code>&lt;/rdf:RDF&gt;</code>."
+msgstr ""
+
+#: admin/page.copyright.php:76
+msgid "You can validate RDF encoded licenses and RDF enabled content with the <a href=\"http://validator.creativecommons.org/\" target=\"_blank\">CC RDF License Validator</a>."
+msgstr ""
+
+#: admin/page.copyright.php:77
+msgid "The license's RDF code:"
+msgstr ""
+
+#: admin/page.copyright.php:78
+msgid "Embed RDF in Newsfeeds:"
+msgstr ""
+
+#: admin/page.copyright.php:78
+msgid "Embed the RDF in the Atom and RSS feeds"
+msgstr ""
+
+#: admin/page.copyright.php:78
+msgid "<strong>Use this with caution!</strong> Enable this option only if you are sure what you are doing! Faulty RDF markup may render your newsfeeds invalid or even unusable. Test your newsfeeds thoroughly when enabling this!"
+msgstr ""
+
+#: admin/page.copyright.php:83
+#: admin/page.datetime.php:122
+#: admin/page.general.php:140
+#: admin/page.navigation.php:116
+#: admin/page.styling.php:151
+msgid "Factory Defaults"
+msgstr ""
+
+#: admin/page.copyright.php:84
+#: admin/page.datetime.php:123
+#: admin/page.general.php:141
+#: admin/page.navigation.php:117
+#: admin/page.styling.php:152
+msgid "Save Settings"
+msgstr ""
+
+#: admin/page.datetime.php:32
+msgid "For information on date and time formatting codes refer to the PHP manual entry of <a href=\"http://www.php.net/date\" target=\"_blank\">the <code>date()</code> function</a>."
+msgstr ""
+
+#: admin/page.datetime.php:33
+msgid "If you want to include a specific text in the format, such as \"<code>o'clock</code>\", you may include it in curly braces, e.g. \"<code>{o'clock'}</code>\""
+msgstr ""
+
+#: admin/page.datetime.php:37
+msgid "Some examples"
+msgstr ""
+
+#: admin/page.datetime.php:42
+msgid "format"
+msgstr ""
+
+#: admin/page.datetime.php:43
+msgid "result"
+msgstr ""
+
+#: admin/page.datetime.php:83
+msgid "Archive settings"
+msgstr ""
+
+#: admin/page.datetime.php:85
+#: admin/page.datetime.php:90
+#: admin/page.datetime.php:100
+#: admin/page.datetime.php:110
+#: admin/page.datetime.php:115
+msgid "The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time."
+msgstr ""
+
+#: admin/page.datetime.php:88
+msgid "Daily Archive:"
+msgstr ""
+
+#: admin/page.datetime.php:88
+msgid "The date or time format in the archive for a specific day."
+msgstr ""
+
+#: admin/page.datetime.php:93
+msgid "Monthly Archive:"
+msgstr ""
+
+#: admin/page.datetime.php:93
+msgid "The date or time format in the archive for a specific month."
+msgstr ""
+
+#: admin/page.datetime.php:98
+msgid "Photo Info"
+msgstr ""
+
+#: admin/page.datetime.php:103
+msgid "Publication date:"
+msgstr ""
+
+#: admin/page.datetime.php:103
+msgid "The date and time format for the photo's 'published' date."
+msgstr ""
+
+#: admin/page.datetime.php:108
+msgid "Per comment"
+msgstr ""
+
+#: admin/page.datetime.php:113
+msgid "Date of comment:"
+msgstr ""
+
+#: admin/page.datetime.php:113
+msgid "The date format for a comment."
+msgstr ""
+
+#: admin/page.datetime.php:118
+msgid "Time of comment:"
+msgstr ""
+
+#: admin/page.datetime.php:118
+msgid "The time format for a comment."
+msgstr ""
+
+#: admin/page.general.php:28
+msgid "Info and commenting mode"
+msgstr ""
+
+#: admin/page.general.php:32
+msgid "Basic behavior"
+msgstr ""
+
+#: admin/page.general.php:35
+msgid "Discussion"
+msgstr ""
+
+#: admin/page.general.php:36
+msgid "Most probably you want to leave this enabled to receive feedback. But maybe you really just want to <em>show</em> your photos. This is the showcase option then: If you disable it, visitors will neither be able to comment (which is a standard feature) nor to view any existing comments. You may then also want to disable WordPress' commenting options on the %LINK screen altogether to prevent comments coming in through track-/pingbacks or backdoors."
+msgstr ""
+
+#: admin/page.general.php:38
+msgid "Enable comments:"
+msgstr ""
+
+#: admin/page.general.php:38
+msgid "Allow visitors to comment or view existing comments"
+msgstr ""
+
+#: admin/page.general.php:40
+msgid "No popups!"
+msgstr ""
+
+#: admin/page.general.php:40
+msgid "Don't use a popup to display an image's info and commenting form"
+msgstr ""
+
+#: admin/page.general.php:40
+msgid "If you enable this, the \"Extended Info page\" mechanism will be used. This is a replacement for the older comments popup, showing the info and comments on the same page as the photo. One will still have to click the comments link to display it, though.<br />If you prefer a popup for that task, disable this option."
+msgstr ""
+
+#: admin/page.general.php:41
+msgid "Always show info:"
+msgstr ""
+
+#: admin/page.general.php:41
+msgid "Always show photo title/description regardless of the popup setting above"
+msgstr ""
+
+#: admin/page.general.php:41
+msgid "If you always want to display the photo's title and it's description on the photo page, enable this option. If you uncheck this option and have the popups disabled (enabled the option above that is), be aware that the user won't see any information about your photo. (They would be shown on the popup, but you disabled it.)"
+msgstr ""
+
+#: admin/page.general.php:42
+msgid "Directly jump to comments:"
+msgstr ""
+
+#: admin/page.general.php:42
+msgid "If the comments popup opens, skip the description text there"
+msgstr ""
+
+#: admin/page.general.php:42
+msgid "This option only applies when the info is already shown on the main page, so that the visitor won't have to scroll to the comments on the popup. Rule of thumb: If you tend to write long texts and use the popup, you may want to enable this option."
+msgstr ""
+
+#: admin/page.general.php:47
+msgid "Info display: Your photo's description"
+msgstr ""
+
+#: admin/page.general.php:52
+msgid "If you understand PHP, you can affect how the EXIF information is displayed by editing the %FILE file.<br /><strong>Hint:</strong> Enable YAPBs EXIF filtering to keep things clean."
+msgstr ""
+
+#: admin/page.general.php:54
+msgid "Display EXIF info:"
+msgstr ""
+
+#: admin/page.general.php:54
+msgid "Show a photo's EXIF information next to the description"
+msgstr ""
+
+#: admin/page.general.php:56
+msgid "Enable permalink:"
+msgstr ""
+
+#: admin/page.general.php:56
+#: admin/page.general.php:57
+msgid "Show the permanlink in the image info"
+msgstr ""
+
+#: admin/page.general.php:56
+msgid "The permalink is an address that won't change. This way a visitor can securely link one of your photo pages. Permalinks are managed by WordPress."
+msgstr ""
+
+#: admin/page.general.php:57
+msgid "Enable comment hint:"
+msgstr ""
+
+#: admin/page.general.php:57
+msgid "If enabled, Grain shows a link to the comments in the short info display below the image."
+msgstr ""
+
+#: admin/page.general.php:58
+msgid "Show Date:"
+msgstr ""
+
+#: admin/page.general.php:58
+msgid "Display the date the photo was published"
+msgstr ""
+
+#: admin/page.general.php:58
+msgid "This shows the date and time the photo page was published in the description text."
+msgstr ""
+
+#: admin/page.general.php:62
+msgid "Info display: Categories"
+msgstr ""
+
+#: admin/page.general.php:64
+msgid "Show category list:"
+msgstr ""
+
+#: admin/page.general.php:64
+msgid "Shows the categories in which the photo is filed"
+msgstr ""
+
+#: admin/page.general.php:67
+msgid "Begin category list:"
+msgstr ""
+
+#: admin/page.general.php:67
+msgid "This text will be embedded right before the category list. You can put specific markup here to style your theme."
+msgstr ""
+
+#: admin/page.general.php:68
+msgid "Category list delimiter:"
+msgstr ""
+
+#: admin/page.general.php:68
+msgid "This will be embedded within the category list to separate two entries."
+msgstr ""
+
+#: admin/page.general.php:69
+msgid "End category list:"
+msgstr ""
+
+#: admin/page.general.php:69
+msgid "This will be embedded right after the category list."
+msgstr ""
+
+#: admin/page.general.php:73
+msgid "Info display: Tags"
+msgstr ""
+
+#: admin/page.general.php:75
+msgid "Show tag list:"
+msgstr ""
+
+#: admin/page.general.php:75
+msgid "Shows the tags with which the photo is marked"
+msgstr ""
+
+#: admin/page.general.php:77
+msgid "Begin tag list:"
+msgstr ""
+
+#: admin/page.general.php:77
+msgid "This text will be embedded right before the tag list. You can put specific markup here to style your theme."
+msgstr ""
+
+#: admin/page.general.php:78
+msgid "Tag list delimiter:"
+msgstr ""
+
+#: admin/page.general.php:78
+msgid "This will be embedded within the tag list to separate two entries."
+msgstr ""
+
+#: admin/page.general.php:79
+msgid "End tag list:"
+msgstr ""
+
+#: admin/page.general.php:79
+msgid "This will be embedded right after the tag list."
+msgstr ""
+
+#: admin/page.general.php:83
+msgid "Newsfeeds"
+msgstr ""
+
+#: admin/page.general.php:86
+msgid "Atom Feed Settings"
+msgstr ""
+
+#: admin/page.general.php:88
+msgid "Atom Feed:"
+msgstr ""
+
+#: admin/page.general.php:88
+msgid "Show the Atom Feed icon next to the RSS feed icon"
+msgstr ""
+
+#: admin/page.general.php:92
+msgid "Syndication Options"
+msgstr ""
+
+#: admin/page.general.php:96
+msgid "<strong>Hint:</strong> Syndication data can (and has to be) changed in the {FILE} file to reflect your own syndicate. If you are not sure what syndication means or what to do in that file, please disable the Flat Syndication option."
+msgstr ""
+
+#: admin/page.general.php:101
+msgid "Flat Syndication"
+msgstr ""
+
+#: admin/page.general.php:103
+msgid "Flat Syndication:"
+msgstr ""
+
+#: admin/page.general.php:103
+msgid "Show ring / syndication info as a list in the blog's footer"
+msgstr ""
+
+#: admin/page.general.php:105
+msgid "Delimiter:"
+msgstr ""
+
+#: admin/page.general.php:105
+msgid "This will be embedded as a separator of the list items."
+msgstr ""
+
+#: admin/page.general.php:109
+msgid "Secondary Language Options"
+msgstr ""
+
+#: admin/page.general.php:112
+msgid "General options"
+msgstr ""
+
+#: admin/page.general.php:114
+msgid "Grain has an option that allows you to display photo titles in an additional second language or tho use an additional texts as a subtitle."
+msgstr ""
+
+#: admin/page.general.php:116
+msgid "2nd Line:"
+msgstr ""
+
+#: admin/page.general.php:116
+msgid "Enable 2nd line/2nd language support"
+msgstr ""
+
+#: admin/page.general.php:117
+msgid "2nd line custom field:"
+msgstr ""
+
+#: admin/page.general.php:117
+msgid "The name/key of the custom field that contains the secondary language title.<br />You may want to read the WordPress Codex article on <a title=\"_blank\" href=\"http://codex.wordpress.org/Using_Custom_Fields\">Using Custom Fields</a>."
+msgstr ""
+
+#: admin/page.general.php:121
+msgid "Archives Sidebar"
+msgstr ""
+
+#: admin/page.general.php:125
+msgid "These settings affect the sidebar you can see when you open an archive page, such as the Mosaic, the category archives etc.<br />Grain is a theme with widget support, so you can easily customize your sidebar in the Widgets menu; These options will only apply if there is no widget plugged into the according sidebar."
+msgstr ""
+
+#: admin/page.general.php:128
+msgid "The values in the {FILE} file will be used for that."
+msgstr ""
+
+#: admin/page.general.php:129
+msgid "Sidebar Syndication:"
+msgstr ""
+
+#: admin/page.general.php:129
+msgid "Show Syndication in the Sidebar"
+msgstr ""
+
+#: admin/page.general.php:131
+msgid "Most commented:"
+msgstr ""
+
+#: admin/page.general.php:131
+msgid "List most commented photos"
+msgstr ""
+
+#: admin/page.general.php:132
+msgid "Show at most:"
+msgstr ""
+
+#: admin/page.general.php:132
+msgid "This sets the maximum number of recent comments that will be displayed in the list."
+msgstr ""
+
+#: admin/page.general.php:134
+msgid "Display Calendar:"
+msgstr ""
+
+#: admin/page.general.php:134
+msgid "Show the post calendar"
+msgstr ""
+
+#: admin/page.general.php:135
+msgid "Display Blogroll:"
+msgstr ""
+
+#: admin/page.general.php:135
+msgid "Show your blogroll"
+msgstr ""
+
+#: admin/page.general.php:136
+msgid "Display \"Meta\" block:"
+msgstr ""
+
+#: admin/page.general.php:136
+msgid "Show WordPress' \"Meta\" blog to enable users to register or log in"
+msgstr ""
+
+#: admin/page.navigation.php:29
+msgid "Navigation"
+msgstr ""
+
+#: admin/page.navigation.php:33
+msgid "On-Image navigation"
+msgstr ""
+
+#: admin/page.navigation.php:35
+msgid "This setting controls what happens when a visitor clicks on the photo."
+msgstr ""
+
+#: admin/page.navigation.php:36
+msgid "Bidirectional Navigation:"
+msgstr ""
+
+#: admin/page.navigation.php:36
+msgid "Enable the bidirectional on-image navigation"
+msgstr ""
+
+#: admin/page.navigation.php:36
+msgid "If enabled, the photo will contain links to the previous (older) and next (newer) photos. If disabled, only the previous link will be used."
+msgstr ""
+
+#: admin/page.navigation.php:41
+msgid "Newest & Random"
+msgstr ""
+
+#: admin/page.navigation.php:43
+msgid "Newest Photo:"
+msgstr ""
+
+#: admin/page.navigation.php:43
+msgid "Show a link to the newest photo"
+msgstr ""
+
+#: admin/page.navigation.php:44
+msgid "Random Photo:"
+msgstr ""
+
+#: admin/page.navigation.php:44
+msgid "Show a link to a random photo"
+msgstr ""
+
+#: admin/page.navigation.php:49
+msgid "About & Information Link"
+msgstr ""
+
+#: admin/page.navigation.php:53
+msgid "Enable \"About\":"
+msgstr ""
+
+#: admin/page.navigation.php:53
+msgid "Show the About link"
+msgstr ""
+
+#: admin/page.navigation.php:57
+msgid "Select the page you want to use as your info page"
+msgstr ""
+
+#: admin/page.navigation.php:58
+#: admin/page.navigation.php:78
+msgid "You currently have no pages."
+msgstr ""
+
+#: admin/page.navigation.php:61
+#: admin/page.navigation.php:81
+msgid "Write Page"
+msgstr ""
+
+#: admin/page.navigation.php:62
+#: admin/page.navigation.php:82
+msgid "You can create a new page in the \"%LINK\" menu."
+msgstr ""
+
+#: admin/page.navigation.php:64
+msgid "About page:"
+msgstr ""
+
+#: admin/page.navigation.php:70
+msgid "Mosaic Page Link"
+msgstr ""
+
+#: admin/page.navigation.php:73
+msgid "Enable \"Mosaic\":"
+msgstr ""
+
+#: admin/page.navigation.php:73
+msgid "Show \"Mosaic\" link in the navigation bar"
+msgstr ""
+
+#: admin/page.navigation.php:77
+msgid "Select the page you want to use as your mosaic page"
+msgstr ""
+
+#: admin/page.navigation.php:84
+msgid "Mosaic page:"
+msgstr ""
+
+#: admin/page.navigation.php:88
+msgid "Link Title:"
+msgstr ""
+
+#: admin/page.navigation.php:88
+#: admin/page.navigation.php:95
+msgid "This title will be shown in the navigation bar."
+msgstr ""
+
+#: admin/page.navigation.php:92
+msgid "Permalink Navigation item"
+msgstr ""
+
+#: admin/page.navigation.php:94
+msgid "Permalink:"
+msgstr ""
+
+#: admin/page.navigation.php:94
+msgid "Show the Permalink in the Navigation Bar"
+msgstr ""
+
+#: admin/page.navigation.php:94
+msgid "Unchecking this removes the permalink from the navigation. The permalink will still be visible at the Comments/Details popup (if it is not explicitely disabled otherwise)."
+msgstr ""
+
+#: admin/page.navigation.php:95
+msgid "Permalink title:"
+msgstr ""
+
+#: admin/page.navigation.php:100
+msgid "Navigation Bar Location"
+msgstr ""
+
+#: admin/page.navigation.php:105
+msgid "Page header"
+msgstr ""
+
+#: admin/page.navigation.php:106
+msgid "In front/top of the photo"
+msgstr ""
+
+#: admin/page.navigation.php:107
+msgid "Behind/below the photo"
+msgstr ""
+
+#: admin/page.navigation.php:109
+msgid "This sets the position of the navigation bar. Normally you want this to be '<code>{DEFAULT}</code>', but if you have special plans you may choose another position that better fits your needs."
+msgstr ""
+
+#: admin/page.navigation.php:111
+msgid "Location:"
+msgstr ""
+
+#: admin/page.styling.php:29
+msgid "Style Override"
+msgstr ""
+
+#: admin/page.styling.php:33
+msgid "Style Override settings"
+msgstr ""
+
+#: admin/page.styling.php:37
+msgid "none"
+msgstr ""
+
+#: admin/page.styling.php:51
+msgid "You can edit the currently selected override file here: %FILE"
+msgstr ""
+
+#: admin/page.styling.php:56
+msgid "CSS File:"
+msgstr ""
+
+#: admin/page.styling.php:56
+msgid "The file selected here is loaded in addition to the base stylesheet and allows for style overrides. You can use this for quick switching or non-destructive editing of your blog's CSS styles."
+msgstr ""
+
+#: admin/page.styling.php:61
+msgid "Image Settings"
+msgstr ""
+
+#: admin/page.styling.php:63
+msgid "Image settings"
+msgstr ""
+
+#: admin/page.styling.php:65
+msgid "Image dimensions:"
+msgstr ""
+
+#: admin/page.styling.php:65
+#: admin/page.styling.php:75
+#: admin/page.styling.php:94
+#: admin/page.styling.php:103
+msgid "Pixels"
+msgstr ""
+
+#: admin/page.styling.php:65
+msgid "The maximum dimensions of a photo. The photo will be scaled to fit.<br />If you change these to higher values you probably also have to change your CSS styles for the blog."
+msgstr ""
+
+#: admin/page.styling.php:69
+msgid "Missing Image"
+msgstr ""
+
+#: admin/page.styling.php:71
+msgid "<em>Whoops</em> image"
+msgstr ""
+
+#: admin/page.styling.php:73
+msgid "If it happens that YAPB is unable to load an image or if you haven't set any image for a post Grain will show a message about that fact. If you want to you can set an image that is to be displayed instead."
+msgstr ""
+
+#: admin/page.styling.php:74
+msgid "Whoops image URL:"
+msgstr ""
+
+#: admin/page.styling.php:74
+msgid "The URL of the image that will be displayed if a photoblog post has no image assigned or the image is not uploaded yet.<br />If you want to display a text instead of an image, leave the field empty."
+msgstr ""
+
+#: admin/page.styling.php:75
+msgid "Image size:"
+msgstr ""
+
+#: admin/page.styling.php:75
+msgid "The actual size of the replacement image."
+msgstr ""
+
+#: admin/page.styling.php:80
+msgid "Mosaic Settings"
+msgstr ""
+
+#: admin/page.styling.php:82
+msgid "Mosaic settings"
+msgstr ""
+
+#: admin/page.styling.php:84
+msgid "Show Years:"
+msgstr ""
+
+#: admin/page.styling.php:84
+msgid "Group thumbnails by years in the mosaic page"
+msgstr ""
+
+#: admin/page.styling.php:85
+msgid "Photos per page:"
+msgstr ""
+
+#: admin/page.styling.php:85
+msgid "This value sets how many photos will be displayed at most on a mosaic page."
+msgstr ""
+
+#: admin/page.styling.php:89
+msgid "Thumbnail settings"
+msgstr ""
+
+#: admin/page.styling.php:91
+msgid "Comments popup"
+msgstr ""
+
+#: admin/page.styling.php:93
+msgid "Show Thumbnail:"
+msgstr ""
+
+#: admin/page.styling.php:93
+msgid "Show the photo's thumbnail image on the comments popup"
+msgstr ""
+
+#: admin/page.styling.php:94
+#: admin/page.styling.php:103
+msgid "Thumbnail size:"
+msgstr ""
+
+#: admin/page.styling.php:95
+msgid "Size to fit:"
+msgstr ""
+
+#: admin/page.styling.php:95
+msgid "Values given above are the maximum dimensions."
+msgstr ""
+
+#: admin/page.styling.php:95
+msgid "If disabled, the thumbnail will be displayed in the size given above, cropping the parts that don't fit.<br />If it is enabled the thumbnail image will be resized so that it fits within these boundaries."
+msgstr ""
+
+#: admin/page.styling.php:100
+msgid "Mosaic & Archive"
+msgstr ""
+
+#: admin/page.styling.php:102
+msgid "Show Tooltips:"
+msgstr ""
+
+#: admin/page.styling.php:102
+msgid "Show tooltip when hovering a thumbnail"
+msgstr ""
+
+#: admin/page.styling.php:107
+msgid "Comments"
+msgstr ""
+
+#: admin/page.styling.php:110
+msgid "Gravatar options"
+msgstr ""
+
+#: admin/page.styling.php:112
+msgid "Use Gravatars:"
+msgstr ""
+
+#: admin/page.styling.php:112
+msgid "If enabled, <a href=\"http://www.gravatar.com/\" target=\"_blank\">Gravatar</a> icons are shown on user comments"
+msgstr ""
+
+#: admin/page.styling.php:113
+msgid "Alternative Image:"
+msgstr ""
+
+#: admin/page.styling.php:113
+msgid "URL of an alternate image for the case the commenter has no Gravatar. If you don't specify an image URL Gravatar will use it's own dummy image if necessary."
+msgstr ""
+
+#: admin/page.styling.php:115
+msgid "The following values are extended configuration options for the Gravatar service. Please change them only if you know what you are doing."
+msgstr ""
+
+#: admin/page.styling.php:117
+msgid "Gravatar rating:"
+msgstr ""
+
+#: admin/page.styling.php:117
+msgid "Here you can specify the rating of the gravatars. Allowed values are <code>G, PG, R</code> and <code>X</code>. Only change this if you know why you would want to."
+msgstr ""
+
+#: admin/page.styling.php:118
+msgid "Gravatar size:"
+msgstr ""
+
+#: admin/page.styling.php:118
+msgid "Here you can change the size of the Gravatar. If you change this value you will have to adapt your stylesheet."
+msgstr ""
+
+#: admin/page.styling.php:123
+msgid "Ring / Syndication options"
+msgstr ""
+
+#: admin/page.styling.php:125
+#: admin/page.styling.php:129
+msgid "If enabled, a \"%\" button will be added to the comment form"
+msgstr ""
+
+#: admin/page.styling.php:126
+msgid "photoblogs.org button:"
+msgstr ""
+
+#: admin/page.styling.php:127
+#: admin/page.styling.php:131
+msgid "Profile URL:"
+msgstr ""
+
+#: admin/page.styling.php:127
+#: admin/page.styling.php:131
+msgid "The URL of your <a href=\"http://photoblogs.org\" target=\"_blank\">photoblogs.org</a> profile"
+msgstr ""
+
+#: admin/page.styling.php:129
+msgid "vote for me at coolphotoblogs.com"
+msgstr ""
+
+#: admin/page.styling.php:130
+msgid "coolphotoblogs.com button:"
+msgstr ""
+
+#: admin/page.styling.php:136
+msgid "Effects Options"
+msgstr ""
+
+#: admin/page.styling.php:139
+msgid "moo.fx options"
+msgstr ""
+
+#: admin/page.styling.php:141
+msgid "Use moo.fx:"
+msgstr ""
+
+#: admin/page.styling.php:141
+msgid "Enable JavaScript effects (<a href=\"http://moofx.mad4milk.net/\" target=\"_blank\">moo.fx</a> engine)"
+msgstr ""
+
+#: admin/page.styling.php:143
+msgid "Once you have enabled moo.fx, you can choose use the following effects."
+msgstr ""
+
+#: admin/page.styling.php:145
+msgid "Reflection effect:"
+msgstr ""
+
+#: admin/page.styling.php:145
+msgid "If enabled, the image reflects on the background"
+msgstr ""
+
+#: admin/page.styling.php:146
+msgid "Fade effect:"
+msgstr ""
+
+#: admin/page.styling.php:146
+msgid "Use a fade-in effect to display the image"
+msgstr ""
+
+#: admin/page.styling.php:146
+msgid "The effect may be slow for some machines and is definitly slower for larger images, as well as complex theme styles. Double check that. In addition it requires support on the browser's side, so it isn't necessarily visible to every visitor."
+msgstr ""
+
+#: func/feeds.php:23
+msgid "RSS Feed"
+msgstr ""
+
+#: func/feeds.php:24
+#: func/feeds.php:38
+msgid "Syndication"
+msgstr ""
+
+#: func/feeds.php:37
+msgid "Atom Feed"
+msgstr ""
+
+#: func/image.php:56
+msgid "click to view"
+msgstr ""
+
+#: func/navlinks.php:66
+msgid "comments (%)"
+msgstr ""
+
+#: func/navlinks.php:73
+#: func/navlinks.php:98
+msgid "comments and details"
+msgstr ""
+
+#: func/navlinks.php:80
+msgid "show comments (%)"
+msgstr ""
+
+#: func/navlinks.php:81
+msgid "hide comments"
+msgstr ""
+
+#: func/optionskeys.php:53
+msgid "Mosaic"
+msgstr ""
+
+#: func/optionskeys.php:69
+#: func/optionskeys.php:70
+msgid "(Your name)"
+msgstr ""
+
+#: func/optionskeys.php:100
+#: func/optionskeys.php:103
+msgid "F jS, Y"
+msgstr ""
+
+#: func/optionskeys.php:101
+msgid "F, Y"
+msgstr ""
+
+#: func/optionskeys.php:102
+msgid "j. F Y, H:i"
+msgstr ""
+
+#: func/optionskeys.php:104
+msgid "H:i"
+msgstr ""
+
+#: iplugs/suite.0.2.php:128
+msgid "Grain: Post Settings"
+msgstr ""
+
+#: iplugs/suite.0.2.php:136
+msgid "Shows a photo and it's description."
+msgstr ""
+
+#: iplugs/suite.0.2.php:137
+msgid "Uses a viewer applet to show the panorama given in the box below."
+msgstr ""
+
+#: iplugs/suite.0.2.php:138
+msgid "Looks like a 'Photo Post' type, but displays everything behind the <code>&lt;</code><code>!--more--&gt;</code> marker instead of the photo. This way you can show user-defined content."
+msgstr ""
+
+#: iplugs/suite.0.2.php:139
+msgid "The post will be displayed just like a normal (text) blog post or static page."
+msgstr ""
+
+#: iplugs/suite.0.2.php:149
+msgid "Post Settings"
+msgstr ""
+
+#: iplugs/suite.0.2.php:154
+msgid "Post type:"
+msgstr ""
+
+#: iplugs/suite.0.2.php:161
+msgid "Photo Post"
+msgstr ""
+
+#: iplugs/suite.0.2.php:164
+msgid "Panorama Post"
+msgstr ""
+
+#: iplugs/suite.0.2.php:169
+msgid "Split Post"
+msgstr ""
+
+#: iplugs/suite.0.2.php:172
+msgid "Pure Content"
+msgstr ""
+
+#: iplugs/suite.0.2.php:183
+msgid "Panorama Settings"
+msgstr ""
+
+#: iplugs/suite.0.2.php:188
+msgid "Panorama file URL:"
+msgstr ""
+
+#: iplugs/suite.0.2.php:196
+msgid "You can upload or select a panorama file using the Upload box. To find the URL of the uploaded file, click it's <code>Edit</code> link afterwards."
+msgstr ""
+
+#: iplugs/suite.0.2.php:201
+msgid "Panorama player:"
+msgstr ""
+
+#: iplugs/suite.0.2.php:210
+msgid "autoselect by filetype"
+msgstr ""
+
+#: iplugs/suite.0.2.php:219
+msgid "DevalVR"
+msgstr ""
+
+#: iplugs/suite.0.2.php:228
+msgid "Quicktime"
+msgstr ""
+
+#: iplugs/suite.0.2.php:237
+msgid "Java based (PTViewer)"
+msgstr ""
+
+#: iplugs/suite.0.2.php:243
+msgid "Panorama Image:"
+msgstr ""
+
+#: iplugs/devalvr/detectvr.js.php:268
+msgid "click here to install (250 KB, it only takes a few seconds)"
+msgstr ""
+
+#: iplugs/devalvr/detectvr.js.php:271
+msgid "click here after installing to reload page"
+msgstr ""
+

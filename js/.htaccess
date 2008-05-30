@@ -1,0 +1,13 @@
+# Tunings
+Options -Indexes
+
+# Disallow access to certain files
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+<FilesMatch ^\.>
+	Order deny,allow
+	Deny from all
+</FilesMatch>
