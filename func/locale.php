@@ -15,7 +15,7 @@
 
 	function grain_load_locale() {	
 		// I18N support through GNU-Gettext files
-		load_theme_textdomain('grain', GRAIN_RELATIVE_PATH.'/po/');
+		load_theme_textdomain('grain', GRAIN_RELATIVE_PATH.'/lang/');
 	}
 	
 	function grain_get_base_locale() {
