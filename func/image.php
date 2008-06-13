@@ -118,5 +118,12 @@
 		global $post, $GrainOpt;
 		return !empty($post->image) && $GrainOpt->is(GRAIN_EXIF_VISIBLE);
 	}
+	
+	function grain_get_exif() {
+		global $GrainOpt;
+		if( !$GrainOpt->is(GRAIN_EXIF_VISIBLE) ) return null;
+		if( !function_exists('yapb_get_exif') || !function_exists('yapb_has_exif') ) return null;
+		return yapb_get_exif();
+	}
 
 ?>

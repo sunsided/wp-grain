@@ -12,9 +12,8 @@
 	
 	global $GrainOpt;
 	
-	if ($GrainOpt->is(GRAIN_EXIF_VISIBLE) && function_exists('yapb_get_exif') && function_exists('yapb_has_exif')): 
-		if( yapb_has_exif() ):
-			$exif = yapb_get_exif();
+	if ( null != ($exif = grain_get_exif()) ): 
+			
 		?>
 			<table id="exif">
 			<caption><?php _e("EXIF information", "grain"); ?></caption>
@@ -30,11 +29,7 @@
 		
 			</tbody>
 			</table>
-		
-		<?php else: ?>
-			<p><?php _e("This photo has no EXIF data.", "grain"); ?></p>
-		<?php 
-		endif;
+		<?php
 	endif;
 
 ?>

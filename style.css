@@ -1225,12 +1225,23 @@ h2#comments-headline {
 	margin: 0 auto;
 }
 
+
+#exif-frame {
+	overflow: hidden;
+}
+
 #info-frame #exif-frame {
 	padding: 0;
 	margin-bottom: 10px;
 	float: right;
-	width: 300px;
+	width: 350px;
 	}
+
+#exif caption {
+	text-align: left;
+	color: gray;
+	padding-bottom: 2px;
+}
 	
 #commentspopup #exif-frame {
 	padding: 0;

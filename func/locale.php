@@ -31,8 +31,11 @@
 	}
 
 	function grain_switch_locale($locale=WPLANG) {
+		global $wp_locale;
 		putenv("LC_ALL=$locale");
-		setlocale(LC_ALL, $locale);	
+		setlocale(LC_ALL, $locale, grain_get_base_locale($locale));	
+		$file = TEMPLATEPATH."/$locale.mo";
+		load_textdomain("grain", $file);
 	}
 	
 	// cached mo file names
@@ -131,7 +134,6 @@
 		for($i=0; $i<count($results); $i++) {
 			$q = $results[$i]["q"];
 			$langs = explode( ",", $results[$i]["langs"] );
-			$langs = str_replace("-", "_", $langs);
 			$findings[$q] = $langs;
 		}
 		unset($results); unset($regex);
@@ -142,9 +144,12 @@
 		// test for existing locale files
 		foreach( $findings as $weighting => $languages ) {
 			// grain_find_locale
-			foreach( $languages as $lang ) {
-				$hit = grain_find_locale($lang, null);
-				if( $hit ) {
+			foreach( $languages as $lang ) {		
+				if(0 != ($i=strpos($lang, "-")) ) {
+					$lang = substr($lang, 0, $i)."_".strtoupper(substr($lang, $i+1));
+				}			
+				$hit = grain_find_locale($lang, null);				
+				if( !empty($hit) ) {			
 					return $hit;
 				}
 			}
@@ -153,5 +158,16 @@
 		
 		return $fallback;
 	}
+
+	function grain_autolocale() {
+		global $GrainOpt;
+		if( !$GrainOpt->is(GRAIN_AUTOLOCALE_ENABLED) ) return;
+		$locale = grain_get_acceptedlocale(NULL);
+		if( empty($locale) ) return;	
+		grain_switch_locale($locale);
+	}
+
+	// load locale
+	grain_load_locale();
 
 ?>

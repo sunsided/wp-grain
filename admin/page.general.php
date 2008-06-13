@@ -113,15 +113,24 @@
 					?>
 				</fieldset>
 	
-				<h2><?php _e("Secondary Language Options", "grain"); ?></h2>
+				<h2><?php _e("Localisation Options", "grain"); ?></h2>
 
 				<fieldset>				
-					<legend><?php _e("General options", "grain"); ?></legend>
+					<legend><?php _e("Secondary Language Options", "grain"); ?></legend>
 					<?php 
 					grain_admin_infoline(NULL, __("Grain has an option that allows you to display photo titles in an additional second language or tho use an additional texts as a subtitle.", "grain"));
 
 					grain_admin_checkbox(GRAIN_2NDLANG_ENABLED, "second_language", NULL, __("2nd Line:", "grain"), __("Enable 2nd line/2nd language support", "grain"), NULL);
 					grain_admin_shortline(GRAIN_2NDLANG_TAG, "second_language_tag", NULL, __("2nd line custom field:", "grain"), $no_HTML, __("The name/key of the custom field that contains the secondary language title.<br />You may want to read the WordPress Codex article on <a title=\"_blank\" href=\"http://codex.wordpress.org/Using_Custom_Fields\">Using Custom Fields</a>.", "grain"));
+					?>				
+				</fieldset>
+				
+				<fieldset>				
+					<legend><?php _e("Localized Blog", "grain"); ?></legend>
+					<?php 
+					grain_admin_infoline(NULL, __("Browsers may send an information about their preferred language. Grain can make use of this information to automatically select a translation file, displaying the blog in the visitor's language.", "grain"));
+
+					grain_admin_checkbox(GRAIN_AUTOLOCALE_ENABLED, "auto_locale", NULL, __("Autolocale:", "grain"), __("Activate visitor based translation", "grain"), __("Grain tries to match a browser's <code>HTTP_ACCEPT_LANGUAGE</code> against a set of locale (<code>*.mo</code>) files in your theme's directory. If no match can be found, the default translation based on your WordPress settings will be used.", "grain"));
 					?>				
 				</fieldset>
 

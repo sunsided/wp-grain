@@ -44,6 +44,7 @@
 	// 2nd language
 	$GrainOpt->defineFlagOpt( 'GRAIN_2NDLANG_ENABLED', 'feature_2ndl_enabled', FALSE );
 	$GrainOpt->defineStringOpt( 'GRAIN_2NDLANG_TAG', 'feature_2ndl_tag', "grain_2nd_title", FALSE );
+	$GrainOpt->defineFlagOpt( 'GRAIN_AUTOLOCALE_ENABLED', 'autolocale_enabled', FALSE );
 	
 	// feeds
 	$GrainOpt->defineFlagOpt( 'GRAIN_FEED_ATOM_ENABLED', 'feed_atom_enabled', FALSE );

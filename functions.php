@@ -17,6 +17,10 @@
 	@require_once(TEMPLATEPATH . '/func/options.php');
 	@require_once(TEMPLATEPATH . '/func/upgrade.php');
 
+/* fire autolocale */
+
+	grain_autolocale();
+
 /* load plugin functions */
 	
 	@require_once(TEMPLATEPATH . '/func/plugins.php');
