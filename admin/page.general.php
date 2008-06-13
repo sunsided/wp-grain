@@ -126,11 +126,11 @@
 				</fieldset>
 				
 				<fieldset>				
-					<legend><?php _e("Localized Blog", "grain"); ?></legend>
+					<legend><?php _e("Auto Locale", "grain"); ?></legend>
 					<?php 
 					grain_admin_infoline(NULL, __("Browsers may send an information about their preferred language. Grain can make use of this information to automatically select a translation file, displaying the blog in the visitor's language.", "grain"));
 
-					grain_admin_checkbox(GRAIN_AUTOLOCALE_ENABLED, "auto_locale", NULL, __("Autolocale:", "grain"), __("Activate visitor based translation", "grain"), __("Grain tries to match a browser's <code>HTTP_ACCEPT_LANGUAGE</code> against a set of locale (<code>*.mo</code>) files in your theme's directory. If no match can be found, the default translation based on your WordPress settings will be used.", "grain"));
+					grain_admin_checkbox(GRAIN_AUTOLOCALE_ENABLED, "auto_locale", NULL, __("Enable Auto Locale:", "grain"), __("Activate visitor based translation", "grain"), __("Grain tries to match a browser's <code>HTTP_ACCEPT_LANGUAGE</code> against a set of locale (<code>*.mo</code>) files in your theme's directory. If no match can be found, the default translation based on your WordPress settings will be used.", "grain"));
 					?>				
 				</fieldset>
 

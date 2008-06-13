@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Grain 0.3 beta 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-12 09:52+0100\n"
+"POT-Creation-Date: 2008-06-13 11:42+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Markus Mayer <code@defx.de>\n"
 "Language-Team: \n"
@@ -194,12 +194,8 @@ msgstr ""
 msgid "Sorry, the comment form is closed at this time."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/exif-block.php:17
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/exif-block.php:19
 msgid "EXIF information"
-msgstr ""
-
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/exif-block.php:32
-msgid "This photo has no EXIF data."
 msgstr ""
 
 #: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/footer.php:39
@@ -536,7 +532,7 @@ msgstr ""
 
 #: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:83
 #: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:122
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:147
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:156
 #: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:116
 #: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:153
 msgid "Factory Defaults"
@@ -544,7 +540,7 @@ msgstr ""
 
 #: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:84
 #: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:123
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:148
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:157
 #: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:117
 #: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:154
 msgid "Save Settings"
@@ -884,11 +880,11 @@ msgid "This will be embedded as a separator of the list items."
 msgstr ""
 
 #: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:116
-msgid "Secondary Language Options"
+msgid "Localisation Options"
 msgstr ""
 
 #: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:119
-msgid "General options"
+msgid "Secondary Language Options"
 msgstr ""
 
 #: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:121
@@ -911,63 +907,83 @@ msgstr ""
 msgid "The name/key of the custom field that contains the secondary language title.<br />You may want to read the WordPress Codex article on <a title=\"_blank\" href=\"http://codex.wordpress.org/Using_Custom_Fields\">Using Custom Fields</a>."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:128
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:129
+msgid "Auto Locale"
+msgstr ""
+
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:131
+msgid "Browsers may send an information about their preferred language. Grain can make use of this information to automatically select a translation file, displaying the blog in the visitor's language."
+msgstr ""
+
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:133
+msgid "Enable Auto Locale:"
+msgstr ""
+
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:133
+msgid "Activate visitor based translation"
+msgstr ""
+
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:133
+msgid "Grain tries to match a browser's <code>HTTP_ACCEPT_LANGUAGE</code> against a set of locale (<code>*.mo</code>) files in your theme's directory. If no match can be found, the default translation based on your WordPress settings will be used."
+msgstr ""
+
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:137
 msgid "Archives Sidebar"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:132
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:141
 msgid "These settings affect the sidebar you can see when you open an archive page, such as the Mosaic, the category archives etc.<br />Grain is a theme with widget support, so you can easily customize your sidebar in the Widgets menu; These options will only apply if there is no widget plugged into the according sidebar."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:135
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:144
 msgid "The values in the {FILE} file will be used for that."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:136
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:145
 msgid "Sidebar Syndication:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:136
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:145
 msgid "Show Syndication in the Sidebar"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:138
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:147
 msgid "Most commented:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:138
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:147
 msgid "List most commented photos"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:139
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:148
 msgid "Show at most:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:139
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:148
 msgid "This sets the maximum number of recent comments that will be displayed in the list."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:141
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:150
 msgid "Display Calendar:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:141
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:150
 msgid "Show the post calendar"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:142
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:151
 msgid "Display Blogroll:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:142
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:151
 msgid "Show your blogroll"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:143
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:152
 msgid "Display \"Meta\" block:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:143
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:152
 msgid "Show WordPress' \"Meta\" blog to enable users to register or log in"
 msgstr ""
 
@@ -1447,40 +1463,40 @@ msgstr ""
 msgid "hide details"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:53
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:54
 msgid "Mosaic"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:67
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:68
 msgid "(Your name)"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:68
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:69
 msgid "<em>(Your name)</em>"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:124
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:127
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:125
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:128
 msgid "F jS, Y"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:125
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:126
 msgid "F, Y"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:126
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:127
 msgid "j. F Y, H:i"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:128
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:129
 msgid "H:i"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:130
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:131
 msgid "Posted in: "
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:132
+#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:133
 msgid "Tagged with: "
 msgstr ""
 
