@@ -13,6 +13,11 @@
 
 	/* functions */
 
+	function grain_switch_locale($locale="en_US") {
+		putenv("LC_ALL=$locale");
+		setlocale(LC_ALL, $locale);	
+	}
+
 	function grain_load_locale() {	
 		// I18N support through GNU-Gettext files
 		load_theme_textdomain('grain');
