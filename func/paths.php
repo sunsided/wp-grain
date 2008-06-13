@@ -11,6 +11,7 @@
 	/* definitions */
 
 	define('GRAIN_RELATIVE_PATH', substr(TEMPLATEPATH, strlen(ABSPATH)));
+	define('GRAIN_ABSOLUTE_PATH', TEMPLATEPATH);
 	define('GRAIN_TEMPLATE_DIR', get_bloginfo('template_directory'));
 
 ?>
