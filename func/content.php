@@ -368,7 +368,8 @@
 						// in default mode, so display the content (or it's excerpt)
 						if($GrainOpt->is(GRAIN_EXCERPTONLY) || $is_folded) 
 						{
-							the_excerpt();
+							// the_excerpt();
+							echo grain_get_the_content();
 						} 
 						else 
 						{
