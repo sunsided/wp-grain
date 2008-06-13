@@ -113,7 +113,7 @@
 		if( !$GrainOpt->get(GRAIN_COPYRIGHT_CC_ENABLED) ) return;
 
 		// test rdf
-		$rdf = grain_cc_rdf();
+		$rdf = $GrainOpt->get(GRAIN_CC_RDF_FEED);
 		if(!empty($rdf)) echo '<!--'.$rdf.'-->';
 	}
 
