@@ -25,7 +25,7 @@
 	// get's Grains footer version link
 	function grain_getgrainfvlink() {
 		$grainName = "Grain" . (GRAIN_THEME_VERSION_DEVBUILD?" ".GRAIN_THEME_VERSION:"");
-		$grainTitle = "Grain" . (GRAIN_THEME_VERSION_DEVBUILD?" (development ".(defined("GRAIN_THEME_VERSION_REVISION")?" R".GRAIN_THEME_VERSION_REVISION:"").")":"");
+		$grainTitle = "Grain" . (GRAIN_THEME_VERSION_DEVBUILD?" (development".(defined("GRAIN_THEME_VERSION_REVISION")?" R".GRAIN_THEME_VERSION_REVISION:"").")":"");
 		$grainURL = '<a class="grain" href="'.GRAIN_THEME_URL.'" title="'.$grainTitle.'">'.$grainName.'</a>';
 		return $grainURL;
 	}
