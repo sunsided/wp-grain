@@ -34,9 +34,7 @@
 				<?php
 				
 				$blogName = '<span class="blogname">'.get_bloginfo('name').'</span>';
-				$grainName = "Grain" . (GRAIN_THEME_VERSION_DEVBUILD?" ".GRAIN_THEME_VERSION:"");
-				$grainTitle = "Grain" . (GRAIN_THEME_VERSION_DEVBUILD?" (development build)":"");
-				$grainURL = '<a class="grain" href="'.GRAIN_THEME_URL.'" title="'.$grainTitle.'">'.$grainName.'</a>';
+				$grainURL = grain_getgrainfvlink();
 				$wordpressURL = '<a class="wordpress" href="http://wordpress.org/">WordPress</a>';
 				$message = __("{BLOG} is proudly powered by {WP} and {GRAIN}");
 				echo str_replace( 

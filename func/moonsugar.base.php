@@ -8,6 +8,7 @@
 	/* defines */
 	
 	define('GRAIN_THEME_VERSION_EXTENDED', 'beta 1');
-	define('GRAIN_THEME_VERSION_DEVBUILD', true);	
+	define('GRAIN_THEME_VERSION_DEVBUILD', true);
+	define('GRAIN_THEME_VERSION_REVISION', '$WCREV$'); // last SVN revision
 	
 ?>
