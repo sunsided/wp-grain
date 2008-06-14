@@ -35,6 +35,7 @@
 	if( $postCount && $isContentPage ):
 
 		// get next / previous post link
+		$prev = $next = null;
 		if( get_previous_post() != null )	$prev = grain_mimic_previous_post_link( '%link', __("&laquo; previous", "grain") );
 		if( get_next_post() != null )		$next = grain_mimic_next_post_link( '%link', __("next &raquo;", "grain") );
 

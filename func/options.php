@@ -118,7 +118,7 @@
 			
 			// get option and value
 			$option = $this->option_defs[$keyName];			
-			$value = $this->options[$option["FIELD"]];
+			$value = @$this->options[$option["FIELD"]];
 			
 			// apply default, if necessary
 			if(empty($value)) {

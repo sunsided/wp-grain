@@ -15,10 +15,11 @@
 
 	function grain_embed_cc_div() 
 	{
+		global $GrainOpt;
 		echo '<div id="license-text"><!--Creative Commons License-->';
 		
 		// Get the code and remove linebreaks so that the HTML doesn't look too jagged
-		$code = grain_cc_code();
+		$code = $GrainOpt->get("GRAIN_COPYRIGHT_CC_CODE");
 		$code = grain_rmlinebreaks($code);
 		echo $code;
 		
