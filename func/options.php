@@ -70,7 +70,7 @@
 		// checks if an options exists
 		function exists($keyName) 
 		{
-			return array_key_exists($keyName, $this->option_defs );
+			return !empty($this->option_defs) && array_key_exists($keyName, $this->option_defs );
 		}
 		
 		// checks if an option is empty (without applying filters or defaults)
@@ -118,7 +118,7 @@
 			
 			// get option and value
 			$option = $this->option_defs[$keyName];			
-			$value = $this->options[$option["FIELD"]];
+			$value = @$this->options[$option["FIELD"]];
 			
 			// apply default, if necessary
 			if(empty($value)) {
@@ -155,8 +155,11 @@
 			}
 			
 			// get option and value
-			$option = $this->option_defs[$keyName];
-			if(empty($this->options) || !array_key_exists($option["FIELD"], $this->options)) return $option["DEFAULT"];
+			$option = $this->option_defs[$keyName];		
+			$key = $option["FIELD"];
+			$array = $this->options;
+			$keyExists = !empty($array) && array_key_exists($key, $array);
+			if(empty($this->options) || !$keyExists) return $option["DEFAULT"];
 			return $this->options[$option["FIELD"]];
 		}
 				

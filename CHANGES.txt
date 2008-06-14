@@ -11,6 +11,7 @@ Add: Option to enable or disable linking of Gravatar icons
 Add: Error messages (no post, photo not found, ...) can now be styled (in addition to the filter that can be applied)
 Add: Option to control access to the comment form if a photo page has no content
 Add: Option to only show the excerpt of a post on the comment popup.
+Add: Autolocale option to load a translation based on a request's HTTP_ACCEPT_LANGUAGE setting
 Add/Change: Several new localization strings; Old strings have changed. (added i.e. date/time formats, so that their defaults can be localized too)
 Change: Option to show popup is now option to suppress popup because of new business logic; The setting is interpreted correctly though.
 Change: Reordered navigation bar page.
@@ -22,6 +23,8 @@ Change: Blog description line is now linked, too
 Change: Grain now shows only the excerpt of a post when displaying a photo page. The full text will be displayed as soon as the page enters extended info mode (or on the popup, if the "only excerpts" option is not set)
 Change: CSS footer now resizes automatically depending on it's content (no height hardcoding needed anymore)
 Change: Posts without an image are now shown in the archives and the mosaic, but are not linked
+Change: If a photo has no EXIF data, the whole EXIF block will be hidden
+Change: CSS style for the exif table hides overflow; Information larger than the width of the frame itself will be cut
 Fix: Rounded borders had different colors in Internet Explorer 6 and 7 (this is not totally fixed yet, but it definitely looks better)
 Fix: "%" in copyrights is now correctly rendered as the current year. This was due to bug preventing that an options default value got filtered.
 Fix: Navigation bar was shown even if there were no post at all

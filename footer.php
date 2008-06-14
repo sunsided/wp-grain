@@ -34,7 +34,7 @@
 				<?php
 				
 				$blogName = '<span class="blogname">'.get_bloginfo('name').'</span>';
-				$grainURL = '<a class="grain" href="'.GRAIN_THEME_URL.'" title="Grain">Grain</a>';
+				$grainURL = grain_getgrainfvlink();
 				$wordpressURL = '<a class="wordpress" href="http://wordpress.org/">WordPress</a>';
 				$message = __("{BLOG} is proudly powered by {WP} and {GRAIN}");
 				echo str_replace( 

@@ -16,7 +16,7 @@
 		global $wp_query, $GrainOpt;
 			
 		// start new session
-		session_start();
+		@session_start();
 		
 		// If the index page is called, pretend it is not
 		if( is_home() ):
@@ -29,7 +29,7 @@
 		endif;
 		
 		// allow OTI requests only from local server
-		$oti_allowed = /*($_SERVER["REMOTE_ADDR"] == $_SERVER["SERVER_ADDR"]) &&*/ $_SESSION["GRAIN_FROM_COMPP"] === true;
+		$oti_allowed = array_key_exists("GRAIN_FROM_COMPP", $_SESSION) && $_SESSION["GRAIN_FROM_COMPP"] === true;
 		$ext_allowed = $GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED);
 		$comments_allowed = grain_can_comment(); // $GrainOpt->getYesNo(GRAIN_COMMENTS_ON_EMPTY_ENABLED);
 		
@@ -53,7 +53,7 @@
 	
 	function grain_endSession() 
 	{
-		if( $_SESSION['GRAIN_FROM_COMPP'] ) {
+		if( @$_SESSION['GRAIN_FROM_COMPP'] ) {
 			session_unregister('GRAIN_FROM_COMPP');
 		}
 	}
@@ -113,7 +113,7 @@
 		if( !$GrainOpt->get(GRAIN_COPYRIGHT_CC_ENABLED) ) return;
 
 		// test rdf
-		$rdf = grain_cc_rdf();
+		$rdf = $GrainOpt->get(GRAIN_COPYRIGHT_CC_RDF);
 		if(!empty($rdf)) echo '<!--'.$rdf.'-->';
 	}
 

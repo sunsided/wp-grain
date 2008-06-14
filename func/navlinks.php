@@ -32,7 +32,7 @@
 		$title = apply_filters('the_title', $prev->post_title, $prev);
 		$string = '<a rel="prev" href="'.get_permalink($prev->ID).$addon.'">';
 		$link = str_replace('%title', $title, $link);
-		$link = $pre . $string . $link . '</a>';
+		$link = $string . $link . '</a>';
 
 		$format = str_replace('%link', $link, $format);
 
