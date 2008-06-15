@@ -93,7 +93,7 @@
 <meta name="dc.rights" content="(Scheme=URL) <?php echo $imprint_url; ?>" />
 <?php endif; ?>
 <meta name="dc.language" scheme="RFC3066" content="<?php echo get_bloginfo('language'); ?>">
-<meta name="dc.title" content="<?php bloginfo('name'); ?>>" />
+<meta name="dc.title" content="<?php bloginfo('name'); ?>" />
 <meta name="dc.description"  content="<?php bloginfo('name'); ?>, <?php wp_title(); ?>" />
 <meta name="dc.creator" content="<?php echo $GrainOpt->get(GRAIN_COPYRIGHT_HOLDER); ?>" />
 <meta name="dc.publisher" content="<?php echo $GrainOpt->get(GRAIN_COPYRIGHT_HOLDER); ?>" />

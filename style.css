@@ -113,7 +113,8 @@ div.archive-photo {
 
 .post {
 	margin: 0 auto;
-	padding: 0 20px;
+	/*padding: 0 20px;*/
+	padding: 0px;
 	position: relative;
 	}
 
@@ -451,6 +452,15 @@ img#rss-feed {
 div#photo-frame,
 div#special-frame {
 	position: relative;
+	z-index: 1;
+}
+
+div#photo-fade,
+div#photo-nofade {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 1;
 }
 
 #infotext-frame {
@@ -1350,17 +1360,6 @@ a img {
 .tooltip-title,
 .tooltip-title-prev,
 .tooltip-title-next {
-	/*
-	background: rgb(255, 156, 0) url(images/tip-header.png);
-	opacity: 0.75;
-	padding: 1px 4px;
-	color: rgb(70, 30, 0);
-	border: 1px solid rgb(255, 102, 0);
-	border-bottom: none;
-	letter-spacing: 0.1em;
-	font-weight: bolder;
-	font-family: 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif;
-	*/
 	background: black url(images/tip-header.png);
 	color: black;
 	opacity: 0.8;
@@ -1377,14 +1376,6 @@ a img {
 .tooltip-text,
 .tooltip-text-prev,
 .tooltip-text-next {
-	/*
-	background: white;
-	opacity: 0.85;
-	padding: 1px 4px;
-	color: rgb(70, 30, 0);
-	border: 1px solid rgb(255, 102, 0);
-	border-top: none;
-	*/
 	background: dimgray url(images/grid.gif);
 	color: white;
 	opacity: 0.8;
@@ -1486,18 +1477,43 @@ div.photo-with-reflection #panorama {
 		/* border: 10px solid rgb(230, 230, 230);  */
 		
 	padding: 0;
+	z-index: 1;
 	max-width: 800px;
+	position: relative;
+}
+
+div.photo {
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 1;
+	position: relative;
 }
 
 div.photo #photo,
 div.photo #panorama {
-	/*border: 10px solid rgb(230, 230, 230);*/
 	border: 1px solid dimgray;
-	/*border: 0px;*/
-	margin: 20px 0;
 	padding: 0;
+	z-index: 1;
 	max-width: 800px;
 	position: relative;
+}
+
+div#photo-frame.no-reflection #area_prev,
+div#photo-frame.no-reflection #area_prev_spacer,
+div#photo-frame.no-reflection #area_next {
+	/* we need to compensate for the photo's borders here */
+	top: 1px; /* top border with only */
+}
+
+div#photo-frame.no-reflection #area_prev,
+div#photo-frame.no-reflection #area_prev_spacer {
+	/* we need to compensate for the photo's borders here */
+	left: 1px; /* left border width only */
+}
+
+div#photo-frame.no-reflection #area_next {
+	/* we need to compensate for the photo's borders here */
+	left: 2px; /* left border width + right border width */
 }
 
 div.photo-with-reflection {
@@ -1518,6 +1534,7 @@ div.photo-with-reflection canvas {
 #panorama {
 	margin: 0 auto;
 	text-align: left;
+	position: relative;
 	}
 
 #comment-thumb {
@@ -1619,32 +1636,6 @@ td.exif-value {
 	position: relative;
 }
 
-#photo-nav-left {
-	float: left;
-}
-
-#photo-nav-left a {
-}
-
-#photo-nav-left a:hover {
-	background-image: url(images/go_left.gif);
-	background-repeat: no-repeat;
-	background-position: left center;
-}
-
-#photo-nav-right {
-	float: right;
-}
-
-#photo-nav-right a {
-}
-
-#photo-nav-right a:hover {
-	background-image: url(images/go_right.gif);
-	background-repeat: no-repeat;
-	background-position: left center;
-}
-
 img.gravatar {
    border: 0px !important;
 }
@@ -1684,4 +1675,41 @@ span.unapproved-comment {
 
 span.menu-delimiter {
 	color: gray;
+}
+
+#linkmap {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	/*overflow: hidden;*/
+}
+
+#area_prev, #area_prev_spacer, #area_next {
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none !important;
+	display: block;
+	float: left;
+	position: relative;
+	z-index: 100;
+}
+
+#area_prev, #area_prev_spacer {
+	background: none;
+}
+
+#area_next {
+	background: none;
+}
+
+#area_prev:hover {
+	background-image: url(images/go_left.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#area_next:hover {
+	background-image: url(images/go_right.gif);
+	background-repeat: no-repeat;
+	background-position: right center;
 }

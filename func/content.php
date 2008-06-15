@@ -101,8 +101,11 @@
 		// The URL of the image that will be displayed if no photo could be found for a post
 		$whoops_url = $GrainOpt->get(GRAIN_WHOOPS_URL);
 		
+		// Test for reflection
+		$useReflection = grain_use_reflection();
+		
 		// open the region
-		echo '<div id="photo-frame">';
+		echo '<div id="photo-frame" class="'.($useReflection?"with-reflection":"no-reflection").'">';
 			
 		// If the post has no image and no replacement ("whoops") image, display an error text
 		$hasImage = grain_post_has_image();
@@ -130,6 +133,9 @@
 			$dimensions = grain_scale_image_size($image_dimensions, $GrainOpt->get(GRAIN_MAX_IMAGE_WIDTH), $GrainOpt->get(GRAIN_MAX_IMAGE_HEIGHT)); // max width, max height
 			$width = $dimensions['width']; $height = $dimensions['height']; $width2 = $dimensions['halfWidth']; $rigth_width = $dimensions['halfWidth2'];
 
+			// the size of the actual photo
+			$sizeStyle = 'width: '.$width.'px; height: '.$height.'px;';
+
 			// get reduced size image if necessary
 			$imageIsBiggerThanMax = $image_dimensions[0] > GRAIN_MAX_IMAGE_WIDTH;
 			$quality = 100; // <- this value can be altered to set the quality (percent) of the rescaled image
@@ -153,42 +159,62 @@
 				$title_attr .= ($PostOpt["pagePosition"] == GRAIN_NEWEST_POST) ? $title_next : $title_prev;
 				$title_attr .= '"';
 			}
-						
+				
+			// Image map
+			$useImageMap = FALSE;
+		
 			// build image link and link map
 			$string =  '';
-			$useReflection = grain_use_reflection();
 			if( $GrainOpt->is(GRAIN_NAV_BIDIR_ENABLED) )
-			{						
-				// create image
-				if( !$useReflection ) $string .= '<div class="photo">';
-				$string .= '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection? '-with-reflection' : '' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'" usemap="#bloglinks" />';				
+			{							
+				// prepare non-reflection
+				if( !$useReflection ) $string .= '<div class="photo" style="'.$sizeStyle.'">';
+
+				// add links if the linkmap is not used
+				if( !$useImageMap && ($previous || $next) ) {
+					if( $previous != null )	$string .= '<a id="area_prev" class="tooltipped bidir" style="width: '.$width2.'px; height: '.$height.'px;" title="'.$title_prev.'" rel="prev" href="'. get_permalink($previous->ID) .'"></a>';
+					if( $previous == null )	$string .= '<a id="area_prev_spacer bidir" class="tooltipped" style="width: '.$width2.'px; height: '.$height.'px;" '.$title_attr.' name="prev_spacing"></a>';
+					if( $next!= null ) 		$string .= '<a id="area_next" class="tooltipped bidir" style="width: '.$width2.'px; height: '.$height.'px;" title="'.$title_next.'" rel="next" href="'. get_permalink($next->ID) .'"></a>';
+				}
+				
+				// add photo
+				$string .= '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection? '-with-reflection' : '' ).'" style="'.(!$useImageMap?'bottom: '.$height.'px;':'').' '.$sizeStyle.'" src="'. $image_url .'"'.($useImageMap?' usemap="#bloglinks"':'').' />';
+				
+				// prepare non-reflection
 				if( !$useReflection ) $string .= '</div>';
 				
 				// create linkmap
-				if( $previous || $next ) {
+				if( $useImageMap && (previous || $next) ) {
 					$string .= ' <map name="bloglinks">'."\n";					
-					if( $previous != null )	$string .= '<area shape="rect" class="tooltipped" coords="0,0,'.$width2.','.$height.'" title="'.$title_prev.'" rel="prev" href="'. get_permalink($previous->ID) .'">'."\n";
-					if( $next!= null ) 		$string .= '<area shape="rect" class="tooltipped" coords="'.$width2.',0,'.($rigth_width+$width2).','.$height.'" title="'.$title_next.'" rel="next" href="'. get_permalink($next->ID) .'">'."\n";
+					if( $previous != null )	$string .= '<area id="area_prev" shape="rect" class="tooltipped bidir" coords="0,0,'.$width2.','.$height.'" title="'.$title_prev.'" rel="prev" href="'. get_permalink($previous->ID) .'">'."\n";
+					if( $next!= null ) 		$string .= '<area id="area_next" shape="rect" class="tooltipped bidir" coords="'.$width2.',0,'.($rigth_width+$width2).','.$height.'" title="'.$title_next.'" rel="next" href="'. get_permalink($next->ID) .'">'."\n";
 					$string .= '</map>';
 				}
+
 			}
 			else
 			{
+				// prepare non-reflection
+				if( !$useReflection ) $string .= '<div class="photo" style="'.$sizeStyle.'">';
+			
 				if( $previous != null ) {
-					$string  = '<a class="tooltipped" title="'.$title_prev.'" rel="prev" href="'. get_permalink($previous->ID) .'">';
-					$string .= '<img title="'.$title_prev.'" id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection? '-with-reflection' : '' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/>';
-					$string .= '</a>';
+					$string .= '<a id="area_prev" class="tooltipped unidir" style="'.$sizeStyle.'" title="'.$title_prev.'" rel="prev" href="'. get_permalink($previous->ID) .'">';
+					if( !$useImageMap ) $string .= '</a>';
+					$string .= '<img title="'.$title_prev.'" id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection? '-with-reflection' : '' ).'" style="'.(!$useImageMap?'bottom: '.$height.'px;':'').' '.$sizeStyle.'" src="'. $image_url .'"/>';
+					if( $useImageMap ) $string .= '</a>';
 				} else {
-					$string  = '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection ? '-with-reflection' : '' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/>';
+					$string .= '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection ? '-with-reflection' : '' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/>';
 				}
 				
+				// prepare non-reflection
+				if( !$useReflection ) $string .= '</div>';
 			}
 
 			// action
 			do_action(GRAIN_BEFORE_IMAGE);				
 			
 			// display image
-			echo '<div id="photo-'.(grain_fx_can_fade()?'':'no').'fade">';
+			echo '<div id="photo-'.(grain_fx_can_fade()?'fade':'nofade').'" style="'.$sizeStyle.'">';
 			echo $string;				
 			echo '</div>';
 			
