@@ -8,10 +8,10 @@
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 		
 	// image sizes, ...
-	$GrainOpt->defineValueOpt('GRAIN_MAX_IMAGE_WIDTH', "max_img_width", 800);
-	$GrainOpt->defineValueOpt('GRAIN_MAX_IMAGE_HEIGHT', "max_img_height", 533);
-	$GrainOpt->defineValueOpt( 'GRAIN_WHOOPS_WIDTH', 'whoops_image_width', 800 );
-	$GrainOpt->defineValueOpt( 'GRAIN_WHOOPS_HEIGHT', 'whoops_image_height', 533 );		
+	$GrainOpt->defineValueOpt('GRAIN_MAX_IMAGE_WIDTH', "max_img_width", 800, FALSE);
+	$GrainOpt->defineValueOpt('GRAIN_MAX_IMAGE_HEIGHT', "max_img_height", 533, FALSE);
+	$GrainOpt->defineValueOpt( 'GRAIN_WHOOPS_WIDTH', 'whoops_image_width', 800, FALSE );
+	$GrainOpt->defineValueOpt( 'GRAIN_WHOOPS_HEIGHT', 'whoops_image_height', 533, FALSE );		
 	$GrainOpt->defineStringOpt( 'GRAIN_WHOOPS_URL', 'whoops_image_url', GRAIN_TEMPLATE_DIR.'/images/whoops.png', FALSE );
 		
 	// menu and navigation
@@ -36,7 +36,7 @@
 	// sidebar
 	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_SYND_ENABLED', 'sdbr_syndication', FALSE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_MOSTCOMM_ENABLED', 'sdbr_mc_enabled', TRUE );
-	$GrainOpt->defineValueOpt( 'GRAIN_SDBR_MOSTCOMM_COUNT', 'sdbr_mc_count', 10 );
+	$GrainOpt->defineValueOpt( 'GRAIN_SDBR_MOSTCOMM_COUNT', 'sdbr_mc_count', 10, FALSE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_META_ENABLED', 'sdbr_meta_enabled', TRUE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_BLOGROLL_ENABLED', 'sdbr_blogroll_enabled', TRUE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_CALENDAR_ENABLED', 'sdbr_calendar_enabled', TRUE );
@@ -52,7 +52,7 @@
 	// archive and mosaic
 	$GrainOpt->defineFlagOpt( 'GRAIN_MOSAIC_ENABLED', 'mosaic_enabled', FALSE );
 	$GrainOpt->defineStringOpt( 'GRAIN_MOSAIC_LINKTITLE', 'mosaic_linktitle', __("Mosaic", "grain"), TRUE );
-	$GrainOpt->defineValueOpt( 'GRAIN_MOSAIC_COUNT', 'mosaic_count', 50 );
+	$GrainOpt->defineValueOpt( 'GRAIN_MOSAIC_COUNT', 'mosaic_count', 50, TRUE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_MOSAIC_DISPLAY_YEARS', 'mosaic_years', FALSE );
 	$GrainOpt->defineValueOpt( 'GRAIN_MOSAIC_PAGEID', 'mosaicpage_id', -1 );
 	

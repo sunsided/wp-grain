@@ -38,11 +38,12 @@
 						"FILTER" => $callFilter, 
 						"DEFAULT" => $defaultValue, 
 						"HTML" => $canBeHTML,
+						"ALLOW_NEGATIVE" => FALSE,
 					);
 		}
 		
 		// defines an integer option
-		function defineValueOpt($keyName, $dbFieldName, $defaultValue=-1)
+		function defineValueOpt($keyName, $dbFieldName, $defaultValue=-1, $allowNegative=FALSE)
 		{
 			define( $keyName, $keyName );
 			$this->option_defs[$keyName] = array( 
@@ -51,6 +52,7 @@
 						"FILTER" => FALSE, 
 						"DEFAULT" => $defaultValue, 
 						"HTML" => FALSE,
+						"ALLOW_NEGATIVE" => $allowNegative,
 					);
 		}
 		
@@ -64,6 +66,7 @@
 						"FILTER" => FALSE, 
 						"DEFAULT" => $defaultValue, 
 						"HTML" => FALSE, 
+						"ALLOW_NEGATIVE" => FALSE,
 					);
 		}
 		
@@ -137,6 +140,7 @@
 			}
 			else if( $option["TYPE"] == "INT" ) {
 				$value = intval($value);
+				if( @$option["ALLOW_NEGATIVE"] !== TRUE && $value < 0 ) $value = intval($option["DEFAULT"]);
 			}
 		
 			// return
