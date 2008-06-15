@@ -271,14 +271,9 @@
 
 	function grain_admin_createmenus() 
 	{	
-		$baseTitle = __("Configure Grain", "grain") . ' &raquo; ';
-
-		add_theme_page(	$baseTitle . __("Copyright Settings", "grain"), 		
-						__("Copyright Settings", "grain"), 
-						'edit_themes', 
-						'copyright', 
-						'grain_adminpage_copyright');
-		
+		$basePageTitle = __("Configure Grain", "grain");
+		$baseTitle = $basePageTitle . ' &raquo; ';
+	
 		add_theme_page( $baseTitle . __("General Settings", "grain"), 			
 						__("General Settings", "grain"), 
 						'edit_themes', 
@@ -297,6 +292,12 @@
 						'styling', 
 						'grain_adminpage_styling');
 		
+		add_theme_page(	$baseTitle . __("Copyright Settings", "grain"), 		
+						__("Copyright Settings", "grain"), 
+						'edit_themes', 
+						'copyright', 
+						'grain_adminpage_copyright');		
+		
 		add_theme_page( $baseTitle . __("Date and Time Settings", "grain"), 	
 						__("Date and Time", "grain"), 
 						'edit_themes', 
@@ -314,7 +315,14 @@
 							'edit_plugins', 
 							$yapb_page);
 		}
-				
+
+		// add an options shortcut
+		$grain_page = 'themes.php?page=general';
+		add_options_page( $basePageTitle,
+						"Grain", 
+						'edit_themes',
+						$grain_page );
+
 		// do the logic
 		grain_admin_dologic();
 
