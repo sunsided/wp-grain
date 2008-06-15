@@ -15,7 +15,10 @@
 
 	function grain_load_locale() {	
 		// I18N support through GNU-Gettext files
-		load_theme_textdomain('grain');
+		$locale = get_locale();
+		$file = TEMPLATEPATH."/lang/$locale.mo";
+		if( !file_exists($file ) ) $file = TEMPLATEPATH."/$locale.mo";
+		load_textdomain("grain", $file );
 	}
 	
 	function grain_get_base_locale($locale=WPLANG) {
@@ -32,9 +35,11 @@
 
 	function grain_switch_locale($locale=WPLANG) {
 		global $wp_locale;
+		$locale=apply_filters( 'locale', $locale );
 		putenv("LC_ALL=$locale");
 		setlocale(LC_ALL, $locale, grain_get_base_locale($locale));	
-		$file = TEMPLATEPATH."/$locale.mo";
+		$file = TEMPLATEPATH."/lang/$locale.mo";
+		if( !file_exists($file) ) $file = TEMPLATEPATH."/$locale.mo";
 		load_textdomain("grain", $file);
 	}
 	
@@ -54,7 +59,8 @@
 	//		"de"			"fr.mo" 						"en_US"
 	function grain_find_locale($locale, $fallback=WPLANG) {
 		// test for a direct hit
-		if( file_exists(TEMPLATEPATH."/$locale.mo") ) return $locale;
+		if( file_exists(TEMPLATEPATH."/lang/$locale.mo") ) return $locale;
+		#if( file_exists(TEMPLATEPATH."/$locale.mo") ) return $locale;
 		// no direct hit; check for a specialized locale
 		// get base locale
 		$baselocale = grain_get_base_locale($locale);
@@ -163,8 +169,15 @@
 		global $GrainOpt;
 		if( !$GrainOpt->is(GRAIN_AUTOLOCALE_ENABLED) ) return;
 		$locale = grain_get_acceptedlocale(NULL);
-		if( empty($locale) ) return;	
+		if( empty($locale) ) return;
+		
+		// no need to switrch if the locale is the same
+		$system_locale = get_locale();
+		if( !empty($system_locale) && $system_locale == $locale ) return;
+		
+		// switch
 		grain_switch_locale($locale);
+		if( !headers_sent() ) header("X-Grain-Autolocale: $locale");
 	}
 
 	// load locale
