@@ -17,12 +17,15 @@
 		define('GRAIN_THEME_VERSION', GRAIN_THEME_VERSION_BASE." ".GRAIN_THEME_VERSION_EXTENDED);
 		if(!defined("GRAIN_THEME_VERSION_DEVBUILD")) define('GRAIN_THEME_VERSION_DEVBUILD', true);
 		// Set header
-		if( !headers_sent() ) header("X-Grain-Devbuild: ".GRAIN_THEME_VERSION."/R".GRAIN_THEME_VERSION_REVISION);
+		if( !headers_sent() ) header("X-Grain-Devbuild: R".GRAIN_THEME_VERSION_REVISION);
 	}
 	else {
 		define('GRAIN_THEME_VERSION', GRAIN_THEME_VERSION_BASE);
 		if(!defined("GRAIN_THEME_VERSION_DEVBUILD")) define('GRAIN_THEME_VERSION_DEVBUILD', false);
 	}
+	
+	// Add version response header. Used for version determination in case of support requests.
+	if( !headers_sent() && !defined("GRAIN_NO_VERSIONRESPONSE")) header("X-Grain-Version: ".GRAIN_THEME_VERSION);
 
 	// get's Grains footer version link
 	function grain_getgrainfvlink() {
