@@ -39,11 +39,12 @@
 						"DEFAULT" => $defaultValue, 
 						"HTML" => $canBeHTML,
 						"ALLOW_NEGATIVE" => FALSE,
+						"ALLOW_ZERO" => FALSE
 					);
 		}
 		
 		// defines an integer option
-		function defineValueOpt($keyName, $dbFieldName, $defaultValue=-1, $allowNegative=FALSE)
+		function defineValueOpt($keyName, $dbFieldName, $defaultValue=-1, $allowNegative=FALSE, $allowZero=TRUE)
 		{
 			define( $keyName, $keyName );
 			$this->option_defs[$keyName] = array( 
@@ -53,6 +54,7 @@
 						"DEFAULT" => $defaultValue, 
 						"HTML" => FALSE,
 						"ALLOW_NEGATIVE" => $allowNegative,
+						"ALLOW_ZERO" => $allowZero
 					);
 		}
 		
@@ -67,6 +69,7 @@
 						"DEFAULT" => $defaultValue, 
 						"HTML" => FALSE, 
 						"ALLOW_NEGATIVE" => FALSE,
+						"ALLOW_ZERO" => FALSE
 					);
 		}
 		
@@ -141,6 +144,7 @@
 			else if( $option["TYPE"] == "INT" ) {
 				$value = intval($value);
 				if( @$option["ALLOW_NEGATIVE"] !== TRUE && $value < 0 ) $value = intval($option["DEFAULT"]);
+				if( @$option["ALLOW_ZERO"] !== TRUE && $value == 0 ) $value = intval($option["DEFAULT"]);
 			}
 		
 			// return
