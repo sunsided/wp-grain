@@ -244,7 +244,7 @@
 	}
 
 	function grain_mosaic_ppl( $title, $page, $count_per_page ) {
-		
+		if( $count_per_page <= 0 ) return;
 		global $wpdb, $tableposts;
 
 		$query = "SELECT count(ID) as c ".

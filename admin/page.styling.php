@@ -71,7 +71,7 @@
 					<legend><?php _e("<em>Whoops</em> image", "grain"); ?></legend>
 					<?php
 					grain_admin_infoline(NULL, __("If it happens that YAPB is unable to load an image or if you haven't set any image for a post Grain will show a message about that fact. If you want to you can set an image that is to be displayed instead.", "grain"));
-					grain_admin_longline(GRAIN_WHOOPS_URL, "whoops_uri", NULL, __("Whoops image URL:", "grain"), $no_HTML, __("The URL of the image that will be displayed if a photoblog post has no image assigned or the image is not uploaded yet.<br />If you want to display a text instead of an image, leave the field empty.", "grain"));					
+					grain_admin_longline(GRAIN_WHOOPS_URL, "whoops_uri", NULL, __("Whoops image URL:", "grain"), $no_HTML, __("The URL of the image that will be displayed if a photoblog post has no image assigned or the image is not uploaded yet.<br />If you want to display a text instead of an image, leave the field empty.", "grain"));
 					grain_admin_sizeboxes(GRAIN_WHOOPS_WIDTH, "whoops_width", GRAIN_WHOOPS_HEIGHT, "whoops_height", NULL, __("Image size:", "grain"), __("Pixels", "grain"), __("The actual size of the replacement image.", "grain"));
 					?>					
 				</fieldset>
@@ -82,7 +82,7 @@
 					<legend><?php _e("Mosaic settings", "grain"); ?></legend>
 					<?php					
 					grain_admin_checkbox(GRAIN_MOSAIC_DISPLAY_YEARS, "show_mosaic_years", NULL, __("Show Years:", "grain"), __("Group thumbnails by years in the mosaic page", "grain"), NULL);
-					grain_admin_shortline(GRAIN_MOSAIC_COUNT, "mosaic_count", NULL, __("Photos per page:", "grain"), $no_HTML, __("This value sets how many photos will be displayed at most on a mosaic page.", "grain"));
+					grain_admin_shortline(GRAIN_MOSAIC_COUNT, "mosaic_count", NULL, __("Photos per page:", "grain"), $no_HTML, __("This value sets how many photos will be displayed at most on a mosaic page.", "grain").__("If you set a negative value or zero, no limitation will be applied.", "grain"));
 					?>	
 				</fieldset>
 						

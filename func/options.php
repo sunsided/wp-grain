@@ -118,10 +118,11 @@
 			
 			// get option and value
 			$option = $this->option_defs[$keyName];			
+			$existed = @array_key_exists($option["FIELD"], $this->options);
 			$value = @$this->options[$option["FIELD"]];
 			
 			// apply default, if necessary
-			if(empty($value)) {
+			if(!$existed) {
 				$value = $option["DEFAULT"];
 			}
 			

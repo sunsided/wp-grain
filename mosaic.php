@@ -30,8 +30,9 @@
 
 		<?php
 
-			$offset = (grain_mocaic_current_page()-1) * $mosaic_count_per_page;
-			$posts = get_posts('numberposts='.$mosaic_count_per_page.'&offset='.$offset);
+			$isLimited = ($mosaic_count_per_page > 0);
+			$offset = $isLimited ? ((grain_mocaic_current_page()-1) * $mosaic_count_per_page) : (grain_mocaic_current_page()-1);
+			$posts = $isLimited ? get_posts('numberposts='.$mosaic_count_per_page.'&offset='.$offset) : get_posts('&offset='.$offset);
 			$previousYear = '0000';
 			$years_enabled = $GrainOpt->is(GRAIN_MOSAIC_DISPLAY_YEARS);
 			foreach($posts as $post): 
