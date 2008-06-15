@@ -16,6 +16,8 @@
 		@require_once(TEMPLATEPATH."/func/moonsugar.php");
 		define('GRAIN_THEME_VERSION', GRAIN_THEME_VERSION_BASE." ".GRAIN_THEME_VERSION_EXTENDED);
 		if(!defined("GRAIN_THEME_VERSION_DEVBUILD")) define('GRAIN_THEME_VERSION_DEVBUILD', true);
+		// Set header
+		if( !headers_sent() ) header("X-Grain-Devbuild: ".GRAIN_THEME_VERSION."/R".GRAIN_THEME_VERSION_REVISION);
 	}
 	else {
 		define('GRAIN_THEME_VERSION', GRAIN_THEME_VERSION_BASE);
