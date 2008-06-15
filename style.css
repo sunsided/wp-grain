@@ -1082,6 +1082,8 @@ span.syndication-comment-info span.syndication-comment-type {
 #info-frame {
 	padding: 0 20px;
 	margin-top: 20px;
+	z-index: 20;
+	position: relative;
 	}
 	
 #comment-page h2.summary,
@@ -1678,28 +1680,53 @@ span.menu-delimiter {
 }
 
 #linkmap {
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
-	/*overflow: hidden;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	margin: 0;
+	padding: 0;
 }
 
-#area_prev, #area_prev_spacer, #area_next {
-	margin: 0 !important;
+#linkmap a {
+	outline-color: invert;
+	outline-style: none;
+	outline-width: medium;
+}
+
+#area_prev, #area_prev_spacer, #area_next, #area_prev_map {
+	/*margin: 0 !important;
 	padding: 0 !important;
-	border: none !important;
+	border: none !important;*/
+	width: 49%;
+	height: 100%;
 	display: block;
+	/*position: absolute;*/
+	z-index: 10;
 	float: left;
-	position: relative;
-	z-index: 100;
+	color: white;
+	text-decoration: none;
+	background-repeat: no-repeat;
 }
 
 #area_prev, #area_prev_spacer {
-	background: none;
+	float: left;
+	right: 0pt;
+	background-image: url(images/spacer.gif);
+}
+
+#area_prev_map {
+	background-image: url(images/spacer.gif);
+	float: left;
+	right: 0pt;
 }
 
 #area_next {
-	background: none;
+	float: right;
+	left: 0pt;
+	background-image: url(images/spacer.gif);
 }
 
 #area_prev:hover {
