@@ -85,7 +85,7 @@ while ( have_posts()) : the_post();
 			// display EXIF data
 			if ($exif_enabled) 
 			{
-				echo '<div id="exif-frame">'.PHP_EOL;;
+				echo '<div id="exif-frame">'.PHP_EOL;
 				include( TEMPLATEPATH .'/exif-block.php' );
 				echo '</div>'.PHP_EOL;
 			}

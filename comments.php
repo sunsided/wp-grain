@@ -5,25 +5,34 @@
 	File version: $Id$	
 */
 
-
 	// Do not delete these lines
 	
 	if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 		die (__("Please don't call this page directly"));
 
-        if (!empty($post->post_password)) { // if there's a password
-            if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie
-				?>
-				
-				<p class="nocomments"><?php _e("The comments are password protected, too"); ?><p>
-				
-				<?php
-				return;
-            }
-        }
+	if (!empty($post->post_password)) { // if there's a password
+		if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie
+			?>
+			
+			<p class="nocomments"><?php _e("The comments are password protected, too"); ?><p>
+			
+			<?php
+			return;
+		}
+	}
 
-		/* This variable is for alternating comment background */
-		$oddcomment = 'alt';
+	// Get options
+	global $GrainOpt, $userdata, $post;
+	
+	// get the ID
+	if( empty($userdata) ) get_currentuserinfo();
+	$user_ID = $userdata->ID;
+	
+	// get some values
+	$id = $post->ID;
+	
+	/* This variable is for alternating comment background */
+	$oddcomment = 'alt';
 ?>
 
 <!-- You can start editing here. -->
@@ -31,7 +40,7 @@
 <div id="comment-frame">
 
 <a name="comments"></a>
-<?php if(grain_can_inject_moofx_slide()) : ?>
+<?php if($GrainOpt->is(GRAIN_EYECANDY_USE_SLIDE)) : ?>
 <a href="#" id="comments-toggle" name="comments-toggle">
 <?php endif ?>
 
@@ -40,7 +49,7 @@
 		echo $comments_title; 
 	?></h2>
 
-<?php if(grain_can_inject_moofx_slide()) : ?>
+<?php if($GrainOpt->is(GRAIN_EYECANDY_USE_SLIDE)) : ?>
 </a>	
 <?php endif ?>
 	
@@ -61,12 +70,14 @@
 		<?php } 
 		
 		// this line is WordPress' motor, do not delete it.
+		// it takes the latest input from the cookies to prefill the forms with the values
 		$commenter = wp_get_current_commenter();
 		extract($commenter);	
-		
+			
 		// get all commments, approved as well as unapproved
-		$comments = grain_get_comments($id);
-		$post = get_post($id);
+		$comments = grain_get_comments($post->ID);
+		
+		// test for password protection
 		if (!empty($post->post_password) && $_COOKIE['wp-postpass_'. COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie
 			echo(get_the_password_form());
 		} else { ?>
@@ -74,24 +85,30 @@
 		<div id="comment-area">
 			<?php if ($comments) { ?>
 			<ol id="commentlist">
-			<?php foreach ($comments as $comment): 
+			<?php 
+				global $comment;
+				foreach ($comments as $comment): 
 			
 				$is_author_comment = ($comment->user_id == $post->post_author);		
 				$is_syndicated = ($comment->comment_type == 'trackback' || $comment->comment_type == 'pingback');		
-				$has_url = (!empty($comment->comment_author_url) && $comment->comment_author_url != 'http://');
-			
+				$author_url = get_comment_author_url();
+				$has_url = (!empty($author_url) && $author_url != 'http://');
+
+//echo "<pre>";print_r($commenter);echo "</pre>";
+
 				?>
 				<li class="commentbody<?php 
-					if( $is_author_comment ) // if the email addresses match
+					if( $is_author_comment ) // if the comment was written by the author of the comment
 						echo "-author";
-					else if( $is_syndicated ) // if the email addresses match
+					else if( $is_syndicated ) // if the comment came via trackback or pingback
 						echo "-syndication";
-				?>" id="comment-<?php comment_ID() ?>">
+				?>" id="comment-<?php echo $comment->comment_ID; ?>">
 					
 					<div class="comment-boxed">
 					
 					<div class="comment-text">
-						<?php grain_inject_commenteditlink(); ?>
+						<?php grain_inject_commenteditlink($comment); ?>
+						
 					
 						<div class="comment-text-inner" <?php if($GrainOpt->getYesNo(GRAIN_EYECANDY_GRAVATARS_ENABLED)) echo ' style="min-height: '.$GrainOpt->get(GRAIN_EYECANDY_GRAVATAR_SIZE).'px;"'; ?>>				
 						
@@ -101,27 +118,32 @@
 							<span class="syndication-comment-type">
 							<?php 
 							echo ($comment->comment_type == 'trackback' ? __("Trackback", "grain") : __("Pingback", "grain"));
-							?></span></span><?php endif; ?>
-							
-						<?php 
-							$thumTitle = grain_thumbnail_title($comment->comment_author, $has_url ? $comment->comment_author_url : __("no website", "grain") .' '. $comment->comment_ID);						
-							
-							if($GrainOpt->getYesNo(GRAIN_EYECANDY_GRAVATARS_ENABLED) && !$is_syndicated) : 
-								$gravatar_size = $GrainOpt->get(GRAIN_EYECANDY_GRAVATAR_SIZE);
-								$gravatar_uri = grain_get_gravatar_uri($GrainOpt->get(GRAIN_EYECANDY_GRAVATAR_RATING), $gravatar_size, $GrainOpt->get(GRAIN_EYECANDY_GRAVATAR_ALTERNATE));
-								$disableLinkedGravatar = !$GrainOpt->getYesNo(GRAIN_EYECANDY_GRAVATARS_LINKED);
+							?></span></span><?php 
+						endif; 
+						
+						// Generate the Tooltip
+						$thumbURL = $has_url ? $comment->comment_author_url : __("no website", "grain");
+						if( $is_author_comment ) $thumbURL = __("post author", "grain");
+						$thumbTitle = grain_thumbnail_title($comment->comment_author, $thumbURL);
+						
+						// Generate the gravatar
+						if($GrainOpt->getYesNo(GRAIN_EYECANDY_GRAVATARS_ENABLED) && !$is_syndicated) : 
+							$gravatar_size = $GrainOpt->get(GRAIN_EYECANDY_GRAVATAR_SIZE);
+							$gravatar_uri = grain_get_gravatar_uri($GrainOpt->get(GRAIN_EYECANDY_GRAVATAR_RATING), $gravatar_size, $GrainOpt->get(GRAIN_EYECANDY_GRAVATAR_ALTERNATE));
+							$disableLinkedGravatar = !$GrainOpt->getYesNo(GRAIN_EYECANDY_GRAVATARS_LINKED);
 						?>
 						
-						<div class="comment-gravatar" style="width: <?php echo $gravatar_size; ?>px; height: <?php echo $gravatar_size; ?>px;">
-							<?php if($has_url && !$disableLinkedGravatar) {
-								$author_url = '<a href="'.$comment->comment_author_url.'">%CONTENT</a>';							
-								echo '<a href="'.$comment->comment_author_url.'">';
-							} ?>
-							<img class="gravatar" style="border:1px solid white;" src="<?php echo $gravatar_uri; ?>" title="<?php echo (!$disableLinkedGravatar ? $thumTitle : $comment->comment_author); ?>" title="<?php echo $comment->comment_author; ?>" />
-							<?php if($has_url && !$disableLinkedGravatar) echo '</a>'; ?>
-						</div>
+							<div class="comment-gravatar" style="width: <?php echo $gravatar_size; ?>px; height: <?php echo $gravatar_size; ?>px;">
+								<?php if($has_url && !$disableLinkedGravatar) {
+									$author_url = '<a href="'.$comment->comment_author_url.'">%CONTENT</a>';							
+									echo '<a href="'.$comment->comment_author_url.'">';
+								} ?>
+								<img class="gravatar" style="border:1px solid white;" src="<?php echo $gravatar_uri; ?>" title="<?php echo (!$disableLinkedGravatar ? $thumbTitle : $comment->comment_author); ?>" title="<?php echo $comment->comment_author; ?>" />
+								<?php if($has_url && !$disableLinkedGravatar) echo '</a>'; ?>
+							</div>
 						
-						<?php endif; //gravatar
+						<?php 
+						endif; //gravatar
 						 ?>
 							
 						<?php comment_text() ?>			
@@ -138,13 +160,13 @@
 
 						$string = __("%AUTHOR &#8212; %DATE at %TIME", "grain");
 						if($has_url)
-							$string = str_replace('%AUTHOR', '<a title="'.(empty($thumTitle) ? $comment->comment_author : $thumTitle).'" class="comment-author-link" href="'.get_comment_author_url().'">'.get_comment_author().'</a>', $string);
+							$string = str_replace('%AUTHOR', '<span class="author"><a title="'.(empty($thumbTitle) ? $comment->comment_author : $thumbTitle).'" class="comment-author-link" href="'.get_comment_author_url().'">'.get_comment_author().'</a></span>', $string);
 						else
-							$string = str_replace('%AUTHOR', $comment->comment_author, $string);
-						$string = str_replace('%IP', get_comment_author_IP(), $string);
-						$string = str_replace('%DATE', get_comment_date( grain_filter_dt($GrainOpt->get(GRAIN_DFMT_COMMENTS))), $string );
-						$string = str_replace('%TIME', get_comment_date( grain_filter_dt($GrainOpt->get(GRAIN_TFMT_COMMENTS))), $string );
-						$string = str_replace('%TYPE', $comment->comment_type == 'trackback' ? __("Trackback", "grain") : $comment->comment_type == 'pingback' ? __("Pingback", "grain") : __("Comment", "grain"), $string );
+							$string = str_replace('%AUTHOR', '<span class="author">'.$comment->comment_author.'</span>', $string);
+						$string = str_replace('%IP', '<span class="ip">'.get_comment_author_IP().'</span>', $string);
+						$string = str_replace('%DATE', '<span class="date">'.get_comment_date( grain_filter_dt($GrainOpt->get(GRAIN_DFMT_COMMENTS))).'</span>', $string );
+						$string = str_replace('%TIME', '<span class="time">'.get_comment_date( grain_filter_dt($GrainOpt->get(GRAIN_TFMT_COMMENTS))).'</span>', $string );
+						$string = str_replace('%TYPE', '<span class="type">'.($comment->comment_type == 'trackback' ? __("Trackback", "grain") : $comment->comment_type == 'pingback' ? __("Pingback", "grain") : __("Comment", "grain")).'</span>', $string );
 						echo $string;
 
 					?>
@@ -166,16 +188,38 @@
 
 		<form action="<?php echo get_settings('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 
-		<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
+		<input type="hidden" name="comment_post_ID" value="<?php echo $post->ID; ?>" />
 		<input type="hidden" name="redirect_to" value="<?php echo wp_specialchars($_SERVER["REQUEST_URI"]); ?>" />
 
 <?php if ( $user_ID ) : ?>
 
 			<p id="comment-field-loggedin" >
 				<?php _e("Your are logged in as", "grain"); ?> 
-				<a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. 
+				<a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $userdata->display_name; ?></a>. 
 				<a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="<?php _e("logout", "grain"); ?>"><?php _e("Logout &raquo;", "grain"); ?></a>
 			</p>
+
+			<!--
+			<input 
+					type="hidden"
+					name="author"
+					id="author"
+					value="<?php echo $comment_author; ?>"
+					/>
+					
+			<input 
+					type="hiden"
+					name="email"
+					id="email"
+					value="<?php echo $comment_author_email; ?>"
+					/>
+					
+			<input 
+					type="hidden"
+					name="url"
+					id="url"
+					value="<?php echo $comment_author_url; ?>"
+					/>-->
 
 <?php else : ?>		
 		
