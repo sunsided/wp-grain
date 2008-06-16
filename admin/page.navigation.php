@@ -34,6 +34,7 @@
 					<?php
 					grain_admin_infoline(NULL, __("This setting controls what happens when a visitor clicks on the photo.", "grain"));
 					grain_admin_checkbox(GRAIN_NAV_BIDIR_ENABLED, "bidir_nav", NULL, __("Bidirectional Navigation:", "grain"), __("Enable the bidirectional on-image navigation", "grain"), __("If enabled, the photo will contain links to the previous (older) and next (newer) photos. If disabled, only the previous link will be used.", "grain"));
+					grain_admin_checkbox(GRAIN_EYECANDY_IMAGE_TOOLTIPS, "image_tips", NULL, __("Show Tooltips:", "grain"), __("Show a tooltip when hovering the image", "grain"));
 					?>
 				</fieldset>
 				

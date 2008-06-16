@@ -146,6 +146,10 @@
 			// compose tooltips
 			$tooltips = grain_compose_post_tooltips($PostOpt["message_left"], $PostOpt["message_right"], $PostOpt["addon"] );
 			$title_prev = $tooltips["prev"]; $title_next = $tooltips["next"];
+
+			// Show tooltips
+			$tips = $GrainOpt->is(GRAIN_EYECANDY_IMAGE_TOOLTIPS);
+			if( !$tips ) { $title_prev = NULL; $title_next = NULL; }
 						
 			// get links
 			$link_prev = ($previous != null ) ? get_permalink($previous->ID) : '#';
@@ -153,7 +157,7 @@
 
 			// tweak title
 			$title_attr = "";
-			if( $PostOpt["pagePosition"] != GRAIN_SURROUNDED_POST )
+			if( $tips && ($PostOpt["pagePosition"] != GRAIN_SURROUNDED_POST) )
 			{
 				$title_attr = 'title="';
 				$title_attr .= ($PostOpt["pagePosition"] == GRAIN_NEWEST_POST) ? $title_next : $title_prev;
@@ -171,12 +175,11 @@
 				if( !$useReflection ) $string .= '<div class="photo" style="'.$sizeStyle.'">';
 				
 				// add photo
-				//$string .= '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection? '-with-reflection' : '' ).'" style="'.(!$useImageMap?'bottom: '.$height.'px;':'').' '.$sizeStyle.'" src="'. $image_url .'"'.($useImageMap?' usemap="#bloglinks"':'').' />';
 				$string .= '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection? '-with-reflection' : '' ).'" style="'.$sizeStyle.'" src="'. $image_url .'"'.($useImageMap?' usemap="#bloglinks"':'').' />';
 				
 				// add links if the linkmap is not used
 				if( !$useImageMap && ($previous || $next) ) {
-					$string .= '<div id="linkmap">';
+					$string .= '<div id="linkmap" '.$title_attr.'>';
 					if( $previous != null )	$string .= '<a id="area_prev" class="tooltipped bidir" title="'.$title_prev.'" rel="prev" style="width: '.$width2.'px; height: '.$height.'px;" href="'. get_permalink($previous->ID) .'"></a>';
 					if( $next != null ) 	$string .= '<a id="area_next" class="tooltipped bidir" title="'.$title_next.'" rel="next" style="width: '.$width2.'px; height: '.$height.'px;" href="'. get_permalink($next->ID    ) .'"></a>';
 					$string .= '</div>';
