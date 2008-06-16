@@ -17,7 +17,7 @@
 		
 		if($GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX)) 
 		{
-			echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/mootools.v1.11.js"></script>';
+			echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/mootools-1.2-core.js"></script>';
 			if($GrainOpt->getYesNo(GRAIN_EYECANDY_REFLECTION_ENABLED)) 
 			{
 				echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/reflection.js"></script>';
@@ -102,19 +102,18 @@
 		$reflection_size_factor = 0.3;
 		$reflection_opacity = 0.3;
 		
-		$reflection_shift = 0;
-		$top_offset = intval($height*$reflection_size_factor) - $reflection_shift;
-		
 		// fix locale bug (decimal "point" is locale specific)
 		$reflection_size_factor = intval($reflection_size_factor) .'.'. ($reflection_size_factor-intval($reflection_size_factor)) * 1000;
 		$reflection_opacity = intval($reflection_opacity) .'.'. ($reflection_opacity-intval($reflection_opacity)) * 1000;
+		
 		?>
 		
 		<script language="Javascript">
-			Reflection.add('<?php echo $element; ?>', { height: <?php echo $reflection_size_factor; ?>, opacity: <?php echo $reflection_opacity; ?> });
+			$$("img#<?php echo $element; ?>").reflect({ height: <?php echo $reflection_size_factor; ?>, opacity: <?php echo $reflection_opacity; ?> });
 		</script>
 		
 		<?php
+		
 	}
 	
 /* Eye candy: Fading */

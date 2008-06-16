@@ -30,6 +30,7 @@ Change: CSS footer now resizes automatically depending on it's content (no heigh
 Change: Posts without an image are now shown in the archives and the mosaic, but are not linked
 Change: If a photo has no EXIF data, the whole EXIF block will be hidden
 Change: CSS style for the exif table hides overflow; Information larger than the width of the frame itself will be cut
+Change: Now using mootools 1.2 and reflection.js for mootools 1.4
 Fix: Rounded borders had different colors in Internet Explorer 6 and 7 (this is not totally fixed yet, but it definitely looks better)
 Fix: "%" in copyrights is now correctly rendered as the current year. This was due to bug preventing that an options default value got filtered.
 Fix: Navigation bar was shown even if there were no post at all

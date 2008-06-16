@@ -1,83 +1,14 @@
 /*
-	reflection.js for mootools v1.2
-	by Christophe Beyls (http://www.digitalia.be) - MIT-style license
+	reflection.js for mootools v1.4
+	(c) 2006-2008 Christophe Beyls <http://www.digitalia.be>
+	MIT-style license.
 */
+Element.implement({reflect:function(B){var A=this;if(A.get("tag")!="img"){return }B=$extend({height:0.33,opacity:0.5},B);function C(){A.unreflect();var G,E=Math.floor(A.height*B.height),H,D,F;if(Browser.Engine.trident){G=new Element("img",{src:A.src,styles:{width:A.width,height:A.height,marginBottom:-A.height+E,filter:"flipv progid:DXImageTransform.Microsoft.Alpha(opacity="+(B.opacity*100)+", style=1, finishOpacity=0, startx=0, starty=0, finishx=0, finishy="+(B.height*100)+")"}})}else{G=new Element("canvas");if(!G.getContext){return }}G.setStyles({display:"block",border:0});H=new Element(($(A.parentNode).get("tag")=="a")?"span":"div").injectAfter(A).adopt(A,G);H.className=A.className;A.store("reflected",H.style.cssText=A.style.cssText);H.setStyles({width:A.width,height:A.height+E,overflow:"hidden"});A.style.cssText="display: block; border: 0px";A.className="";if(!Browser.Engine.trident){D=G.setProperties({width:A.width,height:E}).getContext("2d");D.save();D.translate(0,A.height-1);D.scale(1,-1);D.drawImage(A,0,0,A.width,A.height);D.restore();D.globalCompositeOperation="destination-out";F=D.createLinearGradient(0,0,0,E);F.addColorStop(0,"rgba(255, 255, 255, "+(1-B.opacity)+")");F.addColorStop(1,"rgba(255, 255, 255, 1.0)");D.fillStyle=F;D.rect(0,0,A.width,E);D.fill()}}if(A.complete){A.unreflect();C()}else{A.onload=C}return A},unreflect:function(){var B=this,A=this.retrieve("reflected"),C;B.onload=$empty;if(A!==null){C=B.parentNode;B.className=C.className;B.style.cssText=A;B.store("reflected",null);C.parentNode.replaceChild(B,C)}return B}});
 
+// AUTOLOAD CODE BLOCK (MAY BE CHANGED OR REMOVED)
 var Reflection = {
-
-	add: function(img, options){
-		img = $(img);
-		if (img.getTag() != 'img') return;
-		options = {arguments: [img, options]};
-		if (window.ie) options.delay = 50;
-		img.preload = new Image();
-		img.preload.onload = Reflection.reflect.create(options);
-		img.preload.src = img.src;
-	},
-
-	remove: function(img){
-		img = $(img);
-		if (img.preload) img.preload.onload = null;
-		if ((img.getTag() == 'img') && (img.className == 'reflected')){
-			img.className = img.parentNode.className;
-			img.style.cssText = img.backupStyle;
-			img.parentNode.replaceWith(img);
-		}
-	},
-
-	reflect: function(img, options){
-		options = $extend({
-			height: 0.33,
-			opacity: 0.5
-		}, options || {});
-
-		Reflection.remove(img);
-		var canvas, canvasHeight = Math.floor(img.height*options.height);
-
-		if (window.ie){
-			canvas = new Element('img', {'src': img.src, 'styles': {
-				'width': img.width,
-				'marginBottom': -img.height+canvasHeight,
-				'filter': 'flipv progid:DXImageTransform.Microsoft.Alpha(opacity='+(options.opacity*100)+', style=1, finishOpacity=0, startx=0, starty=0, finishx=0, finishy='+(options.height*100)+')'
-			}});
-		} else {
-			canvas = new Element('canvas', {'styles': {'width': img.width, 'height': canvasHeight}});
-			if (!canvas.getContext) return;
-		}
-
-		var div = new Element('div').injectAfter(img).adopt(img, canvas);
-		div.className = img.className;
-		div.style.cssText = img.backupStyle = img.style.cssText;
-		div.removeClass('reflect').setStyles({'width': img.width, 'height': canvasHeight+img.height});
-		img.style.cssText = 'vertical-align: bottom';
-		img.className = 'reflected';
-		if (window.ie) return;
-
-		var context = canvas.setProperties({'width': img.width, 'height': canvasHeight}).getContext('2d');
-		context.save();
-		context.translate(0, img.height-1);
-		context.scale(1, -1);
-		context.drawImage(img, 0, 0, img.width, img.height);
-		context.restore();
-		context.globalCompositeOperation = 'destination-out';
-		var gradient = context.createLinearGradient(0, 0, 0, canvasHeight);
-		gradient.addColorStop(0, 'rgba(255, 255, 255, '+(1-options.opacity)+')');
-		gradient.addColorStop(1, 'rgba(255, 255, 255, 1.0)');
-		context.fillStyle = gradient;
-		context.rect(0, 0, img.width, canvasHeight);
-		context.fill();
-	},
-
-	addFromClass: function(){
-		$each(document.getElementsByTagName('img'), function(img){
-			if ($(img).hasClass('reflect')) Reflection.add(img);
-		});
+	scanPage: function() {
+		$$("img").filter(function(img) { return img.hasClass("reflect"); }).reflect({/* Put custom options here */});
 	}
 };
-
-Element.extend({
-	addReflection: function(options) { Reflection.add(this, options); return this; },
-	removeReflection: function(options) { Reflection.remove(this, options); return this; }
-});
-
-Window.addEvent("domready", Reflection.addFromClass);
+window.addEvent("domready", Reflection.scanPage);
