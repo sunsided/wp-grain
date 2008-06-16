@@ -75,7 +75,14 @@
 					grain_admin_sizeboxes(GRAIN_WHOOPS_WIDTH, "whoops_width", GRAIN_WHOOPS_HEIGHT, "whoops_height", NULL, __("Image size:", "grain"), __("Pixels", "grain"), __("The actual size of the replacement image.", "grain"));
 					?>					
 				</fieldset>
-						
+			
+				<fieldset>
+					<legend><?php _e("Info display: EXIF data", "grain"); ?></legend>
+					<?php
+					grain_admin_checkbox(GRAIN_FANCY_EXIFFILTER, "fancy_exiffilter", NULL, __("EXIF filtering:", "grain"), __("Enable quick EXIF filtering.", "grain"), __("If this option is enabled, Grain will filter some of the EXIF fields that it gets from YAPB: Some fields will be removed even if they are enabled in the YAPB options, some fields will be displayed differently. It is recommended to disable this option only if you take another (own) approach to EXIF filtering.", "grain"));
+					grain_admin_checkbox(GRAIN_EXIF_RENDER_INLINE, "exif_inline", NULL, __("Display as inline:", "grain"), __("Display EXIF data \"inline\".", "grain"), __("If you disable this option, Grain will render any EXIF data in a table.", "grain"));
+					?>
+				</fieldset>			
 			
 				<h2><?php _e("Mosaic Settings", "grain"); ?></h2>
 				<fieldset>

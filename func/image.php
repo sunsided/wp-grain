@@ -132,4 +132,68 @@
 		return yapb_get_exif();
 	}
 
+	// Add hooks
+	add_filter(GRAIN_EXIF_KEY, "grain_fancy_exif_filter_key");	
+	if($GrainOpt->is(GRAIN_FANCY_EXIFFILTER)) add_filter(GRAIN_EXIF_VALUE, "grain_fancy_exif_filter");
+	
+	$__grain_exif_key = null;
+	
+	function grain_fancy_exif_filter_key($key) {
+		global $__grain_exif_key;
+		$__grain_exif_key = strtolower($key);
+		// Translate EXIF keys
+		$exifTranslationFunc = "__";
+		return $exifTranslationFunc($key, "grain");
+	}
+	
+	function grain_fancy_exif_filter($value) {
+		global $__grain_exif_key, $GrainOpt;
+		if(!$GrainOpt->is(GRAIN_FANCY_EXIFFILTER)) return $value;
+		
+		// hide non-ASCII fields
+		switch($__grain_exif_key) {
+			case "cfapattern":
+			case "scenetype":
+			case "sourcetype":
+			case "filename": return NULL;
+		}
+		// convert some values fields
+		switch($__grain_exif_key) {
+			case "xresolution":
+			case "yresolution":
+			case "exposurebias":
+			case "focallength":
+			case "aperture":
+			case "zoomratio": return round(floatval($value), 4);
+		}
+		// convert some values fields
+		switch($__grain_exif_key) {
+			case "exposuretime": {
+				$index = strpos($value, '(');
+				$index2 = strpos($value, ')');
+				if( $index !== FALSE && $index2 !== FALSE) {
+					return substr($value, $index+1, $index2-$index-1) ." s";
+				}
+				break;
+			}
+		}
+		// convert some dates
+		switch($__grain_exif_key) {
+			case "filemodifieddate":
+			case "datetime":
+			case "datetimedigitized": {
+				// Array ( [0] => 2008 [1] => 04 [2] => 30 [3] => 12 [4] => 03 [5] => 22 )
+				$values = preg_split("/[:\s]/", $value);
+				if( count($values) == 6 ) {
+					$time = mktime($values[3], $values[4], $values[5], $values[1], $values[2], $values[0]);
+					$formatted = date($GrainOpt->get(GRAIN_DTFMT_EXIF), $time);
+					return $formatted;
+				}
+			}
+		}
+		
+		// GRAIN_DTFMT_EXIF
+		return $value;
+	}
+
 ?>

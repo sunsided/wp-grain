@@ -14,22 +14,59 @@
 	
 	if ( null != ($exif = grain_get_exif()) ): 
 			
+		do_action(GRAIN_BEFORE_EXIFBLOCK);
+		
+		if(!$GrainOpt->is(GRAIN_EXIF_RENDER_INLINE)):
 		?>
 			<table id="exif">
-			<caption><?php _e("EXIF information", "grain"); ?></caption>
+			<caption><span><?php _e("EXIF information", "grain"); ?></span></caption>
 			<tbody>
 			<?php 
-			apply_filters('grain_exif', $exif);
-			foreach ($exif as $key => $value): ?>
-			<tr>
-				<td class="exif-key"><?php echo $key ?></td>
-				<td class="exif-value"><?php echo $value ?></td>
+			$exif = apply_filters(GRAIN_EXIF, $exif);
+			foreach ($exif as $key => $value): 
+				// filter values
+				$key = apply_filters(GRAIN_EXIF_KEY, $key);	
+				$value = apply_filters(GRAIN_EXIF_VALUE, $value, $key);
+				// skip empty values
+				if( empty($key) || empty($value) ) continue;
+			?>
+			<tr id="exif-<?php echo $key; ?>">
+				<td class="exif-key"><span><?php echo $key ?></span></td>
+				<td class="exif-value"><span><?php echo $value ?></span></td>
 			</tr>
 			<?php endforeach ?>
 		
 			</tbody>
 			</table>
 		<?php
+		else: // GRAIN_EXIF_RENDER_INLINE
+		?>
+			<div id="exif">
+			<div id="exif-caption"><span><?php _e("EXIF information", "grain"); ?></span></div>
+			<div id="exif-body">
+			<?php 
+			$exif = apply_filters(GRAIN_EXIF, $exif);
+			foreach ($exif as $key => $value): 
+				// filter values
+				$key = apply_filters(GRAIN_EXIF_KEY, $key);	
+				$value = apply_filters(GRAIN_EXIF_VALUE, $value, $key);
+				// skip empty values
+				if( empty($key) || empty($value) ) continue;
+			?>
+			<div id="exif-<?php echo $key; ?>">
+				<span class="exif-key"><span><?php echo $key ?></span></span>
+				<span class="exif-value"><span><?php echo $value ?></span></span>
+			</div>
+			<?php endforeach ?>
+		
+			</div>
+			</div>
+		<?php
+		endif; // !GRAIN_EXIF_RENDER_INLINE
+		
+		
+		do_action(GRAIN_AFTER_EXIFBLOCK);
+		
 	endif;
 
 ?>

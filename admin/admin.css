@@ -170,3 +170,12 @@ fieldset legend {
 input.pixelbox {
 	width: 50px;
 }
+
+div.spacer {
+	padding-top: 10px;
+	margin-top: 10px;
+	border-top: 1px dashed #F0F0F0;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}

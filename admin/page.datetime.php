@@ -101,6 +101,14 @@
 						$message = str_replace('%FORMAT', $GrainOpt->get(GRAIN_DTFMT_PUBLISHED), $message); 
 						$message = str_replace('%RESULT', date(grain_filter_dt($GrainOpt->get(GRAIN_DTFMT_PUBLISHED))), $message); 
 						grain_admin_shortline(GRAIN_DTFMT_PUBLISHED, "post_publish_dt", NULL, __("Publication date:", "grain"), $no_HTML, __("The date and time format for the photo's 'published' date.", "grain").'<br />'.$message);
+						
+						$message = __("The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time.", "grain");
+						$message = str_replace('%FORMAT', $GrainOpt->get(GRAIN_DTFMT_EXIF), $message); 
+						$message = str_replace('%RESULT', date(grain_filter_dt($GrainOpt->get(GRAIN_DTFMT_EXIF))), $message); 
+						$enabled_msg = __("(EXIF filtering is currently enabled.)", "grain");
+						$disabled_msg = __("(EXIF filtering is currently disabled.)", "grain");
+						$quickfilter_msg = $GrainOpt->is(GRAIN_FANCY_EXIFFILTER)?$enabled_msg:$disabled_msg;
+						grain_admin_shortline(GRAIN_DTFMT_EXIF, "post_exif_dt", NULL, __("EXIF dates:", "grain"), $no_HTML, __("The timestamp format used for some EXIF fields if EXIF quickfiltering is enabled.", "grain").'<br />'.$quickfilter_msg.'<br />'.$message);
 						?>					
 					</fieldset>
 					

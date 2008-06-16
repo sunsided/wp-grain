@@ -380,6 +380,7 @@
 		if( $contentless ) $classes[] = "contentless";
 		if( $exif_enabled ) $classes[] = "has-exif"; else $classes[] = "no-exif";
 		if( $has_content ) $classes[] = "has-content"; else $classes[] = "no-content";
+		if( $GrainOpt->is(GRAIN_EXIF_RENDER_INLINE) ) $classes[] = "exif-inline"; else $classes[] = "exif-table";
 		$class = implode(" ", $classes);
 		
 		?>
@@ -390,19 +391,6 @@
 			<?php if($addon) echo '<h3 id="subtitle">'.$en_title.'</h3>'; ?>
 					 
 			<div id="content">
-					 
-			<?php
-				// display EXIF data
-				if ($exif_enabled): 
-			?>
-				
-				<div id="exif-frame">
-				<?php include( TEMPLATEPATH .'/exif-block.php' ); ?>
-				</div>
-				
-			<?php 	
-				endif 
-			?>
 					
 				<div id="infotext-frame" class="<?php echo $exif_class; ?>">
 				<?php 
@@ -426,6 +414,18 @@
 					}
 				?>
 				</div>
+
+			<?php
+				// display EXIF data
+				if ($exif_enabled): 
+				$class = $GrainOpt->is(GRAIN_EXIF_RENDER_INLINE) ? "inline" : "table";
+			?>
+				<div id="exif-frame" class="<?php echo $class ; ?>">
+				<?php include( TEMPLATEPATH .'/exif-block.php' ); ?>
+				</div>
+			<?php 	
+				endif 
+			?>
 
 				<div id="meta" class="<?php echo grain_is_enforced_extendedmode() ? 'enforced' : 'regular'; ?>">
 

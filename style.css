@@ -1785,3 +1785,80 @@ div.grain-sidebar #yapb-widget img {
 	/*color: gray;*/
 	font-size: x-small;
 }
+
+#info-frame.no-content h2.no-subtitle {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+#info-frame.no-content #infotext-frame {
+	display: none;
+	visibility: hidden;
+	height: 0px;
+}
+
+#info-frame.exif-inline #infotext-frame {
+	width: 100%;
+}
+
+#info-frame.exif-table #infotext-frame {
+	float: left;
+}
+
+#info-frame.no-content #content {
+	margin-top: 0;
+	padding-top: 5px;
+}
+
+#info-frame #exif-frame.inline {
+	/*display: inline !important;*/
+	width: 100%;
+	/*float: none !important;*/
+	padding: 0;
+	margin: 0;
+}
+
+#exif-frame.inline div#exif {
+	display: block;
+	text-align: left;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+#exif-frame.inline div#exif #exif-caption {
+	color: gray;
+	display: block;
+	float: left;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid gray;
+}
+
+#exif-frame.inline div#exif #exif-body,
+#exif-frame.inline div#exif #exif-body div,
+#exif-frame.inline div#exif #exif-body div span {
+	color: #B0B0B0;
+	display: inline;
+	border: none;
+}
+
+#exif-frame.inline div#exif span.exif-value {
+	color: #C0C0C0;
+}
+
+#exif-frame.inline div#exif span.exif-key {
+	color: #C0C0C0;
+	margin-right: 2px;
+	font-weight: bold;
+}
+
+#exif-frame.inline div#exif span.exif-key:after {
+	content: "\00BB \0020";
+}
+
+#exif-frame.inline div#exif span {
+	padding: 0;
+	margin: 0;
+}

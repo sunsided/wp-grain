@@ -95,6 +95,8 @@ This content is licensed under a <a rel="license" href="http://creativecommons.o
 	
 	// content switches
 	$GrainOpt->defineFlagOpt( 'GRAIN_EXIF_VISIBLE', 'exif_visible', TRUE );
+	$GrainOpt->defineFlagOpt( 'GRAIN_FANCY_EXIFFILTER', 'exif_fancy', TRUE );
+	$GrainOpt->defineFlagOpt( 'GRAIN_EXIF_RENDER_INLINE', 'exif_render_inline', TRUE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_HIDE_EXIF_IF_NO_CONTENT', 'hide_exif_inc', TRUE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_CONTENT_PERMALINK_VISIBLE', 'content_permalink_visible', TRUE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_CONTENT_ENFORCE_INFO', 'content_enforce_info', TRUE );
@@ -130,6 +132,7 @@ This content is licensed under a <a rel="license" href="http://creativecommons.o
 	$GrainOpt->defineStringOpt( 'GRAIN_DTFMT_PUBLISHED', 'dtfmt_published', __("j. F Y, H:i", "grain"), FALSE );
 	$GrainOpt->defineStringOpt( 'GRAIN_DFMT_COMMENTS', 'dtfmt_comment_date', __("F jS, Y", "grain"), FALSE );
 	$GrainOpt->defineStringOpt( 'GRAIN_TFMT_COMMENTS', 'dtfmt_comment_time', __("H:i", "grain"), FALSE );
+	$GrainOpt->defineStringOpt( 'GRAIN_DTFMT_EXIF', 'dtfmt_exif', __("j. F Y, H:i", "grain"), FALSE );
 	
 	$GrainOpt->defineStringOpt( 'GRAIN_OPENTAGS_CATLIST', 'tags_open_catlist', __("Posted in: ", "grain"), TRUE);
 	$GrainOpt->defineStringOpt( 'GRAIN_CLOSETAGS_CATLIST', 'tags_close_catlist', "", TRUE);

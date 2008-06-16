@@ -256,6 +256,11 @@
 		echo '</div>';
 	}
 
+	function grain_admin_spacer() 
+	{
+		echo '<div class="spacer"></div>';
+	}
+
 /* known menus */
 
 	$knownPagesList = array( "copyright", "general", "styling", "datetime", "navigation" );

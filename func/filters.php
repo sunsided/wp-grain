@@ -15,4 +15,8 @@
 	define('GRAIN_SEARCHFORM_ERROR_MESSAGE', 'grain_searchform_error_message');
 	define('GRAIN_GET_THE_CONTENT', 'grain_get_the_special_content');
 	define('GRAIN_GET_THE_SPECIAL_CONTENT', 'grain_get_the_special_content');
+	
+	define('GRAIN_EXIF', 'GRAIN_EXIF');
+	define('GRAIN_EXIF_KEY', 'GRAIN_EXIF_KEY');
+	define('GRAIN_EXIF_VALUE', 'GRAIN_EXIF_VALUE');
 ?>

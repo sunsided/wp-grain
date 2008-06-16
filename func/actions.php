@@ -7,7 +7,7 @@
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 
-/* define filters */
+/* define actions */
 	
 	define('GRAIN_BEFORE_IMAGE', 'grain_before_image');
 	define('GRAIN_AFTER_IMAGE', 'grain_after_image');
@@ -20,5 +20,8 @@
 	
 	define('GRAIN_ARCHIVE_BEFORE_THUMB', 'grain_archive_before_thumb');
 	define('GRAIN_ARCHIVE_AFTER_THUMB', 'grain_archive_after_thumb');
+	
+	define('GRAIN_BEFORE_EXIFBLOCK', 'GRAIN_BEFORE_EXIFBLOCK');
+	define('GRAIN_AFTER_EXIFBLOCK', 'GRAIN_AFTER_EXIFBLOCK');
 	
 ?>
