@@ -1758,3 +1758,25 @@ span.menu-delimiter {
 	background-repeat: no-repeat;
 	background-position: right center;
 }
+
+div.grain-sidebar ul {
+	list-style-type: none;
+	list-style-position: inside;
+}
+
+div.grain-sidebar ul li li {
+	display: inline;
+}
+
+div.grain-sidebar ul li h2 {
+	display: none;
+}
+
+div.grain-sidebar ul li li:before {
+	content: "\00BB \0020";
+}
+
+div.grain-sidebar #yapb-widget img {
+	width: 50px;
+	height: 50px;
+}

@@ -190,7 +190,7 @@
 		// Widgetized sidebar, if you have the plugin installed.
 		if ( function_exists('dynamic_sidebar')) {
 		?>
-			<div id="content-sidebar-above" class="">
+			<div id="content-sidebar-above" class="grain-sidebar">
 				<ul>
 		<?php
 			dynamic_sidebar('Above Image');
@@ -205,7 +205,7 @@
 		// Widgetized sidebar, if you have the plugin installed.
 		if ( function_exists('dynamic_sidebar')) {
 		?>
-			<div id="content-sidebar-below" class="">
+			<div id="content-sidebar-below" class="grain-sidebar">
 				<ul>
 		<?php
 			dynamic_sidebar('Below Image');
@@ -220,7 +220,7 @@
 		// Widgetized sidebar, if you have the plugin installed.
 		if ( function_exists('dynamic_sidebar')) {
 		?>
-			<div id="content-sidebar-footer" class="">
+			<div id="content-sidebar-footer" class="grain-sidebar">
 				<ul>
 		<?php
 			dynamic_sidebar('Footer');
