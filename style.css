@@ -1222,10 +1222,26 @@ h2#comments-headline {
 	margin: 10px 0px;
 }
 
-#info-frame #content.exif {
+#info-frame.contentless h2 {
+	margin-bottom: 0;
 }
 
-#info-frame #content.no-exif {
+#info-frame.contentless #exif-frame,
+#info-frame.contentless #infotext-frame {
+	display: none;
+	visibility: hidden;
+}
+
+#info-frame.contentless #meta {
+	border-top: none;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+#info-frame.exif {
+}
+
+#info-frame.no-exif {
 }
 
 #info-frame #comment-area {

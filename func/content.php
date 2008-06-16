@@ -21,6 +21,11 @@
 		//return 'split-post';
 		
 	}
+
+	function grain_has_content() {
+		global $post;
+		return strlen($post->post_content) != 0;
+	}
 	
 	function grain_get_the_content() {
 		global $post;
@@ -362,17 +367,27 @@
 			if( $en_title != null && $en_title != $post->post_title ) $addon = TRUE;
 		}
 
-		$exif_enabled = $post->image && $GrainOpt->getYesNo(GRAIN_EXIF_VISIBLE);
+		//$exif_enabled = $post->image && $GrainOpt->getYesNo(GRAIN_EXIF_VISIBLE);
+		$exif_enabled = grain_has_exif();
 		$exif_class = $exif_enabled ? 'exif' : 'no-exif';
 		$subtitle_class = $addon ? 'has-subtitle' : 'no-subtitle';
-					
+
+		$has_content = grain_has_content();
+		$contentless = !$has_content && !$exif_enabled;
+		
+		// define CSS classes
+		$classes = array();
+		if( $contentless ) $classes[] = "contentless";
+		if( $exif_enabled ) $classes[] = "has-exif"; else $classes[] = "no-exif";
+		if( $has_content ) $classes[] = "has-content"; else $classes[] = "no-content";
+		$class = implode(" ", $classes);
+		
 		?>
 
-		<div id="info-frame"><a name="info"></a>
+		<div id="info-frame" class="<?php echo $class; ?>"><a name="info"></a>
 	
 			<h2 id="title" class="<?php echo $subtitle_class; ?>"><?php the_title(); ?></h2>
 			<?php if($addon) echo '<h3 id="subtitle">'.$en_title.'</h3>'; ?>
-					 
 					 
 			<div id="content">
 					 

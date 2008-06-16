@@ -119,10 +119,16 @@
 		return !empty($post->image) && $GrainOpt->is(GRAIN_EXIF_VISIBLE);
 	}
 	
-	function grain_get_exif() {
+	function grain_has_exif() {
 		global $GrainOpt;
-		if( !$GrainOpt->is(GRAIN_EXIF_VISIBLE) ) return null;
-		if( !function_exists('yapb_get_exif') || !function_exists('yapb_has_exif') ) return null;
+		if( !grain_has_content() && $GrainOpt->is(GRAIN_HIDE_EXIF_IF_NO_CONTENT) ) return FALSE;
+		if( !$GrainOpt->is(GRAIN_EXIF_VISIBLE) ) return FALSE;
+		if( !function_exists('yapb_get_exif') || !function_exists('yapb_has_exif') ) return FALSE;
+		return yapb_has_exif();
+	}
+	
+	function grain_get_exif() {
+		if( !grain_has_exif() ) return NULL;
 		return yapb_get_exif();
 	}
 

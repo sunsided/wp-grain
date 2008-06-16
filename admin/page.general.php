@@ -59,6 +59,7 @@
 					$message = __("If you understand PHP, you can affect how the EXIF information is displayed by editing the %FILE file.<br /><strong>Hint:</strong> Enable YAPBs EXIF filtering to keep things clean.", "grain"); 
 					$message = str_replace('%FILE', $link, $message);
 					grain_admin_checkbox(GRAIN_EXIF_VISIBLE, "display_exif", NULL, __("Display EXIF info:", "grain"), __("Show a photo's EXIF information next to the description", "grain"), $message);
+					grain_admin_checkbox(GRAIN_HIDE_EXIF_IF_NO_CONTENT, "hide_exif", NULL, __("Hide EXIF if no content:", "grain"), __("Don't show a photo's EXIF information if no content text was given.", "grain"));
 					
 					grain_admin_checkbox(GRAIN_CONTENT_PERMALINK_VISIBLE, "show_permalink", NULL, __("Enable permalink:", "grain"), __("Show the permanlink in the image info", "grain"), __("The permalink is an address that won't change. This way a visitor can securely link one of your photo pages. Permalinks are managed by WordPress.", "grain"));
 					grain_admin_checkbox(GRAIN_CONTENT_COMMENTS_HINT, "show_comments_hint", NULL, __("Enable comment hint:", "grain"), __("Show the permanlink in the image info", "grain"), __("If enabled, Grain shows a link to the comments in the short info display below the image.", "grain"));				
