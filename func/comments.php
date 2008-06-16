@@ -52,7 +52,7 @@
 		// check user privileges
 		$user_can_moderate = current_user_can('moderate_comments');
 		if( $user_can_moderate ) {
-			$comment_count = $approved_count.'<span class="unapproved_count">/'.$unapproved_count.'</span>';
+			if($unapproved_count > 0) $comment_count = $approved_count.'<span class="unapproved_count">/'.$unapproved_count.'</span>';
 		}
 		
 		return $comment_count;
