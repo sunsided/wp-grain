@@ -15,6 +15,7 @@ Add: Autolocale option to load a translation based on a request's HTTP_ACCEPT_LA
 Add: Grain options link in the "settings" section of the WP administration
 Add: The tooltips on the image can now be disabled
 Add: CSS: The #info-frame now gets a class "contentless" if neither text nor exif data is available. Additionally the CSS classes has-exif/no-exif and has-content/no-content are set.
+Add: The number of comments awaiting moderation on the current post is now shown to moderators
 Add/Change: Several new localization strings; Old strings have changed. (added i.e. date/time formats, so that their defaults can be localized too)
 Add/Change: The number of photos displayed on the mosaic page can now be unlimited by setting a negative value or zero as the number of items to display
 Add/Change: Localization files are now searched in the ./lang subdirectory
