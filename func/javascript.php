@@ -17,7 +17,7 @@
 		
 		if($GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX)) 
 		{
-			echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/mootools-1.2-core.js"></script>';
+			echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/mootools.js"></script>';
 			if($GrainOpt->getYesNo(GRAIN_EYECANDY_REFLECTION_ENABLED)) 
 			{
 				echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/reflection.js"></script>';
@@ -117,7 +117,7 @@
 	}
 	
 /* Eye candy: Fading */
-
+	/*
 	function grain_inject_simplefader($element_id='photo') {
 		if(!grain_eyecandy_use_fader()) return;
 	?>
@@ -159,7 +159,7 @@
 	</script>
 	<?php
 	}
-	
+	*/
 /* Eye candy: Fading 2 */
 
 	function grain_fx_can_fade() {
@@ -175,40 +175,40 @@
 	?>
 	<script type="text/javascript" language="JavaScript">
 
-		Element.extend({
+		Element.implement({
 			fadeIn:function(delay) {
-				// Will fade in after delay - is chainable, ie:
-				// $('element').fadeIn(500).fadeOut(1000);
-				f = new Fx.Style(this, 'opacity', {duration:750, fps:50});
-				f.start.pass([0,1], f).delay(delay);
-				return this;
+			this.setStyle('display','');  
+				this.fade('in');
 			},
+			
 			hide:function() {
 				this.setStyle('opacity', '0');
+				this.setStyle('display','none');  
 				return this;
 			},
+			
 			fadeOut:function(delay) {
-				// Will fade out after delay - is chainable, ie:
-				// $('element').fadeOut(500).fadeIn(1000);
-				f = new Fx.Style(this, 'opacity', {duration:500, fps:50});
-				f.start.pass([1,0], f).delay(delay);
-				return this;
+				this.fade("out");
 			}
 		});
 
 		window.addEvent('domready', function() {
 		
-			photo = $('photo-fade');
-			//photo = $('photo');
+			photo = $$('div#photo-fade');		
 			photo.hide();
 		
 		});	
 		
 		window.addEvent('load', function() {
 		
-			photo = $('photo-fade');
-			//photo = $('photo');
+			photo = $$('div#photo-fade');
 			photo.fadeIn(100);
+		});	
+		
+		window.addEvent('unload', function() {
+		
+			photo = $$('div#photo-fade');
+			photo.fadeOut(100);
 		});	
 		
 	</script>
