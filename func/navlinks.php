@@ -76,11 +76,14 @@
 		$comments_open = $post->comment_status == "open";
 		$link = '';
 
+		// get the comment count
+		$comment_count = grain_commentcount_string();
+
 	    // display the comment popup link
 		if( !$grain_extended_comments && !GRAIN_REQUESTED_OTEXINFO )
 		{
 			// get string
-			$_hmn_comments_more = str_replace( "%", $post->comment_count, __("comments (%)", "grain") );
+			$_hmn_comments_more = str_replace( "%", $comment_count, __("comments (%)", "grain") );
 			
 			// inf info enforcement is on, we skip directly to the comments on the popup
 			$internal = ($GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO) && $GrainOpt->getYesNo(GRAIN_POPUP_JTC) ? '#comments' : '');
@@ -93,8 +96,8 @@
 		else
 		{
 			// get strings
-			$_hmn_comments_more = str_replace( "%", $post->comment_count, __("details &amp; comments (%)", "grain") );
-			$_hmn_comments_less = str_replace( "%", $post->comment_count, __("hide details", "grain") );
+			$_hmn_comments_more = str_replace( "%", $comment_count, __("details &amp; comments (%)", "grain") );
+			$_hmn_comments_less = str_replace( "%", $comment_count, __("hide details", "grain") );
 			
 			// set text
 			//$text = (isset($_SESSION['grain:info']) && $_SESSION['grain:info'] == 'on') ? $_hmn_comments_less : $_hmn_comments_more;

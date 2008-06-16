@@ -39,5 +39,23 @@
 			<?php 
 		endif; // moderation test	
 	}
+	
+	function grain_commentcount_string() {
+		global $post;
+		
+		// get counts
+		$comment_count = get_comment_count($post->ID);
+		$unapproved_count = $comment_count["awaiting_moderation"];
+		$approved_count = $post->comment_count;
+		$comment_count = $approved_count;
+		
+		// check user privileges
+		$user_can_moderate = current_user_can('moderate_comments');
+		if( $user_can_moderate ) {
+			$comment_count = $approved_count.'<span class="unapproved_count">/'.$unapproved_count.'</span>';
+		}
+		
+		return $comment_count;
+	}
 
 ?>

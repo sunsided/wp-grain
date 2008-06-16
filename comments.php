@@ -94,7 +94,11 @@
 				$author_url = get_comment_author_url();
 				$has_url = (!empty($author_url) && $author_url != 'http://');
 
-//echo "<pre>";print_r($commenter);echo "</pre>";
+				// check if this comment is approved
+				$is_approved = ($comment->comment_approved == "1");
+				$user_can_moderate = !empty($user_ID) && current_user_can('moderate_comments');
+
+				if( !$is_approved && !$user_can_moderate ) continue;
 
 				?>
 				<li class="commentbody<?php 
