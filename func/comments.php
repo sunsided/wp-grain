@@ -24,7 +24,7 @@
 		
 		// test if the current user can moderate comments
 		if( !empty($user_ID) && current_user_can('moderate_comments') ):
-				$approved = ($comment->comment_approved == TRUE);
+				$approved = ($comment->comment_approved == "1");
 			?>
 			<div class="comment-admin-tools<?php if(!$approved) echo "-unapproved"; ?>">
 				<?php 
