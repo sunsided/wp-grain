@@ -104,6 +104,10 @@
 		
 		$reflection_shift = 0;
 		$top_offset = intval($height*$reflection_size_factor) - $reflection_shift;
+		
+		// fix locale bug (decimal "point" is locale specific)
+		$reflection_size_factor = intval($reflection_size_factor) .'.'. ($reflection_size_factor-intval($reflection_size_factor)) * 1000;
+		$reflection_opacity = intval($reflection_opacity) .'.'. ($reflection_opacity-intval($reflection_opacity)) * 1000;
 		?>
 		
 		<script language="Javascript">

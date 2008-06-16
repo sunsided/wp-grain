@@ -461,6 +461,7 @@ div#photo-nofade {
 	margin-left: auto;
 	margin-right: auto;
 	z-index: 1;
+	overflow: visible;
 }
 
 #infotext-frame {
