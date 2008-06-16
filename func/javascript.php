@@ -116,50 +116,6 @@
 		
 	}
 	
-/* Eye candy: Fading */
-	/*
-	function grain_inject_simplefader($element_id='photo') {
-		if(!grain_eyecandy_use_fader()) return;
-	?>
-	<style type='text/css'>#<?php echo $element_id; ?> {visibility:hidden;}</style>
-	<script type="text/javascript" language="JavaScript">
-
-		function initImage() {
-			// get image
-			imageId = '<?php echo $element_id; ?>';
-			image = document.getElementById(imageId);
-			// begin fade
-			setOpacity(image, 0);
-			image.style.visibility = "visible";
-			fadeIn(imageId,0);
-		}
-		function fadeIn(objId,opacity) {
-			if (document.getElementById) {
-				obj = document.getElementById(objId);
-				if (opacity <= 100) {
-					setOpacity(obj, opacity);
-					opacity += 5;
-					window.setTimeout("fadeIn('"+objId+"',"+opacity+")", 20);
-				}
-			}
-		}
-		function setOpacity(obj, opacity) {
-			opacity = (opacity == 100)?99.999:opacity;
-			// IE/Win
-			obj.style.filter = "alpha(opacity:"+opacity+")";
-			// Safari<1.2, Konqueror
-			obj.style.KHTMLOpacity = opacity/100;
-			// Older Mozilla and Firefox
-			obj.style.MozOpacity = opacity/100;
-			// Safari 1.2, newer Firefox and Mozilla, CSS3
-			obj.style.opacity = opacity/100;
-		}
-		window.onload = function() {initImage()}	
-		
-	</script>
-	<?php
-	}
-	*/
 /* Eye candy: Fading 2 */
 
 	function grain_fx_can_fade() {
@@ -183,7 +139,7 @@
 			
 			hide:function() {
 				this.setStyle('opacity', '0');
-				this.setStyle('display','none');  
+				/*this.setStyle('display','none'); */
 				return this;
 			},
 			
