@@ -25,6 +25,7 @@ Add/Change: Several new localization strings; Old strings have changed. (added i
 Add/Change: The number of photos displayed on the mosaic page can now be unlimited by setting a negative value or zero as the number of items to display
 Add/Change: Localization files are now searched in the ./lang subdirectory
 Add/Change: Added hovering arrows for the on-image navigation
+Add/Change: Grain is now recognizing override stylesheets following the scheme style.override[.-]<name>.css.php and style.override[.-]<name>.pcss, too
 Change: Option to show popup is now option to suppress popup because of new business logic; The setting is interpreted correctly though.
 Change: Reordered navigation bar page.
 Change: Changed defaults so that some options are now enabled by default (newest, random link etc.)

@@ -27,5 +27,26 @@
 <?php
 		}	
 	}
+	
+/* Helper: Override Styles */
+
+	function grain_get_css_overrides() {
+		$regexp = '#style\.override([-\.].+|\d+)?(\.css(\.php)?|\.pcss)#i';
+		$result = array();
+		
+		if ($dh = opendir(TEMPLATEPATH)) {
+			while (($file = readdir($dh)) !== false) {
+				$path = TEMPLATEPATH.'/'.$file;
+				
+				if(is_file($path)) {
+					if( preg_match($regexp, $file) ) {
+						$result[] = $file;
+					}
+				}
+			}
+			closedir($dh);
+		}
+		return $result;
+    }
 
 ?>

@@ -172,27 +172,6 @@
 		return array( "prev" => $title_prev, "next" => $title_next );
 	}
 
-/* Helper: Override Styles */
-
-	function grain_get_css_overrides() {
-		$regexp = '#style\.override([-\.].+|\d+)?\.css#i';
-		$result = array();
-		
-		if ($dh = opendir(TEMPLATEPATH)) {
-			while (($file = readdir($dh)) !== false) {
-				$path = TEMPLATEPATH.'/'.$file;
-				
-				if(is_file($path)) {
-					if( preg_match($regexp, $file) ) {
-						$result[] = $file;
-					}
-				}
-			}
-			closedir($dh);
-		}
-		return $result;
-    }
-
 	/* Helper: Content sidebars */
 
 	function grain_inject_sidebar_above() 

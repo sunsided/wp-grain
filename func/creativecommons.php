@@ -25,5 +25,17 @@
 		
 		echo '<!--/Creative Commons License--></div>';
 	}
+	
+	// embed creative commons RDF
+	function grain_embed_cc_rdf() 
+	{
+		global $GrainOpt;
+		
+		if( !$GrainOpt->get(GRAIN_COPYRIGHT_CC_ENABLED) ) return;
+
+		// test rdf
+		$rdf = $GrainOpt->get(GRAIN_COPYRIGHT_CC_RDF);
+		if(!empty($rdf)) echo '<!--'.$rdf.'-->';
+	}
 
 ?>
