@@ -12,4 +12,4 @@ REM Update version
 if exist update-wcrev.cmd call update-wcrev.cmd
 
 REM Compress
-tar cf - . --exclude=.svn --exclude=*.psd --exclude=*.tgz --exclude=.htaccess --exclude=*.tar.gz --exclude=*.zip --exclude=./po --exclude=*.tdl --exclude=*.cmd --exclude=*.bat --exclude=*.sh --exclude=*.py --exclude=%grain_tar%* %grain_feature_excludes% | gzip --best --verbose > %grain_tgz%
+tar cf - . --exclude=.svn --exclude=*.psd --exclude=*.tgz --exclude=*.log --exclude=.htaccess --exclude=*.tar.gz --exclude=*.zip --exclude=./po --exclude=*.tdl --exclude=*.cmd --exclude=*.bat --exclude=*.sh --exclude=*.py --exclude=%grain_tar%* %grain_feature_excludes% | gzip --best --verbose > %grain_tgz%
