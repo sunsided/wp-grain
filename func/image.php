@@ -58,6 +58,7 @@
 		
 		// get additional options
 		// check http://phpthumb.sourceforge.net/demo/demo/phpThumb.demo.demo.php for further phpThumb() configuration options
+		// http://phpthumb.sourceforge.net/demo/docs/phpthumb.readme.txt
 		$additionalOptsLine = $GrainOpt->get(GRAIN_PHPTHUMB_OPTIONS);
 		$additionalOpts = preg_split("/[&\s]/", $additionalOptsLine, -1, PREG_SPLIT_NO_EMPTY);
 		$phpThumbOptions = array_merge($phpThumbOptions, $additionalOpts);
