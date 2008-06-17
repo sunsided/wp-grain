@@ -1141,6 +1141,12 @@ div.comment-meta {
 	color: rgb( 192, 192, 192);
 	}
 
+li.commentbody-author div.comment-meta {
+	/* border-top: 1px dotted white; */
+	text-align: left;
+	}
+
+
 div.comment-text {
 	padding-bottom: 10px;
 	}
@@ -1159,7 +1165,7 @@ li.commentbody-syndication div.comment-text {
 	
 li.commentbody-author div.comment-text {
 	background: url(images/comm-author.png) no-repeat bottom left;
-	background-position: 20px bottom;
+	background-position: 20px bottom; /* <-- adjust this shift to the size of the icon */
 	}
 
 li.commentbody div.comment-text-inner,
