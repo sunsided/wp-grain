@@ -254,6 +254,10 @@
 	}
 
 	function grain_mosaic_ppl( $title, $page, $count_per_page ) {
+		echo grain_get_mosaic_ppl( $title, $page, $count_per_page );
+	}
+
+	function grain_get_mosaic_ppl( $title, $page, $count_per_page ) {
 		if( $count_per_page <= 0 ) return;
 		global $wpdb, $tableposts;
 
@@ -263,12 +267,17 @@
 		$count   = $wpdb->get_results($query);
 
 		if( $count[0]->c <= $page*$count_per_page ) return;
-		echo '<a class="prev-page" rel="prev" href="'.get_pagenum_link($page+1).'">'.$title.'</a>';
+		return '<a class="prev-page" rel="prev" href="'.get_pagenum_link($page+1).'">'.$title.'</a>';
 	}
 
 	function grain_mosaic_npl( $title, $page, $count_per_page ) {
+		echo grain_get_mosaic_npl( $title, $page, $count_per_page );
+	}
+	
+	function grain_get_mosaic_npl( $title, $page, $count_per_page ) {
 		if( $page <= 1 ) return;
-		echo '<a class="next-page" rel="next" href="'.get_pagenum_link($page-1).'">'.$title.'</a>';
+		if( $count_per_page <= 0 ) return;
+		return '<a class="next-page" rel="next" href="'.get_pagenum_link($page-1).'">'.$title.'</a>';
 	}
 	
 /* Date and time related */

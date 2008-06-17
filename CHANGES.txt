@@ -19,6 +19,7 @@ Add: The number of comments awaiting moderation on the current post is now shown
 Add: EXIF data can now be rendered inline
 Add: EXIF data filtering prevents (some) byte data to display, strips long fields and renders float values correctly
 Add: Additional phpThumb() configuration options can now be set in the administration
+Add: Option to hide the sidebar on the mosaic page
 Add/Change: Several new localization strings; Old strings have changed. (added i.e. date/time formats, so that their defaults can be localized too)
 Add/Change: The number of photos displayed on the mosaic page can now be unlimited by setting a negative value or zero as the number of items to display
 Add/Change: Localization files are now searched in the ./lang subdirectory

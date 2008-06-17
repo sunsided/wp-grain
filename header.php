@@ -84,4 +84,4 @@ grain_startSession();
 	</div>
 
 	<!-- content following -->
-	<div id="<?php echo $contentarea_id; ?>">
+	<div id="<?php echo $contentarea_id; ?>"<?php global $contentarea_class; if(!@empty($contentarea_class)) echo 'class="'.$contentarea_class.'"';?>>

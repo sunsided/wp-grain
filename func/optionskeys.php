@@ -40,6 +40,7 @@
 	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_META_ENABLED', 'sdbr_meta_enabled', TRUE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_BLOGROLL_ENABLED', 'sdbr_blogroll_enabled', TRUE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_CALENDAR_ENABLED', 'sdbr_calendar_enabled', TRUE );
+	$GrainOpt->defineFlagOpt( 'GRAIN_SDBR_ON_MOSAIC', 'sdbr_ob_mosaic', TRUE );
 	
 	// 2nd language
 	$GrainOpt->defineFlagOpt( 'GRAIN_2NDLANG_ENABLED', 'feature_2ndl_enabled', FALSE );

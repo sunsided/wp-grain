@@ -47,6 +47,7 @@ body {
 	width: 980px;
 	margin: 20px auto /*40px auto*/;
 	display: block;
+	overflow: hidden;
 	}
 
 /* Footer */
@@ -98,10 +99,20 @@ body {
 	float: left;
 	padding-left: 20px;
 	}
-	
+
+.no-navigation #navigation-top {
+	display: none;
+}
+
 #archive-list {
 	padding-left: 10px;
 	}
+	
+.no-sidebar #archive-list {
+	width: auto;
+	float: none;
+	padding: 0;
+	}	
 
 div.mosaic-photo,
 div.archive-photo {
@@ -427,6 +438,10 @@ img#rss-feed {
 	text-align: left;
 	}
 	
+.no-sidebar #content-archives {
+	text-align: right;
+	}
+	
 #commentspopup #comment-page,
 #archive-list {
 	/*font-size: 1.2em;*/
@@ -436,7 +451,9 @@ img#rss-feed {
 /* Dynamic design */
 
 .archive-post {
-	display: inline;
+	/*display: inline;
+	*/
+	display: block;
 }
 
 .narrowcolumn .post,
@@ -836,7 +853,7 @@ ol li, #sidebar ul ol li {
 	
 	
 /*
-	Template Name: Stylesheet: Forms
+	Stylesheet: Forms
 */
 
 #searchform {
@@ -943,9 +960,13 @@ select {
 	padding: 20px 0 10px 0;
 	padding-left: 20px;
 	margin-left: 740px;
-	width: 190px;
-	border-left: 1px solid white;
-	}
+
+	background: url(images/grid2.gif) !important;
+	position: relative;
+	width: 219px;
+	z-index: 50;
+	border-left: 1px solid black;
+}
 
 #sidebar form {
 	margin: 0;
@@ -1861,4 +1882,13 @@ div.grain-sidebar #yapb-widget img {
 #exif-frame.inline div#exif span {
 	padding: 0;
 	margin: 0;
+}
+
+div.year h2 {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+div.year {
+	border-bottom: 1px solid white;
 }
