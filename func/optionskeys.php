@@ -157,6 +157,8 @@ This content is licensed under a <a rel="license" href="http://creativecommons.o
 
 	$GrainOpt->defineStringOpt( 'GRAIN_IMPRINT_URL', 'imprint_url', NULL, FALSE );
 
+	$GrainOpt->defineStringOpt( 'GRAIN_PHPTHUMB_OPTIONS', 'phpthumb_opts', "", FALSE );
+
 	// version
 	$GrainOpt->defineStringOpt( 'GRAIN_VERSION_KEY', 'version', GRAIN_THEME_VERSION_BASE );
 

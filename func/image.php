@@ -61,7 +61,27 @@
 		
 		// build
 		$image_src = ""; //GRAIN_TEMPLATE_DIR ."/images/tip-header.png";
-		if( !empty($image) ) $image_src = $image->getThumbnailHref(array('w='.$width,'h='.$height,'zc=1'));
+		// check http://phpthumb.sourceforge.net/demo/demo/phpThumb.demo.demo.php for phpThumb configuration options
+		$image_src = NULL;
+		if( !empty($image) ) {
+		
+			// prepare phpThumb options
+			$phpThumbOptions = array();
+			$phpThumbOptions[] = 'w='.$width;
+			$phpThumbOptions[] = 'h='.$height;
+			$phpThumbOptions[] = 'zc=1'; // zoom-cropping - can be disabled but a background color is advised then
+			$phpThumbOptions[] = 'fltr[]=usm|80|0.5|3'; // usm filter
+			$phpThumbOptions[] = 'far=1'; // forced aspect ratio
+			$phpThumbOptions[] = 'bg=000000'; // background if zoom-cropping is disabled
+			
+			// get additional options
+			$additionalOptsLine = $GrainOpt->get(GRAIN_PHPTHUMB_OPTIONS);
+			$additionalOpts = preg_split("/[&\s]/", $additionalOptsLine, -1, PREG_SPLIT_NO_EMPTY);
+			$phpThumbOptions = array_merge($phpThumbOptions, $additionalOpts);
+			
+			// get thumbnail
+			$image_src = $image->getThumbnailHref($phpThumbOptions);
+		}
 		
 		$image_html = '<img id="thumbnail-'.$post->ID.'" width="'.$width.'" height="'.$height.'" style="width: '.$width.'px; height: '.$height.'px;" class="archive-thumb" src="' .$image_src. '" alt="'.$post->post_title.'" />';
 		$image_html = apply_filters( 'yapb_get_thumbnail', $image_html );
