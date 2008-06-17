@@ -1892,3 +1892,8 @@ div.year h2 {
 div.year {
 	border-bottom: 1px solid white;
 }
+
+
+#photo-frame canvas {
+	margin-top: 5px; /* <-- this is the offset of the reflected image to it's original */
+}
