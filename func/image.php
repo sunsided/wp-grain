@@ -71,7 +71,7 @@
 			$phpThumbOptions[] = 'h='.$height;
 			$phpThumbOptions[] = 'zc=1'; // zoom-cropping - can be disabled but a background color is advised then
 			$phpThumbOptions[] = 'fltr[]=usm|80|0.5|3'; // usm filter
-			$phpThumbOptions[] = 'far=1'; // forced aspect ratio
+			$phpThumbOptions[] = 'iar=1'; // forced aspect ratio
 			$phpThumbOptions[] = 'bg=000000'; // background if zoom-cropping is disabled
 			
 			// get additional options
