@@ -44,8 +44,12 @@
 		return yapb_is_photoblog_post();
 	}
 
-	function grain_get_phpthumb_options($width, $height) {
+	function grain_get_phpthumb_options($width=NULL, $height=NULL) {
 		global $GrainOpt;
+		
+		// Fallback
+		if($width === NULL) $width = intval($GrainOpt->get(GRAIN_MOSAIC_THUMB_WIDTH));
+		if($height === NULL) $height = intval($GrainOpt->get(GRAIN_MOSAIC_THUMB_HEIGHT));
 		
 		// prepare phpThumb options
 		$phpThumbOptions = array();

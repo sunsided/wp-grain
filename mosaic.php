@@ -46,6 +46,7 @@
 		?>
 <div id="archive-posts">
 		<?php
+			echo '<!--'.@implode(",",grain_get_phpthumb_options(NULL, NULL)).'-->';
 			foreach($posts as $post): 
 
 				if( $years_enabled ) {
