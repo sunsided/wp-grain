@@ -109,7 +109,7 @@
 					<legend><?php _e("Mosaic & Archive", "grain"); ?></legend>
 					<?php
 					grain_admin_checkbox(GRAIN_ARCHIVE_TOOLTIPS, "show_tooltips", NULL, __("Show Tooltips:", "grain"), __("Show tooltip when hovering a thumbnail", "grain"), NULL);	
-					grain_admin_sizeboxes(GRAIN_MOSAIC_THUMB_WIDTH, "thumb_width", GRAIN_MOSAIC_THUMB_HEIGHT, "thumb_height", NULL, __("Thumbnail size:", "grain"), __("Pixels", "grain"), NULL);	
+					grain_admin_sizeboxes(GRAIN_MOSAIC_THUMB_WIDTH, "thumb_width", GRAIN_MOSAIC_THUMB_HEIGHT, "thumb_height", NULL, __("Thumbnail size:", "grain"), __("Pixels", "grain"), __("If you set any of these values a negative number or zero, the according attribute of the thumbnail won't be set. A common usage would be to set the first value to zero and the second to a fixed size.", "grain"));
 					?>
 				</fieldset>
 

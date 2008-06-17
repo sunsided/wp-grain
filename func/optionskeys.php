@@ -144,8 +144,8 @@ This content is licensed under a <a rel="license" href="http://creativecommons.o
 	
 	$GrainOpt->defineFlagOpt( 'GRAIN_POPUP_SHOW_THUMB', 'popup_show_thumb', TRUE);
 	
-	$GrainOpt->defineValueOpt( 'GRAIN_MOSAIC_THUMB_WIDTH', 'mosaic_thumb_width', 120);
-	$GrainOpt->defineValueOpt( 'GRAIN_MOSAIC_THUMB_HEIGHT', 'mosaic_thumb_height', 90);
+	$GrainOpt->defineValueOpt( 'GRAIN_MOSAIC_THUMB_WIDTH', 'mosaic_thumb_width', 120, TRUE, TRUE);
+	$GrainOpt->defineValueOpt( 'GRAIN_MOSAIC_THUMB_HEIGHT', 'mosaic_thumb_height', 90, TRUE, TRUE);
 	$GrainOpt->defineValueOpt( 'GRAIN_POPUP_THUMB_WIDTH', 'popup_thumb_width', 200);
 	$GrainOpt->defineValueOpt( 'GRAIN_POPUP_THUMB_HEIGHT', 'popup_thumb_height', 200);
 	$GrainOpt->defineFlagOpt( 'GRAIN_POPUP_THUMB_STF', 'popup_thumb_stf', FALSE);

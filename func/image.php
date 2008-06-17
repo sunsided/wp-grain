@@ -49,8 +49,8 @@
 		
 		// prepare phpThumb options
 		$phpThumbOptions = array();
-		$phpThumbOptions[] = 'w='.$width;
-		$phpThumbOptions[] = 'h='.$height;
+		if( $width > 0  ) $phpThumbOptions[] = 'w='.$width;
+		if( $height > 0 ) $phpThumbOptions[] = 'h='.$height;
 		$phpThumbOptions[] = 'zc=1'; // zoom-cropping - can be disabled but a background color is advised then
 		$phpThumbOptions[] = 'fltr[]=usm|80|0.5|3'; // usm filter
 		$phpThumbOptions[] = 'iar=1'; // forced aspect ratio
@@ -83,7 +83,6 @@
 		
 		// build
 		$image_src = ""; //GRAIN_TEMPLATE_DIR ."/images/tip-header.png";
-		$image_src = NULL;
 		if( !empty($image) ) {
 		
 			// get phpThumb() options
@@ -92,8 +91,17 @@
 			// get thumbnail
 			$image_src = $image->getThumbnailHref($phpThumbOptions);
 		}
+		else {
+			$width = 120;
+		}
 		
-		$image_html = '<img id="thumbnail-'.$post->ID.'" width="'.$width.'" height="'.$height.'" style="width: '.$width.'px; height: '.$height.'px;" class="archive-thumb" src="' .$image_src. '" alt="'.$post->post_title.'" />';
+		$width_attrib = $height_attrib = NULL;
+		if($width  > 0 ) $width_attrib = 'width="'.$width.'"';
+		if($height > 0 ) $height_attrib = 'height="'.$height.'"';
+		$sizeStyle = NULL;
+		if($width  > 0 ) $sizeStyle .='width: '.$width.'px;';
+		if($height > 0 ) $sizeStyle .='height: '.$height.'px;';
+		$image_html = '<img id="thumbnail-'.$post->ID.'" '.$width_attrib.' '.$height_attrib.' style="'.sizeStyle.'" class="archive-thumb" src="' .$image_src. '" alt="'.$post->post_title.'" />';
 		$image_html = apply_filters( 'yapb_get_thumbnail', $image_html );
 		$anchor_html = '<a rel="bookmark" href="' . get_permalink($post->ID) . '">'.$image_html.'</a>';
 		
