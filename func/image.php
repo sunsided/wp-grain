@@ -44,6 +44,28 @@
 		return yapb_is_photoblog_post();
 	}
 
+	function grain_get_phpthumb_options($width, $height) {
+		global $GrainOpt;
+		
+		// prepare phpThumb options
+		$phpThumbOptions = array();
+		$phpThumbOptions[] = 'w='.$width;
+		$phpThumbOptions[] = 'h='.$height;
+		$phpThumbOptions[] = 'zc=1'; // zoom-cropping - can be disabled but a background color is advised then
+		$phpThumbOptions[] = 'fltr[]=usm|80|0.5|3'; // usm filter
+		$phpThumbOptions[] = 'iar=1'; // forced aspect ratio
+		$phpThumbOptions[] = 'bg=000000'; // background if zoom-cropping is disabled
+		
+		// get additional options
+		// check http://phpthumb.sourceforge.net/demo/demo/phpThumb.demo.demo.php for further phpThumb() configuration options
+		$additionalOptsLine = $GrainOpt->get(GRAIN_PHPTHUMB_OPTIONS);
+		$additionalOpts = preg_split("/[&\s]/", $additionalOptsLine, -1, PREG_SPLIT_NO_EMPTY);
+		$phpThumbOptions = array_merge($phpThumbOptions, $additionalOpts);
+		
+		// return
+		return $phpThumbOptions;
+	}
+
 	function grain_mimic_ygi_archive($image, $post) {
 		global $GrainOpt;
 
@@ -61,23 +83,11 @@
 		
 		// build
 		$image_src = ""; //GRAIN_TEMPLATE_DIR ."/images/tip-header.png";
-		// check http://phpthumb.sourceforge.net/demo/demo/phpThumb.demo.demo.php for phpThumb configuration options
 		$image_src = NULL;
 		if( !empty($image) ) {
 		
-			// prepare phpThumb options
-			$phpThumbOptions = array();
-			$phpThumbOptions[] = 'w='.$width;
-			$phpThumbOptions[] = 'h='.$height;
-			$phpThumbOptions[] = 'zc=1'; // zoom-cropping - can be disabled but a background color is advised then
-			$phpThumbOptions[] = 'fltr[]=usm|80|0.5|3'; // usm filter
-			$phpThumbOptions[] = 'iar=1'; // forced aspect ratio
-			$phpThumbOptions[] = 'bg=000000'; // background if zoom-cropping is disabled
-			
-			// get additional options
-			$additionalOptsLine = $GrainOpt->get(GRAIN_PHPTHUMB_OPTIONS);
-			$additionalOpts = preg_split("/[&\s]/", $additionalOptsLine, -1, PREG_SPLIT_NO_EMPTY);
-			$phpThumbOptions = array_merge($phpThumbOptions, $additionalOpts);
+			// get phpThumb() options
+			$phpThumbOptions = grain_get_phpthumb_options($width, $height);
 			
 			// get thumbnail
 			$image_src = $image->getThumbnailHref($phpThumbOptions);
