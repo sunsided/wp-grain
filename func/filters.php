@@ -48,4 +48,7 @@
 	 * The GRAIN_EXIF_KEY filter is always applied to the key right before the GRAIN_EXIF_VALUE filter is applied to the value.
 	 */
 	define('GRAIN_EXIF_VALUE', 'GRAIN_EXIF_VALUE');
+	
+	/** Filter the navigation ("header menu") before it is embedded */
+	define('GRAIN_FILTER_NAVIGATION', 'GRAIN_FILTER_NAVIGATION');
 ?>

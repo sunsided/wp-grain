@@ -22,6 +22,7 @@
 	// get some system related values
 	$isContentPage = is_single() || is_home();
 	$postCount = grain_getpostcount();
+	$commentCount = grain_getcommentcount();
 
 /**********************************************************************************************/
 
@@ -41,23 +42,33 @@
 
 		// build the link
 		$link = "";
-		if( $prev ) 			$link = '<span id="menu-prev">'.$prev.'</span>';
+		if( $prev ) 			$link = '<span id="menu-prev" class="postlink">'.$prev.'</span>';
 		if( $prev && $next ) 	$link .= " ";
-		if( $next ) 			$link .= '<span id="menu-next">'.$next.'</span>';
+		if( $next ) 			$link .= '<span id="menu-next" class="postlink">'.$next.'</span>';
 		
 		// add the link
-		if( !empty($link) ) 	array_push( $links, $link );
+		if( !empty($link) ) {
+			$classes = array();
+			$classes[] = $prev ? "has-prev" : "no-prev";
+			$classes[] = $next ? "has-next" : "no-next";
+			$classes[] = ($prev && $next) ? "bidir" : "unidir";
+			$classes = implode(" ", $classes);
+			
+			$link  = '<span id="menu-navigation" class="'.$classes.' postlink">'.$link.'</span>';
+			array_push( $links, $link );
+		}
 
 		// add comments link
 		if( grain_can_comment() ) {
-			$link = grain_generate_comments_link();			
-			array_push( $links, '<span id="menu-comments">'.$link.'</span>' );
+			$link = grain_generate_comments_link();
+			$class = ($commentCount > 0) ? "has-comments" : "no-comments";
+			array_push( $links, '<span id="menu-comments" class="'.$class.' infolink">'.$link.'</span>' );
 		}
 
 		// add permalink
 		if( $GrainOpt->getYesNo(GRAIN_MNU_PERMALINK_VISIBLE) ):
 			$link = '<a class="tooltipped" id="permalink" alt="'.__("Permalink for: ", "grain").$post->post_title.'" title="'.grain_thumbnail_title(__("Permalink", "grain"), $post->post_title).'" href="'.get_permalink($post->ID).'">'.__("#", "grain").'</a>';
-			array_push( $links, '<span id="menu-permalink">'.$link.'</span>' );
+			array_push( $links, '<span id="menu-permalink" class="postlink">'.$link.'</span>' );
 		endif;
 	
 	endif;
@@ -65,13 +76,13 @@
 	// Newest photo link
 	if( $postCount > 1 && $grain_newest_enabled && !is_home() && ((is_single() && get_next_post()) || is_page()) ):
 		$link = '<a title="'.__("go to the newest photo", "grain").'" accesskey="h" rel="start" href="'.get_settings('home').'/">'.__("newest", "grain").'</a>';
-        array_push( $links, '<span id="menu-newest">'.$link.'</span>' );
+        array_push( $links, '<span id="menu-newest" class="postlink">'.$link.'</span>' );
 	endif;
 
 	// Random photo link
 	if( $postCount > 2 && $grain_random_enabled ):
 		$link = grain_randompost( __("random", "grain") );
-        array_push( $links, '<span id="menu-random">'.$link.'</span>' );
+        array_push( $links, '<span id="menu-random" class="postlink">'.$link.'</span>' );
 	endif;
 	
 	// Mosaic page link
@@ -79,7 +90,7 @@
 		$mosaicpost = get_post($mosaicPageId);
 		if($mosaicpost) {
 			$link = '<a class="tooltipped" title="'.grain_thumbnail_title($mosaicpost->post_title,__("To the overview", "grain")).'" accesskey="m" href="'.get_permalink($mosaicPageId).'">'.$GrainOpt->get(GRAIN_MOSAIC_LINKTITLE).'</a>';
-			array_push( $links, '<span id="menu-mosaic">'.$link.'</span>' );
+			array_push( $links, '<span id="menu-mosaic" class="pagelink">'.$link.'</span>' );
 		}
 	endif;
 
@@ -88,11 +99,13 @@
 		$infopost = get_post($infoPageId);
 		if($infopost) {
 			$link = '<a title="'.__("about &amp; information", "grain").'" accesskey="a" href="'.get_permalink($infoPageId).'">'.__("about", "grain").'</a>';
-			array_push( $links, '<span id="menu-about">'.$link.'</span>' );
+			array_push( $links, '<span id="menu-about" class="pagelink">'.$link.'</span>' );
 		}
 	endif;
 
 	// combine the array elements to one large menu
- 	echo implode( $links, ' <span class="menu-delimiter">|</span> ' );
+	do_action(GRAIN_BEFORE_NAVIGATION);
+ 	echo apply_filters(GRAIN_FILTER_NAVIGATION, implode( $links, ' <span class="menu-delimiter">|</span> ') );
+	do_action(GRAIN_AFTER_NAVIGATION);
 
 ?>

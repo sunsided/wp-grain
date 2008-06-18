@@ -49,4 +49,10 @@
 	/** Signaled after the exif block is embedded */
 	define('GRAIN_AFTER_EXIFBLOCK', 'GRAIN_AFTER_EXIFBLOCK');
 	
+	/** Signaled before the navigation is embedded. */
+	define('GRAIN_BEFORE_NAVIGATION', 'GRAIN_BEFORE_NAVIGATION');
+	
+	/** Signaled after the navigation is embedded. */
+	define('GRAIN_AFTER_NAVIGATION', 'GRAIN_AFTER_NAVIGATION');
+	
 ?>

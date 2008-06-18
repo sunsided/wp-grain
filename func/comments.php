@@ -87,6 +87,7 @@
 	 * If the current user is allowed to moderate, the count of unapproved comments on the current post
 	 * is appended.
 	 *
+	 * @since 0.3
 	 * @uses get_comment_count() 		To get the number of comments on the current post
 	 * @uses current_user_can() 		To determine wheter the current user is allowed to moderate a comment
 	 * @return string						A string containing the number of comments
@@ -104,6 +105,36 @@
 		$user_can_moderate = current_user_can('moderate_comments');
 		if( $user_can_moderate ) {
 			if($unapproved_count > 0) $comment_count = $approved_count.'<span class="unapproved_count">/'.$unapproved_count.'</span>';
+		}
+		
+		return $comment_count;
+	}
+	
+	/**
+	 * grain_getcommentcount() - Gets a the number number of comments on the current post
+	 *
+	 * The returned string is the number of comments on the current post.
+	 * If the current user is allowed to moderate, the count of unapproved comments on the current post
+	 * is added.
+	 *
+	 * @since 0.3
+	 * @uses get_comment_count() 		To get the number of comments on the current post
+	 * @uses current_user_can() 		To determine wheter the current user is allowed to moderate a comment
+	 * @return string						A string containing the number of comments
+	 */	
+	function grain_getcommentcount() {
+		global $post;
+		
+		// get counts
+		$comment_count = get_comment_count($post->ID);
+		$unapproved_count = $comment_count["awaiting_moderation"];
+		$approved_count = $post->comment_count;
+		$comment_count = intval($approved_count);
+		
+		// check user privileges
+		$user_can_moderate = current_user_can('moderate_comments');
+		if( $user_can_moderate ) {
+			if($unapproved_count > 0) $comment_count += intval($unapproved_count);
 		}
 		
 		return $comment_count;
