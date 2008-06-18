@@ -10,10 +10,13 @@
 	
 	@since 0.3 (R113)
 	@package Grain Theme for WordPress
-	@subpackage Post Hooks
+	@subpackage Post Options
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
+	
+	// load the post option class
+	@require_once(TEMPLATEPATH . '/func/postoptions.php');
 
 /* functions */
 
@@ -90,7 +93,7 @@ EOT;
 			
 			// Inject it
 			$this->inject_editform_js($optionBox);
-		}
+}
 
 		/**
 		 * generate_option_rows_markup() - Generates the markup for all options

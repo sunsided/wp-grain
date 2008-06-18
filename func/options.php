@@ -63,6 +63,29 @@
 		}
 		
 		/**
+		 * internalDefineOptionName() - Corrects and defines post option key
+		 *
+		 * The input is transformed so that it is upper case and starts with
+		 * "GRAIN_" and then define()'d.
+		 *
+		 * @since 0.3
+		 * @access private
+		 * @param string $keyName 			The option's key.
+		 * @return string new option name
+		 */
+		function internalDefineOptionName($keyName) 
+		{		
+			$keyName = strtoupper($keyName);
+			if( substr($keyName, 0, strlen("GRAIN_")) != "GRAIN_" ) 
+			{
+				$keyName = "GRAIN_" . $keyName;
+			}
+			
+			define( $keyName, $keyName );
+			return $keyName;
+		}
+		
+		/**
 		 * defineStringOpt() - Defines an option with a value of a string type
 		 *
 		 * When an option is created, a global define will be set. This define is always
@@ -80,8 +103,7 @@
 		 */
 		function defineStringOpt($keyName, $dbFieldName, $defaultValue=NULL, $canBeHTML = FALSE, $callFilter=TRUE) 
 		{		
-			$keyName = strtoupper($keyName);
-			define( $keyName, $keyName );
+			$keyName = $this->internalDefineOptionName($keyName);
 			$this->option_defs[$keyName] = array( 
 						"FIELD" => $dbFieldName, 
 						"TYPE" => "STR", 
@@ -116,8 +138,7 @@
 		 */
 		function defineValueOpt($keyName, $dbFieldName, $defaultValue=-1, $allowNegative=FALSE, $allowZero=TRUE)
 		{
-			$keyName = strtoupper($keyName);
-			define( $keyName, $keyName );
+			$keyName = $this->internalDefineOptionName($keyName);
 			$this->option_defs[$keyName] = array( 
 						"FIELD" => $dbFieldName, 
 						"TYPE" => "INT", 
@@ -130,7 +151,7 @@
 		}
 		
 		/**
-		 * defineFlagOpt() - Defines an option with a value of a booleantype
+		 * defineFlagOpt() - Defines an option with a value of a boolean type
 		 *
 		 * When an option is created, a global define will be set. This define is always
 		 * the upper case version of the $keyName value. Options are always addressed using
@@ -145,8 +166,7 @@
 		 */
 		function defineFlagOpt($keyName, $dbFieldName, $defaultValue=FALSE) 
 		{
-			$keyName = strtoupper($keyName);
-			define( $keyName, $keyName );
+			$keyName = $this->internalDefineOptionName($keyName);
 			$this->option_defs[$keyName] = array( 
 						"FIELD" => $dbFieldName, 
 						"TYPE" => "BOOL", 
