@@ -268,12 +268,14 @@
 	 * @since 0.3
 	 * @uses grain_has_content() to check if the post has content
 	 * @global $GrainOpt Grain options
+	 * @global $GrainPostOpt Grain post options
 	 * @return bool TRUE if EXIF information are available
 	 */
 	function grain_has_exif() {
-		global $GrainOpt;
+		global $GrainOpt, $GrainPostOpt;
 		if( !grain_has_content() && $GrainOpt->is(GRAIN_HIDE_EXIF_IF_NO_CONTENT) ) return FALSE;
 		if( !$GrainOpt->is(GRAIN_EXIF_VISIBLE) ) return FALSE;
+		if( $GrainPostOpt->get(GRAIN_POSTOPT_HIDE_EXIF) ) return FALSE;
 		if( !function_exists('yapb_get_exif') || !function_exists('yapb_has_exif') ) return FALSE;
 		return yapb_has_exif();
 	}

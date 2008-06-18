@@ -69,9 +69,10 @@
 
 	@require_once(TEMPLATEPATH . '/func/content.php');
 
-/* Grain admin panel following */
+/* Grain admin panel and other hooks following */
 
 	@require_once(TEMPLATEPATH . '/admin/menu.php');
+	@require_once(TEMPLATEPATH . '/func/posthooks.php');
 
 /* Sidebars */
 

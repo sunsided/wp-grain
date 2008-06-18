@@ -6,35 +6,31 @@
 
 *//**
 
-	GrainOption class
+	GrainPostOption class
 	
 	@package Grain Theme for WordPress
-	@subpackage Grain Options
+	@subpackage Post Options
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 
 /* Options class */
 
-	// define the main option key
-	define( 'GRAIN_OPTIONS_KEY', 'grain_theme' );
-	define( 'GRAIN_OPTION_KEY', GRAIN_OPTIONS_KEY );
-
 	/**
 	 * An instance of the Grain options class
 	 * @global GrainOption $GrainOpt
 	 * @name $GrainOpt
 	 */
-	$GrainOpt = new GrainOption();
+	$GrainPostOpt = new GrainPostOption();
 
 	/**
-	 * GrainOption class
+	 * GrainPostOption class
 	 *
 	 * This class manages the configuration options for Grain.
 	 *
 	 * @since 0.3
 	 */
-	class GrainOption {
+	class GrainPostOption {
 		
 		/**
 		 * Option definitions
@@ -42,31 +38,37 @@
 		 * @var array An associative array containing the definitions for Grain's configuration options
 		 * @since 0.3
 		*/
-		var $option_defs;
+		var $option_defs = array();
 		
 		/**
-		 * Current configuration options
+		 * Metadata key
 		 * @access private
-		 * @var array An associative array of the configuration option keys mapped to their values
+		 * @var string A string containing the key for the "Custom Fields" field
 		 * @since 0.3
 		*/
-		var $options;
+		var $metaOptionKey = "_GRAIN_POST_OPTIONS";
+		
+		/**
+		 * Cached post metadata
+		 * @access private
+		 * @var array An array that caches the metadata for posts
+		 * @since 0.3
+		*/
+		var $pageCache = array();
 		
 		/**
 		 * Initializes the class
 		 * @access private
 		 * @since 0.3
 		*/
-		function GrainOption() {
-			$this->option_defs = array();
-			$this->loadOptions();
+		function GrainPostOption() {
 		}
 		
 		/**
 		 * internalDefineOptionName() - Corrects and defines post option key
 		 *
 		 * The input is transformed so that it is upper case and starts with
-		 * "GRAIN_" and then define()'d.
+		 * "GRAIN_POSTOPT_" and then define()'d.
 		 *
 		 * @since 0.3
 		 * @access private
@@ -76,9 +78,15 @@
 		function internalDefineOptionName($keyName) 
 		{		
 			$keyName = strtoupper($keyName);
-			if( substr($keyName, 0, strlen("GRAIN_")) != "GRAIN_" ) 
+			if( substr($keyName, 0, strlen("GRAIN_POSTOPT_")) != "GRAIN_POSTOPT_" ) 
 			{
-				$keyName = "GRAIN_" . $keyName;
+				if( substr($keyName, 0, strlen("GRAIN_")) == "GRAIN_" ) {
+					$keyName = "GRAIN_POSTOPT_" . substr($keyName, strlen("GRAIN_"));
+				}
+				else 
+				{
+					$keyName = "GRAIN_POSTOPT_" . $keyName;
+				}
 			}
 			
 			define( $keyName, $keyName );
@@ -96,7 +104,7 @@
 		 *
 		 * @since 0.3
 		 * @param string $keyName 			The option's key.
-		 * @param string $dbFieldName 		The name of the field as stored in the database. Keep it short.
+		 * @param string $dbFieldName 		The name of the field as stored in the database. Keep it short, but understandable.
 		 * @param string $defaultValue 		Optional. The default value. (Defaults to NULL)
 		 * @param bool $canBeHTML 			Optional. Set to TRUE if HTML tags are allowed in this option's value.
 		 * @param bool $callFilter 			Optional. Set to FALSE if no call to apply_filter() shall be raised when retrieving this option.
@@ -109,9 +117,7 @@
 						"TYPE" => "STR", 
 						"FILTER" => $callFilter, 
 						"DEFAULT" => $defaultValue, 
-						"HTML" => $canBeHTML,
-						"ALLOW_NEGATIVE" => FALSE,
-						"ALLOW_ZERO" => FALSE
+						"HTML" => $canBeHTML
 					);
 		}
 		
@@ -131,7 +137,7 @@
 		 *
 		 * @since 0.3
 		 * @param string $keyName 			The option's key.
-		 * @param string $dbFieldName 		The name of the field as stored in the database. Keep it short.
+		 * @param string $dbFieldName 		The name of the field as stored in the database. Keep it short, but understandable.
 		 * @param int $defaultValue 		Optional. The default value. (Defaults to -1)
 		 * @param bool $allowNegative 		Optional. Set to TRUE if negative values are allowed.
 		 * @param bool $allowZero 			Optional. Set to FALSE if zero is not a valid value.
@@ -144,7 +150,6 @@
 						"TYPE" => "INT", 
 						"FILTER" => FALSE, 
 						"DEFAULT" => $defaultValue, 
-						"HTML" => FALSE,
 						"ALLOW_NEGATIVE" => $allowNegative,
 						"ALLOW_ZERO" => $allowZero
 					);
@@ -161,7 +166,7 @@
 		 *
 		 * @since 0.3
 		 * @param string $keyName 			The option's key.
-		 * @param string $dbFieldName 		The name of the field as stored in the database. Keep it short.
+		 * @param string $dbFieldName 		The name of the field as stored in the database. Keep it short, but understandable.
 		 * @param bool $defaultValue 		Optional. The default value. (Defaults to FALSE)
 		 */
 		function defineFlagOpt($keyName, $dbFieldName, $defaultValue=FALSE) 
@@ -171,10 +176,7 @@
 						"FIELD" => $dbFieldName, 
 						"TYPE" => "BOOL", 
 						"FILTER" => FALSE, 
-						"DEFAULT" => $defaultValue, 
-						"HTML" => FALSE, 
-						"ALLOW_NEGATIVE" => FALSE,
-						"ALLOW_ZERO" => FALSE
+						"DEFAULT" => $defaultValue
 					);
 		}
 		
@@ -192,64 +194,136 @@
 		}
 		
 		/**
-		 * isempty() - Checks whether an option is empty
+		 * is_defined() - Alias for exists()
 		 *
-		 * This function throws an exception if the option definition was not set.
-		 *
-		 * @see is_set()
 		 * @since 0.3
 		 * @access private
+		 * @uses exists()
 		 * @param string $keyName 			The option's key.
-		 * @return bool True if the option value is empty
+		 * @return bool True if the option definition is set
 		 */
-		function isempty($keyName) 
+		function is_defined($keyName) 
 		{
-			if( !$this->exists($keyName) ) {
-				throw new ErrorException("Option key ".$keyName." was unknown.");
-			}
-
-			$option = $this->option_defs[$keyName];
-			return empty($this->options[$option["FIELD"]]);
+			return $this->exists($keyName);
 		}
-		
+			
 		/**
-		 * is_set() - Checks whether an option is set
+		 * has_options() - Checks if a post has post options assigned
 		 *
-		 * If you know that an option exists (this should be the case most of the time)
-		 * and want to know wheter it's value is considered empty, the isempty() function
-		 * is there for you.
-		 *
-		 * @see isempty()
-		 * @since 0.3
-		 * @access private
-		 * @param string $keyName 			The option's key.
-		 * @return bool True if the option value is set
-		 */
-		function is_set($keyName) 
-		{
-			if( !$this->exists($keyName) ) return FALSE;
-			$option = $this->option_defs[$keyName];
-			return array_kex_exists($option["FIELD"], $this->options);
-		}
-		
-		/**
-		 * getDefault() - Gets the default value for an option
-		 *
-		 * This function throws an exception if the option definition was not set.
+		 * If no $postID is given, the current post is assumed.
 		 *
 		 * @since 0.3
-		 * @param string $keyName 			The option's key.
-		 * @return mixed The default value for an option.
+		 * @param int $postID 				Optional. The ID of the post to check
+		 * @return bool TRUE if the post has Grain post options assigned
 		 */
-		function getDefault($keyName) 
-		{	
-			if(!$this->exists($keyName)) {
-				throw new ErrorException("Option key ".$keyName." was unknown.");
+		function has_options($postID=NULL) 
+		{
+			// sanity check
+			if( $postID <= 0 || empty($postID))  {
+				global $post;
+				$postID = $post->ID;
 			}
 			
-			// get option and value
-			$option = $this->option_defs[$keyName];			
-			return $option["DEFAULT"];
+			// sanity check, part 2
+			if( empty($postID) ) return FALSE;
+			
+			// get the metadata for the post and checks if our key exists
+			$keys = get_post_custom_keys($postID);
+			return in_array($this->metaOptionKey, $keys);
+		}
+
+		/**
+		 * get_options() - Gets the options for a post
+		 *
+		 * If no $postID is given, the current post is assumed.
+		 *
+		 * @since 0.3
+		 * @access private
+		 * @param int $postID 				Optional. The ID of the post to check
+		 * @return array An associative array of the meta options keys to their values
+		 */
+		function get_options($postID=NULL) 
+		{		
+			// sanity check
+			if( $postID <= 0 || empty($postID))  {
+				global $post;
+				$postID = $post->ID;
+			}
+
+			// sanity check, part 2
+			if( empty($postID) ) return array();
+			
+			// return cached data, if any
+			if( array_key_exists($postID, $this->pageCache) ) return $this->pageCache[$postID];
+			
+			// get and cache the data
+			$data = get_post_meta($postID, $this->metaOptionKey, TRUE);					
+			$this->pageCache[$postID] = $data;
+			return $data;
+		}
+		
+		/**
+		 * load_options() - Alias for get_otions()
+		 *
+		 * If no $postID is given, the current post is assumed.
+		 *
+		 * @since 0.3
+		 * @access private
+		 * @uses get_options()
+		 * @param int $postID 				Optional. The ID of the post to check
+		 * @return array An associative array of the meta options keys to their values
+		 */
+		function load_options($postID=NULL) 
+		{	
+			return $this->get_options($postID);
+		}
+		
+		/**
+		 * save_options() - Writes the options for the current post to the database
+		 *
+		 * If no $postID is given, the current post is assumed. The options are
+		 * taken from the internal cache.
+		 *
+		 * @since 0.3
+		 * @access private
+		 * @param int $postID 				Optional. The ID of the post to check
+		 */
+		function save_options($postID=NULL) 
+		{		
+			// sanity check
+			if( $postID <= 0 || empty($postID))  {
+				global $post;
+				$postID = $post->ID;
+			}
+
+			// sanity check, part 2
+			if( empty($postID) ) return;
+			
+			// check if we have values
+			if( !array_key_exists($postID, $this->pageCache) ) 
+			{
+				// no values, so delete the key
+				delete_post_meta($postID, $this->metaOptionKey);
+			}
+			else 
+			{
+				// values found; First, get them
+				$values = $this->pageCache[$postID];
+				
+				// TODO: Strip invalid values here
+				
+				// are there values left?
+				if( count($values) == 0 ) 
+				{
+					// if not, delete the key
+					delete_post_meta($postID, $this->metaOptionKey);
+				}
+				else {
+					// write them
+					add_post_meta($postID, $this->metaOptionKey, $values, true) or 
+						update_post_meta($postID, $this->metaOptionKey, $values);
+				}
+			}
 		}
 		
 		/**
@@ -279,25 +353,89 @@
 		}
 		
 		/**
+		 * set() - Set an option's value
+		 *
+		 * This function sets the value for a given option. Depending on the options'
+		 * defined value type, the value will be casted to match that type.
+		 *
+		 * This function throws an exception if the option definition was not set.
+		 *
+		 * @since 0.3
+		 * @param string $keyName 			The option's key.
+		 * @param mixed $value 				The option's value.
+		 * @param int $postID				Optional. The post for which to set the value
+		 * @param bool $skipLoadOptions 	Optional. Set to TRUE if you know that the options have already been loaded.
+		 */
+		function set($keyName, $value, $postID = NULL, $skipLoadOptions=FALSE) 
+		{
+			// sanity check
+			if( $postID <= 0 || empty($postID))  {
+				global $post;
+				$postID = $post->ID;
+			}
+
+			// sanity check, part 2
+			if( empty($postID) ) throw new ErrorException("Post option could not be written because no valid post ID was set.");
+			if(!$this->exists($keyName)) throw new ErrorException("Post option key ".$keyName." was unknown.");
+			
+			// load the options so that we can merge the new value with the old ones
+			if( !$skipLoadOptions ) $this->load_options($postID);
+			
+			// get option and value
+			$option = $this->option_defs[$keyName];
+
+			// typecast			
+			if($option["TYPE"] == "BOOL") {
+				$value = $this->value_isEnabled(strip_tags($value));
+			}
+			else if($option["TYPE"] == "INT") {
+				$value = intval(strip_tags($value));
+			}
+			else {
+				if($option["HTML"]) {
+					$value = stripslashes($value);
+				}
+				else {
+					$value = strip_tags(stripslashes($value));
+				}
+			}
+			
+			// apply value
+			$field = $option["FIELD"];
+			$this->pageCache[$postID][$field] = $value;
+		}
+				
+		/**
 		 * get() - Gets an option's value
 		 *
 		 * This function throws an exception if the option definition was not set.
 		 *
 		 * @since 0.3
 		 * @param string $keyName 			The option's key.
+		 * @param int $postID				Optional. The post for which to set the value
 		 * @param bool $doFilter 			Optional. States wheter the value should be filtered by WordPress. (Defaults to TRUE)
+		 * @param bool $skipLoadOptions 	Optional. Set to TRUE if you know that the options have already been loaded.
 		 * @return mixed The option's value or it's default, if the option was not set.
 		 */
-		function get($keyName, $doFilter=TRUE) 
+		function get($keyName, $postID = NULL, $doFilter=TRUE, $skipLoadOptions=FALSE) 
 		{	
-			if(!$this->exists($keyName)) {
-				throw new ErrorException("Option key ".$keyName." was unknown.");
+			// sanity check
+			if( $postID <= 0 || empty($postID))  {
+				global $post;
+				$postID = $post->ID;
 			}
+		
+			// sanity check, part 2
+			if( empty($postID) ) throw new ErrorException("Post option could not be written because no valid post ID was set.");
+			if(!$this->exists($keyName)) throw new ErrorException("Post option key \"".$keyName."\" was unknown.");
+			
+			// load the options so that we can merge the new value with the old ones
+			if( !$skipLoadOptions ) $this->load_options($postID);
 			
 			// get option and value
 			$option = $this->option_defs[$keyName];			
-			$existed = @array_key_exists($option["FIELD"], $this->options);
-			$value = @$this->options[$option["FIELD"]];
+			$existed = @array_key_exists($option["FIELD"], $this->pageCache[$postID]);
+			$value = @$this->pageCache[$postID][$option["FIELD"]];
 			
 			// apply default, if necessary
 			if(!$existed) {
@@ -324,150 +462,27 @@
 		}
 		
 		/**
-		 * getFormatted() - Gets an attribute_escape()'d representation of an option's value
+		 * getDefault() - Gets the default value for an option
 		 *
 		 * This function throws an exception if the option definition was not set.
 		 *
 		 * @since 0.3
 		 * @param string $keyName 			The option's key.
-		 * @param bool $doFilter 			Optional. States wheter the value should be filtered by WordPress. (Defaults to FALSE)
-		 * @return mixed The option's value or it's default, if the option was not set.
+		 * @return mixed The default value for an option.
 		 */
-		function getFormatted($keyName, $doFilter=FALSE) 
-		{
-			$value = $this->get($keyName, $doFiler);
-			return attribute_escape($value);
-		}
-		
-		/**
-		 * getForCheckbox() - Gets an option's value to be used in a checkbox selection check
-		 *
-		 * This function throws an exception if the option definition was not set.
-		 *
-		 * @since 0.3
-		 * @param string $keyName 			The option's key.
-		 * @return mixed The option's value or it's default, if the option was not set.
-		 */
-		function getForCheckbox($keyName) 
-		{
-			if(!$this->exists($keyName)) {
-				throw new ErrorException("Option key ".$keyName." was unknown.");
-			}
+		function getDefault($keyName) 
+		{	
+			if(!$this->exists($keyName)) throw new ErrorException("Option key ".$keyName." was unknown.");
 			
 			// get option and value
-			$option = $this->option_defs[$keyName];		
-			$key = $option["FIELD"];
-			$array = $this->options;
-			$keyExists = !empty($array) && array_key_exists($key, $array);
-			if(empty($this->options) || !$keyExists) return $option["DEFAULT"];
-			return $this->options[$option["FIELD"]];
-		}
-				
-		/**
-		 * getYesNo() - Gets an option's value to be used in a boolean check
-		 *
-		 * This function throws an exception if the option definition was not set or if the option
-		 * was no flag (boolean).
-		 *
-		 * @since 0.3
-		 * @uses getForCheckbox()			Get's the value and throws if the option was not defined.
-		 * @param string $keyName 			The option's key.
-		 * @return mixed The option's value or it's default, if the option was not set.
-		 */
-		function getYesNo($keyName) 
-		{
-			if($this->option_defs[$keyName]["TYPE"] != "BOOL") {
-				throw new ErrorException("Type for ".$keyName." was no bool");	
-			}
-			return $this->getForCheckbox($keyName);
-		}
-		
-		/**
-		 * is() - Alias for getYesNo()
-		 *
-		 * This function throws an exception if the option definition was not set or if the option
-		 * was no flag (boolean).
-		 *
-		 * @since 0.3
-		 * @see getYesNo()
-		 * @uses getYesNo()					Get's the value
-		 * @param string $keyName 			The option's key.
-		 * @return mixed The option's value or it's default, if the option was not set.
-		 */
-		function is($keyName) 
-		{
-			return $this->getYesNo($keyName);
-		}
-		
-		/**
-		 * set() - Set an option's value
-		 *
-		 * This function sets the value for a given option. Depending on the options'
-		 * defined value type, the value will be casted to match that type.
-		 *
-		 * This function throws an exception if the option definition was not set.
-		 *
-		 * @since 0.3
-		 * @param string $keyName 			The option's key.
-		 * @param mixed $value 				The option's value.
-		 */
-		function set($keyName, $value) 
-		{
-			if(!$this->exists($keyName)) {
-				throw new ErrorException("Option key ".$keyName." was unknown.");
-			}
-			
-			// get option and value
-			$option = $this->option_defs[$keyName];
-
-			// typecast			
-			if($option["TYPE"] == "BOOL") {
-				$value = $this->value_isEnabled(strip_tags($value));
-			}
-			else if($option["TYPE"] == "INT") {
-				$value = intval(strip_tags($value));
-			}
-			else {
-				if($option["HTML"]) {
-					$value = stripslashes($value);
-				}
-				else {
-					$value = strip_tags(stripslashes($value));
-				}
-			}
-
-			// print $option["FIELD"] . " (".$option["HTML"].") << " . $value . PHP_EOL;
-			
-			// apply value
-			$this->options[$option["FIELD"]] = $value;
+			$option = $this->option_defs[$keyName];			
+			return $option["DEFAULT"];
 		}
 			
-		/**
-		 * loadOptions() - Loads the options from the WordPress database
-		 *
-		 * @since 0.3
-		 * @uses get_option()
-		 */
-		function loadOptions() 
-		{
-			$this->options = get_option( GRAIN_OPTIONS_KEY );
-		}
-			
-		/**
-		 * writeOptions() - Writes the options to the WordPress database
-		 *
-		 * @since 0.3
-		 * @uses update_option()
-		 */
-		function writeOptions() 
-		{
-			update_option( GRAIN_OPTIONS_KEY, $this->options );
-		}
-			
-	} // GrainOpt
+	} // GrainPostOption
 
 /* Load options */
 
-	@require_once(TEMPLATEPATH . '/func/optionskeys.php');
+	@require_once(TEMPLATEPATH . '/func/postoptionskeys.php');
 
 ?>
