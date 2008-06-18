@@ -219,7 +219,7 @@
 		function has_options($postID=NULL) 
 		{
 			// sanity check
-			if( $postID !== 0 && empty($postID))  {
+			if( $postID <= 0 || empty($postID))  {
 				global $post;
 				$postID = $post->ID;
 			}
@@ -245,7 +245,7 @@
 		function get_options($postID=NULL) 
 		{		
 			// sanity check
-			if( $postID !== 0 && empty($postID))  {
+			if( $postID <= 0 || empty($postID))  {
 				global $post;
 				$postID = $post->ID;
 			}
@@ -291,7 +291,7 @@
 		function save_options($postID=NULL) 
 		{		
 			// sanity check
-			if( $postID !== 0 && empty($postID))  {
+			if( $postID <= 0 || empty($postID))  {
 				global $post;
 				$postID = $post->ID;
 			}
@@ -339,13 +339,16 @@
 			if( empty($value) ) return FALSE;
 			else if( $value === FALSE ) return FALSE;
 			else if( $value === 0 ) return FALSE;
-			else if( $value === '' ) return FALSE;
-			else if( $value === 'off' ) return FALSE;
-			else if( $value === 'false' ) return FALSE;
-			else if( $value === 'no' ) return FALSE;
-			else if( $value === '-' ) return FALSE;
-			else if( $value === 'n' ) return FALSE;
-			else if( $value === 'f' ) return FALSE;
+			
+			// treat as string
+			$value = strtolower($value);
+			if( $value == '' ) return FALSE;
+			else if( $value == 'off' ) return FALSE;
+			else if( $value == 'false' ) return FALSE;
+			else if( $value == 'no' ) return FALSE;
+			else if( $value == '-' ) return FALSE;
+			else if( $value == 'n' ) return FALSE;
+			else if( $value == 'f' ) return FALSE;
 			return TRUE;
 		}
 		
@@ -363,10 +366,10 @@
 		 * @param int $postID				Optional. The post for which to set the value
 		 * @param bool $skipLoadOptions 	Optional. Set to TRUE if you know that the options have already been loaded.
 		 */
-		function set($keyName, $value, $postID = -1, $skipLoadOptions=FALSE) 
+		function set($keyName, $value, $postID = NULL, $skipLoadOptions=FALSE) 
 		{
 			// sanity check
-			if( $postID !== 0 && empty($postID))  {
+			if( $postID <= 0 || empty($postID))  {
 				global $post;
 				$postID = $post->ID;
 			}
@@ -414,10 +417,10 @@
 		 * @param bool $skipLoadOptions 	Optional. Set to TRUE if you know that the options have already been loaded.
 		 * @return mixed The option's value or it's default, if the option was not set.
 		 */
-		function get($keyName, $postID = -1, $doFilter=TRUE, $skipLoadOptions=FALSE) 
+		function get($keyName, $postID = NULL, $doFilter=TRUE, $skipLoadOptions=FALSE) 
 		{	
 			// sanity check
-			if( $postID !== 0 && empty($postID))  {
+			if( $postID <= 0 || empty($postID))  {
 				global $post;
 				$postID = $post->ID;
 			}

@@ -265,13 +265,16 @@
 			if( empty($value) ) return FALSE;
 			else if( $value === FALSE ) return FALSE;
 			else if( $value === 0 ) return FALSE;
-			else if( $value === '' ) return FALSE;
-			else if( $value === 'off' ) return FALSE;
-			else if( $value === 'false' ) return FALSE;
-			else if( $value === 'no' ) return FALSE;
-			else if( $value === '-' ) return FALSE;
-			else if( $value === 'n' ) return FALSE;
-			else if( $value === 'f' ) return FALSE;
+			
+			// treat as string
+			$value = strtolower($value);
+			if( $value == '' ) return FALSE;
+			else if( $value == 'off' ) return FALSE;
+			else if( $value == 'false' ) return FALSE;
+			else if( $value == 'no' ) return FALSE;
+			else if( $value == '-' ) return FALSE;
+			else if( $value == 'n' ) return FALSE;
+			else if( $value == 'f' ) return FALSE;
 			return TRUE;
 		}
 		
