@@ -178,7 +178,7 @@ EOT;
 			$optionMarkups = array();
 			
 			// Generate the options
-			if( $GrainOpt->is(GRAIN_EXIF_VISIBLE) ) $optionMarkups[] = $this->get_postopt_checkbox(GRAIN_POSTOPT_HIDE_EXIF, NULL, "Hide EXIF data");
+			if( $GrainOpt->is(GRAIN_EXIF_VISIBLE) ) $optionMarkups[] = $this->get_postopt_checkbox(GRAIN_POSTOPT_HIDE_EXIF, NULL, __("Hide EXIF data", "grain"));
 			
 			// return the options
 			return $optionMarkups;
