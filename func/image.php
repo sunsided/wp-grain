@@ -397,5 +397,34 @@
 		// GRAIN_DTFMT_EXIF
 		return $value;
 	}
+	
+	/**
+	 * grain_get_mosaic_posts() - Gets the list of posts to be used by the mosaic
+	 *
+	 * @since 0.3
+	 * @uses get_posts() Gets the posts
+	 * @param int $mosaic_count_per_page		Optional. The number of posts per page
+	 * @param int $offset						Optional. The current post offset
+	 * @return array Array of scaled dimensions.
+	 */
+	function grain_get_mosaic_posts($mosaic_count_per_page=0, $offset=0) {
+		global $GrainOpt;
+		
+		// generate options
+		$get_post_options = array();
+		$get_post_options[] = "post_type=post";
+		$get_post_options[] = "numberposts=$mosaic_count_per_page";
+		$get_post_options[] = "offset=$offset";
+		
+		// set ordering
+		$ordering = "post_date";
+		if( $GrainOpt->is(GRAIN_MOSAIC_SHUFFLE) ) $ordering = "RAND()";
+		$get_post_options[] = "order=DESC";
+		$get_post_options[] = "orderby=$ordering";
+		
+		// return posts
+		$get_post_options = implode("&", $get_post_options);
+		return get_posts($get_post_options);
+	}
 
 ?>

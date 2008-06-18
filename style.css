@@ -1891,6 +1891,7 @@ div.grain-sidebar #yapb-widget img {
 }
 
 div.year h2 {
+	clear: left;
 	padding-bottom: 0;
 	margin-bottom: 0;
 }

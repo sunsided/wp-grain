@@ -59,6 +59,8 @@
 	
 	// archive and mosaic
 	$GrainOpt->defineFlagOpt( 'GRAIN_MOSAIC_ENABLED', 'mosaic_enabled', FALSE );
+	$GrainOpt->defineFlagOpt( 'GRAIN_MOSAIC_SKIP_EMPTY', 'mosaic_empty', TRUE );
+	$GrainOpt->defineFlagOpt( 'GRAIN_MOSAIC_SHUFFLE', 'mosaic_shuffle', FALSE );
 	$GrainOpt->defineStringOpt( 'GRAIN_MOSAIC_LINKTITLE', 'mosaic_linktitle', __("Mosaic", "grain"), TRUE );
 	$GrainOpt->defineValueOpt( 'GRAIN_MOSAIC_COUNT', 'mosaic_count', 50, TRUE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_MOSAIC_DISPLAY_YEARS', 'mosaic_years', FALSE );
