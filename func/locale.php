@@ -3,6 +3,13 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Translation helper functions
+	
+	@package Grain Theme for WordPress
+	@subpackage Localization
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
@@ -13,6 +20,17 @@
 
 	/* functions */
 
+	/**
+	 * grain_load_locale() - Loads the locale file matching WordPress' locale settings
+	 *
+	 * This function tries to find a matching .mo file in the ./lang/ subdirectory first
+	 * and then falls back to the ./ (root) directory of the theme.
+	 *
+	 * @since 0.3	 
+	 * @access private
+	 * @param string $string A string
+	 * @return string Input string without BR tags
+	 */
 	function grain_load_locale() {	
 		// I18N support through GNU-Gettext files
 		$locale = get_locale();
@@ -21,6 +39,15 @@
 		load_textdomain("grain", $file );
 	}
 	
+	/**
+	 * grain_get_base_locale() - Gets the base locale from given locale
+	 *
+	 * This function extracts the base locale from a given locale, e.g. "de" for "de_DE"
+	 *
+	 * @since 0.2 
+	 * @param string $locale Optional. A given locale (defaults to WPLANG)
+	 * @return string The base locale
+	 */
 	function grain_get_base_locale($locale=WPLANG) {
 		// try full locale
 		$loc = strtolower($locale);
@@ -33,6 +60,15 @@
 		return $locale;
 	}
 
+	/**
+	 * grain_switch_locale() - Loads a new loaded locale
+	 *
+	 * This function tries to find a matching .mo file in the ./lang/ subdirectory first
+	 * and then falls back to the ./ (root) directory of the theme.
+	 *
+	 * @since 0.3
+	 * @param string $locale Optional. The locale to switch to (defaults to WPLANG)
+	 */
 	function grain_switch_locale($locale=WPLANG) {
 		global $wp_locale;
 		$locale=apply_filters( 'locale', $locale );
@@ -43,7 +79,16 @@
 		load_textdomain("grain", $file);
 	}
 	
-	// cached mo file names
+	/**
+	 * An array of cached .mo file names
+	 *
+	 * This value will be set upon a call to grain_find_locale()
+	 *
+	 * @see grain_find_locale()
+	 * @global array $__grain_mo_cache
+	 * @name $__grain_mo_cache
+	 * @access private
+	 */
 	$__grain_mo_cache = null;
 	
 	// tries to find a matching locale file based on a locale given
@@ -57,6 +102,36 @@
 	//		"de_AT"			"de.mo" 						"de"
 	//		"de_AT"			"fr.mo" 						"en_US"
 	//		"de"			"fr.mo" 						"en_US"
+	
+	/**
+	 * grain_find_locale() - Finds a locale file that matches a given locale string
+	 *
+	 * This function tries to find a matching .mo file for the $locale parameter 
+	 * in the ./lang/ subdirectory first and then falls back to the ./ (root) directory of the theme.
+	 * If no matching file was found there either, it falls back to the $fallback value.
+	 *
+	 * The results of this function are cached in the $__grain_mo_cache global variable
+	 * to speed up access when testing multiple locales.
+	 *
+	 * <code>
+	 * Examples; assuming the default locale (WPLANG) is "en_US"
+	 *	  You enter      You have                    it returns
+	 *	    "de"          "de.mo"                    "de"	
+	 *	    "de"          "de_AT.mo"                 "de_AT"
+	 *	    "de"          "de_AT.mo" and "de_DE.mo"  "de_DE"
+	 *	    "de_DE"       "de_AT.mo" and "de_DE.mo"  "de_DE"
+	 *	    "de_AT"       "de_AT.mo" and "de_DE.mo"  "de_AT"
+	 *	    "de_AT"       "de.mo"                    "de"
+	 *	    "de_AT"       "fr.mo"                    "en_US"
+	 *	    "de"          "fr.mo"                    "en_US"
+	 * </code>
+	 *
+	 * @since 0.3
+	 * @access private
+	 * @global $__grain_mo_cache The .mo file cache
+	 * @param string $locale The locale for which a .mo file shall be searched
+	 * @param string $fallback Optional. A fallback value to return. (defaults to WPLANG)
+	 */
 	function grain_find_locale($locale, $fallback=WPLANG) {
 		// test for a direct hit
 		if( file_exists(TEMPLATEPATH."/lang/$locale.mo") ) return $locale;
@@ -113,8 +188,20 @@
 	}
 
 
-	// tries to find a locale from the HTTP_ACCEPT_LANGUAGE header
-	// that matches an existing locale file in the theme directory
+	/**
+	 * grain_get_acceptedlocale() - Gets and returns the best matching accepted locale from the request's HTTP_ACCEPT_LANGUAGE header
+	 *
+	 * This functions gets the values from the HTTP_ACCEPT_LANGUAGE request header,
+	 * splits them, sorts them by weighting and then tries to find the best match from the list
+	 * of known locales. If no match was found, a fallback value is returned.
+	 *
+	 * @since 0.3
+	 * @access private
+	 * @see grain_find_locale()
+	 * @uses grain_find_locale() To find the best matching .mo for a given locale
+	 * @param string $fallback Optional. The locale to fall back to if no acceptable HTTP_ACCEPT_LANGUAGE was found (defaults to WPLANG)
+	 * @return string The best matching locale or the value $fallback
+	 */
 	function grain_get_acceptedlocale($fallback=WPLANG) {
 		// de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
 		// --> de-de,de;q=0.8
@@ -165,6 +252,19 @@
 		return $fallback;
 	}
 
+	/**
+	 * grain_autolocale() - Performs the autlocale logic, if enabled
+	 *
+	 * If successful, this function tries to set a X-Grain-Autolocale response header with
+	 * the loaded locale.
+	 *
+	 * @since 0.3
+	 * @access private
+	 * @global $GrainOpt Grain options
+	 * @uses grain_get_acceptedlocale() To find the best matching locale
+	 * @uses get_locale() To find the current locale
+	 * @uses grain_switch_locale() To switch the locale
+	 */
 	function grain_autolocale() {
 		global $GrainOpt;
 		if( !$GrainOpt->is(GRAIN_AUTOLOCALE_ENABLED) ) return;

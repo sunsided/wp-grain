@@ -3,12 +3,21 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Development build information
+	
+	@package Grain Theme for WordPress
+	@subpackage Version
 */
 
 	/* defines */
-	
-	define('GRAIN_THEME_VERSION_EXTENDED', 'beta 1');
+
+	/** States that this is a development build */	
 	define('GRAIN_THEME_VERSION_DEVBUILD', true);
+	
+	/** The current SVN release */	
 	define('GRAIN_THEME_VERSION_REVISION', '$WCREV$'); // last SVN revision
 	
 	error_reporting(E_ALL ^ E_NOTICE);

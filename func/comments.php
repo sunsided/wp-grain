@@ -3,22 +3,62 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Comment helper functions
+	
+	@package Grain Theme for WordPress
+	@subpackage Comments
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 	
 /* comments helper */
 
+	/**
+	 * grain_can_comment() - Checks if the current post is open for comments
+	 *
+	 * @global $GrainOpt Grain options
+	 * @uses $post Global post object
+	 * @return bool TRUE if comments are allowed on the current post
+	 */
+	function grain_can_comment() 
+	{
+		global $GrainOpt, $post;
+		if( empty($post) ) return false;
+		if( !$GrainOpt->getYesNo(GRAIN_COMMENTS_ENABLED) ) return false;
+		if( !grain_post_has_image()	) {
+			return $GrainOpt->getYesNo(GRAIN_COMMENTS_ON_EMPTY_ENABLED);
+		}
+		return true;
+	}
+
+	/**
+	 * grain_get_comments() - Gets all comments on a post, ordered by date
+	 *
+	 * @uses $wpdb Database Object
+	 * @param int $post_id 				The post's id
+	 * @return array An array of comments as returned from the database.
+	 */
 	function grain_get_comments($post_id) {
 		global $wpdb;
 
-		$post_id = (int) $post_id;
+		$post_id = intval($post_id);
 		return $wpdb->get_results("SELECT * FROM $wpdb->comments WHERE comment_post_ID = $post_id AND comment_approved IN ('0', '1') ORDER BY comment_date");
 	}	
 
+	/**
+	 * grain_inject_commenteditlink() - Injects the edit link for a given comment
+	 *
+	 * @uses $userdata To determine wheter the current user is allowed to moderate a comment
+	 * @uses current_user_can() To determine wheter the current user is allowed to moderate a comment
+	 * @param int $comment 				The comment object
+	 */
 	function grain_inject_commenteditlink($comment) {
 		global $userdata;
-
+		if( empty($comment) ) return;
+	
 		// get the ID
 		$user_ID = $userdata->ID;
 		
@@ -40,6 +80,17 @@
 		endif; // moderation test	
 	}
 	
+	/**
+	 * grain_commentcount_string() - Gets a string containing the count of comments on the current post
+	 *
+	 * The returned string is a string representation of the number of comments on the current post.
+	 * If the current user is allowed to moderate, the count of unapproved comments on the current post
+	 * is appended.
+	 *
+	 * @uses get_comment_count() 		To get the number of comments on the current post
+	 * @uses current_user_can() 		To determine wheter the current user is allowed to moderate a comment
+	 * @return string						A string containing the number of comments
+	 */	
 	function grain_commentcount_string() {
 		global $post;
 		

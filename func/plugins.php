@@ -3,6 +3,13 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Plugin loader
+	
+	@package Grain Theme for WordPress
+	@subpackage Plugin Suite
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));

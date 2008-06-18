@@ -1,8 +1,15 @@
 <?php 
-/*     
+/*
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Administration menu options
+	
+	@package Grain Theme for WordPress
+	@subpackage Administration Menu
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
@@ -20,18 +27,57 @@
 
 /* Some translations */
 
+	/**
+	 * A string containing a localized text stating that HTML is not allowed for a field.
+	 * @global string $no_HTML
+	 * @name $no_HTML
+	 */
 	$no_HTML = __("No HTML here", "grain");
+	
+	/**
+	 * A string containing a localized text stating that HTML is allowed for a field.
+	 * @global string $HTML_allowed
+	 * @name $HTML_allowed
+	 */
 	$HTML_allowed = __("HTML allowed here", "grain");
 
 /* Menu building functions */
 
 	// this object holds the values that are allowed to be saved from the currently loaded page
 
+	/**
+	 * grain_admin_start_page() - Prepares the admin option array
+	 *
+	 * This function prepares the internal array of options that are allowed to be changed
+	 * from an options page.
+	 * A call to this function must be made before any administration options are displayed.
+	 *
+	 * @since 0.3
+	 * @access private
+	 * @uses $_SESSION["__grain_admin_options"] Current options store
+	 */
 	function grain_admin_start_page() 
 	{
 		$_SESSION["__grain_admin_options"] = array();
 	}
 
+	/**
+	 * grain_admin_line() - General function to inject a text input field
+	 *
+	 * @since 0.3
+	 * @uses $GrainOpt Grain options
+	 * @global $HTML_allowed 			used to tell that HTML is allowed
+	 * @global $no_HTML 					used to tell that HTML is not allowed
+	 * @uses $_SESSION["__grain_admin_options"] Current options store
+	 *
+	 * @param string $optionName 		The internal option key
+	 * @param string $fieldName 		The name/ID of the HTML field in the form
+	 * @param string $lineCSS 			General CSS class to be assigned to the input element
+	 * @param string $cssClass 			Additional CSS classes to be assigned to the input element
+	 * @param string $title 				The readable name of the option
+	 * @param string $quickInfo 		A short description of the option
+	 * @param string $descriptionLine 	Optional. A detailed description of the option
+	 */
 	function grain_admin_line($optionName, $fieldName, $lineCSS, $cssClass, $title, $quickInfo, $descriptionLine = NULL ) 
 	{
 		global $GrainOpt, $HTML_allowed, $no_HTML;
@@ -74,16 +120,50 @@
 		echo '</div>';
 	}
 
+	/**
+	 * grain_admin_longline() - Injects a long text input field
+	 *
+	 * @since 0.3
+	 * @uses grain_admin_line() Create the input element
+	 *
+	 * @param string $optionName 		The internal option key
+	 * @param string $fieldName 		The name/ID of the HTML field in the form
+	 * @param string $cssClass 			Additional CSS classes to be assigned to the input element
+	 * @param string $title 				The readable name of the option
+	 * @param string $quickInfo 		A short description of the option
+	 * @param string $descriptionLine 	Optional. A detailed description of the option
+	 */
 	function grain_admin_longline($optionName, $fieldName, $cssClass, $title, $quickInfo, $descriptionLine = NULL ) 
 	{
 		grain_admin_line($optionName, $fieldName, "longline", $cssClass, $title, $quickInfo, $descriptionLine );
 	}
-
+	
+	/**
+	 * grain_admin_shortline() - Injects a short text input field
+	 *
+	 * @since 0.3
+	 * @uses grain_admin_line() Create the input element
+	 *
+	 * @param string $optionName 		The internal option key
+	 * @param string $fieldName 		The name/ID of the HTML field in the form
+	 * @param string $cssClass 			Additional CSS classes to be assigned to the input element
+	 * @param string $title 				The readable name of the option
+	 * @param string $quickInfo 		A short description of the option
+	 * @param string $descriptionLine 	Optional. A detailed description of the option
+	 */
 	function grain_admin_shortline($optionName, $fieldName, $cssClass, $title, $quickInfo, $descriptionLine = NULL ) 
 	{
 		grain_admin_line($optionName, $fieldName, "shortline", $cssClass, $title, $quickInfo, $descriptionLine );
 	}
 
+	/**
+	 * grain_admin_infoline() - Injects a descriptive text block
+	 *
+	 * @since 0.3
+	 *
+	 * @param string $cssClass 			An additional CSS class to be assigned to the text block. If not needed, set to NULL.
+	 * @param string $text	 			The text block to be displayed
+	 */
 	function grain_admin_infoline($cssClass, $text) 
 	{		
 		// begin option line
@@ -96,9 +176,23 @@
 		}
 	}
 
+	/**
+	 * grain_admin_checkbox() - Injects a checkbox input field
+	 *
+	 * @since 0.3
+	 * @uses $GrainOpt Grain options
+	 * @uses $_SESSION["__grain_admin_options"] Current options store
+	 *
+	 * @param string $optionName 		The internal option key
+	 * @param string $fieldName 		The name/ID of the HTML field in the form
+	 * @param string $cssClass 			Additional CSS classes to be assigned to the input element
+	 * @param string $title 				The readable name of the option
+	 * @param string $quickInfo 		A short description of the option
+	 * @param string $descriptionLine 	Optional. A detailed description of the option
+	 */
 	function grain_admin_checkbox($optionName, $fieldName, $cssClass, $title, $quickInfo, $descriptionLine = NULL ) 
 	{
-		global $GrainOpt, $HTML_allowed, $no_HTML;
+		global $GrainOpt;
 		$_SESSION["__grain_admin_options"][$fieldName] = $optionName;
 		
 		$value = $GrainOpt->getYesNo($optionName, FALSE);
@@ -136,6 +230,21 @@
 		echo '</div>'.PHP_EOL;
 	}
 
+	/**
+	 * grain_admin_multiline() - Injects a multiline text input field
+	 *
+	 * @since 0.3
+	 * @uses $GrainOpt Grain options
+	 * @global $HTML_allowed 			used to tell that HTML is allowed
+	 * @global $no_HTML 					used to tell that HTML is not allowed
+	 * @uses $_SESSION["__grain_admin_options"] Current options store
+	 *
+	 * @param string $optionName 		The internal option key
+	 * @param string $fieldName 		The name/ID of the HTML field in the form
+	 * @param string $cssClass 			Additional CSS classes to be assigned to the input element
+	 * @param string $title 				The readable name of the option
+	 * @param string $descriptionLine 	Optional. A detailed description of the option
+	 */
 	function grain_admin_multiline($optionName, $fieldName, $cssClass, $title, $descriptionLine = NULL ) 
 	{
 		global $GrainOpt, $HTML_allowed, $no_HTML;
@@ -163,9 +272,30 @@
 		echo '</div>';
 	}
 
+	/**
+	 * grain_admin_combobox() - General function to inject a combobox input field
+	 *
+	 * This function is used to create a combobox. It is important to notice that the $values parameter
+	 * is an associative array that maps option values to their readable names, i.e.
+	 * <code>
+	 * $values = array( 0 => "zero things", 1 => "one thing" );
+	 * </code>
+	 *
+	 * @since 0.3
+	 * @uses $GrainOpt Grain options
+	 * @uses $_SESSION["__grain_admin_options"] Current options store
+	 *
+	 * @param string $optionName 		The internal option key
+	 * @param string $fieldName 		The name/ID of the HTML field in the form
+	 * @param string $cssClass 			Additional CSS classes to be assigned to the input element
+	 * @param array  $values 			An associative array value ==> key of the values to be displayed
+	 * @param string $title 				The readable name of the option
+	 * @param string $quickInfo 		Optional. A short description of the option
+	 * @param string $descriptionLine 	Optional. A detailed description of the option
+	 */
 	function grain_admin_combobox($optionName, $fieldName, $cssClass, $values, $title, $quickInfo = NULL, $descriptionLine = NULL ) 
 	{
-		global $GrainOpt, $HTML_allowed, $no_HTML;
+		global $GrainOpt;
 		$_SESSION["__grain_admin_options"][$fieldName] = $optionName;
 		
 		$optionvalue = $GrainOpt->get($optionName, FALSE);
@@ -208,6 +338,20 @@
 		echo '</div>'.PHP_EOL;
 	}
 	
+	/**
+	 * grain_admin_pageselector() - Injects a selection combobox for static pages
+	 *
+	 * @since 0.3
+	 * @uses grain_admin_combobox() Creates the combobox
+	 * @uses get_pages() Gets the static pages
+	 *
+	 * @param string $optionName 		The internal option key
+	 * @param string $fieldName 		The name/ID of the HTML field in the form
+	 * @param string $cssClass 			Additional CSS classes to be assigned to the input element
+	 * @param string $title 				The readable name of the option
+	 * @param string $quickInfo 		Optional. A short description of the option
+	 * @param string $descriptionLine 	Optional. A detailed description of the option
+	 */
 	function grain_admin_pageselector($optionName, $fieldName, $cssClass, $title, $quickInfo = NULL, $descriptionLine = NULL ) 
 	{
 		$pages = get_pages();
@@ -219,9 +363,27 @@
 	
 	}
 	
+	/**
+	 * grain_admin_sizeboxes() - Injects two short text input boxes to allow the user to input a size
+	 *
+	 * This option is used to enter sizes, e.g. width and height of an image.
+	 *
+	 * @since 0.3
+	 * @uses grain_admin_combobox() Creates the combobox
+	 * @uses $_SESSION["__grain_admin_options"] Current options store
+	 *
+	 * @param string $optionName1 		The internal option key for the first value
+	 * @param string $fieldName1 		The name/ID of the HTML field in the form for the first value
+	 * @param string $optionName2 		The internal option key for the second value
+	 * @param string $fieldName2 		The name/ID of the HTML field in the form for the second value
+	 * @param string $cssClass 			Additional CSS classes to be assigned to the input element
+	 * @param string $title 				The readable name of the option
+	 * @param string $unit		 		A text describing the unit that will be displayed next to the boxes, e.g. "px"
+	 * @param string $descriptionLine 	Optional. A detailed description of the option
+	 */
 	function grain_admin_sizeboxes($optionName1, $fieldName1, $optionName2, $fieldName2, $cssClass, $title, $unit, $descriptionLine = NULL ) 
 	{
-		global $GrainOpt, $HTML_allowed, $no_HTML;
+		global $GrainOpt;
 		$_SESSION["__grain_admin_options"][$fieldName1] = $optionName1;
 		$_SESSION["__grain_admin_options"][$fieldName2] = $optionName2;
 		
@@ -256,6 +418,11 @@
 		echo '</div>';
 	}
 
+	/**
+	 * grain_admin_spacer() - Injects a vertical spacer
+	 *
+	 * @since 0.3
+	 */
 	function grain_admin_spacer() 
 	{
 		echo '<div class="spacer"></div>';
@@ -263,7 +430,18 @@
 
 /* known menus */
 
+	/**
+	 * An array of recognized option pages
+	 * @global array $knownPagesList
+	 * @name $knownPagesList
+	 */
 	$knownPagesList = array( "copyright", "general", "styling", "datetime", "navigation" );
+	
+	/**
+	 * A boolean to determine whether or not we have recognized a "page" request.
+	 * @global bool $knownPage
+	 * @name $knownPage
+	 */
 	$knownPage = in_array( $_GET['page'], $knownPagesList );
 
 	@require_once(TEMPLATEPATH . '/admin/page.copyright.php');
@@ -274,6 +452,14 @@
 
 /* top level menu */
 
+	/**
+	 * grain_admin_createmenus() - Hooks the option pages into the WordPress backend
+	 *
+	 * @since 0.2
+	 * @uses add_theme_page() 			Adds a page to WordPress' themes/presentation page
+	 * @uses add_options_page()			Adds a page to WordPress' options page
+	 * @uses grain_admin_dologic()		Performs the request
+	 */
 	function grain_admin_createmenus() 
 	{	
 		$basePageTitle = __("Configure Grain", "grain");
@@ -333,8 +519,13 @@
 
 	}
 
-/* functions */
-
+	/**
+	 * grain_admin_dologic() - Shows the admin pages and processes requests
+	 *
+	 * @since 0.2
+	 * @global $GrainOpt 		Gets/sets the options
+	 * @global $knownPage 		To determine if the page is recognized
+	 */
 	function grain_admin_dologic() 
 	{
 		global $GrainOpt, $knownPage, $_SESSION;
@@ -380,10 +571,21 @@
 		
 	}
 
+	/**
+	 * grain_admin_pagestyle() - Injects the CSS stylesheet used for the admin pages
+	 *
+	 * @since 0.3
+	 */
 	function grain_admin_pagestyle() {
 		echo "<link rel='stylesheet' href='".GRAIN_TEMPLATE_DIR."/admin/admin.css' type='text/css' />";
 	}
 
+	/**
+	 * grain_admin_inject_yapb_msg() - Injects a warning if YAPB is not installed
+	 * 
+	 * @since 0.3
+	 * @uses grain_is_yapb_installed() Determine if the YAPB plugin is installed
+	 */
 	function grain_admin_inject_yapb_msg() 
 	{
 		if( !grain_is_yapb_installed() ) 

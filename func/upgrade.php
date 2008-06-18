@@ -3,6 +3,13 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Upgrade mechanism
+	
+	@package Grain Theme for WordPress
+	@subpackage Upgrade Mechanism
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
@@ -13,8 +20,14 @@
 	
 	/* version helper */
 		
+	/**
+	 * grain_get_version_array() - Gets an associative array with information about the current version
+	 *
+	 * @param string $versionString The version string
+	 * @return array Information about the current version
+	 */
 	function grain_get_version_array($versionString) {
-		$regexp = '#(?P<major>\d+)\.(?P<minor>\d+)(\.(?P<revision>\d+)(r(?P<fix>\d+))?)?#iu';
+		$regexp = '#(?P<major>\d+)\.(?P<minor>\d+)(\.(?P<revision>\d+)((\.|\s*r)(?P<fix>\d+))?)?(\s*b(eta)?\s*(?P<beta>\d+))?#iu';
 		preg_match($regexp, $versionString, $array);
 		if(!$array) return null;
 
@@ -22,10 +35,19 @@
 			'major' => empty($array['major']) ? 0 : $array['major'],
 			'minor' => empty($array['minor']) ? 0 : $array['minor'],
 			'revision' => empty($array['revision']) ? 0 : $array['revision'],
-			'fix' => empty($array['fix']) ? 0 : $array['fix']
+			'fix' => empty($array['fix']) ? 0 : $array['fix'],
+			'beta' => empty($array['beta']) ? 0 : $array['beta']
 		);
 	}
 	
+	/**
+	 * grain_compare_version() - Compares two versions
+	 *
+	 * @uses grain_get_version_array() To split the version strings into arrays
+	 * @param string $versionString1 		The left version string
+	 * @param string $versionString2 		The right version string
+	 * @return int negative if left version is smaller, equal if identical, positive value if left version is bigger
+	 */
 	function grain_compare_version($versionString1, $versionString2) {
 		$v1 = grain_get_version_array($versionString1);
 		$v2 = grain_get_version_array($versionString2);
@@ -38,17 +60,21 @@
 		if( $v1['major'] < $v2['major'] ) return -1;
 		if( $v1['major'] > $v2['major'] ) return +1;
 		
-		// check major version
+		// check minor version
 		if( $v1['minor'] < $v2['minor'] ) return -1;
 		if( $v1['minor'] > $v2['minor'] ) return +1;
 		
-		// check major version
+		// check revision
 		if( $v1['revision'] < $v2['revision'] ) return -1;
 		if( $v1['revision'] > $v2['revision'] ) return +1;
 		
-		// check major version
+		// check fix
 		if( $v1['fix'] < $v2['fix'] ) return -1;
 		if( $v1['fix'] > $v2['fix'] ) return +1;
+
+		// check beta version
+		if( $v1['beta'] < $v2['beta'] ) return -1;
+		if( $v1['beta'] > $v2['beta'] ) return +1;
 		
 		// equal
 		return 0;
@@ -56,6 +82,13 @@
 	
 	/* upgrader */
 	
+	/**
+	 * grain_perform_upgrade() - Performs an automatic upgrade from older versions
+	 *
+	 * @uses get_option() 					To get an option
+	 * @uses delete_option() 				To delete an option
+	 * @access internal
+	 */
 	function grain_perform_upgrade() {
 		global $GrainOpt;
 		
@@ -130,9 +163,17 @@
 
 	/* first-time YAPB configuration */
 	
+	/**
+	 * grain_tweak_yapb() - Sets some YAPB options
+	 *
+	 * @deprecated
+	 * @uses get_option() 					To get an option
+	 * @uses delete_option() 				To delete an option
+	 * @access internal
+	 */
 	function grain_tweak_yapb() {
 		// disable YAPB's automatic insertion
-		update_option('yapb_display_images_activate', '');
+		// update_option('yapb_display_images_activate', '');
 	}
 
 	/* auto-perform the upgrade and first-time installation */

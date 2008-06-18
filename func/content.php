@@ -3,6 +3,13 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Content helper functions
+	
+	@package Grain Theme for WordPress
+	@subpackage Content
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
@@ -10,23 +17,50 @@
 
 /* functions */
 
+	/** A "default" post type, with a photo and some text */
 	define('GRAIN_POSTTYPE_PHOTO', 'photo');
+	
+	/** An "user defined" post type, where the "photo" content is build from the text */
 	define('GRAIN_POSTTYPE_SPLITPOST', 'split-post');
 
-	function grain_posttype($post_id, $default=GRAIN_POSTTYPE_PHOTO) {
-		
-		// TODO: Get real type from the database
+	/**
+	 * grain_posttype() - Gets the Grain post type of a given post
+	 *
+	 * Since post types are not implemented yet, this function always
+	 * returns GRAIN_POSTTYPE_PHOTO;
+	 *
+	 * @since 0.2
+	 * @param int $post_id 				The post's id
+	 * @param string $default 			Optional. The default type.
+	 * @return string 					The type of the current post.
+	 */
+	function grain_posttype($post_id, $default=GRAIN_POSTTYPE_PHOTO) 
+	{
 		return GRAIN_POSTTYPE_PHOTO;
-		//return GRAIN_POSTTYPE_SPLITPOST;
-		//return 'split-post';
-		
 	}
 
+	/**
+	 * grain_has_content() - Checks wheter the current post has any (text) content
+	 *
+	 * @since 0.3
+	 * @uses $post						The current post object
+	 * @return bool TRUE if the current post has any (textual) content
+	 */
 	function grain_has_content() {
 		global $post;
 		return strlen($post->post_content) != 0;
 	}
 	
+	/**
+	 * grain_get_the_content() - Gets the part of the content that is before the "more" tag
+	 *
+	 * In addition to the "get_the_content" and "the_content" filters, a filter on 
+	 * "GRAIN_GET_THE_CONTENT" is also applied.
+	 *
+	 * @since 0.3
+	 * @uses $post						The current post object
+	 * @return string The content before the "more" tag
+	 */	
 	function grain_get_the_content() {
 		global $post;
 	
@@ -40,11 +74,22 @@
 		return $content;
 	}
 	
+	/**
+	 * grain_get_the_special_content() - Gets the part of the content that is after the "more" tag
+	 *
+	 * In addition to the "get_the_content" and "the_content" filters, a filter on 
+	 * "GRAIN_THE_SPECIAL_CONTENT" is also applied.
+	 *
+	 * @since 0.3
+	 * @uses $post						The current post object
+	 * @return string The content after the "more" tag or NULL, if no "more" tag was set
+	 */	
 	function grain_get_the_special_content() {
 		global $post;
 	
 		$array = explode('<!--more-->', $post->post_content);
 		//$content = get_the_content('', 0, '');
+		if( count($array) <= 1 ) return NULL;
 		$content = $array[1];
 		$content = apply_filters('get_the_content', $content);
 		$content = apply_filters('the_content', $content);
@@ -55,6 +100,14 @@
 
 /* Common post tasks */
 
+	/**
+	 * grain_prepare_post_logic() - Prepares for the _postlogic functions
+	 *
+	 * @since 0.3
+	 * @access private
+	 * @global $GrainOpt					Grain options
+	 * @return array An associative array of certain post information
+	 */	
 	function grain_prepare_post_logic() {
 	
 		global $GrainOpt, $post; //, $previous, $next, $pagePosition, $message_left, $message_right;
@@ -96,6 +149,14 @@
 
 /* Regular photo page */
 
+	/**
+	 * grain_do_regularpost_logic() - Does the logic for a regular post (GRAIN_POSTTYPE_PHOTO)
+	 *
+	 * This renders the a default photo block.
+	 *
+	 * @since 0.3
+	 * @global $GrainOpt					Grain options
+	 */	
 	function grain_do_regularpost_logic() {
 		global $GrainOpt, $post;
 
@@ -244,6 +305,15 @@
 
 /* Splitpost */
 	
+	/**
+	 * grain_do_regularpost_logic() - Does the logic for an user-defined post (GRAIN_POSTTYPE_SPLITPOST)
+	 *
+	 * This function is marked deprecated since it is not fully implemented yet
+	 *
+	 * @deprecated
+	 * @since 0.3
+	 * @global $GrainOpt					Grain options
+	 */	
 	function grain_do_splitpost_logic() {
 		global $post;
 		
@@ -306,10 +376,15 @@
 /* Extended Info */
 
 	/**
-		Tests whether Grain is in regular extended mode.
-		Grain enters "regular" extended mode if extended mode is enabled in the options and the user clicked
-		the comments/info link or when the user tried to visit a comments page directly.
-	*/
+	 * grain_is_regular_extendedmode() - Tests whether Grain is in regular extended mode.
+	 *
+	 * Grain enters "regular" extended mode if extended mode is enabled in the options and the user clicked
+	 * the comments/info link or when the user tried to visit a comments page directly.
+	 *
+	 * @since 0.3
+	 * @global $GrainOpt					Grain options
+	 * @return bool TRUE if Grain is in regular extended mode
+	 */	
 	function grain_is_regular_extendedmode() 
 	{
 		global $GrainOpt;
@@ -317,10 +392,16 @@
 	}
 
 	/**
-		Tests whether Grain is in enforced extended mode.
-		Enforced extended mode means that the photo's information will be shown without regard to the
-		extended mode setting in the options.
-	*/
+	 * grain_is_enforced_extendedmode() - Tests whether Grain is in enforced extended mode.
+	 *
+	 * Enforced extended mode means that the photo's information will be shown without regard to the
+	 * extended mode setting in the options.
+	 * This may happen if Grain performs a redirect from a direct hit on the comments popup.
+	 *
+	 * @since 0.3
+	 * @global $GrainOpt					Grain options
+	 * @return bool TRUE if Grain is in enforced extended mode
+	 */	
 	function grain_is_enforced_extendedmode() 
 	{
 		global $GrainOpt;
@@ -328,25 +409,31 @@
 	}
 
 	/**
-		Tests whether Grain is in extended mode.
-		This function returns true, if either enforced or regular extended mode is entered.
-	*/
+	 * grain_is_extendedmode() - Tests whether Grain is in extended mode.
+	 *
+	 * Extended mode is enabled if the conditions for regular extended mode
+	 * or enforced extended mode are met.
+	 *
+	 * @since 0.3
+	 * @uses grain_is_regular_extendedmode()	Determines if we are in regular extended mode
+	 * @uses grain_is_enforced_extendedmode()	Determines if we are in enforced extended mode
+	 * @return bool TRUE if Grain is in regular extended mode
+	 */	
 	function grain_is_extendedmode() 
 	{
-		// $regular_extended_mode = (GRAIN_REQUESTED_EXINFO && $GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED)) || GRAIN_REQUESTED_OTEXINFO;
-		// $enforced_extended_mode = $GrainOpt->getYesNo(GRAIN_CONTENT_ENFORCE_INFO);
-		// $extended_mode = $regular_extended_mode || $enforced_extended_mode;
-	
 		if(grain_is_regular_extendedmode()) return true;
 		if(grain_is_enforced_extendedmode()) return true;
-		
 		return false;
 	}
 
 	/**
-		Does the "extended info" logic.
-		This renders the extended information block under the photo
-	*/
+	 * grain_do_extendedinfo_logic() - Performs the "extended info" logic.
+	 *
+	 * This renders the extended information block under the photo
+	 *
+	 * @since 0.3
+	 * @global $GrainOpt					Grain options
+	 */	
 	function grain_do_extendedinfo_logic() 
 	{
 		global $GrainOpt, $post;
@@ -367,7 +454,6 @@
 			if( $en_title != null && $en_title != $post->post_title ) $addon = TRUE;
 		}
 
-		//$exif_enabled = $post->image && $GrainOpt->getYesNo(GRAIN_EXIF_VISIBLE);
 		$exif_enabled = grain_has_exif();
 		$exif_class = $exif_enabled ? 'exif' : 'no-exif';
 		$subtitle_class = $addon ? 'has-subtitle' : 'no-subtitle';

@@ -3,6 +3,13 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Administration menu options for copyright settings
+	
+	@package Grain Theme for WordPress
+	@subpackage Administration Menu
 */
 
 	
@@ -12,6 +19,20 @@
 /* functions */
 
 
+	/**
+	 * grain_adminpage_copyright() - Builds the copyright options page
+	 *
+	 * @since 0.2
+	 * @uses grain_admin_inject_yapb_msg()
+	 * @uses grain_admin_start_page()
+	 * @uses grain_admin_infoline()
+	 * @uses grain_admin_shortline()
+	 * @uses grain_admin_longline()
+	 * @uses grain_admin_checkbox()
+	 * @uses grain_admin_multiline()
+	 * @global $HTML_allowed
+	 * @global $no_HTML
+	 */
 	function grain_adminpage_copyright() 
 	{		
 		global $HTML_allowed, $no_HTML;

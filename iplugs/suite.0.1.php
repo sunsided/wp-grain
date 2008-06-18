@@ -3,12 +3,27 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Plugin Suite 1
+	
+	@package Grain Theme for WordPress
+	@subpackage Plugin Suite
 */
 
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 
 /* functions */
 
+	/**
+	 * grain_weighted_categories() - Injects a (weighted) category cloud
+	 *
+	 * @param int $smallest 		Optional. CSS font size of the smallest category item
+	 * @param int $largest 		Optional. CSS font size of the largest category item
+	 * @param string $unit		Optional. CSS unit of the font size
+	 * @return string A filtered date string
+	 */
 	function grain_weighted_categories($smallest=10, $largest=48, $unit="pt", $exclude='')
 	{
 		/*
@@ -39,7 +54,14 @@
 		}
 	}
 
-	function grain_randompost( $message ) {
+	/**
+	 * grain_randompost() - Gets a link to a random post
+	 *
+	 * @param string $message 	The text of the link
+	 * @param string $id			Optional. ID of the HTML entity
+	 * @return string A HTML anchor containing a link to a random post
+	 */
+	function grain_randompost( $message, $id="random-post" ) {
 		
 		/*
 		Based on RandomPost 0.1 (http://wordpress.gaw2006.de/wordpress-plugin-random-post.html)
@@ -61,9 +83,14 @@
 
 		$post = $wpdb->get_results($query);
 
-		return '<a id="random-post" rel="bookmark" href="'. get_permalink($post[0]->ID) .'" title="'.$post[0]->post_title.'">'.$message.'</a>';
+		return '<a id="'.$id.'" class="random-post-link" rel="next" href="'. get_permalink($post[0]->ID) .'" title="'.$post[0]->post_title.'">'.$message.'</a>';
 	}
 
+	/**
+	 * grain_mostcommented() - Injects a list of the most commented posts
+	 *
+	 * @param int $limit 		Optional. The maximum count of posts in the list.
+	 */
 	function grain_mostcommented( $limit = 10 ) {
 		
 		/*

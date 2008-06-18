@@ -3,6 +3,13 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Administration menu options for date/time settings
+	
+	@package Grain Theme for WordPress
+	@subpackage Administration Menu
 */
 
 	
@@ -12,6 +19,16 @@
 /* functions */
 
 
+	/**
+	 * grain_adminpage_datetime() - Builds the date/time options page
+	 *
+	 * @since 0.2
+	 * @uses grain_admin_inject_yapb_msg()
+	 * @uses grain_admin_start_page()
+	 * @uses grain_admin_shortline()
+	 * @global $HTML_allowed
+	 * @global $no_HTML
+	 */
 	function grain_adminpage_datetime() 
 	{
 		global $HTML_allowed, $no_HTML, $GrainOpt;

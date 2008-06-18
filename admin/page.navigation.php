@@ -3,6 +3,13 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Administration menu options for navigation settings
+	
+	@package Grain Theme for WordPress
+	@subpackage Administration Menu
 */
 
 	
@@ -12,6 +19,19 @@
 /* functions */
 
 
+	/**
+	 * grain_adminpage_navigation() - Builds the navigation options page
+	 *
+	 * @since 0.2
+	 * @uses grain_admin_inject_yapb_msg()
+	 * @uses grain_admin_start_page()
+	 * @uses grain_admin_infoline()
+	 * @uses grain_admin_pageselector()
+	 * @uses grain_admin_shortline()
+	 * @uses grain_admin_combobox()
+	 * @global $HTML_allowed
+	 * @global $no_HTML
+	 */
 	function grain_adminpage_navigation() 
 	{
 		global $HTML_allowed, $no_HTML, $GrainOpt;

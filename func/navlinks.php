@@ -3,6 +3,13 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Navigation helper functions
+	
+	@package Grain Theme for WordPress
+	@subpackage Navigation
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
@@ -15,6 +22,18 @@
 
 /* left/right navigation */
 
+	/**
+	 * grain_mimic_previous_post_link() - Gets a link to the previous post
+	 *
+	 * @since 0.1
+	 * @see grain_mimic_next_post_link()
+	 * @access private
+	 * @param string $format Optional. The HTML markup in which the link shall be embedded. "%link" will be replaced with the actual anchor
+	 * @param string $link Optional. The HTML markup of the link's title. "%title" will be replaced with the post's title
+	 * @param bool $in_same_cat Optional. Set to TRUE if the next link in the same category shall be retrieved
+	 * @param mixed $excluded_categories Optional. A list of excluded categories
+	 * @return string HTML markup with the link to the previous post
+	 */
 	function grain_mimic_previous_post_link($format='&laquo; %link', $link='%title', $in_same_cat = false, $excluded_categories = '') {
 		global $post;
 
@@ -39,6 +58,18 @@
 		return $format;
 	}
 
+	/**
+	 * grain_mimic_next_post_link() - Gets a link to the next post
+	 *
+	 * @since 0.1
+	 * @see grain_mimic_previous_post_link()
+	 * @access private
+	 * @param string $format Optional. The HTML markup in which the link shall be embedded. "%link" will be replaced with the actual anchor
+	 * @param string $link Optional. The HTML markup of the link's title. "%title" will be replaced with the post's title
+	 * @param bool $in_same_cat Optional. Set to TRUE if the next link in the same category shall be retrieved
+	 * @param mixed $excluded_categories Optional. A list of excluded categories
+	 * @return string HTML markup with the link to the previous post
+	 */
 	function grain_mimic_next_post_link($format='%link &raquo;', $link='%title', $in_same_cat = false, $excluded_categories = '') {
 		global $post;	
 	
@@ -58,17 +89,18 @@
 	
 /* comment link generation */
 
-	function grain_can_comment() 
-	{
-		global $GrainOpt, $post;
-		if( empty($post) ) return false;
-		if( !$GrainOpt->getYesNo(GRAIN_COMMENTS_ENABLED) ) return false;
-		if( !grain_post_has_image()	) {
-			return $GrainOpt->getYesNo(GRAIN_COMMENTS_ON_EMPTY_ENABLED);
-		}
-		return true;
-	}
-
+	/**
+	 * grain_generate_comments_link() - Generates a link to the comments
+	 *
+	 * The behavior of this function depends on the mode Grain is using. If in popup mode,
+	 * this link will open the popup. If in extended info mode, this link will lead to the details.
+	 *
+	 * @since 0.1
+	 * @access private
+	 * @global $GrainOpt Grain options
+	 * @using $post Global post object
+	 * @return string HTML markup with the link to the comments
+	 */
 	function grain_generate_comments_link() {
 		global $post, $GrainOpt;
 		
@@ -123,6 +155,15 @@
 	
 /* Header Menu */
 
+	/**
+	 * grain_inject_navigation_menu() - This function injects the navgation menu
+	 *
+	 * The navigation menu is defined in ./header.menu.php
+	 *
+	 * @since 0.1
+	 * @access private
+	 * @global $GrainOpt Grain options
+	 */
 	function grain_inject_navigation_menu($location) 
 	{
 		global $GrainOpt;

@@ -3,6 +3,13 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Creative Commons helper functions
+	
+	@package Grain Theme for WordPress
+	@subpackage Creative Commons
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
@@ -11,8 +18,12 @@
 
 	@require_once(TEMPLATEPATH . '/func/options.php');
 
-/* Shortcut functions helper */
-
+	/**
+	 * grain_embed_cc_div() - Injects the Creative Commons license markup
+	 *
+	 * @since 0.3
+	 * @global $GrainOpt			Grain options
+	 */
 	function grain_embed_cc_div() 
 	{
 		global $GrainOpt;
@@ -26,7 +37,12 @@
 		echo '<!--/Creative Commons License--></div>';
 	}
 	
-	// embed creative commons RDF
+	/**
+	 * grain_embed_cc_rdf() - Injects the Creative Commons license RDF
+	 *
+	 * @since 0.3
+	 * @global $GrainOpt			Grain options
+	 */
 	function grain_embed_cc_rdf() 
 	{
 		global $GrainOpt;

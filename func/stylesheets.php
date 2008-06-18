@@ -3,6 +3,13 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Stylesheet functions
+	
+	@package Grain Theme for WordPress
+	@subpackage Stylesheets
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
@@ -10,6 +17,12 @@
 
 	/* functions */
 
+	/**
+	 * grain_embed_css() - Injects the HTML links to the CSS files used by Grain
+	 *
+	 * @global $GrainOpt Grain options
+	 * @see grain_get_css_overrides()
+	 */
 	function grain_embed_css() 
 	{
 		global $GrainOpt;
@@ -30,6 +43,11 @@
 	
 /* Helper: Override Styles */
 
+	/**
+	 * grain_get_css_overrides() - Gets an array of override stylesheet found in Grain's theme directory
+	 *
+	 * @return array An array of filenames
+	 */
 	function grain_get_css_overrides() {
 		$regexp = '#style\.override([-\.].+|\d+)?(\.css(\.php)?|\.pcss)#i';
 		$result = array();

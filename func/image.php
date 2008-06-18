@@ -3,12 +3,37 @@
 	This file is part of Grain Theme for WordPress.
 	------------------------------------------------------------------
 	File version: $Id$
+
+*//**
+
+	Image helper functions
+	
+	@package Grain Theme for WordPress
+	@subpackage Image
 */
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 
 /* Image functions */
 	
+	/**
+	 * grain_scale_image_size() - Scales a size array to fit in given dimensions
+	 *
+	 * This function implements aspect ratio correct scaling of given size structure.
+	 * If no height is given, no height constraint will be applied. This is useful for
+	 * panoramic images that are higher than wide.
+	 *
+	 * This function returns an associative array of ints. "width" refers to the scaled width,
+	 * "height" to the scaled height. In addition to that, the keys "halfWidth" and "halfWidth2"
+	 * are added, where "halfWidth" is half the scaled width and "halfWidth2" is the scaled and
+	 * reduced width, so that halfWidth+halfWidth2=width for images whose scaled width is odd.
+	 *
+	 * @since 0.3
+	 * @param array $dimensions		Array with the original sizes. Width at index 0, height at index 1.
+	 * @param int $maxWidth			Maximum width
+	 * @param int $maxHeight			Optional. Maximum height
+	 * @return array Array of scaled dimensions.
+	 */
 	function grain_scale_image_size( $dimensions, $maxWidth, $maxHeight=null ) {
 		$width = $dimensions[0];
 		$height = $dimensions[1];
@@ -39,11 +64,40 @@
 		);
 	}
 
+	/**
+	 * grain_post_has_image() - Tests whether the post has an image.
+	 *
+	 * @since 0.3
+	 * @uses grain_is_yapb_installed() To determine if the YAPB plugin is installed.
+	 * @uses yapb_is_photoblog_post() To test if this post is a photoblog post.
+	 * @return array Array of scaled dimensions.
+	 */
 	function grain_post_has_image() {
 		if( !grain_is_yapb_installed() || !function_exists("yapb_is_photoblog_post") ) return null;
 		return yapb_is_photoblog_post();
 	}
 
+	/**
+	 * grain_get_phpthumb_options() - Gets the options for the phpThumb thumbnail generator
+	 *
+	 * This function should be called with $width and $height parameters set. Otherwise
+	 * the function will fall back to the GRAIN_MOSAIC_THUMB_WIDTH and GRAIN_MOSAIC_THUMB_HEIGHT
+	 * configuration options' values.
+	 *
+	 * A basic set of options is set here, additional options are taken from the
+	 * GRAIN_PHPTHUMB_OPTIONS config option.
+	 *
+	 * A complete list of configuration options for phpThumb can be found in the 
+	 * <a href="http://phpthumb.sourceforge.net/demo/docs/phpthumb.readme.txt">phpThumb() manual</a> 
+	 * or at the <a href="http://phpthumb.sourceforge.net/">phpThumb()</a> project site
+	 * in general.
+	 *
+	 * @since 0.3
+	 * @global $GrainOpt Grain options
+	 * @param int $width			Optional. The width of the thumbnail
+	 * @param int $height		Optional. The height of the thumbnail
+	 * @return array Array of strings containing the options for phpThumb
+	 */
 	function grain_get_phpthumb_options($width=NULL, $height=NULL) {
 		global $GrainOpt;
 		
@@ -71,6 +125,19 @@
 		return $phpThumbOptions;
 	}
 
+	/**
+	 * grain_mimic_ygi_archive() - Gets the HTML markup for a thumbnail frame on an archive page
+	 *
+	 * This function applies the "yapb_get_thumbnail" filter.
+	 *
+	 * @since 0.2
+	 * @global $GrainOpt Grain options
+	 * @uses grain_get_phpthumb_options() To get the phpThumb() configuration options
+	 *
+	 * @param mixed $image		The YAPB image object
+	 * @param mixed $post		The current post object
+	 * @return string HTML markup for the current image's/post's thumbnail
+	 */
 	function grain_mimic_ygi_archive($image, $post) {
 		global $GrainOpt;
 
@@ -116,6 +183,17 @@
 		return $anchor_html;
 	}
 
+	/**
+	 * grain_inject_popup_thumb() - Injects the HTML markup for a thumbnail frame on the comments popup
+	 *
+	 * @since 0.2
+	 * @global $GrainOpt Grain options
+	 * @uses grain_get_phpthumb_options() To get the phpThumb() configuration options
+	 *
+	 * @param mixed $image		The YAPB image object
+	 * @param mixed $post		The current post object
+	 * @return string HTML markup for the current image's/post's thumbnail
+	 */
 	function grain_inject_popup_thumb() {
 		global $post, $GrainOpt;
 		if( !$GrainOpt->is(GRAIN_POPUP_SHOW_THUMB) ) return;
@@ -135,8 +213,11 @@
 				$height = $dimensions['height'];
 			}
 		
+			// get phpThumb() options
+			$phpThumbOptions = grain_get_phpthumb_options($width, $height);
+		
 			// create URL to the thumbnail
-			$thumbHref = $post->image->getThumbnailHref(array('w='.$width,'h='.$height, 'zc=1'));
+			$thumbHref = $post->image->getThumbnailHref($phpThumbOptions);
 			$title = get_the_title();
 		
 			// embed thumbnail
@@ -145,6 +226,14 @@
 		
 	}
 	
+	/**
+	 * grain_get_subtitle() - Gets a post's subtile if 2ndlang support is activated
+	 *
+	 * @since 0.2
+	 * @global $GrainOpt Grain options
+	 * @uses get_post_meta() To get post meta ifnromation
+	 * @return string The subtitle or NULL
+	 */
 	function grain_get_subtitle() {
 		global $post, $GrainOpt;
 		if( !$GrainOpt->is(GRAIN_2NDLANG_ENABLED) ) return null;
@@ -157,11 +246,30 @@
 		return $has_subtitle ? $subtitle : null;
 	}
 	
+	/**
+	 * grain_exif_visible() - Checks if EXIF information shall be displayed
+	 *
+	 * @deprecated
+	 * @since 0.2
+	 * @global $GrainOpt Grain options
+	 * @return bool TRUE if EXIF information shall be displayed
+	 */
 	function grain_exif_visible() {
 		global $post, $GrainOpt;
 		return !empty($post->image) && $GrainOpt->is(GRAIN_EXIF_VISIBLE);
 	}
 	
+	/**
+	 * grain_has_exif() - Checks if the current post has EXIF information
+	 *
+	 * This function also checks against the post's content and the GRAIN_HIDE_EXIF_IF_NO_CONTENT
+	 * configuration option to determine wheter EXIF data shall be displayed.
+	 *
+	 * @since 0.3
+	 * @uses grain_has_content() to check if the post has content
+	 * @global $GrainOpt Grain options
+	 * @return bool TRUE if EXIF information are available
+	 */
 	function grain_has_exif() {
 		global $GrainOpt;
 		if( !grain_has_content() && $GrainOpt->is(GRAIN_HIDE_EXIF_IF_NO_CONTENT) ) return FALSE;
@@ -170,17 +278,51 @@
 		return yapb_has_exif();
 	}
 	
+	/**
+	 * grain_get_exif() - Gets the EXIF data of the current photo
+	 *
+	 * @since 0.3
+	 * @uses grain_has_exif() To check if EXIF information are available
+	 * @uses yapb_get_exif() To get the EXIF information
+	 * @return array An array of EXIF information as returned by yapb_get_exif()
+	 */
 	function grain_get_exif() {
 		if( !grain_has_exif() ) return NULL;
 		return yapb_get_exif();
 	}
 
+/* fancy EXIF filtering */
+
 	// Add hooks
 	add_filter(GRAIN_EXIF_KEY, "grain_fancy_exif_filter_key");	
 	if($GrainOpt->is(GRAIN_FANCY_EXIFFILTER)) add_filter(GRAIN_EXIF_VALUE, "grain_fancy_exif_filter");
 	
+	/**
+	 * A string containing the current EXIF data key.
+	 *
+	 * @see grain_fancy_exif_filter_key()
+	 * @access private
+	 * @global string $__grain_exif_key
+	 * @name $__grain_exif_key
+	 */
 	$__grain_exif_key = null;
 	
+	/**
+	 * grain_fancy_exif_filter_key() - Filters the EXIF data KEY
+	 *
+	 * This function implements gettext() translation for EXIF data keys.
+	 * Since it is not clear on compile time what EXIF keys are available,
+	 * the call to the gettext function is obfuscated.
+	 *
+	 * In addition to that, the function also sets the key for simple value filtering.
+	 *
+	 * @since 0.3
+	 * @see grain_fancy_exif_filter()
+	 * @global $__grain_exif_key	The EXIF data key to be set
+	 * @access private
+	 * @param string $key		The EXIF data key
+	 * @return string A translated string or the same value as $key
+	 */
 	function grain_fancy_exif_filter_key($key) {
 		global $__grain_exif_key;
 		$__grain_exif_key = strtolower($key);
@@ -189,6 +331,21 @@
 		return $exifTranslationFunc($key, "grain");
 	}
 	
+	/**
+	 * grain_fancy_exif_filter() - Filters the EXIF data VALUE
+	 *
+	 * This function implements simple EXIF value filtering.
+	 * This is a naive approach to filter out certain long or non-text fields, as well
+	 * as localize timestamps, et cetera.
+	 *
+	 * @since 0.3
+	 * @see grain_fancy_exif_filter_key()
+	 * @global $GrainOpt Grain options
+	 * @global $__grain_exif_key	The current EXIF data key as set by grain_fancy_exif_filter_key()
+	 * @access private
+	 * @param string $key		The EXIF data key
+	 * @return string The filtered value or the same value as $value
+	 */
 	function grain_fancy_exif_filter($value) {
 		global $__grain_exif_key, $GrainOpt;
 		if(!$GrainOpt->is(GRAIN_FANCY_EXIFFILTER)) return $value;
