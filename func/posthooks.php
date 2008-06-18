@@ -53,10 +53,42 @@
 		function GrainPostscreenHook() 
 		{
 			// hook it
-			add_filter('edit_form_advanced', array(&$this, 'inject_editform_options'));
+			add_filter('edit_form_advanced', 	array(&$this, 'inject_editform_options'));		
+			add_action('save_post', 			array(&$this, 'on_save_post'), 100, 2);
 			
 			// open in dev build
 			if( GRAIN_THEME_VERSION_DEVBUILD ) $this->closedByDefault = FALSE;
+		}
+		
+		/**
+		 * on_save_post() - Callback when a post is being saved
+		 *
+		 * @since 0.3
+		 * @access private
+		 */
+		function on_save_post($post_ID, $post) 
+		{
+			global $GrainPostOpt;
+			//echo "<pre>";print_r($_REQUEST);echo "</pre>";
+			// auf $_POST kieken
+			
+			// load the options for the current post
+			$GrainPostOpt->load_options($post_ID);
+			
+			// now loop through all fields in the POST request and check if we can handle them
+			$transmitted = $_POST;
+			foreach($transmitted as $field => $value) 
+			{
+				// check if we know the field
+				$field = strtoupper($field);
+				if( !$GrainPostOpt->is_defined($field) ) continue;
+				
+				// set the value.
+				$GrainPostOpt->set($field, $value, $post_ID);
+			}
+			
+			// at the end, write the value
+			$GrainPostOpt->save_options($post_ID);
 		}
 
 		/**
@@ -70,16 +102,23 @@
 			global $post;
 			
 			// Get the content
-			$boxTitle = __("Grain Options", "grain");
+			$boxTitle = __("Grain: Options For This Post", "grain");
+			
+			// Shall be box be closed?
+			$closed = $this->closedByDefault;
+			
+			// Get the options
+			$optionRowsMarkup = $this->generate_option_rows_markup();
+			if( empty($optionRowsMarkup) ) {
+				$optionRowsMarkup = '<span class="grain_notice">'.__("There a currently no advanced options for this post.", "grain").'</span>';
+				$closed = TRUE; // close the box, since there is nothing to do anyway
+			}
 			
 			// Get CSS classes
 			$cssClasses = array();
 			$cssClasses[] = "postbox";
-			if( $this->closedByDefault ) $cssClasses[] = "closed";
+			if( $closed ) $cssClasses[] = "closed";
 			$cssClasses = implode(" ", $cssClasses);
-			
-			// Get the options
-			$optionRowsMarkup = $this->generate_option_rows_markup();
 			
 			// Build the markup ...
 			$optionBox = <<<EOT
@@ -105,6 +144,8 @@ EOT;
 		function generate_option_rows_markup() 
 		{
 			$options = $this->generate_options();
+			if( count($options) == 0 ) return NULL;
+			
 			$rows = array();
 			foreach($options as $option) {
 				if( empty($option) ) continue;
@@ -126,15 +167,18 @@ EOT;
 		 * generate_options() - Generates the markup for all options
 		 *
 		 * @since 0.3
+		 * @global $GrainOpt Grain option store
 		 * @return array An array of strings containing the markup for the individual options
 		 */
 		function generate_options() 
 		{
+			global $GrainOpt;
+		
 			// Prepare
 			$optionMarkups = array();
 			
 			// Generate the options
-			$optionMarkups[] = $this->get_postopt_checkbox("foo", "fooid", "fooname");
+			if( $GrainOpt->is(GRAIN_EXIF_VISIBLE) ) $optionMarkups[] = $this->get_postopt_checkbox(GRAIN_POSTOPT_HIDE_EXIF, NULL, "Hide EXIF data");
 			
 			// return the options
 			return $optionMarkups;
@@ -146,27 +190,37 @@ EOT;
 		 *
 		 * @since 0.3
 		 * @param string 	$postOption			The related post option
-		 * @param string 	$htmlFieldID			The ID of the HTML input field
-		 * @param string 	$htmlFieldName		Optional. The name of the HTML input field
-		 * @param string 	$additionalCSS		Optional. A list of additional CSS classes
+		 * @param string 	$additionalCSS		A list of additional CSS classes. May be NULL
+		 * @param string 	$shortDesc				A short description of the field. This will be shown next to the checkbox.
+		 * @param string 	$title					The title of the field
 		 */
-		function get_postopt_checkbox($postOption, $htmlFieldID, $htmlFieldName=NULL, $additionalCSS=NULL) 
+		function get_postopt_checkbox($postOption, $additionalCSS, $shortDesc, $title=NULL) 
 		{
 			// Sanity check
-			if(empty($postOption))  throw new ErrorException("Option key must not be empty.");
-			if(empty($htmlFieldID)) throw new ErrorException("Field ID must not be empty.");
+			if(empty($postOption))  throw new ErrorException("Post option key must not be empty.");
+			
+			global $GrainPostOpt;
+			if(!$GrainPostOpt->is_defined($postOption))  throw new ErrorException("Post option key \"$postOption\" was undefined.");
 		
 			// Get a field name, if unset
-			if( empty($htmlFieldName) ) $htmlFieldName = $htmlFieldID;
+			$htmlFieldName = strtolower($postOption);
+			$htmlFieldID = strtolower($postOption);
+			if( empty($title) ) $title = $shortDesc;
 		
-			// Get the title, text, description, etc.
-			$title = "sumthin";
+			// Get the field's value
+			$value = $GrainPostOpt->getDefault($postOption);
+			global $post;
+			if( !empty($post) && !empty($post->ID) ) $value = $GrainPostOpt->get($postOption, $post->ID, FALSE);
+		
+			// Is the field checked?
+			$checked = NULL;
+			if( $value ) $checked = ' checked="checked" ';
 		
 			// Generate the markup
 			$markup  = '<span id="'.$htmlFieldID.'_option">';
 			$markup .= '<input type="hidden"   id="'.$htmlFieldID.'_zerovalue" name="'.$htmlFieldName.'"                      value="0" />';
-			$markup .= '<input type="checkbox" id="'.$htmlFieldID.'"           name="'.$htmlFieldName.'" class="'.$classes.'" value="1" />';
-			$markup .= '<label id="'.$htmlFieldID.'_label" class="'.$classes.'" for="'.$htmlFieldID.'">'.$title.'</label>';
+			$markup .= '<input type="checkbox" id="'.$htmlFieldID.'"           name="'.$htmlFieldName.'" class="'.$additionalCSS.'" value="1" title="'.$title.'" '.$checked.'/>';
+			$markup .= '<label id="'.$htmlFieldID.'_label" class="'.$additionalCSS.'" for="'.$htmlFieldID.'">'.$shortDesc.'</label>';
 			$markup .= '</span>';
 			
 			// return the markup

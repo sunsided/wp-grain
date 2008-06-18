@@ -407,7 +407,6 @@
 		 * @since 0.3
 		 * @param string $keyName 			The option's key.
 		 * @param mixed $value 				The option's value.
-		 * @return mixed The option's value or it's default, if the option was not set.
 		 */
 		function set($keyName, $value) 
 		{

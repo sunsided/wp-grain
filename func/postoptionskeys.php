@@ -14,7 +14,7 @@
 	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 		
-	// image sizes, ...
-	// $GrainOpt->defineValueOpt('GRAIN_MAX_IMAGE_WIDTH', "max_img_width", 800, FALSE);
+	
+	$GrainPostOpt->defineFlagOpt('GRAIN_POSTOPT_HIDE_EXIF', "hide_exif", FALSE);
 
 ?>

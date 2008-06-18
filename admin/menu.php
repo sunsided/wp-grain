@@ -536,7 +536,7 @@
 			{
 				// loop all values
 				$allowed_options = $_SESSION["__grain_admin_options"];
-				$transmitted = $_REQUEST;
+				$transmitted = $_POST;
 				
 				// print_r($transmitted);
 				
