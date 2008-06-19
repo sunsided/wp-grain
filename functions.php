@@ -11,6 +11,7 @@
 
 /* Helper functions */
 
+	@require_once(TEMPLATEPATH . '/func/php4fix.php');
 	@require_once(TEMPLATEPATH . '/func/littlehelpers.php');
 	@require_once(TEMPLATEPATH . '/func/paths.php');
 	@require_once(TEMPLATEPATH . '/func/locale.php');
@@ -72,7 +73,7 @@
 
 /* Grain admin panel and other hooks following */
 
-	@require_once(TEMPLATEPATH . '/admin/menu.php');
+	@require_once(TEMPLATEPATH . '/admin/menu.php');	
 	@require_once(TEMPLATEPATH . '/func/posthooks.php');
 
 /* Sidebars */

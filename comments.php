@@ -8,7 +8,7 @@
 	// Do not delete these lines
 	
 	if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die (__("Please don't call this page directly"));
+		die ("Please don't call this page directly");
 
 	if (!empty($post->post_password)) { // if there's a password
 		if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie

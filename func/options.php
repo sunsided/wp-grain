@@ -205,7 +205,7 @@
 		function isempty($keyName) 
 		{
 			if( !$this->exists($keyName) ) {
-				throw new ErrorException("Option key ".$keyName." was unknown.");
+				throw (new ErrorException("Option key ".$keyName." was unknown."));
 			}
 
 			$option = $this->option_defs[$keyName];
@@ -244,7 +244,7 @@
 		function getDefault($keyName) 
 		{	
 			if(!$this->exists($keyName)) {
-				throw new ErrorException("Option key ".$keyName." was unknown.");
+				//throw new ErrorException("Option key ".$keyName." was unknown.");
 			}
 			
 			// get option and value
@@ -291,7 +291,7 @@
 		function get($keyName, $doFilter=TRUE) 
 		{	
 			if(!$this->exists($keyName)) {
-				throw new ErrorException("Option key ".$keyName." was unknown.");
+				throw (new ErrorException("Option key ".$keyName." was unknown."));
 			}
 			
 			// get option and value
@@ -351,7 +351,7 @@
 		function getForCheckbox($keyName) 
 		{
 			if(!$this->exists($keyName)) {
-				throw new ErrorException("Option key ".$keyName." was unknown.");
+				throw (new ErrorException("Option key ".$keyName." was unknown."));
 			}
 			
 			// get option and value
@@ -377,7 +377,7 @@
 		function getYesNo($keyName) 
 		{
 			if($this->option_defs[$keyName]["TYPE"] != "BOOL") {
-				throw new ErrorException("Type for ".$keyName." was no bool");	
+				throw (new ErrorException("Type for ".$keyName." was no bool"));	
 			}
 			return $this->getForCheckbox($keyName);
 		}
@@ -414,7 +414,7 @@
 		function set($keyName, $value) 
 		{
 			if(!$this->exists($keyName)) {
-				throw new ErrorException("Option key ".$keyName." was unknown.");
+				throw (new ErrorException("Option key ".$keyName." was unknown."));
 			}
 			
 			// get option and value
@@ -435,8 +435,6 @@
 					$value = strip_tags(stripslashes($value));
 				}
 			}
-
-			// print $option["FIELD"] . " (".$option["HTML"].") << " . $value . PHP_EOL;
 			
 			// apply value
 			$this->options[$option["FIELD"]] = $value;

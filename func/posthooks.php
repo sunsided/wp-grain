@@ -197,10 +197,10 @@ EOT;
 		function get_postopt_checkbox($postOption, $additionalCSS, $shortDesc, $title=NULL) 
 		{
 			// Sanity check
-			if(empty($postOption))  throw new ErrorException("Post option key must not be empty.");
+			if(empty($postOption))  throw (new ErrorException("Post option key must not be empty."));
 			
 			global $GrainPostOpt;
-			if(!$GrainPostOpt->is_defined($postOption))  throw new ErrorException("Post option key \"$postOption\" was undefined.");
+			if(!$GrainPostOpt->is_defined($postOption))  throw (new ErrorException("Post option key \"$postOption\" was undefined."));
 		
 			// Get a field name, if unset
 			$htmlFieldName = strtolower($postOption);

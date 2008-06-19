@@ -375,8 +375,8 @@
 			}
 
 			// sanity check, part 2
-			if( empty($postID) ) throw new ErrorException("Post option could not be written because no valid post ID was set.");
-			if(!$this->exists($keyName)) throw new ErrorException("Post option key ".$keyName." was unknown.");
+			if( empty($postID) ) throw (new ErrorException("Post option could not be written because no valid post ID was set."));
+			if(!$this->exists($keyName)) throw (new ErrorException("Post option key ".$keyName." was unknown."));
 			
 			// load the options so that we can merge the new value with the old ones
 			if( !$skipLoadOptions ) $this->load_options($postID);
@@ -426,8 +426,8 @@
 			}
 		
 			// sanity check, part 2
-			if( empty($postID) ) throw new ErrorException("Post option could not be written because no valid post ID was set.");
-			if(!$this->exists($keyName)) throw new ErrorException("Post option key \"".$keyName."\" was unknown.");
+			if( empty($postID) ) throw (new ErrorException("Post option could not be written because no valid post ID was set."));
+			if(!$this->exists($keyName)) throw (new ErrorException("Post option key \"".$keyName."\" was unknown."));
 			
 			// load the options so that we can merge the new value with the old ones
 			if( !$skipLoadOptions ) $this->load_options($postID);
@@ -472,7 +472,7 @@
 		 */
 		function getDefault($keyName) 
 		{	
-			if(!$this->exists($keyName)) throw new ErrorException("Option key ".$keyName." was unknown.");
+			if(!$this->exists($keyName)) throw (new ErrorException("Option key ".$keyName." was unknown."));
 			
 			// get option and value
 			$option = $this->option_defs[$keyName];			
