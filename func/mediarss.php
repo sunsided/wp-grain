@@ -38,12 +38,12 @@
 		
 		// get the posts
 		$posts = grain_get_mediarss_posts();
-		
-		?><?xml version="1.0" encoding="<?php echo get_option('blog_charset'); ?>" standalone="yes"?>
+
+		echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'" standalone="yes"?>';
+?>
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-<?php
-		
+<?php 
 		// loop through all posts
 		foreach($posts as $post):
 
@@ -66,13 +66,12 @@
 			<media:content url="<?php echo $full_url; ?>"/>
 		</item>
 <?php	
-
 		endforeach;
+
 ?>
 
 	</channel>
 </rss><?php
-
 	}
 
 	
