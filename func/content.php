@@ -203,9 +203,11 @@
 			$sizeStyle = 'width: '.$width.'px; height: '.$height.'px;';
 
 			// get reduced size image if necessary
-			$imageIsBiggerThanMax = $image_dimensions[0] > GRAIN_MAX_IMAGE_WIDTH;
+			$imageIsBiggerThanMax = $image_dimensions[0] > $GrainOpt->get(GRAIN_MAX_IMAGE_WIDTH);
+			$imageIsBiggerThanMax = $imageIsBiggerThanMax || $image_dimensions[1] > $GrainOpt->get(GRAIN_MAX_IMAGE_HEIGHT);
 			$quality = 100; // <- this value can be altered to set the quality (percent) of the rescaled image
 			if ( $hasImage && $imageIsBiggerThanMax ) {
+				echo "<!--scaled image-->";
 				$image_url = $post->image->getThumbnailHref(array('w='.$width,'h='.$height,'q='.$quality));
 			}
 
