@@ -36,6 +36,10 @@
 	@require_once(TEMPLATEPATH . '/func/javascript.php');	
 	@require_once(TEMPLATEPATH . '/func/header.php');
 
+/* Comment functions */
+
+	@require_once(TEMPLATEPATH . '/func/comments.php');	
+
 /* Navigation link functions */
 	
 	@require_once(TEMPLATEPATH . '/func/navlinks.php');
@@ -50,10 +54,6 @@
 /* Template functions */
 
 	@require_once(TEMPLATEPATH . '/func/template.php');
-
-/* Comment functions */
-
-	@require_once(TEMPLATEPATH . '/func/comments.php');	
 
 /* Image helper functions */
 

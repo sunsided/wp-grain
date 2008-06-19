@@ -84,5 +84,12 @@
 		}
 		
 	}
+	
+	if(!class_exists('NotImplementedException')){
+	
+		class NotImplementedException extends Exception {
+		}
+		
+	}	
 		
 ?>

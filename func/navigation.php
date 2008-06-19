@@ -108,7 +108,7 @@
 		 * @return string the text
 		*/
 		function getDisplayText() {
-			throw (new ErrorException("Not implemented"));
+			throw (new NotImplementedException("Not implemented"));
 		}
 		
 		/**
@@ -118,7 +118,7 @@
 		 * @return string the URL
  		 */
 		function getURL() {
-			throw (new ErrorException("Not implemented"));
+			throw (new NotImplementedException("Not implemented"));
 		}
 			
 		/**
@@ -131,11 +131,13 @@
 		 * @return string the link class
 		*/
 		function getLinkClass() {
-			throw (new ErrorException("Not implemented"));
+			throw (new NotImplementedException("Not implemented"));
 		}
 			
 	} // GrainNavigationItem
 	
-	// $item = new GrainNavigationItem();
+	//$item = new GrainNavigationItem();
+	//print_r($item->getLinkClass());
+	//die();
 
 ?>
