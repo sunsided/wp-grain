@@ -149,7 +149,8 @@
 	addLoadEvent(grain_overridecssajaxbutton);	
 	function grain_overridecssajaxbutton() {
 		(function($) {
-			$('#css_override_file').after('<input type="button" id="refresh_override_css" class="refreshbutton" value="<?php echo __("refresh", "grain") ?>" title="<?php echo __("reload the stylesheet list", "grain") ?>" onclick="grain_ajax_refresh_override_css();" />');
+			$('#css_override_file').after('<input type="button" id="refresh_override_css" class="refreshbutton" value="<?php echo __("refresh", "grain") ?>" title="<?php echo __("reload the stylesheet list", "grain") ?>" />');
+			$('#refresh_override_css').click(grain_ajax_refresh_override_css);
 		})(jQuery);
 	}
 	
