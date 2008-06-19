@@ -32,9 +32,10 @@ grain_startSession();
 <?php grain_embed_javascripts(); ?>
 
 <!-- feeds -->
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Comments RSS Feed" href="<?php bloginfo('comments_rss2_url'); ?>" />
-<link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
+<link rel="alternate" type="application/rss+xml" title="Comments RSS Feed" href="<?php bloginfo('comments_rss2_url'); ?>" />
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
+<link rel="alternate" type="application/rss+xml" title="Media RSS Feed" id="gallery" href="<?php bloginfo('url'); ?>/?feed=mediarss" />
 
 <!-- syndication -->
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />

@@ -43,15 +43,6 @@
 			$offset = $isLimited ? ((grain_mocaic_current_page()-1) * $mosaic_count_per_page) : 0;
 			
 			// get_post options
-			/*
-			$get_post_options = "order=DESC&orderby=post_date";
-			if( $isLimited )
-				$get_post_options .= '&numberposts='.$mosaic_count_per_page.'&offset='.$offset;
-			else
-				$get_post_options .= '&numberposts=0&offset=0';
-			
-			$posts = get_posts($get_post_options);
-			*/
 			$posts = grain_get_mosaic_posts($mosaic_count_per_page, $offset);
 			
 			$previousYear = '0000';

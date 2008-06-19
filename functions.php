@@ -80,4 +80,8 @@
 
 	@require_once(TEMPLATEPATH . '/func/sidebars.php');
 
+/* Feeds */
+
+	@require_once(TEMPLATEPATH . '/func/mediarss.php');
+
 ?>

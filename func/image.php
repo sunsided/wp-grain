@@ -227,6 +227,53 @@
 	}
 	
 	/**
+	 * grain_get_mediarss_image_URL() - Gets the thumbnail URL to be used by the Media RSS
+	 *
+	 * @since 0.3
+	 * @global $GrainOpt Grain options
+	 * @uses grain_get_phpthumb_options() To get the phpThumb() configuration options
+	 *
+	 * @param mixed $post		The current post object
+	 * @param mixed $image		The image object
+	 * @param mixed $thumbnail	Optional. Set to TRUE if the full-resolution image shall be retrieved. (Defaults to FALSE, thumbnail)
+	 * @return string HTML markup for the current image's/post's thumbnail
+	 */
+	function grain_get_mediarss_image_URL($post, $image, $thumbnail=TRUE) {
+		global $GrainOpt;
+
+		// if there is an image
+		if (!empty($image))
+		{
+			// get image size
+			$dimensions = getimagesize($image->systemFilePath());			 		
+			
+			// get image URI
+			$img_URL = $image->uri;
+			
+			// scale?
+			if( $thumbnail ) {
+			
+				// scale image
+				$width = 300; // $GrainOpt->get(GRAIN_POPUP_THUMB_WIDTH);
+				$height = 200; // $GrainOpt->get(GRAIN_POPUP_THUMB_HEIGHT);
+				$dimensions = grain_scale_image_size($dimensions, $width, $height); // max size
+				$width = $dimensions['width'];
+				$height = $dimensions['height'];
+		
+				// get phpThumb() options
+				$phpThumbOptions = grain_get_phpthumb_options($width, $height);
+		
+				// create URL to the thumbnail
+				$img_URL = $image->getThumbnailHref($phpThumbOptions);
+			}
+		
+			// embed thumbnail
+			return $img_URL;
+		}
+		
+	}
+	
+	/**
 	 * grain_get_subtitle() - Gets a post's subtile if 2ndlang support is activated
 	 *
 	 * @since 0.2
@@ -405,7 +452,7 @@
 	 * @uses get_posts() Gets the posts
 	 * @param int $mosaic_count_per_page		Optional. The number of posts per page
 	 * @param int $offset						Optional. The current post offset
-	 * @return array Array of scaled dimensions.
+	 * @return array Array of posts
 	 */
 	function grain_get_mosaic_posts($mosaic_count_per_page=0, $offset=0) {
 		global $GrainOpt;
@@ -419,6 +466,32 @@
 		// set ordering
 		$ordering = "post_date";
 		if( $GrainOpt->is(GRAIN_MOSAIC_SHUFFLE) ) $ordering = "RAND()";
+		$get_post_options[] = "order=DESC";
+		$get_post_options[] = "orderby=$ordering";
+		
+		// return posts
+		$get_post_options = implode("&", $get_post_options);
+		return get_posts($get_post_options);
+	}
+	
+	/**
+	 * grain_get_mediarss_posts() - Gets the list of posts to be used by the meda RSS feed
+	 *
+	 * @since 0.3
+	 * @uses get_posts() Gets the posts
+	 * @return array Array of posts
+	 */
+	function grain_get_mediarss_posts() {
+		global $GrainOpt;
+		
+		// generate options
+		$get_post_options = array();
+		$get_post_options[] = "post_type=post";
+		$get_post_options[] = "numberposts=0";
+		$get_post_options[] = "offset=0";
+		
+		// set ordering
+		$ordering = "post_date";
 		$get_post_options[] = "order=DESC";
 		$get_post_options[] = "orderby=$ordering";
 		

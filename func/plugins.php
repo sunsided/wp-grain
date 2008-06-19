@@ -19,5 +19,6 @@
 
 	if( file_exists(TEMPLATEPATH . '/iplugs/suite.0.1.php') ) @require_once(TEMPLATEPATH . '/iplugs/suite.0.1.php');
 	if( file_exists(TEMPLATEPATH . '/iplugs/suite.0.2.php') ) @require_once(TEMPLATEPATH . '/iplugs/suite.0.2.php');
+	if( file_exists(TEMPLATEPATH . '/iplugs/suite.0.3.php') ) @require_once(TEMPLATEPATH . '/iplugs/suite.0.3.php');
 
 ?>
