@@ -67,7 +67,7 @@
 
 		// add permalink
 		if( $GrainOpt->getYesNo(GRAIN_MNU_PERMALINK_VISIBLE) ):
-			$link = '<a class="tooltipped" id="permalink" alt="'.__("Permalink for: ", "grain").$post->post_title.'" title="'.grain_thumbnail_title(__("Permalink", "grain"), $post->post_title).'" href="'.get_permalink($post->ID).'">'.__("#", "grain").'</a>';
+			$link = '<a class="tooltipped" id="permalink" alt="'.__("Permalink for: ", "grain").$post->post_title.'" title="'.grain_thumbnail_title(__("Permalink", "grain"), $post->post_title).'" href="'.get_permalink($post->ID).'">'.$GrainOpt->get(GRAIN_MNU_PERMALINK_TEXT).'</a>';
 			array_push( $links, '<span id="menu-permalink" class="postlink">'.$link.'</span>' );
 		endif;
 	

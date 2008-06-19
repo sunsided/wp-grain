@@ -12,9 +12,10 @@
 	@subpackage Administration Menu
 */
 
-	
 	if(!defined('GRAIN_ADMINPAGE_LOADED') ) die(basename(__FILE__));
-	
+
+	// load AJAX functions
+	@require_once(TEMPLATEPATH . '/admin/page.styling.ajax.php');
 
 /* functions */
 
@@ -76,7 +77,7 @@
 					
 					grain_admin_combobox(GRAIN_STYLE_OVERRIDE, "css_override_file", NULL, $selection, __("CSS File:", "grain"), NULL, __("The file selected here is loaded in addition to the base stylesheet and allows for style overrides. You can use this for quick switching or non-destructive editing of your blog's CSS styles.", "grain") . "<br /><br />" . $message);
 
-					?>	
+					?>						
 				</fieldset>	
 			
 				<h2><?php _e("Image Settings", "grain"); ?></h2>

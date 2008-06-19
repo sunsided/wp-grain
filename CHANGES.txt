@@ -24,6 +24,7 @@ Add: Mosaic posts can now be displayed in a random order
 Add: Option to skip or show posts without photos at the mosaic
 Add: A negative value for the mosaic thumbnail size (width or height) will be interpreted as "do not set", thus auto-width (or auto-height) mosaic thumbnails are possible.
 Add: Per-post options
+Add: AJAX is used to refresh the list of override stylesheets on the fly at the styling options page
 Add/Change: Several new localization strings; Old strings have changed. (added i.e. date/time formats, so that their defaults can be localized too)
 Add/Change: The number of photos displayed on the mosaic page can now be unlimited by setting a negative value or zero as the number of items to display
 Add/Change: Localization files are now searched in the ./lang subdirectory

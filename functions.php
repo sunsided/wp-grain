@@ -38,6 +38,7 @@
 /* Navigation link functions */
 	
 	@require_once(TEMPLATEPATH . '/func/navlinks.php');
+	@require_once(TEMPLATEPATH . '/func/navigation.php');
 
 /* template filters and action */
 	
