@@ -6,7 +6,7 @@ set grain_tar=grain-archive.tar
 set grain_tgz=%grain_tar%.gz
 
 REM Set Features to exclude
-set grain_feature_excludes=%grain_feature_excludes% --exclude=./iplugs/devalvr --exclude=./iplugs/ptviewer
+set grain_feature_excludes=%grain_feature_excludes% --exclude=devalvr --exclude=ptviewer
 
 REM Update version
 if exist update-wcrev.cmd call update-wcrev.cmd
