@@ -30,8 +30,8 @@
 	 */
 	function grain_rmlinebreaks($string) 
 	{
-		$breaks = array('<br />', '<br/>', '<br>');
-		return str_ireplace($breaks, '', $string);
+		if( function_exists("str_ireplace") ) return str_ireplace(array('<br />', '<br/>', '<br>'), '', $string);		
+		return preg_replace("#<br\s*/?>#i", "", $string);
 	}
 
 	/**
