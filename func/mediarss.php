@@ -28,13 +28,47 @@
 	function grain_do_feed_mediarss() {
 		global $GrainOpt, $wpdb;
 		
-		// get last changed date
-		$dates = $wpdb->get_row("SELECT max(post_modified_gmt) AS a, max(post_date_gmt) AS b FROM $wpdb->posts LIMIT 1", ARRAY_N);
-		$date = max(strtotime($dates[0]), strtotime($dates[1]));
-
+		// caching
+		$stamp = get_lastpostmodified('GMT');
+		$etag = '"'.$stamp.'"';
+		$modified_date = mysql2date('D, d M Y H:i:s +0000', $stamp, false) . " GMT";
+		$if_modified_since = preg_replace('/;.*$/', '', @$_SERVER['HTTP_IF_MODIFIED_SINCE']);
+		$if_none_match = stripslashes(@$_SERVER['HTTP_IF_NONE_MATCH']);
+		$etag_list = explode(",", $if_none_match);
+		
 		// Send headers
-		header('Content-Type: text/xml; charset=' . get_option('blog_charset'), true);
-		header("Last-Modified: " . mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false) . " GMT");
+		header("Last-Modified: " . $modified_date);
+		header('ETag: '.$etag, false);
+		
+		// if the content hasn't changed, don't deliver it
+		foreach($etag_list as $etag_list_item) {
+			if (trim($etag_list_item) == $etag) {
+				//header("HTTP/1.0 403 Not Modified");
+				header("X-Grain-NotModifiedReason: ETag");
+				//die();
+			}
+		}
+		
+		// if the content hasn't changed, don't deliver it
+		if ($if_modified_since == $modified_date) {
+			//header("HTTP/1.0 403 Not Modified");
+			header("X-Grain-NotModifiedReason: Modified-Date");
+			//die();
+		}
+		
+		// further information
+		header("Cache-Control: public, must-revalidate");
+		header("Pragma: public");
+		header('Content-Type: text/xml; charset=' . get_option('blog_charset'), true);		
+		
+		// enable output buffering
+		$can_compress = extension_loaded('zlib') && !ini_get('zlib.output_compression');
+		if( $can_compress ) 
+			ob_start("ob_gzhandler");
+		else 
+			ob_start();
+			
+		ob_implicit_flush(FALSE);
 		
 		// get some flags
 		$is_cc = $GrainOpt->is(GRAIN_COPYRIGHT_CC_ENABLED);
@@ -192,6 +226,13 @@
 
 	</channel>
 </rss><?php
+
+		// send the content length
+		header("Content-Length: ".ob_get_length());
+		
+		// flush it
+		ob_end_flush();
+
 	}
 
 	
