@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Grain 0.3 beta 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-18 22:28+0100\n"
+"POT-Creation-Date: 2008-06-20 23:09+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Markus Mayer <code@defx.de>\n"
 "Language-Team: \n"
@@ -11,1709 +11,1740 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: D:\\localserver\\grain-testbed\\htdocs\\wp-content\\themes\\grain\n"
+"X-Poedit-SearchPath-0: ..\\.\n"
+"X-Poedit-SearchPath-1: .\n"
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/404.php:15
+#: ..\./404.php:15
 msgid "Error 404 - Not found!"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/404.php:16
+#: ..\./404.php:16
 msgid "Would you like to search for something?"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archive.php:20
+#: ..\./archive.php:20
 msgid "Archive for category %CATEGORY."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archive.php:29
+#: ..\./archive.php:29
 msgid "Archive for tag %TAG."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archive.php:38
+#: ..\./archive.php:38
 msgid "Daily archive for %DATE."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archive.php:49
+#: ..\./archive.php:49
 msgid "Monthly archive for %DATE."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archive.php:57
+#: ..\./archive.php:57
 msgid "Yearly archive for %YEAR."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archive.php:64
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/search.php:16
+#: ..\./archive.php:64
+#: ..\./search.php:16
 msgid "Search results"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archive.php:67
+#: ..\./archive.php:67
 msgid "Archive of authors"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archive.php:70
+#: ..\./archive.php:70
 msgid "Blog archive"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archive.php:76
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archive.php:100
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/search.php:19
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/search.php:43
+#: ..\./archive.php:76
+#: ..\./archive.php:100
+#: ..\./search.php:19
+#: ..\./search.php:43
 msgid "&laquo; next page"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archive.php:77
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archive.php:101
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/search.php:20
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/search.php:44
+#: ..\./archive.php:77
+#: ..\./archive.php:101
+#: ..\./search.php:20
+#: ..\./search.php:44
 msgid "previous page &raquo;"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archives.php:19
+#: ..\./archives.php:19
 msgid "Archive cloud"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archives.php:31
+#: ..\./archives.php:31
 msgid "Archives by years"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archives.php:43
+#: ..\./archives.php:43
 msgid "Archives by months"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/archives.php:48
+#: ..\./archives.php:48
 msgid "Archives by categories"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments-popup.php:35
+#: ..\./comments-popup.php:35
 msgid "Comments are closed - You are not supposed to be here."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments-popup.php:94
+#: ..\./comments-popup.php:94
 msgid "The permalink address <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> of this photo is:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:11
-msgid "Please don't call this page directly"
-msgstr ""
-
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:17
+#: ..\./comments.php:17
 msgid "The comments are password protected, too"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:48
+#: ..\./comments.php:48
 msgid "Comments (%)"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:60
+#: ..\./comments.php:60
 msgid "RSS feed for comments on this photo"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:62
+#: ..\./comments.php:62
 msgid "Syndication"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:69
+#: ..\./comments.php:69
 msgid "The <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> to TrackBack this photo is:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:124
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:173
+#: ..\./comments.php:124
+#: ..\./comments.php:173
 msgid "Trackback"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:124
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:173
+#: ..\./comments.php:124
+#: ..\./comments.php:173
 msgid "Pingback"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:129
+#: ..\./comments.php:129
 msgid "no website"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:130
+#: ..\./comments.php:130
 msgid "post author"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:165
+#: ..\./comments.php:165
 msgid "%AUTHOR &#8212; %DATE at %TIME"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:173
+#: ..\./comments.php:173
 msgid "Comment"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:185
+#: ..\./comments.php:185
 msgid "Be the first to comment!"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:190
+#: ..\./comments.php:190
 msgid "Leave a comment"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:191
+#: ..\./comments.php:191
 msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed: "
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:201
+#: ..\./comments.php:201
 msgid "Your are logged in as"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:203
+#: ..\./comments.php:203
 msgid "logout"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:203
+#: ..\./comments.php:203
 msgid "Logout &raquo;"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:241
+#: ..\./comments.php:241
 msgid "Your Name:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:255
+#: ..\./comments.php:255
 msgid "E-mail (invisible):"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:269
+#: ..\./comments.php:269
 msgid "Website (<acronym title=\"Uniform Resource Locator\">URL</acronym>):"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:277
+#: ..\./comments.php:277
 msgid "Your comment:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:291
+#: ..\./comments.php:291
 msgid "Say it!"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:303
+#: ..\./comments.php:304
 msgid "bookmark me at photoblogs.org"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:316
+#: ..\./comments.php:318
 msgid "vote for me at CoolPhotoblogs"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/comments.php:325
+#: ..\./comments.php:327
 msgid "Sorry, the comment form is closed at this time."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/exif-block.php:22
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/exif-block.php:45
+#: ..\./exif-block.php:22
+#: ..\./exif-block.php:45
 msgid "EXIF information"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/footer.php:39
+#: ..\./footer.php:39
 msgid "{BLOG} is proudly powered by {WP} and {GRAIN}"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/footer.php:48
+#: ..\./footer.php:48
 msgid "edit post"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/footer.php:63
+#: ..\./footer.php:63
 msgid "Copyright"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/header.menu.php:39
+#: ..\./header.menu.php:40
 msgid "&laquo; previous"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/header.menu.php:40
+#: ..\./header.menu.php:41
 msgid "next &raquo;"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/header.menu.php:59
+#: ..\./header.menu.php:70
 msgid "Permalink for: "
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/header.menu.php:59
+#: ..\./header.menu.php:70
 msgid "Permalink"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/header.menu.php:59
-msgid "#"
-msgstr ""
-
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/header.menu.php:67
+#: ..\./header.menu.php:78
 msgid "go to the newest photo"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/header.menu.php:67
+#: ..\./header.menu.php:78
 msgid "newest"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/header.menu.php:73
+#: ..\./header.menu.php:84
 msgid "random"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/header.menu.php:81
+#: ..\./header.menu.php:92
 msgid "To the overview"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/header.menu.php:90
+#: ..\./header.menu.php:101
 msgid "about &amp; information"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/header.menu.php:90
+#: ..\./header.menu.php:101
 msgid "about"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/index.php:88
+#: ..\./index.php:88
 msgid "There is currently no page to display. Please check back later."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/mosaic.php:21
+#: ..\./mosaic.php:21
 msgid "&laquo; previous page"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/mosaic.php:22
+#: ..\./mosaic.php:22
 msgid "next page &raquo;"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/page.php:19
+#: ..\./page.php:19
 msgid "Read the whole story..."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/page.php:21
+#: ..\./page.php:21
 msgid "Pages:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/searchform.php:12
+#: ..\./searchform.php:12
 msgid "search"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/sidebar.php:31
+#: ..\./sidebar.php:31
 msgid "You are browsing the archive for the category '%CATEGORY'."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/sidebar.php:41
+#: ..\./sidebar.php:41
 msgid "You are browsing the %BLOG archive for %DAY, %DATE."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/sidebar.php:53
+#: ..\./sidebar.php:53
 msgid "You are browsing the %BLOG archive for the month %DATE."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/sidebar.php:64
+#: ..\./sidebar.php:64
 msgid "You are browsing the %BLOG archive for the year %YEAR."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/sidebar.php:75
+#: ..\./sidebar.php:75
 msgid "You have searched the %BLOG archives for <strong>%SEARCH</strong>. If you are unable to find anything in these search results, you can try one of these links."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/sidebar.php:84
+#: ..\./sidebar.php:84
 msgid "You are browsing the %BLOG archive."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/sidebar.php:92
+#: ..\./sidebar.php:92
 msgid "Pages"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/sidebar.php:109
+#: ..\./sidebar.php:109
 msgid "Archives by month"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/sidebar.php:115
+#: ..\./sidebar.php:115
 msgid "Categories"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/sidebar.php:122
+#: ..\./sidebar.php:122
 msgid "Most commented"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/sidebar.php:137
+#: ..\./sidebar.php:137
 msgid "Meta"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/sidebar.php:153
+#: ..\./sidebar.php:153
 msgid "Syndicate"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:35
+#: ..\./admin/menu.php:35
 msgid "No HTML here"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:42
+#: ..\./admin/menu.php:42
 msgid "HTML allowed here"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:404
+#: ..\./admin/menu.php:404
 msgid "&times;"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:465
+#: ..\./admin/menu.php:465
 msgid "Configure Grain"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:468
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:469
+#: ..\./admin/menu.php:468
+#: ..\./admin/menu.php:469
 msgid "General Settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:474
+#: ..\./admin/menu.php:474
 msgid "Navigation Settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:475
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:49
+#: ..\./admin/menu.php:475
+#: ..\./admin/page.navigation.php:49
 msgid "Navigation"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:480
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:481
+#: ..\./admin/menu.php:480
+#: ..\./admin/menu.php:481
 msgid "Styling and Layout"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:486
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:487
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:49
+#: ..\./admin/menu.php:486
+#: ..\./admin/menu.php:487
+#: ..\./admin/page.copyright.php:49
 msgid "Copyright Settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:492
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:45
+#: ..\./admin/menu.php:492
+#: ..\./admin/page.datetime.php:45
 msgid "Date and Time Settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:493
+#: ..\./admin/menu.php:493
 msgid "Date and Time"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:504
+#: ..\./admin/menu.php:504
 msgid "Yet Another Photoblog (Plugin Options)"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:505
+#: ..\./admin/menu.php:505
 msgid "YAPB"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:594
+#: ..\./admin/menu.php:594
 msgid "The YAPB plugin could not be found."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:594
+#: ..\./admin/menu.php:594
 msgid "Yet Another Photoblog"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/menu.php:594
+#: ..\./admin/menu.php:594
 msgid "Click for more information"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:41
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:37
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:38
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:40
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:41
+#: ..\./admin/page.copyright.php:41
+#: ..\./admin/page.datetime.php:37
+#: ..\./admin/page.general.php:38
+#: ..\./admin/page.navigation.php:40
+#: ..\./admin/page.styling.php:42
 msgid "Changes saved"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:53
+#: ..\./admin/page.copyright.php:53
 msgid "Copyright Holder"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:55
+#: ..\./admin/page.copyright.php:55
 msgid "Here you can enter your copyright information and tell Grain how to display them."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:57
+#: ..\./admin/page.copyright.php:57
 msgid "% is always the current year"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:58
+#: ..\./admin/page.copyright.php:58
 msgid "First copyright year:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:59
+#: ..\./admin/page.copyright.php:59
 msgid "Last copyright year:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:61
+#: ..\./admin/page.copyright.php:61
 msgid "i.e. <code>%OFFSET</code> to get <code>%SUMMED_YEAR</code> if the end year is <code>%YEAR</code>"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:63
+#: ..\./admin/page.copyright.php:63
 msgid "Offset to end year:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:65
+#: ..\./admin/page.copyright.php:65
 msgid "Here you can configure the informational text, e.g. your name and a licensing info."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:67
+#: ..\./admin/page.copyright.php:67
 msgid "Copyright holder:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:67
+#: ..\./admin/page.copyright.php:67
 msgid "Keep this short, e.g. <code>\"John Doe\"</code>. This info will be embedded in the page's meta header."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:68
+#: ..\./admin/page.copyright.php:68
 msgid "Full copyright holder and info:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:68
+#: ..\./admin/page.copyright.php:68
 msgid "e.g. <code>\"John Doe. All rights reserved.\"</code> This info will be visible to the visitor."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:74
+#: ..\./admin/page.copyright.php:74
 msgid "Imprint Page"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:76
+#: ..\./admin/page.copyright.php:76
 msgid "Grain uses <a href=\"http://dublincore.org/\" target=\"_blank\">Dublin Core</a> meta tags to describe your blog. If you have an imprint page you may set it here.<br />If you do not have an imprint or do not want to propagate it through the DC meta tag the field can be left empty."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:77
+#: ..\./admin/page.copyright.php:77
 msgid "Imprint URL:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:77
+#: ..\./admin/page.copyright.php:77
 msgid "The URL to your imprint page. Leave empty if you do not want to embed an <code>DC.Rights</code> meta tag."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:81
+#: ..\./admin/page.copyright.php:81
 msgid "Creative Commons License"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:84
+#: ..\./admin/page.copyright.php:84
 msgid "Embedding a Creative Commons License"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:87
+#: ..\./admin/page.copyright.php:87
 msgid "If you like to, you can publish your photos under a <a href=\"http://creativecommons.org/\" target=\"_blank\">Creative Commons</a> License. You can choose a license <a href=\"http://creativecommons.org/license/?lang=%LANGCODE\" target=\"_blank\">here</a>."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:91
+#: ..\./admin/page.copyright.php:91
 msgid "Copyright:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:91
+#: ..\./admin/page.copyright.php:91
 msgid "Embed Creative Commons license"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:91
+#: ..\./admin/page.copyright.php:91
 msgid "Unchecking this option will remove the Creative Commons Logo, the textual message, as well as the embedded <a target=\"_blank\" href=\"http://en.wikipedia.org/wiki/Resource_Description_Framework\">RDF</a> (if any). This is the way to go if you want your photos to be published as, e.g. \"All rights reserved\"."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:92
+#: ..\./admin/page.copyright.php:92
 msgid "The license's HTML code:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:92
+#: ..\./admin/page.copyright.php:92
 msgid "To simplify CSS styling of the theme, all occurrences of <code>&lt;br /&gt;</code>, <code>&lt;br/&gt;</code> and <code>&lt;br&gt;</code> tags will be removed when embedding the code."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:94
+#: ..\./admin/page.copyright.php:94
 msgid "In addition to the code above you can choose to embed an <acronym title=\"Resource Description Framework\">RDF</acronym> representation - a machine readable version - of the license. The RDF will be embedded on the website and can also be integrated in your newsfeeds, if you choose to enable that."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:96
+#: ..\./admin/page.copyright.php:96
 msgid "The RDF code for the license you selected can be found by downloading and opening the template for the PDF or XML embedding on the license selection page. The code begins with <code>&lt;rdf:RDF ...</code> and ends with <code>&lt;/rdf:RDF&gt;</code>."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:97
+#: ..\./admin/page.copyright.php:97
 msgid "You can validate RDF encoded licenses and RDF enabled content with the <a href=\"http://validator.creativecommons.org/\" target=\"_blank\">CC RDF License Validator</a>."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:98
+#: ..\./admin/page.copyright.php:98
 msgid "The license's RDF code:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:99
+#: ..\./admin/page.copyright.php:99
 msgid "Embed RDF in Newsfeeds:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:99
+#: ..\./admin/page.copyright.php:99
 msgid "Embed the RDF in the Atom and RSS feeds"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:99
+#: ..\./admin/page.copyright.php:99
 msgid "<strong>Use this with caution!</strong> Enable this option only if you are sure what you are doing! Faulty RDF markup may render your newsfeeds invalid or even unusable. Test your newsfeeds thoroughly when enabling this!"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:104
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:147
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:179
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:137
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:183
+#: ..\./admin/page.copyright.php:104
+#: ..\./admin/page.datetime.php:147
+#: ..\./admin/page.general.php:179
+#: ..\./admin/page.navigation.php:137
+#: ..\./admin/page.styling.php:186
 msgid "Factory Defaults"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.copyright.php:105
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:148
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:180
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:138
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:184
+#: ..\./admin/page.copyright.php:105
+#: ..\./admin/page.datetime.php:148
+#: ..\./admin/page.general.php:180
+#: ..\./admin/page.navigation.php:138
+#: ..\./admin/page.styling.php:187
 msgid "Save Settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:49
+#: ..\./admin/page.datetime.php:49
 msgid "For information on date and time formatting codes refer to the PHP manual entry of <a href=\"http://www.php.net/date\" target=\"_blank\">the <code>date()</code> function</a>."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:50
+#: ..\./admin/page.datetime.php:50
 msgid "If you want to include a specific text in the format, such as \"<code>o'clock</code>\", you may include it in curly braces, e.g. \"<code>{o'clock'}</code>\""
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:54
+#: ..\./admin/page.datetime.php:54
 msgid "Some examples"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:59
+#: ..\./admin/page.datetime.php:59
 msgid "format"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:60
+#: ..\./admin/page.datetime.php:60
 msgid "result"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:100
+#: ..\./admin/page.datetime.php:100
 msgid "Archive settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:102
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:107
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:117
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:122
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:135
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:140
+#: ..\./admin/page.datetime.php:102
+#: ..\./admin/page.datetime.php:107
+#: ..\./admin/page.datetime.php:117
+#: ..\./admin/page.datetime.php:122
+#: ..\./admin/page.datetime.php:135
+#: ..\./admin/page.datetime.php:140
 msgid "The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:105
+#: ..\./admin/page.datetime.php:105
 msgid "Daily Archive:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:105
+#: ..\./admin/page.datetime.php:105
 msgid "The date or time format in the archive for a specific day."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:110
+#: ..\./admin/page.datetime.php:110
 msgid "Monthly Archive:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:110
+#: ..\./admin/page.datetime.php:110
 msgid "The date or time format in the archive for a specific month."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:115
+#: ..\./admin/page.datetime.php:115
 msgid "Photo Info"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:120
+#: ..\./admin/page.datetime.php:120
 msgid "Publication date:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:120
+#: ..\./admin/page.datetime.php:120
 msgid "The date and time format for the photo's 'published' date."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:125
+#: ..\./admin/page.datetime.php:125
 msgid "(EXIF filtering is currently enabled.)"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:126
+#: ..\./admin/page.datetime.php:126
 msgid "(EXIF filtering is currently disabled.)"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:128
+#: ..\./admin/page.datetime.php:128
 msgid "EXIF dates:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:128
+#: ..\./admin/page.datetime.php:128
 msgid "The timestamp format used for some EXIF fields if EXIF quickfiltering is enabled."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:133
+#: ..\./admin/page.datetime.php:133
 msgid "Per comment"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:138
+#: ..\./admin/page.datetime.php:138
 msgid "Date of comment:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:138
+#: ..\./admin/page.datetime.php:138
 msgid "The date format for a comment."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:143
+#: ..\./admin/page.datetime.php:143
 msgid "Time of comment:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.datetime.php:143
+#: ..\./admin/page.datetime.php:143
 msgid "The time format for a comment."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:46
+#: ..\./admin/page.general.php:46
 msgid "Info and commenting mode"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:50
+#: ..\./admin/page.general.php:50
 msgid "Basic behavior"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:53
+#: ..\./admin/page.general.php:53
 msgid "Discussion"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:54
+#: ..\./admin/page.general.php:54
 msgid "Most probably you want to leave this enabled to receive feedback. But maybe you really just want to <em>show</em> your photos. This is the showcase option then: If you disable it, visitors will neither be able to comment (which is a standard feature) nor to view any existing comments. You may then also want to disable WordPress' commenting options on the %LINK screen altogether to prevent comments coming in through track-/pingbacks or backdoors."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:56
+#: ..\./admin/page.general.php:56
 msgid "Enable comments:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:56
+#: ..\./admin/page.general.php:56
 msgid "Allow visitors to comment or view existing comments"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:57
+#: ..\./admin/page.general.php:57
 msgid "No popups!"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:57
+#: ..\./admin/page.general.php:57
 msgid "Don't use a popup to display an image's info and commenting form"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:57
+#: ..\./admin/page.general.php:57
 msgid "If you enable this, the \"Extended Info page\" mechanism will be used. This is a replacement for the older comments popup, showing the info and comments on the same page as the photo. One will still have to click the comments link to display it, though.<br />If you prefer a popup for that task, disable this option."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:58
+#: ..\./admin/page.general.php:58
 msgid "Always show info:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:58
+#: ..\./admin/page.general.php:58
 msgid "Always show photo title/description regardless of the popup setting above"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:58
+#: ..\./admin/page.general.php:58
 msgid "If you always want to display the photo's title and it's description on the photo page, enable this option. If you uncheck this option and have the popups disabled (enabled the option above that is), be aware that the user won't see any information about your photo. (They would be shown on the popup, but you disabled it.)"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:64
+#: ..\./admin/page.general.php:64
 msgid "Basic behavior II"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:66
+#: ..\./admin/page.general.php:66
 msgid "Comments always allowed:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:66
+#: ..\./admin/page.general.php:66
 msgid "Allow visitors to comment on pages considered \"not ready\""
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:66
+#: ..\./admin/page.general.php:66
 msgid "Sometimes it happens that a visitor sees a page whose image is not available. Leave this option disabled to prevent access to the comments form in this special case.<br />This also implies that the image infos can be seen."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:67
+#: ..\./admin/page.general.php:67
 msgid "Directly jump to comments:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:67
+#: ..\./admin/page.general.php:67
 msgid "If the comments popup opens, skip the description text there"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:67
+#: ..\./admin/page.general.php:67
 msgid "This option only applies when the info is already shown on the main page, so that the visitor won't have to scroll to the comments on the popup. Rule of thumb: If you tend to write long texts and use the popup, you may want to enable this option."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:68
+#: ..\./admin/page.general.php:68
 msgid "Show only excerpts:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:68
+#: ..\./admin/page.general.php:68
 msgid "Show only a post's excerpt on a comment popup"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:68
+#: ..\./admin/page.general.php:68
 msgid "This option doesn't apply to you if you never use the <code>&lt!--more--&gt</code> tag anyway. If you choose to disable this option and such tag is found in the photo's description text, only the text in front of the tag will be shown. This only applies to the popup; Grain will generally show only the excerpt on a photo page, except when it's in extended view."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:72
+#: ..\./admin/page.general.php:72
 msgid "Info display: Your photo's description"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:74
+#: ..\./admin/page.general.php:74
 msgid "Enable permalink:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:74
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:75
-msgid "Show the permanlink in the image info"
+#: ..\./admin/page.general.php:74
+#: ..\./admin/page.general.php:75
+msgid "Show the permalink in the image info"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:74
+#: ..\./admin/page.general.php:74
 msgid "The permalink is an address that won't change. This way a visitor can securely link one of your photo pages. Permalinks are managed by WordPress."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:75
+#: ..\./admin/page.general.php:75
 msgid "Enable comment hint:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:75
+#: ..\./admin/page.general.php:75
 msgid "If enabled, Grain shows a link to the comments in the short info display below the image."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:76
+#: ..\./admin/page.general.php:76
 msgid "Show Date:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:76
+#: ..\./admin/page.general.php:76
 msgid "Display the date the photo was published"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:76
+#: ..\./admin/page.general.php:76
 msgid "This shows the date and time the photo page was published in the description text."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:80
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:101
+#: ..\./admin/page.general.php:80
+#: ..\./admin/page.styling.php:102
 msgid "Info display: EXIF data"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:85
+#: ..\./admin/page.general.php:85
 msgid "If you understand PHP, you can affect how the EXIF information is displayed by editing the %FILE file.<br /><strong>Hint:</strong> Enable YAPBs EXIF filtering to keep things clean."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:87
+#: ..\./admin/page.general.php:87
 msgid "Display EXIF info:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:87
+#: ..\./admin/page.general.php:87
 msgid "Show a photo's EXIF information next to the description"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:88
+#: ..\./admin/page.general.php:88
 msgid "Hide EXIF if no content:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:88
+#: ..\./admin/page.general.php:88
 msgid "Don't show a photo's EXIF information if no content text was given."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:92
+#: ..\./admin/page.general.php:92
 msgid "Info display: Categories"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:94
+#: ..\./admin/page.general.php:94
 msgid "Show category list:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:94
+#: ..\./admin/page.general.php:94
 msgid "Shows the categories in which the photo is filed"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:97
+#: ..\./admin/page.general.php:97
 msgid "Begin category list:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:97
+#: ..\./admin/page.general.php:97
 msgid "This text will be embedded right before the category list. You can put specific markup here to style your theme."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:98
+#: ..\./admin/page.general.php:98
 msgid "Category list delimiter:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:98
+#: ..\./admin/page.general.php:98
 msgid "This will be embedded within the category list to separate two entries."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:99
+#: ..\./admin/page.general.php:99
 msgid "End category list:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:99
+#: ..\./admin/page.general.php:99
 msgid "This will be embedded right after the category list."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:103
+#: ..\./admin/page.general.php:103
 msgid "Info display: Tags"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:105
+#: ..\./admin/page.general.php:105
 msgid "Show tag list:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:105
+#: ..\./admin/page.general.php:105
 msgid "Shows the tags with which the photo is marked"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:107
+#: ..\./admin/page.general.php:107
 msgid "Begin tag list:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:107
+#: ..\./admin/page.general.php:107
 msgid "This text will be embedded right before the tag list. You can put specific markup here to style your theme."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:108
+#: ..\./admin/page.general.php:108
 msgid "Tag list delimiter:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:108
+#: ..\./admin/page.general.php:108
 msgid "This will be embedded within the tag list to separate two entries."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:109
+#: ..\./admin/page.general.php:109
 msgid "End tag list:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:109
+#: ..\./admin/page.general.php:109
 msgid "This will be embedded right after the tag list."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:113
+#: ..\./admin/page.general.php:113
 msgid "Newsfeeds"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:116
+#: ..\./admin/page.general.php:116
 msgid "Atom Feed Settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:118
+#: ..\./admin/page.general.php:118
 msgid "Atom Feed:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:118
+#: ..\./admin/page.general.php:118
 msgid "Show the Atom Feed icon next to the RSS feed icon"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:122
+#: ..\./admin/page.general.php:122
 msgid "Syndication Options"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:126
+#: ..\./admin/page.general.php:126
 msgid "<strong>Hint:</strong> Syndication data can (and has to be) changed in the {FILE} file to reflect your own syndicate. If you are not sure what syndication means or what to do in that file, please disable the Flat Syndication option."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:131
+#: ..\./admin/page.general.php:131
 msgid "Flat Syndication"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:133
+#: ..\./admin/page.general.php:133
 msgid "Flat Syndication:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:133
+#: ..\./admin/page.general.php:133
 msgid "Show ring / syndication info as a list in the blog's footer"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:135
+#: ..\./admin/page.general.php:135
 msgid "Delimiter:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:135
+#: ..\./admin/page.general.php:135
 msgid "This will be embedded as a separator of the list items."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:139
+#: ..\./admin/page.general.php:139
 msgid "Localisation Options"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:142
+#: ..\./admin/page.general.php:142
 msgid "Secondary Language Options"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:144
+#: ..\./admin/page.general.php:144
 msgid "Grain has an option that allows you to display photo titles in an additional second language or tho use an additional texts as a subtitle."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:146
+#: ..\./admin/page.general.php:146
 msgid "2nd Line:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:146
+#: ..\./admin/page.general.php:146
 msgid "Enable 2nd line/2nd language support"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:147
+#: ..\./admin/page.general.php:147
 msgid "2nd line custom field:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:147
+#: ..\./admin/page.general.php:147
 msgid "The name/key of the custom field that contains the secondary language title.<br />You may want to read the WordPress Codex article on <a title=\"_blank\" href=\"http://codex.wordpress.org/Using_Custom_Fields\">Using Custom Fields</a>."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:152
+#: ..\./admin/page.general.php:152
 msgid "Auto Locale"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:154
+#: ..\./admin/page.general.php:154
 msgid "Browsers may send an information about their preferred language. Grain can make use of this information to automatically select a translation file, displaying the blog in the visitor's language."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:156
+#: ..\./admin/page.general.php:156
 msgid "Enable Auto Locale:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:156
+#: ..\./admin/page.general.php:156
 msgid "Activate visitor based translation"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:156
+#: ..\./admin/page.general.php:156
 msgid "Grain tries to match a browser's <code>HTTP_ACCEPT_LANGUAGE</code> against a set of locale (<code>*.mo</code>) files in your theme's directory. If no match can be found, the default translation based on your WordPress settings will be used."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:160
+#: ..\./admin/page.general.php:160
 msgid "Archives Sidebar"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:164
+#: ..\./admin/page.general.php:164
 msgid "These settings affect the sidebar you can see when you open an archive page, such as the Mosaic, the category archives etc.<br />Grain is a theme with widget support, so you can easily customize your sidebar in the Widgets menu; These options will only apply if there is no widget plugged into the according sidebar."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:167
+#: ..\./admin/page.general.php:167
 msgid "The values in the {FILE} file will be used for that."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:168
+#: ..\./admin/page.general.php:168
 msgid "Sidebar Syndication:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:168
+#: ..\./admin/page.general.php:168
 msgid "Show Syndication in the Sidebar"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:170
+#: ..\./admin/page.general.php:170
 msgid "Most commented:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:170
+#: ..\./admin/page.general.php:170
 msgid "List most commented photos"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:171
+#: ..\./admin/page.general.php:171
 msgid "Show at most:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:171
+#: ..\./admin/page.general.php:171
 msgid "This sets the maximum number of recent comments that will be displayed in the list."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:173
+#: ..\./admin/page.general.php:173
 msgid "Display Calendar:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:173
+#: ..\./admin/page.general.php:173
 msgid "Show the post calendar"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:174
+#: ..\./admin/page.general.php:174
 msgid "Display Blogroll:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:174
+#: ..\./admin/page.general.php:174
 msgid "Show your blogroll"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:175
+#: ..\./admin/page.general.php:175
 msgid "Display \"Meta\" block:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.general.php:175
+#: ..\./admin/page.general.php:175
 msgid "Show WordPress' \"Meta\" blog to enable users to register or log in"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:53
+#: ..\./admin/page.navigation.php:53
 msgid "On-Image navigation"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:55
+#: ..\./admin/page.navigation.php:55
 msgid "This setting controls what happens when a visitor clicks on the photo."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:56
+#: ..\./admin/page.navigation.php:56
 msgid "Bidirectional Navigation:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:56
+#: ..\./admin/page.navigation.php:56
 msgid "Enable the bidirectional on-image navigation"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:56
+#: ..\./admin/page.navigation.php:56
 msgid "If enabled, the photo will contain links to the previous (older) and next (newer) photos. If disabled, only the previous link will be used."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:57
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:132
+#: ..\./admin/page.navigation.php:57
+#: ..\./admin/page.styling.php:135
 msgid "Show Tooltips:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:57
+#: ..\./admin/page.navigation.php:57
 msgid "Show a tooltip when hovering the image"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:62
+#: ..\./admin/page.navigation.php:62
 msgid "Newest & Random"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:64
+#: ..\./admin/page.navigation.php:64
 msgid "Newest Photo:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:64
+#: ..\./admin/page.navigation.php:64
 msgid "Show a link to the newest photo"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:64
+#: ..\./admin/page.navigation.php:64
 msgid "The link will only appear if there are at least two (public) posts"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:65
+#: ..\./admin/page.navigation.php:65
 msgid "Random Photo:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:65
+#: ..\./admin/page.navigation.php:65
 msgid "Show a link to a random photo"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:65
+#: ..\./admin/page.navigation.php:65
 msgid "The link will only appear if there are at least three (public) posts"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:70
+#: ..\./admin/page.navigation.php:70
 msgid "About & Information Link"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:74
+#: ..\./admin/page.navigation.php:74
 msgid "Enable \"About\":"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:74
+#: ..\./admin/page.navigation.php:74
 msgid "Show the About link"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:78
+#: ..\./admin/page.navigation.php:78
 msgid "Select the page you want to use as your info page"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:79
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:99
+#: ..\./admin/page.navigation.php:79
+#: ..\./admin/page.navigation.php:99
 msgid "You currently have no pages."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:82
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:102
+#: ..\./admin/page.navigation.php:82
+#: ..\./admin/page.navigation.php:102
 msgid "Write Page"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:83
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:103
+#: ..\./admin/page.navigation.php:83
+#: ..\./admin/page.navigation.php:103
 msgid "You can create a new page in the \"%LINK\" menu."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:85
+#: ..\./admin/page.navigation.php:85
 msgid "About page:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:91
+#: ..\./admin/page.navigation.php:91
 msgid "Mosaic Page Link"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:94
+#: ..\./admin/page.navigation.php:94
 msgid "Enable \"Mosaic\":"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:94
+#: ..\./admin/page.navigation.php:94
 msgid "Show \"Mosaic\" link in the navigation bar"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:98
+#: ..\./admin/page.navigation.php:98
 msgid "Select the page you want to use as your mosaic page"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:105
+#: ..\./admin/page.navigation.php:105
 msgid "Mosaic page:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:109
+#: ..\./admin/page.navigation.php:109
 msgid "Link Title:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:109
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:116
+#: ..\./admin/page.navigation.php:109
+#: ..\./admin/page.navigation.php:116
 msgid "This title will be shown in the navigation bar."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:113
+#: ..\./admin/page.navigation.php:113
 msgid "Permalink Navigation item"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:115
+#: ..\./admin/page.navigation.php:115
 msgid "Permalink:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:115
+#: ..\./admin/page.navigation.php:115
 msgid "Show the Permalink in the Navigation Bar"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:115
+#: ..\./admin/page.navigation.php:115
 msgid "Unchecking this removes the permalink from the navigation. The permalink will still be visible at the Comments/Details popup (if it is not explicitely disabled otherwise)."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:116
+#: ..\./admin/page.navigation.php:116
 msgid "Permalink title:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:121
+#: ..\./admin/page.navigation.php:121
 msgid "Navigation Bar Location"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:126
+#: ..\./admin/page.navigation.php:126
 msgid "Page header"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:127
+#: ..\./admin/page.navigation.php:127
 msgid "In front/top of the photo"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:128
+#: ..\./admin/page.navigation.php:128
 msgid "Behind/below the photo"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:130
+#: ..\./admin/page.navigation.php:130
 msgid "This sets the position of the navigation bar. Normally you want this to be '<code>{DEFAULT}</code>', but if you have special plans you may choose another position that better fits your needs."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.navigation.php:132
+#: ..\./admin/page.navigation.php:132
 msgid "Location:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:50
-msgid "Style Override"
-msgstr ""
-
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:54
-msgid "Style Override settings"
-msgstr ""
-
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:58
+#: ..\./admin/page.styling.ajax.php:57
+#: ..\./admin/page.styling.ajax.php:59
+#: ..\./admin/page.styling.php:59
 msgid "none"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:72
+#: ..\./admin/page.styling.ajax.php:118
+msgid "loading ..."
+msgstr ""
+
+#: ..\./admin/page.styling.ajax.php:152
+msgid "refresh"
+msgstr ""
+
+#: ..\./admin/page.styling.ajax.php:152
+msgid "reload the stylesheet list"
+msgstr ""
+
+#: ..\./admin/page.styling.php:51
+msgid "Style Override"
+msgstr ""
+
+#: ..\./admin/page.styling.php:55
+msgid "Style Override settings"
+msgstr ""
+
+#: ..\./admin/page.styling.php:73
 msgid "You can edit the currently selected override file here: %FILE"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:77
+#: ..\./admin/page.styling.php:78
 msgid "CSS File:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:77
+#: ..\./admin/page.styling.php:78
 msgid "The file selected here is loaded in addition to the base stylesheet and allows for style overrides. You can use this for quick switching or non-destructive editing of your blog's CSS styles."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:82
+#: ..\./admin/page.styling.php:83
 msgid "Image Settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:84
+#: ..\./admin/page.styling.php:85
 msgid "Image settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:86
+#: ..\./admin/page.styling.php:87
 msgid "Image dimensions:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:86
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:96
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:124
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:133
+#: ..\./admin/page.styling.php:87
+#: ..\./admin/page.styling.php:97
+#: ..\./admin/page.styling.php:127
+#: ..\./admin/page.styling.php:136
 msgid "Pixels"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:86
+#: ..\./admin/page.styling.php:87
 msgid "The maximum dimensions of a photo. The photo will be scaled to fit.<br />If you change these to higher values you probably also have to change your CSS styles for the blog."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:90
+#: ..\./admin/page.styling.php:91
 msgid "Missing Image"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:92
+#: ..\./admin/page.styling.php:93
 msgid "<em>Whoops</em> image"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:94
+#: ..\./admin/page.styling.php:95
 msgid "If it happens that YAPB is unable to load an image or if you haven't set any image for a post Grain will show a message about that fact. If you want to you can set an image that is to be displayed instead."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:95
+#: ..\./admin/page.styling.php:96
 msgid "Whoops image URL:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:95
+#: ..\./admin/page.styling.php:96
 msgid "The URL of the image that will be displayed if a photoblog post has no image assigned or the image is not uploaded yet.<br />If you want to display a text instead of an image, leave the field empty."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:96
+#: ..\./admin/page.styling.php:97
 msgid "Image size:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:96
+#: ..\./admin/page.styling.php:97
 msgid "The actual size of the replacement image."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:103
+#: ..\./admin/page.styling.php:104
 msgid "EXIF filtering:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:103
+#: ..\./admin/page.styling.php:104
 msgid "Enable quick EXIF filtering."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:103
+#: ..\./admin/page.styling.php:104
 msgid "If this option is enabled, Grain will filter some of the EXIF fields that it gets from YAPB: Some fields will be removed even if they are enabled in the YAPB options, some fields will be displayed differently. It is recommended to disable this option only if you take another (own) approach to EXIF filtering."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:104
+#: ..\./admin/page.styling.php:105
 msgid "Display as inline:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:104
+#: ..\./admin/page.styling.php:105
 msgid "Display EXIF data \"inline\"."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:104
+#: ..\./admin/page.styling.php:105
 msgid "If you disable this option, Grain will render any EXIF data in a table."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:108
+#: ..\./admin/page.styling.php:109
 msgid "Mosaic Settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:110
+#: ..\./admin/page.styling.php:111
 msgid "Mosaic settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:112
+#: ..\./admin/page.styling.php:113
 msgid "Show Sidebar:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:112
+#: ..\./admin/page.styling.php:113
 msgid "Show the sidebar on the mosaic page."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:113
+#: ..\./admin/page.styling.php:114
+msgid "Skip empty posts:"
+msgstr ""
+
+#: ..\./admin/page.styling.php:114
+msgid "Skip posts that have no photo attached."
+msgstr ""
+
+#: ..\./admin/page.styling.php:114
+msgid "If you disable this option, posts without a photo will be rendered as an empty box in the mosaic."
+msgstr ""
+
+#: ..\./admin/page.styling.php:115
 msgid "Show Years:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:113
+#: ..\./admin/page.styling.php:115
 msgid "Group thumbnails by years in the mosaic page"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:114
+#: ..\./admin/page.styling.php:116
+msgid "Shuffle mosaic posts:"
+msgstr ""
+
+#: ..\./admin/page.styling.php:116
+msgid "Display posts on the mosaic in a random order."
+msgstr ""
+
+#: ..\./admin/page.styling.php:116
+msgid "It is recommended to disable the \"Show Years\" option above if you enable this."
+msgstr ""
+
+#: ..\./admin/page.styling.php:117
 msgid "Photos per page:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:114
+#: ..\./admin/page.styling.php:117
 msgid "This value sets how many photos will be displayed at most on a mosaic page."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:114
+#: ..\./admin/page.styling.php:117
 msgid "If you set a negative value or zero, no limitation will be applied."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:115
+#: ..\./admin/page.styling.php:118
 msgid "phpThumb Options:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:115
+#: ..\./admin/page.styling.php:118
 msgid "Here you can set an additional configuration string that will be passed to phpThumb for the thumbnail generation."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:115
+#: ..\./admin/page.styling.php:118
 msgid "Configuration options are separated by an ampersand or whitespace; See <a target=\"_blank\" href=\"http://phpthumb.sourceforge.net/\">phpThumb()</a> for more information."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:115
+#: ..\./admin/page.styling.php:118
 msgid "If you are in doubt please leave this field empty."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:119
+#: ..\./admin/page.styling.php:122
 msgid "Thumbnail settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:121
+#: ..\./admin/page.styling.php:124
 msgid "Comments popup"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:123
+#: ..\./admin/page.styling.php:126
 msgid "Show Thumbnail:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:123
+#: ..\./admin/page.styling.php:126
 msgid "Show the photo's thumbnail image on the comments popup"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:124
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:133
+#: ..\./admin/page.styling.php:127
+#: ..\./admin/page.styling.php:136
 msgid "Thumbnail size:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:125
+#: ..\./admin/page.styling.php:128
 msgid "Size to fit:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:125
+#: ..\./admin/page.styling.php:128
 msgid "Values given above are the maximum dimensions."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:125
+#: ..\./admin/page.styling.php:128
 msgid "If disabled, the thumbnail will be displayed in the size given above, cropping the parts that don't fit.<br />If it is enabled the thumbnail image will be resized so that it fits within these boundaries."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:130
+#: ..\./admin/page.styling.php:133
 msgid "Mosaic & Archive"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:132
+#: ..\./admin/page.styling.php:135
 msgid "Show tooltip when hovering a thumbnail"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:133
+#: ..\./admin/page.styling.php:136
 msgid "If you set any of these values a negative number or zero, the according attribute of the thumbnail won't be set. A common usage would be to set the first value to zero and the second to a fixed size."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:137
+#: ..\./admin/page.styling.php:140
 msgid "Comments"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:140
+#: ..\./admin/page.styling.php:143
 msgid "Gravatar options"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:142
+#: ..\./admin/page.styling.php:145
 msgid "Use Gravatars:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:142
+#: ..\./admin/page.styling.php:145
 msgid "If enabled, <a href=\"http://www.gravatar.com/\" target=\"_blank\">Gravatar</a> icons are shown on user comments"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:143
+#: ..\./admin/page.styling.php:146
 msgid "Link Gravatars:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:143
+#: ..\./admin/page.styling.php:146
 msgid "If a commenter gives a website URL, the gravatar icon links to his page"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:145
+#: ..\./admin/page.styling.php:148
 msgid "Alternative Image:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:145
+#: ..\./admin/page.styling.php:148
 msgid "URL of an alternate image for the case the commenter has no Gravatar. If you don't specify an image URL Gravatar will use it's own dummy image if necessary."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:147
+#: ..\./admin/page.styling.php:150
 msgid "The following values are extended configuration options for the Gravatar service. Please change them only if you know what you are doing."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:149
+#: ..\./admin/page.styling.php:152
 msgid "Gravatar rating:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:149
+#: ..\./admin/page.styling.php:152
 msgid "Here you can specify the rating of the gravatars. Allowed values are <code>G, PG, R</code> and <code>X</code>. Only change this if you know why you would want to."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:150
+#: ..\./admin/page.styling.php:153
 msgid "Gravatar size:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:150
+#: ..\./admin/page.styling.php:153
 msgid "Here you can change the size of the Gravatar. If you change this value you will have to adapt your stylesheet."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:155
+#: ..\./admin/page.styling.php:158
 msgid "Ring / Syndication options"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:157
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:161
+#: ..\./admin/page.styling.php:160
+#: ..\./admin/page.styling.php:164
 msgid "If enabled, a \"%\" button will be added to the comment form"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:158
+#: ..\./admin/page.styling.php:161
 msgid "photoblogs.org button:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:159
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:163
+#: ..\./admin/page.styling.php:162
+#: ..\./admin/page.styling.php:166
 msgid "Profile URL:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:159
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:163
+#: ..\./admin/page.styling.php:162
+#: ..\./admin/page.styling.php:166
 msgid "The URL of your <a href=\"http://photoblogs.org\" target=\"_blank\">photoblogs.org</a> profile"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:161
+#: ..\./admin/page.styling.php:164
 msgid "vote for me at coolphotoblogs.com"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:162
+#: ..\./admin/page.styling.php:165
 msgid "coolphotoblogs.com button:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:168
+#: ..\./admin/page.styling.php:171
 msgid "Effects Options"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:171
+#: ..\./admin/page.styling.php:174
 msgid "moo.fx options"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:173
+#: ..\./admin/page.styling.php:176
 msgid "Use moo.fx:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:173
+#: ..\./admin/page.styling.php:176
 msgid "Enable JavaScript effects (<a href=\"http://moofx.mad4milk.net/\" target=\"_blank\">moo.fx</a> engine)"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:175
+#: ..\./admin/page.styling.php:178
 msgid "Once you have enabled moo.fx, you can choose use the following effects."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:177
+#: ..\./admin/page.styling.php:180
 msgid "Reflection effect:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:177
+#: ..\./admin/page.styling.php:180
 msgid "If enabled, the image reflects on the background"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:178
+#: ..\./admin/page.styling.php:181
 msgid "Fade effect:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:178
+#: ..\./admin/page.styling.php:181
 msgid "Use a fade-in effect to display the image"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/admin/page.styling.php:178
+#: ..\./admin/page.styling.php:181
 msgid "The effect may be slow for some machines and is definitly slower for larger images, as well as complex theme styles. Double check that. In addition it requires support on the browser's side, so it isn't necessarily visible to every visitor."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/comments.php:72
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/comments.php:73
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/comments.php:74
+#: ..\./func/comments.php:72
+#: ..\./func/comments.php:73
+#: ..\./func/comments.php:74
 msgid "edit comment"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/comments.php:72
+#: ..\./func/comments.php:72
 msgid "comment ID:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/comments.php:75
+#: ..\./func/comments.php:75
 msgid "unapproved &rarr;"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/content.php:133
+#: ..\./func/content.php:133
 msgid "&lArr; click for previous photo"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/content.php:135
+#: ..\./func/content.php:135
 msgid "(this is the first photo)"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/content.php:140
+#: ..\./func/content.php:140
 msgid "click for next photo &rArr;"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/content.php:142
+#: ..\./func/content.php:142
 msgid "(this is the newest photo)"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/content.php:180
+#: ..\./func/content.php:180
 msgid "This photo page is not ready yet. Please check back later."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/feeds.php:42
+#: ..\./func/feeds.php:42
 msgid "RSS Feed"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/feeds.php:62
+#: ..\./func/feeds.php:62
 msgid "Atom Feed"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/image.php:152
+#: ..\./func/image.php:152
 msgid "click to view"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/image.php:153
+#: ..\./func/image.php:153
 msgid "not ready yet"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/navlinks.php:118
+#: ..\./func/navlinks.php:118
 msgid "comments (%)"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/navlinks.php:124
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/navlinks.php:149
+#: ..\./func/navlinks.php:124
+#: ..\./func/navlinks.php:149
 msgid "comments and details"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/navlinks.php:131
+#: ..\./func/navlinks.php:131
 msgid "details &amp; comments (%)"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/navlinks.php:132
+#: ..\./func/navlinks.php:132
 msgid "hide details"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:62
+#: ..\./func/optionskeys.php:64
 msgid "Mosaic"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:76
+#: ..\./func/optionskeys.php:78
 msgid "(Your name)"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:77
+#: ..\./func/optionskeys.php:79
 msgid "<em>(Your name)</em>"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:138
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:141
+#: ..\./func/optionskeys.php:140
+#: ..\./func/optionskeys.php:143
 msgid "F jS, Y"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:139
+#: ..\./func/optionskeys.php:141
 msgid "F, Y"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:140
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:143
+#: ..\./func/optionskeys.php:142
+#: ..\./func/optionskeys.php:145
 msgid "j. F Y, H:i"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:142
+#: ..\./func/optionskeys.php:144
 msgid "H:i"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:145
+#: ..\./func/optionskeys.php:147
 msgid "Posted in: "
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/optionskeys.php:147
+#: ..\./func/optionskeys.php:149
 msgid "Tagged with: "
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/posthooks.php:105
+#: ..\./func/posthooks.php:105
 msgid "Grain: Options For This Post"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/posthooks.php:113
+#: ..\./func/posthooks.php:113
 msgid "There a currently no advanced options for this post."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/posthooks.php:181
+#: ..\./func/posthooks.php:181
 msgid "Hide EXIF data"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/template.php:81
+#: ..\./func/template.php:81
 msgid "Not found."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/func/template.php:82
+#: ..\./func/template.php:82
 msgid "Sorry, but you are looking for something that isn't here."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:135
+#: ..\./iplugs/suite.0.2.php:135
 msgid "Grain: Post Settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:143
+#: ..\./iplugs/suite.0.2.php:143
 msgid "Shows a photo and it's description."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:144
+#: ..\./iplugs/suite.0.2.php:144
 msgid "Uses a viewer applet to show the panorama given in the box below."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:145
+#: ..\./iplugs/suite.0.2.php:145
 msgid "Looks like a 'Photo Post' type, but displays everything behind the <code>&lt;</code><code>!--more--&gt;</code> marker instead of the photo. This way you can show user-defined content."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:146
+#: ..\./iplugs/suite.0.2.php:146
 msgid "The post will be displayed just like a normal (text) blog post or static page."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:156
+#: ..\./iplugs/suite.0.2.php:156
 msgid "Post Settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:161
+#: ..\./iplugs/suite.0.2.php:161
 msgid "Post type:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:168
+#: ..\./iplugs/suite.0.2.php:168
 msgid "Photo Post"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:171
+#: ..\./iplugs/suite.0.2.php:171
 msgid "Panorama Post"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:176
+#: ..\./iplugs/suite.0.2.php:176
 msgid "Split Post"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:179
+#: ..\./iplugs/suite.0.2.php:179
 msgid "Pure Content"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:190
+#: ..\./iplugs/suite.0.2.php:190
 msgid "Panorama Settings"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:195
+#: ..\./iplugs/suite.0.2.php:195
 msgid "Panorama file URL:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:203
+#: ..\./iplugs/suite.0.2.php:203
 msgid "You can upload or select a panorama file using the Upload box. To find the URL of the uploaded file, click it's <code>Edit</code> link afterwards."
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:208
+#: ..\./iplugs/suite.0.2.php:208
 msgid "Panorama player:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:217
+#: ..\./iplugs/suite.0.2.php:217
 msgid "autoselect by filetype"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:226
+#: ..\./iplugs/suite.0.2.php:226
 msgid "DevalVR"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:235
+#: ..\./iplugs/suite.0.2.php:235
 msgid "Quicktime"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:244
+#: ..\./iplugs/suite.0.2.php:244
 msgid "Java based (PTViewer)"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/suite.0.2.php:250
+#: ..\./iplugs/suite.0.2.php:250
 msgid "Panorama Image:"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/devalvr/detectvr.js.php:268
+#: ..\./iplugs/devalvr/detectvr.js.php:268
 msgid "click here to install (250 KB, it only takes a few seconds)"
 msgstr ""
 
-#: D:\localserver\grain-testbed\htdocs\wp-content\themes\grain/iplugs/devalvr/detectvr.js.php:271
+#: ..\./iplugs/devalvr/detectvr.js.php:271
 msgid "click here after installing to reload page"
 msgstr ""
 
