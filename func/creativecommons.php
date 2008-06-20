@@ -54,4 +54,23 @@
 		if(!empty($rdf)) echo '<!--'.$rdf.'-->';
 	}
 
+	/**
+	 * grain_get_cc_license_url() - Gets the Creative Commons license URL from the markup
+	 *
+	 * @since 0.3
+	 * @global $GrainOpt			Grain options
+	 */
+	function grain_get_cc_license_url() 
+	{
+		global $GrainOpt;
+		if( !$GrainOpt->get(GRAIN_COPYRIGHT_CC_ENABLED) ) return;
+		
+		// Get the code and remove linebreaks so that the HTML doesn't look too jagged
+		$code = $GrainOpt->get("GRAIN_COPYRIGHT_CC_CODE");
+		// <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.0/en/">
+		$pattern = '#href="?(http://creativecommons.org/licenses/[^"]+)"?#i';
+		preg_match($pattern, $code, $matches);
+		return $matches[1];
+	}
+
 ?>

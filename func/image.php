@@ -238,7 +238,7 @@
 	 * @param mixed $thumbnail	Optional. Set to TRUE if the full-resolution image shall be retrieved. (Defaults to FALSE, thumbnail)
 	 * @return string HTML markup for the current image's/post's thumbnail
 	 */
-	function grain_get_mediarss_image_URL($post, $image, $thumbnail=TRUE) {
+	function grain_get_mediarss_image_URL($post, $image, $thumbnail=TRUE, &$width, &$height) {
 		global $GrainOpt;
 
 		// if there is an image
@@ -249,6 +249,8 @@
 			
 			// get image URI
 			$img_URL = $image->uri;
+			$width = $dimensions[0];
+			$height = $dimensions[1];
 			
 			// scale?
 			if( $thumbnail ) {
