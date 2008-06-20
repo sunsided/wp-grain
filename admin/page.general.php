@@ -71,8 +71,8 @@
 				<fieldset>
 					<legend><?php _e("Info display: Your photo's description", "grain"); ?></legend>
 					<?php				
-					grain_admin_checkbox(GRAIN_CONTENT_PERMALINK_VISIBLE, "show_permalink", NULL, __("Enable permalink:", "grain"), __("Show the permanlink in the image info", "grain"), __("The permalink is an address that won't change. This way a visitor can securely link one of your photo pages. Permalinks are managed by WordPress.", "grain"));
-					grain_admin_checkbox(GRAIN_CONTENT_COMMENTS_HINT, "show_comments_hint", NULL, __("Enable comment hint:", "grain"), __("Show the permanlink in the image info", "grain"), __("If enabled, Grain shows a link to the comments in the short info display below the image.", "grain"));				
+					grain_admin_checkbox(GRAIN_CONTENT_PERMALINK_VISIBLE, "show_permalink", NULL, __("Enable permalink:", "grain"), __("Show the permalink in the image info", "grain"), __("The permalink is an address that won't change. This way a visitor can securely link one of your photo pages. Permalinks are managed by WordPress.", "grain"));
+					grain_admin_checkbox(GRAIN_CONTENT_COMMENTS_HINT, "show_comments_hint", NULL, __("Enable comment hint:", "grain"), __("Show the permalink in the image info", "grain"), __("If enabled, Grain shows a link to the comments in the short info display below the image.", "grain"));				
 					grain_admin_checkbox(GRAIN_CONTENT_DATES, "show_dates", NULL, __("Show Date:", "grain"), __("Display the date the photo was published", "grain"), __("This shows the date and time the photo page was published in the description text.") );
 					?>
 				</fieldset>
