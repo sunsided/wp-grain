@@ -43,17 +43,17 @@
 		// if the content hasn't changed, don't deliver it
 		foreach($etag_list as $etag_list_item) {
 			if (trim($etag_list_item) == $etag) {
-				//header("HTTP/1.0 403 Not Modified");
+				header("HTTP/1.0 403 Not Modified");
 				header("X-Grain-NotModifiedReason: ETag");
-				//die();
+				die();
 			}
 		}
 		
 		// if the content hasn't changed, don't deliver it
 		if ($if_modified_since == $modified_date) {
-			//header("HTTP/1.0 403 Not Modified");
+			header("HTTP/1.0 403 Not Modified");
 			header("X-Grain-NotModifiedReason: Modified-Date");
-			//die();
+			die();
 		}
 		
 		// further information
