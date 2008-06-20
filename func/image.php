@@ -173,7 +173,7 @@
 		$sizeStyle = NULL;
 		if($width  > 0 ) $sizeStyle .='width: '.$width.'px;';
 		if($height > 0 ) $sizeStyle .='height: '.$height.'px;';
-		$image_html = '<img id="thumbnail-'.$post->ID.'" '.$width_attrib.' '.$height_attrib.' style="'.sizeStyle.'" class="archive-thumb" src="' .$image_src. '" alt="'.$post->post_title.'" />';
+		$image_html = '<img id="thumbnail-'.$post->ID.'" '.$width_attrib.' '.$height_attrib.' style="'.$sizeStyle.'" class="archive-thumb" src="' .$image_src. '" alt="'.$post->post_title.'" />';
 		$image_html = apply_filters( 'yapb_get_thumbnail', $image_html );
 		$anchor_html = '<a rel="bookmark" href="' . get_permalink($post->ID) . '">'.$image_html.'</a>';
 		
