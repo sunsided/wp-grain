@@ -300,6 +300,7 @@
 					name="photoblogs-org" 
 					type="button" 
 					id="photoblogs-org" 
+					rev="vote-for"
 					value="<?php _e("bookmark me at photoblogs.org", "grain"); ?>" 
 					onclick="window.open('<?php echo $uri; ?>')" />
 				<?php endif; endif; ?>	
@@ -313,6 +314,7 @@
 					name="coolphotoblogs-com" 
 					type="button" 
 					id="coolphotoblogs-com" 
+					rev="vote-for"
 					value="<?php _e("vote for me at CoolPhotoblogs", "grain"); ?>" 
 					onclick="window.open('<?php echo $uri; ?>')" />
 				<?php endif; endif; ?>
