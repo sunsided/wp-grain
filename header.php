@@ -5,6 +5,7 @@
 	File version: $Id$
 */
 
+global $GrainOpt;
 grain_startSession();
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -35,7 +36,9 @@ grain_startSession();
 <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="alternate" type="application/rss+xml" title="Comments RSS Feed" href="<?php bloginfo('comments_rss2_url'); ?>" />
 <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
+<?php if( $GrainOpt->is(GRAIN_FTR_MEDIARSS) ): ?>
 <link rel="alternate" type="application/rss+xml" title="Media RSS Feed" id="gallery" href="<?php bloginfo('url'); ?>/?feed=mediarss" />
+<?php endif; ?>
 
 <!-- syndication -->
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
