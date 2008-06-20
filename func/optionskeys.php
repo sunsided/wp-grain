@@ -169,6 +169,7 @@ This content is licensed under a <a rel="license" href="http://creativecommons.o
 
 	$GrainOpt->defineStringOpt( 'GRAIN_PHPTHUMB_OPTIONS', 'phpthumb_opts', "", FALSE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_FTR_MEDIARSS', 'mediarss', TRUE );
+	$GrainOpt->defineValueOpt( 'GRAIN_FTR_MEDIARSS_COUNT', 'mediarss_count', 50, TRUE, FALSE);
 
 	// version
 	$GrainOpt->defineStringOpt( 'GRAIN_VERSION_KEY', 'version', GRAIN_THEME_VERSION_BASE );

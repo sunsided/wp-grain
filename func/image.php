@@ -488,10 +488,14 @@
 	function grain_get_mediarss_posts() {
 		global $GrainOpt;
 		
+		$count = $GrainOpt->get(GRAIN_FTR_MEDIARSS_COUNT);
+		if($count < 0) $count = grain_getpostcount();
+		else if($count = 0) $count = $GrainOpt->getDefault(GRAIN_FTR_MEDIARSS_COUNT);
+		
 		// generate options
 		$get_post_options = array();
 		$get_post_options[] = "post_type=post";
-		$get_post_options[] = "numberposts=".grain_getpostcount();
+		$get_post_options[] = "numberposts=$count";
 		$get_post_options[] = "offset=0";
 		
 		// set ordering

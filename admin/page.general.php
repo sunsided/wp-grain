@@ -118,6 +118,13 @@
 					grain_admin_checkbox(GRAIN_FEED_ATOM_ENABLED, "atom_feed", NULL, __("Atom Feed:", "grain"), __("Show the Atom Feed icon next to the RSS feed icon", "grain"), NULL);
 					?>
 				</fieldset>
+				<fieldset>
+					<legend><?php _e("Media RSS Settings", "grain"); ?></legend>
+					<?php
+					grain_admin_checkbox(GRAIN_FTR_MEDIARSS, "mediarss_feed", NULL, __("Media RSS:", "grain"), __("Enable the Media RSS/MRSS feed", "grain"), __('The <a href="http://en.wikipedia.org/wiki/Media_RSS">Media RSS</a> feed is an extended RSS feed for multimedia applications.', "grain") ." ". __('Note that enabling this option may increase the traffic of your blog, depending on the browser.', "grain"));
+					grain_admin_shortline(GRAIN_FTR_MEDIARSS_COUNT, "mediarss_count", NULL, __("Media RSS items:", "grain"), $no_HTML, __("Number of recent items in the Media RSS feed. A higher value provides a more detailed representation of your blog but adds more web traffic. A value of zero sets this to the default; a negative number represents no limitation.", "grain"));
+					?>
+				</fieldset>
 			
 				<h2><?php _e("Syndication Options", "grain"); ?></h2>
 
@@ -136,7 +143,7 @@
 					?>
 				</fieldset>
 	
-				<h2><?php _e("Localisation Options", "grain"); ?></h2>
+				<h2><?php _e("Localization Options", "grain"); ?></h2>
 
 				<fieldset>				
 					<legend><?php _e("Secondary Language Options", "grain"); ?></legend>
