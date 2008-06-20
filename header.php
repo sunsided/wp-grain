@@ -39,6 +39,7 @@ grain_startSession();
 
 <!-- syndication -->
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+<link rel="home" href="<?php echo get_settings('home'); ?>" />
 
 <!-- etc -->
 <?php wp_head(); ?>
