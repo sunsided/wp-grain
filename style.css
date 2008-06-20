@@ -1402,6 +1402,8 @@ a img {
 	display: block;
 	margin: 0 auto;
 	padding-bottom: 20px;
+	position: relative;
+	z-index: 20;
 	}
 
 .tooltip-title,

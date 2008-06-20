@@ -456,8 +456,10 @@
 	 * @param int $offset						Optional. The current post offset
 	 * @return array Array of posts
 	 */
-	function grain_get_mosaic_posts($mosaic_count_per_page=0, $offset=0) {
+	function grain_get_mosaic_posts($mosaic_count_per_page=-1, $offset=0) {
 		global $GrainOpt;
+		
+		if($mosaic_count_per_page < 0 ) $mosaic_count_per_page = grain_getpostcount();
 		
 		// generate options
 		$get_post_options = array();
@@ -489,7 +491,7 @@
 		// generate options
 		$get_post_options = array();
 		$get_post_options[] = "post_type=post";
-		$get_post_options[] = "numberposts=0";
+		$get_post_options[] = "numberposts=".grain_getpostcount();
 		$get_post_options[] = "offset=0";
 		
 		// set ordering

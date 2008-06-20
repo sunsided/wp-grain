@@ -44,6 +44,8 @@
 		// get the posts
 		$posts = grain_get_mediarss_posts();
 
+		$language = get_bloginfo('language');
+
 		echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'" standalone="yes"?>';
 ?>
 <rss version="2.0" 
@@ -53,7 +55,8 @@
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
 <?php if($is_cc): ?>
 	xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule"
-<?php endif; ?>
+<?php endif; 
+	?>
 	>
 	<channel>
 		<title><?php bloginfo('name'); ?></title>
@@ -61,13 +64,16 @@
 		<atom:link href="<?php self_link(); ?>" rel="self" type="application/rss+xml" />
 		<pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></pubDate>
 		<description><?php bloginfo('description'); ?></description>
-		<language><?php bloginfo('language'); ?></language>
-<?php 
+<?php if( !empty($language) ): ?>
+		<language><?php echo $language; ?></language>
+<?php
+		endif;
+		
 		// loop through all posts
 		global $post;
 		foreach($posts as $the_post):
 			$post = $the_post;
-			the_post();
+			//the_post();
 
 			// get the image
 			$image = NULL;
@@ -144,6 +150,9 @@
 
 			)
 			*/
+					
+			$thumb_url = str_replace(array("[", "]", "&", "=", "|"), array(urlencode("["), urlencode("]"), urlencode("&"), urlencode("="), urlencode("|")), $thumb_url);
+			
 ?>
 		<item>
 			<title><?php the_title_rss() ?></title>
@@ -169,10 +178,11 @@
 				/>
 			<media:content 
 				url="<?php echo $full_url; ?>"
-				width="<?php echo $width; ?>" 
+				width="<?php echo $width; ?>"
 				height="<?php echo $height; ?>"
-<?php if(!empty($mime_type)): ?>
-				type="<?php echo $mime_type; ?>"<?php endif; ?>
+<?php if(!empty($mime_type)): ?>				
+				type="<?php echo $mime_type; ?>"
+<?php endif; ?>
 				/>
 		</item>
 <?php	
