@@ -67,7 +67,7 @@
 
 		// add permalink
 		if( $GrainOpt->getYesNo(GRAIN_MNU_PERMALINK_VISIBLE) ):
-			$link = '<a class="tooltipped" id="permalink" alt="'.__("Permalink for: ", "grain").$post->post_title.'" title="'.grain_thumbnail_title(__("Permalink", "grain"), $post->post_title).'" href="'.get_permalink($post->ID).'">'.$GrainOpt->get(GRAIN_MNU_PERMALINK_TEXT).'</a>';
+			$link = '<a rel="permalink" class="tooltipped" id="permalink" alt="'.__("Permalink for: ", "grain").$post->post_title.'" title="'.grain_thumbnail_title(__("Permalink", "grain"), $post->post_title).'" href="'.get_permalink($post->ID).'">'.$GrainOpt->get(GRAIN_MNU_PERMALINK_TEXT).'</a>';
 			array_push( $links, '<span id="menu-permalink" class="postlink">'.$link.'</span>' );
 		endif;
 	
@@ -75,7 +75,7 @@
 
 	// Newest photo link
 	if( $postCount > 1 && $grain_newest_enabled && !is_home() && ((is_single() && get_next_post()) || is_page()) ):
-		$link = '<a title="'.__("go to the newest photo", "grain").'" accesskey="h" rel="start" href="'.get_settings('home').'/">'.__("newest", "grain").'</a>';
+		$link = '<a rel="start" title="'.__("go to the newest photo", "grain").'" accesskey="h" href="'.get_settings('home').'/">'.__("newest", "grain").'</a>';
         array_push( $links, '<span id="menu-newest" class="postlink">'.$link.'</span>' );
 	endif;
 
@@ -89,7 +89,7 @@
 	if( $postCount && $grain_mosaic_enabled && !$thisIsMosaicPage ):
 		$mosaicpost = get_post($mosaicPageId);
 		if($mosaicpost) {
-			$link = '<a class="tooltipped" title="'.grain_thumbnail_title($mosaicpost->post_title,__("To the overview", "grain")).'" accesskey="m" href="'.get_permalink($mosaicPageId).'">'.$GrainOpt->get(GRAIN_MOSAIC_LINKTITLE).'</a>';
+			$link = '<a rel="contents" class="tooltipped" title="'.grain_thumbnail_title($mosaicpost->post_title,__("To the overview", "grain")).'" accesskey="m" href="'.get_permalink($mosaicPageId).'">'.$GrainOpt->get(GRAIN_MOSAIC_LINKTITLE).'</a>';
 			array_push( $links, '<span id="menu-mosaic" class="pagelink">'.$link.'</span>' );
 		}
 	endif;

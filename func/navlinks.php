@@ -146,7 +146,7 @@
 			
 			// build link
 			$link .= (!$comments_open ? '<del class="closed-comments">' : '');
-			$link .= '<a class="open-extended" title="'.__("comments and details", "grain").'" accesskey="i" rel="alternate" href="'.$permalink.'">'.$text.'</a>';
+			$link .= '<a class="open-extended" title="'.__("comments and details", "grain").'" accesskey="i" rel="details" href="'.$permalink.'">'.$text.'</a>';
 			$link .= (!$comments_open ? '</del>' : '');
 		}
 		

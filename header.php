@@ -67,17 +67,18 @@ grain_startSession();
 				
 				// link to the main page
 				$href = grain_ispopup() ? "javascript:close();" : get_settings('home');
+				$rel = grain_ispopup() ? "start" : "home";
 			?>
 			
 			<!-- header image -->
 			<div id="blogtitle-complete">
 				<div id="headerimg">
-					<h1 id="header-title"><a rel="start" href="<?php echo $href; ?>"><?php bloginfo('name'); ?></a></h1>
+					<h1 id="header-title"><a rel="<?php echo $rel; ?>" href="<?php echo $href; ?>"><?php bloginfo('name'); ?></a></h1>
 				</div>
 				
 				<!-- blog description -->
 				<div id="header-description">
-					<a rel="start" href="<?php echo $href; ?>"><?php bloginfo('description'); ?></a>
+					<a rel="<?php echo $rel; ?>" href="<?php echo $href; ?>"><?php bloginfo('description'); ?></a>
 				</div>
 			</div>
 	
