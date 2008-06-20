@@ -15,8 +15,9 @@
 
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 
-	// e.g. http://192.168.0.13:82/?feed=mediarss
-	add_feed("mediarss", "grain_do_feed_mediarss");
+	// e.g. http://127.0.0.1/wordpress/?feed=mediarss
+	global $GrainOpt;
+	if( $GrainOpt->is(GRAIN_FTR_MEDIARSS) ) add_feed("mediarss", "grain_do_feed_mediarss");
 
 	/**
 	 * grain_do_feed_mediarss() - Outputs a media RSS feed
@@ -43,7 +44,7 @@
 		// if the content hasn't changed, don't deliver it
 		foreach($etag_list as $etag_list_item) {
 			if (trim($etag_list_item) == $etag) {
-				header("HTTP/1.0 403 Not Modified");
+				header("HTTP/1.0 304 Not Modified");
 				header("X-Grain-NotModifiedReason: ETag");
 				die();
 			}
@@ -51,7 +52,7 @@
 		
 		// if the content hasn't changed, don't deliver it
 		if ($if_modified_since == $modified_date) {
-			header("HTTP/1.0 403 Not Modified");
+			header("HTTP/1.0 304 Not Modified");
 			header("X-Grain-NotModifiedReason: Modified-Date");
 			die();
 		}
