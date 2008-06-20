@@ -64,7 +64,7 @@
 		// enable output buffering
 		$can_compress = extension_loaded('zlib') && !ini_get('zlib.output_compression');
 		if( $can_compress ) 
-			ob_start("ob_gzhandler");
+			@ob_start("ob_gzhandler");
 		else 
 			ob_start();
 			
