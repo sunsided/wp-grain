@@ -112,7 +112,7 @@
 					
 					<div id="styling-options-block" class="grain-options-block">
 						<div class="option-name"><a href="admin.php?page=<?php echo $knownPagesList["styling"]; ?>"><?php _e("Styling and Layout", "grain"); ?></a></div>
-						<div class="option-description"><?php _e("This holds options such as maximum image sizes, CSS stylesheets, options for your Mosaic and visual effects.", "grain"); ?></div>
+						<div class="option-description"><?php _e("This holds options such as maximum image sizes, CSS stylesheets, Thumbnails, options for your Mosaic, visual effects and more.", "grain"); ?></div>
 					</div>
 					
 					<div id="copyright-options-block" class="grain-options-block">
