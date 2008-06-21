@@ -488,9 +488,9 @@
 	function grain_get_mediarss_posts() {
 		global $GrainOpt;
 		
-		$count = $GrainOpt->get(GRAIN_FTR_MEDIARSS_COUNT);
+		$count = $GrainOpt->get(GRAIN_FTR_MEDIARSS_COUNT);	
 		if($count < 0) $count = grain_getpostcount();
-		else if($count = 0) $count = $GrainOpt->getDefault(GRAIN_FTR_MEDIARSS_COUNT);
+		else if($count == 0) $count = $GrainOpt->getDefault(GRAIN_FTR_MEDIARSS_COUNT);
 		
 		// generate options
 		$get_post_options = array();
@@ -505,6 +505,7 @@
 		
 		// return posts
 		$get_post_options = implode("&", $get_post_options);
+		
 		return get_posts($get_post_options);
 	}
 

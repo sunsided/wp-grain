@@ -19,6 +19,82 @@
 	global $GrainOpt;
 	if( $GrainOpt->is(GRAIN_FTR_MEDIARSS) ) add_feed("mediarss", "grain_do_feed_mediarss");
 
+	add_action("rss2_ns", "grain_inject_mrss_ns");
+	add_action("rss2_item", "grain_inject_mrss_item");
+
+	function grain_inject_mrss_ns() {
+		echo 'xmlns:media="http://search.yahoo.com/mrss/"'.PHP_EOL;
+	}
+	
+	function grain_inject_mrss_item() {
+		global $post;
+	
+		// get the image
+		$image = NULL;
+		if (class_exists(YapbImage)) $image = YapbImage::getInstanceFromDb($post->ID);
+		if( empty($image)  ) continue;
+
+		// image sizes
+		$width = 0; $height = 0;
+		$thumb_width = 0; $thumb_height = 0;
+		
+		// get image urls
+		$thumb_url = grain_get_mediarss_image_URL($post, $image, TRUE, $thumb_width, $thumb_height);
+		$full_url = grain_get_mediarss_image_URL($post, $image, FALSE, $width, $height);
+		if( substr($full_url, 0, 1) == "/" ) $full_url = get_bloginfo("url") . $full_url;
+		
+		// get the list of tahs
+		$posttags = get_the_tags();
+		$taglist = array();
+		if ($posttags) {
+			foreach($posttags as $tag) {
+				$taglist[] = $tag->name;
+			}
+		}
+		$taglist = @implode(", ", $taglist);
+		
+		// mime type
+		$mime_type = "";
+		if( substr($image->uri, -4, 4) == ".jpg" ) $mime_type = "image/jpeg";
+		else if( substr($image->uri, -5, 5) == ".jpeg" ) $mime_type = "image/jpeg";
+		else if( substr($image->uri, -4, 4) == ".jpe" ) $mime_type = "image/jpeg";
+		else if( substr($image->uri, -5, 5) == ".jfif" ) $mime_type = "image/jpeg";
+		else if( substr($image->uri, -4, 4) == ".png" ) $mime_type = "image/png";
+		else if( substr($image->uri, -4, 4) == ".gif" ) $mime_type = "image/gif";
+	
+				
+		$filesize = filesize(realpath(ABSPATH.".".$image->uri));					
+		$thumb_url = str_replace(array("[", "]", "&", "=", "|"), array(urlencode("["), urlencode("]"), urlencode("&"), urlencode("="), urlencode("|")), $thumb_url);
+		?>
+<?php if(!empty($taglist)): ?>
+			<media:keywords><?php echo $taglist; ?></media:keywords>
+<?php endif; ?>
+			<media:thumbnail 
+				url="<?php echo $thumb_url; ?>"
+				width="<?php echo $thumb_width; ?>" 
+				height="<?php echo $thumb_height; ?>"
+				/>
+<?php if(!empty($filesize)): ?>
+			<enclosure 
+				url="<?php echo $full_url; ?>"
+				length="<?php echo $filesize; ?>"
+				type="<?php echo $mime_type; ?>"
+				/>
+<?php endif; ?>
+			<media:content 
+				url="<?php echo $full_url; ?>"
+				width="<?php echo $width; ?>"
+				height="<?php echo $height; ?>"
+<?php if(!empty($filesize)): ?>				
+				fileSize="<?php echo $filesize; ?>" 
+<?php endif; ?>
+<?php if(!empty($mime_type)): ?>				
+				type="<?php echo $mime_type; ?>"
+<?php endif; ?>
+				/>		
+		<?php
+	}
+
 	/**
 	 * grain_do_feed_mediarss() - Outputs a media RSS feed
 	 *
@@ -84,7 +160,7 @@
 		echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'" standalone="yes"?>';
 ?>
 <rss version="2.0" 
-	xmlns:media="http://search.yahoo.com/mrss/"
+	<?php grain_inject_mrss_ns(); ?>
 	xmlns:atom="http://www.w3.org/2005/Atom"
 	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -110,39 +186,7 @@
 			$post = $the_post;
 			//the_post();
 
-			// get the image
-			$image = NULL;
-			if (class_exists(YapbImage)) $image = YapbImage::getInstanceFromDb($post->ID);
-			if( empty($image)  ) continue;
-
-			// image sizes
-			$width = 0; $height = 0;
-			$thumb_width = 0; $thumb_height = 0;
-			
-			// get image urls
-			$thumb_url = grain_get_mediarss_image_URL($post, $image, TRUE, $thumb_width, $thumb_height);
-			$full_url = grain_get_mediarss_image_URL($post, $image, FALSE, $width, $height);
-			if( substr($full_url, 0, 1) == "/" ) $full_url = get_bloginfo("url") . $full_url;
-			
-			// get the list of tahs
-			$posttags = get_the_tags();
-			$taglist = array();
-			if ($posttags) {
-				foreach($posttags as $tag) {
-					$taglist[] = $tag->name;
-				}
-			}
-			$taglist = @implode(", ", $taglist);
-			
-			// mime type
-			$mime_type = "";
-			if( substr($image->uri, -4, 4) == ".jpg" ) $mime_type = "image/jpeg";
-			else if( substr($image->uri, -5, 5) == ".jpeg" ) $mime_type = "image/jpeg";
-			else if( substr($image->uri, -4, 4) == ".jpe" ) $mime_type = "image/jpeg";
-			else if( substr($image->uri, -5, 5) == ".jfif" ) $mime_type = "image/jpeg";
-			else if( substr($image->uri, -4, 4) == ".png" ) $mime_type = "image/png";
-			else if( substr($image->uri, -4, 4) == ".gif" ) $mime_type = "image/gif";
-			
+	
 			/*
 			stdClass Object
 			(
@@ -185,11 +229,42 @@
 
 			)
 			*/
-					
-			$filesize = filesize(realpath(ABSPATH.".".$image->uri));
+
+			// get the image
+			$image = NULL;
+			if (class_exists(YapbImage)) $image = YapbImage::getInstanceFromDb($post->ID);
+			if( empty($image)  ) continue;
+
+			// image sizes
+			$width = 0; $height = 0;
+			$thumb_width = 0; $thumb_height = 0;
 			
-			//die(".".filesize(ABSPATH.".".$image->uri).".");
+			// get image urls
+			$thumb_url = grain_get_mediarss_image_URL($post, $image, TRUE, $thumb_width, $thumb_height);
+			$full_url = grain_get_mediarss_image_URL($post, $image, FALSE, $width, $height);
+			if( substr($full_url, 0, 1) == "/" ) $full_url = get_bloginfo("url") . $full_url;
+			
+			// get the list of tahs
+			$posttags = get_the_tags();
+			$taglist = array();
+			if ($posttags) {
+				foreach($posttags as $tag) {
+					$taglist[] = $tag->name;
+				}
+			}
+			$taglist = @implode(", ", $taglist);
+			
+			// mime type
+			$mime_type = "";
+			if( substr($image->uri, -4, 4) == ".jpg" ) $mime_type = "image/jpeg";
+			else if( substr($image->uri, -5, 5) == ".jpeg" ) $mime_type = "image/jpeg";
+			else if( substr($image->uri, -4, 4) == ".jpe" ) $mime_type = "image/jpeg";
+			else if( substr($image->uri, -5, 5) == ".jfif" ) $mime_type = "image/jpeg";
+			else if( substr($image->uri, -4, 4) == ".png" ) $mime_type = "image/png";
+			else if( substr($image->uri, -4, 4) == ".gif" ) $mime_type = "image/gif";
+		
 					
+			$filesize = filesize(realpath(ABSPATH.".".$image->uri));					
 			$thumb_url = str_replace(array("[", "]", "&", "=", "|"), array(urlencode("["), urlencode("]"), urlencode("&"), urlencode("="), urlencode("|")), $thumb_url);
 			
 ?>
