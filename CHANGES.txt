@@ -12,7 +12,6 @@ Add: Error messages (no post, photo not found, ...) can now be styled (in additi
 Add: Option to control access to the comment form if a photo page has no content
 Add: Option to only show the excerpt of a post on the comment popup.
 Add: Autolocale option to load a translation based on a request's HTTP_ACCEPT_LANGUAGE setting
-Add: Grain options link in the "settings" section of the WP administration
 Add: The tooltips on the image can now be disabled
 Add: CSS: The #info-frame now gets a class "contentless" if neither text nor exif data is available. Additionally the CSS classes has-exif/no-exif and has-content/no-content are set.
 Add: The number of comments awaiting moderation on the current post is now shown to moderators
@@ -32,6 +31,7 @@ Add/Change: The number of photos displayed on the mosaic page can now be unlimit
 Add/Change: Localization files are now searched in the ./lang subdirectory
 Add/Change: Added hovering arrows for the on-image navigation
 Add/Change: Grain is now recognizing override stylesheets following the scheme style.override[.-]<name>.css.php and style.override[.-]<name>.pcss, too
+Change: Grain options can now be found in a top-level menu
 Change: Option to show popup is now option to suppress popup because of new business logic; The setting is interpreted correctly though.
 Change: Reordered navigation bar page.
 Change: Changed defaults so that some options are now enabled by default (newest, random link etc.)

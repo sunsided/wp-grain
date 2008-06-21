@@ -12,7 +12,10 @@
 	@subpackage Administration Menu
 */
 	
+	//require_once(realpath(dirname(__FILE__).'/../../../../wp-admin/admin.php'));
+	
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
+	
 	session_start();
 	
 /* Options */
@@ -435,8 +438,14 @@
 	 * @global array $knownPagesList
 	 * @name $knownPagesList
 	 */
-	$knownPagesList = array( "copyright", "general", "styling", "datetime", "navigation" );
-	
+	$knownPagesList = array( 
+							"landingzone" => GRAIN_ADMIN_PATH."/page.landingzone.php", 
+							"copyright" => GRAIN_ADMIN_PATH."/page.copyright.php", 
+							"general" => GRAIN_ADMIN_PATH."/page.general.php", 
+							"styling" => GRAIN_ADMIN_PATH."/page.styling.php", 
+							"datetime" => GRAIN_ADMIN_PATH."/page.datetime.php", 
+							"navigation" => GRAIN_ADMIN_PATH."/page.navigation.php"
+							);	
 	/**
 	 * A boolean to determine whether or not we have recognized a "page" request.
 	 * @global bool $knownPage
@@ -444,6 +453,7 @@
 	 */
 	$knownPage = in_array( $_GET['page'], $knownPagesList );
 
+	@require_once(TEMPLATEPATH . '/admin/page.landingzone.php');
 	@require_once(TEMPLATEPATH . '/admin/page.copyright.php');
 	@require_once(TEMPLATEPATH . '/admin/page.general.php');
 	@require_once(TEMPLATEPATH . '/admin/page.styling.php');
@@ -462,60 +472,72 @@
 	 */
 	function grain_admin_createmenus() 
 	{	
+		global $knownPagesList;
+	
 		$basePageTitle = __("Configure Grain", "grain");
 		$baseTitle = $basePageTitle . ' &raquo; ';
 	
 		// add an options shortcut
-		$grain_page = 'themes.php?page=general';
-		add_options_page( $basePageTitle,
-						"Grain", 
-						'edit_themes',
-						$grain_page );
+		$grain_page = $knownPagesList["landingzone"]; 
+			
 
 		// Add the top menu page
 		add_menu_page( $basePageTitle, 
 						"Grain", 
 						'edit_themes',
-						$grain_page );
-	
+						$grain_page,
+						"grain_adminpage_landingzone");
+						
+		add_submenu_page( $grain_page,
+						$basePageTitle, 
+						"Grain ".GRAIN_THEME_VERSION, 
+						'edit_themes',
+						$grain_page,
+						"grain_build_admin_screen");
+
 		// add theme pages
-		add_theme_page( $baseTitle . __("General Settings", "grain"), 			
+		add_submenu_page( $grain_page,
+						$baseTitle . __("General Settings", "grain"), 			
 						__("General Settings", "grain"), 
 						'edit_themes', 
-						'general', 
+						$knownPagesList["general"],
 						'grain_adminpage_general');
-		
-		add_theme_page( $baseTitle . __("Navigation Settings", "grain"), 		
+						
+		add_submenu_page( $grain_page,
+						$baseTitle . __("Navigation Settings", "grain"), 		
 						__("Navigation", "grain"), 
 						'edit_themes', 
-						'navigation', 
+						$knownPagesList["navigation"],
 						'grain_adminpage_navigation');
 		
-		add_theme_page( $baseTitle . __("Styling and Layout", "grain"), 		
+		add_submenu_page( $grain_page,
+						$baseTitle . __("Styling and Layout", "grain"), 		
 						__("Styling and Layout", "grain"), 
 						'edit_themes', 
-						'styling', 
+						$knownPagesList["styling"],
 						'grain_adminpage_styling');
 		
-		add_theme_page(	$baseTitle . __("Copyright Settings", "grain"), 		
+		add_submenu_page( $grain_page,
+						$baseTitle . __("Copyright Settings", "grain"), 		
 						__("Copyright Settings", "grain"), 
 						'edit_themes', 
-						'copyright', 
+						$knownPagesList["copyright"],
 						'grain_adminpage_copyright');		
 		
-		add_theme_page( $baseTitle . __("Date and Time Settings", "grain"), 	
+		add_submenu_page( $grain_page,
+						$baseTitle . __("Date and Time Settings", "grain"), 	
 						__("Date and Time", "grain"), 
 						'edit_themes', 
-						'datetime', 
+						$knownPagesList["datetime"],
 						'grain_adminpage_datetime');
-		
-		
+				
 		// shortcut to yapb
 		if( grain_is_yapb_installed() ) 
 		{
 			// http://192.168.0.123/wp-admin/options-general.php?page=Yapb.class.php
 			$yapb_page = 'options-general.php?page=Yapb.class.php';
-			add_theme_page( __("Yet Another Photoblog (Plugin Options)", "grain"), 
+			add_submenu_page( $grain_page,
+							__("Yet Another Photoblog (Plugin Options)", "grain"), 
 							__("YAPB", "grain"), 
 							'edit_plugins', 
 							$yapb_page);
@@ -523,7 +545,6 @@
 
 		// do the logic
 		grain_admin_dologic();
-
 	}
 
 	/**
@@ -535,10 +556,10 @@
 	 */
 	function grain_admin_dologic() 
 	{
-		global $GrainOpt, $knownPage, $_SESSION;
+		global $GrainOpt, $knownPage, $knownPagesList, $_SESSION;
 	
 		if ( $knownPage ) 
-		{
+		{	
 			if ( 'save' == $_REQUEST['action'] ) 
 			{
 				// loop all values
@@ -566,10 +587,12 @@
 
 				// die();
 
-				// ... and write
+				// ... write ...
 				$GrainOpt->writeOptions();
-
-				wp_redirect("themes.php?page=".$_GET['page']."&saved=true");
+				
+				// ... amd redirect
+				$target = $_GET['page'];
+				wp_redirect("admin.php?page=".$target."&saved=true");
 				die;
 			
 			} // save

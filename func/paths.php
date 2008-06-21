@@ -34,5 +34,11 @@
 	 * This is an alias for get_bloginfo('template_directory')
 	 */ 
 	define('GRAIN_TEMPLATE_DIR', get_bloginfo('template_directory'));
+	
+	/** 
+	 * The URL to Grain's directory.
+	 * This is an alias for get_bloginfo('template_directory')
+	 */ 
+	define('GRAIN_ADMIN_PATH', "/".GRAIN_RELATIVE_PATH."/admin");
 
 ?>
