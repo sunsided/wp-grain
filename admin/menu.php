@@ -530,7 +530,7 @@
 						'edit_themes', 
 						$knownPagesList["datetime"],
 						'grain_adminpage_datetime');
-				
+							
 		// shortcut to yapb
 		if( grain_is_yapb_installed() ) 
 		{
@@ -538,10 +538,16 @@
 			$yapb_page = 'options-general.php?page=Yapb.class.php';
 			add_submenu_page( $grain_page,
 							__("Yet Another Photoblog (Plugin Options)", "grain"), 
-							__("YAPB", "grain"), 
+							__("&raquo; YAPB", "grain"), 
 							'edit_plugins', 
 							$yapb_page);
 		}
+		
+		add_submenu_page( $grain_page,
+						__("Widgets"),
+						__("&raquo; Widgets"), 
+						'edit_themes', 
+						"widgets.php" );
 
 		// do the logic
 		grain_admin_dologic();

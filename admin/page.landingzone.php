@@ -31,7 +31,7 @@
 	?>
 	<div class='wrap'>
 		<div id="grain-header">
-		<h2>Temporary Landing Zone</h2>
+		<h2><?php echo str_replace("%VERSION", GRAIN_THEME_VERSION_BASE, __("Welcome to Grain %VERSION", "grain")); ?></h2>
 		</div>
 	</div>
 	<?php 
