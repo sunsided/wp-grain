@@ -34,7 +34,7 @@
 		if( !grain_is_yapb_installed() ):
 		?>
 		<div class="error">
-		<h3><?php _e("Missing the Yet Another Photoblog plugin", "grain") ?></h3>
+		<h3><?php _e("Grain is missing the Yet Another Photoblog plugin", "grain") ?></h3>
 		<p><?php _e("Unfortunately the YAPB plugin could not be found. Reasons may be that it isn't installed yet or that it's just not activated.", "grain") ?><br />
 		<?php 
 			$msg = __("If you haven't installed it yet, you may want to download it <a href=\"%YAPB_URL\">here</a>. If you did not activate it, you can do so on the <a href=\"%PLUGINS_URL\">plugins</a> page.", "grain");
@@ -42,7 +42,7 @@
 							array( GRAIN_YAPB_URL, "./plugins.php" ),
 							$msg);
 		?></p>
-		<p><?php _e("You can continue editing the options for Grain now, but your photoblog won't work until YAPB is running.", "grain") ?></p>
+		<p><?php _e("You can continue editing the options for Grain now, but your photoblog won't work until YAPB is running. Grain needs YAPB. Really.", "grain") ?></p>
 		</div>
 		<?php
 		endif;
