@@ -26,6 +26,7 @@
 /* Hooks */
 
 	add_action('admin_head', 'grain_admin_pagestyle');	
+	add_action('admin_head', 'grain_admin_inject_js');
 	add_action('admin_menu', 'grain_admin_createmenus');
 
 /* Some translations */
@@ -95,9 +96,16 @@
 		// begin option line
 		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">';
 		
+		// add input handler
+		$handler = "";
+		if( @$GrainOpt->option_defs[$optionName]["TYPE"] == "INT" ) {
+			$handler = 'onKeyPress="return grain_numbersonly(this, event)"';
+			if( $quickInfo == $no_HTML ) $quickInfo = __("(numbers only)", "grain");
+		}
+		
 		// write input
 		echo '	<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>';
-		echo '	<input class="'.$classes.'" type="text" name="'.$fieldName.'" id="'.$fieldName.'" value="'.$value.'" />';
+		echo '	<input class="'.$classes.'" type="text" '.$handler.' name="'.$fieldName.'" id="'.$fieldName.'" value="'.$value.'" />';
 		
 		// quickinfo
 		if( !empty($quickInfo) ) {
@@ -403,9 +411,9 @@
 		// write input
 		echo '	<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>';
 		
-		echo '	<input maxlength="4" class="'.$classes.'" type="text" name="'.$fieldName1.'" id="'.$fieldName1.'" value="'.$value1.'" />';
+		echo '	<input maxlength="4" class="'.$classes.'" type="text" name="'.$fieldName1.'" id="'.$fieldName1.'" value="'.$value1.'" onKeyPress="return grain_numbersonly(this, event)" />';
 		echo '	<span class="separator">'.__("&times;", "grain").'</span>';
-		echo '	<input maxlength="4" class="'.$classes.'" type="text" name="'.$fieldName2.'" id="'.$fieldName2.'" value="'.$value2.'" />';
+		echo '	<input maxlength="4" class="'.$classes.'" type="text" name="'.$fieldName2.'" id="'.$fieldName2.'" value="'.$value2.'" onKeyPress="return grain_numbersonly(this, event)" />';
 		
 		// quickinfo
 		if( !empty($unit) ) {
@@ -630,6 +638,55 @@
 			<div id="errormessage" class="error"><p><strong><?php _e("The YAPB plugin could not be found.", "grain"); ?></strong> <a title="<?php _e("Yet Another Photoblog", "grain"); ?>" target="_blank" href="<?php echo GRAIN_YAPB_URL; ?>"><?php _e("Click for more information", "grain"); ?></a></p></div>	
 			<?php
 		}
+	}
+	
+	/**
+	 * grain_admin_inject_js() - Injects JavaScripts needed by the input fields
+	 * 
+	 * @since 0.3
+	 * @access private
+	 */	
+	function grain_admin_inject_js() {
+	?>
+	<script type="text/javascript" language="JavaScript">
+	<!--
+	// copyright 1999 Idocs, Inc. http://www.idocs.com
+	// Distribute this script freely but keep this notice in place
+	function grain_numbersonly(myfield, e, dec)
+	{
+	var key;
+	var keychar;
+
+	if (window.event)
+	   key = window.event.keyCode;
+	else if (e)
+	   key = e.which;
+	else
+	   return true;
+	keychar = String.fromCharCode(key);
+
+	// control keys
+	if ((key==null) || (key==0) || (key==8) || 
+		(key==9) || (key==13) || (key==27) )
+	   return true;
+
+	// numbers
+	else if ((("-+0123456789").indexOf(keychar) > -1))
+	   return true;
+
+	// decimal point jump
+	else if (dec && (keychar == "."))
+	   {
+	   myfield.form.elements[dec].focus();
+	   return false;
+	   }
+	else
+	   return false;
+	}
+
+	//-->
+	</script>	
+	<?php
 	}
 
 ?>
