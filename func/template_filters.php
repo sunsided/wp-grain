@@ -38,7 +38,7 @@
 
 /* Template Hooks */
 
-	add_action('wp_head', 'grain_inject_fader', '', 0);
+	add_action('grain_scripts', 'grain_inject_fader', '', 0);
 	
 	/**
 	 * grain_inject_fader_hook() - Hook to inject the fader
@@ -51,8 +51,8 @@
 		grain_inject_fader();
 	}
 	
-	add_action('wp_head', 'grain_inject_moofx_tooltips', '', 0);
-	add_action('wp_head', 'grain_inject_moofx_slide', '', 0);
+	add_action('grain_scripts', 'grain_inject_moofx_tooltips', '', 0);
+	add_action('grain_scripts', 'grain_inject_moofx_slide', '', 0);
 	
 /* Feed hooks */
 

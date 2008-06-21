@@ -25,19 +25,22 @@
 	function grain_embed_javascripts() 
 	{
 		global $GrainOpt;
-		echo '<script type="text/javascript" defer="defer" src="'.GRAIN_TEMPLATE_DIR.'/js/boxover.js"></script>'.PHP_EOL;
+		echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/boxover.js"></script>'.PHP_EOL;
 		
 		if($GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX)) 
 		{
-			echo '<script type="text/javascript" defer="defer" src="'.GRAIN_TEMPLATE_DIR.'/js/mootools.js"></script>'.PHP_EOL;
+			echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/mootools.js"></script>'.PHP_EOL;
 			if($GrainOpt->getYesNo(GRAIN_EYECANDY_REFLECTION_ENABLED)) 
 			{
-				echo '<script type="text/javascript" defer="defer" src="'.GRAIN_TEMPLATE_DIR.'/js/reflection.js"></script>'.PHP_EOL;
+				echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/reflection.js"></script>'.PHP_EOL;
 			}
 		}
 		
 		// info for the comments popup
 		if(!$GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED)) comments_popup_script(600, 600);
+		
+		// invoke the action
+		do_action("grain_scripts");
 	}
 
 /* Eye candy: Tooltips */
