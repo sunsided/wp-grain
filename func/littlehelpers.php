@@ -220,7 +220,7 @@
 		 */
 		function grain_log() {
 			global $GrainOpt;
-			if(!$GrainOpt->is(GRAIN_DEBUG)) return;
+			if(!$GrainOpt->is(GRAIN_DEBUG_LOGGING)) return;
 			$args = func_get_args();
 			return call_user_func_array('fb',$args);
 		}

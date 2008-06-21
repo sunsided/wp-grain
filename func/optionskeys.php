@@ -172,10 +172,7 @@ This content is licensed under a <a rel="license" href="http://creativecommons.o
 	$GrainOpt->defineValueOpt( 'GRAIN_FTR_MEDIARSS_COUNT', 'mediarss_count', 50, TRUE, FALSE);
 	
 	// debugging enabled? default to TRUE only in debug builds
-	if( !defined("GRAIN_THEME_VERSION_DEVBUILD") || !GRAIN_THEME_VERSION_DEVBUILD )
-		$GrainOpt->defineFlagOpt( 'GRAIN_DEBUG', 'debug_enabled', FALSE);
-	else
-		$GrainOpt->defineFlagOpt( 'GRAIN_DEBUG', 'debug_enabled', TRUE);
+	$GrainOpt->defineFlagOpt( 'GRAIN_DEBUG_LOGGING', 'logging_enabled', FALSE);
 
 	// version
 	$GrainOpt->defineStringOpt( 'GRAIN_VERSION_KEY', 'version', GRAIN_THEME_VERSION_BASE );
