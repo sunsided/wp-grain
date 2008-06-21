@@ -18,6 +18,17 @@
 	
 	if(!defined("PHP_EOL")) define("PHP_EOL", '\n');
 
+	/**
+	 * grain_htmlentities() - Entity encodes a string
+	 *
+	 * @since 0.3
+	 * @param string $string A string
+	 * @return string entity encoded string
+	 */
+	function grain_htmlentities($string) 
+	{
+		return htmlentities($string, ENT_QUOTES, GRAIN_CONTENT_CHARSET, FALSE);
+	}
 
 	/**
 	 * grain_rmlinebreaks() - Removes breaks from a string

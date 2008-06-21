@@ -22,6 +22,9 @@
 	 */
 	define("GRAIN_OTI_KEY", "otex");
 	
+	/** The current encoding */
+	define('GRAIN_CONTENT_CHARSET', get_option('blog_charset'));
+	
 	/**
 	 * grain_startSession() - Starts a new session
 	 *

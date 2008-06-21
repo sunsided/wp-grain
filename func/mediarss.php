@@ -147,12 +147,11 @@
 		}
 
 		$language = get_bloginfo('language');
-		$encoding = get_option('blog_charset');
 
 		// further information
 		header("Cache-Control: public, must-revalidate");
 		header("Pragma: public");
-		header('Content-Type: text/xml; charset=' . $encoding, true);		
+		header('Content-Type: text/xml; charset=' . GRAIN_CONTENT_CHARSET, true);		
 		
 		// enable output buffering
 		grain_start_buffering();
@@ -165,7 +164,7 @@
 		// get the posts
 		$posts = grain_get_mediarss_posts();
 
-		echo '<?xml version="1.0" encoding="'.$encoding.'" standalone="yes"?>'; 
+		echo '<?xml version="1.0" encoding="'.GRAIN_CONTENT_CHARSET.'" standalone="yes"?>'; 
 ?>
 
 <rss version="2.0" 
@@ -281,7 +280,7 @@
 ?>
 		<item>
 			<title><?php the_title_rss() ?></title>
-			<media:title type="html"><![CDATA[<?php echo htmlentities($post->post_title, ENT_QUOTES, $encoding, FALSE); ?>]]></media:title>
+			<media:title type="html"><![CDATA[<?php echo htmlentities($post->post_title, ENT_QUOTES, GRAIN_CONTENT_CHARSET, FALSE); ?>]]></media:title>
 			<link><?php the_permalink_rss() ?></link>
 			<guid isPermaLink="false"><?php the_guid(); ?></guid>
 			<pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', !empty($post->post_modified_gmt) ? $post->post_modified_gmt : $post->post_date_gmt, false); ?> GMT</pubDate>
