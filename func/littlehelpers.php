@@ -194,5 +194,22 @@
 		// add the header
 		header("Expires: $expires_stamp");
 	}
+	
+	
+	// load the FirePHP extension
+	if( GRAIN_THEME_VERSION_DEVBUILD && file_exists(TEMPLATEPATH . '/lib/FirePHPCore/fb.php') )
+	{
+		@require_once(TEMPLATEPATH . '/lib/FirePHPCore/fb.php');
+		function grain_log() {
+			global $GrainOpt;
+			if(!$GrainOpt->is(GRAIN_DEBUG)) return;
+			$args = func_get_args();
+			return call_user_func_array('fb',$args);
+		}
+	}
+	else {
+		// send it to oblivion
+		function grain_log() {}
+	}
 
 ?>

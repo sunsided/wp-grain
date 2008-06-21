@@ -31,8 +31,4 @@
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);	
 	
-	// load firephp extension
-	if( file_exists(TEMPLATEPATH . '/lib/FirePHPCore/fb.php') ) @require_once(TEMPLATEPATH . '/lib/FirePHPCore/fb.php');
-	if( !function_exists("fb") ) { function fb() {} 	}
-	
 ?>

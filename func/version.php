@@ -48,8 +48,6 @@
 	// Add version response header. Used for version determination in case of support requests.
 	if( !headers_sent() && !defined("GRAIN_NO_VERSIONRESPONSE")) header("X-Grain-Version: ".GRAIN_THEME_VERSION);
 	if( !headers_sent() ) { global $yapb; header("X-Yapb-Version: ".$yapb->pluginVersion); }
-
-	// get's Grains footer version link
 	
 	/**
 	 * grain_getgrainfvlink() - Gets the HTML markup for the footer, containing the Version of Grain
