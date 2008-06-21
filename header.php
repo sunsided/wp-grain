@@ -30,11 +30,11 @@ grain_startSession();
 <?php grain_embed_css(); ?>
 
 <!-- feeds -->
-<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
-<link rel="alternate" type="application/rss+xml" title="Comments RSS Feed" href="<?php bloginfo('comments_rss2_url'); ?>" />
-<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
+<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> - RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
+<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> - <?php _e("Comments RSS Feed", "grain"); ?>" href="<?php bloginfo('comments_rss2_url'); ?>" />
+<link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> - Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
 <?php if( $GrainOpt->is(GRAIN_FTR_MEDIARSS) ): ?>
-<link rel="alternate" type="application/rss+xml" title="MediaRSS:<?php bloginfo('name'); ?>" id="gallery" href="<?php bloginfo('url'); ?>/?feed=mediarss" />
+<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> - MediaRSS Feed" id="gallery" href="<?php bloginfo('url'); ?>/?feed=mediarss" />
 <?php endif; ?>
 
 <!-- syndication -->

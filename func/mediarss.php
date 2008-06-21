@@ -87,13 +87,13 @@
 				width="<?php echo $thumb_width; ?>" 
 				height="<?php echo $thumb_height; ?>"
 				/>
-<?php if(!empty($filesize)): ?>
+<?php /* if(!empty($filesize)): ?>
 			<enclosure 
 				url="<?php echo $full_url; ?>"
 				length="<?php echo $filesize; ?>"
 				type="<?php echo $mime_type; ?>"
 				/>
-<?php endif; ?>
+<?php endif; */ ?>
 			<media:content 
 				url="<?php echo $full_url; ?>"
 				width="<?php echo $width; ?>"
