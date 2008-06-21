@@ -100,7 +100,7 @@
 		$handler = "";
 		if( @$GrainOpt->option_defs[$optionName]["TYPE"] == "INT" ) {
 			$handler = 'onKeyPress="return grain_numbersonly(this, event)"';
-			if( $quickInfo == $no_HTML ) $quickInfo = __("(numbers only)", "grain");
+			if( empty($quickInfo ) || $quickInfo == $no_HTML ) $quickInfo = __("(numbers only)", "grain");
 		}
 		
 		// write input
