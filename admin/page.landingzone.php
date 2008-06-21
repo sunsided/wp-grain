@@ -53,7 +53,7 @@
 		?>
 		<div class="information">
 		<h3><?php _e("This is a development version", "grain") ?></h3>
-		<p class="space_me"><?php _e("While this doesn't affect the functionality of your blog it may increase loading times and send information about your server and configuration to the visitor. Although no sensitive data (e.g., passwords) are being sent it may be that the additional information can be abused to exploit your blog. Because of this it is advised to enable the development feature only for testing and debugging purposes.", "grain") ?></p>
+		<p class="space_me"><?php _e("While this doesn't affect the functionality of your blog it may increase loading times and send information about your server and configuration to the visitor. Although no sensitive data (e.g., passwords) are being sent it could happen that the additional information can be abused to exploit your blog. Because of this it is advised to enable the development feature only for testing and debugging purposes.", "grain") ?></p>
 		<p id="logging-state"><?php 
 			$logging_enabled = $GrainOpt->is(GRAIN_DEBUG_LOGGING) && !defined("GRAIN_LOGGING_DISABLED_THE_HARD_WAY");
 		
