@@ -465,6 +465,20 @@
 		$basePageTitle = __("Configure Grain", "grain");
 		$baseTitle = $basePageTitle . ' &raquo; ';
 	
+		// add an options shortcut
+		$grain_page = 'themes.php?page=general';
+		add_options_page( $basePageTitle,
+						"Grain", 
+						'edit_themes',
+						$grain_page );
+
+		// Add the top menu page
+		add_menu_page( $basePageTitle, 
+						"Grain", 
+						'edit_themes',
+						$grain_page );
+	
+		// add theme pages
 		add_theme_page( $baseTitle . __("General Settings", "grain"), 			
 						__("General Settings", "grain"), 
 						'edit_themes', 
@@ -506,13 +520,6 @@
 							'edit_plugins', 
 							$yapb_page);
 		}
-
-		// add an options shortcut
-		$grain_page = 'themes.php?page=general';
-		add_options_page( $basePageTitle,
-						"Grain", 
-						'edit_themes',
-						$grain_page );
 
 		// do the logic
 		grain_admin_dologic();
