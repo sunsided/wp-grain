@@ -498,7 +498,7 @@
 						
 		add_submenu_page( $grain_page,
 						$basePageTitle, 
-						"Grain ".GRAIN_THEME_VERSION, 
+						"Grain ".GRAIN_THEME_VERSION_BASE, 
 						'edit_themes',
 						$grain_page,
 						"grain_build_admin_screen");
