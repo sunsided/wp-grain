@@ -226,3 +226,18 @@ input.refreshbutton {
 	background: white;
 	width: auto;
 }
+
+#logging-state .enabled,
+#logging-state .disabled {
+	border-bottom: 1px solid;
+}
+
+#logging-state .enabled {
+	/*color: #cc0000; */
+	font-weight: bold;
+}
+
+p.current {
+	padding-bottom: 10px;
+	border-bottom: 1px dashed silver;
+}

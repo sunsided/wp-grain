@@ -26,6 +26,7 @@
 	 */
 	function grain_adminpage_landingzone() 
 	{			
+		global $GrainOpt;
 	?>
 	<div class='wrap'>
 		<div id="grain-header">
@@ -52,8 +53,20 @@
 		?>
 		<div class="information">
 		<h3><?php _e("This is a development version", "grain") ?></h3>
-		<p><?php _e("While this doesn't affect the functionality of your blog it may increase loading times and send information about your server and configuration to the visitor. Although no sensitive data (e.g., passwords) are being sent it may be that the data can be used to exploit your blog. Because of this it is advised to enable the development feature only for testing and debugging purposes.", "grain") ?></p>
-		<p><?php _e("To disable development mode altogether, please delete or rename the following file:", "grain"); ?><br />
+		<p class="space_me"><?php _e("While this doesn't affect the functionality of your blog it may increase loading times and send information about your server and configuration to the visitor. Although no sensitive data (e.g., passwords) are being sent it may be that the additional information can be abused to exploit your blog. Because of this it is advised to enable the development feature only for testing and debugging purposes.", "grain") ?></p>
+		<p id="logging-state"><?php 
+			$logging_enabled = $GrainOpt->is(GRAIN_DEBUG_LOGGING) && !defined("GRAIN_LOGGING_DISABLED_THE_HARD_WAY");
+		
+			$logging_msg = __("Logging is currently %CURRENT_STATE.", "grain");
+			$state = '<span class="disabled">'.__("disabled", "grain").'</span>';
+			if($logging_enabled) $state = '<span class="enabled">'.__("enabled", "grain").'</span>';
+			echo str_replace("%CURRENT_STATE", $state, $logging_msg). " ";
+			if(!$logging_enabled) 
+				_e("No trace or debug messages are sent to the browser.", "grain");
+			else
+				_e("Trace or debug messages may be sent to the browser.", "grain");
+		?></p>
+		<p><?php _e("To get rid of this warning you need to disable development mode altogether. To do so, please delete or rename the following file:", "grain"); ?><br />
 			<code id="dev-filename">/<?php echo GRAIN_RELATIVE_PATH; echo GRAIN_DEV_TRIGGER; ?></code>
 		</p>
 		</div>

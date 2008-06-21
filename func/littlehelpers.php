@@ -227,6 +227,7 @@
 	}
 	else {
 		// send it to oblivion
+		define("GRAIN_LOGGING_DISABLED_THE_HARD_WAY", true);
 		function grain_log() {}
 	}
 
