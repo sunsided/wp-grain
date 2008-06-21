@@ -94,7 +94,7 @@
 	?>
 	>
 	<channel>
-		<title><?php bloginfo('name'); ?></title>
+		<title><?php bloginfo('name'); ?> Media RSS Feed</title>
 		<link><?php bloginfo("url"); ?></link>
 		<atom:link href="<?php self_link(); ?>" rel="self" type="application/rss+xml" />
 		<pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></pubDate>
@@ -186,6 +186,10 @@
 			)
 			*/
 					
+			$filesize = filesize(realpath(ABSPATH.".".$image->uri));
+			
+			//die(".".filesize(ABSPATH.".".$image->uri).".");
+					
 			$thumb_url = str_replace(array("[", "]", "&", "=", "|"), array(urlencode("["), urlencode("]"), urlencode("&"), urlencode("="), urlencode("|")), $thumb_url);
 			
 ?>
@@ -211,10 +215,20 @@
 				width="<?php echo $thumb_width; ?>" 
 				height="<?php echo $thumb_height; ?>"
 				/>
+<?php if(!empty($filesize)): ?>
+			<enclosure 
+				url="<?php echo $full_url; ?>"
+				length="<?php echo $filesize; ?>"
+				type="<?php echo $mime_type; ?>"
+				/>
+<?php endif; ?>
 			<media:content 
 				url="<?php echo $full_url; ?>"
 				width="<?php echo $width; ?>"
 				height="<?php echo $height; ?>"
+<?php if(!empty($filesize)): ?>				
+				fileSize="<?php echo $filesize; ?>" 
+<?php endif; ?>
 <?php if(!empty($mime_type)): ?>				
 				type="<?php echo $mime_type; ?>"
 <?php endif; ?>
