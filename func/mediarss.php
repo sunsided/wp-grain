@@ -152,13 +152,7 @@
 		header('Content-Type: text/xml; charset=' . get_option('blog_charset'), true);		
 		
 		// enable output buffering
-		$can_compress = extension_loaded('zlib') && !ini_get('zlib.output_compression');
-		if( $can_compress ) 
-			@ob_start("ob_gzhandler");
-		else 
-			ob_start();
-			
-		ob_implicit_flush(FALSE);
+		grain_start_buffering();
 		
 		// get some flags
 		$is_cc = $GrainOpt->is(GRAIN_COPYRIGHT_CC_ENABLED);
@@ -329,12 +323,9 @@
 
 	</channel>
 </rss><?php
-
-		// send the content length
-		header("Content-Length: ".ob_get_length());
 		
 		// flush it
-		ob_end_flush();
+		grain_finish_buffering();
 
 	}
 

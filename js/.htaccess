@@ -1,0 +1,10 @@
+# Tunings
+Options -Indexes
+
+# Enable Expires header for some elements
+<IfModule mod_expires.c>
+	<FilesMatch "\.(js)$">
+		ExpiresActive on
+		ExpiresDefault "access plus 1 week"
+	</FilesMatch>
+</IfModule>

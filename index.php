@@ -5,6 +5,9 @@
 	File version: $Id$
 */
 
+	grain_set_expires_header();
+
+	grain_start_buffering();
 	grain_set_ispopup(FALSE);
 	get_header(); 
 	
@@ -100,5 +103,6 @@
 
 	get_footer(); 
 	grain_endSession();
+	grain_finish_buffering();
 
 ?>

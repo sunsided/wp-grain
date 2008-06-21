@@ -127,5 +127,72 @@
 		if(defined("GRAIN_IS_POPUP")) return GRAIN_IS_POPUP;
 		return false;	
 	}
+	
+	/**
+	 * grain_start_buffering() - Starts the output buffering
+	 *
+	 * @since 0.3
+	 * @access private
+	 */
+	function grain_start_buffering() 
+	{
+		// enable output buffering
+		$can_compress = extension_loaded('zlib') && !ini_get('zlib.output_compression');
+		if( $can_compress ) 
+			@ob_start("ob_gzhandler");
+		else 
+			ob_start();
+			
+		ob_implicit_flush(FALSE);
+	}
+	
+	/**
+	 * grain_finish_buffering() - Stops buffering and sends the output buffer, cleating it
+	 *
+	 * @since 0.3
+	 * @access private
+	 */
+	function grain_finish_buffering() 
+	{
+		// send the content length
+		if(!headers_sent()) header("Content-Length: ".ob_get_length());
+		
+		// flush it
+		ob_end_flush();
+	}
+
+	/**
+	 * grain_set_expires_header() - Sets the "Expires" header if it is not already set
+	 *
+	 * The current behavior is to set the expires header to the last modification date
+	 * plus one day (or so), assuming that this photoblog will publish one post a day.
+	 *
+	 * @since 0.3
+	 * @access private
+	 * @uses get_lastpostmodified() 	Gets the last modification date
+	 */
+	function grain_set_expires_header() 
+	{
+		if(headers_sent()) return;
+	
+		// set the time
+		$expires_after_hours = 12;
+		$expires_after_seconds = 3600 * $expires_after_hours;
+	
+		// caching
+		$stamp = get_lastpostmodified('GMT');
+		$expires_stamp = date("D, d M Y H:i:s +0000", strtotime ($stamp) + $expires_after_seconds ). " GMT";
+	
+		header("Expires: $expires_stamp");
+	
+		// check if it already exists
+		$headers = headers_list();	
+		foreach($headers as $header) {
+			if( substr(strtolower($header), 0, 8) == "expires:" ) return;
+		}
+		
+		// add the header
+		header("Expires: $expires_stamp");
+	}
 
 ?>

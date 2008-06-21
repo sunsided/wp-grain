@@ -29,15 +29,12 @@ grain_startSession();
 <!-- stylesheets -->
 <?php grain_embed_css(); ?>
 
-<!-- theme js -->
-<?php grain_embed_javascripts(); ?>
-
 <!-- feeds -->
 <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="alternate" type="application/rss+xml" title="Comments RSS Feed" href="<?php bloginfo('comments_rss2_url'); ?>" />
 <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
 <?php if( $GrainOpt->is(GRAIN_FTR_MEDIARSS) ): ?>
-<link rel="alternate" type="application/rss+xml" title="Media RSS Feed" id="gallery" href="<?php bloginfo('url'); ?>/?feed=mediarss" />
+<link rel="alternate" type="application/rss+xml" title="MediaRSS:<?php bloginfo('name'); ?>" id="gallery" href="<?php bloginfo('url'); ?>/?feed=mediarss" />
 <?php endif; ?>
 
 <!-- syndication -->
@@ -50,6 +47,9 @@ grain_startSession();
 </head>
 
 <body id="body">
+
+<!-- theme js -->
+<?php grain_embed_javascripts(); ?>
 
 <?php
 	$page_id = grain_ispopup() ? "commentspopup" : "page";

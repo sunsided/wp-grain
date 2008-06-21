@@ -1,0 +1,15 @@
+# Tunings
+Options -Indexes
+
+# Disallow access to certain files
+<FilesMatch "\.psd$">
+	Deny from all
+</FilesMatch>
+
+# Enable Expires header for some elements
+<IfModule mod_expires.c>
+	<FilesMatch "\.(ico|jpe?g|jpe|png|gif)$">
+		ExpiresActive on
+		ExpiresDefault "access plus 1 week"
+	</FilesMatch>
+</IfModule>
