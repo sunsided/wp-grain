@@ -17,15 +17,28 @@
 
 	// e.g. http://127.0.0.1/wordpress/?feed=mediarss
 	global $GrainOpt;
-	if( $GrainOpt->is(GRAIN_FTR_MEDIARSS) ) add_feed("mediarss", "grain_do_feed_mediarss");
+	if( $GrainOpt->is(GRAIN_FTR_MEDIARSS) ) {
+		add_feed("mediarss", "grain_do_feed_mediarss");
+	}
+	else {
+		add_action("rss2_ns", "grain_inject_mrss_ns");
+		add_action("rss2_item", "grain_inject_mrss_item");
+	}
 
-	add_action("rss2_ns", "grain_inject_mrss_ns");
-	add_action("rss2_item", "grain_inject_mrss_item");
-
+	/**
+	 * grain_inject_mrss_ns() - Injects the MRSS namespace
+	 *
+	 * @since 0.3
+	 */	
 	function grain_inject_mrss_ns() {
 		echo 'xmlns:media="http://search.yahoo.com/mrss/"'.PHP_EOL;
 	}
 	
+	/**
+	 * grain_inject_mrss_item() - Injects media:* values into the RSS2 feed
+	 *
+	 * @since 0.3
+	 */	
 	function grain_inject_mrss_item() {
 		global $post;
 	
