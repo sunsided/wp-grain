@@ -203,3 +203,26 @@ input.refreshbutton {
 	text-align: center;
 	vertical-align: middle;
 }
+
+
+.information {
+	background-color: #fff0c0;
+	border-color: #c00;
+	border-width: 1px;
+	border-style: solid;
+	padding: 0px 10px;
+}
+
+.information a {
+	color: #c00;
+}
+
+#dev-filename {
+	margin-left: 10px;
+	position: relative;
+	top: 5px;
+	padding: 2px;
+	border: 1px solid silver;
+	background: white;
+	width: auto;
+}

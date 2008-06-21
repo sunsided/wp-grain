@@ -47,6 +47,19 @@
 		<?php
 		endif;
 		?>
+		<?php
+		if( defined("GRAIN_THEME_VERSION_DEVBUILD") && GRAIN_THEME_VERSION_DEVBUILD ):
+		?>
+		<div class="information">
+		<h3><?php _e("This is a development version", "grain") ?></h3>
+		<p><?php _e("While this doesn't affect the functionality of your blog it may increase loading times and send information about your server and configuration to the visitor. Although no sensitive data (e.g., passwords) are being sent it may be that the data can be used to exploit your blog. Because of this it is advised to enable the development feature only for testing and debugging purposes.", "grain") ?></p>
+		<p><?php _e("To disable development mode altogether, please delete or rename the following file:", "grain"); ?><br />
+			<code id="dev-filename">/<?php echo GRAIN_RELATIVE_PATH; echo GRAIN_DEV_TRIGGER; ?></code>
+		</p>
+		</div>
+		<?php
+		endif;
+		?>
 		</div>
 	</div>
 	<?php 

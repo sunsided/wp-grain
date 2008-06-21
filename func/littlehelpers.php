@@ -208,9 +208,16 @@
 	
 	
 	// load the FirePHP extension
-	if( GRAIN_THEME_VERSION_DEVBUILD && file_exists(TEMPLATEPATH . '/lib/FirePHPCore/fb.php') )
+	if( defined("GRAIN_THEME_VERSION_DEVBUILD") && GRAIN_THEME_VERSION_DEVBUILD && file_exists(TEMPLATEPATH . '/lib/FirePHPCore/fb.php') )
 	{
 		@require_once(TEMPLATEPATH . '/lib/FirePHPCore/fb.php');
+		
+		/**
+		 * grain_log() - Wrapper around the FirePHP fb() logging function 
+		 *
+		 * @since 0.3
+		 * @uses fb() 	FirePHP logging function
+		 */
 		function grain_log() {
 			global $GrainOpt;
 			if(!$GrainOpt->is(GRAIN_DEBUG)) return;

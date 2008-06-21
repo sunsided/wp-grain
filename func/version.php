@@ -33,10 +33,13 @@
 	} else {
 		define('GRAIN_THEME_VERSION', GRAIN_THEME_VERSION_BASE);
 	}
+	
+	/** The Grain-relative path to the file that triggers development mode */
+	define("GRAIN_DEV_TRIGGER", "/func/moonsugar.php");
 
 	/* include development build information */
-	if( file_exists(TEMPLATEPATH."/func/moonsugar.php") ) {
-		@require_once(TEMPLATEPATH."/func/moonsugar.php");
+	if( file_exists(TEMPLATEPATH.GRAIN_DEV_TRIGGER) ) {
+		@require_once(TEMPLATEPATH.GRAIN_DEV_TRIGGER);
 		if(!defined("GRAIN_THEME_VERSION_DEVBUILD")) define('GRAIN_THEME_VERSION_DEVBUILD', true);
 		// Set header
 		if( !headers_sent() ) header("X-Grain-Devbuild: R".GRAIN_THEME_VERSION_REVISION);
