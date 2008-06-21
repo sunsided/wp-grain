@@ -53,8 +53,10 @@
 		function GrainPostscreenHook() 
 		{
 			// hook it
-			add_filter('edit_form_advanced', 	array(&$this, 'inject_editform_options'));		
-			add_action('save_post', 			array(&$this, 'on_save_post'), 100, 2);
+			if( grain_is_yapb_installed() ) {
+				add_filter('edit_form_advanced', 	array(&$this, 'inject_editform_options'));		
+				add_action('save_post', 			array(&$this, 'on_save_post'), 100, 2);
+			}
 			
 			// open in dev build
 			if( GRAIN_THEME_VERSION_DEVBUILD ) $this->closedByDefault = FALSE;
