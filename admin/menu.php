@@ -546,14 +546,14 @@
 			$yapb_page = 'options-general.php?page=Yapb.class.php';
 			add_submenu_page( $grain_page,
 							__("Yet Another Photoblog (Plugin Options)", "grain"), 
-							__("&raquo; YAPB", "grain"), 
+							"&raquo; ".__("YAPB", "grain"), 
 							'edit_plugins', 
 							$yapb_page);
 		}
 		
 		add_submenu_page( $grain_page,
 						__("Widgets"),
-						__("&raquo; Widgets"), 
+						"&raquo; ".__("Widgets"), 
 						'edit_themes', 
 						"widgets.php" );
 

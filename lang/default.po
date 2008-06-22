@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Grain 0.3 beta 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-20 23:09+0100\n"
+"POT-Creation-Date: 2008-06-22 06:27+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Markus Mayer <code@defx.de>\n"
 "Language-Team: \n"
@@ -252,7 +252,11 @@ msgstr ""
 msgid "about"
 msgstr ""
 
-#: ..\./index.php:88
+#: ..\./header.php:34
+msgid "Comments RSS Feed"
+msgstr ""
+
+#: ..\./index.php:91
 msgid "There is currently no page to display. Please check back later."
 msgstr ""
 
@@ -324,73 +328,87 @@ msgstr ""
 msgid "Syndicate"
 msgstr ""
 
-#: ..\./admin/menu.php:35
+#: ..\./admin/menu.php:39
 msgid "No HTML here"
 msgstr ""
 
-#: ..\./admin/menu.php:42
+#: ..\./admin/menu.php:46
 msgid "HTML allowed here"
 msgstr ""
 
-#: ..\./admin/menu.php:404
+#: ..\./admin/menu.php:103
+msgid "(numbers only)"
+msgstr ""
+
+#: ..\./admin/menu.php:415
 msgid "&times;"
 msgstr ""
 
-#: ..\./admin/menu.php:465
+#: ..\./admin/menu.php:485
 msgid "Configure Grain"
 msgstr ""
 
-#: ..\./admin/menu.php:468
-#: ..\./admin/menu.php:469
+#: ..\./admin/menu.php:508
+#: ..\./admin/menu.php:509
+#: ..\./admin/page.landingzone.php:104
 msgid "General Settings"
 msgstr ""
 
-#: ..\./admin/menu.php:474
+#: ..\./admin/menu.php:515
 msgid "Navigation Settings"
 msgstr ""
 
-#: ..\./admin/menu.php:475
+#: ..\./admin/menu.php:516
+#: ..\./admin/page.landingzone.php:109
 #: ..\./admin/page.navigation.php:49
 msgid "Navigation"
 msgstr ""
 
-#: ..\./admin/menu.php:480
-#: ..\./admin/menu.php:481
+#: ..\./admin/menu.php:522
+#: ..\./admin/menu.php:523
+#: ..\./admin/page.landingzone.php:114
 msgid "Styling and Layout"
 msgstr ""
 
-#: ..\./admin/menu.php:486
-#: ..\./admin/menu.php:487
+#: ..\./admin/menu.php:529
+#: ..\./admin/menu.php:530
 #: ..\./admin/page.copyright.php:49
+#: ..\./admin/page.landingzone.php:119
 msgid "Copyright Settings"
 msgstr ""
 
-#: ..\./admin/menu.php:492
+#: ..\./admin/menu.php:536
 #: ..\./admin/page.datetime.php:45
 msgid "Date and Time Settings"
 msgstr ""
 
-#: ..\./admin/menu.php:493
+#: ..\./admin/menu.php:537
+#: ..\./admin/page.landingzone.php:124
 msgid "Date and Time"
 msgstr ""
 
-#: ..\./admin/menu.php:504
+#: ..\./admin/menu.php:548
 msgid "Yet Another Photoblog (Plugin Options)"
 msgstr ""
 
-#: ..\./admin/menu.php:505
+#: ..\./admin/menu.php:549
 msgid "YAPB"
 msgstr ""
 
-#: ..\./admin/menu.php:594
+#: ..\./admin/menu.php:555
+#: ..\./admin/menu.php:556
+msgid "Widgets"
+msgstr ""
+
+#: ..\./admin/menu.php:638
 msgid "The YAPB plugin could not be found."
 msgstr ""
 
-#: ..\./admin/menu.php:594
+#: ..\./admin/menu.php:638
 msgid "Yet Another Photoblog"
 msgstr ""
 
-#: ..\./admin/menu.php:594
+#: ..\./admin/menu.php:638
 msgid "Click for more information"
 msgstr ""
 
@@ -528,7 +546,7 @@ msgstr ""
 
 #: ..\./admin/page.copyright.php:104
 #: ..\./admin/page.datetime.php:147
-#: ..\./admin/page.general.php:179
+#: ..\./admin/page.general.php:186
 #: ..\./admin/page.navigation.php:137
 #: ..\./admin/page.styling.php:186
 msgid "Factory Defaults"
@@ -536,7 +554,7 @@ msgstr ""
 
 #: ..\./admin/page.copyright.php:105
 #: ..\./admin/page.datetime.php:148
-#: ..\./admin/page.general.php:180
+#: ..\./admin/page.general.php:187
 #: ..\./admin/page.navigation.php:138
 #: ..\./admin/page.styling.php:187
 msgid "Save Settings"
@@ -878,139 +896,267 @@ msgid "Show the Atom Feed icon next to the RSS feed icon"
 msgstr ""
 
 #: ..\./admin/page.general.php:122
+msgid "Media RSS Settings"
+msgstr ""
+
+#: ..\./admin/page.general.php:124
+msgid "Media RSS:"
+msgstr ""
+
+#: ..\./admin/page.general.php:124
+msgid "Enable the Media RSS/MRSS feed"
+msgstr ""
+
+#: ..\./admin/page.general.php:124
+msgid "The <a href=\"http://en.wikipedia.org/wiki/Media_RSS\">Media RSS</a> feed is an extended RSS feed for multimedia applications."
+msgstr ""
+
+#: ..\./admin/page.general.php:124
+msgid "Note that enabling this option may increase the traffic of your blog, depending on the browser."
+msgstr ""
+
+#: ..\./admin/page.general.php:125
+msgid "Media RSS items:"
+msgstr ""
+
+#: ..\./admin/page.general.php:125
+msgid "Number of recent items in the Media RSS feed. A higher value provides a more detailed representation of your blog but adds more web traffic. A value of zero sets this to the default; a negative number represents no limitation."
+msgstr ""
+
+#: ..\./admin/page.general.php:129
 msgid "Syndication Options"
 msgstr ""
 
-#: ..\./admin/page.general.php:126
+#: ..\./admin/page.general.php:133
 msgid "<strong>Hint:</strong> Syndication data can (and has to be) changed in the {FILE} file to reflect your own syndicate. If you are not sure what syndication means or what to do in that file, please disable the Flat Syndication option."
 msgstr ""
 
-#: ..\./admin/page.general.php:131
+#: ..\./admin/page.general.php:138
 msgid "Flat Syndication"
 msgstr ""
 
-#: ..\./admin/page.general.php:133
+#: ..\./admin/page.general.php:140
 msgid "Flat Syndication:"
 msgstr ""
 
-#: ..\./admin/page.general.php:133
+#: ..\./admin/page.general.php:140
 msgid "Show ring / syndication info as a list in the blog's footer"
 msgstr ""
 
-#: ..\./admin/page.general.php:135
+#: ..\./admin/page.general.php:142
 msgid "Delimiter:"
 msgstr ""
 
-#: ..\./admin/page.general.php:135
+#: ..\./admin/page.general.php:142
 msgid "This will be embedded as a separator of the list items."
 msgstr ""
 
-#: ..\./admin/page.general.php:139
-msgid "Localisation Options"
+#: ..\./admin/page.general.php:146
+msgid "Localization Options"
 msgstr ""
 
-#: ..\./admin/page.general.php:142
+#: ..\./admin/page.general.php:149
 msgid "Secondary Language Options"
 msgstr ""
 
-#: ..\./admin/page.general.php:144
+#: ..\./admin/page.general.php:151
 msgid "Grain has an option that allows you to display photo titles in an additional second language or tho use an additional texts as a subtitle."
 msgstr ""
 
-#: ..\./admin/page.general.php:146
+#: ..\./admin/page.general.php:153
 msgid "2nd Line:"
 msgstr ""
 
-#: ..\./admin/page.general.php:146
+#: ..\./admin/page.general.php:153
 msgid "Enable 2nd line/2nd language support"
 msgstr ""
 
-#: ..\./admin/page.general.php:147
+#: ..\./admin/page.general.php:154
 msgid "2nd line custom field:"
 msgstr ""
 
-#: ..\./admin/page.general.php:147
+#: ..\./admin/page.general.php:154
 msgid "The name/key of the custom field that contains the secondary language title.<br />You may want to read the WordPress Codex article on <a title=\"_blank\" href=\"http://codex.wordpress.org/Using_Custom_Fields\">Using Custom Fields</a>."
 msgstr ""
 
-#: ..\./admin/page.general.php:152
+#: ..\./admin/page.general.php:159
 msgid "Auto Locale"
 msgstr ""
 
-#: ..\./admin/page.general.php:154
+#: ..\./admin/page.general.php:161
 msgid "Browsers may send an information about their preferred language. Grain can make use of this information to automatically select a translation file, displaying the blog in the visitor's language."
 msgstr ""
 
-#: ..\./admin/page.general.php:156
+#: ..\./admin/page.general.php:163
 msgid "Enable Auto Locale:"
 msgstr ""
 
-#: ..\./admin/page.general.php:156
+#: ..\./admin/page.general.php:163
 msgid "Activate visitor based translation"
 msgstr ""
 
-#: ..\./admin/page.general.php:156
+#: ..\./admin/page.general.php:163
 msgid "Grain tries to match a browser's <code>HTTP_ACCEPT_LANGUAGE</code> against a set of locale (<code>*.mo</code>) files in your theme's directory. If no match can be found, the default translation based on your WordPress settings will be used."
 msgstr ""
 
-#: ..\./admin/page.general.php:160
+#: ..\./admin/page.general.php:167
 msgid "Archives Sidebar"
 msgstr ""
 
-#: ..\./admin/page.general.php:164
+#: ..\./admin/page.general.php:171
 msgid "These settings affect the sidebar you can see when you open an archive page, such as the Mosaic, the category archives etc.<br />Grain is a theme with widget support, so you can easily customize your sidebar in the Widgets menu; These options will only apply if there is no widget plugged into the according sidebar."
 msgstr ""
 
-#: ..\./admin/page.general.php:167
+#: ..\./admin/page.general.php:174
 msgid "The values in the {FILE} file will be used for that."
 msgstr ""
 
-#: ..\./admin/page.general.php:168
+#: ..\./admin/page.general.php:175
 msgid "Sidebar Syndication:"
 msgstr ""
 
-#: ..\./admin/page.general.php:168
+#: ..\./admin/page.general.php:175
 msgid "Show Syndication in the Sidebar"
 msgstr ""
 
-#: ..\./admin/page.general.php:170
+#: ..\./admin/page.general.php:177
 msgid "Most commented:"
 msgstr ""
 
-#: ..\./admin/page.general.php:170
+#: ..\./admin/page.general.php:177
 msgid "List most commented photos"
 msgstr ""
 
-#: ..\./admin/page.general.php:171
+#: ..\./admin/page.general.php:178
 msgid "Show at most:"
 msgstr ""
 
-#: ..\./admin/page.general.php:171
+#: ..\./admin/page.general.php:178
 msgid "This sets the maximum number of recent comments that will be displayed in the list."
 msgstr ""
 
-#: ..\./admin/page.general.php:173
+#: ..\./admin/page.general.php:180
 msgid "Display Calendar:"
 msgstr ""
 
-#: ..\./admin/page.general.php:173
+#: ..\./admin/page.general.php:180
 msgid "Show the post calendar"
 msgstr ""
 
-#: ..\./admin/page.general.php:174
+#: ..\./admin/page.general.php:181
 msgid "Display Blogroll:"
 msgstr ""
 
-#: ..\./admin/page.general.php:174
+#: ..\./admin/page.general.php:181
 msgid "Show your blogroll"
 msgstr ""
 
-#: ..\./admin/page.general.php:175
+#: ..\./admin/page.general.php:182
 msgid "Display \"Meta\" block:"
 msgstr ""
 
-#: ..\./admin/page.general.php:175
+#: ..\./admin/page.general.php:182
 msgid "Show WordPress' \"Meta\" blog to enable users to register or log in"
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:34
+msgid "Welcome to Grain %VERSION"
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:40
+msgid "Grain is missing the Yet Another Photoblog plugin"
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:41
+msgid "Unfortunately the YAPB plugin could not be found. Reasons may be that it isn't installed yet or that it's just not activated."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:43
+msgid "If you haven't installed it yet, you may want to download it <a href=\"%YAPB_URL\">here</a>. If you did not activate it, you can do so on the <a href=\"%PLUGINS_URL\">plugins</a> page."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:48
+msgid "You can continue editing the options for Grain now, but your photoblog won't work until YAPB is running. Grain needs YAPB. Really."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:58
+msgid "This is a development version"
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:59
+msgid "While this doesn't affect the functionality of your blog it may increase loading times and send information about your server and configuration to the visitor. Although no sensitive data (e.g., passwords) are being sent it could happen that the additional information can be abused to exploit your blog. Because of this it is advised to enable the development feature only for testing and debugging purposes."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:63
+msgid "Logging is currently %CURRENT_STATE."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:64
+msgid "disabled"
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:65
+msgid "enabled"
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:68
+msgid "No trace or debug messages are sent to the browser."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:70
+msgid "Trace or debug messages may be sent to the browser."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:72
+msgid "To get rid of this warning you need to disable development mode altogether. To do so, please delete the following file:"
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:82
+msgid "You are using %YAPB_VERSION with %GRAIN_VERSION."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:88
+msgid "Please check out the <a href=\"%PROJECT_URL\">Grain Wiki</a> for updates and support."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:97
+msgid "Grain configuration options"
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:99
+msgid "Here you can control and fine-tune how Grain displays your photoblog (or parts of it)."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:99
+msgid "Unfortunately the options are a bit cluttered right now. This will hopefully change in a future version. :)"
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:105
+msgid "Here you will find general options (e.g. if you want to use a popup for the comments or not) and all those options that didn't fit elsewhere."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:110
+msgid "This is where you control how your visitors will navigate your photo stream. You can also control which items will appear in the menu bar here."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:115
+msgid "This holds options such as maximum image sizes, CSS stylesheets, Thumbnails, options for your Mosaic, visual effects and more."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:120
+msgid "This is where you set your name, imprint and special licenses such as a Creative Commons license."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:125
+msgid "This section is most probably only interesting to you if you don't use a localized version of Grain. Here you can set how dates and times are displayed to your visitors."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:131
+msgid "Final words"
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:132
+msgid "Happy photoblogging! :)"
 msgstr ""
 
 #: ..\./admin/page.navigation.php:53
@@ -1640,15 +1786,15 @@ msgstr ""
 msgid "Tagged with: "
 msgstr ""
 
-#: ..\./func/posthooks.php:105
+#: ..\./func/posthooks.php:107
 msgid "Grain: Options For This Post"
 msgstr ""
 
-#: ..\./func/posthooks.php:113
+#: ..\./func/posthooks.php:115
 msgid "There a currently no advanced options for this post."
 msgstr ""
 
-#: ..\./func/posthooks.php:181
+#: ..\./func/posthooks.php:183
 msgid "Hide EXIF data"
 msgstr ""
 
