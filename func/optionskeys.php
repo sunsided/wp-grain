@@ -133,7 +133,7 @@ This content is licensed under a <a rel="license" href="http://creativecommons.o
 	$GrainOpt->defineFlagOpt( 'GRAIN_EYECANDY_USE_MOOTIPS', 'eyecandy_use_mootips', FALSE );
 	$GrainOpt->defineFlagOpt( 'GRAIN_EYECANDY_USE_SLIDE', 'eyecandy_use_slide', FALSE );
 	
-	$GrainOpt->defineFlagOpt( 'GRAIN_EYECANDY_IMAGE_TOOLTIPS', 'eyecandy_img_tips', TRUE );
+	$GrainOpt->defineFlagOpt( 'GRAIN_EYECANDY_IMAGE_TOOLTIPS', 'eyecandy_img_tips', FALSE );
 	
 	$GrainOpt->defineStringOpt( 'GRAIN_STYLE_OVERRIDE', "style_override_file", "style.override.css", FALSE );
 	
