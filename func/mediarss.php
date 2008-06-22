@@ -121,7 +121,7 @@
 		// caching
 		$stamp = get_lastpostmodified('GMT');
 		$etag = '"'.$stamp.'"';
-		$modified_date = mysql2date('D, d M Y H:i:s +0000', $stamp, false) . " GMT";
+		$modified_date = mysql2date('D, d M Y H:i:s +0000', $stamp, false);
 		$if_modified_since = preg_replace('/;.*$/', '', @$_SERVER['HTTP_IF_MODIFIED_SINCE']);
 		$if_none_match = stripslashes(@$_SERVER['HTTP_IF_NONE_MATCH']);
 		$etag_list = explode(",", $if_none_match);
@@ -181,7 +181,7 @@
 		<title><?php bloginfo('name'); ?> Media RSS Feed</title>
 		<link><?php bloginfo("url"); ?></link>
 		<atom:link href="<?php self_link(); ?>" rel="self" type="application/rss+xml" />
-		<pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?> GMT</pubDate>
+		<pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></pubDate>
 		<description><?php bloginfo('description'); ?></description>
 		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
 		<generator>Grain <?php echo GRAIN_THEME_VERSION; ?></generator>
@@ -283,7 +283,7 @@
 			<media:title type="html"><![CDATA[<?php echo htmlentities($post->post_title, ENT_QUOTES, GRAIN_CONTENT_CHARSET, FALSE); ?>]]></media:title>
 			<link><?php the_permalink_rss() ?></link>
 			<guid isPermaLink="false"><?php the_guid(); ?></guid>
-			<pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', !empty($post->post_modified_gmt) ? $post->post_modified_gmt : $post->post_date_gmt, false); ?> GMT</pubDate>
+			<pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', !empty($post->post_modified_gmt) ? $post->post_modified_gmt : $post->post_date_gmt, false); ?></pubDate>
 			<comments><?php comments_link(); ?></comments>
 			<wfw:commentRss><?php echo get_post_comments_feed_link(); ?></wfw:commentRss>
 <?php if(!empty($post->post_excerpt)): ?>	

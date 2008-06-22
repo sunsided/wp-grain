@@ -16,7 +16,7 @@
 		
 	// image sizes, ...
 	$GrainOpt->defineValueOpt('GRAIN_MAX_IMAGE_WIDTH', "max_img_width", 800, FALSE);
-	$GrainOpt->defineValueOpt('GRAIN_MAX_IMAGE_HEIGHT', "max_img_height", 533, FALSE);
+	$GrainOpt->defineValueOpt('GRAIN_MAX_IMAGE_HEIGHT', "max_img_height", 700, FALSE);
 	$GrainOpt->defineValueOpt( 'GRAIN_WHOOPS_WIDTH', 'whoops_image_width', 800, FALSE );
 	$GrainOpt->defineValueOpt( 'GRAIN_WHOOPS_HEIGHT', 'whoops_image_height', 533, FALSE );		
 	$GrainOpt->defineStringOpt( 'GRAIN_WHOOPS_URL', 'whoops_image_url', GRAIN_TEMPLATE_DIR.'/images/whoops.png', FALSE );
