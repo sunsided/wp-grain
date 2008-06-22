@@ -1777,15 +1777,13 @@ span.menu-delimiter {
 }
 
 #area_prev:hover {
-	background-image: url(images/go_left.gif);
-	background-repeat: no-repeat;
-	background-position: left center;
+	background: transparent url(images/go_left.png) no-repeat scroll center center;
+	cursor: pointer;
 }
 
 #area_next:hover {
-	background-image: url(images/go_right.gif);
-	background-repeat: no-repeat;
-	background-position: right center;
+	background: transparent url(images/go_right.png) no-repeat scroll center center;
+	cursor: pointer;
 }
 
 div.grain-sidebar ul {
