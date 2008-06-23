@@ -11,7 +11,7 @@ Add: Option to enable or disable linking of Gravatar icons
 Add: Error messages (no post, photo not found, ...) can now be styled (in addition to the filter that can be applied)
 Add: Option to control access to the comment form if a photo page has no content
 Add: Option to only show the excerpt of a post on the comment popup.
-Add: Autolocale option to load a translation based on a request's HTTP_ACCEPT_LANGUAGE setting
+Add: Autolocale option (locale autodiscovery) to load a translation based on a request's HTTP_ACCEPT_LANGUAGE setting
 Add: The tooltips on the image can now be disabled
 Add: CSS: The #info-frame now gets a class "contentless" if neither text nor exif data is available. Additionally the CSS classes has-exif/no-exif and has-content/no-content are set.
 Add: The number of comments awaiting moderation on the current post is now shown to moderators

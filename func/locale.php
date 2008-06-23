@@ -134,7 +134,10 @@
 	 */
 	function grain_find_locale($locale, $fallback=WPLANG) {
 		// test for a direct hit
-		if( file_exists(TEMPLATEPATH."/lang/$locale.mo") ) return $locale;
+		if( file_exists(TEMPLATEPATH."/lang/$locale.mo") ) {
+			grain_log("$locale is a direct hit", "Locale", FirePHP::INFO);
+			return $locale;
+		}
 		#if( file_exists(TEMPLATEPATH."/$locale.mo") ) return $locale;
 		// no direct hit; check for a specialized locale
 		// get base locale
@@ -145,15 +148,15 @@
 		
 		// get cached files
 		global $__grain_mo_cache;
-		if( !$__grain_mo_cache ) {
+		if( $__grain_mo_cache === null ) {
 			// create new cache
 			$__grain_mo_cache = array();
 		
 			// walk through all files
-			if ($handle = opendir(TEMPLATEPATH)) {
-				while (false !== ($file = readdir($handle))) {
+			if ($handle = opendir(TEMPLATEPATH."/lang/")) {
+				while (false !== ($file = readdir($handle))) {				
 					// test pattern for "xx" and ".mo"
-					if( substr($file, -3, 3) == ".mo") {
+					if( substr($file, -3, 3) == ".mo") {					
 						$__grain_mo_cache[] = $file;
 						if( substr($file, 0, 2) != $baselocale ) continue;
 						
@@ -169,7 +172,7 @@
 			}
 		}
 		// use cached files
-		else {
+		else {		
 			foreach($__grain_mo_cache as $file) {
 				// test pattern for "xx" and ".mo"
 				if( substr($file, 0, 2) != $baselocale ) continue;
