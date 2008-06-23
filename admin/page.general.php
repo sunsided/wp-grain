@@ -73,7 +73,7 @@
 					<?php				
 					grain_admin_checkbox(GRAIN_CONTENT_PERMALINK_VISIBLE, "show_permalink", NULL, __("Enable permalink:", "grain"), __("Show the permalink in the image info", "grain"), __("The permalink is an address that won't change. This way a visitor can securely link one of your photo pages. Permalinks are managed by WordPress.", "grain"));
 					grain_admin_checkbox(GRAIN_CONTENT_COMMENTS_HINT, "show_comments_hint", NULL, __("Enable comment hint:", "grain"), __("Show the permalink in the image info", "grain"), __("If enabled, Grain shows a link to the comments in the short info display below the image.", "grain"));				
-					grain_admin_checkbox(GRAIN_CONTENT_DATES, "show_dates", NULL, __("Show Date:", "grain"), __("Display the date the photo was published", "grain"), __("This shows the date and time the photo page was published in the description text.") );
+					grain_admin_checkbox(GRAIN_CONTENT_DATES, "show_dates", NULL, __("Show Date:", "grain"), __("Display the date the photo was published", "grain"), __("This shows the date and time the photo page was published in the description text.", "grain") );
 					?>
 				</fieldset>
 				<fieldset>
@@ -94,9 +94,9 @@
 					grain_admin_checkbox(GRAIN_CONTENT_CATEGORIES, "show_categories", NULL, __("Show category list:", "grain"), __("Shows the categories in which the photo is filed", "grain"), NULL);
 					
 					// TODO: Move these to the styling/layout page
-					grain_admin_shortline(GRAIN_OPENTAGS_CATLIST, "before_categories", NULL, __("Begin category list:", "grain"), $HTML_allowed, __("This text will be embedded right before the category list. You can put specific markup here to style your theme."));
-					grain_admin_shortline(GRAIN_CATLIST_SEPARATOR, "delimit_categories", NULL, __("Category list delimiter:", "grain"), $HTML_allowed, __("This will be embedded within the category list to separate two entries."));
-					grain_admin_shortline(GRAIN_CLOSETAGS_CATLIST, "after_categories", NULL, __("End category list:", "grain"), $HTML_allowed, __("This will be embedded right after the category list."));
+					grain_admin_shortline(GRAIN_OPENTAGS_CATLIST, "before_categories", NULL, __("Begin category list:", "grain"), $HTML_allowed, __("This text will be embedded right before the category list. You can put specific markup here to style your theme.", "grain"));
+					grain_admin_shortline(GRAIN_CATLIST_SEPARATOR, "delimit_categories", NULL, __("Category list delimiter:", "grain"), $HTML_allowed, __("This will be embedded within the category list to separate two entries.", "grain"));
+					grain_admin_shortline(GRAIN_CLOSETAGS_CATLIST, "after_categories", NULL, __("End category list:", "grain"), $HTML_allowed, __("This will be embedded right after the category list.", "grain"));
 					?>
 				</fieldset>
 				<fieldset>
@@ -104,9 +104,9 @@
 					<?php				
 					grain_admin_checkbox(GRAIN_CONTENT_TAGS, "show_taglist", NULL, __("Show tag list:", "grain"), __("Shows the tags with which the photo is marked", "grain"), NULL);
 					// TODO: Move these to the styling/layout page
-					grain_admin_shortline(GRAIN_OPENTAGS_TAGLIST, "before_taglist", NULL, __("Begin tag list:", "grain"), $HTML_allowed, __("This text will be embedded right before the tag list. You can put specific markup here to style your theme."));
-					grain_admin_shortline(GRAIN_TAGLIST_SEPARATOR, "delimit_taglist", NULL, __("Tag list delimiter:", "grain"), $HTML_allowed, __("This will be embedded within the tag list to separate two entries."));
-					grain_admin_shortline(GRAIN_CLOSETAGS_TAGLIST, "after_taglist", NULL, __("End tag list:", "grain"), $HTML_allowed, __("This will be embedded right after the tag list."));
+					grain_admin_shortline(GRAIN_OPENTAGS_TAGLIST, "before_taglist", NULL, __("Begin tag list:", "grain"), $HTML_allowed, __("This text will be embedded right before the tag list. You can put specific markup here to style your theme.", "grain"));
+					grain_admin_shortline(GRAIN_TAGLIST_SEPARATOR, "delimit_taglist", NULL, __("Tag list delimiter:", "grain"), $HTML_allowed, __("This will be embedded within the tag list to separate two entries.", "grain"));
+					grain_admin_shortline(GRAIN_CLOSETAGS_TAGLIST, "after_taglist", NULL, __("End tag list:", "grain"), $HTML_allowed, __("This will be embedded right after the tag list.", "grain"));
 					?>
 				</fieldset>
 					
@@ -139,7 +139,7 @@
 					<?php 
 					grain_admin_checkbox(GRAIN_SYND_FLAT_ENABLED, "flat_syndication", NULL, __("Flat Syndication:", "grain"), __("Show ring / syndication info as a list in the blog's footer", "grain"), NULL);
 					// TODO: Move these to the styling/layout page
-					grain_admin_shortline(GRAIN_SYND_FLAT_DELIMITER, "flat_syndication_delimiter", NULL, __("Delimiter:", "grain"), $HTML_allowed, __("This will be embedded as a separator of the list items."));
+					grain_admin_shortline(GRAIN_SYND_FLAT_DELIMITER, "flat_syndication_delimiter", NULL, __("Delimiter:", "grain"), $HTML_allowed, __("This will be embedded as a separator of the list items.", "grain"));
 					?>
 				</fieldset>
 	

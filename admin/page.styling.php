@@ -102,7 +102,7 @@
 					<legend><?php _e("Info display: EXIF data", "grain"); ?></legend>
 					<?php
 					grain_admin_checkbox(GRAIN_FANCY_EXIFFILTER, "fancy_exiffilter", NULL, __("EXIF filtering:", "grain"), __("Enable quick EXIF filtering.", "grain"), __("If this option is enabled, Grain will filter some of the EXIF fields that it gets from YAPB: Some fields will be removed even if they are enabled in the YAPB options, some fields will be displayed differently. It is recommended to disable this option only if you take another (own) approach to EXIF filtering.", "grain"));
-					grain_admin_checkbox(GRAIN_EXIF_RENDER_INLINE, "exif_inline", NULL, __("Display as inline:", "grain"), __("Display EXIF data \"inline\".", "grain"), __("If you disable this option, Grain will render any EXIF data in a table.", "grain"));
+					grain_admin_checkbox(GRAIN_EXIF_RENDER_INLINE, "exif_inline", NULL, __("Display as inline:", "grain"), __('Display EXIF data "inline".', "grain"), __("If you disable this option, Grain will render any EXIF data in a table.", "grain"));
 					?>
 				</fieldset>			
 			
@@ -113,7 +113,7 @@
 					grain_admin_checkbox(GRAIN_SDBR_ON_MOSAIC, "mosaic_sdbr", NULL, __("Show Sidebar:", "grain"), __("Show the sidebar on the mosaic page.", "grain"), NULL);
 					grain_admin_checkbox(GRAIN_MOSAIC_SKIP_EMPTY, "mosaic_skip_empty", NULL, __("Skip empty posts:", "grain"), __("Skip posts that have no photo attached.", "grain"), __("If you disable this option, posts without a photo will be rendered as an empty box in the mosaic.", "grain"));
 					grain_admin_checkbox(GRAIN_MOSAIC_DISPLAY_YEARS, "show_mosaic_years", NULL, __("Show Years:", "grain"), __("Group thumbnails by years in the mosaic page", "grain"), NULL);
-					grain_admin_checkbox(GRAIN_MOSAIC_SHUFFLE, "mosaic_shuffle", NULL, __("Shuffle mosaic posts:", "grain"), __("Display posts on the mosaic in a random order.", "grain"), __("It is recommended to disable the \"Show Years\" option above if you enable this.", "grain"));
+					grain_admin_checkbox(GRAIN_MOSAIC_SHUFFLE, "mosaic_shuffle", NULL, __("Shuffle mosaic posts:", "grain"), __("Display posts on the mosaic in a random order.", "grain"), __('It is recommended to disable the "Show Years" option above if you enable this.', "grain"));
 					grain_admin_shortline(GRAIN_MOSAIC_COUNT, "mosaic_count", NULL, __("Photos per page:", "grain"), $no_HTML, __("This value sets how many photos will be displayed at most on a mosaic page.", "grain").__("If you set a negative value or zero, no limitation will be applied.", "grain"));
 					grain_admin_longline(GRAIN_PHPTHUMB_OPTIONS, "phpthumb_opt", NULL, __("phpThumb Options:", "grain"), $no_HTML, __("Here you can set an additional configuration string that will be passed to phpThumb for the thumbnail generation.", "grain").'<br />'.__('Configuration options are separated by an ampersand or whitespace; See <a target="_blank" href="http://phpthumb.sourceforge.net/">phpThumb()</a> for more information.', "grain").'<br />'.__("If you are in doubt please leave this field empty.", "grain"));
 					?>	

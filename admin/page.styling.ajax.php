@@ -14,6 +14,8 @@
 	
 	if(!defined('GRAIN_ADMINPAGE_LOADED') ) die(basename(__FILE__));
 	
+	// load AJAX functions
+	@require_once(TEMPLATEPATH . '/admin/common.ajax.php');
 
 /* functions */
 
@@ -89,38 +91,8 @@
 	
 	?>
 	
-	<script type="text/javascript">
+	<script type="text/javascript" lang="JavaScript">
 	//<![CDATA[
-	function grain_enable_element(name, enabled)
-	{
-		(function($) {
-			if(enabled)
-				$('#'+name).removeAttr('disabled');
-			else
-				$('#'+name).attr('disabled', 'disabled');
-		})(jQuery);
-	}
-	
-	function grain_hide_element(name, hidden)
-	{
-		(function($) {
-			if(hidden)
-				$('#'+name).css('visibility', 'hidden');
-			else
-				$('#'+name).css('visibility', 'visible');
-		})(jQuery);
-	}	
-	
-	function grain_show_ajaxloader(name, enabled)
-	{
-		(function($) {
-			if(enabled) {
-				$('#'+name).after('<div id="'+name+'_ajaxloader" class="ajaxloader"><img id="'+name+'_ajaxloader_img" height="16" width="16" class="ajaxloader" src="<?php echo GRAIN_TEMPLATE_DIR ?>/images/ajax-loader.gif" /><span class="loading"><?php echo __("loading ...", "grain") ?></span></div>');
-			} else {
-				$('#'+name+"_ajaxloader").remove();
-			}
-		})(jQuery);
-	}
 	
 	function grain_ajax_refresh_override_css( )
 	{
@@ -139,7 +111,7 @@
 				{ 
 					grain_enable_element("css_override_file", true); 
 					grain_hide_element("refresh_override_css", false);
-					alert('Ajax error in doing stuff' )
+					alert('Ajax while trying to refresh stylesheet list' )
 				};
 		mysack.runAJAX();
 

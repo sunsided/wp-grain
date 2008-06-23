@@ -15,6 +15,8 @@
 	
 	if(!defined('GRAIN_ADMINPAGE_LOADED') ) die(basename(__FILE__));
 	
+	// load AJAX functions
+	@require_once(TEMPLATEPATH . '/admin/page.landingzone.ajax.php');
 
 /* functions */
 
@@ -61,8 +63,8 @@
 				$logging_enabled = $GrainOpt->is(GRAIN_DEBUG_LOGGING) && !defined("GRAIN_LOGGING_DISABLED_THE_HARD_WAY");
 			
 				$logging_msg = __("Logging is currently %CURRENT_STATE.", "grain");
-				$state = '<span class="disabled">'.__("disabled", "grain").'</span>';
-				if($logging_enabled) $state = '<span class="enabled">'.__("enabled", "grain").'</span>';
+				$state = '<span id="logging-state-text" class="disabled">'.__("disabled", "grain").'</span>';
+				if($logging_enabled) $state = '<span id="logging-state-text" class="enabled">'.__("enabled", "grain").'</span>';
 				echo str_replace("%CURRENT_STATE", $state, $logging_msg). " ";
 				if(!$logging_enabled) 
 					_e("No trace or debug messages are sent to the browser.", "grain");

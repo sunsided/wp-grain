@@ -17,6 +17,7 @@
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 	
 	session_start();
+	ob_start();
 	
 /* Options */
 
