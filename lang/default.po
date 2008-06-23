@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Grain 0.3 beta 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-22 06:27+0100\n"
+"POT-Creation-Date: 2008-06-23 21:14+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Markus Mayer <code@defx.de>\n"
 "Language-Team: \n"
@@ -56,14 +56,14 @@ msgid "Blog archive"
 msgstr ""
 
 #: ..\./archive.php:76
-#: ..\./archive.php:100
+#: ..\./archive.php:97
 #: ..\./search.php:19
 #: ..\./search.php:43
 msgid "&laquo; next page"
 msgstr ""
 
 #: ..\./archive.php:77
-#: ..\./archive.php:101
+#: ..\./archive.php:98
 #: ..\./search.php:20
 #: ..\./search.php:44
 msgid "previous page &raquo;"
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Comments are closed - You are not supposed to be here."
 msgstr ""
 
-#: ..\./comments-popup.php:94
+#: ..\./comments-popup.php:98
 msgid "The permalink address <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> of this photo is:"
 msgstr ""
 
@@ -328,87 +328,91 @@ msgstr ""
 msgid "Syndicate"
 msgstr ""
 
-#: ..\./admin/menu.php:39
+#: ..\./admin/common.ajax.php:61
+msgid "loading ..."
+msgstr ""
+
+#: ..\./admin/menu.php:40
 msgid "No HTML here"
 msgstr ""
 
-#: ..\./admin/menu.php:46
+#: ..\./admin/menu.php:47
 msgid "HTML allowed here"
 msgstr ""
 
-#: ..\./admin/menu.php:103
+#: ..\./admin/menu.php:104
 msgid "(numbers only)"
 msgstr ""
 
-#: ..\./admin/menu.php:415
+#: ..\./admin/menu.php:416
 msgid "&times;"
 msgstr ""
 
-#: ..\./admin/menu.php:485
+#: ..\./admin/menu.php:486
 msgid "Configure Grain"
 msgstr ""
 
-#: ..\./admin/menu.php:508
 #: ..\./admin/menu.php:509
-#: ..\./admin/page.landingzone.php:104
+#: ..\./admin/menu.php:510
+#: ..\./admin/page.landingzone.php:106
 msgid "General Settings"
 msgstr ""
 
-#: ..\./admin/menu.php:515
+#: ..\./admin/menu.php:516
 msgid "Navigation Settings"
 msgstr ""
 
-#: ..\./admin/menu.php:516
-#: ..\./admin/page.landingzone.php:109
+#: ..\./admin/menu.php:517
+#: ..\./admin/page.landingzone.php:111
 #: ..\./admin/page.navigation.php:49
 msgid "Navigation"
 msgstr ""
 
-#: ..\./admin/menu.php:522
 #: ..\./admin/menu.php:523
-#: ..\./admin/page.landingzone.php:114
+#: ..\./admin/menu.php:524
+#: ..\./admin/page.landingzone.php:116
 msgid "Styling and Layout"
 msgstr ""
 
-#: ..\./admin/menu.php:529
 #: ..\./admin/menu.php:530
+#: ..\./admin/menu.php:531
 #: ..\./admin/page.copyright.php:49
-#: ..\./admin/page.landingzone.php:119
+#: ..\./admin/page.landingzone.php:121
 msgid "Copyright Settings"
 msgstr ""
 
-#: ..\./admin/menu.php:536
+#: ..\./admin/menu.php:537
 #: ..\./admin/page.datetime.php:45
 msgid "Date and Time Settings"
 msgstr ""
 
-#: ..\./admin/menu.php:537
-#: ..\./admin/page.landingzone.php:124
+#: ..\./admin/menu.php:538
+#: ..\./admin/page.landingzone.php:126
 msgid "Date and Time"
 msgstr ""
 
-#: ..\./admin/menu.php:548
+#: ..\./admin/menu.php:549
 msgid "Yet Another Photoblog (Plugin Options)"
 msgstr ""
 
-#: ..\./admin/menu.php:549
+#: ..\./admin/menu.php:550
 msgid "YAPB"
 msgstr ""
 
-#: ..\./admin/menu.php:555
 #: ..\./admin/menu.php:556
+#: ..\./admin/menu.php:557
 msgid "Widgets"
 msgstr ""
 
-#: ..\./admin/menu.php:638
+#: ..\./admin/menu.php:639
 msgid "The YAPB plugin could not be found."
 msgstr ""
 
-#: ..\./admin/menu.php:638
+#: ..\./admin/menu.php:639
 msgid "Yet Another Photoblog"
 msgstr ""
 
-#: ..\./admin/menu.php:638
+#: ..\./admin/menu.php:639
 msgid "Click for more information"
 msgstr ""
 
@@ -1059,103 +1063,105 @@ msgstr ""
 msgid "Show WordPress' \"Meta\" blog to enable users to register or log in"
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:34
-msgid "Welcome to Grain %VERSION"
-msgstr ""
-
-#: ..\./admin/page.landingzone.php:40
-msgid "Grain is missing the Yet Another Photoblog plugin"
-msgstr ""
-
-#: ..\./admin/page.landingzone.php:41
-msgid "Unfortunately the YAPB plugin could not be found. Reasons may be that it isn't installed yet or that it's just not activated."
-msgstr ""
-
-#: ..\./admin/page.landingzone.php:43
-msgid "If you haven't installed it yet, you may want to download it <a href=\"%YAPB_URL\">here</a>. If you did not activate it, you can do so on the <a href=\"%PLUGINS_URL\">plugins</a> page."
-msgstr ""
-
-#: ..\./admin/page.landingzone.php:48
-msgid "You can continue editing the options for Grain now, but your photoblog won't work until YAPB is running. Grain needs YAPB. Really."
-msgstr ""
-
-#: ..\./admin/page.landingzone.php:58
-msgid "This is a development version"
-msgstr ""
-
-#: ..\./admin/page.landingzone.php:59
-msgid "While this doesn't affect the functionality of your blog it may increase loading times and send information about your server and configuration to the visitor. Although no sensitive data (e.g., passwords) are being sent it could happen that the additional information can be abused to exploit your blog. Because of this it is advised to enable the development feature only for testing and debugging purposes."
-msgstr ""
-
-#: ..\./admin/page.landingzone.php:63
-msgid "Logging is currently %CURRENT_STATE."
-msgstr ""
-
-#: ..\./admin/page.landingzone.php:64
+#: ..\./admin/page.landingzone.ajax.php:51
+#: ..\./admin/page.landingzone.php:66
 msgid "disabled"
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:65
+#: ..\./admin/page.landingzone.ajax.php:54
+#: ..\./admin/page.landingzone.php:67
 msgid "enabled"
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:68
-msgid "No trace or debug messages are sent to the browser."
+#: ..\./admin/page.landingzone.php:36
+msgid "Welcome to Grain %VERSION"
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:42
+msgid "Grain is missing the Yet Another Photoblog plugin"
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:43
+msgid "Unfortunately the YAPB plugin could not be found. Reasons may be that it isn't installed yet or that it's just not activated."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:45
+msgid "If you haven't installed it yet, you may want to download it <a href=\"%YAPB_URL\">here</a>. If you did not activate it, you can do so on the <a href=\"%PLUGINS_URL\">plugins</a> page."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:50
+msgid "You can continue editing the options for Grain now, but your photoblog won't work until YAPB is running. Grain needs YAPB. Really."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:60
+msgid "This is a development version"
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:61
+msgid "While this doesn't affect the functionality of your blog it may increase loading times and send information about your server and configuration to the visitor. Although no sensitive data (e.g., passwords) are being sent it could happen that the additional information can be abused to exploit your blog. Because of this it is advised to enable the development feature only for testing and debugging purposes."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:65
+msgid "Logging is currently %CURRENT_STATE."
 msgstr ""
 
 #: ..\./admin/page.landingzone.php:70
-msgid "Trace or debug messages may be sent to the browser."
+msgid "No trace or debug messages are sent to the browser."
 msgstr ""
 
 #: ..\./admin/page.landingzone.php:72
+msgid "Trace or debug messages may be sent to the browser."
+msgstr ""
+
+#: ..\./admin/page.landingzone.php:74
 msgid "To get rid of this warning you need to disable development mode altogether. To do so, please delete the following file:"
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:82
+#: ..\./admin/page.landingzone.php:84
 msgid "You are using %YAPB_VERSION with %GRAIN_VERSION."
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:88
+#: ..\./admin/page.landingzone.php:90
 msgid "Please check out the <a href=\"%PROJECT_URL\">Grain Wiki</a> for updates and support."
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:97
+#: ..\./admin/page.landingzone.php:99
 msgid "Grain configuration options"
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:99
+#: ..\./admin/page.landingzone.php:101
 msgid "Here you can control and fine-tune how Grain displays your photoblog (or parts of it)."
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:99
+#: ..\./admin/page.landingzone.php:101
 msgid "Unfortunately the options are a bit cluttered right now. This will hopefully change in a future version. :)"
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:105
+#: ..\./admin/page.landingzone.php:107
 msgid "Here you will find general options (e.g. if you want to use a popup for the comments or not) and all those options that didn't fit elsewhere."
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:110
+#: ..\./admin/page.landingzone.php:112
 msgid "This is where you control how your visitors will navigate your photo stream. You can also control which items will appear in the menu bar here."
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:115
+#: ..\./admin/page.landingzone.php:117
 msgid "This holds options such as maximum image sizes, CSS stylesheets, Thumbnails, options for your Mosaic, visual effects and more."
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:120
+#: ..\./admin/page.landingzone.php:122
 msgid "This is where you set your name, imprint and special licenses such as a Creative Commons license."
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:125
+#: ..\./admin/page.landingzone.php:127
 msgid "This section is most probably only interesting to you if you don't use a localized version of Grain. Here you can set how dates and times are displayed to your visitors."
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:131
+#: ..\./admin/page.landingzone.php:133
 msgid "Final words"
 msgstr ""
 
-#: ..\./admin/page.landingzone.php:132
+#: ..\./admin/page.landingzone.php:134
 msgid "Happy photoblogging! :)"
 msgstr ""
 
@@ -1324,21 +1330,17 @@ msgstr ""
 msgid "Location:"
 msgstr ""
 
-#: ..\./admin/page.styling.ajax.php:57
 #: ..\./admin/page.styling.ajax.php:59
+#: ..\./admin/page.styling.ajax.php:61
 #: ..\./admin/page.styling.php:59
 msgid "none"
 msgstr ""
 
-#: ..\./admin/page.styling.ajax.php:118
-msgid "loading ..."
-msgstr ""
-
-#: ..\./admin/page.styling.ajax.php:152
+#: ..\./admin/page.styling.ajax.php:124
 msgid "refresh"
 msgstr ""
 
-#: ..\./admin/page.styling.ajax.php:152
+#: ..\./admin/page.styling.ajax.php:124
 msgid "reload the stylesheet list"
 msgstr ""
 
@@ -1695,23 +1697,23 @@ msgstr ""
 msgid "unapproved &rarr;"
 msgstr ""
 
-#: ..\./func/content.php:133
+#: ..\./func/content.php:137
 msgid "&lArr; click for previous photo"
 msgstr ""
 
-#: ..\./func/content.php:135
+#: ..\./func/content.php:139
 msgid "(this is the first photo)"
 msgstr ""
 
-#: ..\./func/content.php:140
+#: ..\./func/content.php:144
 msgid "click for next photo &rArr;"
 msgstr ""
 
-#: ..\./func/content.php:142
+#: ..\./func/content.php:146
 msgid "(this is the newest photo)"
 msgstr ""
 
-#: ..\./func/content.php:180
+#: ..\./func/content.php:184
 msgid "This photo page is not ready yet. Please check back later."
 msgstr ""
 
@@ -1723,11 +1725,11 @@ msgstr ""
 msgid "Atom Feed"
 msgstr ""
 
-#: ..\./func/image.php:152
+#: ..\./func/image.php:153
 msgid "click to view"
 msgstr ""
 
-#: ..\./func/image.php:153
+#: ..\./func/image.php:154
 msgid "not ready yet"
 msgstr ""
 
@@ -1786,15 +1788,31 @@ msgstr ""
 msgid "Tagged with: "
 msgstr ""
 
-#: ..\./func/posthooks.php:107
+#: ..\./func/posthooks.php:135
 msgid "Grain: Options For This Post"
 msgstr ""
 
-#: ..\./func/posthooks.php:115
+#: ..\./func/posthooks.php:151
 msgid "There a currently no advanced options for this post."
 msgstr ""
 
-#: ..\./func/posthooks.php:183
+#: ..\./func/posthooks.php:226
+msgid "General options"
+msgstr ""
+
+#: ..\./func/posthooks.php:233
+msgid "I want Grain to show"
+msgstr ""
+
+#: ..\./func/posthooks.php:233
+msgid "See <a target=\"_blank\" href=\"http://wp-grain.wiki.sourceforge.net/Post+Types\">this wiki page</a> for more information about post types."
+msgstr ""
+
+#: ..\./func/posthooks.php:236
+msgid "Photoblog post options"
+msgstr ""
+
+#: ..\./func/posthooks.php:239
 msgid "Hide EXIF data"
 msgstr ""
 

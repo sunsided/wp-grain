@@ -48,7 +48,7 @@ while ( have_posts()) : the_post();
 		$en_title = grain_get_subtitle();
 
 		// exif information
-		$exif_enabled = grain_exif_visible();
+		$exif_enabled = grain_has_exif();
 		$exif_class = $exif_enabled ? 'exif' : 'no-exif';
 		$subtitle_class = $en_title ? 'has-subtitle' : 'no-subtitle';
 
@@ -63,19 +63,23 @@ while ( have_posts()) : the_post();
 			<div id="content" class="<?php echo $exif_class; ?>">
 				<?php 
 				
-					
-					if($GrainOpt->is(GRAIN_EXCERPTONLY))
-						the_excerpt();
+					if( grain_posttype($post->ID) == GRAIN_POSTTYPE_SPLITPOST )
+					{
+						// output the basic content
+						echo grain_get_the_content();					
+					} 
 					else 
 					{
-						/*
-						$_SESSION["GRAIN_FROM_COMPP"] = true;
-						$the_content = apply_filters("the_content", get_the_content());
-						$the_content = str_replace("?p=".$post->ID, "?p=".$post->ID."&".GRAIN_OTI_KEY."=on", $the_content);
-						echo $the_content;
-						*/
-						echo grain_get_the_content();
-						echo grain_get_the_special_content();
+						// in default mode, so display the content (or it's excerpt)
+						if($GrainOpt->is(GRAIN_EXCERPTONLY)) 
+						{
+							// the_excerpt();
+							echo grain_get_the_content();
+						} 
+						else 
+						{
+							the_content();
+						}
 					}
 					
 				?>

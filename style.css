@@ -156,6 +156,10 @@ body {
 	background: rgb(64, 64, 64) url(images/grid3.png);
 	}
 
+#commentspopup {
+	overflow: hidden;
+}
+
 /* Header */
 
 
@@ -177,6 +181,11 @@ body {
 	/* allow positioning; is itself relative to #page  */
 	position: relative;
 	}
+	
+#commentspopup #header {
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
 	
 #headerimg h1 {
 	font-size: 14pt;
@@ -323,6 +332,10 @@ body {
 	background: rgb(37, 37, 37) url(images/grid2.gif);
 	position: relative;
 	}
+	
+#commentspopup #footer {
+	padding-bottom: 20px;
+}
 	
 #footer-top {	
 	/* display the upper left rounded border */
@@ -1625,6 +1638,8 @@ div.photo-with-reflection canvas {
 	border: 5px solid rgb(230, 230, 230);
 	margin-left: 5px;
 	margin-bottom: 5px;
+	z-index: 200;
+	position: relative;
 	}
 
 #photo-info h2 {

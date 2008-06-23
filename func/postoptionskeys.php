@@ -16,5 +16,6 @@
 		
 	
 	$GrainPostOpt->defineFlagOpt('GRAIN_POSTOPT_HIDE_EXIF', "hide_exif", FALSE);
+	$GrainPostOpt->defineValueOpt('GRAIN_POSTOPT_POSTTYPE', "posttype", GRAIN_POSTTYPE_PHOTO, FALSE, TRUE);
 
 ?>

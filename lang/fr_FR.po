@@ -1,0 +1,1631 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Grain 0.3 beta 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-06-22 22:42+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Markus Mayer <code@defx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /Users/aurelien/Documents/Traductions/Wordpress/Thèmes/grain-archive\n"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/404.php:15
+msgid "Error 404 - Not found!"
+msgstr "Erreur 404 - Introuvable !"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/404.php:16
+msgid "Would you like to search for something?"
+msgstr "Désirez-vous chercher quelque chose&nbsp;?"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archive.php:20
+msgid "Archive for category %CATEGORY."
+msgstr "Archive de la cat&eacute;gorie %CATEGORY."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archive.php:29
+msgid "Archive for tag %TAG."
+msgstr "Archive des tags %TAG."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archive.php:38
+msgid "Daily archive for %DATE."
+msgstr "Archive journali&egrave;re de %DATE."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archive.php:49
+msgid "Monthly archive for %DATE."
+msgstr "Archive mensuelle de %DATE"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archive.php:57
+msgid "Yearly archive for %YEAR."
+msgstr "Archive annuelle de %YEAR."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archive.php:64
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/search.php:16
+msgid "Search results"
+msgstr "R&eacute;sultats de la recherche"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archive.php:67
+msgid "Archive of authors"
+msgstr "Archive des auteurs"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archive.php:70
+msgid "Blog archive"
+msgstr "Archive du blog"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archive.php:76
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archive.php:100
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/search.php:19
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/search.php:43
+msgid "&laquo; next page"
+msgstr "&laquo; page suivante"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archive.php:77
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archive.php:101
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/search.php:20
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/search.php:44
+msgid "previous page &raquo;"
+msgstr "page pr&eacute;c&eacute;dente &raquo;"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archives.php:19
+msgid "Archive cloud"
+msgstr "Nuage d'archive"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archives.php:31
+msgid "Archives by years"
+msgstr "Archives par années"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archives.php:43
+msgid "Archives by months"
+msgstr "Archives par mois"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/archives.php:48
+msgid "Archives by categories"
+msgstr "Archives par cat&eacute;gories"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments-popup.php:35
+msgid "Comments are closed - You are not supposed to be here."
+msgstr "Les commentaires sont d&eacute;sactiv&eacute;s."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments-popup.php:94
+msgid "The permalink address <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> of this photo is:"
+msgstr "L'adresse permanente <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> de cette photo est&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:11
+msgid "Please don't call this page directly"
+msgstr "Merci de pas appeler directement cette page"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:17
+msgid "The comments are password protected, too"
+msgstr "Les commentaires sont prot&eacute;g&eacute;s par mot de passe"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:48
+msgid "Comments (%)"
+msgstr "Commentaires (%)"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:60
+msgid "RSS feed for comments on this photo"
+msgstr "Flux RSS des commentaires de cette photo"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:62
+msgid "Syndication"
+msgstr "Syndication"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:69
+msgid "The <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> to TrackBack this photo is:"
+msgstr "L'<acronym title=\"Uniform Resource Identifier\">(URI)</acronym> pour effectuer un r&eacute;trolien sur cette photo est&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:124
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:173
+msgid "Trackback"
+msgstr "R&eacute;trolien"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:124
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:173
+msgid "Pingback"
+msgstr "Pingback"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:129
+msgid "no website"
+msgstr "pas de site web"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:130
+msgid "post author"
+msgstr "Auteur du billet"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:165
+msgid "%AUTHOR &#8212; %DATE at %TIME"
+msgstr "%AUTHOR &#8212; %DATE &agrave; %TIME"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:173
+msgid "Comment"
+msgstr "Commentaire"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:185
+msgid "Be the first to comment!"
+msgstr "Soyez le premier &agrave; commenter l'image&nbsp;!"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:190
+msgid "Leave a comment"
+msgstr "Laisser un commentaire"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:191
+msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed: "
+msgstr "Les lignes et les paragraphes se segmentent automatiquement, l'adresse &eacute;lectronique ne sera jamais publi&eacute;e. Voici les balises <acronym title=\"Hypertext Markup Language\">HTML</acronym> autoris&eacute;&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:201
+msgid "Your are logged in as"
+msgstr "Vous êtes identifi&eacute; sous"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:203
+msgid "logout"
+msgstr "d&eacute;connexion"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:203
+msgid "Logout &raquo;"
+msgstr "D&eacute;connexion &raquo;"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:241
+msgid "Your Name:"
+msgstr "Votre nom&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:255
+msgid "E-mail (invisible):"
+msgstr "Adresse &eacutelectronique (invisible)&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:269
+msgid "Website (<acronym title=\"Uniform Resource Locator\">URL</acronym>):"
+msgstr "Votre site web (<acronym title=\"Uniform Resource Locator\">URL</acronym>)&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:277
+msgid "Your comment:"
+msgstr "Votre commentaire&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:291
+msgid "Say it!"
+msgstr "Dites-le&nbsp;!"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:303
+msgid "bookmark me at photoblogs.org"
+msgstr "Mémorisez-moi sur photoblogs.org"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:316
+msgid "vote for me at CoolPhotoblogs"
+msgstr "votez pour moi sur CoolPhotoblgs"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/comments.php:325
+msgid "Sorry, the comment form is closed at this time."
+msgstr "D&eacute;sol&eacute;, le formulaire de commentaire est temporairement ferm&eacute;."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/exif-block.php:19
+msgid "EXIF information"
+msgstr "Informations EXIF"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/footer.php:39
+msgid "{BLOG} is proudly powered by {WP} and {GRAIN}"
+msgstr "{BLOG} est fi&egrave;rement propuls&eacute; par {WP}. Th&egrave;me {GRAIN} traduit de l'anglais par <a href=\"http://www.aurelienpaulus.net/\">Aur&eacute;lien Paulus</a>"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/footer.php:48
+msgid "edit post"
+msgstr "modifier le billet"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/footer.php:63
+msgid "Copyright"
+msgstr "Copyright"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/header.menu.php:39
+msgid "&laquo; previous"
+msgstr "&laquo; pr&eacute;c&eacute;dent"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/header.menu.php:40
+msgid "next &raquo;"
+msgstr "suivant &raquo;"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/header.menu.php:59
+msgid "Permalink for: "
+msgstr "Lien permanent pour&nbsp;"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/header.menu.php:59
+msgid "Permalink"
+msgstr "Lien permanent"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/header.menu.php:59
+msgid "#"
+msgstr "#"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/header.menu.php:67
+msgid "go to the newest photo"
+msgstr "se rendre &agrave; la derni&egrave;re photo"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/header.menu.php:67
+msgid "newest"
+msgstr "derni&egrave;re photo"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/header.menu.php:73
+msgid "random"
+msgstr "al&eacute;atoire"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/header.menu.php:81
+msgid "To the overview"
+msgstr "Se rendre sur la page"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/header.menu.php:90
+msgid "about &amp; information"
+msgstr "&agrave propos &amp; informations"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/header.menu.php:90
+msgid "about"
+msgstr "&agrave; propos"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/index.php:88
+msgid "There is currently no page to display. Please check back later."
+msgstr "Il n'existe pour le moment aucune page &agrave; afficher. Veuillez revenir plus tard."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/mosaic.php:27
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/mosaic.php:69
+msgid "&laquo; previous page"
+msgstr "&laquo; page pr&eacute;c&eacute;dente"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/mosaic.php:28
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/mosaic.php:70
+msgid "next page &raquo;"
+msgstr "page suivante &raquo;"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/page.php:19
+msgid "Read the whole story..."
+msgstr "Lire toute l'histoire…"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/page.php:21
+msgid "Pages:"
+msgstr "Pages&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/searchform.php:12
+msgid "search"
+msgstr "recherche"
+
+# Cherchez balise HTML pour guillemets français
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/sidebar.php:31
+msgid "You are browsing the archive for the category '%CATEGORY'."
+msgstr "Vous parcourez les archives de la cat&eacute;gorie &laquo;&nbsp;%CATEGORY&nbsp;&raquo;."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/sidebar.php:41
+msgid "You are browsing the %BLOG archive for %DAY, %DATE."
+msgstr "Vous parcourez les archives de %BLOG du %DAY, %DATE."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/sidebar.php:53
+msgid "You are browsing the %BLOG archive for the month %DATE."
+msgstr "Vous parcourez les archives du %BLOG du mois de %DATE."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/sidebar.php:64
+msgid "You are browsing the %BLOG archive for the year %YEAR."
+msgstr "Vous parcourez les archives du %BLOG de l'ann&eacute;e %YEAR."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/sidebar.php:75
+msgid "You have searched the %BLOG archives for <strong>%SEARCH</strong>. If you are unable to find anything in these search results, you can try one of these links."
+msgstr "Vous recherchez <strong>%SEARCH</strong> dans les archives du %BLOG. Si votre recherche s'av&egrave;re infructueuse, vous pouvez essayer un de ces liens."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/sidebar.php:84
+msgid "You are browsing the %BLOG archive."
+msgstr "Vous parcourez les archives de %blog."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/sidebar.php:92
+msgid "Pages"
+msgstr "Pages"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/sidebar.php:109
+msgid "Archives by month"
+msgstr "Archives par mois"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/sidebar.php:115
+msgid "Categories"
+msgstr "Cat&eacute;gories"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/sidebar.php:122
+msgid "Most commented"
+msgstr "Les plus comment&eacute;es"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/sidebar.php:137
+msgid "Meta"
+msgstr "M&eacute;ta"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/sidebar.php:153
+msgid "Syndicate"
+msgstr "S'abonner au flux"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:23
+msgid "No HTML here"
+msgstr "Pas de HTML"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:24
+msgid "HTML allowed here"
+msgstr "HMTL autoris&eacute;"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:242
+msgid "&times;"
+msgstr "&times;"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:274
+msgid "Configure Grain"
+msgstr "Configurer Grain"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:277
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:278
+msgid "General Settings"
+msgstr "Param&egrave;tres g&eacute;n&eacute;raux"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:283
+msgid "Navigation Settings"
+msgstr "Param&egrave;tres de navigation"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:284
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:29
+msgid "Navigation"
+msgstr "Navigation"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:289
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:290
+msgid "Styling and Layout"
+msgstr "Style et mise en page"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:295
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:296
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:28
+msgid "Copyright Settings"
+msgstr "Param&egrave;tres du droit d'auteur"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:301
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:28
+msgid "Date and Time Settings"
+msgstr "Param&egrave;tres de la date et de l'heure"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:302
+msgid "Date and Time"
+msgstr "Date et heure"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:313
+msgid "Yet Another Photoblog (Plugin Options)"
+msgstr "Yet Another Photoblog (options de l'extension)"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:314
+msgid "YAPB"
+msgstr "YAPB"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:387
+msgid "The YAPB plugin could not be found."
+msgstr "L'extension YAPB est introuvable."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:387
+msgid "Yet Another Photoblog"
+msgstr "Yet Another Photoblog"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/menu.php:387
+msgid "Click for more information"
+msgstr "Cliquez ici pour obtenir plus d'informations"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:20
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:20
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:20
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:20
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:20
+msgid "Changes saved"
+msgstr "Changements sauvegard&eacute;s"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:32
+msgid "Copyright Holder"
+msgstr "Propri&eacute;taire du droit d'auteur"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:34
+msgid "Here you can enter your copyright information and tell Grain how to display them."
+msgstr "Vous pouvez entrer ici vos informations relatives au droit d'auteur et indiquez &agrave; Grain comment les afficher."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:36
+msgid "% is always the current year"
+msgstr "% est toujours l'ann&eacute;e en cours"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:37
+msgid "First copyright year:"
+msgstr "Premi&egrave;re ann&eacute;e du droit d'auteur&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:38
+msgid "Last copyright year:"
+msgstr "Derni&egrave;re ann&eacute;e du droit d'auteur&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:40
+msgid "i.e. <code>%OFFSET</code> to get <code>%SUMMED_YEAR</code> if the end year is <code>%YEAR</code>"
+msgstr "Autrement dit&nbsp;:&nbsp; si vous inscrivez <code>%OFFSET</code> vous otbtiendrez <code>%SUMMED_YEAR</code> si la derni&egrave;re ann&eacute;e est <code>%YEAR</code>"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:42
+msgid "Offset to end year:"
+msgstr "Nombre d'ann&eacute;es restantes&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:44
+msgid "Here you can configure the informational text, e.g. your name and a licensing info."
+msgstr "Vous pouvez configurer ici le texte d'information, par exemple votre nom et une info sur la licence."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:46
+msgid "Copyright holder:"
+msgstr "Propri&eacute;taire du droit d'auteur&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:46
+msgid "Keep this short, e.g. <code>\"John Doe\"</code>. This info will be embedded in the page's meta header."
+msgstr "Faites court, par exemple <code>\"John Doe\"</code>. Cette mention sera int&eacute;gr&eacute;e dans le m&eacute;ta de la page d'en-tête."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:47
+msgid "Full copyright holder and info:"
+msgstr "Tous les propri&eacute;taires du droit d'auteur et toutes les informations&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:47
+msgid "e.g. <code>\"John Doe. All rights reserved.\"</code> This info will be visible to the visitor."
+msgstr "par exemple <code>\"John Doe. All rights reserved.\"</code>. Cette mention sera affich&eacute;e aux visiteurs."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:53
+msgid "Imprint Page"
+msgstr "Page des mentions l&eacute;gales"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:55
+msgid "Grain uses <a href=\"http://dublincore.org/\" target=\"_blank\">Dublin Core</a> meta tags to describe your blog. If you have an imprint page you may set it here.<br />If you do not have an imprint or do not want to propagate it through the DC meta tag the field can be left empty."
+msgstr "Grain utilise les m&eacute;ta tags de <a href=\"http://dublincore.org/\" target=\"_blank\">Dublin Core</a> pour d&eacute;crire votre blog. Si vous avez une page de mentions l&eacute;gales, vous pouvez l'appeler ici.<br />Si vous n'avez pas de page de mentions l&eacute;gales ou si vous ne voulez pas la propager &agrave; travers les m&eacute;ta tags DC, vous pouvez laisser le champ vide."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:56
+msgid "Imprint URL:"
+msgstr "URL des mentions l&eacute;gales&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:56
+msgid "The URL to your imprint page. Leave empty if you do not want to embed an <code>DC.Rights</code> meta tag."
+msgstr "L'URL de votre page de mentions l&eacute;gales. Laissez ce champ vide si vous ne voulez pas int&eacute;grer un m&eacute;ta tag <code>DC.Rights</code>."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:60
+msgid "Creative Commons License"
+msgstr "Licence Creative Commons"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:63
+msgid "Embedding a Creative Commons License"
+msgstr "Int&eacute;gration d'une licence Creative Commons"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:66
+msgid "If you like to, you can publish your photos under a <a href=\"http://creativecommons.org/\" target=\"_blank\">Creative Commons</a> License. You can choose a license <a href=\"http://creativecommons.org/license/?lang=%LANGCODE\" target=\"_blank\">here</a>."
+msgstr "Si vous le d&eacute;sirez, vous pouvez publier vos photos sous une licence <a href=\"http://creativecommons.org/\" target=\"_blank\">Creative Commons</a>. Vous pouvez choisir une licence <a href=\"http://creativecommons.org/license/?lang=%LANGCODE\" target=\"_blank\">ici</a>."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:70
+msgid "Copyright:"
+msgstr "Droit d'auteur&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:70
+msgid "Embed Creative Commons license"
+msgstr "Int&eacute;grer la licence Creative Commons"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:70
+msgid "Unchecking this option will remove the Creative Commons Logo, the textual message, as well as the embedded <a target=\"_blank\" href=\"http://en.wikipedia.org/wiki/Resource_Description_Framework\">RDF</a> (if any). This is the way to go if you want your photos to be published as, e.g. \"All rights reserved\"."
+msgstr "D&eacute;cocher cette option supprimera le logo Creative Commons, le texte ainsi que le <a target=\"_blank\" href=\"http://en.wikipedia.org/wiki/Resource_Description_Framework\">RDF</a> (s'il existe) int&eacute;gr&eacute;. C'est le meilleur choix si vous voulez que vos photos soient publi&eacute;es sans licence Creative Commons, par exemple, &laquo;&nbsp;Tous droits r&eacute;serv&eacute;s&nbsp;&raquo;."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:71
+msgid "The license's HTML code:"
+msgstr "Le code HTML de la licence&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:71
+msgid "To simplify CSS styling of the theme, all occurrences of <code>&lt;br /&gt;</code>, <code>&lt;br/&gt;</code> and <code>&lt;br&gt;</code> tags will be removed when embedding the code."
+msgstr "Pour simplifier la feuille de style CSS du th&egrave;me, toutes les occurrences des tags <code>&lt;br /&gt;</code>, <code>&lt;br/&gt;</code> et <code>&lt;br&gt;</code> seront supprim&eacute;es lors de l'int&eacute;gration au code."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:73
+msgid "In addition to the code above you can choose to embed an <acronym title=\"Resource Description Framework\">RDF</acronym> representation - a machine readable version - of the license. The RDF will be embedded on the website and can also be integrated in your newsfeeds, if you choose to enable that."
+msgstr "En plus du code ci-dessus, vous pouvez choisir d'int&eacute;grer une repr&eacute;sentation <acronym title=\"Resource Description Framework\">RDF</acronym> - une version lisible par la machine - de la licence. Le RDF sera int&eacute;gr&eacute; au site web et pourra aussi l'&ecirc;tre dans votre flux de nouvelles si vous choisissez d'activer cette option. "
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:75
+msgid "The RDF code for the license you selected can be found by downloading and opening the template for the PDF or XML embedding on the license selection page. The code begins with <code>&lt;rdf:RDF ...</code> and ends with <code>&lt;/rdf:RDF&gt;</code>."
+msgstr "Vous pouvez obtenir le code RDF de la licence en t&eacute;l&eacute;chargeant et en ouvrant le mod&egrave;le pour marquer un fichier PDF ou XML propos&eacute; sur la page de s&eacute;lection de la licence (note du traducteur : la possibilit&eacute; de t&eacute;l&eacute;charger ce fichier apparait apr&egrave;s avoir choisi la licence). Le code commence par <code>&lt;rdf:RDF ...</code> et se termine par <code>&lt;/rdf:RDF&gt;</code>."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:76
+msgid "You can validate RDF encoded licenses and RDF enabled content with the <a href=\"http://validator.creativecommons.org/\" target=\"_blank\">CC RDF License Validator</a>."
+msgstr "Vous pouvez valider vos licences encod&eacute;es en RDF et votre contenu RDF actif gr&acirc;ce au <a href=\"http://validator.creativecommons.org/\" target=\"_blank\">CC RDF License Validator</a>."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:77
+msgid "The license's RDF code:"
+msgstr "Le code RDF de la licence&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:78
+msgid "Embed RDF in Newsfeeds:"
+msgstr "Int&eacute;grer le RDF dans le flux de nouvelles&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:78
+msgid "Embed the RDF in the Atom and RSS feeds"
+msgstr "Int&eacute;grer le RDF dans les flux Atom et RSS"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:78
+msgid "<strong>Use this with caution!</strong> Enable this option only if you are sure what you are doing! Faulty RDF markup may render your newsfeeds invalid or even unusable. Test your newsfeeds thoroughly when enabling this!"
+msgstr "<strong>Utilisez cette fonctionnalit&eacute; avec pr&eacute;caution&nbsp;!</strong> Activez cette option uniquement si vous &ecirc;tes certain de ce que vous faites&nbsp;! Un mauvais code RDF peut rendre votre flux de nouvelles invalide ou m&ecirc;me inutilisable. Testez attentivement votre flux lorsque vous activez cette option."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:83
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:122
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:157
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:117
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:153
+msgid "Factory Defaults"
+msgstr "Param&egrave;tres par d&eacute;faut"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.copyright.php:84
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:123
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:158
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:118
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:154
+msgid "Save Settings"
+msgstr "Sauvegarder les param&egrave;tres"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:32
+msgid "For information on date and time formatting codes refer to the PHP manual entry of <a href=\"http://www.php.net/date\" target=\"_blank\">the <code>date()</code> function</a>."
+msgstr "Pour obtenir des informations sur le formatage de la date et de l'heure, r&eacute;f&eacute;rez-vous &agrave; cette entr&eacute;e du manuel PHP&nbsp;:&nbsp;<a href=\"http://www.php.net/date\" target=\"_blank\">the <code>date()</code> function</a>."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:33
+msgid "If you want to include a specific text in the format, such as \"<code>o'clock</code>\", you may include it in curly braces, e.g. \"<code>{o'clock'}</code>\""
+msgstr "Si vous d&eacute;sirez ajouter un texte sp&eacute;cifique dans le format, comme &laquo;&nbsp;<code>o'clock</code>&nbsp;&raquo;, vous pouvez l'ajouter entre deux accolades, par exemple &laquo;&nbsp;<code>{o'clock'}</code>&raquo;&nbsp;"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:37
+msgid "Some examples"
+msgstr "Quelques exemples"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:42
+msgid "format"
+msgstr "format"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:43
+msgid "result"
+msgstr "r&eacute;sultat"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:83
+msgid "Archive settings"
+msgstr "Param&egrave;tres des archives"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:85
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:90
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:100
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:110
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:115
+msgid "The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time."
+msgstr "La s&eacute;lection actuelle (<code>%FORMAT</code>) donne (<code>%RESULT</code>) pour l'heure actuelle."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:88
+msgid "Daily Archive:"
+msgstr "Archives quotidiennes&nbsp;"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:88
+msgid "The date or time format in the archive for a specific day."
+msgstr "La format de la date ou de l'heure dans l'archive pour un jour sp&eacute;cifique."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:93
+msgid "Monthly Archive:"
+msgstr "Archives mensuelles&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:93
+msgid "The date or time format in the archive for a specific month."
+msgstr "Le format et de la date ou de l'heure dans l'archive pour un mois sp&eacute;cifique."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:98
+msgid "Photo Info"
+msgstr "Informations de la photo"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:103
+msgid "Publication date:"
+msgstr "Date de publication&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:103
+msgid "The date and time format for the photo's 'published' date."
+msgstr "Le format de la date ou de l'heure pour la date d'une photo &laquo;&nbsp;publi&eacute;e&nbsp;&raquo;."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:108
+msgid "Per comment"
+msgstr "Par commentaire"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:113
+msgid "Date of comment:"
+msgstr "Date du commentaire&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:113
+msgid "The date format for a comment."
+msgstr "Le format de la date pour un commentaire"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:118
+msgid "Time of comment:"
+msgstr "Heure du commentaire&nbsp;"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.datetime.php:118
+msgid "The time format for a comment."
+msgstr "Le format de l'heure pour un commentaire."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:28
+msgid "Info and commenting mode"
+msgstr "Mode informations et commentaires"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:32
+msgid "Basic behavior"
+msgstr "Comportement basique"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:35
+msgid "Discussion"
+msgstr "Discussion"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:36
+msgid "Most probably you want to leave this enabled to receive feedback. But maybe you really just want to <em>show</em> your photos. This is the showcase option then: If you disable it, visitors will neither be able to comment (which is a standard feature) nor to view any existing comments. You may then also want to disable WordPress' commenting options on the %LINK screen altogether to prevent comments coming in through track-/pingbacks or backdoors."
+msgstr "Si vous d&eacute;sirez recevoir des retours, ce qui est le plus probable, laissez cette option active. Cependant, il se peut que vous souhaitiez uniquement <em>afficher</em> vos photos. C'est le bon endroit pour cela. Donc, si vous d&eacute;sactivez ceci, les visiteurs ne pourront ni commenter (ce qui est une option standard) ni consulter les commentaires. Vous pouvez dans ce cas aussi d&eacute;sactiver les options des commentaires de Wordpress dans le menu %LINK pour emp&ecirc;cher la r&eacute;ception de r&eacute;troliens et de pingbacks."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:38
+msgid "Enable comments:"
+msgstr "Activer les commentaires&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:38
+msgid "Allow visitors to comment or view existing comments"
+msgstr "Autoriser les visiteurs &agrave; commenter ou &agrave; consulter les commentaires existants"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:39
+msgid "No popups!"
+msgstr "Pas de fen&ecirc;tre surgissante&nbsp;!"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:39
+msgid "Don't use a popup to display an image's info and commenting form"
+msgstr "Ne pas utiliser de fen&ecirc;tre surgissante pour afficher les informations d'une image ou le formulaire de commentaire"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:39
+msgid "If you enable this, the \"Extended Info page\" mechanism will be used. This is a replacement for the older comments popup, showing the info and comments on the same page as the photo. One will still have to click the comments link to display it, though.<br />If you prefer a popup for that task, disable this option."
+msgstr "Si vous activez ceci, le mécanisme de &laquo;&nbsp;page &eacute;tendue d'informations&nbsp;&raquo; sera utilis&eacute;. C'est une substitution de l'ancienne fen&ecirc;tre surgissante pour les commentaires. Elle montre les informations et les commentaires sur la m&ecirc;me page que la photo. Il faudra de toutes fa&ccedil;ons que le visiteur clique sur le lien de commentaire pour l'afficher.<br />Si vous pr&eacute;f&eacute;rez une fen&ecirc;tre surgissante pour remplir cette t&acirc;che, d&eacute;sactivez cette option."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:40
+msgid "Always show info:"
+msgstr "Toujours montrer les informations"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:40
+msgid "Always show photo title/description regardless of the popup setting above"
+msgstr "Toujours montrer le titre et la description de la photo sans tenir compte de vos param&egrave;tres de fen&ecirc;tre surgissante ci-dessus."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:40
+msgid "If you always want to display the photo's title and it's description on the photo page, enable this option. If you uncheck this option and have the popups disabled (enabled the option above that is), be aware that the user won't see any information about your photo. (They would be shown on the popup, but you disabled it.)"
+msgstr "Si vous voulez toujours afficher le titre et la description de la photo sur sa page, activez cette option. Si vous d&eacute;cochez cette option et que vous avez d&eacute;sactiv&eacute; les fen&ecirc;tres surgissantes (activez cette option ci-dessus), sachez que les utilisateurs ne verront pas la moindre information &agrave; propos de votre photo. (Elles auraient &eacute;t&eacute; affich&eacute;es dans la fen&ecirc;tre surgissante, mais vous l'avez peut-&ecirc;tre d&eacute;sactiv&eacute;e.)"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:46
+msgid "Basic behavior II"
+msgstr "Comportement basique II"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:48
+msgid "Comments always allowed:"
+msgstr "Les commentaires sont autoris&eacute;s&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:48
+msgid "Allow visitors to comment on pages considered \"not ready\""
+msgstr "Permettre aux visiteurs de commenter les pages consid&eacute;r&eacute;es comme &laquo;&nbsp;pas pr&ecirc;tes&nbsp;&raquo;"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:48
+msgid "Sometimes it happens that a visitor sees a page whose image is not available. Leave this option disabled to prevent access to the comments form in this special case.<br />This also implies that the image infos can be seen."
+msgstr "Il arrive parfois que le visiteur d&eacute;couvre une page dont l'image n'est pas encore disponible. Laissez cette option d&eacute;sactiv&eacute;e pour les emp&ecirc;cher de commenter la photo dans ce cas particulier.<br />Cela implique que les informations de l'image pourront &ecirc;tre consult&eacute;es."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:49
+msgid "Directly jump to comments:"
+msgstr "Sauter directement aux commentaires&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:49
+msgid "If the comments popup opens, skip the description text there"
+msgstr "Si les commentaires en fen&ecirc;tre surgissante sont ouverts, ne pas afficher le texte de description"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:49
+msgid "This option only applies when the info is already shown on the main page, so that the visitor won't have to scroll to the comments on the popup. Rule of thumb: If you tend to write long texts and use the popup, you may want to enable this option."
+msgstr "Cette option ne s'effectue que lorsque l'information est déjà affich&eacute;e sur la page principale, ainsi les visiteurs ne devront pas survoler le contenu jusqu'aux commentaires dans la fen&ecirc;tre surgissante. De mani&egrave;re g&eacute;n&eacute;rale, si vous avez tendance &agrave; &eacute;crire de longs textes et &agrave; utiliser la fen&ecirc;tre surgissante, il se peut que vous ayez besoin d'activer cette option."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:50
+msgid "Show only excerpts:"
+msgstr "Afficher uniquement les extraits&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:50
+msgid "Show only a post's excerpt on a comment popup"
+msgstr "Afficher uniquement un extrait du billet dans la fen&ecirc;tre de commentaire"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:50
+msgid "This option doesn't apply to you if you never use the <code>&lt!--more--&gt</code> tag anyway. If you choose to disable this option and such tag is found in the photo's description text, only the text in front of the tag will be shown. This only applies to the popup; Grain will generally show only the excerpt on a photo page, except when it's in extended view."
+msgstr "Cette option ne s'impose pas &agrave; vous si vous n'utilisez jamais la balise <code>&lt!--more--&gt</code>. Si vous choisissez de d&eacute;sactiver cette option et que cette balise se trouve dans la description d'un texte en page d'accueil, la balise sera affich&eacute;e. Cela s'applique uniquement aux fen&ecirc;tres surgissantes&nbsp;;&nbsp;Grain n'affichera g&eacute;n&eacute;ralement que les extraits sur une page de photo, sauf lorsqu'elle est en vue &eacute;tendue."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:54
+msgid "Info display: Your photo's description"
+msgstr "Informations &agrave; afficher : la description de votre photo"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:59
+msgid "If you understand PHP, you can affect how the EXIF information is displayed by editing the %FILE file.<br /><strong>Hint:</strong> Enable YAPBs EXIF filtering to keep things clean."
+msgstr "Si vous ma&icirc;trisez le PHP, vous pouvez modifier la fa&ccedil;on dont les informations EXIF sont affich&eacute;es en modifiant le fichier %FILE.<br /><strong>Astuce</strong> Activez le filtrage EXIF de YAPB pour garder tout en ordre."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:61
+msgid "Display EXIF info:"
+msgstr "Afficher les informations EXIF&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:61
+msgid "Show a photo's EXIF information next to the description"
+msgstr "Afficher l'information EXIF d'une photo &agrave; c&ocirc;t&eacute; de la description"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:62
+msgid "Hide EXIF if no content:"
+msgstr "Cacher les informations EXIF s'il n'y a pas de contenu&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:62
+msgid "Don't show a photo's EXIF information if no content text was given."
+msgstr "Ne pas afficher les informations EXIF d'une photo lorsqu'aucun texte n'est donn&eacute;."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:64
+msgid "Enable permalink:"
+msgstr "Activez le lien permanent&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:64
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:65
+msgid "Show the permanlink in the image info"
+msgstr "Afficher le lien permanent dans les informations de l'image"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:64
+msgid "The permalink is an address that won't change. This way a visitor can securely link one of your photo pages. Permalinks are managed by WordPress."
+msgstr "Le lien permanent est une adresse qui ne changera pas. De cette fa&ccedil;on, un visiteur peut cr&eacute;er un lien de mani&egrave;re fiable vers une des pages de vos photos. Les liens permanents sont g&eacute;r&eacute;s par WordPress."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:65
+msgid "Enable comment hint:"
+msgstr "Activer l'indication de commentaire&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:65
+msgid "If enabled, Grain shows a link to the comments in the short info display below the image."
+msgstr "Lorsque cette option est activ&eacute;e, Grain montre un lien vers les commentaires dans le petit affichage d'informations sous l'image."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:66
+msgid "Show Date:"
+msgstr "Afficher la date&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:66
+msgid "Display the date the photo was published"
+msgstr "Afficher la date de publication de la photo"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:66
+msgid "This shows the date and time the photo page was published in the description text."
+msgstr "Cette option affiche la date et l'heure &agrave; laquelle la page de la photo fut publi&eacute;e dans le texte de description."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:70
+msgid "Info display: Categories"
+msgstr "Affichage d'informations&nbsp;:&nbsp;les cat&eacute;gories"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:72
+msgid "Show category list:"
+msgstr "Afficher la liste des cat&eacute;gories"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:72
+msgid "Shows the categories in which the photo is filed"
+msgstr "Afficher les cat&eacute;gories dans lesquelles la photo est class&eacute;e"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:75
+msgid "Begin category list:"
+msgstr "Commencer la liste des cat&eacute;gories par&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:75
+msgid "This text will be embedded right before the category list. You can put specific markup here to style your theme."
+msgstr "Ce texte sera int&eacute;gr&eacute; juste avant la liste des cat&eacute;gories. Vous pouvez ajouter du code sp&eacute;cifique pour personnaliser votre th&egrave;."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:76
+msgid "Category list delimiter:"
+msgstr "S&eacute;parateur de cat&eacute;gorie&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:76
+msgid "This will be embedded within the category list to separate two entries."
+msgstr "Ce que vous inscrivez ici sera ajout&eacute; entre dans la liste de cat&eacute;gories pour s&eacute;parer chaque entr&eacute;e."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:77
+msgid "End category list:"
+msgstr "Terminer la liste des cat&eacute;gories par&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:77
+msgid "This will be embedded right after the category list."
+msgstr "Ce que vous inscrivez ici sera ajout&eacute; juste apr&egrave;s la liste de cat&eacute;gories."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:81
+msgid "Info display: Tags"
+msgstr "Affichage d'informations&nbsp;:&nbsp;les tags"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:83
+msgid "Show tag list:"
+msgstr "Montrer la liste des tags&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:83
+msgid "Shows the tags with which the photo is marked"
+msgstr "Montrer les tags associ&eacute;s &agrave; la photo"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:85
+msgid "Begin tag list:"
+msgstr "D&eacute;but de la liste des tags&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:85
+msgid "This text will be embedded right before the tag list. You can put specific markup here to style your theme."
+msgstr "Ce texte sera ajout&eacute; juste avant la liste des tags. Vous pouvez sp&eacute;cifier des balises pour l'adapter au th&egrave;."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:86
+msgid "Tag list delimiter:"
+msgstr "S&eacute;parateur de la liste des tags&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:86
+msgid "This will be embedded within the tag list to separate two entries."
+msgstr "Ce que vous inscrivez ici sera ajout&eacute; dans la liste de tags entre deux entr&eacute;es."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:87
+msgid "End tag list:"
+msgstr "Fin de la liste des tags&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:87
+msgid "This will be embedded right after the tag list."
+msgstr "Ce que vous inscrivez ici sera ajout&eacute; juste apr&egrave;s la liste des tags."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:91
+msgid "Newsfeeds"
+msgstr "Flux de nouvelles"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:94
+msgid "Atom Feed Settings"
+msgstr "Param&egrave;tres du flux Atom"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:96
+msgid "Atom Feed:"
+msgstr "Flux Atom&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:96
+msgid "Show the Atom Feed icon next to the RSS feed icon"
+msgstr "Afficher l'ic&ocirc;ne du flux Atom &agrave; c&ocirc;t&eacute; de l'ic&ocirc;ne du flux RSS"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:100
+msgid "Syndication Options"
+msgstr "Options d'abonnement"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:104
+msgid "<strong>Hint:</strong> Syndication data can (and has to be) changed in the {FILE} file to reflect your own syndicate. If you are not sure what syndication means or what to do in that file, please disable the Flat Syndication option."
+msgstr "<strong>Indication&nbsp;:&nbsp;</strong> Les donn&eacute;es d'abonnement peuvent (doivent) &ecirc;tre modifi&eacute;es dans le fichier {FILE} pour refl&eacute;ter votre propre syndication. Si vous n'&ecirc;tes pas certain de la significaiton du terme syndication (ou abonnement au flux) ou de ce qu'il faut faire dans ce fichier, veuillez d&eacute;sactiver l'option d'abonnement &agrave; plat."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:109
+msgid "Flat Syndication"
+msgstr "Syndication dans d'autres services"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:111
+msgid "Flat Syndication:"
+msgstr "Syndication dans d'autres services"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:111
+msgid "Show ring / syndication info as a list in the blog's footer"
+msgstr "Afficher les informations de syndication sous forme de liste dans le pied de page"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:113
+msgid "Delimiter:"
+msgstr "S&eacute;parateur&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:113
+msgid "This will be embedded as a separator of the list items."
+msgstr "Ce que vous inscrivez ici sera ajout&eacute; pour s&eacute;parer les &eacute;l&eacute;ments de la liste."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:117
+msgid "Localisation Options"
+msgstr "Options de localisation&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:120
+msgid "Secondary Language Options"
+msgstr "Options de la seconde langue"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:122
+msgid "Grain has an option that allows you to display photo titles in an additional second language or tho use an additional texts as a subtitle."
+msgstr "Grain poss&egrave;de une option qui vous permet d'afficher les titres de vos photos dans une seconde langue ou d'utiliser des textes additionnels comme des sous-titres."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:124
+msgid "2nd Line:"
+msgstr "Seconde ligne&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:124
+msgid "Enable 2nd line/2nd language support"
+msgstr "Activer la prise en charge de la seconde ligne et de la seconde langue."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:125
+msgid "2nd line custom field:"
+msgstr "Champ personnalis&eacute; de la seconde ligne&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:125
+msgid "The name/key of the custom field that contains the secondary language title.<br />You may want to read the WordPress Codex article on <a title=\"_blank\" href=\"http://codex.wordpress.org/Using_Custom_Fields\">Using Custom Fields</a>."
+msgstr "Le nom ou la cl&eacute; du champ personnalis&eacute; qui contient le titre dans la seconde langue.<br /> Il est possible que vous ayez &agrave; lire l'article du Codex de Wordpress sur <a title=\"_blank\" href=\"http://codex.wordpress.org/Using_Custom_Fields\">l'utilisation des champs personnalis&eacute;s</a>."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:130
+msgid "Auto Locale"
+msgstr "Localisation automatique"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:132
+msgid "Browsers may send an information about their preferred language. Grain can make use of this information to automatically select a translation file, displaying the blog in the visitor's language."
+msgstr "Il se peut que les navigateurs envoient des informations concernant leur langue pr&eacute;f&eacute;r&eacute;e. Grain peut utiliser ces informations pour s&eacute;lectionner automatiquement un fichier de traduction pour afficher le blog dans la langue du visiteur."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:134
+msgid "Enable Auto Locale:"
+msgstr "Activez la &laquo;&nbsp;localisation automatique&nbsp;&raquo;&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:134
+msgid "Activate visitor based translation"
+msgstr "Activer la traduction en fonction du visiteur"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:134
+msgid "Grain tries to match a browser's <code>HTTP_ACCEPT_LANGUAGE</code> against a set of locale (<code>*.mo</code>) files in your theme's directory. If no match can be found, the default translation based on your WordPress settings will be used."
+msgstr "Grain essaie comparer la requ&ecirc;te <code>HTTP_ACCEPT_LANGUAGE</code> du navigateur avec un ensemble de fichiers de localisation (<code>*.mo</code>) disponibles dans le r&eacute;pertoire du th&egrave;me. Si aucune correspondance n'est trouv&eacute;e, la traduction par d&eacute;faut choisie en fonction de vos param&egrave;tres Wordpress sera utilis&eacute;e."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:138
+msgid "Archives Sidebar"
+msgstr "Archives dans la barre lat&eacute;rale"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:142
+msgid "These settings affect the sidebar you can see when you open an archive page, such as the Mosaic, the category archives etc.<br />Grain is a theme with widget support, so you can easily customize your sidebar in the Widgets menu; These options will only apply if there is no widget plugged into the according sidebar."
+msgstr "Ces param&egrave;tres affectent la barre lat&eacute;rale qui appara&icirc;t lorsque vous ouvrez une page d'archives, comme la page Mosa&iuml;que, les archives par cat&eacute;gories, etc.<br />Grain est un th&egrave;me qui prend en charge les widgets, ainsi vous pouvez facilement personnaliser votre barre lat&eacute;rale dans le menu Widgets&nbsp;:&nbsp;ces options n'auront d'effet que lorsqu'aucun Widget n'est plac&eacute; dans la barre lat&eacute;rale concern&eacute;."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:145
+msgid "The values in the {FILE} file will be used for that."
+msgstr "La valeur contenue dans le fichier {FILE} sera utilis&eacute;e &agrave; cet effet."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:146
+msgid "Sidebar Syndication:"
+msgstr "Syndication dans la barre lat&eacute;rale&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:146
+msgid "Show Syndication in the Sidebar"
+msgstr "Affichez la syndication dans la barre lat&eacute;rale&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:148
+msgid "Most commented:"
+msgstr "Les plus comment&eacute;es&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:148
+msgid "List most commented photos"
+msgstr "Liste des photos les plus comment&eacute;es"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:149
+msgid "Show at most:"
+msgstr "Affichez au maximum&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:149
+msgid "This sets the maximum number of recent comments that will be displayed in the list."
+msgstr "Cette options fixe le nombre maximum de commentaires r&eacute;cents qui seront affich&eacute;s dans la litste."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:151
+msgid "Display Calendar:"
+msgstr "Afficher le calendrier&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:151
+msgid "Show the post calendar"
+msgstr "Affiche les billets dans le calendrier"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:152
+msgid "Display Blogroll:"
+msgstr "Afficher la blogoliste&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:152
+msgid "Show your blogroll"
+msgstr "Affiche votre blogoliste"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:153
+msgid "Display \"Meta\" block:"
+msgstr "Afficher le bloc &laquo;&nbsp;M&eacute;ta&nbsp;&raquo;&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.general.php:153
+msgid "Show WordPress' \"Meta\" blog to enable users to register or log in"
+msgstr "Afficher les &laquo;&nbsp;M&eacute;ta&nbsp;&raquo; du blog Wordpress pour offrir la possibilit&eacute; aux utilisateurs de s'enregistrer ou de s'identifier"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:33
+msgid "On-Image navigation"
+msgstr "Navigation au clic sur l'image"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:35
+msgid "This setting controls what happens when a visitor clicks on the photo."
+msgstr "Cette option contr&ocirc;le ce qui se passe lorsqu'un visiteur clique sur une photo."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:36
+msgid "Bidirectional Navigation:"
+msgstr "Navigation bidirectionnelle&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:36
+msgid "Enable the bidirectional on-image navigation"
+msgstr "Activer la navigation bidirectionnelle en cliquant sur l'image"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:36
+msgid "If enabled, the photo will contain links to the previous (older) and next (newer) photos. If disabled, only the previous link will be used."
+msgstr "Lorsque cette option est activée, la photo contiendra des liens vers la photo pr&eacute;c&eacute;dente (plus ancienne) et vers la photo suivante (plus r&eacute;cente). Si vous d&eacute;sactivez l'option, seul le lien vers la photo pr&eacute;c&eacute;dente sera utilis&eacute;."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:37
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:102
+msgid "Show Tooltips:"
+msgstr "Afficher les info-bulles"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:37
+msgid "Show a tooltip when hovering the image"
+msgstr "Afficher une info-bulle lors du survol d'une image"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:42
+msgid "Newest & Random"
+msgstr "Nouveaut&eacute; & photo al&eacute;atoire"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:44
+msgid "Newest Photo:"
+msgstr "Toute derni&egrave;re photo&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:44
+msgid "Show a link to the newest photo"
+msgstr "Afficher un lien vers la photo la plus r&eacute;cente"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:44
+msgid "The link will only appear if there are at least two (public) posts"
+msgstr "Le lien apparaitra uniquement s'il existe au moins deux photos (publi&eacute;es)."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:45
+msgid "Random Photo:"
+msgstr "Photo al&eacute;atoire&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:45
+msgid "Show a link to a random photo"
+msgstr "Afficher un lien vers une photo au hasard"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:45
+msgid "The link will only appear if there are at least three (public) posts"
+msgstr "Le lien apparaitra uniquement s'il existe au moins trois photo (publi&eacute;es)"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:50
+msgid "About & Information Link"
+msgstr "Lien vers l'&agrave; propos et les informations"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:54
+msgid "Enable \"About\":"
+msgstr "Activez &laquo;&nbsp;&Agrave; propos&nbsp;&raquo;&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:54
+msgid "Show the About link"
+msgstr "Affiche le lien &Agrave propos"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:58
+msgid "Select the page you want to use as your info page"
+msgstr "Sélectionnez la page que vous d&eacute;sirez utiliser comme page d'informations"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:59
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:79
+msgid "You currently have no pages."
+msgstr "Vous n'avez actuellement aucune page."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:62
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:82
+msgid "Write Page"
+msgstr "&Eacute;crire une page"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:63
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:83
+msgid "You can create a new page in the \"%LINK\" menu."
+msgstr "Vous pouvez cr&eacute;er une nouvelle page dans le menu &laquo;&nbsp;%LINK&nbsp;&raquo;."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:65
+msgid "About page:"
+msgstr "Page &Agrave propos&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:71
+msgid "Mosaic Page Link"
+msgstr "Lien de la page de la mosa&ique"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:74
+msgid "Enable \"Mosaic\":"
+msgstr "Activer la &laquo;&nbsp;mosa&iuml;que&nbsp;&raquo;&nbsp:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:74
+msgid "Show \"Mosaic\" link in the navigation bar"
+msgstr "Afficher le lien &laquo:&nbsp;mosa&iuml;que&nbsp;&raquo; dans la barre de navigation"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:78
+msgid "Select the page you want to use as your mosaic page"
+msgstr "S&eacute;lectionnez la page que vous d&eacute;sirez utiliser comme page de mosa&iuml;que"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:85
+msgid "Mosaic page:"
+msgstr "Page de mosa&iuml;que&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:89
+msgid "Link Title:"
+msgstr "Titre du lien&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:89
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:96
+msgid "This title will be shown in the navigation bar."
+msgstr "Ce titre sera affich&eacute; dans la barre de navigation."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:93
+msgid "Permalink Navigation item"
+msgstr "Permalion dans le menu de navigation"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:95
+msgid "Permalink:"
+msgstr "Permalien&eacute;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:95
+msgid "Show the Permalink in the Navigation Bar"
+msgstr "Afficher le permalien dans la barre de navigation"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:95
+msgid "Unchecking this removes the permalink from the navigation. The permalink will still be visible at the Comments/Details popup (if it is not explicitely disabled otherwise)."
+msgstr "D&eacute;cocher cette option supprimera le permalien de la navigation. Le permalion sera toujours visible dans la fen&ecirc;tre surgissante des commentaires/d&eacute;tails (si elle n'est pas explicitement désactiv&eacute;e)."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:96
+msgid "Permalink title:"
+msgstr "Titre du permalien&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:101
+msgid "Navigation Bar Location"
+msgstr "Emplacement de la barre de navigation"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:106
+msgid "Page header"
+msgstr "En-t&ecirc;te"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:107
+msgid "In front/top of the photo"
+msgstr "Devant/au-dessus de la photo"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:108
+msgid "Behind/below the photo"
+msgstr "Derri&egrave/sous la photo"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:110
+msgid "This sets the position of the navigation bar. Normally you want this to be '<code>{DEFAULT}</code>', but if you have special plans you may choose another position that better fits your needs."
+msgstr "Cette option définit la position de la barre de navigation. Normalement, il s'agit de '<code>{DEFAULT}</code>', mais si vous avez d'autres plans, il vous est possible de choisir une autre position qui convient mieux à vos besoins."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.navigation.php:112
+msgid "Location:"
+msgstr "Emplacement&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:29
+msgid "Style Override"
+msgstr "Param&eacute;trage du style"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:33
+msgid "Style Override settings"
+msgstr "Options de param&eacute;trage du style"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:37
+msgid "none"
+msgstr "aucune"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:51
+msgid "You can edit the currently selected override file here: %FILE"
+msgstr "Vous pouvez modifier le fichier param&eacute;trage s&eacute;lectionn&eacute; actuellement ici&nbsp;:&nbsp;%FILE"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:56
+msgid "CSS File:"
+msgstr "Feuille de style CSS&eacute;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:56
+msgid "The file selected here is loaded in addition to the base stylesheet and allows for style overrides. You can use this for quick switching or non-destructive editing of your blog's CSS styles."
+msgstr "Le fichier sélectionn&eacute; ici est charg&eacute; en plus de la feuille de style de base et vous permet de param&eacute;trer le style. Vous pouvez l'utiliser pour changer rapidement les styles CSS du blog ou pour les modifier de mani&egrave;re sure (non destructive)."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:61
+msgid "Image Settings"
+msgstr "Param&egrave;tres des images"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:63
+msgid "Image settings"
+msgstr "Param&egrave;tres des images"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:65
+msgid "Image dimensions:"
+msgstr "Dimensions de l'image&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:65
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:75
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:94
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:103
+msgid "Pixels"
+msgstr "Pixels"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:65
+msgid "The maximum dimensions of a photo. The photo will be scaled to fit.<br />If you change these to higher values you probably also have to change your CSS styles for the blog."
+msgstr "Les dimensions maximales de la photo. La photo sera adapt&eacute; en respectant l'&eacute;chelle.<br />Si vous changez ces valeurs par des valeurs plus &eacute;lev&eacute;es, vous devrez probablement aussi modifier la feuille de style CSS de votre blog."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:69
+msgid "Missing Image"
+msgstr "Image manquante"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:71
+msgid "<em>Whoops</em> image"
+msgstr "Image <em>Oups</em>"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:73
+msgid "If it happens that YAPB is unable to load an image or if you haven't set any image for a post Grain will show a message about that fact. If you want to you can set an image that is to be displayed instead."
+msgstr "S'il devait arriver que l'extension YAPB soit dans l'incapacit&eacute; de charger une image ou que vous n'ayez pas ins&eacute;r&eacute; la moindre image dans un billet, Grain affichera un message signalant cette situation. Si vous le d&eacute;sirez, vous pouvez choisir une image qui sera affich&eacute;e &agrave; la place."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:74
+msgid "Whoops image URL:"
+msgstr "URL de l'image Oups&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:74
+msgid "The URL of the image that will be displayed if a photoblog post has no image assigned or the image is not uploaded yet.<br />If you want to display a text instead of an image, leave the field empty."
+msgstr "L'URL de l'image qui sera affich&eacute;e si un bilet du photoblog ne contient pas d'image ou si l'image n'est pas encore charg&eacute;.<br />Si vous pr&eacute;f&eacute;rez afficher un texte &agrave; la place d'une image, laissez ce champ vide."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:75
+msgid "Image size:"
+msgstr "Taille de l'image&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:75
+msgid "The actual size of the replacement image."
+msgstr "La taille actuelle de l'image de substitution."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:80
+msgid "Mosaic Settings"
+msgstr "Param&egrave;tres de la mosa&iuml;que"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:82
+msgid "Mosaic settings"
+msgstr "Param&egrave;tres de la mosa&iuml;que"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:84
+msgid "Show Years:"
+msgstr "Afficher l'ann&eacute;e&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:84
+msgid "Group thumbnails by years in the mosaic page"
+msgstr "Assembler les vignettes par ann&eacute;es dans la page de mosa&iuml;que"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:85
+msgid "Photos per page:"
+msgstr "Photos par page&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:85
+msgid "This value sets how many photos will be displayed at most on a mosaic page."
+msgstr "Cette option d&eacute;termine le nombre de photos qui seront affich&eacute;es sur la page de mosa&iuml;que."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:85
+msgid "If you set a negative value or zero, no limitation will be applied."
+msgstr "Si vous d&eacute;finissez une valeur n&eacute;gative ou z&eacute;ro, aucune limitation ne sera appliqu&eacute;e"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:89
+msgid "Thumbnail settings"
+msgstr "Param&egrave;tres des vignettes"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:91
+msgid "Comments popup"
+msgstr "Commentaires en fen&ecirc;tre surgissante"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:93
+msgid "Show Thumbnail:"
+msgstr "Afficher les vignettes&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:93
+msgid "Show the photo's thumbnail image on the comments popup"
+msgstr "Afficher la vignette de l'image dans la fen&ecirc;tre surgissante des commentaires"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:94
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:103
+msgid "Thumbnail size:"
+msgstr "Taille des vignettes"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:95
+msgid "Size to fit:"
+msgstr "Adapter la taille&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:95
+msgid "Values given above are the maximum dimensions."
+msgstr "Les valeurs indiqu&eacute;es ci-dessus sont les dimensions maximales."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:95
+msgid "If disabled, the thumbnail will be displayed in the size given above, cropping the parts that don't fit.<br />If it is enabled the thumbnail image will be resized so that it fits within these boundaries."
+msgstr "Si cette option est d&eacute;sactiv&eacute;e, les vignettes seront affich&eacute;es dans la taille d&eacute;termin&eacute;e ci-dessous et les parties qui ne correspondent pas seront rogn&eacute;es.<br />Si cette option est activ&eacute;e, les vignettes des images seront redimensionn&eacute;es afin qu'elles correspondent aux limites impos&eacute;es."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:100
+msgid "Mosaic & Archive"
+msgstr "Mosa&iuml;que &amp; archives"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:102
+msgid "Show tooltip when hovering a thumbnail"
+msgstr "Afficher une info-bulle lors du survol d'une vignette"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:107
+msgid "Comments"
+msgstr "Commentaires"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:110
+msgid "Gravatar options"
+msgstr "Options Gravatar"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:112
+msgid "Use Gravatars:"
+msgstr "Utiliser Gravatars&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:112
+msgid "If enabled, <a href=\"http://www.gravatar.com/\" target=\"_blank\">Gravatar</a> icons are shown on user comments"
+msgstr "Lorsque cette option est activ&eacute;e, les ic&ocirc;nes <a href=\"http://www.gravatar.com/\" target=\"_blank\">Gravatar</a> sont affich&eacute;es dans les commentaires des utilisateurs"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:113
+msgid "Link Gravatars:"
+msgstr "Lien Gravatar&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:113
+msgid "If a commenter gives a website URL, the gravatar icon links to his page"
+msgstr "Si une URL de site web est mentionn&eacute;e dans un commentaire, l'ic&ocirc;ne gravatar renvoie &agrave; la page"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:115
+msgid "Alternative Image:"
+msgstr "Image alternative&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:115
+msgid "URL of an alternate image for the case the commenter has no Gravatar. If you don't specify an image URL Gravatar will use it's own dummy image if necessary."
+msgstr "URL d'une image alternative au cas o&ugrave; le commentateur n'utilise pas Gravatar. Si vous ne sp&eacute;cifiez pas d'URL d'image, Gravatar utilisera sa propre image &laquo;&nbsp;portrait&nbsp;&raquo; si n&eacute;cessaire."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:117
+msgid "The following values are extended configuration options for the Gravatar service. Please change them only if you know what you are doing."
+msgstr "Les valeurs suivantes sont des options de configuration avanc&eacute;es du service Gravatar. Veuillez ne les modifier que si vous savez ce que vous faites."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:119
+msgid "Gravatar rating:"
+msgstr "Avis (parental) de Gravatar&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:119
+msgid "Here you can specify the rating of the gravatars. Allowed values are <code>G, PG, R</code> and <code>X</code>. Only change this if you know why you would want to."
+msgstr "Vous pouvez sp&eacute;cifier ici l'avis des Gravatars. Les valeurs autoris&eacute;es sont <code>G, PG, R</code> et <code>X</code>. Ne les modifiez que si vous savez pourquoi vous le faites."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:120
+msgid "Gravatar size:"
+msgstr "Taille du Gravatar&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:120
+msgid "Here you can change the size of the Gravatar. If you change this value you will have to adapt your stylesheet."
+msgstr "Vous pouvez changer ici la taille des Gravatars. Si vous modifiez cette valeur, vous devrez adapter votre feuille de style."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:125
+msgid "Ring / Syndication options"
+msgstr "Options de syndications"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:127
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:131
+msgid "If enabled, a \"%\" button will be added to the comment form"
+msgstr "Lorsque cette option est activ&eacute;e, un bouton &laquo;&nbsp;%&nbsp;&raquo; sera ajout&eacute; au formulaire de commentaire"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:128
+msgid "photoblogs.org button:"
+msgstr "Bouton photoblogs.org&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:129
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:133
+msgid "Profile URL:"
+msgstr "URL du profil&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:129
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:133
+msgid "The URL of your <a href=\"http://photoblogs.org\" target=\"_blank\">photoblogs.org</a> profile"
+msgstr "Indiquez l'URL de votre profil <a href=\"http://photoblogs.org\" target=\"_blank\">photoblogs.org</a>"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:131
+msgid "vote for me at coolphotoblogs.com"
+msgstr "Votez pour moi sur coolphotoblogs.com"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:132
+msgid "coolphotoblogs.com button:"
+msgstr "Bouton coolphotoblogs.com&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:138
+msgid "Effects Options"
+msgstr "Options des effets"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:141
+msgid "moo.fx options"
+msgstr "options moo.fx"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:143
+msgid "Use moo.fx:"
+msgstr "Utiliser moo.fx&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:143
+msgid "Enable JavaScript effects (<a href=\"http://moofx.mad4milk.net/\" target=\"_blank\">moo.fx</a> engine)"
+msgstr "Activer les effets Javascript  (moteur <a href=\"http://moofx.mad4milk.net/\" target=\"_blank\">moo.fx</a>)"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:145
+msgid "Once you have enabled moo.fx, you can choose use the following effects."
+msgstr "Une fois moo.fx valid&eacute;, vous pouvez choisir les effets suivants."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:147
+msgid "Reflection effect:"
+msgstr "Effet de r&eacute;flexion&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:147
+msgid "If enabled, the image reflects on the background"
+msgstr "Lorsque cette option est activ&eacute;e, l'image se refl&egrave;te sur l'arri&egrave;rre-plan"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:148
+msgid "Fade effect:"
+msgstr "Effet de fondu&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:148
+msgid "Use a fade-in effect to display the image"
+msgstr "Utiliser un effet de fondu entrant pour afficher l'image"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/admin/page.styling.php:148
+msgid "The effect may be slow for some machines and is definitly slower for larger images, as well as complex theme styles. Double check that. In addition it requires support on the browser's side, so it isn't necessarily visible to every visitor."
+msgstr "L'effet peut &ecirc;tre tr&egrave;s pour certaines machines et l'est vraiment pour les images plus larges, tout comme un style de th&egrave;me complexe. V&eacute;rifiez ces deux possibilit&eacute;s. En plus, cela demande que le navigateur de votre visiteur prenne en charge le Javascript, autrement dit l'effet n'est pas n&eacute;cessairement visible pour tous les visiteurs."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/comments.php:32
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/comments.php:33
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/comments.php:34
+msgid "edit comment"
+msgstr "modifier le commentaire"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/comments.php:32
+msgid "comment ID:"
+msgstr "ID du commentaire&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/comments.php:35
+msgid "unapproved &rarr;"
+msgstr "d&eacute;sapprouver &rarr;"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/content.php:80
+msgid "&lArr; click for previous photo"
+msgstr "&lArr; cliquez pour visionner la photo pr&eacute;c&eacute;dente"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/content.php:82
+msgid "(this is the first photo)"
+msgstr "(c'est la premi&egrave;re photo)"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/content.php:87
+msgid "click for next photo &rArr;"
+msgstr "cliquez pour visionner la photo suivante &rArr;"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/content.php:89
+msgid "(this is the newest photo)"
+msgstr "(c'est la photo la plus r&eacute;cente)"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/content.php:119
+msgid "This photo page is not ready yet. Please check back later."
+msgstr "La page de cette photo n'est pas encore pr&ecirc;te. Veuillez repasser plus tard."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/feeds.php:23
+msgid "RSS Feed"
+msgstr "Flux RSS"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/feeds.php:37
+msgid "Atom Feed"
+msgstr "Flux Atom"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/image.php:58
+msgid "click to view"
+msgstr "cliquez pour visionner l'image"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/image.php:59
+msgid "not ready yet"
+msgstr "pas encore pr&ecirc;t"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/navlinks.php:86
+msgid "comments (%)"
+msgstr "commentaires (%)"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/navlinks.php:92
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/navlinks.php:117
+msgid "comments and details"
+msgstr "commentaires et d&eacute;tails"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/navlinks.php:99
+msgid "details &amp; comments (%)"
+msgstr "d&eacute;tails; &amp; commentaires (%)"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/navlinks.php:100
+msgid "hide details"
+msgstr "cacher les d&eacute;tails"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/optionskeys.php:54
+msgid "Mosaic"
+msgstr "Mosa&iuml;que"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/optionskeys.php:68
+msgid "(Your name)"
+msgstr "(votre nom)"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/optionskeys.php:69
+msgid "<em>(Your name)</em>"
+msgstr "<em>(votre nom)</em>"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/optionskeys.php:128
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/optionskeys.php:131
+msgid "F jS, Y"
+msgstr "j F Y"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/optionskeys.php:129
+msgid "F, Y"
+msgstr "F Y"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/optionskeys.php:130
+msgid "j. F Y, H:i"
+msgstr "j F Y, H:i"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/optionskeys.php:132
+msgid "H:i"
+msgstr "H:i"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/optionskeys.php:134
+msgid "Posted in: "
+msgstr "Publi&eacute; dans&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/optionskeys.php:136
+msgid "Tagged with: "
+msgstr "Tagu&eacute; sous&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/template.php:45
+msgid "Not found."
+msgstr "Introuvable."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/func/template.php:46
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr "D&eacute;sol&eacute, ce que vous rechercher n'existe pas ou plus ici."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:128
+msgid "Grain: Post Settings"
+msgstr "Grain&nbsp; Param&egrave;tres de publication"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:136
+msgid "Shows a photo and it's description."
+msgstr "Afficher une photo et sa description."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:137
+msgid "Uses a viewer applet to show the panorama given in the box below."
+msgstr "Utiliser un applet de visualisation pour afficher le panorama donn&eacute; dans la bo&icirc;te ci-dessous."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:138
+msgid "Looks like a 'Photo Post' type, but displays everything behind the <code>&lt;</code><code>!--more--&gt;</code> marker instead of the photo. This way you can show user-defined content."
+msgstr "Ressemble &agrave; un type de &laquo;&nbsp;publication de photo&nbsp;&raquo;, mais affiche tout derri&egrave;re la balise <code>&lt;</code><code>!--more--&gt;</code> au lieu de la photo. De cette fa&ccedil;on, vous pouvez afficher le contenu d&eacute;fini par l'utilisateur."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:139
+msgid "The post will be displayed just like a normal (text) blog post or static page."
+msgstr "Le billet sera affich&eacute; comme un billet normal de blog (du texte) ou comme un page statique."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:149
+msgid "Post Settings"
+msgstr "Param&egrave;tres de publication&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:154
+msgid "Post type:"
+msgstr "Type de publication&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:161
+msgid "Photo Post"
+msgstr "Publication de photo"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:164
+msgid "Panorama Post"
+msgstr "Publication de panorama"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:169
+msgid "Split Post"
+msgstr "Billet divis&eacute;"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:172
+msgid "Pure Content"
+msgstr "Contenu pur"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:183
+msgid "Panorama Settings"
+msgstr "Param&egrave;tres du panorama"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:188
+msgid "Panorama file URL:"
+msgstr "URL du fichier de panorama&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:196
+msgid "You can upload or select a panorama file using the Upload box. To find the URL of the uploaded file, click it's <code>Edit</code> link afterwards."
+msgstr "Vous pouvez charger ou s&eacute;lectionner un fichier de panorama en utilisant la bo&icirc;te de chargement. Pour trouver l'URL d'un fichier charg&eacute; cliquez sur son lien <code>Modifier</code> qui suit."
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:201
+msgid "Panorama player:"
+msgstr "Lecteur de panorama&nbsp;:"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:210
+msgid "autoselect by filetype"
+msgstr "s&eacute;lection automatique par type de fichier"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:219
+msgid "DevalVR"
+msgstr "DevalVR"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:228
+msgid "Quicktime"
+msgstr "Quicktime"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:237
+msgid "Java based (PTViewer)"
+msgstr "bas&eacute; sur Java (PTViewer)"
+
+#: /Users/aurelien/Documents/Traductions/Wordpress/ThÃ¨mes/grain-archive/iplugs/suite.0.2.php:243
+msgid "Panorama Image:"
+msgstr "Image de panorama&nbsp;:"
+
+#~ msgid "This photo has no EXIF data."
+#~ msgstr "Cette photo n'a pas de donn&eacute;es EXIF"
+#~ msgid "General options"
+#~ msgstr "Options g&eacute;n&eacute;rales"
+

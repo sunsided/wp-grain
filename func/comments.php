@@ -25,10 +25,10 @@
 	 */
 	function grain_can_comment() 
 	{
-		global $GrainOpt, $post;
+		global $GrainOpt, $post, $GrainPostOpt;
 		if( empty($post) ) return false;
 		if( !$GrainOpt->getYesNo(GRAIN_COMMENTS_ENABLED) ) return false;
-		if( !grain_post_has_image()	) {
+		if( !grain_post_has_image()	&& grain_posttype($post->ID) != GRAIN_POSTTYPE_PHOTO ) {
 			return $GrainOpt->getYesNo(GRAIN_COMMENTS_ON_EMPTY_ENABLED);
 		}
 		return true;

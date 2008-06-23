@@ -93,12 +93,14 @@
 				length="<?php echo $filesize; ?>"
 				type="<?php echo $mime_type; ?>"
 				/>
-<?php endif; */ ?>
+<?php endif; */ 
+if( grain_posttype($post->ID) == GRAIN_POSTTYPE_PHOTO ):
+?>
 			<media:content 
 				url="<?php echo $full_url; ?>"
 				width="<?php echo $width; ?>"
 				height="<?php echo $height; ?>"
-<?php if(!empty($filesize)): ?>				
+<?php 	if(!empty($filesize)): ?>				
 				fileSize="<?php echo $filesize; ?>" 
 <?php endif; ?>
 <?php if(!empty($mime_type)): ?>				
@@ -106,6 +108,8 @@
 <?php endif; ?>
 				/>		
 		<?php
+endif; // GRAIN_POSTTYPE_PHOTO
+		
 	}
 
 	/**
@@ -308,7 +312,9 @@
 				length="<?php echo $filesize; ?>"
 				type="<?php echo $mime_type; ?>"
 				/>
-<?php endif; ?>
+<?php endif; 
+if( grain_posttype($post->ID) == GRAIN_POSTTYPE_PHOTO ):
+?>
 			<media:content 
 				url="<?php echo $full_url; ?>"
 				width="<?php echo $width; ?>"
@@ -320,6 +326,9 @@
 				type="<?php echo $mime_type; ?>"
 <?php endif; ?>
 				/>
+<?php
+endif; // GRAIN_POSTTYPE_PHOTO
+?>				
 		</item>
 <?php	
 		endforeach;

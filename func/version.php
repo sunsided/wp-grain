@@ -21,7 +21,7 @@
 	define('GRAIN_THEME_VERSION_EXTENDED', 'beta 1');
 	
 	/** The URL of the theme project */
-	define('GRAIN_THEME_URL', 'http://wp-grain.wiki.sourceforge.net/');
+	define('GRAIN_THEME_URL', 'http://wp-grain.sourceforge.net/');
 	
 	/** The URL of the YAPB project */
 	define('GRAIN_YAPB_URL', 'http://wordpress.org/extend/plugins/yet-another-photoblog/');

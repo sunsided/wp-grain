@@ -26,6 +26,7 @@ Add: Per-post options
 Add: AJAX is used to refresh the list of override stylesheets on the fly at the styling options page
 Add: Media RSS support
 Add: Comment form voting links now use the VoteLinks microformat (http://microformats.org/wiki/vote-links)
+Add: Different post types; User defined content instead of an image is now possible
 Add/Change: Several new localization strings; Old strings have changed. (added i.e. date/time formats, so that their defaults can be localized too)
 Add/Change: The number of photos displayed on the mosaic page can now be unlimited by setting a negative value or zero as the number of items to display
 Add/Change: Localization files are now searched in the ./lang subdirectory

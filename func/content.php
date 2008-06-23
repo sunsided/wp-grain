@@ -18,10 +18,10 @@
 /* functions */
 
 	/** A "default" post type, with a photo and some text */
-	define('GRAIN_POSTTYPE_PHOTO', 'photo');
+	define('GRAIN_POSTTYPE_PHOTO', 0);
 	
 	/** An "user defined" post type, where the "photo" content is build from the text */
-	define('GRAIN_POSTTYPE_SPLITPOST', 'split-post');
+	define('GRAIN_POSTTYPE_SPLITPOST', 10);
 
 	/**
 	 * grain_posttype() - Gets the Grain post type of a given post
@@ -32,11 +32,15 @@
 	 * @since 0.2
 	 * @param int $post_id 				The post's id
 	 * @param string $default 			Optional. The default type.
-	 * @return string 					The type of the current post.
+	 * @return int 						The type of the current post.
 	 */
 	function grain_posttype($post_id, $default=GRAIN_POSTTYPE_PHOTO) 
 	{
-		return GRAIN_POSTTYPE_PHOTO;
+		global $GrainPostOpt;
+		$value = $GrainPostOpt->get(GRAIN_POSTOPT_POSTTYPE);
+		grain_log("Post type: $value");
+		return $value;
+		// return GRAIN_POSTTYPE_PHOTO;
 	}
 
 	/**
@@ -324,50 +328,18 @@
 		
 		echo '<div id="special-frame">';
 				
-		// action
-		do_action(GRAIN_BEFORE_PANORAMA);
-		
-		if( !grain_use_reflection() ) 
-			echo '<div class="photo">';
-		else
-			echo '<div class="photo-with-reflection">';
+			// action
+			// do_action(GRAIN_BEFORE_PANORAMA);
 			
-	
-		$path = $post->image->systemFilePath();
-		$image_url = get_bloginfo('url').$post->image->uri;
-		// get image size
-		$image_dimensions = getimagesize($path);					
-		
-		/*
-		grain_embed_ptviewer( 
-			array( 
-				'file' => $image_url,
-				'pwidth' => $image_dimensions[0], 
-				'pheight' => $image_dimensions[1]
-			));
-		*/
-		
-		//$image_url = get_bloginfo('template_directory').'/iplugs/devalvr/testfiles/testfileForQT.mov';
-		
-		grain_embed_devalvr( array( 
-			'file' => $image_url,
-			'ptviewer' => 
-				array( 
-					'pwidth' => $image_dimensions[0], 
-					'pheight' => $image_dimensions[1],
-					'wait' => GRAIN_TEMPLATE_DIR.'/images/loading.gif',
-					'panmin' => '-90',
-					'panmax' => '90'
-				)
-			));
-	
-		// output the 'special' content here
-		echo grain_get_the_special_content();
-		
-		echo '</div>'; // photo-(with)?border
-		
-		// action
-		do_action(GRAIN_AFTER_PANORAMA);
+			echo '<div class="content">';
+			
+			// output the 'special' content here
+			echo grain_get_the_special_content();
+			
+			echo '</div>';
+			
+			// action
+			//do_action(GRAIN_AFTER_PANORAMA);
 		
 		echo '</div>'; // special-frame
 	
@@ -527,7 +499,7 @@
 					</span>
 					<?php endif; ?>
 					
-					<?php if($GrainOpt->getYesNo(GRAIN_COMMENTS_ENABLED) && $GrainOpt->getYesNo(GRAIN_CONTENT_COMMENTS_HINT)): ?>
+					<?php if(grain_can_comment() && $GrainOpt->getYesNo(GRAIN_CONTENT_COMMENTS_HINT)): ?>
 					<span id="comment-hint">
 						<?php 
 							echo grain_generate_comments_link(); 

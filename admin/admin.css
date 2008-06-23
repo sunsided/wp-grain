@@ -27,7 +27,14 @@
 	text-align: right;
 }
 
-#nonJsForm label.checkbox_text {
+#grainoptions label.leftbound {
+	width: 150px;
+	display: block;
+	float: left;
+}
+
+#nonJsForm label.checkbox_text,
+#grainoptions  label.checkbox_text {
 	padding-top: none;
 	padding-right: none;
 	width: auto;
@@ -36,6 +43,8 @@
 
 #nonJsForm input,
 #nonJsForm textarea,
+#grainoptions input,
+#grainoptions textarea,
 .input_pad {
 	padding-top: 6px;
 	padding-right: 5px;
@@ -50,7 +59,14 @@
 	margin-top: 5px;
 }
 
-#nonJsForm textarea, #nonJsForm input {
+#grainoptions .input_pad {
+	padding-left: 140px;
+	padding-top: 0;
+	margin-top: 5px;
+}
+
+#nonJsForm textarea, #nonJsForm input,
+#grainoptions textarea, #grainoptions input {
 	font-family: "Courier New", Courier, monospace;
 }
 
@@ -82,13 +98,13 @@ textarea {
 	padding-top: 0px;
 }
 
-fieldset {
+#nonJsForm fieldset {
 	border: 1px solid silver;
 	margin-bottom: 10px;
 	padding: 10px;
 }
 
-fieldset p {
+#nonJsForm fieldset p {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
@@ -140,7 +156,8 @@ div.optionline {
 	margin-bottom: 5px;	
 }
 
-fieldset {
+#nonJsForm fieldset,
+#graindiv fieldset {
 	border: none;
 	border-left: 1px dashed silver;
 	border-bottom: 1px dashed silver;
@@ -149,9 +166,11 @@ fieldset {
 	padding-left: 20px;
 }
 
-fieldset legend {
+#nonJsForm fieldset legend,
+#graindiv fieldset legend {
 	font-size: 1.25em;
 	border-bottom: 1px dotted silver;
+	margin-bottom: 5px;
 }
 
 #atom_feed_line {
