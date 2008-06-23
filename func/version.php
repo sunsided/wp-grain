@@ -18,7 +18,7 @@
 	define('GRAIN_THEME_VERSION_BASE', '0.3');
 	
 	/** An extension to the current version */
-	define('GRAIN_THEME_VERSION_EXTENDED', 'beta 1');
+	define('GRAIN_THEME_VERSION_EXTENDED', 'beta 2');
 	
 	/** The URL of the theme project */
 	define('GRAIN_THEME_URL', 'http://wp-grain.sourceforge.net/');
