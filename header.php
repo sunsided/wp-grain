@@ -41,15 +41,15 @@ grain_startSession();
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="home" href="<?php echo get_settings('home'); ?>" />
 
+<!-- theme js -->
+<?php grain_embed_javascripts(); ?>
+
 <!-- etc -->
 <?php wp_head(); ?>
 
 </head>
 
 <body id="body">
-
-<!-- theme js -->
-<?php grain_embed_javascripts(); ?>
 
 <?php
 	$page_id = grain_ispopup() ? "commentspopup" : "page";
