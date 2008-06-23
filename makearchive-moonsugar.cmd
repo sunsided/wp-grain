@@ -2,8 +2,9 @@
 REM $Id$
 
 REM Set archive name(s)
-set grain_tar=grain-archive.tar
-set grain_tgz=%grain_tar%.gz
+set grain_base=grain-archive
+set grain_tar=%grain_base%.tar
+set grain_tgz=%grain_base%.tgz
 
 REM Set Features to exclude
 set grain_feature_excludes=%grain_feature_excludes% --exclude=iplugs/devalvr --exclude=iplugs/ptviewer
