@@ -136,9 +136,10 @@
 	 *
 	 * @param mixed $image		The YAPB image object
 	 * @param mixed $post		The current post object
+	 * @param string $scope		Optional. The scope of the image. (Defaults to "archive")
 	 * @return string HTML markup for the current image's/post's thumbnail
 	 */
-	function grain_mimic_ygi_archive($image, $post) {
+	function grain_mimic_ygi_archive($image, $post, $scope="archive") {
 		global $GrainOpt;
 
 		// get data
@@ -163,9 +164,6 @@
 			// get thumbnail
 			$image_src = $image->getThumbnailHref($phpThumbOptions);
 		}
-		else {
-			$width = 120;
-		}
 		
 		$width_attrib = $height_attrib = NULL;
 		if($width  > 0 ) $width_attrib = 'width="'.$width.'"';
@@ -173,11 +171,13 @@
 		$sizeStyle = NULL;
 		if($width  > 0 ) $sizeStyle .='width: '.$width.'px;';
 		if($height > 0 ) $sizeStyle .='height: '.$height.'px;';
-		$image_html = '<img id="thumbnail-'.$post->ID.'" '.$width_attrib.' '.$height_attrib.' style="'.$sizeStyle.'" class="archive-thumb" src="' .$image_src. '" alt="'.$post->post_title.'" />';
+		$image_html = "";
+		if( empty($image) ) $image_src = GRAIN_TEMPLATE_DIR."/images/spacer.gif";
+		$image_html = '<img id="thumbnail-'.$post->ID.'" '.$width_attrib.' '.$height_attrib.' style="'.$sizeStyle.'" class="'.$scope.'-thumb'.(empty($image)?" missing-image":"").'" src="' .$image_src. '" alt="'.$post->post_title.'" />';
 		$image_html = apply_filters( 'yapb_get_thumbnail', $image_html );
-		$anchor_html = '<a rel="bookmark" href="' . get_permalink($post->ID) . '">'.$image_html.'</a>';
+		$anchor_html = '<a rel="alternate" href="' . get_permalink($post->ID) . '">'.$image_html.'</a>';
 		
-		$anchor_html = '<div title="'.$tooltip.'" id="thumbframe-'.$post->ID.'" class="archive-thumbframe'.(empty($image)?"-no-image":"").'" style="width: '.$width.'px; height: '.$height.'px; overflow: visible;">'.$anchor_html."</div>";
+		$anchor_html = '<div title="'.$tooltip.'" id="thumbframe-'.$post->ID.'" class="thumbframe'.(empty($image)?"-no-image":"").'" style="'.$sizeStyle.'; overflow: visible;">'.$anchor_html."</div>";
 		
 		// return
 		return $anchor_html;

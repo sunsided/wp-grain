@@ -78,8 +78,7 @@
 		</div>
 
 		<div id="archive-list">
-		<?php while (have_posts()) : the_post(); ?>
-		<div class="archive-post"><?php 
+		<?php while (have_posts()) : the_post(); ?><div class="archive-post"><?php 
 				
 				$image = NULL;
 				if (class_exists(YapbImage)) $image = YapbImage::getInstanceFromDb($post->ID);
@@ -87,12 +86,10 @@
 				// display
 				echo '<div class="archive-photo">';
 				do_action(GRAIN_ARCHIVE_BEFORE_THUMB);
-				echo grain_mimic_ygi_archive($image, $post);
+				echo grain_mimic_ygi_archive($image, $post, "archive");
 				do_action(GRAIN_ARCHIVE_AFTER_THUMB);					
 				echo '</div>';
-			?>
-			</div>
-			<?php 
+			?></div><?php 
 			endwhile; ?>
 		</div>
 

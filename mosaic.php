@@ -20,21 +20,24 @@
 	$mosaic_count_per_page = $GrainOpt->get(GRAIN_MOSAIC_COUNT);
 	$left_nav  = grain_get_mosaic_ppl(__("&laquo; previous page", "grain"), grain_mocaic_current_page(), $mosaic_count_per_page);
 	$right_nav = grain_get_mosaic_npl(__("next page &raquo;", "grain"), grain_mocaic_current_page(), $mosaic_count_per_page);
-	$has_navigation = !empty($left_nav) && !empty($right_nav);
+	$has_navigation = !empty($left_nav) || !empty($right_nav);
 
 	// get the page data
 	the_post();
+	
+	// send phpThumb config if enabled
+	grain_log(@implode(",",grain_get_phpthumb_options(NULL, NULL)));
 
 ?>
 <div id="content-archives" class="<?php echo $has_sidebar?"narrowcolumn":"widecolumn" ?>">
 
-	<div id="archive-list" class="<?php echo $has_navigation?"has-navigat":"no-navigation"; ?>">
+	<h2 class="pagetitle"><?php the_title(); ?></h2>
 
-		<h2 class="pagetitle"><?php the_title(); ?></h2>
+	<div id="mosaic-list" class="<?php echo $has_navigation?"has-navigation":"no-navigation"; ?>">
 
 				<div id="navigation-top" class="navigation">
-					<div class="alignleft"><?php echo $left_nav; ?></div>
-					<div class="alignright"><?php echo $right_nav; ?></div>
+					<div class="nav-left"><?php echo $left_nav; ?></div>
+					<div class="nav-right"><?php echo $right_nav; ?></div>
 				</div>
 		<?php
 
@@ -48,9 +51,8 @@
 			$previousYear = '0000';
 			$years_enabled = $GrainOpt->is(GRAIN_MOSAIC_DISPLAY_YEARS);
 		?>
-<div id="archive-posts">
+<div id="mosaic-posts">
 		<?php
-			echo '<!--'.@implode(",",grain_get_phpthumb_options(NULL, NULL)).'-->';
 			
 			$skipEmpty = $GrainOpt->is(GRAIN_MOSAIC_SKIP_EMPTY);
 			foreach($posts as $post): 
@@ -62,32 +64,28 @@
 						$previousYear = $currentYear;
 					}
 				}
-			
-			?>
-			
-<div id="post-<?php echo $post->ID; ?>" class="archive-post"><?php
 				
 				$image = NULL;
 				if (class_exists(YapbImage)) $image = YapbImage::getInstanceFromDb($post->ID);
-				if( empty($image) && $skipEmpty ) continue;
+				$is_empty_post = empty($image);
+				if( $is_empty_post && $skipEmpty ) continue;
+			
+			?><div id="post-<?php echo $post->ID; ?>" class="mosaic-post<?php if($is_empty_post) echo " empty-post"; ?>"><?php
 				
 				// display
 				echo '<div class="mosaic-photo">';
 				do_action(GRAIN_ARCHIVE_BEFORE_THUMB);
-				echo grain_mimic_ygi_archive($image, $post);
+				echo grain_mimic_ygi_archive($image, $post, "mosaic");
 				do_action(GRAIN_ARCHIVE_AFTER_THUMB);					
 				echo '</div>';
-		?>
-		</div>
-<?php
+		?></div><?php
 		
 			endforeach;
 
-		?>
-</div>
+		?></div>
 		<div id="navigation-bottom" class="navigation">
-			<div class="alignleft"><?php echo $left_nav; ?></div>
-			<div class="alignright"><?php echo $right_nav; ?></div>
+			<div class="nav-left"><?php echo $left_nav; ?></div>
+			<div class="nav-right"><?php echo $right_nav; ?></div>
 		</div>
 	</div>
 </div>
