@@ -30,6 +30,7 @@
 		if($GrainOpt->getYesNo(GRAIN_EYECANDY_MOOFX)) 
 		{
 			echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/mootools.js"></script>'.PHP_EOL;
+			echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/mootools-more.js"></script>'.PHP_EOL;
 			if($GrainOpt->getYesNo(GRAIN_EYECANDY_REFLECTION_ENABLED)) 
 			{
 				echo '<script type="text/javascript" src="'.GRAIN_TEMPLATE_DIR.'/js/reflection.js"></script>'.PHP_EOL;
@@ -200,42 +201,42 @@
 	<script type="text/javascript" language="JavaScript">
 
 		Element.implement({
-			fadeIn:function(delay) {
-				this.setStyle('display',''); 
-				this.setStyle('opacity', '0');
-				this.fade('in');
-			},
-			
-			hide:function() {
-				this.setStyle('opacity', '0');
-				/*this.setStyle('display','none'); */
+		
+			grainFadeIn:function(delay) {
+				var myFx = new Fx.Tween(this, { duration: 500, link: "chain" } );
+				myFx.start("opacity", 0, 1);				
 				return this;
 			},
 			
-			fadeOut:function(delay) {
-				this.fade("out");
+			grainHide:function() {
 				this.setStyle('opacity', '0');
+				return this;
+			},
+			
+			grainFadeOut:function(delay) {
+				var myFx = new Fx.Tween(this, { duration: 500, link: "chain" } );
+				myFx.start("opacity", 1, 0);
+				return this;
 			}
 		});
 
 		window.addEvent('domready', function() {
 		
 			photo = $$('div#photo-fade');		
-			photo.hide();
+			photo.grainHide();
 		
-		});	
+		});
 		
 		window.addEvent('load', function() {
-		
 			photo = $$('div#photo-fade');
-			photo.fadeIn(100);
+			photo.grainFadeIn(100);
 		});	
 		
 		window.addEvent('unload', function() {
 		
 			photo = $$('div#photo-fade');
-			photo.fadeOut(100);
-		});	
+			photo.grainFadeOut(100);
+		});
 		
 	</script>
 	<?php

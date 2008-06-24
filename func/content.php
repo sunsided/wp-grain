@@ -285,6 +285,9 @@
 					$string .= '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection ? '-with-reflection' : '' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/>';
 				}
 				
+				// hide image immediately if we are using the fader
+				if(grain_fx_can_fade()) $string .='<script type="text/javascript" language="JavaScript">$$("div#photo-fade").grainHide();</script>';
+				
 				// prepare non-reflection
 				if( !$useReflection ) $string .= '</div>';
 			}
@@ -294,7 +297,7 @@
 			
 			// display image
 			echo '<div id="photo-'.(grain_fx_can_fade()?'fade':'nofade').'" style="'.$sizeStyle.'">';
-			echo $string;				
+			echo $string;
 			echo '</div>';
 			
 			// action
