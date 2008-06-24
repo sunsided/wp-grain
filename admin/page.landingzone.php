@@ -124,7 +124,7 @@
 					
 					<div id="datetime-options-block" class="grain-options-block">
 						<div class="option-name"><a href="admin.php?page=<?php echo $knownPagesList["datetime"]; ?>"><?php _e("Date and Time", "grain"); ?></a></div>
-						<div class="option-description"><?php _e("This section is most probably only interesting to you if you don't use a localized version of Grain. Here you can set how dates and times are displayed to your visitors.", "grain"); ?></div>
+						<div class="option-description"><?php _e("Here you can set how dates and times are displayed to your visitors.", "grain"); ?></div>
 					</div>
 				
 				</div>
