@@ -201,7 +201,8 @@
 
 		Element.implement({
 			fadeIn:function(delay) {
-			this.setStyle('display','');  
+				this.setStyle('display',''); 
+				this.setStyle('opacity', '0');
 				this.fade('in');
 			},
 			
@@ -213,6 +214,7 @@
 			
 			fadeOut:function(delay) {
 				this.fade("out");
+				this.setStyle('opacity', '0');
 			}
 		});
 
