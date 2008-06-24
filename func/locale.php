@@ -135,7 +135,6 @@
 	function grain_find_locale($locale, $fallback=WPLANG) {
 		// test for a direct hit
 		if( file_exists(TEMPLATEPATH."/lang/$locale.mo") ) {
-			grain_log("$locale is a direct hit", "Locale", FirePHP::INFO);
 			return $locale;
 		}
 		#if( file_exists(TEMPLATEPATH."/$locale.mo") ) return $locale;
@@ -282,7 +281,7 @@
 		grain_switch_locale($locale);
 		if( !headers_sent() ) header("X-Grain-Autolocale: $locale");
 	}
-
+	
 	// load locale
 	grain_load_locale();
 
