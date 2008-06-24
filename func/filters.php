@@ -33,6 +33,9 @@
 	
 	/** Filter the return value of grain_get_the_special_content() */
 	define('GRAIN_GET_THE_SPECIAL_CONTENT', 'grain_get_the_special_content');
+
+	/** Filter the user defined content */
+	define('GRAIN_FILTER_USERCONTENT', 'GRAIN_FILTER_USERCONTENT');
 	
 	/** Filter the EXIF data as returned by YAPB */
 	define('GRAIN_EXIF', 'GRAIN_EXIF');

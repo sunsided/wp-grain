@@ -185,6 +185,9 @@
 	function grain_set_expires_header() 
 	{
 		if(headers_sent()) return;
+		
+		// PHP4 doesn't know the headers_list() function, so quit directly
+		if(!function_exists("headers_list")) return;
 	
 		// set the time
 		$expires_after_hours = 12;
@@ -206,9 +209,11 @@
 		header("Expires: $expires_stamp");
 	}
 	
-	
 	// load the FirePHP extension
-	if( defined("GRAIN_THEME_VERSION_DEVBUILD") && GRAIN_THEME_VERSION_DEVBUILD && file_exists(TEMPLATEPATH . '/lib/FirePHPCore/fb.php') )
+	if( 	version_compare(PHP_VERSION, '5.0.0') === 1 &&
+			defined("GRAIN_THEME_VERSION_DEVBUILD") && 
+			GRAIN_THEME_VERSION_DEVBUILD && 
+			file_exists(TEMPLATEPATH . '/lib/FirePHPCore/fb.php') )
 	{
 		@require_once(TEMPLATEPATH . '/lib/FirePHPCore/fb.php');
 		
@@ -225,7 +230,7 @@
 			return call_user_func_array('fb',$args);
 		}
 	}
-	else {
+	else {	
 		// send it to oblivion
 		define("GRAIN_LOGGING_DISABLED_THE_HARD_WAY", true);
 		function grain_log() {}

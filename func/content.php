@@ -285,6 +285,9 @@
 					$string .= '<img '.$title_attr.' id="photo" alt="'. $post->post_title . '" class="photo'.($useReflection ? '-with-reflection' : '' ).'" style="width: '.$width.'px; height: '.$height.'px;" src="'. $image_url .'"/>';
 				}
 				
+				// hide image immediately if we are using the fader
+				if(grain_fx_can_fade()) $string .='<script type="text/javascript" language="JavaScript">$$("div#photo-fade").grainHide();</script>';
+				
 				// prepare non-reflection
 				if( !$useReflection ) $string .= '</div>';
 			}
@@ -294,7 +297,7 @@
 			
 			// display image
 			echo '<div id="photo-'.(grain_fx_can_fade()?'fade':'nofade').'" style="'.$sizeStyle.'">';
-			echo $string;				
+			echo $string;
 			echo '</div>';
 			
 			// action
@@ -329,17 +332,17 @@
 		echo '<div id="special-frame">';
 				
 			// action
-			// do_action(GRAIN_BEFORE_PANORAMA);
+			do_action(GRAIN_BEFORE_USERCONTENT);
 			
 			echo '<div class="content">';
 			
 			// output the 'special' content here
-			echo grain_get_the_special_content();
+			echo apply_filters(GRAIN_FILTER_USERCONTENT, grain_get_the_special_content());
 			
 			echo '</div>';
 			
 			// action
-			//do_action(GRAIN_AFTER_PANORAMA);
+			do_action(GRAIN_AFTER_USERCONTENT);
 		
 		echo '</div>'; // special-frame
 	

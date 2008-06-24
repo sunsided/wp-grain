@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Grain 0.3 beta 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-23 21:14+0100\n"
+"POT-Creation-Date: 2008-06-24 19:11+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Markus Mayer <code@defx.de>\n"
 "Language-Team: \n"
@@ -1154,7 +1154,7 @@ msgid "This is where you set your name, imprint and special licenses such as a C
 msgstr ""
 
 #: ..\./admin/page.landingzone.php:127
-msgid "This section is most probably only interesting to you if you don't use a localized version of Grain. Here you can set how dates and times are displayed to your visitors."
+msgid "Here you can set how dates and times are displayed to your visitors."
 msgstr ""
 
 #: ..\./admin/page.landingzone.php:133

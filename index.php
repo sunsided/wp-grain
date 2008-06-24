@@ -5,6 +5,12 @@
 	File version: $Id$
 */
 
+	if(!defined("GRAIN_THEME_VERSION")) {
+		header("HTTP/1.0 403 Forbidden");
+		@require_once(dirname(__FILE__)."/func/version.php");
+		die("Please do not access this place directly.");
+	}
+
 	grain_set_expires_header();
 
 	grain_start_buffering();
