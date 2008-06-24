@@ -445,12 +445,19 @@ img#rss-feed {
 
 /* Content */
 
+#content-page {
+	text-align: left;
+	}
+
 #content-page,
 #content-archives,
 #content-post {
-	/*font-size: 1.2em;*/
-	text-align: center;
 	position: relative;
+	}
+
+#content-archives,
+#content-post {
+	text-align: center;
 	}
 	
 #content-archives {
@@ -474,6 +481,11 @@ img#rss-feed {
 #mosaic-list .archive-post, 	
 .narrowcolumn .post,
 .widecolumn .post {
+	color: rgb(255, 255, 255);
+	}
+
+#archive-list .archive-post, 	
+#mosaic-list .archive-post {
 	color: rgb(255, 255, 255);
 	text-align: center;
 	}
