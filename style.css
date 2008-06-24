@@ -1453,9 +1453,7 @@ a img {
 	padding: 5px 0px;
 }
 
-.tooltip-title,
-.tooltip-title-prev,
-.tooltip-title-next {
+.tooltip-title {
 	background: black url(images/tip-header.png);
 	color: black;
 	opacity: 0.8;
@@ -1469,9 +1467,7 @@ a img {
 	font-family: 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif;
 	}
 
-.tooltip-text,
-.tooltip-text-prev,
-.tooltip-text-next {
+.tooltip-text {
 	background: dimgray url(images/grid.gif);
 	color: white;
 	opacity: 0.8;

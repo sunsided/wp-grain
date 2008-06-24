@@ -89,7 +89,7 @@
 	if( $postCount && $grain_mosaic_enabled && !$thisIsMosaicPage ):
 		$mosaicpost = get_post($mosaicPageId);
 		if($mosaicpost) {
-			$link = '<a rel="contents" class="tooltipped" title="'.grain_thumbnail_title($mosaicpost->post_title,__("To the overview", "grain")).'" accesskey="m" href="'.get_permalink($mosaicPageId).'">'.$GrainOpt->get(GRAIN_MOSAIC_LINKTITLE).'</a>';
+			$link = '<a rel="contents" class="tooltipped" title="'.grain_thumbnail_title($mosaicpost->post_title,__("To the overview", "grain"), "navigation").'" accesskey="m" href="'.get_permalink($mosaicPageId).'">'.$GrainOpt->get(GRAIN_MOSAIC_LINKTITLE).'</a>';
 			array_push( $links, '<span id="menu-mosaic" class="pagelink">'.$link.'</span>' );
 		}
 	endif;

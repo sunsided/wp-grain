@@ -152,7 +152,7 @@
 		
 		$message = __("click to view", "grain");
 		if(empty($image)) $message = __("not ready yet", "grain");
-		$tooltip = $GrainOpt->is(GRAIN_ARCHIVE_TOOLTIPS) ? grain_thumbnail_title($post->post_title.$addon, $message) : '';
+		$tooltip = $GrainOpt->is(GRAIN_ARCHIVE_TOOLTIPS) ? grain_thumbnail_title($post->post_title.$addon, $message, "mosaic") : '';
 		
 		// build
 		$image_src = ""; //GRAIN_TEMPLATE_DIR ."/images/tip-header.png";

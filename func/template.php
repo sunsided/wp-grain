@@ -261,9 +261,10 @@
 	 * @see grain_compose_post_tooltips()
 	 * @param string $title		The title of the tooltip
 	 * @param string $text		The text of the tooltip
+	 * @param string $direction	Optional. The direction of the tooltip (Defaults to "prev")
 	 * @return string A string to be used in a HTML entities' "title" attribute
 	 */
-	function grain_thumbnail_title($title, $text) {
+	function grain_thumbnail_title($title, $text, $direction="prev") {
 		$title = htmlspecialchars($title);
 		$text = htmlspecialchars($text);
 		
@@ -274,7 +275,7 @@
 		$text = str_replace($search, $replace, $text);
 		
 		// generate tooltip text
-		return 'cssbody=[tooltip-text-prev] cssheader=[tooltip-title-prev] header=['.$title.'] body=['.$text.']';
+		return 'cssbody=[tooltip-text tooltip-text-'.$direction.'] cssheader=[tooltip-title tooltip-title-'.$direction.'] header=['.$title.'] body=['.$text.']';
 	}
 
 	/**
@@ -291,8 +292,8 @@
 		global $GrainOpt, $post;
 		
 		if(!$GrainOpt->getYesNo(GRAIN_EYECANDY_USE_MOOTIPS)) {
-			$title_prev = grain_thumbnail_title($post->post_title. $addon, $message_left);
-			$title_next = grain_thumbnail_title($post->post_title. $addon, $message_right);
+			$title_prev = grain_thumbnail_title($post->post_title. $addon, $message_left, "prev");
+			$title_next = grain_thumbnail_title($post->post_title. $addon, $message_right, "next");
 		}
 		else
 		{
