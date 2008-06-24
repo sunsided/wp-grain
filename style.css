@@ -1951,5 +1951,5 @@ div.year {
 
 
 #photo-frame canvas {
-	margin-top: 5px; /* <-- this is the offset of the reflected image to it's original */
+	margin-top: 0px; /* <-- this is the offset of the reflected image to it's original */
 }

@@ -329,17 +329,17 @@
 		echo '<div id="special-frame">';
 				
 			// action
-			// do_action(GRAIN_BEFORE_PANORAMA);
+			do_action(GRAIN_BEFORE_USERCONTENT);
 			
 			echo '<div class="content">';
 			
 			// output the 'special' content here
-			echo grain_get_the_special_content();
+			echo apply_filters(GRAIN_FILTER_USERCONTENT, grain_get_the_special_content());
 			
 			echo '</div>';
 			
 			// action
-			//do_action(GRAIN_AFTER_PANORAMA);
+			do_action(GRAIN_AFTER_USERCONTENT);
 		
 		echo '</div>'; // special-frame
 	

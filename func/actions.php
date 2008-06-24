@@ -22,6 +22,12 @@
 	/** Signaled after the image was embedded. */
 	define('GRAIN_AFTER_IMAGE', 'grain_after_image');
 	
+	/** Signaled before the user defined content is embedded. */
+	define('GRAIN_BEFORE_USERCONTENT', 'GRAIN_BEFORE_USERCONTENT');
+	
+	/** Signaled after the user defined content was embedded. */
+	define('GRAIN_AFTER_USERCONTENT', 'GRAIN_AFTER_USERCONTENT');	
+	
 	/** Signaled bevore a panorama is embedded. */
 	define('GRAIN_BEFORE_PANORAMA', 'grain_before_pano');
 	
