@@ -54,7 +54,7 @@
 				$text = __("enabled", "grain");
 				$class = "enabled";
 			}
-			$response .= "$('#logging-state-text').text('$text');";
+			$response .= "$('#logging-state-text').html('$text');";
 			$response .= "$('#logging-state-text').removeClass('enabled');";
 			$response .= "$('#logging-state-text').removeClass('disabled');";
 			$response .= "$('#logging-state-text').addClass('$class');";
