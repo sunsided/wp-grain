@@ -97,6 +97,7 @@
 		global $grain_syndication_list;
 		$i = 0; $output = '';
 		$count = count( $grain_syndication_list );
+		$delimiter = ""; // @todo: Set delimiter for sidebar syndication 
 		foreach( $grain_syndication_list as $item ) {
 			$output .= '<li id="list-synd-'.(++$i).'"><a alt="'.$item['title'].'" href="'.$item['url'].'"><img class="syndbutton" src="'.$item['button_url'].'" alt="'.$item['text'].'" title='.$item['title'].' border="0" /></a></li>';
 			if( $i < $count ) $output .= ' ' . $delimiter . ' ';

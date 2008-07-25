@@ -214,7 +214,7 @@
 		if(!empty($cssClass) && ($classes != $cssClass)) $classes .= ' '.$cssClass;
 		
 		// begin option line
-		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">'.PHP_EOL;
+		echo '<div id="'.$fieldName.'_line" class="optionline '.$classes.'">'.PHP_EOL;
 		
 		// write input
 		echo '	<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'_field">'.$title.'</label>'.PHP_EOL;	
@@ -269,7 +269,7 @@
 		if(!empty($cssClass)) $classes .= ' '.$cssClass;
 		
 		// begin option line
-		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">'.PHP_EOL;
+		echo '<div id="'.$fieldName.'_line" class="optionline '.$classes.'">'.PHP_EOL;
 		
 		// write input
 		echo '	<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>'.PHP_EOL;	
@@ -317,7 +317,7 @@
 		if(!empty($cssClass)) $classes .= ' '.$cssClass;
 		
 		// begin option line
-		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">'.PHP_EOL;
+		echo '<div id="'.$fieldName.'_line" class="optionline '.$classes.'">'.PHP_EOL;
 		
 		// write input
 		echo '	<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>'.PHP_EOL;	
@@ -338,7 +338,7 @@
 		
 		// quickinfo
 		if( !empty($quickInfo) ) {
-			echo '	<span class="'.$class.'" id="'.$fieldName.'_info">'.$quickInfo.'</span>';
+			echo '	<span class="'.$classes.'" id="'.$fieldName.'_info">'.$quickInfo.'</span>';
 		}
 		
 		// description line
@@ -407,10 +407,10 @@
 		if(!empty($cssClass)) $classes .= ' '.$cssClass;
 		
 		// begin option line
-		echo '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">';
+		echo '<div id="'.$fieldName1.'_'.$fieldName2.'_line" class="optionline '.$classes.'">';
 		
 		// write input
-		echo '	<label id="'.$fieldName.'_label" class="'.$classes.' leftbound" for="'.$fieldName.'">'.$title.'</label>';
+		echo '	<label id="'.$fieldName1.'_'.$fieldName2.'_label" class="'.$classes.' leftbound" for="'.$fieldName1.'">'.$title.'</label>';
 		
 		echo '	<input maxlength="4" class="'.$classes.'" type="text" name="'.$fieldName1.'" id="'.$fieldName1.'" value="'.$value1.'" onKeyPress="return grain_numbersonly(this, event)" />';
 		echo '	<span class="separator">'.__("&times;", "grain").'</span>';
@@ -418,12 +418,12 @@
 		
 		// quickinfo
 		if( !empty($unit) ) {
-			echo '	<span class="'.$class.'" id="'.$fieldName.'_info">'.$unit.'</span>';
+			echo '	<span class="'.$classes.'" id="'.$fieldName1.'_'.$fieldName2.'_info">'.$unit.'</span>';
 		}
 		
 		// description line
 		if( !empty($descriptionLine) ) {
-			echo '	<div class="description input_pad" id="'.$fieldName.'_desc">'.$descriptionLine.'</div>';
+			echo '	<div class="description input_pad" id="'.$fieldName1.'_'.$fieldName2.'_desc">'.$descriptionLine.'</div>';
 		}
 		
 		// end option line

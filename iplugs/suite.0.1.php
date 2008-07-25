@@ -33,6 +33,7 @@
 
 		$cats = get_categories('orderby=name&order=asc&hide_empty=true');
 
+		$counts = 0;
 		foreach ($cats as $cat)
 		{
 			$catlink = get_category_link($cat->cat_ID);

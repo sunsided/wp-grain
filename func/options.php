@@ -335,7 +335,7 @@
 		 */
 		function getFormatted($keyName, $doFilter=FALSE) 
 		{
-			$value = $this->get($keyName, $doFiler);
+			$value = $this->get($keyName, $doFilter);
 			return attribute_escape($value);
 		}
 		

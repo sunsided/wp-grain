@@ -311,16 +311,16 @@
 			$value = htmlentities($GrainPostOpt->get($optionName, FALSE));
 
 			// Get a field name, if unset
-			$htmlFieldName = strtolower($postOption);
-			$htmlFieldID = strtolower($postOption);
-			if( empty($title) ) $title = $shortDesc;
+			$htmlFieldName = strtolower($optionName);
+			$htmlFieldID = strtolower($optionName);
+			if( empty($title) ) $title = $quickInfo;
 
 			// get css class
 			$classes = $lineCSS;
 			if(!empty($cssClass)) $classes .= ' '.$cssClass;
 			
 			// begin option line
-			$markup  = '<div id="'.$fieldName.'_line" class="optionline '.$lineCSS.'">';
+			$markup  = '<div id="'.$htmlFieldName.'_line" class="optionline '.$lineCSS.'">';
 			
 			// add input handler
 			$handler = "";
@@ -345,7 +345,7 @@
 					$quickInfo = "<strike title=\"".$this->no_HTML."\">(HTML)</strike>";
 				}
 
-				$markup .= '	<span class="'.$class.'" id="'.$fieldName.'_info">'.$quickInfo.'</span>';
+				$markup .= '	<span class="'.$class.'" id="'.$htmlFieldName.'_info">'.$quickInfo.'</span>';
 			}
 			
 			// description line
@@ -423,14 +423,14 @@
 			// Get a field name, if unset
 			$htmlFieldName = strtolower($optionName);
 			$htmlFieldID = strtolower($optionName);
-			if( empty($title) ) $title = $shortDesc;
+			if( empty($title) ) $title = $quickInfo;
 
 			// get css class
 			$classes = "combobox";
 			if(!empty($cssClass)) $classes .= ' '.$cssClass;
 			
 			// begin option line
-			$markup  = '<div id="'.$htmlFieldID.'_line" class="optionline '.$lineCSS.'">'.PHP_EOL;
+			$markup  = '<div id="'.$htmlFieldID.'_line" class="optionline '.$classes.'">'.PHP_EOL;
 			
 			// write input
 			$markup .= '	<label id="'.$htmlFieldID.'_label" class="'.$classes.' leftbound" for="'.$htmlFieldName.'">'.$title.'</label>'.PHP_EOL;	
@@ -454,7 +454,7 @@
 			
 			// quickinfo
 			if( !empty($quickInfo) ) {
-				$markup .= '	<span class="'.$class.'" id="'.$htmlFieldID.'_info">'.$quickInfo.'</span>';
+				$markup .= '	<span class="'.$classes.'" id="'.$htmlFieldID.'_info">'.$quickInfo.'</span>';
 			}
 			
 			// description line
