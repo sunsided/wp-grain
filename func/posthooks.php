@@ -191,16 +191,19 @@
 				$rows[] = "<div style=\"display:$display;\" id=\"grainopt-set-".$field."\"><fieldset>";
 				$rows[] = "<legend>".$options["label"]."</legend>";
 			
-				foreach($options["fields"] as $option) {
-					if( empty($option) ) continue;
+				if(!empty($options) && !empty($options["fields"]))
+				{
+					foreach($options["fields"] as $option) {
+						if( empty($option) ) continue;
 				
-					// build the markup
-					$markup  = '<div id="option-'.(++$i).'" class="grain_option_row">';
-					$markup .= $option;
-					$markup .= "</div>";
-					
-					// append
-					$rows[] = $markup;
+						// build the markup
+						$markup  = '<div id="option-'.(++$i).'" class="grain_option_row">';
+						$markup .= $option;
+						$markup .= "</div>";
+						
+						// append
+						$rows[] = $markup;
+					}
 				}
 				
 				$rows[] = "</fieldset></div>";
