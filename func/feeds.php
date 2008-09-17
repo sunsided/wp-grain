@@ -25,7 +25,7 @@
 	 */
 	function grain_feedembed_ccrdf() 
 	{
-		echo grain_cc_rdf();
+		echo grain_embed_cc_rdf();
 	}
 		
 	/* icon embedding */
