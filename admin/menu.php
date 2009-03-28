@@ -502,7 +502,7 @@
 						"Grain ".GRAIN_THEME_VERSION_BASE, 
 						'edit_themes',
 						$grain_page,
-						"grain_build_admin_screen");
+						"grain_adminpage_landingzone");
 
 		// add theme pages
 		add_submenu_page( $grain_page,
