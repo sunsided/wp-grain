@@ -164,7 +164,7 @@
 					?>				
 				</fieldset>
 
-				<h2><?php _e("Archives Sidebar"); ?></h2>
+				<h2><?php _e("Archives Sidebar", "grain"); ?></h2>
 
 				<fieldset>
 					<?php

@@ -46,7 +46,7 @@
 		<div id="nonJsForm">
 			<form method="post" action="">
 			
-				<h2 id="first"><?php _e("Navigation"); ?></h2>
+				<h2 id="first"><?php _e("Navigation", "grain"); ?></h2>
 					<div class="zerosize"><input type="submit" name="defaultsubmit" value="Save" /></div>
 				
 				<fieldset>
