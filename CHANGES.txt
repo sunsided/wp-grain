@@ -1,4 +1,8 @@
-﻿0.3
+﻿0.3.1 (work in progress)
+Fix: "Archive Sidebar" and "Navigation" not localizable
+Fix: PHP warning on the admin entry page
+
+0.3
 Add: Sidebars now have additional CSS styles applied describing their position
 Add: Grain version number now is extended by "dev" in the HTML header if it was taken from a development branch
 Add: The administration now shows an error message if YAPB was not installed.
