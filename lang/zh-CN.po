@@ -1,0 +1,1918 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Grain 0.3 beta 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-06-24 19:11+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: stone <code0513@gmail.com>\n"
+"Language-Team: stone <code0513@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\\.\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: ..\./404.php:15
+msgid "Error 404 - Not found!"
+msgstr "HTTP 404 - 未找到文件！"
+
+#: ..\./404.php:16
+msgid "Would you like to search for something?"
+msgstr "您需要进行一次搜索吗？"
+
+#: ..\./archive.php:20
+msgid "Archive for category %CATEGORY."
+msgstr " %CATEGORY分类的存档。"
+
+#: ..\./archive.php:29
+msgid "Archive for tag %TAG."
+msgstr "%TAG标签的存档。"
+
+#: ..\./archive.php:38
+msgid "Daily archive for %DATE."
+msgstr "%DATE的日度存档。"
+
+#: ..\./archive.php:49
+msgid "Monthly archive for %DATE."
+msgstr "%DATE的月度存档。"
+
+#: ..\./archive.php:57
+msgid "Yearly archive for %YEAR."
+msgstr "%YEAR年的年度存档。"
+
+#: ..\./archive.php:64
+#: ..\./search.php:16
+msgid "Search results"
+msgstr "搜索结果"
+
+#: ..\./archive.php:67
+msgid "Archive of authors"
+msgstr "作者存档"
+
+#: ..\./archive.php:70
+msgid "Blog archive"
+msgstr "博客存档"
+
+#: ..\./archive.php:76
+#: ..\./archive.php:97
+#: ..\./search.php:19
+#: ..\./search.php:43
+msgid "&laquo; next page"
+msgstr "&laquo; 下一页"
+
+#: ..\./archive.php:77
+#: ..\./archive.php:98
+#: ..\./search.php:20
+#: ..\./search.php:44
+msgid "previous page &raquo;"
+msgstr "上一页 &raquo;"
+
+#: ..\./archives.php:19
+msgid "Archive cloud"
+msgstr "标签云"
+
+#: ..\./archives.php:31
+msgid "Archives by years"
+msgstr "年度存档"
+
+#: ..\./archives.php:43
+msgid "Archives by months"
+msgstr "月度存档"
+
+#: ..\./archives.php:48
+msgid "Archives by categories"
+msgstr "分类目录存档"
+
+#: ..\./comments-popup.php:35
+msgid "Comments are closed - You are not supposed to be here."
+msgstr "本文的评论功能被关闭 - 请您离开本页面。"
+
+#: ..\./comments-popup.php:98
+msgid "The permalink address <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> of this photo is:"
+msgstr "这张相片的固定链接地址 <acronym title=\"Uniform Resource Identifier(统一资源标志符)\">(URI)</acronym> 是："
+
+#: ..\./comments.php:17
+msgid "The comments are password protected, too"
+msgstr "评论也已被密码保护。"
+
+#: ..\./comments.php:48
+msgid "Comments (%)"
+msgstr "(%) 条评论"
+
+#: ..\./comments.php:60
+msgid "RSS feed for comments on this photo"
+msgstr "这张相片的评论 RSS Feed"
+
+#: ..\./comments.php:62
+msgid "Syndication"
+msgstr "联合供稿"
+
+#: ..\./comments.php:69
+msgid "The <acronym title=\"Uniform Resource Identifier\">(URI)</acronym> to TrackBack this photo is:"
+msgstr "这张相片的 TrackBack <acronym title=\"Uniform Resource Identifier(统一资源标志符)\">(URI)</acronym> 是："
+
+#: ..\./comments.php:124
+#: ..\./comments.php:173
+msgid "Trackback"
+msgstr "Trackback"
+
+#: ..\./comments.php:124
+#: ..\./comments.php:173
+msgid "Pingback"
+msgstr "Pingback"
+
+#: ..\./comments.php:129
+msgid "no website"
+msgstr "没有网站"
+
+#: ..\./comments.php:130
+msgid "post author"
+msgstr "文章作者"
+
+#: ..\./comments.php:165
+msgid "%AUTHOR &#8212; %DATE at %TIME"
+msgstr "%AUTHOR &#8212; %DATE %TIME"
+
+#: ..\./comments.php:173
+msgid "Comment"
+msgstr "评论"
+
+#: ..\./comments.php:185
+msgid "Be the first to comment!"
+msgstr "第一个发表评论！"
+
+#: ..\./comments.php:190
+msgid "Leave a comment"
+msgstr "发表评论"
+
+#: ..\./comments.php:191
+msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed: "
+msgstr "您的评论将自动分行或段，电子邮件也不会显示出来，允许的 <acronym title=\"Hypertext Markup Language(超文本置标语言)\">HTML</acronym> 标签："
+
+#: ..\./comments.php:201
+msgid "Your are logged in as"
+msgstr "您的登录帐号："
+
+#: ..\./comments.php:203
+msgid "logout"
+msgstr "退出"
+
+#: ..\./comments.php:203
+msgid "Logout &raquo;"
+msgstr "退出 &raquo;"
+
+#: ..\./comments.php:241
+msgid "Your Name:"
+msgstr "您的昵称："
+
+#: ..\./comments.php:255
+msgid "E-mail (invisible):"
+msgstr "电子邮箱 (不被显示)："
+
+#: ..\./comments.php:269
+msgid "Website (<acronym title=\"Uniform Resource Locator\">URL</acronym>):"
+msgstr "个人主页 (<acronym title=\"Uniform Resource Locator(统一资源定位符)\">URL</acronym>)："
+
+#: ..\./comments.php:277
+msgid "Your comment:"
+msgstr "您的评论："
+
+#: ..\./comments.php:291
+msgid "Say it!"
+msgstr "就说这些！"
+
+#: ..\./comments.php:304
+msgid "bookmark me at photoblogs.org"
+msgstr "在 photoblogs.org 把我加入收藏"
+
+#: ..\./comments.php:318
+msgid "vote for me at CoolPhotoblogs"
+msgstr "在 CoolPhotoblogs 投票支持我"
+
+#: ..\./comments.php:327
+msgid "Sorry, the comment form is closed at this time."
+msgstr "抱歉，本文评论已关闭。"
+
+#: ..\./exif-block.php:22
+#: ..\./exif-block.php:45
+msgid "EXIF information"
+msgstr "EXIF 信息"
+
+#: ..\./footer.php:39
+msgid "{BLOG} is proudly powered by {WP} and {GRAIN}"
+msgstr "{BLOG} is proudly powered by {WP} and {GRAIN}"
+
+#: ..\./footer.php:48
+msgid "edit post"
+msgstr "编辑文章"
+
+#: ..\./footer.php:63
+msgid "Copyright"
+msgstr "Copyright"
+
+#: ..\./header.menu.php:40
+msgid "&laquo; previous"
+msgstr "&laquo; 上一张"
+
+#: ..\./header.menu.php:41
+msgid "next &raquo;"
+msgstr "下一张 &raquo;"
+
+#: ..\./header.menu.php:70
+msgid "Permalink for: "
+msgstr "生成固定链接："
+
+#: ..\./header.menu.php:70
+msgid "Permalink"
+msgstr "固定链接："
+
+#: ..\./header.menu.php:78
+msgid "go to the newest photo"
+msgstr "浏览最新相片"
+
+#: ..\./header.menu.php:78
+msgid "newest"
+msgstr "最新的"
+
+#: ..\./header.menu.php:84
+msgid "random"
+msgstr "随机浏览"
+
+#: ..\./header.menu.php:92
+msgid "To the overview"
+msgstr "前往概览"
+
+#: ..\./header.menu.php:101
+msgid "about &amp; information"
+msgstr "关于 &amp; 信息"
+
+#: ..\./header.menu.php:101
+msgid "about"
+msgstr "关于"
+
+#: ..\./header.php:34
+msgid "Comments RSS Feed"
+msgstr "评论 RSS Feed"
+
+#: ..\./index.php:91
+msgid "There is currently no page to display. Please check back later."
+msgstr "当前没有页面显示，请稍后访问。"
+
+#: ..\./mosaic.php:21
+msgid "&laquo; previous page"
+msgstr "&laquo; 上一页"
+
+#: ..\./mosaic.php:22
+msgid "next page &raquo;"
+msgstr "下一页 &raquo;"
+
+#: ..\./page.php:19
+msgid "Read the whole story..."
+msgstr "阅读完整叙述..."
+
+#: ..\./page.php:21
+msgid "Pages:"
+msgstr "页面："
+
+#: ..\./searchform.php:12
+msgid "search"
+msgstr "搜索"
+
+#: ..\./sidebar.php:31
+msgid "You are browsing the archive for the category '%CATEGORY'."
+msgstr "您正在浏览“%CATEGORY”分类的博客存档。"
+
+#: ..\./sidebar.php:41
+msgid "You are browsing the %BLOG archive for %DAY, %DATE."
+msgstr "您正在浏览 %DAY, %DATE 的%BLOG博客存档。"
+
+#: ..\./sidebar.php:53
+msgid "You are browsing the %BLOG archive for the month %DATE."
+msgstr "您正在浏览 %DATE 的%BLOG博客存档。"
+
+#: ..\./sidebar.php:64
+msgid "You are browsing the %BLOG archive for the year %YEAR."
+msgstr "您正在浏览 %YEAR 年的%BLOG博客存档。"
+
+#: ..\./sidebar.php:75
+msgid "You have searched the %BLOG archives for <strong>%SEARCH</strong>. If you are unable to find anything in these search results, you can try one of these links."
+msgstr "您已用关键字<strong>%SEARCH</strong>对%BLOG博客存档进行了搜索。如果您无法从搜索结果中找到任何东西，尝试一下那些链接。"
+
+#: ..\./sidebar.php:84
+msgid "You are browsing the %BLOG archive."
+msgstr "您正在浏览%BLOG博客存档。"
+
+#: ..\./sidebar.php:92
+msgid "Pages"
+msgstr "页面"
+
+#: ..\./sidebar.php:109
+msgid "Archives by month"
+msgstr "月度存档"
+
+#: ..\./sidebar.php:115
+msgid "Categories"
+msgstr "分类目录"
+
+#: ..\./sidebar.php:122
+msgid "Most commented"
+msgstr "评论最多的"
+
+#: ..\./sidebar.php:137
+msgid "Meta"
+msgstr "功能"
+
+#: ..\./sidebar.php:153
+msgid "Syndicate"
+msgstr "联合供稿"
+
+#: ..\./admin/common.ajax.php:61
+msgid "loading ..."
+msgstr "读取中..."
+
+#: ..\./admin/menu.php:40
+msgid "No HTML here"
+msgstr "HTML 不可用"
+
+#: ..\./admin/menu.php:47
+msgid "HTML allowed here"
+msgstr "HTML 可用"
+
+#: ..\./admin/menu.php:104
+msgid "(numbers only)"
+msgstr "(仅数字)"
+
+#: ..\./admin/menu.php:416
+msgid "&times;"
+msgstr "&times;"
+
+#: ..\./admin/menu.php:486
+msgid "Configure Grain"
+msgstr "配置 Grain"
+
+#: ..\./admin/menu.php:509
+#: ..\./admin/menu.php:510
+#: ..\./admin/page.landingzone.php:106
+msgid "General Settings"
+msgstr "常规设置"
+
+#: ..\./admin/menu.php:516
+msgid "Navigation Settings"
+msgstr "导航设置"
+
+#: ..\./admin/menu.php:517
+#: ..\./admin/page.landingzone.php:111
+#: ..\./admin/page.navigation.php:49
+msgid "Navigation"
+msgstr "导航"
+
+#: ..\./admin/menu.php:523
+#: ..\./admin/menu.php:524
+#: ..\./admin/page.landingzone.php:116
+msgid "Styling and Layout"
+msgstr "样式和布局"
+
+#: ..\./admin/menu.php:530
+#: ..\./admin/menu.php:531
+#: ..\./admin/page.copyright.php:49
+#: ..\./admin/page.landingzone.php:121
+msgid "Copyright Settings"
+msgstr "版权设置"
+
+#: ..\./admin/menu.php:537
+#: ..\./admin/page.datetime.php:45
+msgid "Date and Time Settings"
+msgstr "日期和时间设置"
+
+#: ..\./admin/menu.php:538
+#: ..\./admin/page.landingzone.php:126
+msgid "Date and Time"
+msgstr "日期和时间"
+
+#: ..\./admin/menu.php:549
+msgid "Yet Another Photoblog (Plugin Options)"
+msgstr "Yet Another Photoblog (插件设置)"
+
+#: ..\./admin/menu.php:550
+msgid "YAPB"
+msgstr "YAPB"
+
+#: ..\./admin/menu.php:556
+#: ..\./admin/menu.php:557
+msgid "Widgets"
+msgstr "小工具"
+
+#: ..\./admin/menu.php:639
+msgid "The YAPB plugin could not be found."
+msgstr "未找到 YAPB 插件。"
+
+#: ..\./admin/menu.php:639
+msgid "Yet Another Photoblog"
+msgstr "Yet Another Photoblog"
+
+#: ..\./admin/menu.php:639
+msgid "Click for more information"
+msgstr "点击查看更多信息"
+
+#: ..\./admin/page.copyright.php:41
+#: ..\./admin/page.datetime.php:37
+#: ..\./admin/page.general.php:38
+#: ..\./admin/page.navigation.php:40
+#: ..\./admin/page.styling.php:42
+msgid "Changes saved"
+msgstr "更改已保存"
+
+#: ..\./admin/page.copyright.php:53
+msgid "Copyright Holder"
+msgstr "版权持有人"
+
+#: ..\./admin/page.copyright.php:55
+msgid "Here you can enter your copyright information and tell Grain how to display them."
+msgstr "您可以在这里输入版权信息并告诉 Grain 怎样显示它们。"
+
+#: ..\./admin/page.copyright.php:57
+msgid "% is always the current year"
+msgstr "% 始终为今年"
+
+#: ..\./admin/page.copyright.php:58
+msgid "First copyright year:"
+msgstr "第一版权年："
+
+#: ..\./admin/page.copyright.php:59
+msgid "Last copyright year:"
+msgstr "最终版权年："
+
+#: ..\./admin/page.copyright.php:61
+msgid "i.e. <code>%OFFSET</code> to get <code>%SUMMED_YEAR</code> if the end year is <code>%YEAR</code>"
+msgstr "即如果最后一年为 <code>%YEAR</code>，由 <code>%OFFSET</code> 得出 <code>%SUMMED_YEAR</code>"
+
+#: ..\./admin/page.copyright.php:63
+msgid "Offset to end year:"
+msgstr "剩余版权年限："
+
+#: ..\./admin/page.copyright.php:65
+msgid "Here you can configure the informational text, e.g. your name and a licensing info."
+msgstr "您可以在这里设置文本信息，例如您的姓名和许可信息。"
+
+#: ..\./admin/page.copyright.php:67
+msgid "Copyright holder:"
+msgstr "版权持有人："
+
+#: ..\./admin/page.copyright.php:67
+msgid "Keep this short, e.g. <code>\"John Doe\"</code>. This info will be embedded in the page's meta header."
+msgstr "保持简短，例如<code>“春丽”</code>。此信息将被嵌入页面头部信息。"
+
+#: ..\./admin/page.copyright.php:68
+msgid "Full copyright holder and info:"
+msgstr "完整的版权持有人信息："
+
+#: ..\./admin/page.copyright.php:68
+msgid "e.g. <code>\"John Doe. All rights reserved.\"</code> This info will be visible to the visitor."
+msgstr "例如<code>“春丽版权所有”</code>。此信息将被公示。"
+
+#: ..\./admin/page.copyright.php:74
+msgid "Imprint Page"
+msgstr "发行说明"
+
+#: ..\./admin/page.copyright.php:76
+msgid "Grain uses <a href=\"http://dublincore.org/\" target=\"_blank\">Dublin Core</a> meta tags to describe your blog. If you have an imprint page you may set it here.<br />If you do not have an imprint or do not want to propagate it through the DC meta tag the field can be left empty."
+msgstr "Grain 使用 <a href=\"http://dublincore.org/\" target=\"_blank\">Dublin Core</a> meta tags 来描述您的博客。如果您有一个发行说明，您可以在这里设置。<br />如果您没有一个发行说明或不想通过 DC meta tag 传播，您可以留空它。"
+
+#: ..\./admin/page.copyright.php:77
+msgid "Imprint URL:"
+msgstr "发行说明 URL："
+
+#: ..\./admin/page.copyright.php:77
+msgid "The URL to your imprint page. Leave empty if you do not want to embed an <code>DC.Rights</code> meta tag."
+msgstr "您的发行说明的链接地址。如果您不想嵌入一个 <code>DC.Rights</code> meta tag，请留空它。"
+
+#: ..\./admin/page.copyright.php:81
+msgid "Creative Commons License"
+msgstr "创作共用许可"
+
+#: ..\./admin/page.copyright.php:84
+msgid "Embedding a Creative Commons License"
+msgstr "嵌入一个创作共用许可"
+
+#: ..\./admin/page.copyright.php:87
+msgid "If you like to, you can publish your photos under a <a href=\"http://creativecommons.org/\" target=\"_blank\">Creative Commons</a> License. You can choose a license <a href=\"http://creativecommons.org/license/?lang=%LANGCODE\" target=\"_blank\">here</a>."
+msgstr "如果您愿意，您可以在 <a href=\"http://creativecommons.org/\" target=\"_blank\">创作共用</a> 许可下发布您的相片。您可以在 <a href=\"http://creativecommons.org/license/?lang=%LANGCODE\" target=\"_blank\">这里</a> 选择一个许可。"
+
+#: ..\./admin/page.copyright.php:91
+msgid "Copyright:"
+msgstr "版权："
+
+#: ..\./admin/page.copyright.php:91
+msgid "Embed Creative Commons license"
+msgstr "嵌入创作共用许可"
+
+#: ..\./admin/page.copyright.php:91
+msgid "Unchecking this option will remove the Creative Commons Logo, the textual message, as well as the embedded <a target=\"_blank\" href=\"http://en.wikipedia.org/wiki/Resource_Description_Framework\">RDF</a> (if any). This is the way to go if you want your photos to be published as, e.g. \"All rights reserved\"."
+msgstr "取消选中此选项将会移除嵌入在 <a target=\"_blank\" href=\"http://en.wikipedia.org/wiki/Resource_Description_Framework(资源描述框架)\">RDF</a> (如果有)中的创作共用许可的标志和文字信息。如果您想让发布的相片“保留最终解释权”，这是可行的方法。"
+
+#: ..\./admin/page.copyright.php:92
+msgid "The license's HTML code:"
+msgstr "许可的 HTML 代码："
+
+#: ..\./admin/page.copyright.php:92
+msgid "To simplify CSS styling of the theme, all occurrences of <code>&lt;br /&gt;</code>, <code>&lt;br/&gt;</code> and <code>&lt;br&gt;</code> tags will be removed when embedding the code."
+msgstr "为了简化主题的 CSS 样式，当嵌入代码的时候，所有 <code>&lt;br /&gt;</code>, <code>&lt;br/&gt;</code> 和 <code>&lt;br&gt;</code> 标签事件将被移除。"
+
+#: ..\./admin/page.copyright.php:94
+msgid "In addition to the code above you can choose to embed an <acronym title=\"Resource Description Framework\">RDF</acronym> representation - a machine readable version - of the license. The RDF will be embedded on the website and can also be integrated in your newsfeeds, if you choose to enable that."
+msgstr "除了以上代码，您可以选择嵌入一个 <acronym title=\"Resource Description Framework(资源描述框架)\">RDF</acronym> 代码 - 一个机读版本的许可。如果您选择启用，RDF 将被嵌入在您的网页中，并且也能容进您的新闻订阅。"
+
+#: ..\./admin/page.copyright.php:96
+msgid "The RDF code for the license you selected can be found by downloading and opening the template for the PDF or XML embedding on the license selection page. The code begins with <code>&lt;rdf:RDF ...</code> and ends with <code>&lt;/rdf:RDF&gt;</code>."
+msgstr "您可以通过下载和打开嵌入在许可选择页面里的 PDF 或 XML 的模板找到您选择的许可的 RDF 代码。代码以 <code>&lt;rdf:RDF ...</code> 开始以 <code>&lt;/rdf:RDF&gt;</code> 结束。"
+
+#: ..\./admin/page.copyright.php:97
+msgid "You can validate RDF encoded licenses and RDF enabled content with the <a href=\"http://validator.creativecommons.org/\" target=\"_blank\">CC RDF License Validator</a>."
+msgstr "您能通过 <a href=\"http://validator.creativecommons.org/\" target=\"_blank\">CC RDF License Validator</a> 确认 RDF 编码许可和 RDF 启用内容。"
+
+#: ..\./admin/page.copyright.php:98
+msgid "The license's RDF code:"
+msgstr "许可的 RDF 代码："
+
+#: ..\./admin/page.copyright.php:99
+msgid "Embed RDF in Newsfeeds:"
+msgstr "在 Newsfeeds 里嵌入 RDF："
+
+#: ..\./admin/page.copyright.php:99
+msgid "Embed the RDF in the Atom and RSS feeds"
+msgstr "在 Atom 和 RSS feeds 里嵌入 RDF"
+
+#: ..\./admin/page.copyright.php:99
+msgid "<strong>Use this with caution!</strong> Enable this option only if you are sure what you are doing! Faulty RDF markup may render your newsfeeds invalid or even unusable. Test your newsfeeds thoroughly when enabling this!"
+msgstr "<strong>使用时要相当注意！</strong>启用这个选项仅在您确定知道您要做什么！错误的 RDF 标识可能会导致您的 newsfeeds 失效甚至无效。 当您启用此选项时，请彻底测试您的 newsfeeds。"
+
+#: ..\./admin/page.copyright.php:104
+#: ..\./admin/page.datetime.php:147
+#: ..\./admin/page.general.php:186
+#: ..\./admin/page.navigation.php:137
+#: ..\./admin/page.styling.php:186
+msgid "Factory Defaults"
+msgstr "默认设置"
+
+#: ..\./admin/page.copyright.php:105
+#: ..\./admin/page.datetime.php:148
+#: ..\./admin/page.general.php:187
+#: ..\./admin/page.navigation.php:138
+#: ..\./admin/page.styling.php:187
+msgid "Save Settings"
+msgstr "保存设置"
+
+#: ..\./admin/page.datetime.php:49
+msgid "For information on date and time formatting codes refer to the PHP manual entry of <a href=\"http://www.php.net/date\" target=\"_blank\">the <code>date()</code> function</a>."
+msgstr "如需有关日期和时间格式的代码请参考 PHP 手册，进入 <a href=\"http://www.php.net/date\" target=\"_blank\">the <code>date()</code> function</a>。"
+
+#: ..\./admin/page.datetime.php:50
+msgid "If you want to include a specific text in the format, such as \"<code>o'clock</code>\", you may include it in curly braces, e.g. \"<code>{o'clock'}</code>\""
+msgstr "如果您想输入一个指定的文本形式，例如 \"<code>o'clock</code>\"，您可以在大括号内输入这个文本，例如 \"<code>{o'clock'}</code>\"。"
+
+#: ..\./admin/page.datetime.php:54
+msgid "Some examples"
+msgstr "一些例子"
+
+#: ..\./admin/page.datetime.php:59
+msgid "format"
+msgstr "格式"
+
+#: ..\./admin/page.datetime.php:60
+msgid "result"
+msgstr "结果"
+
+#: ..\./admin/page.datetime.php:100
+msgid "Archive settings"
+msgstr "存档设置"
+
+#: ..\./admin/page.datetime.php:102
+#: ..\./admin/page.datetime.php:107
+#: ..\./admin/page.datetime.php:117
+#: ..\./admin/page.datetime.php:122
+#: ..\./admin/page.datetime.php:135
+#: ..\./admin/page.datetime.php:140
+msgid "The current selection (<code>%FORMAT</code>) results in '<code>%RESULT</code>' for the current time."
+msgstr "当前选择 (<code>%FORMAT</code>) 时间显示为 \"<code>%RESULT</code>\"。"
+
+#: ..\./admin/page.datetime.php:105
+msgid "Daily Archive:"
+msgstr "日度存档："
+
+#: ..\./admin/page.datetime.php:105
+msgid "The date or time format in the archive for a specific day."
+msgstr "特定日存档的日期或时间格式。"
+
+#: ..\./admin/page.datetime.php:110
+msgid "Monthly Archive:"
+msgstr "月度存档："
+
+#: ..\./admin/page.datetime.php:110
+msgid "The date or time format in the archive for a specific month."
+msgstr "特定月存档的日期或时间格式。"
+
+#: ..\./admin/page.datetime.php:115
+msgid "Photo Info"
+msgstr "相片信息"
+
+#: ..\./admin/page.datetime.php:120
+msgid "Publication date:"
+msgstr "发布日期："
+
+#: ..\./admin/page.datetime.php:120
+msgid "The date and time format for the photo's 'published' date."
+msgstr "照片“出版”日期的日期与时间格式。"
+
+#: ..\./admin/page.datetime.php:125
+msgid "(EXIF filtering is currently enabled.)"
+msgstr "(EXIF 过滤当前启用。)"
+
+#: ..\./admin/page.datetime.php:126
+msgid "(EXIF filtering is currently disabled.)"
+msgstr "(EXIF 过滤当前禁用。)"
+
+#: ..\./admin/page.datetime.php:128
+msgid "EXIF dates:"
+msgstr "EXIF 日期："
+
+#: ..\./admin/page.datetime.php:128
+msgid "The timestamp format used for some EXIF fields if EXIF quickfiltering is enabled."
+msgstr "如果启用 EXIF quickfiltering，时间戳格式将会被用于一些 EXIF 数据。"
+
+#: ..\./admin/page.datetime.php:133
+msgid "Per comment"
+msgstr "每条评论"
+
+#: ..\./admin/page.datetime.php:138
+msgid "Date of comment:"
+msgstr "评论日期："
+
+#: ..\./admin/page.datetime.php:138
+msgid "The date format for a comment."
+msgstr "评论的日期格式。"
+
+#: ..\./admin/page.datetime.php:143
+msgid "Time of comment:"
+msgstr "评论时间："
+
+#: ..\./admin/page.datetime.php:143
+msgid "The time format for a comment."
+msgstr "评论的时间格式。"
+
+#: ..\./admin/page.general.php:46
+msgid "Info and commenting mode"
+msgstr "信息和评论模式"
+
+#: ..\./admin/page.general.php:50
+msgid "Basic behavior"
+msgstr "基本行为"
+
+#: ..\./admin/page.general.php:53
+msgid "Discussion"
+msgstr "讨论"
+
+#: ..\./admin/page.general.php:54
+msgid "Most probably you want to leave this enabled to receive feedback. But maybe you really just want to <em>show</em> your photos. This is the showcase option then: If you disable it, visitors will neither be able to comment (which is a standard feature) nor to view any existing comments. You may then also want to disable WordPress' commenting options on the %LINK screen altogether to prevent comments coming in through track-/pingbacks or backdoors."
+msgstr "很有可能您想启用它以接收信息反馈，但是也许您只想<em>展示</em>您的相片。这是一个展示选项：如果您禁用它，访客将既不能发表评论(这是一个标准功能)也不能阅读已有评论。您也可能想一起禁用 Wordpress 在 %LINK 这个屏幕上的评论选项，用来防止经由 track-/pingbacks 和 backdoors 产生的评论。"
+
+#: ..\./admin/page.general.php:56
+msgid "Enable comments:"
+msgstr "启用评论："
+
+#: ..\./admin/page.general.php:56
+msgid "Allow visitors to comment or view existing comments"
+msgstr "允许访客评论或阅读已有评论"
+
+#: ..\./admin/page.general.php:57
+msgid "No popups!"
+msgstr "禁止弹出！"
+
+#: ..\./admin/page.general.php:57
+msgid "Don't use a popup to display an image's info and commenting form"
+msgstr "不使用弹出窗口来显示图像信息和评论表单"
+
+#: ..\./admin/page.general.php:57
+msgid "If you enable this, the \"Extended Info page\" mechanism will be used. This is a replacement for the older comments popup, showing the info and comments on the same page as the photo. One will still have to click the comments link to display it, though.<br />If you prefer a popup for that task, disable this option."
+msgstr "如果您启用它，“扩展信息页面”机制将被启动。它取代了旧式的弹出式评论，点击评论链接，信息及评论将和相片显示在同一页面上。<br />如果您更喜欢弹出式，请禁用此选项。"
+
+#: ..\./admin/page.general.php:58
+msgid "Always show info:"
+msgstr "一直显示信息："
+
+#: ..\./admin/page.general.php:58
+msgid "Always show photo title/description regardless of the popup setting above"
+msgstr "不管上面的弹出如何设置，总是显示相片的标题和描述"
+
+#: ..\./admin/page.general.php:58
+msgid "If you always want to display the photo's title and it's description on the photo page, enable this option. If you uncheck this option and have the popups disabled (enabled the option above that is), be aware that the user won't see any information about your photo. (They would be shown on the popup, but you disabled it.)"
+msgstr "如果您想一直在相片主页面上显示相片的标题和描述信息，请启用此选项。如果您取消选中选项并禁用弹出(在上面可以开启)，注意访客将看不到任何关于相片的信息(这些信息在弹出中显示，但是您禁用了弹出)。"
+
+#: ..\./admin/page.general.php:64
+msgid "Basic behavior II"
+msgstr "基本行为 II"
+
+#: ..\./admin/page.general.php:66
+msgid "Comments always allowed:"
+msgstr "总是允许评论："
+
+#: ..\./admin/page.general.php:66
+msgid "Allow visitors to comment on pages considered \"not ready\""
+msgstr "允许访客在网页上评论“未准备好”"
+
+#: ..\./admin/page.general.php:66
+msgid "Sometimes it happens that a visitor sees a page whose image is not available. Leave this option disabled to prevent access to the comments form in this special case.<br />This also implies that the image infos can be seen."
+msgstr "有时访客会无法访问页面上的图像，禁用此选项以阻止在这个特殊情况下发表评论。<br />这也暗示图像信息能被看到。"
+
+#: ..\./admin/page.general.php:67
+msgid "Directly jump to comments:"
+msgstr "直接跳到评论："
+
+#: ..\./admin/page.general.php:67
+msgid "If the comments popup opens, skip the description text there"
+msgstr "如果开启弹出式评论，则跳过描述文字"
+
+#: ..\./admin/page.general.php:67
+msgid "This option only applies when the info is already shown on the main page, so that the visitor won't have to scroll to the comments on the popup. Rule of thumb: If you tend to write long texts and use the popup, you may want to enable this option."
+msgstr "此选项只适用于当描述信息已经显示在主页面上，这样，评论窗口弹出时访客将直接跳到评论上而不必滚动屏幕。经验：如果您经常写长的描述文字并使用弹出式评论，也许需要启用此选项。"
+
+#: ..\./admin/page.general.php:68
+msgid "Show only excerpts:"
+msgstr "只显示摘录："
+
+#: ..\./admin/page.general.php:68
+msgid "Show only a post's excerpt on a comment popup"
+msgstr "在弹出式评论中只显示文章摘录"
+
+#: ..\./admin/page.general.php:68
+msgid "This option doesn't apply to you if you never use the <code>&lt!--more--&gt</code> tag anyway. If you choose to disable this option and such tag is found in the photo's description text, only the text in front of the tag will be shown. This only applies to the popup; Grain will generally show only the excerpt on a photo page, except when it's in extended view."
+msgstr "如果您从不使用 <code>&lt!--more--&gt</code> 标签，那么此选项不适用于您。即使您选择禁用此选项并使用那个标签，也只有标签前面的文字才被显示。这只适用于弹出式；Grain 一般在相片页面上只显示摘录，除非是在扩展浏览模式下。"
+
+#: ..\./admin/page.general.php:72
+msgid "Info display: Your photo's description"
+msgstr "信息显示：您相片的描述"
+
+#: ..\./admin/page.general.php:74
+msgid "Enable permalink:"
+msgstr "启用固定链接："
+
+#: ..\./admin/page.general.php:74
+#: ..\./admin/page.general.php:75
+msgid "Show the permalink in the image info"
+msgstr "在相片信息里显示固定链接"
+
+#: ..\./admin/page.general.php:74
+msgid "The permalink is an address that won't change. This way a visitor can securely link one of your photo pages. Permalinks are managed by WordPress."
+msgstr "固定链接是个不会改变的地址。这样，访客可以安全的访问您的相片页面。固定链接由 WordPress 管理。"
+
+#: ..\./admin/page.general.php:75
+msgid "Enable comment hint:"
+msgstr "启用评论提示："
+
+#: ..\./admin/page.general.php:75
+msgid "If enabled, Grain shows a link to the comments in the short info display below the image."
+msgstr "如果启用，Grain 将在图像下方以简短信息显示评论的链接。"
+
+#: ..\./admin/page.general.php:76
+msgid "Show Date:"
+msgstr "显示日期："
+
+#: ..\./admin/page.general.php:76
+msgid "Display the date the photo was published"
+msgstr "显示相片发布的日期"
+
+#: ..\./admin/page.general.php:76
+msgid "This shows the date and time the photo page was published in the description text."
+msgstr "在文字描述里显示相片发布的日期和时间。"
+
+#: ..\./admin/page.general.php:80
+#: ..\./admin/page.styling.php:102
+msgid "Info display: EXIF data"
+msgstr "信息显示：EXIF 数据"
+
+#: ..\./admin/page.general.php:85
+msgid "If you understand PHP, you can affect how the EXIF information is displayed by editing the %FILE file.<br /><strong>Hint:</strong> Enable YAPBs EXIF filtering to keep things clean."
+msgstr "如果您了解 PHP，您能通过编辑 %FILE 文件影响 EXIF 信息如何显示。<br /><strong>提示：</strong>启用 YAPBs EXIF filtering 以保持页面干净。"
+
+#: ..\./admin/page.general.php:87
+msgid "Display EXIF info:"
+msgstr "显示 EXIF 信息："
+
+#: ..\./admin/page.general.php:87
+msgid "Show a photo's EXIF information next to the description"
+msgstr "在描述后显示相片的 EXIF 信息"
+
+#: ..\./admin/page.general.php:88
+msgid "Hide EXIF if no content:"
+msgstr "如果没有内容，则隐藏 EXIF："
+
+#: ..\./admin/page.general.php:88
+msgid "Don't show a photo's EXIF information if no content text was given."
+msgstr "如果没有文字内容，则不显示相片的 EXIF 信息。"
+
+#: ..\./admin/page.general.php:92
+msgid "Info display: Categories"
+msgstr "信息显示：分类目录"
+
+#: ..\./admin/page.general.php:94
+msgid "Show category list:"
+msgstr "显示分类目录："
+
+#: ..\./admin/page.general.php:94
+msgid "Shows the categories in which the photo is filed"
+msgstr "显示相片所属类别"
+
+#: ..\./admin/page.general.php:97
+msgid "Begin category list:"
+msgstr "分类目录前："
+
+#: ..\./admin/page.general.php:97
+msgid "This text will be embedded right before the category list. You can put specific markup here to style your theme."
+msgstr "这些文字将被插入在分类目录前。您能在这里输入特定标记用于自定义您的主题。"
+
+#: ..\./admin/page.general.php:98
+msgid "Category list delimiter:"
+msgstr "分类目录符号："
+
+#: ..\./admin/page.general.php:98
+msgid "This will be embedded within the category list to separate two entries."
+msgstr "这将插入在两个分类目录间。"
+
+#: ..\./admin/page.general.php:99
+msgid "End category list:"
+msgstr "分类目录尾："
+
+#: ..\./admin/page.general.php:99
+msgid "This will be embedded right after the category list."
+msgstr "这将被插入在分类目录后。"
+
+#: ..\./admin/page.general.php:103
+msgid "Info display: Tags"
+msgstr "信息显示：标签"
+
+#: ..\./admin/page.general.php:105
+msgid "Show tag list:"
+msgstr "显示标签目录："
+
+#: ..\./admin/page.general.php:105
+msgid "Shows the tags with which the photo is marked"
+msgstr "显示照片所标标签"
+
+#: ..\./admin/page.general.php:107
+msgid "Begin tag list:"
+msgstr "标签目录前："
+
+#: ..\./admin/page.general.php:107
+msgid "This text will be embedded right before the tag list. You can put specific markup here to style your theme."
+msgstr "此文本将被插入在标签目录前。您能在这里输入特定标记用于自定义您的主题。"
+
+#: ..\./admin/page.general.php:108
+msgid "Tag list delimiter:"
+msgstr "标签目录符号："
+
+#: ..\./admin/page.general.php:108
+msgid "This will be embedded within the tag list to separate two entries."
+msgstr "这将插入在两个标签间。"
+
+#: ..\./admin/page.general.php:109
+msgid "End tag list:"
+msgstr "标签目录尾："
+
+#: ..\./admin/page.general.php:109
+msgid "This will be embedded right after the tag list."
+msgstr "这将被插入在标签目录后。"
+
+#: ..\./admin/page.general.php:113
+msgid "Newsfeeds"
+msgstr "Newsfeeds"
+
+#: ..\./admin/page.general.php:116
+msgid "Atom Feed Settings"
+msgstr "Atom Feed 设置"
+
+#: ..\./admin/page.general.php:118
+msgid "Atom Feed:"
+msgstr "Atom Feed:"
+
+#: ..\./admin/page.general.php:118
+msgid "Show the Atom Feed icon next to the RSS feed icon"
+msgstr "在 RSS feed 图标旁边显示 Atom Feed 图标"
+
+#: ..\./admin/page.general.php:122
+msgid "Media RSS Settings"
+msgstr "Media RSS 设置"
+
+#: ..\./admin/page.general.php:124
+msgid "Media RSS:"
+msgstr "Media RSS："
+
+#: ..\./admin/page.general.php:124
+msgid "Enable the Media RSS/MRSS feed"
+msgstr "启用 Media RSS/MRSS feed"
+
+#: ..\./admin/page.general.php:124
+msgid "The <a href=\"http://en.wikipedia.org/wiki/Media_RSS\">Media RSS</a> feed is an extended RSS feed for multimedia applications."
+msgstr "<a href=\"http://en.wikipedia.org/wiki/Media_RSS\">Media RSS</a> feed  是个关于多媒体程序的扩展 RSS Feed。"
+
+#: ..\./admin/page.general.php:124
+msgid "Note that enabling this option may increase the traffic of your blog, depending on the browser."
+msgstr "注意启用此选项也许会影响您博客的访问速度，这取决于您的浏览器。"
+
+#: ..\./admin/page.general.php:125
+msgid "Media RSS items:"
+msgstr "Media RSS 项:"
+
+#: ..\./admin/page.general.php:125
+msgid "Number of recent items in the Media RSS feed. A higher value provides a more detailed representation of your blog but adds more web traffic. A value of zero sets this to the default; a negative number represents no limitation."
+msgstr "Media RSS feed 中最近项目的数字。较高的数值让您的博客提供了更为详细的描述，但是会影响访问速度。设成0时恢复默认值，设成负数代表没有任何限制。"
+
+#: ..\./admin/page.general.php:129
+msgid "Syndication Options"
+msgstr "网摘选项"
+
+#: ..\./admin/page.general.php:133
+msgid "<strong>Hint:</strong> Syndication data can (and has to be) changed in the {FILE} file to reflect your own syndicate. If you are not sure what syndication means or what to do in that file, please disable the Flat Syndication option."
+msgstr "<strong>提示：</strong>网摘数据可以(而且必须)在文件 {FILE} 里改变以映射您自己的。如果您不确定联合供稿是什么或怎样编辑那个文件，请禁用 Flat Syndication 选项。"
+
+#: ..\./admin/page.general.php:138
+msgid "Flat Syndication"
+msgstr "Flat Syndication"
+
+#: ..\./admin/page.general.php:140
+msgid "Flat Syndication:"
+msgstr "Flat Syndication："
+
+#: ..\./admin/page.general.php:140
+msgid "Show ring / syndication info as a list in the blog's footer"
+msgstr "在博客页脚以目录形式显示 ring / syndication 信息"
+
+#: ..\./admin/page.general.php:142
+msgid "Delimiter:"
+msgstr "符号："
+
+#: ..\./admin/page.general.php:142
+msgid "This will be embedded as a separator of the list items."
+msgstr "这将插入在两个目录项间。"
+
+#: ..\./admin/page.general.php:146
+msgid "Localization Options"
+msgstr "本地化选项"
+
+#: ..\./admin/page.general.php:149
+msgid "Secondary Language Options"
+msgstr "第二语言选项"
+
+#: ..\./admin/page.general.php:151
+msgid "Grain has an option that allows you to display photo titles in an additional second language or tho use an additional texts as a subtitle."
+msgstr "Grain 有一个选项可以让您用另外的第二语言或另外的文字显示您的相片标题。"
+
+#: ..\./admin/page.general.php:153
+msgid "2nd Line:"
+msgstr "第二行："
+
+#: ..\./admin/page.general.php:153
+msgid "Enable 2nd line/2nd language support"
+msgstr "启用第二行/第二语言支持"
+
+#: ..\./admin/page.general.php:154
+msgid "2nd line custom field:"
+msgstr "自定义第二行字段："
+
+#: ..\./admin/page.general.php:154
+msgid "The name/key of the custom field that contains the secondary language title.<br />You may want to read the WordPress Codex article on <a title=\"_blank\" href=\"http://codex.wordpress.org/Using_Custom_Fields\">Using Custom Fields</a>."
+msgstr "自定义字段的名字/键值包含了第二语言的标题。<br />您也许想阅读 WordPress Codex 关于 <a title=\"_blank\" href=\"http://codex.wordpress.org/Using_Custom_Fields\">Using Custom Fields(使用自定义字段)</a> 的文章。"
+
+#: ..\./admin/page.general.php:159
+msgid "Auto Locale"
+msgstr "自动本地化"
+
+#: ..\./admin/page.general.php:161
+msgid "Browsers may send an information about their preferred language. Grain can make use of this information to automatically select a translation file, displaying the blog in the visitor's language."
+msgstr "浏览器可能会发送一个有关它所偏好使用的语言信息，Grain 可以使用这些信息自动选择翻译文件以访客的语言展示博客。"
+
+#: ..\./admin/page.general.php:163
+msgid "Enable Auto Locale:"
+msgstr "启用自动本地化："
+
+#: ..\./admin/page.general.php:163
+msgid "Activate visitor based translation"
+msgstr "激活以访客为基础的翻译"
+
+#: ..\./admin/page.general.php:163
+msgid "Grain tries to match a browser's <code>HTTP_ACCEPT_LANGUAGE</code> against a set of locale (<code>*.mo</code>) files in your theme's directory. If no match can be found, the default translation based on your WordPress settings will be used."
+msgstr "Grain 尝试匹配您的浏览器 <code>HTTP_ACCEPT_LANGUAGE</code> 与您的主题目录里的一组本地化 (<code>*.mo</code>) 文件。如果没有找到相匹配的，将根据您的 WordPress 设置采用默认翻译。"
+
+#: ..\./admin/page.general.php:167
+msgid "Archives Sidebar"
+msgstr "存档边栏"
+
+#: ..\./admin/page.general.php:171
+msgid "These settings affect the sidebar you can see when you open an archive page, such as the Mosaic, the category archives etc.<br />Grain is a theme with widget support, so you can easily customize your sidebar in the Widgets menu; These options will only apply if there is no widget plugged into the according sidebar."
+msgstr "这个设置应用在当您打开一个存档页面，在边栏显示的项目，类似 Mosaic，分类存档等。<br />Grain 是一个支持 widget 的主题，所以您能在小工具菜单里轻松自定义您的边栏；这些选项只适用于没有小工具插入相应边栏的情况下。"
+
+#: ..\./admin/page.general.php:174
+msgid "The values in the {FILE} file will be used for that."
+msgstr "文件 {FILE} 里的数值将被用于这个地方。"
+
+#: ..\./admin/page.general.php:175
+msgid "Sidebar Syndication:"
+msgstr "边栏网摘："
+
+#: ..\./admin/page.general.php:175
+msgid "Show Syndication in the Sidebar"
+msgstr "在边栏显示“网摘”"
+
+#: ..\./admin/page.general.php:177
+msgid "Most commented:"
+msgstr "评论最多的："
+
+#: ..\./admin/page.general.php:177
+msgid "List most commented photos"
+msgstr "列出评论最多的相片"
+
+#: ..\./admin/page.general.php:178
+msgid "Show at most:"
+msgstr "最多显示："
+
+#: ..\./admin/page.general.php:178
+msgid "This sets the maximum number of recent comments that will be displayed in the list."
+msgstr "这设定了将会出现在列表上的最近评论的最大数值。"
+
+#: ..\./admin/page.general.php:180
+msgid "Display Calendar:"
+msgstr "显示日历："
+
+#: ..\./admin/page.general.php:180
+msgid "Show the post calendar"
+msgstr "按日历存档文章"
+
+#: ..\./admin/page.general.php:181
+msgid "Display Blogroll:"
+msgstr "显示链接："
+
+#: ..\./admin/page.general.php:181
+msgid "Show your blogroll"
+msgstr "显示您的链接"
+
+#: ..\./admin/page.general.php:182
+msgid "Display \"Meta\" block:"
+msgstr "显示“功能”区块："
+
+#: ..\./admin/page.general.php:182
+msgid "Show WordPress' \"Meta\" blog to enable users to register or log in"
+msgstr "显示 WordPress 的“功能”区块以启用用户的注册或登录"
+
+#: ..\./admin/page.landingzone.ajax.php:51
+#: ..\./admin/page.landingzone.php:66
+msgid "disabled"
+msgstr "禁用"
+
+#: ..\./admin/page.landingzone.ajax.php:54
+#: ..\./admin/page.landingzone.php:67
+msgid "enabled"
+msgstr "启用"
+
+#: ..\./admin/page.landingzone.php:36
+msgid "Welcome to Grain %VERSION"
+msgstr "欢迎使用 Grain %VERSION"
+
+#: ..\./admin/page.landingzone.php:42
+msgid "Grain is missing the Yet Another Photoblog plugin"
+msgstr "Grain 丢失 Yet Another Photoblog 插件"
+
+#: ..\./admin/page.landingzone.php:43
+msgid "Unfortunately the YAPB plugin could not be found. Reasons may be that it isn't installed yet or that it's just not activated."
+msgstr "不幸的是，无法找到 YAPB 插件，原因可能是它尚未安装或只是尚未启用。"
+
+#: ..\./admin/page.landingzone.php:45
+msgid "If you haven't installed it yet, you may want to download it <a href=\"%YAPB_URL\">here</a>. If you did not activate it, you can do so on the <a href=\"%PLUGINS_URL\">plugins</a> page."
+msgstr "如果您尚未安装它，您可以去 <a href=\"%YAPB_URL\">这里</a> 下载。如果您尚未启用它，您可以去 <a href=\"%PLUGINS_URL\">插件</a> 页面启用。"
+
+#: ..\./admin/page.landingzone.php:50
+msgid "You can continue editing the options for Grain now, but your photoblog won't work until YAPB is running. Grain needs YAPB. Really."
+msgstr "您现在可以继续设置有关 Grain 的选项，但是缺少 YAPB 会让它无法正常运行。 Grain 确实需要 YAPB。"
+
+#: ..\./admin/page.landingzone.php:60
+msgid "This is a development version"
+msgstr "这是一个开发中版本"
+
+#: ..\./admin/page.landingzone.php:61
+msgid "While this doesn't affect the functionality of your blog it may increase loading times and send information about your server and configuration to the visitor. Although no sensitive data (e.g., passwords) are being sent it could happen that the additional information can be abused to exploit your blog. Because of this it is advised to enable the development feature only for testing and debugging purposes."
+msgstr "虽然这不影响您的博客功能，但它可能会增加读取时间和发送您服务器和配置的信息给访客。虽然没有敏感数据(如密码)被发送，但额外的信息可能被滥用导致您的博客漏洞被利用。因此建议此开发功能仅用于测试和调试目的。"
+
+#: ..\./admin/page.landingzone.php:65
+msgid "Logging is currently %CURRENT_STATE."
+msgstr "登录状态为 %CURRENT_STATE。"
+
+#: ..\./admin/page.landingzone.php:70
+msgid "No trace or debug messages are sent to the browser."
+msgstr "没有记录或调试信息发送到浏览器。"
+
+#: ..\./admin/page.landingzone.php:72
+msgid "Trace or debug messages may be sent to the browser."
+msgstr "记录或调试信息可能被发送给浏览器。"
+
+#: ..\./admin/page.landingzone.php:74
+msgid "To get rid of this warning you need to disable development mode altogether. To do so, please delete the following file:"
+msgstr "消除此警告您需要完全禁用开发模式。若要这么做，请删除以下文件："
+
+#: ..\./admin/page.landingzone.php:84
+msgid "You are using %YAPB_VERSION with %GRAIN_VERSION."
+msgstr "您正在使用 %GRAIN_VERSION 和 %YAPB_VERSION。"
+
+#: ..\./admin/page.landingzone.php:90
+msgid "Please check out the <a href=\"%PROJECT_URL\">Grain Wiki</a> for updates and support."
+msgstr "如需更新或支持，请参阅 <a href=\"%PROJECT_URL\">Grain Wiki</a>。"
+
+#: ..\./admin/page.landingzone.php:99
+msgid "Grain configuration options"
+msgstr "Grain 配置选项"
+
+#: ..\./admin/page.landingzone.php:101
+msgid "Here you can control and fine-tune how Grain displays your photoblog (or parts of it)."
+msgstr "在这里您可以控制和微调 Grain 如何显示您的图片博客(或部分)。"
+
+#: ..\./admin/page.landingzone.php:101
+msgid "Unfortunately the options are a bit cluttered right now. This will hopefully change in a future version. :)"
+msgstr "不幸的是，选项有点混乱。希望将来的版本会有所改变。 :) "
+
+#: ..\./admin/page.landingzone.php:107
+msgid "Here you will find general options (e.g. if you want to use a popup for the comments or not) and all those options that didn't fit elsewhere."
+msgstr "在这里您能找到常规选项(例如是否使用弹出窗口来发表评论)，这里的选项不会对其它地方造成影响。"
+
+#: ..\./admin/page.landingzone.php:112
+msgid "This is where you control how your visitors will navigate your photo stream. You can also control which items will appear in the menu bar here."
+msgstr "在这里您可以控制您的访客如何浏览您的相册。您还可以控制哪些项目在菜单栏上显示。"
+
+#: ..\./admin/page.landingzone.php:117
+msgid "This holds options such as maximum image sizes, CSS stylesheets, Thumbnails, options for your Mosaic, visual effects and more."
+msgstr "这些待定选项包括图像最大尺寸，CSS 样式，缩略图，Mosaic 选项，视觉效果等。"
+
+#: ..\./admin/page.landingzone.php:122
+msgid "This is where you set your name, imprint and special licenses such as a Creative Commons license."
+msgstr "在这里您可以设定您的姓名、发行说明和特殊许可证，例如创作共用许可。"
+
+#: ..\./admin/page.landingzone.php:127
+msgid "Here you can set how dates and times are displayed to your visitors."
+msgstr "在这里您可以设定日期和时间怎样对您的访客显示。"
+
+#: ..\./admin/page.landingzone.php:133
+msgid "Final words"
+msgstr "最后的话"
+
+#: ..\./admin/page.landingzone.php:134
+msgid "Happy photoblogging! :)"
+msgstr "用的愉快！:)"
+
+#: ..\./admin/page.navigation.php:53
+msgid "On-Image navigation"
+msgstr "图像上的导航"
+
+#: ..\./admin/page.navigation.php:55
+msgid "This setting controls what happens when a visitor clicks on the photo."
+msgstr "该设置控制了当访客点击相片时发生什么。"
+
+#: ..\./admin/page.navigation.php:56
+msgid "Bidirectional Navigation:"
+msgstr "双向导航："
+
+#: ..\./admin/page.navigation.php:56
+msgid "Enable the bidirectional on-image navigation"
+msgstr "启用图像上的双向导航"
+
+#: ..\./admin/page.navigation.php:56
+msgid "If enabled, the photo will contain links to the previous (older) and next (newer) photos. If disabled, only the previous link will be used."
+msgstr "如果启用，相片将包含“上一张”和“下一张”的链接。如果禁用，只包含“上一张”的链接。"
+
+#: ..\./admin/page.navigation.php:57
+#: ..\./admin/page.styling.php:135
+msgid "Show Tooltips:"
+msgstr "显示气泡提示："
+
+#: ..\./admin/page.navigation.php:57
+msgid "Show a tooltip when hovering the image"
+msgstr "悬停在相片上时显示气泡提示"
+
+#: ..\./admin/page.navigation.php:62
+msgid "Newest & Random"
+msgstr "最新的 & 随机浏览"
+
+#: ..\./admin/page.navigation.php:64
+msgid "Newest Photo:"
+msgstr "最新相片："
+
+#: ..\./admin/page.navigation.php:64
+msgid "Show a link to the newest photo"
+msgstr "显示最新相片的链接"
+
+#: ..\./admin/page.navigation.php:64
+msgid "The link will only appear if there are at least two (public) posts"
+msgstr "至少有两篇文章(公开)时才显示此链接"
+
+#: ..\./admin/page.navigation.php:65
+msgid "Random Photo:"
+msgstr "随机相片："
+
+#: ..\./admin/page.navigation.php:65
+msgid "Show a link to a random photo"
+msgstr "显示一张随机相片的链接"
+
+#: ..\./admin/page.navigation.php:65
+msgid "The link will only appear if there are at least three (public) posts"
+msgstr "至少有三篇文章(公开)时才显示此链接"
+
+#: ..\./admin/page.navigation.php:70
+msgid "About & Information Link"
+msgstr "关于 & 信息页面链接"
+
+#: ..\./admin/page.navigation.php:74
+msgid "Enable \"About\":"
+msgstr "启用“关于”："
+
+#: ..\./admin/page.navigation.php:74
+msgid "Show the About link"
+msgstr "显示关于链接"
+
+#: ..\./admin/page.navigation.php:78
+msgid "Select the page you want to use as your info page"
+msgstr "选择一个页面作为关于页面"
+
+#: ..\./admin/page.navigation.php:79
+#: ..\./admin/page.navigation.php:99
+msgid "You currently have no pages."
+msgstr "当前没有页面。"
+
+#: ..\./admin/page.navigation.php:82
+#: ..\./admin/page.navigation.php:102
+msgid "Write Page"
+msgstr "添加页面"
+
+#: ..\./admin/page.navigation.php:83
+#: ..\./admin/page.navigation.php:103
+msgid "You can create a new page in the \"%LINK\" menu."
+msgstr "您能在 \"%LINK\" 菜单添加新页面。"
+
+#: ..\./admin/page.navigation.php:85
+msgid "About page:"
+msgstr "关于页面："
+
+#: ..\./admin/page.navigation.php:91
+msgid "Mosaic Page Link"
+msgstr "Mosaic 页面链接"
+
+#: ..\./admin/page.navigation.php:94
+msgid "Enable \"Mosaic\":"
+msgstr "启用“Mosaic”"
+
+#: ..\./admin/page.navigation.php:94
+msgid "Show \"Mosaic\" link in the navigation bar"
+msgstr "在导航栏上显示 Mosaic"
+
+#: ..\./admin/page.navigation.php:98
+msgid "Select the page you want to use as your mosaic page"
+msgstr "选择一个页面作为 mosaic 页面"
+
+#: ..\./admin/page.navigation.php:105
+msgid "Mosaic page:"
+msgstr "Mosaic 页面："
+
+#: ..\./admin/page.navigation.php:109
+msgid "Link Title:"
+msgstr "链接标题："
+
+#: ..\./admin/page.navigation.php:109
+#: ..\./admin/page.navigation.php:116
+msgid "This title will be shown in the navigation bar."
+msgstr "此标题会在导航栏上显示。"
+
+#: ..\./admin/page.navigation.php:113
+msgid "Permalink Navigation item"
+msgstr "固定链接导航栏项目"
+
+#: ..\./admin/page.navigation.php:115
+msgid "Permalink:"
+msgstr "固定链接："
+
+#: ..\./admin/page.navigation.php:115
+msgid "Show the Permalink in the Navigation Bar"
+msgstr "在导航栏上显示固定链接"
+
+#: ..\./admin/page.navigation.php:115
+msgid "Unchecking this removes the permalink from the navigation. The permalink will still be visible at the Comments/Details popup (if it is not explicitely disabled otherwise)."
+msgstr "取消选中此选项将会把固定链接从导航栏上移除，固定链接在“详情 & 评论”弹出窗口仍然可见(如果它没有明确的被其它方法禁用)。"
+
+#: ..\./admin/page.navigation.php:116
+msgid "Permalink title:"
+msgstr "固定链接标题："
+
+#: ..\./admin/page.navigation.php:121
+msgid "Navigation Bar Location"
+msgstr "导航栏位置"
+
+#: ..\./admin/page.navigation.php:126
+msgid "Page header"
+msgstr "页首"
+
+#: ..\./admin/page.navigation.php:127
+msgid "In front/top of the photo"
+msgstr "在相片顶部"
+
+#: ..\./admin/page.navigation.php:128
+msgid "Behind/below the photo"
+msgstr "在相片底部"
+
+#: ..\./admin/page.navigation.php:130
+msgid "This sets the position of the navigation bar. Normally you want this to be '<code>{DEFAULT}</code>', but if you have special plans you may choose another position that better fits your needs."
+msgstr "这将设置导航栏的位置。通常在 '<code>{DEFAULT}</code>'，不过如果您有特殊的计划，您可以选择另一个位置以更好地适应您的需要。"
+
+#: ..\./admin/page.navigation.php:132
+msgid "Location:"
+msgstr "位置："
+
+#: ..\./admin/page.styling.ajax.php:59
+#: ..\./admin/page.styling.ajax.php:61
+#: ..\./admin/page.styling.php:59
+msgid "none"
+msgstr "无"
+
+#: ..\./admin/page.styling.ajax.php:124
+msgid "refresh"
+msgstr "刷新"
+
+#: ..\./admin/page.styling.ajax.php:124
+msgid "reload the stylesheet list"
+msgstr "重新加载样式列表"
+
+#: ..\./admin/page.styling.php:51
+msgid "Style Override"
+msgstr "样式重写"
+
+#: ..\./admin/page.styling.php:55
+msgid "Style Override settings"
+msgstr "样式重写设置"
+
+#: ..\./admin/page.styling.php:73
+msgid "You can edit the currently selected override file here: %FILE"
+msgstr "您可以在这里: %FILE 编辑您当前选择的重写文件"
+
+#: ..\./admin/page.styling.php:78
+msgid "CSS File:"
+msgstr "CSS 文件："
+
+#: ..\./admin/page.styling.php:78
+msgid "The file selected here is loaded in addition to the base stylesheet and allows for style overrides. You can use this for quick switching or non-destructive editing of your blog's CSS styles."
+msgstr "在这里选择要加载的文件，除基本样式之外，还允许样式重写。您可以快速切换或非破坏性编辑您博客的 CSS 样式。"
+
+#: ..\./admin/page.styling.php:83
+msgid "Image Settings"
+msgstr "图像设置"
+
+#: ..\./admin/page.styling.php:85
+msgid "Image settings"
+msgstr "图像设置"
+
+#: ..\./admin/page.styling.php:87
+msgid "Image dimensions:"
+msgstr "图像尺寸："
+
+#: ..\./admin/page.styling.php:87
+#: ..\./admin/page.styling.php:97
+#: ..\./admin/page.styling.php:127
+#: ..\./admin/page.styling.php:136
+msgid "Pixels"
+msgstr "像素"
+
+#: ..\./admin/page.styling.php:87
+msgid "The maximum dimensions of a photo. The photo will be scaled to fit.<br />If you change these to higher values you probably also have to change your CSS styles for the blog."
+msgstr "相片的最大尺寸。相片将被成比例的放大或缩小。<br /> 如果您把这些数值改的更大，您也许必须同时更改您博客的 CSS 样式。"
+
+#: ..\./admin/page.styling.php:91
+msgid "Missing Image"
+msgstr "哎呀图像"
+
+#: ..\./admin/page.styling.php:93
+msgid "<em>Whoops</em> image"
+msgstr "<em>哎呀</em> 图像"
+
+#: ..\./admin/page.styling.php:95
+msgid "If it happens that YAPB is unable to load an image or if you haven't set any image for a post Grain will show a message about that fact. If you want to you can set an image that is to be displayed instead."
+msgstr "如果 YAPB 无法加载图像或您没有为文章设置任何图像，Grain 将显示一个告知信息，如果您想，您可以设置一个图像取代。"
+
+#: ..\./admin/page.styling.php:96
+msgid "Whoops image URL:"
+msgstr "哎呀图像 URL："
+
+#: ..\./admin/page.styling.php:96
+msgid "The URL of the image that will be displayed if a photoblog post has no image assigned or the image is not uploaded yet.<br />If you want to display a text instead of an image, leave the field empty."
+msgstr "如果文章不含图像或图像仍未上载，链接中的图像将会显示。<br />如果您想用文本信息取代图像显示，请留空它。"
+
+#: ..\./admin/page.styling.php:97
+msgid "Image size:"
+msgstr "图像尺寸："
+
+#: ..\./admin/page.styling.php:97
+msgid "The actual size of the replacement image."
+msgstr "替代图像的实际大小。"
+
+#: ..\./admin/page.styling.php:104
+msgid "EXIF filtering:"
+msgstr "EXIF 过滤："
+
+#: ..\./admin/page.styling.php:104
+msgid "Enable quick EXIF filtering."
+msgstr "启用 quick EXIF filtering。"
+
+#: ..\./admin/page.styling.php:104
+msgid "If this option is enabled, Grain will filter some of the EXIF fields that it gets from YAPB: Some fields will be removed even if they are enabled in the YAPB options, some fields will be displayed differently. It is recommended to disable this option only if you take another (own) approach to EXIF filtering."
+msgstr "如果启用此选项，Grain 将会过滤掉一些从 YAPB 得来的 EXIF 数据：一些数据将被移除哪怕它们在 YAPB 选项中已被启用，一些数据将会显示成不一样的东西。建议禁用此选项除非您采取另一种(自己的) EXIF 过滤的方法。"
+
+#: ..\./admin/page.styling.php:105
+msgid "Display as inline:"
+msgstr "行内显示："
+
+#: ..\./admin/page.styling.php:105
+msgid "Display EXIF data \"inline\"."
+msgstr "“行内”显示 EXIF 数据。"
+
+#: ..\./admin/page.styling.php:105
+msgid "If you disable this option, Grain will render any EXIF data in a table."
+msgstr "如果禁用此选项，Grain 将以表格形式显示所有 EXIF 数据。"
+
+#: ..\./admin/page.styling.php:109
+msgid "Mosaic Settings"
+msgstr "Mosaic 设置"
+
+#: ..\./admin/page.styling.php:111
+msgid "Mosaic settings"
+msgstr "Mosaic 设置"
+
+#: ..\./admin/page.styling.php:113
+msgid "Show Sidebar:"
+msgstr "显示边栏："
+
+#: ..\./admin/page.styling.php:113
+msgid "Show the sidebar on the mosaic page."
+msgstr "在 mosaic 页面显示边栏。"
+
+#: ..\./admin/page.styling.php:114
+msgid "Skip empty posts:"
+msgstr "跳过空的文章："
+
+#: ..\./admin/page.styling.php:114
+msgid "Skip posts that have no photo attached."
+msgstr "跳过没有相片附件的文章。"
+
+#: ..\./admin/page.styling.php:114
+msgid "If you disable this option, posts without a photo will be rendered as an empty box in the mosaic."
+msgstr "如果您禁用此选项，mosaic 会将不带相片的文章显示成一个空框。"
+
+#: ..\./admin/page.styling.php:115
+msgid "Show Years:"
+msgstr "显示年份："
+
+#: ..\./admin/page.styling.php:115
+msgid "Group thumbnails by years in the mosaic page"
+msgstr "在 mosaic 页面以年份分组缩略图"
+
+#: ..\./admin/page.styling.php:116
+msgid "Shuffle mosaic posts:"
+msgstr "随机排序 mosaic 文章："
+
+#: ..\./admin/page.styling.php:116
+msgid "Display posts on the mosaic in a random order."
+msgstr "随机排序 mosaic 页面上的文章。"
+
+#: ..\./admin/page.styling.php:116
+msgid "It is recommended to disable the \"Show Years\" option above if you enable this."
+msgstr "如果您启用它，建议禁用“显示年份”选项。"
+
+#: ..\./admin/page.styling.php:117
+msgid "Photos per page:"
+msgstr "每页相片："
+
+#: ..\./admin/page.styling.php:117
+msgid "This value sets how many photos will be displayed at most on a mosaic page."
+msgstr "此数值决定了在 mosaic 页面上最多显示多少相片。"
+
+#: ..\./admin/page.styling.php:117
+msgid "If you set a negative value or zero, no limitation will be applied."
+msgstr "如果您设置一个负数或 0，代表没有任何限制。"
+
+#: ..\./admin/page.styling.php:118
+msgid "phpThumb Options:"
+msgstr "phpThumb 选项："
+
+#: ..\./admin/page.styling.php:118
+msgid "Here you can set an additional configuration string that will be passed to phpThumb for the thumbnail generation."
+msgstr "在这里您可以设置一个额外的配置字符串，它将被传递给 phpThumb 以生成缩略图。"
+
+#: ..\./admin/page.styling.php:118
+msgid "Configuration options are separated by an ampersand or whitespace; See <a target=\"_blank\" href=\"http://phpthumb.sourceforge.net/\">phpThumb()</a> for more information."
+msgstr "配置选项以符号或空格分隔；点击 <a target=\"_blank\" href=\"http://phpthumb.sourceforge.net/\">phpThumb()</a> 浏览更多信息。"
+
+#: ..\./admin/page.styling.php:118
+msgid "If you are in doubt please leave this field empty."
+msgstr "如果您心存疑问请留空它。"
+
+#: ..\./admin/page.styling.php:122
+msgid "Thumbnail settings"
+msgstr "缩略图设置"
+
+#: ..\./admin/page.styling.php:124
+msgid "Comments popup"
+msgstr "弹出式评论"
+
+#: ..\./admin/page.styling.php:126
+msgid "Show Thumbnail:"
+msgstr "显示缩略图："
+
+#: ..\./admin/page.styling.php:126
+msgid "Show the photo's thumbnail image on the comments popup"
+msgstr "在弹出式评论中显示相片缩略图"
+
+#: ..\./admin/page.styling.php:127
+#: ..\./admin/page.styling.php:136
+msgid "Thumbnail size:"
+msgstr "缩略图尺寸："
+
+#: ..\./admin/page.styling.php:128
+msgid "Size to fit:"
+msgstr "自适应大小："
+
+#: ..\./admin/page.styling.php:128
+msgid "Values given above are the maximum dimensions."
+msgstr "上面的数值是最大尺寸。"
+
+#: ..\./admin/page.styling.php:128
+msgid "If disabled, the thumbnail will be displayed in the size given above, cropping the parts that don't fit.<br />If it is enabled the thumbnail image will be resized so that it fits within these boundaries."
+msgstr "如果禁用，缩略图超过最大尺寸的部分将被裁剪。<br />如果启用，缩略图将被缩放，这样能保留边界部分。"
+
+#: ..\./admin/page.styling.php:133
+msgid "Mosaic & Archive"
+msgstr "Mosaic & 存档"
+
+#: ..\./admin/page.styling.php:135
+msgid "Show tooltip when hovering a thumbnail"
+msgstr "悬停在缩略图上时显示气泡提示"
+
+#: ..\./admin/page.styling.php:136
+msgid "If you set any of these values a negative number or zero, the according attribute of the thumbnail won't be set. A common usage would be to set the first value to zero and the second to a fixed size."
+msgstr "如果您设置这些数值为负数或 0，缩略图相对应的属性将不被设置。一个常见的用法是将第一个数值设为 0，第二个设为固定值。"
+
+#: ..\./admin/page.styling.php:140
+msgid "Comments"
+msgstr "评论"
+
+#: ..\./admin/page.styling.php:143
+msgid "Gravatar options"
+msgstr "头像选项"
+
+#: ..\./admin/page.styling.php:145
+msgid "Use Gravatars:"
+msgstr "使用头像："
+
+#: ..\./admin/page.styling.php:145
+msgid "If enabled, <a href=\"http://www.gravatar.com/\" target=\"_blank\">Gravatar</a> icons are shown on user comments"
+msgstr "如果启用，将在评论里显示 <a href=\"http://www.gravatar.com/\" target=\"_blank\">头像</a> 图标"
+
+#: ..\./admin/page.styling.php:146
+msgid "Link Gravatars:"
+msgstr "头像链接："
+
+#: ..\./admin/page.styling.php:146
+msgid "If a commenter gives a website URL, the gravatar icon links to his page"
+msgstr "如果评论者给出一个网页链接，则该头像链接到他的网页"
+
+#: ..\./admin/page.styling.php:148
+msgid "Alternative Image:"
+msgstr "替代图像："
+
+#: ..\./admin/page.styling.php:148
+msgid "URL of an alternate image for the case the commenter has no Gravatar. If you don't specify an image URL Gravatar will use it's own dummy image if necessary."
+msgstr "评论者没有头像的情况下的替代图像的链接地址。如果您没有指定一个图像链接，必要的话，头像将使用它本身的虚拟形象。"
+
+#: ..\./admin/page.styling.php:150
+msgid "The following values are extended configuration options for the Gravatar service. Please change them only if you know what you are doing."
+msgstr "下面的数值是头像服务的扩展配置选项。请仅在您知道您在做什么的情况下修改。"
+
+#: ..\./admin/page.styling.php:152
+msgid "Gravatar rating:"
+msgstr "头像等级："
+
+#: ..\./admin/page.styling.php:152
+msgid "Here you can specify the rating of the gravatars. Allowed values are <code>G, PG, R</code> and <code>X</code>. Only change this if you know why you would want to."
+msgstr "在这里您可以指定头像等级。允许的值有 <code>G, PG, R</code> 和 <code>X</code>。请仅在您知道您想做什么的情况下修改。"
+
+#: ..\./admin/page.styling.php:153
+msgid "Gravatar size:"
+msgstr "头像大小："
+
+#: ..\./admin/page.styling.php:153
+msgid "Here you can change the size of the Gravatar. If you change this value you will have to adapt your stylesheet."
+msgstr "在这里您可以修改头像大小。如果您更改此值，您必须使它适应您的样式表。"
+
+#: ..\./admin/page.styling.php:158
+msgid "Ring / Syndication options"
+msgstr "Ring / Syndication 选项"
+
+#: ..\./admin/page.styling.php:160
+#: ..\./admin/page.styling.php:164
+msgid "If enabled, a \"%\" button will be added to the comment form"
+msgstr "如果启用，一个 \"%\" 按钮将被加在评论表单"
+
+#: ..\./admin/page.styling.php:161
+msgid "photoblogs.org button:"
+msgstr "photoblogs.org 按扭："
+
+#: ..\./admin/page.styling.php:162
+#: ..\./admin/page.styling.php:166
+msgid "Profile URL:"
+msgstr "档案资料网址："
+
+#: ..\./admin/page.styling.php:162
+#: ..\./admin/page.styling.php:166
+msgid "The URL of your <a href=\"http://photoblogs.org\" target=\"_blank\">photoblogs.org</a> profile"
+msgstr "您的 <a href=\"http://photoblogs.org\" target=\"_blank\">photoblogs.org</a> 档案资料 URL："
+
+#: ..\./admin/page.styling.php:164
+msgid "vote for me at coolphotoblogs.com"
+msgstr "在 coolphotoblogs.com 投票支持我"
+
+#: ..\./admin/page.styling.php:165
+msgid "coolphotoblogs.com button:"
+msgstr "coolphotoblogs.com 按钮："
+
+#: ..\./admin/page.styling.php:171
+msgid "Effects Options"
+msgstr "效果选项"
+
+#: ..\./admin/page.styling.php:174
+msgid "moo.fx options"
+msgstr "moo.fx 选项"
+
+#: ..\./admin/page.styling.php:176
+msgid "Use moo.fx:"
+msgstr "使用 moo.fx"
+
+#: ..\./admin/page.styling.php:176
+msgid "Enable JavaScript effects (<a href=\"http://moofx.mad4milk.net/\" target=\"_blank\">moo.fx</a> engine)"
+msgstr "启用 JavaScript 效果 (<a href=\"http://moofx.mad4milk.net/\" target=\"_blank\">moo.fx</a> 引擎)"
+
+#: ..\./admin/page.styling.php:178
+msgid "Once you have enabled moo.fx, you can choose use the following effects."
+msgstr "一旦您启用 moo.fx，您便可使用以下效果。"
+
+#: ..\./admin/page.styling.php:180
+msgid "Reflection effect:"
+msgstr "镜像效果："
+
+#: ..\./admin/page.styling.php:180
+msgid "If enabled, the image reflects on the background"
+msgstr "如果启用，图像将镜像在背景上"
+
+#: ..\./admin/page.styling.php:181
+msgid "Fade effect:"
+msgstr "淡入效果："
+
+#: ..\./admin/page.styling.php:181
+msgid "Use a fade-in effect to display the image"
+msgstr "使用淡入效果显示图像"
+
+#: ..\./admin/page.styling.php:181
+msgid "The effect may be slow for some machines and is definitly slower for larger images, as well as complex theme styles. Double check that. In addition it requires support on the browser's side, so it isn't necessarily visible to every visitor."
+msgstr "对于某些机器来说，效果可能比较慢，对于一些较大的图像以及一些复杂的主题风格来说，肯定是比较慢的。请仔细检查。此外，它需要浏览器的支持，所以不一定每个访客都能看到。"
+
+#: ..\./func/comments.php:72
+#: ..\./func/comments.php:73
+#: ..\./func/comments.php:74
+msgid "edit comment"
+msgstr "编辑评论"
+
+#: ..\./func/comments.php:72
+msgid "comment ID:"
+msgstr "评论 ID："
+
+#: ..\./func/comments.php:75
+msgid "unapproved &rarr;"
+msgstr "未经批准 &rarr;"
+
+#: ..\./func/content.php:137
+msgid "&lArr; click for previous photo"
+msgstr "&lArr; 点击浏览上一张相片"
+
+#: ..\./func/content.php:139
+msgid "(this is the first photo)"
+msgstr "(这是第一张相片)"
+
+#: ..\./func/content.php:144
+msgid "click for next photo &rArr;"
+msgstr "点击浏览下一张相片 &rArr;"
+
+#: ..\./func/content.php:146
+msgid "(this is the newest photo)"
+msgstr "(这是最新的相片)"
+
+#: ..\./func/content.php:184
+msgid "This photo page is not ready yet. Please check back later."
+msgstr "本页面尚未准备好，请稍后访问。"
+
+#: ..\./func/feeds.php:42
+msgid "RSS Feed"
+msgstr "RSS Feed"
+
+#: ..\./func/feeds.php:62
+msgid "Atom Feed"
+msgstr "Atom Feed"
+
+#: ..\./func/image.php:153
+msgid "click to view"
+msgstr "点击浏览"
+
+#: ..\./func/image.php:154
+msgid "not ready yet"
+msgstr "未准备好"
+
+#: ..\./func/navlinks.php:118
+msgid "comments (%)"
+msgstr "(%) 条评论"
+
+#: ..\./func/navlinks.php:124
+#: ..\./func/navlinks.php:149
+msgid "comments and details"
+msgstr "评论和详情"
+
+#: ..\./func/navlinks.php:131
+msgid "details &amp; comments (%)"
+msgstr "详情 &amp; (%) 条评论"
+
+#: ..\./func/navlinks.php:132
+msgid "hide details"
+msgstr "隐藏详情"
+
+#: ..\./func/optionskeys.php:64
+msgid "Mosaic"
+msgstr "Mosaic"
+
+#: ..\./func/optionskeys.php:78
+msgid "(Your name)"
+msgstr "(您的姓名)"
+
+#: ..\./func/optionskeys.php:79
+msgid "<em>(Your name)</em>"
+msgstr "<em>(您的姓名)</em>"
+
+#: ..\./func/optionskeys.php:140
+#: ..\./func/optionskeys.php:143
+msgid "F jS, Y"
+msgstr "Y年m月j日"
+
+#: ..\./func/optionskeys.php:141
+msgid "F, Y"
+msgstr "Y年m月"
+
+#: ..\./func/optionskeys.php:142
+#: ..\./func/optionskeys.php:145
+msgid "j. F Y, H:i"
+msgstr "Y年m月j日，H:i"
+
+#: ..\./func/optionskeys.php:144
+msgid "H:i"
+msgstr "H:i"
+
+#: ..\./func/optionskeys.php:147
+msgid "Posted in: "
+msgstr "发布于："
+
+#: ..\./func/optionskeys.php:149
+msgid "Tagged with: "
+msgstr "标签为："
+
+#: ..\./func/posthooks.php:135
+msgid "Grain: Options For This Post"
+msgstr "Grain：这篇文章的选项"
+
+#: ..\./func/posthooks.php:151
+msgid "There a currently no advanced options for this post."
+msgstr "当前这篇文章没有高级选项。"
+
+#: ..\./func/posthooks.php:226
+msgid "General options"
+msgstr "常规选项"
+
+#: ..\./func/posthooks.php:233
+msgid "I want Grain to show"
+msgstr "我想让 Grain 显示"
+
+#: ..\./func/posthooks.php:233
+msgid "See <a target=\"_blank\" href=\"http://wp-grain.wiki.sourceforge.net/Post+Types\">this wiki page</a> for more information about post types."
+msgstr "点击 <a target=\"_blank\" href=\"http://wp-grain.wiki.sourceforge.net/Post+Types\">this wiki page</a> 查看关于文章类型的更多信息。"
+
+#: ..\./func/posthooks.php:236
+msgid "Photoblog post options"
+msgstr "图片博客文章选项"
+
+#: ..\./func/posthooks.php:239
+msgid "Hide EXIF data"
+msgstr "隐藏 EXIF 数据"
+
+#: ..\./func/template.php:81
+msgid "Not found."
+msgstr "没有找到。"
+
+#: ..\./func/template.php:82
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr "抱歉，您找的东西不存在。"
+
+#: ..\./iplugs/suite.0.2.php:135
+msgid "Grain: Post Settings"
+msgstr "Grain：文章设置"
+
+#: ..\./iplugs/suite.0.2.php:143
+msgid "Shows a photo and it's description."
+msgstr "显示相片和它的描述。"
+
+#: ..\./iplugs/suite.0.2.php:144
+msgid "Uses a viewer applet to show the panorama given in the box below."
+msgstr "使用幻灯播放器来显示下列框中的全景图片。"
+
+#: ..\./iplugs/suite.0.2.php:145
+msgid "Looks like a 'Photo Post' type, but displays everything behind the <code>&lt;</code><code>!--more--&gt;</code> marker instead of the photo. This way you can show user-defined content."
+msgstr "看起来是“相片文章”类型，但在 <code>&lt;</code><code>!--more--&gt;</code> 标记后显示全部而不是相片。您可以用这种方法查看用户自定义的内容。"
+
+#: ..\./iplugs/suite.0.2.php:146
+msgid "The post will be displayed just like a normal (text) blog post or static page."
+msgstr "文章将以普通的(文字)日志或静态页面的方式显示。"
+
+#: ..\./iplugs/suite.0.2.php:156
+msgid "Post Settings"
+msgstr "文章设置"
+
+#: ..\./iplugs/suite.0.2.php:161
+msgid "Post type:"
+msgstr "文章类型："
+
+#: ..\./iplugs/suite.0.2.php:168
+msgid "Photo Post"
+msgstr "相片文章"
+
+#: ..\./iplugs/suite.0.2.php:171
+msgid "Panorama Post"
+msgstr "全景文章"
+
+#: ..\./iplugs/suite.0.2.php:176
+msgid "Split Post"
+msgstr "拆分文章"
+
+#: ..\./iplugs/suite.0.2.php:179
+msgid "Pure Content"
+msgstr "纯内容"
+
+#: ..\./iplugs/suite.0.2.php:190
+msgid "Panorama Settings"
+msgstr "全景设置"
+
+#: ..\./iplugs/suite.0.2.php:195
+msgid "Panorama file URL:"
+msgstr "全景文件 URL："
+
+#: ..\./iplugs/suite.0.2.php:203
+msgid "You can upload or select a panorama file using the Upload box. To find the URL of the uploaded file, click it's <code>Edit</code> link afterwards."
+msgstr "您可以使用上传框上传或选择一个全景文件，如果要查看已上传文件的地址，请随后点击它的 <code>Edit</code> 链接。"
+
+#: ..\./iplugs/suite.0.2.php:208
+msgid "Panorama player:"
+msgstr "全景播放器："
+
+#: ..\./iplugs/suite.0.2.php:217
+msgid "autoselect by filetype"
+msgstr "按文件类型自动选择"
+
+#: ..\./iplugs/suite.0.2.php:226
+msgid "DevalVR"
+msgstr "DevalVR"
+
+#: ..\./iplugs/suite.0.2.php:235
+msgid "Quicktime"
+msgstr "Quicktime"
+
+#: ..\./iplugs/suite.0.2.php:244
+msgid "Java based (PTViewer)"
+msgstr "基于 Java (PTViewer)"
+
+#: ..\./iplugs/suite.0.2.php:250
+msgid "Panorama Image:"
+msgstr "全景图像："
+
+#: ..\./iplugs/devalvr/detectvr.js.php:268
+msgid "click here to install (250 KB, it only takes a few seconds)"
+msgstr "点击这里安装(250KB，只需几秒)"
+
+#: ..\./iplugs/devalvr/detectvr.js.php:271
+msgid "click here after installing to reload page"
+msgstr "安装后点击这里刷新页面"
+
