@@ -308,7 +308,7 @@
 			if(empty($optionName))  throw (new ErrorException("Post option key must not be empty."));
 			if(!$GrainPostOpt->is_defined($optionName))  throw (new ErrorException("Post option key \"$postOption\" was undefined."));
 			
-			$value = htmlentities($GrainPostOpt->get($optionName, FALSE));
+			$value = grain_htmlentities($GrainPostOpt->get($optionName, FALSE));
 
 			// Get a field name, if unset
 			$htmlFieldName = strtolower($optionName);

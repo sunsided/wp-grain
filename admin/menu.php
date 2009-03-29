@@ -88,7 +88,7 @@
 		global $GrainOpt, $HTML_allowed, $no_HTML;
 		$_SESSION["__grain_admin_options"][$fieldName] = $optionName;
 		
-		$value = htmlentities($GrainOpt->get($optionName, FALSE));
+		$value = grain_htmlentities($GrainOpt->get($optionName, FALSE));
 
 		// get css class
 		$classes = $lineCSS;
@@ -262,7 +262,7 @@
 		global $GrainOpt, $HTML_allowed, $no_HTML;
 		$_SESSION["__grain_admin_options"][$fieldName] = $optionName;
 		
-		$value = htmlentities($GrainOpt->get($optionName, FALSE));
+		$value = grain_htmlentities($GrainOpt->get($optionName, FALSE));
 
 		// get css class
 		$classes = "multiline";
