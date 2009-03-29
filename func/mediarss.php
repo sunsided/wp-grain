@@ -165,12 +165,22 @@ endif; // GRAIN_POSTTYPE_PHOTO
 		$copyright = grain_get_copyright_string(FALSE);
 		$cc_license_url = grain_get_cc_license_url();
 		
+		// get the number of posts per page
+		$count_per_page = grain_get_mediarss_post_per_page();
+		$count = grain_getpostcount();
+		$page_count = ceil($count / $count_per_page);
+		
+		// get the offset from the request
+		$page = @$_REQUEST["page"];
+		if( empty($page) ) $page = 1;
+		$page = intval($page);
+		
 		// get the posts
-		$posts = grain_get_mediarss_posts();
+		$posts = grain_get_mediarss_posts($page, $count_per_page);
 
 		echo '<?xml version="1.0" encoding="'.GRAIN_CONTENT_CHARSET.'" standalone="yes"?>'; 
 ?>
-
+ <!-- displaying page <?php echo $page; ?> of <?php echo $pages; ?> -->
 <rss version="2.0" 
 	<?php grain_inject_mrss_ns(); ?>
 	xmlns:atom="http://www.w3.org/2005/Atom"
@@ -182,9 +192,15 @@ endif; // GRAIN_POSTTYPE_PHOTO
 	?>
 	>
 	<channel>
+<?php if( $page > 1): ?>
+		<atom:link href="<?php bloginfo('url'); ?>/?feed=mediarss&amp;page=<?php echo $page-1; ?>" rel="previous" type="application/rss+xml" /><?php endif; ?>
+		<atom:link href="<?php bloginfo('url'); ?>/?feed=mediarss&amp;page=<?php echo $page; ?>" rel="self" type="application/rss+xml" />
+<?php if( $page < $page_count): ?>
+		<atom:link href="<?php bloginfo('url'); ?>/?feed=mediarss&amp;page=<?php echo $page+1; ?>" rel="next" type="application/rss+xml" /><?php endif; ?>
+
 		<title><?php bloginfo('name'); ?> Media RSS Feed</title>
 		<link><?php bloginfo("url"); ?></link>
-		<atom:link href="<?php self_link(); ?>" rel="self" type="application/rss+xml" />
+		
 		<pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></pubDate>
 		<description><?php bloginfo('description'); ?></description>
 		<docs>http://blogs.law.harvard.edu/tech/rss</docs>

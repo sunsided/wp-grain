@@ -479,24 +479,41 @@
 	}
 	
 	/**
+	 * grain_get_mediarss_post_per_page() - Gets the number of posts to show per MediaRSS "page"
+	 *
+	 * @since 0.3.1
+	 * @return int Number of posts
+	 */
+	function grain_get_mediarss_post_per_page() {
+		global $GrainOpt;
+		$count = $GrainOpt->get(GRAIN_FTR_MEDIARSS_COUNT);	
+		if($count < 0) $count = grain_getpostcount();
+		else if($count == 0) $count = $GrainOpt->getDefault(GRAIN_FTR_MEDIARSS_COUNT);
+		return $count;
+	}
+	
+	/**
 	 * grain_get_mediarss_posts() - Gets the list of posts to be used by the meda RSS feed
 	 *
 	 * @since 0.3
 	 * @uses get_posts() Gets the posts
+	 * @param int $page						Optional. The number of the MediaRSS "page" to show.
 	 * @return array Array of posts
 	 */
-	function grain_get_mediarss_posts() {
+	function grain_get_mediarss_posts($page=1, $count=-1) {
 		global $GrainOpt;
 		
-		$count = $GrainOpt->get(GRAIN_FTR_MEDIARSS_COUNT);	
-		if($count < 0) $count = grain_getpostcount();
-		else if($count == 0) $count = $GrainOpt->getDefault(GRAIN_FTR_MEDIARSS_COUNT);
+		if($count<=0) $count = grain_get_mediarss_post_per_page();
+		
+		// get offset from page
+		if( $page > 0 ) --$page;
+		$offset = $page * $count;
 		
 		// generate options
 		$get_post_options = array();
 		$get_post_options[] = "post_type=post";
 		$get_post_options[] = "numberposts=$count";
-		$get_post_options[] = "offset=0";
+		$get_post_options[] = "offset=$offset";
 		
 		// set ordering
 		$ordering = "post_date";
