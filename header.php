@@ -7,6 +7,7 @@
 
 global $GrainOpt;
 grain_startSession();
+grain_determine_page_type();
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
@@ -26,20 +27,20 @@ grain_startSession();
 	grain_embed_generator_meta();
 ?>
 
-<!-- stylesheets -->
-<?php grain_embed_css(); ?>
-
 <!-- feeds -->
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> - RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> - <?php _e("Comments RSS Feed", "grain"); ?>" href="<?php bloginfo('comments_rss2_url'); ?>" />
 <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> - Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
 <?php if( $GrainOpt->is(GRAIN_FTR_MEDIARSS) ): ?>
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> - MediaRSS Feed" id="gallery" href="<?php bloginfo('url'); ?>/?feed=mediarss" />
+<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> - MediaRSS Feed" id="gallery" href="<?php echo grain_get_mrss_url(); ?>" />
 <?php endif; ?>
 
 <!-- syndication -->
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="home" href="<?php echo get_settings('home'); ?>" />
+
+<!-- stylesheets -->
+<?php grain_embed_css(); ?>
 
 <!-- theme js -->
 <?php grain_embed_javascripts(); ?>

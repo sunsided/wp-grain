@@ -270,6 +270,7 @@
 			}
 		
 			// embed thumbnail
+			if(stripos($img_URL, "&w=")!==FALSE) $img_URL = str_ireplace("&", "&amp;", $img_URL);
 			return $img_URL;
 		}
 		
@@ -469,7 +470,7 @@
 		
 		// set ordering
 		$ordering = "post_date";
-		if( $GrainOpt->is(GRAIN_MOSAIC_SHUFFLE) ) $ordering = "RAND()";
+		if( $GrainOpt->is(GRAIN_MOSAIC_SHUFFLE) ) $ordering = "rand";
 		$get_post_options[] = "order=DESC";
 		$get_post_options[] = "orderby=$ordering";
 		

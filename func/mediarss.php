@@ -15,6 +15,10 @@
 
 	if(!defined('GRAIN_THEME_VERSION') ) die(basename(__FILE__));
 
+	define("GRAIN_MEDIARSS_MODE_DEFAULT", 	1);
+	define("GRAIN_MEDIARSS_MODE_MOSAIC", 	2);
+	define("GRAIN_MEDIARSS_MODE_ARCHIVE", 	3);
+
 	// e.g. http://127.0.0.1/wordpress/?feed=mediarss
 	global $GrainOpt;
 	if( $GrainOpt->is(GRAIN_FTR_MEDIARSS) ) {
@@ -23,6 +27,37 @@
 	else {
 		add_action("rss2_ns", "grain_inject_mrss_ns");
 		add_action("rss2_item", "grain_inject_mrss_item");
+	}
+
+	/**
+	 * grain_get_mrss_url() - Generates the URL of the MediaRSS feed
+	 *
+	 * @since 0.3.1
+	 */	
+	function grain_get_mrss_url($type=GRAIN_MEDIARSS_MODE_DEFAULT, $xml_safe=false, $page=-1) {
+		// prepare ampersand
+		$amp = "&";
+		if( $xml_safe ) $amp = "&amp;";
+		
+		// create URL
+		$url = get_bloginfo('url') . "/?feed=mediarss";
+		
+		// are we on the mosaic page?
+		if( (GRAIN_ON_MOSAIC_PAGE && !GRAIN_ON_FEED) || (GRAIN_ON_FEED && $type == GRAIN_MEDIARSS_MODE_MOSAIC) ) {
+			if( $page <= 0 ) $page = grain_get_current_page();
+			$url .= $amp . "type=".GRAIN_MEDIARSS_MODE_MOSAIC;//.$amp . "page=$page";
+		}
+		elseif( (GRAIN_ON_ARCHIVE_PAGE && !GRAIN_ON_FEED) || (GRAIN_ON_FEED && $type == GRAIN_MEDIARSS_MODE_ARCHIVE) ) {
+			if( $page <= 0 ) $page = grain_get_current_page();
+			$url .= $amp . "type=".GRAIN_MEDIARSS_MODE_ARCHIVE;//.$amp . "page=$page";
+		}
+		else 
+		{
+			 //$amp . "type=".GRAIN_MEDIARSS_MODE_DEFAULT;
+		}
+		if( $page > 1 )	$url .= $amp."page=$page";
+		
+		return $url;
 	}
 
 	/**
@@ -77,7 +112,6 @@
 	
 				
 		$filesize = filesize(realpath(ABSPATH.".".$image->uri));					
-		$thumb_url = str_replace(array("[", "]", "&", "=", "|"), array(urlencode("["), urlencode("]"), urlencode("&"), urlencode("="), urlencode("|")), $thumb_url);
 		?>
 <?php if(!empty($taglist)): ?>
 			<media:keywords><?php echo $taglist; ?></media:keywords>
@@ -120,7 +154,7 @@ endif; // GRAIN_POSTTYPE_PHOTO
 	 * @uses $wpdb	WordPress Database object
 	 */	
 	function grain_do_feed_mediarss() {
-		global $GrainOpt, $wpdb;
+		global $GrainOpt, $wpdb, $wp_query;
 		
 		// caching
 		$stamp = get_lastpostmodified('GMT');
@@ -165,8 +199,16 @@ endif; // GRAIN_POSTTYPE_PHOTO
 		$copyright = grain_get_copyright_string(FALSE);
 		$cc_license_url = grain_get_cc_license_url();
 		
+		// get the feed type
+		$type = @$_REQUEST["type"];
+		if( empty($type) ) $type = GRAIN_MEDIARSS_MODE_DEFAULT;
+		$type = intval($type);
+		
 		// get the number of posts per page
 		$count_per_page = grain_get_mediarss_post_per_page();
+		if( $type == GRAIN_MEDIARSS_MODE_MOSAIC ) $count_per_page = $GrainOpt->get(GRAIN_MOSAIC_COUNT);
+		elseif( $type == GRAIN_MEDIARSS_MODE_ARCHIVE ) $count_per_page = $wp_query->query_vars["posts_per_page"];
+		
 		$count = grain_getpostcount();
 		$page_count = ceil($count / $count_per_page);
 		
@@ -174,13 +216,14 @@ endif; // GRAIN_POSTTYPE_PHOTO
 		$page = @$_REQUEST["page"];
 		if( empty($page) ) $page = 1;
 		$page = intval($page);
+	
 		
 		// get the posts
 		$posts = grain_get_mediarss_posts($page, $count_per_page);
 
 		echo '<?xml version="1.0" encoding="'.GRAIN_CONTENT_CHARSET.'" standalone="yes"?>'; 
 ?>
- <!-- displaying page <?php echo $page; ?> of <?php echo $pages; ?> -->
+ <!-- displaying page <?php echo $page; ?> of <?php echo $page_count; ?> -->
 <rss version="2.0" 
 	<?php grain_inject_mrss_ns(); ?>
 	xmlns:atom="http://www.w3.org/2005/Atom"
@@ -193,10 +236,11 @@ endif; // GRAIN_POSTTYPE_PHOTO
 	>
 	<channel>
 <?php if( $page > 1): ?>
-		<atom:link href="<?php bloginfo('url'); ?>/?feed=mediarss&amp;page=<?php echo $page-1; ?>" rel="previous" type="application/rss+xml" /><?php endif; ?>
-		<atom:link href="<?php bloginfo('url'); ?>/?feed=mediarss&amp;page=<?php echo $page; ?>" rel="self" type="application/rss+xml" />
+		<atom:link href="<?php echo grain_get_mrss_url($type, true, $page-1); ?>" rel="previous" type="application/rss+xml" /><?php endif; ?>
+		
+		<atom:link href="<?php echo grain_get_mrss_url($type, true, $page); ?>" rel="self" type="application/rss+xml" />
 <?php if( $page < $page_count): ?>
-		<atom:link href="<?php bloginfo('url'); ?>/?feed=mediarss&amp;page=<?php echo $page+1; ?>" rel="next" type="application/rss+xml" /><?php endif; ?>
+		<atom:link href="<?php echo grain_get_mrss_url($type, true, $page+1); ?>" rel="next" type="application/rss+xml" /><?php endif; ?>
 
 		<title><?php bloginfo('name'); ?> Media RSS Feed</title>
 		<link><?php bloginfo("url"); ?></link>
@@ -270,7 +314,7 @@ endif; // GRAIN_POSTTYPE_PHOTO
 			$thumb_width = 0; $thumb_height = 0;
 			
 			// get image urls
-			$thumb_url = grain_get_mediarss_image_URL($post, $image, TRUE, $thumb_width, $thumb_height);
+			$thumb_url = grain_get_mediarss_image_URL($post, $image, TRUE, $thumb_width, $thumb_height);			
 			$full_url = grain_get_mediarss_image_URL($post, $image, FALSE, $width, $height);
 			if( substr($full_url, 0, 1) == "/" ) $full_url = get_bloginfo("url") . $full_url;
 			
@@ -295,7 +339,6 @@ endif; // GRAIN_POSTTYPE_PHOTO
 		
 					
 			$filesize = filesize(realpath(ABSPATH.".".$image->uri));					
-			$thumb_url = str_replace(array("[", "]", "&", "=", "|"), array(urlencode("["), urlencode("]"), urlencode("&"), urlencode("="), urlencode("|")), $thumb_url);
 			
 ?>
 		<item>

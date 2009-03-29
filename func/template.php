@@ -312,6 +312,16 @@
 	*/
 
 	function grain_mocaic_current_page() {
+		return grain_get_current_page();
+	}
+	
+	/**
+	 * grain_get_current_page() - Gets the current page number
+	 *
+	 * @since 0.3.1
+	 * @return int The page number
+	 */
+	function grain_get_current_page() {
 		global $wp_query;
 		if( $wp_query->query_vars['paged'] != '' ) return $wp_query->query_vars['paged'];
 		return 1;

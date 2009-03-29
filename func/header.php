@@ -26,6 +26,33 @@
 	define('GRAIN_CONTENT_CHARSET', get_option('blog_charset'));
 	
 	/**
+	 * grain_determine_page_type() - Determines the type of the current page
+	 *
+	 * @since 0.3.1
+	 */
+	function grain_determine_page_type() {
+		global $wp_query, $GrainOpt;
+		
+		// get the current post ID
+		$thePostID = $wp_query->post->ID;
+		
+		// get the page IDs
+		$infoPageId      = $GrainOpt->get(GRAIN_INFOPAGE_ID);
+		$mosaicPageId    = $GrainOpt->get(GRAIN_MOSAIC_PAGEID);
+		
+		// logic
+		$thisIsInfoPage  = ($infoPageId > 0) && ($thePostID == $infoPageId);
+		$thisIsMosaicPage  = ($mosaicPageId > 0) && ($thePostID == $mosaicPageId);
+		$isContentPage = is_single() || is_home();
+		
+		define("GRAIN_ON_INFO_PAGE", $thisIsInfoPage);
+		define("GRAIN_ON_MOSAIC_PAGE", $thisIsMosaicPage);
+		define("GRAIN_ON_CONTENT_PAGE", $isContentPage);
+		define("GRAIN_ON_ARCHIVE_PAGE", is_archive());
+		define("GRAIN_ON_FEED", is_feed());
+	}
+	
+	/**
 	 * grain_startSession() - Starts a new session
 	 *
 	 * @since 0.3

@@ -235,5 +235,21 @@
 		define("GRAIN_LOGGING_DISABLED_THE_HARD_WAY", true);
 		function grain_log() {}
 	}
-
+	
+	/**
+	 * grain_get_seed() - Gets a seed value for rand() functions
+	 *
+	 * The value will be used to seed MySQL's rand() function so that the
+	 * list can be matched in the MediaRSS feed.
+	 *
+	 * @since 0.3.1
+	 * @access private
+	 */
+	function grain_get_seed()
+	{
+	  list($usec, $sec) = explode(' ', microtime());
+	  return round((float) $sec + ((float) $usec * 100000));
+	}
+	
+	define("GRAIN_SEED", grain_get_seed());
 ?>

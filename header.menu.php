@@ -5,13 +5,17 @@
 	File version: $Id$
 */
 
+
+	// get post object
+	global $post, $GrainOpt;
+
 	// get info / mosaic page
 	$infoPageId      = $GrainOpt->get(GRAIN_INFOPAGE_ID);
 	$mosaicPageId    = $GrainOpt->get(GRAIN_MOSAIC_PAGEID);
     $mosaicLinkTitle = $GrainOpt->get(GRAIN_MOSAIC_LINKTITLE);
-	$thisIsInfoPage  = ($infoPageId > 0) && ($post->ID == $infoPageId);
-	$thisIsMosaicPage  = ($mosaicPageId > 0) && ($post->ID == $mosaicPageId);
-
+	$thisIsInfoPage  = GRAIN_ON_INFO_PAGE;
+	$thisIsMosaicPage  = GRAIN_ON_MOSAIC_PAGE;
+	
 	// test the availability of some options
 	$grain_newest_enabled = $GrainOpt->getYesNo(GRAIN_MNU_NEWEST_VISIBLE);
 	$grain_random_enabled = $GrainOpt->getYesNo(GRAIN_MNU_RANDOM_VISIBLE);
@@ -20,14 +24,11 @@
 	$grain_extended_comments = $GrainOpt->getYesNo(GRAIN_EXTENDEDINFO_ENABLED);
 
 	// get some system related values
-	$isContentPage = is_single() || is_home();
+	$isContentPage = GRAIN_ON_CONTENT_PAGE; // is_single() || is_home();
 	$postCount = grain_getpostcount();
 	$commentCount = grain_getcommentcount();
 
 /**********************************************************************************************/
-
-	// get post object
-	global $post, $GrainOpt;
 
 	// this will be the array that contains the menu items
 	$links = array();
