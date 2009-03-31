@@ -15,10 +15,10 @@
 	/* defines */
 
 	/** The version of the theme */
-	define('GRAIN_THEME_VERSION_BASE', '0.3.1');
+	define('GRAIN_THEME_VERSION_BASE', '0.3 r2');
 	
 	/** An extension to the current version */
-	define('GRAIN_THEME_VERSION_EXTENDED', 'trunk');
+	define('GRAIN_THEME_VERSION_EXTENDED', '');
 	
 	/** The URL of the theme project */
 	define('GRAIN_THEME_URL', 'http://wp-grain.sourceforge.net/');
