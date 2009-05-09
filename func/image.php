@@ -98,7 +98,7 @@
 	 * @param int $height		Optional. The height of the thumbnail
 	 * @return array Array of strings containing the options for phpThumb
 	 */
-	function grain_get_phpthumb_options($width=NULL, $height=NULL) {
+	function grain_get_phpthumb_options($width=NULL, $height=NULL, $reduced=FALSE) {
 		global $GrainOpt;
 		
 		// Fallback
@@ -109,10 +109,12 @@
 		$phpThumbOptions = array();
 		if( $width > 0  ) $phpThumbOptions[] = 'w='.$width;
 		if( $height > 0 ) $phpThumbOptions[] = 'h='.$height;
-		$phpThumbOptions[] = 'zc=1'; // zoom-cropping - can be disabled but a background color is advised then
-		$phpThumbOptions[] = 'fltr[]=usm|80|0.5|3'; // usm filter
-		$phpThumbOptions[] = 'iar=1'; // forced aspect ratio
-		$phpThumbOptions[] = 'bg=000000'; // background if zoom-cropping is disabled
+		if(!$reduced) {
+			$phpThumbOptions[] = 'zc=1'; // zoom-cropping - can be disabled but a background color is advised then
+			$phpThumbOptions[] = 'fltr[]=usm|80|0.5|3'; // usm filter
+			$phpThumbOptions[] = 'iar=1'; // forced aspect ratio
+			$phpThumbOptions[] = 'bg=000000'; // background if zoom-cropping is disabled
+		}
 		
 		// get additional options
 		// check http://phpthumb.sourceforge.net/demo/demo/phpThumb.demo.demo.php for further phpThumb() configuration options
@@ -222,6 +224,39 @@
 		
 			// embed thumbnail
 			echo '<img id="comment-thumb" src="'.$thumbHref.'" alt="'.$title.'" title="'.$title.'" width="'.$width.'" height="'.$height.'" />';
+		}
+		
+	}
+	
+	/**
+	 * grain_get_thumbnail_url() - Gets the URL of the current post's thumbnail
+	 *
+	 * @since 0.3r2
+	 * @global $GrainOpt Grain options
+	 * @uses grain_get_phpthumb_options() To get the phpThumb() configuration options
+	 *
+	 * @param mixed $image		The YAPB image object
+	 * @param mixed $post		The current post object
+	 * @return string HTML markup for the current image's/post's thumbnail
+	 */
+	function grain_get_thumbnail_url() {
+		global $post, $GrainOpt;
+
+		// if there is an image
+		if (!empty($post->image))
+		{
+			// get image size
+			$dimensions = getimagesize($post->image->systemFilePath());			 
+			
+			// scale image
+			$width = $GrainOpt->get(GRAIN_POPUP_THUMB_WIDTH);
+			$height = $GrainOpt->get(GRAIN_POPUP_THUMB_HEIGHT);
+		
+			// get phpThumb() options
+			$phpThumbOptions = grain_get_phpthumb_options($width, $height, true);
+		
+			// return URL to the thumbnail
+			return $post->image->getThumbnailHref($phpThumbOptions);
 		}
 		
 	}

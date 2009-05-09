@@ -34,6 +34,11 @@ grain_determine_page_type();
 <?php if( $GrainOpt->is(GRAIN_FTR_MEDIARSS) ): ?>
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> - MediaRSS Feed" id="gallery" href="<?php echo grain_get_mrss_url(); ?>" />
 <?php endif; ?>
+<?php if( GRAIN_ON_CONTENT_PAGE ): ?>
+<link rel="canonical" href="<?php the_permalink($post->ID) ?>" />
+<?php $thumb = grain_get_thumbnail_url(); if( !empty($thumb) ): ?>
+<link rel="image_src" href="<?php echo $thumb; ?>" />
+<?php endif; endif; ?>
 
 <!-- syndication -->
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
